@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind'
 import mdx from '@astrojs/mdx'
 
 export default defineConfig({
-  site: 'https://your-blog.vercel.app',
+  site: 'https://blog-beta-kohl-92.vercel.app',
   integrations: [
     tailwind({
       applyBaseStyles: false,
