@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import DarkModeToggle from '../../components/DarkModeToggle.astro';
 import TOC from '../../components/TOC.astro';
 import Giscus from '../../components/Giscus.astro';
 import Donate from '../../components/Donate.astro';
@@ -31,14 +31,22 @@ const headings = post.getHeadings ? post.getHeadings() : [];
 ---
 
 <BaseLayout title={post.frontmatter.title} description={post.frontmatter.description} slug={`/blog/${post.file.split('/').pop().replace('.md', '')}`}>
-  <Header />
+  <div id="page" class="flex min-h-screen md:mx-10 md:mt-14">
+    <Sidebar />
 
-  <main class="flex-1">
-    <article class="section-container py-12 sm:py-16">
-      <div class="max-w-3xl mx-auto">
-        <!-- 返回按钮 -->
+    <!-- Main Content -->
+    <main class="w-full flex-1 rounded-r-md pb-20" style="background-color: var(--content-bg);">
+      <!-- Mobile Header -->
+      <div class="relative md:hidden">
+        <div class="absolute right-4 top-5 z-10">
+          <DarkModeToggle />
+        </div>
+      </div>
+
+      <article class="px-4 md:px-10 pt-10">
+        <!-- Back link -->
         <div class="mb-8">
-          <a href="/blog" class="inline-flex items-center gap-1.5 text-sm text-[#9e9e9e] hover:text-[#616161] dark:hover:text-[#bdbdbd] transition-colors">
+          <a href="/blog" class="inline-flex items-center gap-1.5 text-sm transition-colors hover:opacity-80" style="color: var(--text-secondary);">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M15 19l-7-7 7-7"/>
             </svg>
@@ -46,38 +54,36 @@ const headings = post.getHeadings ? post.getHeadings() : [];
           </a>
         </div>
 
-        <!-- 标签 -->
+        <!-- Tags -->
         {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
           <div class="flex flex-wrap gap-2 mb-4">
             {post.frontmatter.tags.map((tag) => (
-              <span class="material-chip">
-                {tag}
-              </span>
+              <span class="tag-pill">{tag}</span>
             ))}
           </div>
         )}
 
-        <!-- 标题 -->
-        <h1 class="text-3xl sm:text-4xl font-bold text-[#212121] dark:text-[#f5f5f5] mb-4 leading-tight">
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4 leading-tight" style="color: var(--title);">
           {post.frontmatter.title}
         </h1>
 
-        <!-- 描述 -->
+        <!-- Description -->
         {post.frontmatter.description && (
-          <p class="text-lg text-[#757575] dark:text-[#9e9e9e] leading-relaxed mb-6">
+          <p class="text-lg leading-relaxed mb-6" style="color: var(--text-secondary);">
             {post.frontmatter.description}
           </p>
         )}
 
-        <!-- 元信息 -->
-        <div class="flex flex-wrap items-center gap-4 text-sm text-[#9e9e9e] dark:text-[#757575] mb-10 pb-10 border-b border-[#e0e0e0] dark:border-[#333333]">
+        <!-- Meta -->
+        <div class="flex flex-wrap items-center gap-4 text-sm mb-10 pb-10 border-b" style="color: var(--text-secondary); border-color: var(--content-border);">
           <span class="flex items-center gap-1.5">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
             {formattedDate}
           </span>
-          <span class="w-1 h-1 rounded-full bg-[#e0e0e0] dark:bg-[#424242]"></span>
+          <span class="w-1 h-1 rounded-full" style="background-color: var(--content-border);"></span>
           <span class="flex items-center gap-1.5">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
@@ -86,7 +92,7 @@ const headings = post.getHeadings ? post.getHeadings() : [];
           </span>
         </div>
 
-        <!-- 正文 + TOC -->
+        <!-- Content + TOC -->
         <div class="flex">
           <div class="flex-1 min-w-0">
             <div class="prose prose-lg max-w-none">
@@ -99,9 +105,7 @@ const headings = post.getHeadings ? post.getHeadings() : [];
 
           <TOC headings={headings} />
         </div>
-      </div>
-    </article>
-  </main>
-
-  <Footer />
+      </article>
+    </main>
+  </div>
 </BaseLayout>

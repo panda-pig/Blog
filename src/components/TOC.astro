@@ -16,8 +16,8 @@ const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 
 {tocHeadings.length > 0 && (
   <nav class="hidden lg:block sticky top-24 w-56 shrink-0 ml-12">
-    <div class="border-l border-[#e0e0e0] dark:border-[#333333] pl-4">
-      <p class="text-xs font-semibold text-[#9e9e9e] dark:text-[#757575] uppercase tracking-wider mb-3">
+    <div class="border-l pl-4" style="border-color: var(--content-border);">
+      <p class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-secondary);">
         目录
       </p>
       <ul class="space-y-2">
@@ -25,7 +25,8 @@ const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
           <li>
             <a
               href={`#${heading.slug}`}
-              class={`block text-sm transition-colors hover:text-[#2196f3] dark:hover:text-[#64b5f6] ${heading.depth === 2 ? 'text-[#616161] dark:text-[#bdbdbd] font-medium' : 'text-[#9e9e9e] dark:text-[#757575] pl-3'}`}
+              class={`block text-sm transition-colors hover:opacity-80 ${heading.depth === 2 ? 'font-medium' : 'pl-3'}`}
+              style={`color: ${heading.depth === 2 ? 'var(--text)' : 'var(--text-secondary)'};`}
             >
               {heading.text}
             </a>

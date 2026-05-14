@@ -2,7 +2,7 @@
 import '../styles/global.css';
 
 const { title, description, slug } = Astro.props;
-const siteTitle = title ? title : 'panda-pig';
+const siteTitle = title ? title : 'Panda Lab';
 const canonicalUrl = `https://blog-beta-kohl-92.vercel.app${slug || ''}`;
 ---
 
@@ -26,11 +26,11 @@ const canonicalUrl = `https://blog-beta-kohl-92.vercel.app${slug || ''}`;
     <script is:inline>
       (function() {
         const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        if (theme === 'dark') document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
   </head>
-  <body class="min-h-screen flex flex-col" data-pagefind-body>
+  <body class="min-h-screen" data-pagefind-body>
     <slot />
   </body>
 </html>

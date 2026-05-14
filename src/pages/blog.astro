@@ -1,9 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Sidebar from '../components/Sidebar.astro';
+import DarkModeToggle from '../components/DarkModeToggle.astro';
 import Search from '../components/Search.astro';
-import PostCard from '../components/PostCard.astro';
 
 const posts = await Astro.glob('../content/blog/*.md');
 const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
@@ -11,58 +10,96 @@ const allTags = [...new Set(posts.flatMap(p => p.frontmatter.tags || []))];
 ---
 
 <BaseLayout title="文章列表" description="Panda Lab 的所有博客文章">
-  <Header />
+  <div id="page" class="flex min-h-screen md:mx-10 md:mt-14">
+    <Sidebar />
 
-  <main class="flex-1">
-    <section class="pt-12 pb-20">
-      <div class="section-container max-w-5xl">
-        <div class="mb-10">
-          <h1 class="text-3xl sm:text-4xl font-bold text-[#212121] dark:text-[#f5f5f5] mb-4">文章列表</h1>
-          <p class="text-[#757575] dark:text-[#9e9e9e]">共 {sortedPosts.length} 篇文章，持续更新中</p>
+    <!-- Main Content -->
+    <main class="w-full flex-1 rounded-r-md pb-20" style="background-color: var(--content-bg);">
+      <!-- Mobile Header -->
+      <div class="relative md:hidden">
+        <div class="absolute right-4 top-5 z-10">
+          <DarkModeToggle />
         </div>
+      </div>
 
-        <div class="mb-8 max-w-xl">
-          <Search />
-        </div>
+      <!-- Page Header -->
+      <div class="px-4 md:px-10 pt-10 pb-6">
+        <h1 class="text-3xl font-bold mb-2" style="color: var(--title);">文章列表</h1>
+        <p class="text-sm" style="color: var(--text-secondary);">共 {sortedPosts.length} 篇文章，持续更新中</p>
+      </div>
 
-        {allTags.length > 0 && (
-          <div class="flex flex-wrap gap-2 mb-10">
-            <span class="material-chip cursor-pointer">
-              全部
-            </span>
+      <!-- Search -->
+      <div class="px-4 md:px-10 mb-6 max-w-xl">
+        <Search />
+      </div>
+
+      <!-- Tags -->
+      {allTags.length > 0 && (
+        <div class="px-4 md:px-10 mb-6">
+          <div class="flex flex-wrap gap-2">
+            <span class="tag-pill cursor-pointer" style="background-color: var(--primary); color: #fff;">全部</span>
             {allTags.map((tag) => (
-              <span class="text-xs px-3 py-1.5 rounded-full bg-white dark:bg-[#1e1e1e] text-[#757575] dark:text-[#9e9e9e] border border-[#e0e0e0] dark:border-[#333333] cursor-pointer hover:border-[#2196f3] dark:hover:border-[#2196f3] hover:text-[#2196f3] dark:hover:text-[#64b5f6] transition-colors">
-                {tag}
-              </span>
+              <span class="tag-pill cursor-pointer">{tag}</span>
             ))}
           </div>
-        )}
-
-        <div class="grid md:grid-cols-2 gap-6">
-          {sortedPosts.map((post) => {
-            const slug = post.file.split('/').pop().replace('.md', '');
-            const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
-            return (
-              <PostCard
-                title={post.frontmatter.title}
-                description={post.frontmatter.description}
-                date={post.frontmatter.date}
-                tags={post.frontmatter.tags}
-                slug={slug}
-                readingTime={readingTime}
-              />
-            );
-          })}
         </div>
+      )}
+
+      <!-- Articles -->
+      <div class="px-4 md:px-10">
+        {sortedPosts.map((post) => {
+          const slug = post.file.split('/').pop().replace('.md', '');
+          const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
+          const formattedDate = new Date(post.frontmatter.date).toLocaleDateString('zh-CN', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          });
+
+          return (
+            <article class="article-item">
+              <div class="flex items-center gap-3 mb-[5px]">
+                <span class="meta-badge">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                  {formattedDate}
+                </span>
+                <span class="meta-badge">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                  {readingTime} 分钟
+                </span>
+              </div>
+
+              <a href={`/blog/${slug}`} class="block mb-2">
+                <h2 class="text-xl font-bold transition-colors hover:opacity-80" style="color: var(--title);">
+                  {post.frontmatter.title}
+                </h2>
+              </a>
+
+              <p class="text-sm leading-relaxed mb-3 max-w-[30rem]" style="color: var(--text-secondary);">
+                {post.frontmatter.description}
+              </p>
+
+              {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
+                <div class="flex flex-wrap content-center gap-2">
+                  {post.frontmatter.tags.map((tag) => (
+                    <span class="tag-pill">{tag}</span>
+                  ))}
+                </div>
+              )}
+            </article>
+          );
+        })}
 
         {sortedPosts.length === 0 && (
-          <div class="text-center py-20">
-            <p class="text-[#9e9e9e] dark:text-[#757575]">还没有文章，开始写作吧！</p>
+          <div class="py-20 text-center" style="color: var(--text-secondary);">
+            <p>还没有文章，开始写作吧！</p>
           </div>
         )}
       </div>
-    </section>
-  </main>
-
-  <Footer />
+    </main>
+  </div>
 </BaseLayout>
