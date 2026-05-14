@@ -1,6 +1,7 @@
 ---
-const { title, description } = Astro.props;
-const siteTitle = title ? `${title} | 我的博客` : '我的博客';
+const { title, description, slug } = Astro.props;
+const siteTitle = title ? `${title}` : '我的博客';
+const canonicalUrl = `https://blog-beta-kohl-92.vercel.app${slug || ''}`;
 ---
 
 <!doctype html>
@@ -9,29 +10,32 @@ const siteTitle = title ? `${title} | 我的博客` : '我的博客';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description || '个人博客，分享想法与文章'} />
+    <meta name="author" content="panda-pig" />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{siteTitle}</title>
-    
-    <!-- Plausible Analytics -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description || '个人博客'} />
+
     <script defer data-domain="blog-beta-kohl-92.vercel.app" src="https://plausible.io/js/script.js"></script>
-    
+
     <script is:inline>
-      const theme = (() => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme');
-        }
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          return 'dark';
-        }
-        return 'light';
+      (function() {
+        const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.classList.add('dark');
       })();
-      
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      }
     </script>
+
+    <style is:global>
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+      .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+      .animate-fade-in-delay { animation: fadeIn 0.6s ease-out 0.15s forwards; opacity: 0; }
+      .animate-fade-in-delay-2 { animation: fadeIn 0.6s ease-out 0.3s forwards; opacity: 0; }
+    </style>
   </head>
-  <body class="min-h-screen flex flex-col" data-pagefind-body>
+  <body class="min-h-screen flex flex-col font-sans" data-pagefind-body>
     <slot />
   </body>
 </html>
