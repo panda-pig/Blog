@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import TOC from '../../components/TOC.astro';
 import Giscus from '../../components/Giscus.astro';
 import Donate from '../../components/Donate.astro';
 
@@ -25,15 +26,18 @@ const formattedDate = new Date(post.frontmatter.date).toLocaleDateString('zh-CN'
   month: 'long',
   day: 'numeric',
 });
+
+const headings = post.getHeadings ? post.getHeadings() : [];
 ---
 
 <BaseLayout title={post.frontmatter.title} description={post.frontmatter.description} slug={`/blog/${post.file.split('/').pop().replace('.md', '')}`}>
   <Header />
 
   <main class="flex-1">
-    <article class="section-container max-w-3xl py-12 sm:py-16">
-      <header class="mb-10">
-        <div class="mb-6">
+    <article class="section-container py-12 sm:py-16">
+      <div class="max-w-3xl mx-auto">
+        <!-- 返回按钮 -->
+        <div class="mb-8">
           <a href="/blog" class="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M15 19l-7-7 7-7"/>
@@ -42,31 +46,38 @@ const formattedDate = new Date(post.frontmatter.date).toLocaleDateString('zh-CN'
           </a>
         </div>
 
-        <div class="flex flex-wrap items-center gap-3 mb-4">
-          {post.frontmatter.tags?.map((tag) => (
-            <span class="text-xs px-2.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/30 text-indigo-600 dark:text-indigo-400 font-medium border border-indigo-100 dark:border-indigo-800/30">
-              {tag}
-            </span>
-          ))}
-        </div>
+        <!-- 标签 -->
+        {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mb-4">
+            {post.frontmatter.tags.map((tag) => (
+              <span class="text-xs px-2.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/30 text-indigo-600 dark:text-indigo-400 font-medium border border-indigo-100 dark:border-indigo-800/30">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
 
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
+        <!-- 标题 -->
+        <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">
           {post.frontmatter.title}
         </h1>
 
+        <!-- 描述 -->
         {post.frontmatter.description && (
           <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
             {post.frontmatter.description}
           </p>
         )}
 
-        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-400 dark:text-slate-500">
+        <!-- 元信息 -->
+        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-400 dark:text-slate-500 mb-10 pb-10 border-b border-slate-200/60 dark:border-slate-800/60">
           <span class="flex items-center gap-1.5">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
             {formattedDate}
           </span>
+          <span class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></span>
           <span class="flex items-center gap-1.5">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
@@ -74,14 +85,21 @@ const formattedDate = new Date(post.frontmatter.date).toLocaleDateString('zh-CN'
             {readingTime} 分钟阅读
           </span>
         </div>
-      </header>
 
-      <div class="prose prose-lg max-w-none">
-        <Content />
+        <!-- 正文 + TOC -->
+        <div class="flex">
+          <div class="flex-1 min-w-0">
+            <div class="prose prose-lg max-w-none">
+              <Content />
+            </div>
+
+            <Donate />
+            <Giscus slug={post.url} />
+          </div>
+
+          <TOC headings={headings} />
+        </div>
       </div>
-
-      <Donate />
-      <Giscus slug={post.url} />
     </article>
   </main>
 
