@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 const { title, description, slug } = Astro.props;
 const siteTitle = title ? `${title}` : '我的博客';
 const canonicalUrl = `https://blog-beta-kohl-92.vercel.app${slug || ''}`;
