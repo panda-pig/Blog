@@ -10,64 +10,15 @@
   }
 
   body {
-    @apply bg-white text-slate-800;
+    @apply bg-white text-slate-700;
   }
 
   .dark body {
-    @apply bg-slate-950 text-slate-300;
+    @apply bg-slate-900 text-slate-300;
   }
 
   ::selection {
-    background-color: #dbeafe;
-    color: #1e3a8a;
-  }
-
-  .dark ::selection {
-    background-color: #1e3a8a;
-    color: #dbeafe;
-  }
-}
-
-@layer components {
-  .glass {
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(226, 232, 240, 0.5);
-  }
-
-  .dark .glass {
-    background-color: rgba(15, 23, 42, 0.7);
-    border-color: rgba(51, 65, 85, 0.5);
-  }
-
-  .card {
-    background-color: #ffffff;
-    border-radius: 1rem;
-    border: 1px solid rgba(241, 245, 249, 1);
-    box-shadow: 0 1px 3px rgba(148, 163, 184, 0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .card:hover {
-    box-shadow: 0 4px 12px rgba(148, 163, 184, 0.2);
-    transform: translateY(-2px);
-  }
-
-  .dark .card {
-    background-color: rgba(15, 23, 42, 0.6);
-    border-color: rgba(30, 41, 59, 1);
-    box-shadow: 0 1px 3px rgba(2, 6, 23, 0.5);
-  }
-
-  .dark .card:hover {
-    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.6);
-  }
-
-  .gradient-text {
-    background: linear-gradient(135deg, #2563eb 0%, #d946ef 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background-color: #bbf7d0;
+    color: #15803d;
   }
 }
