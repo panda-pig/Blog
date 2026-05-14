@@ -1,0 +1,37 @@
+---
+const { title, description } = Astro.props;
+const siteTitle = title ? `${title} | 我的博客` : '我的博客';
+---
+
+<!doctype html>
+<html lang="zh-CN" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description || '个人博客，分享想法与文章'} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{siteTitle}</title>
+    
+    <!-- Plausible Analytics -->
+    <script defer data-domain="your-blog.vercel.app" src="https://plausible.io/js/script.js"></script>
+    
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
+      
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col" data-pagefind-body>
+    <slot />
+  </body>
+</html>

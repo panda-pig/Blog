@@ -1,0 +1,27 @@
+{
+  "name": "my-blog",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^2.3.1",
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.1.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.5.18",
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "@pagefind/default-ui": "^1.5.2",
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.5.0",
+    "pagefind": "^1.5.2",
+    "postcss": "^8.5.14"
+  }
+}

@@ -1,0 +1,21 @@
+---
+import DarkModeToggle from './DarkModeToggle.astro';
+---
+
+<header class="sticky top-0 z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-sm border-b border-stone-200 dark:border-stone-800">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+    <a href="/" class="text-lg font-semibold text-stone-900 dark:text-stone-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+      我的博客
+    </a>
+    
+    <nav class="flex items-center gap-6">
+      <a href="/" class="text-sm text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors">
+        首页
+      </a>
+      <a href="/blog" class="text-sm text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors">
+        文章
+      </a>
+      <DarkModeToggle />
+    </nav>
+  </div>
+</header>
