@@ -10,8 +10,8 @@
   }
 
   body {
-    background-color: #ffffff;
-    color: #334155;
+    background-color: #f8fafc;
+    color: #475569;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   }
 
@@ -21,17 +21,98 @@
   }
 
   ::selection {
-    background-color: #e2e8f0;
-    color: #1e293b;
+    background-color: #e0e7ff;
+    color: #312e81;
   }
 
   .dark ::selection {
-    background-color: #334155;
-    color: #e2e8f0;
+    background-color: #312e81;
+    color: #e0e7ff;
   }
 }
 
 @layer components {
+  .section-container {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid rgba(226, 232, 240, 0.6);
+    box-shadow: 0 1px 3px rgba(148, 163, 184, 0.08), 0 1px 2px rgba(148, 163, 184, 0.04);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 12px rgba(148, 163, 184, 0.12), 0 2px 4px rgba(148, 163, 184, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .dark .card {
+    background-color: rgba(15, 23, 42, 0.5);
+    border-color: rgba(30, 41, 59, 0.6);
+    box-shadow: 0 1px 3px rgba(2, 6, 23, 0.3), 0 1px 2px rgba(2, 6, 23, 0.2);
+  }
+
+  .dark .card:hover {
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.4), 0 4px 8px rgba(2, 6, 23, 0.3);
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(79, 70, 229, 0.15);
+  }
+
+  .btn-primary:hover {
+    background-color: #4338ca;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .dark .btn-secondary {
+    background-color: rgba(30, 41, 59, 0.5);
+    border-color: rgba(51, 65, 85, 0.6);
+    color: #cbd5e1;
+  }
+
+  .btn-secondary:hover {
+    border-color: #cbd5e1;
+    background-color: #f8fafc;
+  }
+
+  .dark .btn-secondary:hover {
+    border-color: rgba(71, 85, 105, 0.8);
+    background-color: rgba(30, 41, 59, 0.8);
+  }
+
   .prose h2 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -63,10 +144,11 @@
     text-decoration: underline;
     text-underline-offset: 4px;
     text-decoration-color: #cbd5e1;
+    transition: color 0.2s ease;
   }
 
   .prose a:hover {
-    color: #0f172a;
+    color: #4f46e5;
   }
 
   .dark .prose a {
@@ -75,7 +157,7 @@
   }
 
   .dark .prose a:hover {
-    color: #e2e8f0;
+    color: #818cf8;
   }
 
   .prose code {
@@ -95,7 +177,7 @@
   .prose pre {
     background-color: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     padding: 1rem;
     overflow-x: auto;
     margin-bottom: 1.25rem;

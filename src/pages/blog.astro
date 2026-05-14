@@ -3,63 +3,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Search from '../components/Search.astro';
+import PostCard from '../components/PostCard.astro';
 
 const posts = await Astro.glob('../content/blog/*.md');
 const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 const allTags = [...new Set(posts.flatMap(p => p.frontmatter.tags || []))];
 ---
 
-<BaseLayout title="文章列表" description="所有博客文章">
+<BaseLayout title="文章列表" description="Panda Lab 的所有博客文章">
   <Header />
 
   <main class="flex-1">
-    <section class="pt-12 pb-16">
-      <div class="max-w-2xl mx-auto px-6">
-        <div class="mb-8">
-          <h1 class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-2">文章列表</h1>
-          <p class="text-sm text-slate-500 dark:text-slate-400">共 {sortedPosts.length} 篇文章</p>
+    <section class="pt-12 pb-20">
+      <div class="section-container">
+        <div class="max-w-2xl mb-10">
+          <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">文章列表</h1>
+          <p class="text-slate-500 dark:text-slate-400">共 {sortedPosts.length} 篇文章，持续更新中</p>
         </div>
 
-        <Search />
+        <div class="max-w-xl mb-8">
+          <Search />
+        </div>
 
         {allTags.length > 0 && (
-          <div class="flex flex-wrap gap-2 mt-6 mb-8">
-            <span class="text-xs px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium border border-slate-200 dark:border-slate-700">
+          <div class="flex flex-wrap gap-2 mb-10">
+            <span class="text-xs px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/30 text-indigo-600 dark:text-indigo-400 font-medium border border-indigo-100 dark:border-indigo-800/30">
               全部
             </span>
             {allTags.map((tag) => (
-              <span class="text-xs px-3 py-1.5 rounded-full bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700/50">
+              <span class="text-xs px-3 py-1.5 rounded-full bg-white dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700/50 cursor-pointer hover:border-indigo-200 dark:hover:border-indigo-800/50 transition-colors">
                 {tag}
               </span>
             ))}
           </div>
         )}
 
-        <div class="space-y-1">
+        <div class="grid md:grid-cols-2 gap-6">
           {sortedPosts.map((post) => {
             const slug = post.file.split('/').pop().replace('.md', '');
+            const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
             return (
-              <a href={`/blog/${slug}`} class="block group py-4 border-b border-slate-50 dark:border-slate-800/50">
-                <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                  <time class="text-xs text-slate-400 dark:text-slate-500 font-mono shrink-0 w-24">
-                    {new Date(post.frontmatter.date).toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' })}
-                  </time>
-                  <div class="flex-1 min-w-0">
-                    <h3 class="text-base font-medium text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-slate-100 transition-colors">
-                      {post.frontmatter.title}
-                    </h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">
-                      {post.frontmatter.description}
-                    </p>
-                  </div>
-                </div>
-              </a>
+              <PostCard
+                title={post.frontmatter.title}
+                description={post.frontmatter.description}
+                date={post.frontmatter.date}
+                tags={post.frontmatter.tags}
+                slug={slug}
+                readingTime={readingTime}
+              />
             );
           })}
         </div>
 
         {sortedPosts.length === 0 && (
-          <p class="text-slate-400 dark:text-slate-500 text-center py-12">还没有文章，开始写作吧！</p>
+          <div class="text-center py-20">
+            <div class="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800/50 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-slate-300 dark:text-slate-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+              </svg>
+            </div>
+            <p class="text-slate-400 dark:text-slate-500">还没有文章，开始写作吧！</p>
+          </div>
         )}
       </div>
     </section>

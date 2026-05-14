@@ -2,60 +2,123 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Search from '../components/Search.astro';
+import Hero from '../components/Hero.astro';
+import PostCard from '../components/PostCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Newsletter from '../components/Newsletter.astro';
 
 const posts = await Astro.glob('../content/blog/*.md');
-const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()).slice(0, 3);
+
+const projects = [
+  {
+    title: 'JLPT 学习工具',
+    description: '一个帮助日语学习者备考 JLPT 的在线工具，包含词汇记忆、语法练习和模拟测试功能。',
+    tags: ['React', 'TypeScript', 'AI'],
+    link: '#',
+    status: '进行中',
+  },
+  {
+    title: 'AI 手相分析网站',
+    description: '结合计算机视觉和深度学习的趣味项目，上传手掌照片即可获取个性化的分析报告。',
+    tags: ['Python', 'TensorFlow', 'Next.js'],
+    link: '#',
+    status: '已完成',
+  },
+  {
+    title: 'Panda Lab 博客',
+    description: '基于 Astro 构建的个人博客系统，支持暗色模式、全文搜索和评论系统。',
+    tags: ['Astro', 'Tailwind CSS', 'Vercel'],
+    link: 'https://blog-beta-kohl-92.vercel.app',
+    status: '已完成',
+  },
+];
 ---
 
-<BaseLayout>
+<BaseLayout description="Panda Lab - panda-pig 的个人博客，记录技术学习、个人作品集与个人成长">
   <Header />
 
   <main class="flex-1">
-    <section class="pt-16 pb-12">
-      <div class="max-w-2xl mx-auto px-6">
-        <div class="mb-10">
-          <h1 class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-3">
-            panda-pig
-          </h1>
-          <p class="text-slate-500 dark:text-slate-400 leading-relaxed">
-            记录想法、技术和生活碎片。
-          </p>
+    <Hero />
+
+    <!-- Featured Posts -->
+    <section class="py-20">
+      <div class="section-container">
+        <div class="flex items-center justify-between mb-10">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2">精选文章</h2>
+            <p class="text-slate-500 dark:text-slate-400">分享技术见解与学习心得</p>
+          </div>
+          <a href="/blog" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors">
+            查看全部
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
         </div>
 
-        <Search />
-      </div>
-    </section>
-
-    <section class="pb-20">
-      <div class="max-w-2xl mx-auto px-6">
-        <h2 class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-6">最新文章</h2>
-
-        <div class="space-y-1">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {sortedPosts.map((post) => {
             const slug = post.file.split('/').pop().replace('.md', '');
+            const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
             return (
-              <a href={`/blog/${slug}`} class="block group py-4 border-b border-slate-50 dark:border-slate-800/50">
-                <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                  <time class="text-xs text-slate-400 dark:text-slate-500 font-mono shrink-0 w-24">
-                    {new Date(post.frontmatter.date).toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' })}
-                  </time>
-                  <div class="flex-1 min-w-0">
-                    <h3 class="text-base font-medium text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-slate-100 transition-colors">
-                      {post.frontmatter.title}
-                    </h3>
-                  </div>
-                </div>
-              </a>
+              <PostCard
+                title={post.frontmatter.title}
+                description={post.frontmatter.description}
+                date={post.frontmatter.date}
+                tags={post.frontmatter.tags}
+                slug={slug}
+                readingTime={readingTime}
+              />
             );
           })}
         </div>
 
-        {sortedPosts.length === 0 && (
-          <p class="text-slate-400 dark:text-slate-500 text-center py-12">还没有文章，开始写作吧！</p>
-        )}
+        <div class="mt-8 text-center sm:hidden">
+          <a href="/blog" class="inline-flex items-center gap-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors">
+            查看全部文章
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
+
+    <!-- Projects -->
+    <section class="py-20 bg-white/50 dark:bg-slate-900/20">
+      <div class="section-container">
+        <div class="flex items-center justify-between mb-10">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2">项目展示</h2>
+            <p class="text-slate-500 dark:text-slate-400">把想法变成产品</p>
+          </div>
+          <a href="/projects" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors">
+            全部项目
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project) => (
+            <ProjectCard {...project} />
+          ))}
+        </div>
+
+        <div class="mt-8 text-center sm:hidden">
+          <a href="/projects" class="inline-flex items-center gap-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors">
+            查看全部项目
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <Newsletter />
   </main>
 
   <Footer />

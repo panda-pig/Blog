@@ -1,0 +1,40 @@
+---
+---
+
+<section class="py-20">
+  <div class="section-container">
+    <div class="card p-8 sm:p-12 text-center max-w-3xl mx-auto relative overflow-hidden">
+      <!-- Subtle gradient background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-transparent to-purple-50/50 dark:from-indigo-950/20 dark:to-purple-950/20 pointer-events-none"></div>
+      
+      <div class="relative z-10">
+        <div class="w-12 h-12 rounded-2xl bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mx-auto mb-6">
+          <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-3">订阅我的实践笔记</h2>
+        <p class="text-slate-500 dark:text-slate-400 mb-8 max-w-md mx-auto">
+          每周分享技术见解、项目心得和学习资源。无垃圾邮件，随时取消订阅。
+        </p>
+
+        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('订阅功能即将上线！');">
+          <input
+            type="email"
+            placeholder="输入你的邮箱地址"
+            class="flex-1 px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-300 transition-all"
+            required
+          />
+          <button type="submit" class="btn-primary whitespace-nowrap">
+            立即订阅
+          </button>
+        </form>
+
+        <p class="text-xs text-slate-400 dark:text-slate-500 mt-4">
+          通过订阅，你同意接收我的最新文章和项目更新
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
