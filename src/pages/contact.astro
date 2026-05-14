@@ -10,54 +10,54 @@ import Footer from '../components/Footer.astro';
   <main class="flex-1">
     <section class="py-12 sm:py-20">
       <div class="section-container max-w-2xl">
-        <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">联系我</h1>
-        <p class="text-slate-500 dark:text-slate-400 mb-10">有任何问题或合作意向？欢迎随时联系我。</p>
+        <h1 class="text-3xl sm:text-4xl font-bold text-[#212121] dark:text-[#f5f5f5] mb-4">联系我</h1>
+        <p class="text-[#757575] dark:text-[#9e9e9e] mb-10">有任何问题或合作意向？欢迎随时联系我。</p>
 
-        <div class="card p-8">
+        <div class="material-card p-8">
           <form class="space-y-6" onsubmit="event.preventDefault(); alert('表单提交功能即将上线！');">
             <div>
-              <label for="name" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">姓名</label>
+              <label for="name" class="block text-sm font-medium text-[#424242] dark:text-[#e0e0e0] mb-2">姓名</label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-300 transition-all"
+                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#1e1e1e] border border-[#e0e0e0] dark:border-[#333333] text-[#424242] dark:text-[#e0e0e0] text-sm placeholder:text-[#9e9e9e] focus:outline-none focus:ring-2 focus:ring-[#2196f3]/20 focus:border-[#2196f3] transition-all"
                 placeholder="你的名字"
                 required
               />
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">邮箱</label>
+              <label for="email" class="block text-sm font-medium text-[#424242] dark:text-[#e0e0e0] mb-2">邮箱</label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-300 transition-all"
+                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#1e1e1e] border border-[#e0e0e0] dark:border-[#333333] text-[#424242] dark:text-[#e0e0e0] text-sm placeholder:text-[#9e9e9e] focus:outline-none focus:ring-2 focus:ring-[#2196f3]/20 focus:border-[#2196f3] transition-all"
                 placeholder="your@email.com"
                 required
               />
             </div>
             <div>
-              <label for="message" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">留言</label>
+              <label for="message" class="block text-sm font-medium text-[#424242] dark:text-[#e0e0e0] mb-2">留言</label>
               <textarea
                 id="message"
                 name="message"
                 rows="5"
-                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-300 transition-all resize-none"
+                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#1e1e1e] border border-[#e0e0e0] dark:border-[#333333] text-[#424242] dark:text-[#e0e0e0] text-sm placeholder:text-[#9e9e9e] focus:outline-none focus:ring-2 focus:ring-[#2196f3]/20 focus:border-[#2196f3] transition-all resize-none"
                 placeholder="你想说什么..."
                 required
               ></textarea>
             </div>
-            <button type="submit" class="btn-primary w-full">发送消息</button>
+            <button type="submit" class="material-btn material-btn-primary w-full">发送消息</button>
           </form>
         </div>
 
-        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-slate-500 dark:text-slate-400">
-          <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-[#757575] dark:text-[#9e9e9e]">
+          <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[#2196f3] dark:hover:text-[#64b5f6] transition-colors">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             GitHub
           </a>
-          <a href="mailto:contact@example.com" class="flex items-center gap-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+          <a href="mailto:contact@example.com" class="flex items-center gap-2 hover:text-[#2196f3] dark:hover:text-[#64b5f6] transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             Email
           </a>
