@@ -3,11 +3,10 @@
 
 <div class="mt-12 pt-8 border-t border-slate-100 dark:border-slate-800">
   <div class="text-center">
-    <h3 class="text-base font-semibold text-slate-800 dark:text-slate-200 mb-2">喜欢这篇文章？</h3>
-    <p class="text-sm text-slate-500 dark:text-slate-400 mb-5">如果对你有所帮助，欢迎支持我继续创作</p>
+    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">如果这篇文章对你有帮助，欢迎支持我继续创作</p>
     <button
       id="donate-trigger"
-      class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-mint-500 hover:bg-mint-600 text-white text-sm font-medium transition-colors"
+      class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white text-sm font-medium transition-colors"
     >
       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
@@ -16,24 +15,24 @@
     </button>
   </div>
 
-  <dialog id="donate-dialog" class="rounded-2xl p-0 bg-transparent backdrop:bg-black/30 border-0">
-    <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 max-w-sm w-full mx-4 border border-slate-100 dark:border-slate-700 shadow-xl">
+  <dialog id="donate-dialog" class="rounded-xl p-0 bg-transparent backdrop:bg-black/30 border-0">
+    <div class="bg-white dark:bg-slate-900 rounded-xl p-6 max-w-sm w-full mx-4 border border-slate-100 dark:border-slate-700 shadow-lg">
       <div class="flex justify-between items-center mb-4">
         <h3 class="text-lg font-semibold text-slate-800 dark:text-white">打赏支持</h3>
-        <button onclick="document.getElementById('donate-dialog').close()" class="p-1 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-50 transition-colors">
+        <button onclick="document.getElementById('donate-dialog').close()" class="p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
       <div class="grid grid-cols-2 gap-4">
         <div class="text-center">
-          <div class="aspect-square rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center mb-2 overflow-hidden">
+          <div class="aspect-square rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center mb-2 overflow-hidden">
             <img src="/wechat-qr.png" alt="微信支付" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
             <span class="hidden text-xs text-slate-400">微信收款码</span>
           </div>
           <span class="text-xs text-slate-500">微信支付</span>
         </div>
         <div class="text-center">
-          <div class="aspect-square rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center mb-2 overflow-hidden">
+          <div class="aspect-square rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center mb-2 overflow-hidden">
             <img src="/alipay-qr.png" alt="支付宝" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
             <span class="hidden text-xs text-slate-400">支付宝收款码</span>
           </div>

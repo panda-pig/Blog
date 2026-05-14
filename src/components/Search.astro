@@ -3,19 +3,19 @@
 
 <button
   id="search-trigger"
-  class="w-full max-w-md mx-auto flex items-center gap-3 px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:border-slate-200 dark:hover:border-slate-600 transition-all text-sm"
+  class="w-full flex items-center gap-3 px-4 py-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:border-slate-200 dark:hover:border-slate-600 transition-all text-sm"
   onclick="document.getElementById('search-dialog').showModal()"
 >
   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
     <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
   </svg>
   <span class="flex-1 text-left">搜索文章...</span>
-  <kbd class="px-1.5 py-0.5 text-[11px] font-mono bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-md text-slate-400">Ctrl K</kbd>
+  <kbd class="px-1.5 py-0.5 text-[11px] font-mono bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded text-slate-400">Ctrl K</kbd>
 </button>
 
 <dialog id="search-dialog" class="fixed inset-0 w-full h-full bg-black/20 backdrop-blur-sm p-0 m-0 border-0">
-  <div class="absolute top-[20%] left-1/2 -translate-x-1/2 w-full max-w-xl px-4">
-    <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden">
+  <div class="absolute top-[15%] left-1/2 -translate-x-1/2 w-full max-w-xl px-4">
+    <div class="bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden">
       <div id="search-container" class="p-3 min-h-[280px]"></div>
     </div>
   </div>
