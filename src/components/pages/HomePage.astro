@@ -285,8 +285,30 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
           <a href={`${prefix}/contact`} class="text-xs transition-colors hover:opacity-70" style="color: var(--text-muted);">Twitter</a>
           <a href={`${prefix}/contact`} class="text-xs transition-colors hover:opacity-70" style="color: var(--text-muted);">LinkedIn</a>
         </div>
+        <div class="flex items-center justify-center gap-2 text-[10px] mb-2" style="color: var(--text-muted);">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+          </svg>
+          <span id="view-counter">加载中...</span>
+        </div>
         <p class="text-[10px]" style="color: var(--text-muted);">© {new Date().getFullYear()} Panda Lab. Developed by panda-pig.</p>
       </div>
     </footer>
+
+    <script is:inline>
+      (function() {
+        const counterEl = document.getElementById('view-counter');
+        if (!counterEl) return;
+        fetch('https://api.countapi.xyz/hit/panda-lab-blog/visits')
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            counterEl.textContent = '浏览次数 ' + data.value.toLocaleString();
+          })
+          .catch(function() {
+            counterEl.textContent = '浏览次数 ∞';
+          });
+      })();
+    </script>
   </main>
 </BaseLayout>

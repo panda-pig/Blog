@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import { momentsData } from '../../data/moments';
+
+const { lang } = Astro.props;
+const moments = momentsData[lang as 'zh' | 'en' | 'ja'] || momentsData.zh;
+
+function formatDate(dateStr: string, locale: string) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+function formatTimelineDate(dateStr: string, locale: string) {
+  const d = new Date(dateStr);
+  if (locale === 'zh-CN') {
+    return `${d.getMonth() + 1}月${d.getDate()}日`;
+  }
+  if (locale === 'ja-JP') {
+    return `${d.getMonth() + 1}月${d.getDate()}日`;
+  }
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
+}
+
+function formatYear(dateStr: string) {
+  return new Date(dateStr).getFullYear().toString();
+}
+
+function formatDay(dateStr: string) {
+  return new Date(dateStr).getDate().toString().padStart(2, '0');
+}
+
+function formatMonth(dateStr: string, locale: string) {
+  const d = new Date(dateStr);
+  if (locale === 'zh-CN') return `${d.getMonth() + 1}月`;
+  if (locale === 'ja-JP') return `${d.getMonth() + 1}月`;
+  return d.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+}
+
+const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
+---
+
+<BaseLayout title="瞬间 — Panda Lab" description="记录生活中的美好瞬间与文字碎片。" lang={lang}>
+  <Header lang={lang} />
+
+  <main class="min-h-screen">
+    <div class="section-container pt-12 md:pt-20 pb-20 md:pb-28">
+      <!-- Page header -->
+      <div class="mb-12 md:mb-20 text-center md:text-left">
+        <h1 class="font-serif text-3xl md:text-5xl font-bold mb-4" style="color: var(--text);" data-i18n="moments.title">瞬间</h1>
+        <p class="text-sm md:text-base max-w-md" style="color: var(--text-secondary);" data-i18n="moments.desc">
+          记录生活中的美好瞬间、旅行见闻与文字碎片。按时间轴陈列，每一刻都值得被记住。
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="relative">
+        {moments.map((moment, index) => {
+          const isFirst = index === 0;
+          const isLast = index === moments.length - 1;
+          return (
+            <div class="flex gap-6 md:gap-10 mb-16 md:mb-24 relative">
+              {/* Left: Timeline axis */}
+              <div class="flex flex-col items-end shrink-0 w-16 md:w-24 relative">
+                {/* Date display */}
+                <div class="text-right">
+                  <div class="text-[10px] md:text-xs font-medium uppercase tracking-wider" style="color: var(--text-muted);">
+                    {formatMonth(moment.date, localeStr)}
+                  </div>
+                  <div class="text-xl md:text-3xl font-serif font-bold leading-none mt-0.5" style="color: var(--text);">
+                    {formatDay(moment.date)}
+                  </div>
+                  <div class="text-[10px] md:text-xs mt-1" style="color: var(--text-muted);">
+                    {formatYear(moment.date)}
+                  </div>
+                </div>
+                
+                {/* Dot on timeline */}
+                <div class="absolute top-2 -right-[11px] md:-right-[15px] w-[9px] h-[9px] md:w-[11px] md:h-[11px] rounded-full border-2" style="background-color: var(--bg); border-color: var(--primary);"></div>
+              </div>
+
+              {/* Vertical line */}
+              <div class="absolute left-8 md:left-12 top-6 bottom-[-4rem] md:bottom-[-6rem] w-px" style="background-color: var(--border);" class:list={[{ 'hidden': isLast }]}></div>
+
+              {/* Right: Content card */}
+              <div class="flex-1 min-w-0 pt-0.5">
+                <div class="card-fluid p-5 md:p-8">
+                  {/* Title */}
+                  <h2 class="font-serif text-xl md:text-2xl font-bold mb-3 md:mb-4" style="color: var(--text);">
+                    {moment.title}
+                  </h2>
+
+                  {/* Images */}
+                  {moment.images && moment.images.length > 0 && (
+                    <div class="mb-4 md:mb-6">
+                      {moment.images.map((img: string) => (
+                        <div class="rounded-xl overflow-hidden border" style="border-color: var(--border);">
+                          <img 
+                            src={img} 
+                            alt={moment.title}
+                            class="w-full h-48 md:h-72 object-cover"
+                            onerror="this.style.display='none'"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Description */}
+                  <p class="text-sm md:text-base leading-relaxed mb-4 md:mb-6" style="color: var(--text-secondary);">
+                    {moment.description}
+                  </p>
+
+                  {/* Meta: location + tags */}
+                  <div class="flex flex-wrap items-center justify-between gap-3 pt-4 md:pt-6 border-t" style="border-color: var(--border);">
+                    <div class="flex items-center gap-1.5 text-xs" style="color: var(--text-muted);">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                      <span>{moment.location}</span>
+                    </div>
+                    <div class="flex gap-1.5">
+                      {moment.tags.map((tag: string) => (
+                        <span class="tag-pill text-[10px]">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </main>
+</BaseLayout>

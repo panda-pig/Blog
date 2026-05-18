@@ -41,9 +41,11 @@ const headings = post.getHeadings ? post.getHeadings() : [];
   <Header lang={lang} />
 
   <main class="min-h-screen">
-    <article class="section-container pt-16 pb-24 mx-auto" style="max-width: 52rem;">
+    <!-- Outer wrapper: wide container for desktop TOC sidebar -->
+    <article class="section-container pt-12 md:pt-20 pb-20 md:pb-28 mx-auto" style="max-width: 72rem;">
+      
       <!-- Back link -->
-      <div class="mb-10">
+      <div class="mb-8 md:mb-12">
         <a href={`${prefix}/blog`} class="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-muted);" data-i18n="article.back">
           返回归档
         </a>
@@ -51,7 +53,7 @@ const headings = post.getHeadings ? post.getHeadings() : [];
 
       <!-- Language switcher -->
       {availableLangs.length > 1 && (
-        <div class="flex items-center gap-2 mb-8">
+        <div class="flex items-center gap-2 mb-6 md:mb-10">
           {availableLangs.map((l) => {
             const active = l === (post.frontmatter.lang || 'zh');
             const label = l === 'zh' ? '中' : l === 'en' ? 'EN' : '日';
@@ -72,7 +74,7 @@ const headings = post.getHeadings ? post.getHeadings() : [];
 
       <!-- Tags -->
       {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
-        <div class="flex flex-wrap gap-2 mb-6">
+        <div class="flex flex-wrap gap-2 mb-5 md:mb-8">
           {post.frontmatter.tags.map((tag: string) => (
             <span class="category-badge">{tag}</span>
           ))}
@@ -80,19 +82,19 @@ const headings = post.getHeadings ? post.getHeadings() : [];
       )}
 
       <!-- Title -->
-      <h1 class="font-serif text-4xl sm:text-5xl font-bold mb-6 leading-tight" style="color: var(--text);">
+      <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-5 md:mb-8 leading-tight" style="color: var(--text);">
         {post.frontmatter.title}
       </h1>
 
       <!-- Description -->
       {post.frontmatter.description && (
-        <p class="text-xl leading-relaxed mb-10" style="color: var(--text-secondary);">
+        <p class="text-lg md:text-xl leading-relaxed mb-8 md:mb-12" style="color: var(--text-secondary);">
           {post.frontmatter.description}
         </p>
       )}
 
       <!-- Meta info -->
-      <div class="flex flex-wrap items-center gap-5 text-sm uppercase tracking-wider mb-16 pb-10 border-b" style="color: var(--text-muted); border-color: var(--border);">
+      <div class="flex flex-wrap items-center gap-4 md:gap-5 text-xs md:text-sm uppercase tracking-wider mb-12 md:mb-16 pb-8 md:pb-12 border-b" style="color: var(--text-muted); border-color: var(--border);">
         <span class="flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -108,23 +110,26 @@ const headings = post.getHeadings ? post.getHeadings() : [];
         </span>
       </div>
 
-      <!-- Content area with TOC sidebar -->
-      <div class="flex gap-16">
-        <div class="flex-1 min-w-0">
+      <!-- Content area: text column + TOC sidebar -->
+      <div class="flex flex-col lg:flex-row lg:gap-16 xl:gap-20">
+        <!-- Main content -->
+        <div class="flex-1 min-w-0" style="max-width: 52rem;">
           <div class="prose prose-lg max-w-none" style="--tw-prose-body: var(--text); --tw-prose-headings: var(--text); --tw-prose-links: var(--primary); --tw-prose-bold: var(--text); --tw-prose-counters: var(--text-muted); --tw-prose-bullets: var(--text-muted);">
             <Content />
           </div>
 
           <!-- Divider -->
-          <div class="my-20 border-t" style="border-color: var(--border);"></div>
+          <div class="my-16 md:my-24 border-t" style="border-color: var(--border);"></div>
 
           <Donate />
 
           <!-- Divider -->
-          <div class="my-20 border-t" style="border-color: var(--border);"></div>
+          <div class="my-16 md:my-24 border-t" style="border-color: var(--border);"></div>
 
           <Giscus slug={post.url} />
         </div>
+        
+        <!-- TOC Sidebar -->
         <TOC headings={headings} />
       </div>
     </article>
