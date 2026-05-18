@@ -5,10 +5,10 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { href: '/', label: '实验室' },
-  { href: '/blog', label: '归档' },
-  { href: '/projects', label: '实验' },
-  { href: '/contact', label: '通讯' },
+  { href: '/', labelKey: 'nav.lab', labelZh: '实验室' },
+  { href: '/blog', labelKey: 'nav.archive', labelZh: '归档' },
+  { href: '/projects', labelKey: 'nav.experiments', labelZh: '实验' },
+  { href: '/contact', labelKey: 'nav.communique', labelZh: '通讯' },
 ];
 ---
 
@@ -22,8 +22,8 @@ const navItems = [
       {navItems.map((item) => {
         const isActive = item.href === '/' ? currentPath === '/' : currentPath.startsWith(item.href);
         return (
-          <a href={item.href} class={`nav-link ${isActive ? 'active' : ''}`}>
-            {item.label}
+          <a href={item.href} class={`nav-link ${isActive ? 'active' : ''}`} data-i18n={item.labelKey}>
+            {item.labelZh}
           </a>
         );
       })}

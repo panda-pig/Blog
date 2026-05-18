@@ -13,28 +13,26 @@ const allTags = [...new Set(posts.flatMap(p => p.frontmatter.tags || []))];
 
   <main class="min-h-screen">
     <div class="section-container pt-10 pb-20">
-      <!-- Page Header -->
       <div class="mb-10">
-        <h1 class="font-serif text-3xl md:text-4xl mb-2" style="color: var(--text);">归档</h1>
-        <p class="text-sm" style="color: var(--text-secondary);">共 {sortedPosts.length} 篇文章，持续更新中</p>
+        <h1 class="font-serif text-3xl md:text-4xl mb-2" style="color: var(--text);" data-i18n="archive.title">归档</h1>
+        <p class="text-sm" style="color: var(--text-secondary);">
+          <span data-i18n="archive.desc">共</span> {sortedPosts.length} <span data-i18n="archive.desc2">篇文章，持续更新中</span>
+        </p>
       </div>
 
-      <!-- Search -->
       <div class="mb-8 max-w-md">
         <Search />
       </div>
 
-      <!-- Tags -->
       {allTags.length > 0 && (
         <div class="flex flex-wrap gap-2 mb-8">
-          <span class="tag-pill cursor-pointer" style="background-color: var(--primary); color: #fff; border-color: var(--primary);">全部</span>
+          <span class="tag-pill cursor-pointer" style="background-color: var(--primary); color: #fff; border-color: var(--primary);" data-i18n="archive.all">全部</span>
           {allTags.map((tag) => (
             <span class="tag-pill cursor-pointer">{tag}</span>
           ))}
         </div>
       )}
 
-      <!-- Articles -->
       <div class="space-y-0">
         {sortedPosts.map((post) => {
           const slug = post.file.split('/').pop().replace('.md', '');
@@ -50,7 +48,7 @@ const allTags = [...new Set(posts.flatMap(p => p.frontmatter.tags || []))];
               <div class="flex items-center gap-3 mb-2 text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">
                 <span>{formattedDate}</span>
                 <span>·</span>
-                <span>{readingTime} 分钟阅读</span>
+                <span>{readingTime} <span data-i18n="archive.minRead">分钟阅读</span></span>
               </div>
               <a href={`/blog/${slug}`} class="block mb-2 group-hover:opacity-80 transition-opacity">
                 <h2 class="font-serif text-xl" style="color: var(--text);">{post.frontmatter.title}</h2>

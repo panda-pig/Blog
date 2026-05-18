@@ -32,5 +32,33 @@ const canonicalUrl = `https://blog-beta-kohl-92.vercel.app${slug || ''}`;
   </head>
   <body class="min-h-screen" data-pagefind-body>
     <slot />
+    <script is:inline type="module">
+      import dict from '/i18n/dict.js';
+      function apply() {
+        const lang = localStorage.getItem('lang') || 'zh';
+        const t = dict[lang] || dict.zh;
+        const year = new Date().getFullYear();
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (t[key]) {
+            el.textContent = t[key].replace(/\{year\}/g, year);
+          }
+        });
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+          const key = el.getAttribute('data-i18n-html');
+          if (t[key]) {
+            el.innerHTML = t[key].replace(/\{year\}/g, year);
+          }
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (t[key]) {
+            el.setAttribute('placeholder', t[key].replace(/\{year\}/g, year));
+          }
+        });
+      }
+      apply();
+      document.addEventListener('astro:after-swap', apply);
+    </script>
   </body>
 </html>
