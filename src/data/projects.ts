@@ -1,10 +1,10 @@
 export const projectsData = {
   zh: [
     {
-      title: 'JLPT 学习工具',
-      description: '一个帮助日语学习者备考 JLPT 的在线工具，包含词汇记忆、语法练习和模拟测试功能。采用 spaced repetition 算法优化记忆效率。',
-      tags: ['React', 'TypeScript', 'AI', 'Vercel'],
-      link: '#',
+      title: 'JLPT 语法词卡',
+      description: '一个基于 React + TypeScript 的 JLPT 语法学习工具，将复杂语法知识点拆解为易于记忆的记忆卡片。支持按 N1-N5 等级筛选、搜索和收藏，采用间隔重复算法优化学习效率。',
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      link: 'https://github.com/panda-pig/jlpt-grammar-cards',
       status: '进行中',
     },
     {
@@ -24,10 +24,10 @@ export const projectsData = {
   ],
   en: [
     {
-      title: 'JLPT Study Tool',
-      description: 'An online tool to help Japanese learners prepare for the JLPT exam, featuring vocabulary memorization, grammar practice, and mock tests. Uses spaced repetition algorithms to optimize memory retention.',
-      tags: ['React', 'TypeScript', 'AI', 'Vercel'],
-      link: '#',
+      title: 'JLPT Grammar Cards',
+      description: 'A React + TypeScript JLPT grammar learning tool that breaks down complex grammar points into bite-sized memory cards. Supports filtering by N1-N5 levels, search, and bookmarking with spaced repetition optimization.',
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      link: 'https://github.com/panda-pig/jlpt-grammar-cards',
       status: 'In Progress',
     },
     {
@@ -47,10 +47,10 @@ export const projectsData = {
   ],
   ja: [
     {
-      title: 'JLPT 学習ツール',
-      description: '日本語学習者が JLPT 試験に備えるためのオンラインツール。語彙記憶、文法練習、模擬テスト機能を搭載。間隔反復アルゴリズムで記憶効率を最適化。',
-      tags: ['React', 'TypeScript', 'AI', 'Vercel'],
-      link: '#',
+      title: 'JLPT 文法カード',
+      description: 'React + TypeScript で構築された JLPT 文法学習ツール。複雑な文法知識を覚えやすいメモリーカードに分解。N1～N5 のレベル別フィルタリング、検索、お気に入り機能に対応し、間隔反復アルゴリズムで学習効率を最適化。',
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      link: 'https://github.com/panda-pig/jlpt-grammar-cards',
       status: '進行中',
     },
     {

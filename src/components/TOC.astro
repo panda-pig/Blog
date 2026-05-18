@@ -15,17 +15,17 @@ const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 ---
 
 {tocHeadings.length > 0 && (
-  <nav class="hidden lg:block sticky top-24 w-56 shrink-0 ml-12">
-    <div class="border-l pl-4" style="border-color: var(--border);">
-      <p class="text-[10px] font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);" data-i18n="article.toc">
+  <nav class="hidden lg:block sticky top-28 w-64 shrink-0">
+    <div class="border-l-2 pl-5" style="border-color: var(--border);">
+      <p class="text-xs font-semibold uppercase tracking-wider mb-4" style="color: var(--text-muted);" data-i18n="article.toc">
         目录
       </p>
-      <ul class="space-y-2">
+      <ul class="space-y-3">
         {tocHeadings.map((heading) => (
           <li>
             <a
               href={`#${heading.slug}`}
-              class={`block text-sm transition-colors hover:opacity-80 ${heading.depth === 2 ? 'font-medium' : 'pl-3'}`}
+              class={`block text-sm leading-relaxed transition-colors hover:opacity-80 ${heading.depth === 2 ? 'font-medium' : 'pl-3 text-[13px]'}`}
               style={`color: ${heading.depth === 2 ? 'var(--text)' : 'var(--text-secondary)'};`}
             >
               {heading.text}

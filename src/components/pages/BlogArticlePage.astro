@@ -41,15 +41,17 @@ const headings = post.getHeadings ? post.getHeadings() : [];
   <Header lang={lang} />
 
   <main class="min-h-screen">
-    <article class="section-container pt-10 pb-20 max-w-3xl mx-auto">
-      <div class="mb-8">
-        <a href={`${prefix}/blog`} class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-muted);" data-i18n="article.back">
+    <article class="section-container pt-16 pb-24 mx-auto" style="max-width: 52rem;">
+      <!-- Back link -->
+      <div class="mb-10">
+        <a href={`${prefix}/blog`} class="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-muted);" data-i18n="article.back">
           返回归档
         </a>
       </div>
 
+      <!-- Language switcher -->
       {availableLangs.length > 1 && (
-        <div class="flex items-center gap-2 mb-6">
+        <div class="flex items-center gap-2 mb-8">
           {availableLangs.map((l) => {
             const active = l === (post.frontmatter.lang || 'zh');
             const label = l === 'zh' ? '中' : l === 'en' ? 'EN' : '日';
@@ -57,57 +59,70 @@ const headings = post.getHeadings ? post.getHeadings() : [];
             return (
               <a
                 href={`${hrefPrefix}/blog/${slug}`}
-                class={`text-[10px] px-2 py-0.5 rounded-md border font-medium uppercase tracking-wider transition-colors ${active ? 'opacity-50 cursor-default pointer-events-none' : 'hover:opacity-70'}`}
+                class={`text-xs px-3 py-1 rounded-md border font-medium uppercase tracking-wider transition-colors ${active ? 'opacity-50 cursor-default pointer-events-none' : 'hover:opacity-70'}`}
                 style={active ? 'background-color: var(--primary); color: #fff; border-color: var(--primary);' : 'background-color: var(--surface); color: var(--text-secondary); border-color: var(--border);'}
               >
                 {label}
               </a>
             );
           })}
-          <span class="text-[10px]" style="color: var(--text-muted);">多语言</span>
+          <span class="text-xs ml-1" style="color: var(--text-muted);">多语言</span>
         </div>
       )}
 
+      <!-- Tags -->
       {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
-        <div class="flex flex-wrap gap-2 mb-4">
+        <div class="flex flex-wrap gap-2 mb-6">
           {post.frontmatter.tags.map((tag: string) => (
             <span class="category-badge">{tag}</span>
           ))}
         </div>
       )}
 
-      <h1 class="font-serif text-3xl sm:text-4xl font-bold mb-4 leading-tight" style="color: var(--text);">
+      <!-- Title -->
+      <h1 class="font-serif text-4xl sm:text-5xl font-bold mb-6 leading-tight" style="color: var(--text);">
         {post.frontmatter.title}
       </h1>
 
+      <!-- Description -->
       {post.frontmatter.description && (
-        <p class="text-lg leading-relaxed mb-6" style="color: var(--text-secondary);">
+        <p class="text-xl leading-relaxed mb-10" style="color: var(--text-secondary);">
           {post.frontmatter.description}
         </p>
       )}
 
-      <div class="flex flex-wrap items-center gap-4 text-xs uppercase tracking-wider mb-10 pb-10 border-b" style="color: var(--text-muted); border-color: var(--border);">
-        <span class="flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <!-- Meta info -->
+      <div class="flex flex-wrap items-center gap-5 text-sm uppercase tracking-wider mb-16 pb-10 border-b" style="color: var(--text-muted); border-color: var(--border);">
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
           </svg>
           {formattedDate}
         </span>
-        <span class="w-1 h-1 rounded-full" style="background-color: var(--border);"></span>
-        <span class="flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <span class="w-1.5 h-1.5 rounded-full" style="background-color: var(--border);"></span>
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
           </svg>
           {readingTime} <span data-i18n="article.minRead">分钟阅读</span>
         </span>
       </div>
 
-      <div class="flex">
+      <!-- Content area with TOC sidebar -->
+      <div class="flex gap-16">
         <div class="flex-1 min-w-0">
-          <div class="prose prose-lg max-w-none">
+          <div class="prose prose-lg max-w-none" style="--tw-prose-body: var(--text); --tw-prose-headings: var(--text); --tw-prose-links: var(--primary); --tw-prose-bold: var(--text); --tw-prose-counters: var(--text-muted); --tw-prose-bullets: var(--text-muted);">
             <Content />
           </div>
+
+          <!-- Divider -->
+          <div class="my-20 border-t" style="border-color: var(--border);"></div>
+
           <Donate />
+
+          <!-- Divider -->
+          <div class="my-20 border-t" style="border-color: var(--border);"></div>
+
           <Giscus slug={post.url} />
         </div>
         <TOC headings={headings} />
