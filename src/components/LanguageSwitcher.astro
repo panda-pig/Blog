@@ -1,0 +1,55 @@
+---
+const languages = [
+  { code: 'zh', label: '中' },
+  { code: 'en', label: '英' },
+  { code: 'ja', label: '日' },
+];
+---
+
+<div id="lang-switcher" class="flex items-center gap-1 p-1 rounded-lg" style="background-color: var(--surface); border: 1px solid var(--border);">
+  {languages.map((lang) => (
+    <button
+      class="lang-btn px-2 py-1 rounded-md text-xs font-medium transition-all"
+      data-lang={lang.code}
+      style="color: var(--text-secondary);"
+    >
+      {lang.label}
+    </button>
+  ))}
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.lang-btn');
+  const currentLang = localStorage.getItem('lang') || 'zh';
+
+  function updateActive() {
+    const lang = localStorage.getItem('lang') || 'zh';
+    buttons.forEach((btn) => {
+      const isActive = btn.getAttribute('data-lang') === lang;
+      if (isActive) {
+        btn.style.backgroundColor = 'var(--primary)';
+        btn.style.color = '#fff';
+      } else {
+        btn.style.backgroundColor = 'transparent';
+        btn.style.color = 'var(--text-secondary)';
+      }
+    });
+  }
+
+  updateActive();
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      localStorage.setItem('lang', lang);
+      updateActive();
+      // For now, reload to apply (future: use i18n framework)
+      if (lang === 'zh') {
+        window.location.href = window.location.pathname;
+      } else {
+        // Placeholder for future i18n routes
+        alert('多语言功能开发中，当前仅支持中文。\nMultilingual support coming soon.');
+      }
+    });
+  });
+</script>

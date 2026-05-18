@@ -7,7 +7,7 @@ const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).valueOf() 
 const recentPosts = sortedPosts.slice(0, 3);
 ---
 
-<BaseLayout description="Panda Lab - panda-pig's digital laboratory for thoughts and code.">
+  <BaseLayout description="Panda Lab - panda-pig 的思想与代码数字实验室">
   <Header />
 
   <main class="min-h-screen">
@@ -27,20 +27,20 @@ const recentPosts = sortedPosts.slice(0, 3);
         <!-- Right: Content -->
         <div class="flex-1 max-w-2xl pt-2">
           <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight mb-5" style="color: var(--text);">
-            Hello, I'm panda-pig. This is my digital laboratory for thoughts and code.
+            你好，我是 panda-pig。这是我的思想与代码的数字实验室。
           </h1>
           <p class="text-sm leading-relaxed mb-8 max-w-lg" style="color: var(--text-secondary);">
-            An archive of exploratory projects, technical musings, and the occasional breakthrough in the intersection of Web Development and AI.
+            一个探索性项目、技术沉思的档案库，偶尔还有 Web 开发与 AI 交叉领域的突破。
           </p>
           <div class="flex items-center gap-3">
             <a href="/blog" class="btn-primary">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
               </svg>
-              Explore Archive
+              浏览归档
             </a>
             <a href="/contact" class="btn-outline">
-              Say Hello
+              打个招呼
             </a>
           </div>
         </div>
@@ -50,14 +50,14 @@ const recentPosts = sortedPosts.slice(0, 3);
     <!-- Info Cards -->
     <section class="section-container pb-10">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <!-- Origin -->
+        <!-- 来源 -->
         <div class="card-fluid p-5">
           <div class="flex items-center gap-2 mb-2">
             <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
-            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">Origin</span>
+            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">来源</span>
           </div>
           <p class="text-sm font-medium" style="color: var(--text);">Beijing, China</p>
         </div>
@@ -73,42 +73,42 @@ const recentPosts = sortedPosts.slice(0, 3);
           <p class="text-sm font-medium" style="color: var(--text);">Astro + Tailwind</p>
         </div>
 
-        <!-- Focus -->
+        <!-- 聚焦 -->
         <div class="card-fluid p-5">
           <div class="flex items-center gap-2 mb-2">
             <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
-            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">Focus</span>
+            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">聚焦</span>
           </div>
           <p class="text-sm font-medium" style="color: var(--text);">Web Dev & AI</p>
         </div>
 
-        <!-- Status -->
+        <!-- 状态 -->
         <div class="card-fluid p-5">
           <div class="flex items-center gap-2 mb-2">
             <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
-            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">Status</span>
+            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">状态</span>
           </div>
           <div class="flex items-center gap-1.5">
             <span class="w-1.5 h-1.5 rounded-full" style="background-color: #4ade80;"></span>
-            <p class="text-sm font-medium" style="color: var(--text);">Open for Research</p>
+            <p class="text-sm font-medium" style="color: var(--text);">开放研究中</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Recent Musings -->
+    <!-- 近期思考 -->
     <section class="section-container py-10">
       <div class="flex items-end justify-between mb-8">
         <div>
-          <h2 class="font-serif text-2xl md:text-3xl mb-1" style="color: var(--text);">Recent Musings</h2>
-          <p class="text-xs" style="color: var(--text-muted);">Lab notes and theoretical expeditions.</p>
+          <h2 class="font-serif text-2xl md:text-3xl mb-1" style="color: var(--text);">近期思考</h2>
+          <p class="text-xs" style="color: var(--text-muted);">实验室笔记与理论探索。</p>
         </div>
         <a href="/blog" class="hidden md:flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-secondary);">
-          View all notes
+          查看全部
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
@@ -145,7 +145,7 @@ const recentPosts = sortedPosts.slice(0, 3);
                 <div class="flex items-center gap-2 mb-3 text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">
                   <span>{formattedDate}</span>
                   <span>·</span>
-                  <span>{readingTime} min read</span>
+                  <span>{readingTime} 分钟阅读</span>
                 </div>
 
                 <a href={`/blog/${slug}`} class="block mb-2 group-hover:opacity-80 transition-opacity">
@@ -178,15 +178,15 @@ const recentPosts = sortedPosts.slice(0, 3);
           <div>
             <div class="flex items-center gap-2 mb-4">
               <div class="w-8 h-0.5" style="background-color: var(--primary);"></div>
-              <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">Direct Thought</span>
+              <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">直接思考</span>
             </div>
             <blockquote class="font-serif text-xl md:text-2xl leading-relaxed mb-4" style="color: var(--text);">
-              "Technology is best when it brings people together, but it's even better when it stays invisible."
+              "技术的价值在于连接人心，而最高境界是让技术本身隐形。"
             </blockquote>
           </div>
           <div>
             <p class="text-xs leading-relaxed mb-6" style="color: var(--text-secondary);">
-              My philosophy on digital product design focuses on the 'Invisible UI'—where the interface dissolves to leave only the content and the intent.
+              我对数字产品设计的理念聚焦于「隐形界面」——界面消融，只留下内容与意图。
             </p>
             <div class="flex items-center gap-3 pt-4 border-t" style="border-color: var(--border);">
               <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background: linear-gradient(135deg, #2d5a4a, #1a3a2f);">
@@ -194,7 +194,7 @@ const recentPosts = sortedPosts.slice(0, 3);
               </div>
               <div>
                 <p class="text-xs font-medium" style="color: var(--text);">Panda Pig</p>
-                <p class="text-[10px]" style="color: var(--text-muted);">Lead Researcher</p>
+                <p class="text-[10px]" style="color: var(--text-muted);">首席研究员</p>
               </div>
             </div>
           </div>
@@ -203,7 +203,7 @@ const recentPosts = sortedPosts.slice(0, 3);
 
       <div class="mt-6 md:hidden text-center">
         <a href="/blog" class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider" style="color: var(--text-secondary);">
-          View all notes
+          查看全部
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
@@ -211,15 +211,15 @@ const recentPosts = sortedPosts.slice(0, 3);
       </div>
     </section>
 
-    <!-- Interactive Experiments -->
+    <!-- 交互实验 -->
     <section class="section-container py-10">
       <div class="card-fluid p-6 md:p-10">
         <div class="flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Left Content */}
           <div class="flex-1">
-            <h2 class="font-serif text-2xl md:text-3xl mb-4" style="color: var(--text);">Interactive Experiments</h2>
+            <h2 class="font-serif text-2xl md:text-3xl mb-4" style="color: var(--text);">交互实验</h2>
             <p class="text-sm leading-relaxed mb-8 max-w-md" style="color: var(--text-secondary);">
-              Beyond the written word, I maintain a gallery of functional prototypes and open-source experiments that challenge standard web conventions.
+              超越文字，我维护着一个功能原型与开源实验的陈列室，挑战标准的 Web 惯例。
             </p>
 
             <div class="space-y-4">
@@ -231,7 +231,7 @@ const recentPosts = sortedPosts.slice(0, 3);
                 </div>
                 <div>
                   <h4 class="text-sm font-medium mb-0.5" style="color: var(--text);">Neural Canvas</h4>
-                  <p class="text-xs" style="color: var(--text-secondary);">An AI-driven sketching tool for layout conceptualization.</p>
+                  <p class="text-xs" style="color: var(--text-secondary);">一个用于布局概念化的 AI 驱动草图工具。</p>
                 </div>
               </div>
 
@@ -243,7 +243,7 @@ const recentPosts = sortedPosts.slice(0, 3);
                 </div>
                 <div>
                   <h4 class="text-sm font-medium mb-0.5" style="color: var(--text);">Chroma Archive</h4>
-                  <p class="text-xs" style="color: var(--text-secondary);">Visualizing cultural color trends through historical art data.</p>
+                  <p class="text-xs" style="color: var(--text-secondary);">通过历史艺术数据可视化文化色彩趋势。</p>
                 </div>
               </div>
             </div>
@@ -260,7 +260,7 @@ const recentPosts = sortedPosts.slice(0, 3);
               <svg class="w-8 h-8 mb-3 opacity-20" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                 <path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
               </svg>
-              <p class="text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">Experimental Instance #042</p>
+              <p class="text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">实验实例 #042</p>
             </div>
           </div>
         </div>

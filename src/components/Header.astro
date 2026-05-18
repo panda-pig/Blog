@@ -1,13 +1,14 @@
 ---
 import DarkModeToggle from './DarkModeToggle.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
 
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { href: '/', label: 'Laboratory' },
-  { href: '/blog', label: 'Archive' },
-  { href: '/projects', label: 'Experiments' },
-  { href: '/contact', label: 'Communique' },
+  { href: '/', label: '实验室' },
+  { href: '/blog', label: '归档' },
+  { href: '/projects', label: '实验' },
+  { href: '/contact', label: '通讯' },
 ];
 ---
 
@@ -29,6 +30,7 @@ const navItems = [
     </nav>
 
     <div class="flex items-center gap-2">
+      <LanguageSwitcher />
       <DarkModeToggle />
       <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full transition-colors hover:opacity-70" style="color: var(--text-secondary);" aria-label="GitHub">
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

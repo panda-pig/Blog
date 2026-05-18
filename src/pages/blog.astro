@@ -8,14 +8,14 @@ const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).valueOf() 
 const allTags = [...new Set(posts.flatMap(p => p.frontmatter.tags || []))];
 ---
 
-<BaseLayout title="Archive — Panda Lab" description="All lab notes and theoretical expeditions.">
+<BaseLayout title="归档 — Panda Lab" description="所有实验室笔记与理论探索。">
   <Header />
 
   <main class="min-h-screen">
     <div class="section-container pt-10 pb-20">
       <!-- Page Header -->
       <div class="mb-10">
-        <h1 class="font-serif text-3xl md:text-4xl mb-2" style="color: var(--text);">Archive</h1>
+        <h1 class="font-serif text-3xl md:text-4xl mb-2" style="color: var(--text);">归档</h1>
         <p class="text-sm" style="color: var(--text-secondary);">共 {sortedPosts.length} 篇文章，持续更新中</p>
       </div>
 
@@ -50,7 +50,7 @@ const allTags = [...new Set(posts.flatMap(p => p.frontmatter.tags || []))];
               <div class="flex items-center gap-3 mb-2 text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">
                 <span>{formattedDate}</span>
                 <span>·</span>
-                <span>{readingTime} min read</span>
+                <span>{readingTime} 分钟阅读</span>
               </div>
               <a href={`/blog/${slug}`} class="block mb-2 group-hover:opacity-80 transition-opacity">
                 <h2 class="font-serif text-xl" style="color: var(--text);">{post.frontmatter.title}</h2>
