@@ -1,18 +1,14 @@
-// i18n dictionary for Panda Lab
-export default {
+window.i18nDict = {
   zh: {
-    // Nav
     'nav.lab': '实验室',
     'nav.archive': '归档',
     'nav.experiments': '实验',
     'nav.communique': '通讯',
-    // Hero
     'hero.title': '你好，我是 panda-pig。这是我的思想与代码的数字实验室。',
     'hero.desc': '一个探索性项目、技术沉思的档案库，偶尔还有 Web 开发与 AI 交叉领域的突破。',
     'hero.cta1': '浏览归档',
     'hero.cta2': '打个招呼',
     'hero.avatar': '实验室',
-    // Info cards
     'info.origin': '来源',
     'info.originVal': '地球 🌍',
     'info.stack': '技术栈',
@@ -21,19 +17,16 @@ export default {
     'info.focusVal': 'Web 开发与人工智能',
     'info.status': '状态',
     'info.statusVal': '开放研究中',
-    // Recent Musings
     'musing.title': '近期思考',
     'musing.subtitle': '实验室笔记与理论探索。',
     'musing.viewAll': '查看全部',
     'musing.category': '随笔',
     'musing.minRead': '分钟阅读',
-    // Quote
     'quote.label': '直接思考',
     'quote.text': '技术的价值在于连接人心，而最高境界是让技术本身隐形。',
     'quote.desc': '我对数字产品设计的理念聚焦于「隐形界面」——界面消融，只留下内容与意图。',
     'quote.author': 'panda-pig',
     'quote.role': '首席研究员',
-    // Experiments
     'exp.title': '交互实验',
     'exp.desc': '超越文字，我维护着一个功能原型与开源实验的陈列室，挑战标准的 Web 惯例。',
     'exp.canvas': '神经画布',
@@ -41,7 +34,6 @@ export default {
     'exp.chroma': '色度档案',
     'exp.chromaDesc': '通过历史艺术数据可视化文化色彩趋势。',
     'exp.instance': '实验实例',
-    // Archive page
     'archive.title': '归档',
     'archive.desc': '共',
     'archive.desc2': '篇文章，持续更新中',
@@ -49,16 +41,13 @@ export default {
     'archive.all': '全部',
     'archive.back': '返回归档',
     'archive.minRead': '分钟阅读',
-    // Article page
     'article.back': '返回归档',
     'article.minRead': '分钟阅读',
     'article.toc': '目录',
     'article.comments': '评论',
-    // Projects
     'proj.title': '实验',
     'proj.desc': '功能原型与开源实验。',
     'proj.view': '查看项目',
-    // About
     'about.title': '关于',
     'about.doing': '我在做什么',
     'about.doingDesc': '目前专注于 Web 开发和 AI 应用。我喜欢探索新技术，并将其应用到实际项目中。Panda Lab 是我记录学习和分享成果的地方。',
@@ -71,7 +60,6 @@ export default {
     'about.contactDesc': '如果你有任何问题或合作意向，欢迎通过以下方式联系我：',
     'about.gh': 'GitHub',
     'about.email': 'Email',
-    // Contact
     'contact.title': '通讯',
     'contact.desc': '有任何问题或合作意向？欢迎随时联系我。',
     'contact.name': '姓名',
@@ -81,14 +69,12 @@ export default {
     'contact.placeholderName': '你的名字',
     'contact.placeholderEmail': 'your@email.com',
     'contact.placeholderMsg': '你想说什么...',
-    // Footer
     'footer.tagline': '一个思想与代码的数字实验室。',
     'footer.nav': '导航',
     'footer.resources': '资源',
     'footer.connect': '联系',
     'footer.copyright': '© {year} Panda Lab',
     'footer.dev': '由 panda-pig 开发',
-    // Donate
     'donate.title': '喜欢这篇文章？',
     'donate.desc': '如果对你有所帮助，欢迎支持我继续创作',
     'donate.btn': '赞赏支持',
@@ -97,23 +83,19 @@ export default {
     'donate.wechat': '微信支付',
     'donate.alipay': '支付宝',
     'donate.qrPlaceholder': '收款码',
-    // Search
     'search.placeholder': '搜索文章...',
     'search.ctrlK': 'Ctrl K',
   },
   en: {
-    // Nav
     'nav.lab': 'Laboratory',
     'nav.archive': 'Archive',
     'nav.experiments': 'Experiments',
     'nav.communique': 'Communique',
-    // Hero
     'hero.title': "Hello, I'm panda-pig. This is my digital laboratory for thoughts and code.",
     'hero.desc': 'An archive of exploratory projects, technical musings, and the occasional breakthrough in the intersection of Web Development and AI.',
     'hero.cta1': 'Explore Archive',
     'hero.cta2': 'Say Hello',
     'hero.avatar': 'Lab',
-    // Info cards
     'info.origin': 'Origin',
     'info.originVal': 'Earth 🌍',
     'info.stack': 'Stack',
@@ -122,19 +104,16 @@ export default {
     'info.focusVal': 'Web Dev & AI',
     'info.status': 'Status',
     'info.statusVal': 'Open for Research',
-    // Recent Musings
     'musing.title': 'Recent Musings',
     'musing.subtitle': 'Lab notes and theoretical expeditions.',
     'musing.viewAll': 'View all notes',
     'musing.category': 'Essay',
     'musing.minRead': 'min read',
-    // Quote
     'quote.label': 'Direct Thought',
     'quote.text': 'Technology is best when it brings people together, but it\'s even better when it stays invisible.',
     'quote.desc': 'My philosophy on digital product design focuses on the "Invisible UI"—where the interface dissolves to leave only the content and the intent.',
     'quote.author': 'panda-pig',
     'quote.role': 'Lead Researcher',
-    // Experiments
     'exp.title': 'Interactive Experiments',
     'exp.desc': 'Beyond the written word, I maintain a gallery of functional prototypes and open-source experiments that challenge standard web conventions.',
     'exp.canvas': 'Neural Canvas',
@@ -142,7 +121,6 @@ export default {
     'exp.chroma': 'Chroma Archive',
     'exp.chromaDesc': 'Visualizing cultural color trends through historical art data.',
     'exp.instance': 'Experimental Instance',
-    // Archive page
     'archive.title': 'Archive',
     'archive.desc': '',
     'archive.desc2': 'articles and counting',
@@ -150,16 +128,13 @@ export default {
     'archive.all': 'All',
     'archive.back': 'Back to Archive',
     'archive.minRead': 'min read',
-    // Article page
     'article.back': 'Back to Archive',
     'article.minRead': 'min read',
     'article.toc': 'Contents',
     'article.comments': 'Comments',
-    // Projects
     'proj.title': 'Experiments',
     'proj.desc': 'Functional prototypes and open-source experiments.',
     'proj.view': 'View Project',
-    // About
     'about.title': 'About',
     'about.doing': 'What I Do',
     'about.doingDesc': 'Currently focused on Web development and AI applications. I love exploring new technologies and applying them to real projects. Panda Lab is where I record my learning and share results.',
@@ -172,7 +147,6 @@ export default {
     'about.contactDesc': 'If you have any questions or collaboration ideas, feel free to reach out:',
     'about.gh': 'GitHub',
     'about.email': 'Email',
-    // Contact
     'contact.title': 'Communique',
     'contact.desc': 'Have a question or collaboration idea? Get in touch.',
     'contact.name': 'Name',
@@ -182,14 +156,12 @@ export default {
     'contact.placeholderName': 'Your name',
     'contact.placeholderEmail': 'your@email.com',
     'contact.placeholderMsg': 'What do you want to say...',
-    // Footer
     'footer.tagline': 'A digital laboratory for thoughts and code.',
     'footer.nav': 'Navigation',
     'footer.resources': 'Resources',
     'footer.connect': 'Connect',
     'footer.copyright': '© {year} Panda Lab',
     'footer.dev': 'Developed by panda-pig',
-    // Donate
     'donate.title': 'Enjoy this article?',
     'donate.desc': 'If you found it helpful, consider supporting my work.',
     'donate.btn': 'Appreciate',
@@ -198,23 +170,19 @@ export default {
     'donate.wechat': 'WeChat Pay',
     'donate.alipay': 'Alipay',
     'donate.qrPlaceholder': 'QR Code',
-    // Search
     'search.placeholder': 'Search articles...',
     'search.ctrlK': 'Ctrl K',
   },
   ja: {
-    // Nav
     'nav.lab': 'ラボ',
     'nav.archive': 'アーカイブ',
     'nav.experiments': '実験',
     'nav.communique': '連絡',
-    // Hero
     'hero.title': 'こんにちは、panda-pig です。これは私の思考とコードのためのデジタル研究室です。',
     'hero.desc': '探索的なプロジェクト、技術的な考察、アーカイブ。時々、Web 開発と AI の交差点での突破もあります。',
     'hero.cta1': 'アーカイブを見る',
     'hero.cta2': '挨拶する',
     'hero.avatar': 'ラボ',
-    // Info cards
     'info.origin': '出身',
     'info.originVal': '地球 🌍',
     'info.stack': '技術スタック',
@@ -223,19 +191,16 @@ export default {
     'info.focusVal': 'Web 開発と AI',
     'info.status': '状態',
     'info.statusVal': '研究中',
-    // Recent Musings
     'musing.title': '最近の思考',
     'musing.subtitle': 'ラボノートと理論的探求。',
     'musing.viewAll': 'すべて表示',
     'musing.category': '随筆',
     'musing.minRead': '分で読める',
-    // Quote
     'quote.label': '直接思考',
     'quote.text': '技術は人々をつなげる時に最高の価値を持ち、しかし、それ自体が目に見えない時にさらに優れている。',
     'quote.desc': '私のデジタル製品デザインの哲学は「不可視 UI」に焦点を当てています——インターフェースが消え、コンテンツと意図だけが残る状態。',
     'quote.author': 'panda-pig',
     'quote.role': '主任研究員',
-    // Experiments
     'exp.title': 'インタラクティブ実験',
     'exp.desc': '文字を超えて、私は標準的な Web 慣行に挑戦する機能プロトタイプとオープンソース実験のギャラリーを維持しています。',
     'exp.canvas': 'ニューラルキャンバス',
@@ -243,7 +208,6 @@ export default {
     'exp.chroma': 'クロマアーカイブ',
     'exp.chromaDesc': '歴史的な芸術データを通じて文化的色彩トレンドを可視化する。',
     'exp.instance': '実験インスタンス',
-    // Archive page
     'archive.title': 'アーカイブ',
     'archive.desc': '計',
     'archive.desc2': '記事、継続更新中',
@@ -251,16 +215,13 @@ export default {
     'archive.all': 'すべて',
     'archive.back': 'アーカイブに戻る',
     'archive.minRead': '分で読める',
-    // Article page
     'article.back': 'アーカイブに戻る',
     'article.minRead': '分で読める',
     'article.toc': '目次',
     'article.comments': 'コメント',
-    // Projects
     'proj.title': '実験',
     'proj.desc': '機能プロトタイプとオープンソース実験。',
     'proj.view': 'プロジェクトを見る',
-    // About
     'about.title': 'について',
     'about.doing': '現在の活動',
     'about.doingDesc': '現在、Web 開発と AI アプリケーションに注力しています。新しい技術を探求し、実際のプロジェクトに応用することが好きです。Panda Lab は、学習を記録し、成果を共有する場所です。',
@@ -273,7 +234,6 @@ export default {
     'about.contactDesc': '質問や協力のご提案があれば、以下からお気軽にご連絡ください：',
     'about.gh': 'GitHub',
     'about.email': 'メール',
-    // Contact
     'contact.title': '連絡',
     'contact.desc': '質問や協力のご提案がありますか？お気軽にご連絡ください。',
     'contact.name': '名前',
@@ -283,14 +243,12 @@ export default {
     'contact.placeholderName': 'あなたの名前',
     'contact.placeholderEmail': 'your@email.com',
     'contact.placeholderMsg': '何か言いたいこと...',
-    // Footer
     'footer.tagline': '思考とコードのためのデジタル研究室。',
     'footer.nav': 'ナビゲーション',
     'footer.resources': 'リソース',
     'footer.connect': '連絡',
     'footer.copyright': '© {year} Panda Lab',
     'footer.dev': 'panda-pig によって開発されました',
-    // Donate
     'donate.title': 'この記事を楽しんでいただけましたか？',
     'donate.desc': '役に立った場合は、私の活動を支援することをご検討ください。',
     'donate.btn': '感謝する',
@@ -299,7 +257,6 @@ export default {
     'donate.wechat': 'WeChat Pay',
     'donate.alipay': 'Alipay',
     'donate.qrPlaceholder': 'QRコード',
-    // Search
     'search.placeholder': '記事を検索...',
     'search.ctrlK': 'Ctrl K',
   },
