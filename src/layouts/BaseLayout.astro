@@ -40,15 +40,15 @@ const canonicalUrl = `https://blog-beta-kohl-92.vercel.app${slug || ''}`;
           var year = new Date().getFullYear();
           document.querySelectorAll('[data-i18n]').forEach(function(el) {
             var key = el.getAttribute('data-i18n');
-            if (t[key]) el.textContent = t[key].replace(/\{year\}/g, year);
+            if (typeof t[key] === 'string') el.textContent = t[key].replace(/\{year\}/g, year);
           });
           document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
             var key = el.getAttribute('data-i18n-html');
-            if (t[key]) el.innerHTML = t[key].replace(/\{year\}/g, year);
+            if (typeof t[key] === 'string') el.innerHTML = t[key].replace(/\{year\}/g, year);
           });
           document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
             var key = el.getAttribute('data-i18n-placeholder');
-            if (t[key]) el.setAttribute('placeholder', t[key].replace(/\{year\}/g, year));
+            if (typeof t[key] === 'string') el.setAttribute('placeholder', t[key].replace(/\{year\}/g, year));
           });
         }
         if (document.readyState === 'loading') {
