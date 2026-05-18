@@ -2,13 +2,15 @@
 import DarkModeToggle from './DarkModeToggle.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 
+const { lang = 'zh' } = Astro.props;
+const prefix = lang === 'zh' ? '' : `/${lang}`;
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { href: '/', labelKey: 'nav.lab', labelZh: '实验室' },
-  { href: '/blog', labelKey: 'nav.archive', labelZh: '归档' },
-  { href: '/projects', labelKey: 'nav.experiments', labelZh: '实验' },
-  { href: '/contact', labelKey: 'nav.communique', labelZh: '通讯' },
+  { href: `${prefix}/`, labelKey: 'nav.lab', labelZh: '实验室' },
+  { href: `${prefix}/blog`, labelKey: 'nav.archive', labelZh: '归档' },
+  { href: `${prefix}/projects`, labelKey: 'nav.experiments', labelZh: '实验' },
+  { href: `${prefix}/contact`, labelKey: 'nav.communique', labelZh: '通讯' },
 ];
 ---
 

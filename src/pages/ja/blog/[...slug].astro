@@ -1,0 +1,13 @@
+---
+import BlogArticlePage from '../../../components/pages/BlogArticlePage.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob('../../../content/blog/*.md');
+  const slugs = [...new Set(allPosts.map((post: any) => {
+    return post.frontmatter.slug || post.file.split('/').pop().replace('.md', '').replace(/\.(en|ja)$/, '');
+  }))];
+  return slugs.map((slug) => ({ params: { slug }, props: { lang: 'ja' } }));
+}
+---
+
+<BlogArticlePage lang="ja" />

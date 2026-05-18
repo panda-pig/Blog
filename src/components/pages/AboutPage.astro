@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+
+const { lang } = Astro.props;
+---
+
+<BaseLayout title="关于 — Panda Lab" description="关于 panda-pig 与数字实验室。" lang={lang}>
+  <Header lang={lang} />
+
+  <main class="min-h-screen">
+    <div class="section-container pt-10 pb-20 max-w-2xl">
+      <h1 class="font-serif text-3xl md:text-4xl mb-8" style="color: var(--text);" data-i18n="about.title">关于</h1>
+      
+      <div class="prose prose-lg max-w-none">
+        <p class="text-lg leading-relaxed mb-6" style="color: var(--text-secondary);" data-i18n="about.intro">
+          你好，我是 panda-pig，一个热爱技术与创造的开发者。我相信好的产品是技术与设计的完美结合，而持续学习是成长的唯一路径。
+        </p>
+        
+        <h2 style="color: var(--text);" data-i18n="about.doing">我在做什么</h2>
+        <p class="mb-5 leading-7" style="color: var(--text-secondary);" data-i18n="about.doingDesc">
+          目前专注于 Web 开发和 AI 应用。我喜欢探索新技术，并将其应用到实际项目中。Panda Lab 是我记录学习和分享成果的地方。
+        </p>
+        
+        <h2 style="color: var(--text);" data-i18n="about.stack">技术栈</h2>
+        <ul class="mb-5 pl-5" style="color: var(--text-secondary);">
+          <li class="mb-2"><strong style="color: var(--text);" data-i18n="about.stackFE">前端：</strong>React, Next.js, Astro, Tailwind CSS, TypeScript</li>
+          <li class="mb-2"><strong style="color: var(--text);" data-i18n="about.stackBE">后端：</strong>Node.js, Python, PostgreSQL</li>
+          <li class="mb-2"><strong style="color: var(--text);" data-i18n="about.stackAI">AI/ML：</strong>TensorFlow, PyTorch, OpenAI API</li>
+          <li class="mb-2"><strong style="color: var(--text);" data-i18n="about.stackTools">工具：</strong>Git, Docker, Vercel, Figma</li>
+        </ul>
+        
+        <h2 style="color: var(--text);" data-i18n="about.contact">联系我</h2>
+        <p class="mb-5 leading-7" style="color: var(--text-secondary);" data-i18n="about.contactDesc">
+          如果你有任何问题或合作意向，欢迎通过以下方式联系我：
+        </p>
+        <ul class="mb-5 pl-5" style="color: var(--text-secondary);">
+          <li class="mb-2">GitHub: <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer">github.com/panda-pig</a></li>
+          <li class="mb-2">Email: <a href="mailto:contact@example.com">contact@example.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

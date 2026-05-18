@@ -1,13 +1,14 @@
 ---
 import '../styles/global.css';
 
-const { title, description, slug } = Astro.props;
+const { title, description, slug, lang = 'zh' } = Astro.props;
 const siteTitle = title ? title : 'Panda Lab';
 const canonicalUrl = `https://blog-beta-kohl-92.vercel.app${slug || ''}`;
+const htmlLang = lang === 'zh' ? 'zh-CN' : lang;
 ---
 
 <!doctype html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang={htmlLang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />

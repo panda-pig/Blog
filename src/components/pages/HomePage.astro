@@ -1,0 +1,292 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+
+const { lang } = Astro.props;
+const prefix = lang === 'zh' ? '' : `/${lang}`;
+
+// Load and filter posts by locale with fallback
+const allPosts = await Astro.glob('../../content/blog/*.md');
+const postsBySlug: Record<string, Record<string, any>> = {};
+allPosts.forEach((post: any) => {
+  const slug = post.frontmatter.slug || post.file.split('/').pop().replace('.md', '').replace(/\.(en|ja)$/, '');
+  const postLang = post.frontmatter.lang || 'zh';
+  if (!postsBySlug[slug]) postsBySlug[slug] = {};
+  postsBySlug[slug][postLang] = post;
+});
+
+const displayPosts = Object.entries(postsBySlug)
+  .map(([slug, langs]) => {
+    const post = langs[lang] || langs['zh'];
+    return post ? { ...post, resolvedSlug: slug } : null;
+  })
+  .filter(Boolean)
+  .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+
+const recentPosts = displayPosts.slice(0, 3);
+const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
+---
+
+<BaseLayout description="Panda Lab - panda-pig 的思想与代码数字实验室" lang={lang}>
+  <Header lang={lang} />
+
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="section-container pt-12 pb-8 md:pt-16 md:pb-12">
+      <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+        <div class="shrink-0 relative">
+          <div class="w-48 h-48 md:w-56 md:h-56 rounded-lg overflow-hidden relative" style="background: linear-gradient(135deg, #2d5a4a 0%, #1a3a2f 100%);">
+            <div class="absolute inset-0 flex items-center justify-center text-white/30 text-6xl font-serif">P</div>
+          </div>
+          <div class="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider text-white" style="background-color: var(--primary);" data-i18n="hero.avatar">
+            实验室
+          </div>
+        </div>
+
+        <div class="flex-1 max-w-2xl pt-2">
+          <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight mb-5" style="color: var(--text);" data-i18n="hero.title">
+            你好，我是 panda-pig。这是我的思想与代码的数字实验室。
+          </h1>
+          <p class="text-sm leading-relaxed mb-8 max-w-lg" style="color: var(--text-secondary);" data-i18n="hero.desc">
+            一个探索性项目、技术沉思的档案库，偶尔还有 Web 开发与 AI 交叉领域的突破。
+          </p>
+          <div class="flex items-center gap-3">
+            <a href={`${prefix}/blog`} class="btn-primary">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              <span data-i18n="hero.cta1">浏览归档</span>
+            </a>
+            <a href={`${prefix}/contact`} class="btn-outline">
+              <span data-i18n="hero.cta2">打个招呼</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Cards -->
+    <section class="section-container pb-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="card-fluid p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+            </svg>
+            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);" data-i18n="info.origin">来源</span>
+          </div>
+          <p class="text-sm font-medium" style="color: var(--text);" data-i18n="info.originVal">地球 🌍</p>
+        </div>
+
+        <div class="card-fluid p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+            </svg>
+            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);" data-i18n="info.stack">技术栈</span>
+          </div>
+          <p class="text-sm font-medium" style="color: var(--text);" data-i18n="info.stackVal">Astro + Tailwind</p>
+        </div>
+
+        <div class="card-fluid p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);" data-i18n="info.focus">聚焦</span>
+          </div>
+          <p class="text-sm font-medium" style="color: var(--text);" data-i18n="info.focusVal">Web 开发与人工智能</p>
+        </div>
+
+        <div class="card-fluid p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);" data-i18n="info.status">状态</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full" style="background-color: #4ade80;"></span>
+            <p class="text-sm font-medium" style="color: var(--text);" data-i18n="info.statusVal">开放研究中</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Musings -->
+    <section class="section-container py-10">
+      <div class="flex items-end justify-between mb-8">
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl mb-1" style="color: var(--text);" data-i18n="musing.title">近期思考</h2>
+          <p class="text-xs" style="color: var(--text-muted);" data-i18n="musing.subtitle">实验室笔记与理论探索。</p>
+        </div>
+        <a href={`${prefix}/blog`} class="hidden md:flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-secondary);" data-i18n="musing.viewAll">
+          查看全部
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {recentPosts.map((post: any, index: number) => {
+          const slug = post.resolvedSlug;
+          const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
+          const formattedDate = new Date(post.frontmatter.date).toLocaleDateString(localeStr, {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          });
+          const category = post.frontmatter.tags?.[0] || '随笔';
+
+          return (
+            <div class="card-fluid group flex flex-col">
+              <div class="h-40 w-full relative overflow-hidden" style={`background: linear-gradient(135deg, ${index === 0 ? '#2d5a4a' : index === 1 ? '#3a6b5c' : '#1e3a2f'} 0%, ${index === 0 ? '#1a3a2f' : index === 1 ? '#2d5a4a' : '#0d1f18'} 100%);`}>
+                <div class="absolute top-3 left-3">
+                  <span class="category-badge" data-i18n="musing.category">{category}</span>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-20">
+                  <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+                    <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="p-5 flex flex-col flex-1">
+                <div class="flex items-center gap-2 mb-3 text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">
+                  <span>{formattedDate}</span>
+                  <span>·</span>
+                  <span data-i18n="musing.minRead">{readingTime} 分钟阅读</span>
+                </div>
+
+                <a href={`${prefix}/blog/${slug}`} class="block mb-2 group-hover:opacity-80 transition-opacity">
+                  <h3 class="font-serif text-lg leading-snug" style="color: var(--text);">{post.frontmatter.title}</h3>
+                </a>
+
+                <p class="text-xs leading-relaxed mb-4 flex-1" style="color: var(--text-secondary);">
+                  {post.frontmatter.description}
+                </p>
+
+                <div class="flex items-center justify-between pt-4 border-t" style="border-color: var(--border);">
+                  <div class="flex gap-1.5">
+                    {post.frontmatter.tags?.slice(0, 2).map((tag: string) => (
+                      <span class="tag-pill">{tag}</span>
+                    ))}
+                  </div>
+                  <button class="p-1.5 rounded-md transition-colors hover:opacity-70" style="color: var(--text-muted);" aria-label="Bookmark">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+
+        <div class="card-fluid p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-8 h-0.5" style="background-color: var(--primary);"></div>
+              <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);" data-i18n="quote.label">直接思考</span>
+            </div>
+            <blockquote class="font-serif text-xl md:text-2xl leading-relaxed mb-4" style="color: var(--text);" data-i18n="quote.text">
+              技术的价值在于连接人心，而最高境界是让技术本身隐形。
+            </blockquote>
+          </div>
+          <div>
+            <p class="text-xs leading-relaxed mb-6" style="color: var(--text-secondary);" data-i18n="quote.desc">
+              我对数字产品设计的理念聚焦于「隐形界面」——界面消融，只留下内容与意图。
+            </p>
+            <div class="flex items-center gap-3 pt-4 border-t" style="border-color: var(--border);">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background: linear-gradient(135deg, #2d5a4a, #1a3a2f);">
+                P
+              </div>
+              <div>
+                <p class="text-xs font-medium" style="color: var(--text);" data-i18n="quote.author">panda-pig</p>
+                <p class="text-[10px]" style="color: var(--text-muted);" data-i18n="quote.role">首席研究员</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 md:hidden text-center">
+        <a href={`${prefix}/blog`} class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider" style="color: var(--text-secondary);" data-i18n="musing.viewAll">
+          查看全部
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Interactive Experiments -->
+    <section class="section-container py-10">
+      <div class="card-fluid p-6 md:p-10">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+          <div class="flex-1">
+            <h2 class="font-serif text-2xl md:text-3xl mb-4" style="color: var(--text);" data-i18n="exp.title">交互实验</h2>
+            <p class="text-sm leading-relaxed mb-8 max-w-md" style="color: var(--text-secondary);" data-i18n="exp.desc">
+              超越文字，我维护着一个功能原型与开源实验的陈列室，挑战标准的 Web 惯例。
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background-color: var(--accent-warm);">
+                  <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-medium mb-0.5" style="color: var(--text);" data-i18n="exp.canvas">神经画布</h4>
+                  <p class="text-xs" style="color: var(--text-secondary);" data-i18n="exp.canvasDesc">一个用于布局概念化的 AI 驱动草图工具。</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background-color: var(--accent-warm);">
+                  <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-medium mb-0.5" style="color: var(--text);" data-i18n="exp.chroma">色度档案</h4>
+                  <p class="text-xs" style="color: var(--text-secondary);" data-i18n="exp.chromaDesc">通过历史艺术数据可视化文化色彩趋势。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="shrink-0 w-full md:w-72">
+            <div class="rounded-lg overflow-hidden border p-6 h-48 flex flex-col items-center justify-center" style="background-color: var(--surface); border-color: var(--border);">
+              <div class="flex gap-1.5 mb-4">
+                <span class="w-2 h-2 rounded-full" style="background-color: #ff5f57;"></span>
+                <span class="w-2 h-2 rounded-full" style="background-color: #febc2e;"></span>
+                <span class="w-2 h-2 rounded-full" style="background-color: #28c840;"></span>
+              </div>
+              <svg class="w-8 h-8 mb-3 opacity-20" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+              </svg>
+              <p class="text-[10px] uppercase tracking-wider" style="color: var(--text-muted);" data-i18n="exp.instance">实验实例 #042</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-container py-12 border-t mt-12" style="border-color: var(--border);">
+      <div class="text-center">
+        <p class="font-serif text-lg mb-4" style="color: var(--text);">Panda Lab</p>
+        <div class="flex items-center justify-center gap-6 mb-4">
+          <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer" class="text-xs transition-colors hover:opacity-70" style="color: var(--text-muted);">Github</a>
+          <a href={`${prefix}/blog`} class="text-xs transition-colors hover:opacity-70" style="color: var(--text-muted);">ResearchGate</a>
+          <a href={`${prefix}/contact`} class="text-xs transition-colors hover:opacity-70" style="color: var(--text-muted);">Twitter</a>
+          <a href={`${prefix}/contact`} class="text-xs transition-colors hover:opacity-70" style="color: var(--text-muted);">LinkedIn</a>
+        </div>
+        <p class="text-[10px]" style="color: var(--text-muted);">© {new Date().getFullYear()} Panda Lab. Developed by panda-pig.</p>
+      </div>
+    </footer>
+  </main>
+</BaseLayout>

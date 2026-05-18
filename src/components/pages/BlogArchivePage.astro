@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../Header.astro';
+import Search from '../Search.astro';
+
+const { lang } = Astro.props;
+const prefix = lang === 'zh' ? '' : `/${lang}`;
+
+// Load all posts and group by slug for locale filtering with fallback
+const allPosts = await Astro.glob('../../content/blog/*.md');
+
+const postsBySlug: Record<string, Record<string, any>> = {};
+allPosts.forEach((post: any) => {
+  const slug = post.frontmatter.slug || post.file.split('/').pop().replace('.md', '').replace(/\.(en|ja)$/, '');
+  const postLang = post.frontmatter.lang || 'zh';
+  if (!postsBySlug[slug]) postsBySlug[slug] = {};
+  postsBySlug[slug][postLang] = post;
+});
+
+const displayPosts = Object.entries(postsBySlug)
+  .map(([slug, langs]) => {
+    const post = langs[lang] || langs['zh'];
+    return post ? { ...post, resolvedSlug: slug } : null;
+  })
+  .filter(Boolean)
+  .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+
+const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || []))];
+---
+
+<BaseLayout title={`归档 — Panda Lab`} description="所有实验室笔记与理论探索。" lang={lang}>
+  <Header lang={lang} />
+
+  <main class="min-h-screen">
+    <div class="section-container pt-10 pb-20">
+      <div class="mb-10">
+        <h1 class="font-serif text-3xl md:text-4xl mb-2" style="color: var(--text);" data-i18n="archive.title">归档</h1>
+        <p class="text-sm" style="color: var(--text-secondary);">
+          <span data-i18n="archive.desc">共</span> {displayPosts.length} <span data-i18n="archive.desc2">篇文章，持续更新中</span>
+        </p>
+      </div>
+
+      <div class="mb-8 max-w-md">
+        <Search />
+      </div>
+
+      {allTags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="tag-pill cursor-pointer" style="background-color: var(--primary); color: #fff; border-color: var(--primary);" data-i18n="archive.all">全部</span>
+          {allTags.map((tag) => (
+            <span class="tag-pill cursor-pointer">{tag}</span>
+          ))}
+        </div>
+      )}
+
+      <div class="space-y-0">
+        {displayPosts.map((post: any) => {
+          const slug = post.resolvedSlug;
+          const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
+          const formattedDate = new Date(post.frontmatter.date).toLocaleDateString(lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          });
+
+          return (
+            <article class="py-8 border-b group" style="border-color: var(--border);">
+              <div class="flex items-center gap-3 mb-2 text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">
+                <span>{formattedDate}</span>
+                <span>·</span>
+                <span>{readingTime} <span data-i18n="archive.minRead">分钟阅读</span></span>
+              </div>
+              <a href={`${prefix}/blog/${slug}`} class="block mb-2 group-hover:opacity-80 transition-opacity">
+                <h2 class="font-serif text-xl" style="color: var(--text);">{post.frontmatter.title}</h2>
+              </a>
+              <p class="text-sm leading-relaxed mb-3" style="color: var(--text-secondary);">
+                {post.frontmatter.description}
+              </p>
+              {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
+                <div class="flex flex-wrap gap-1.5">
+                  {post.frontmatter.tags.map((tag: string) => (
+                    <span class="tag-pill">{tag}</span>
+                  ))}
+                </div>
+              )}
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </main>
+</BaseLayout>

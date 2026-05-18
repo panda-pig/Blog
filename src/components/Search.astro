@@ -32,11 +32,9 @@
   });
   const container = document.getElementById('search-container');
   if (container && !container.dataset.initialized) {
-    new PagefindUI({
-      element: '#search-container',
-      showImages: false,
-      showSubResults: true,
-      translations: {
+    const lang = localStorage.getItem('lang') || 'zh';
+    const t = {
+      zh: {
         placeholder: '搜索文章...',
         clear_search: '清除',
         load_more: '加载更多',
@@ -46,6 +44,32 @@
         one_result: '1 篇相关文章',
         alt_search: '显示所有结果',
       },
+      en: {
+        placeholder: 'Search articles...',
+        clear_search: 'Clear',
+        load_more: 'Load more',
+        search_label: 'Search',
+        zero_results: 'No results found',
+        many_results: '[COUNT] results',
+        one_result: '1 result',
+        alt_search: 'Show all results',
+      },
+      ja: {
+        placeholder: '記事を検索...',
+        clear_search: 'クリア',
+        load_more: 'もっと見る',
+        search_label: '検索',
+        zero_results: '該当する記事が見つかりませんでした',
+        many_results: '[COUNT] 件の結果',
+        one_result: '1 件の結果',
+        alt_search: 'すべて表示',
+      },
+    }[lang] || t.zh;
+    new PagefindUI({
+      element: '#search-container',
+      showImages: false,
+      showSubResults: true,
+      translations: t,
     });
     container.dataset.initialized = 'true';
   }

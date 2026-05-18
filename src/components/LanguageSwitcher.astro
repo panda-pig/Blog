@@ -39,10 +39,21 @@ const languages = [
 
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      const lang = btn.getAttribute('data-lang');
-      localStorage.setItem('lang', lang);
+      const targetLang = btn.getAttribute('data-lang');
+      localStorage.setItem('lang', targetLang);
       updateActive();
-      window.location.reload();
+
+      const url = new URL(window.location.href);
+      let cleanPath = url.pathname.replace(/^\/(en|ja)(?=\/|$)/, '');
+      if (!cleanPath || cleanPath === '') cleanPath = '/';
+
+      if (targetLang === 'zh') {
+        url.pathname = cleanPath;
+      } else {
+        url.pathname = '/' + targetLang + cleanPath;
+      }
+
+      window.location.href = url.toString();
     });
   });
 </script>

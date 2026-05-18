@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import TOC from '../../components/TOC.astro';
+import Giscus from '../../components/Giscus.astro';
+import Donate from '../../components/Donate.astro';
+
+const { slug } = Astro.params;
+const { lang } = Astro.props;
+const prefix = lang === 'zh' ? '' : `/${lang}`;
+
+const allPosts = await Astro.glob('../../content/blog/*.md');
+
+const postsBySlug: Record<string, Record<string, any>> = {};
+allPosts.forEach((post: any) => {
+  const postSlug = post.frontmatter.slug || post.file.split('/').pop().replace('.md', '').replace(/\.(en|ja)$/, '');
+  const postLang = post.frontmatter.lang || 'zh';
+  if (!postsBySlug[postSlug]) postsBySlug[postSlug] = {};
+  postsBySlug[postSlug][postLang] = post;
+});
+
+const availableLangs = Object.keys(postsBySlug[slug] || {});
+const post = postsBySlug[slug]?.[lang] || postsBySlug[slug]?.['zh'];
+
+if (!post) {
+  throw new Error(`Post not found: ${slug}`);
+}
+
+const { Content } = post;
+const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
+const formattedDate = new Date(post.frontmatter.date).toLocaleDateString(lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const headings = post.getHeadings ? post.getHeadings() : [];
+---
+
+<BaseLayout title={post.frontmatter.title} description={post.frontmatter.description} slug={`${prefix}/blog/${slug}`} lang={lang}>
+  <Header lang={lang} />
+
+  <main class="min-h-screen">
+    <article class="section-container pt-10 pb-20 max-w-3xl mx-auto">
+      <div class="mb-8">
+        <a href={`${prefix}/blog`} class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-muted);" data-i18n="article.back">
+          返回归档
+        </a>
+      </div>
+
+      {availableLangs.length > 1 && (
+        <div class="flex items-center gap-2 mb-6">
+          {availableLangs.map((l) => {
+            const active = l === (post.frontmatter.lang || 'zh');
+            const label = l === 'zh' ? '中' : l === 'en' ? 'EN' : '日';
+            const hrefPrefix = l === 'zh' ? '' : `/${l}`;
+            return (
+              <a
+                href={`${hrefPrefix}/blog/${slug}`}
+                class={`text-[10px] px-2 py-0.5 rounded-md border font-medium uppercase tracking-wider transition-colors ${active ? 'opacity-50 cursor-default pointer-events-none' : 'hover:opacity-70'}`}
+                style={active ? 'background-color: var(--primary); color: #fff; border-color: var(--primary);' : 'background-color: var(--surface); color: var(--text-secondary); border-color: var(--border);'}
+              >
+                {label}
+              </a>
+            );
+          })}
+          <span class="text-[10px]" style="color: var(--text-muted);">多语言</span>
+        </div>
+      )}
+
+      {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-4">
+          {post.frontmatter.tags.map((tag: string) => (
+            <span class="category-badge">{tag}</span>
+          ))}
+        </div>
+      )}
+
+      <h1 class="font-serif text-3xl sm:text-4xl font-bold mb-4 leading-tight" style="color: var(--text);">
+        {post.frontmatter.title}
+      </h1>
+
+      {post.frontmatter.description && (
+        <p class="text-lg leading-relaxed mb-6" style="color: var(--text-secondary);">
+          {post.frontmatter.description}
+        </p>
+      )}
+
+      <div class="flex flex-wrap items-center gap-4 text-xs uppercase tracking-wider mb-10 pb-10 border-b" style="color: var(--text-muted); border-color: var(--border);">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          {formattedDate}
+        </span>
+        <span class="w-1 h-1 rounded-full" style="background-color: var(--border);"></span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          {readingTime} <span data-i18n="article.minRead">分钟阅读</span>
+        </span>
+      </div>
+
+      <div class="flex">
+        <div class="flex-1 min-w-0">
+          <div class="prose prose-lg max-w-none">
+            <Content />
+          </div>
+          <Donate />
+          <Giscus slug={post.url} />
+        </div>
+        <TOC headings={headings} />
+      </div>
+    </article>
+  </main>
+</BaseLayout>
