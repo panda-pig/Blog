@@ -27,28 +27,34 @@ const recentPosts = displayPosts.slice(0, 3);
 const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
 ---
 
-<BaseLayout description="Panda Lab - panda-pig 的思想与代码数字实验室" lang={lang}>
+<BaseLayout description="Panda Blog - panda 的想法与代码数字实验室" lang={lang}>
   <Header lang={lang} />
 
   <main class="min-h-screen">
     <!-- Hero Section -->
-    <section class="section-container pt-12 pb-8 md:pt-16 md:pb-12">
+    <section class="section-container pt-16 pb-12 md:pt-24 md:pb-20">
       <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
         <div class="shrink-0 relative">
-          <div class="w-48 h-48 md:w-56 md:h-56 rounded-lg overflow-hidden relative" style="background: linear-gradient(135deg, #2d5a4a 0%, #1a3a2f 100%);">
-            <div class="absolute inset-0 flex items-center justify-center text-white/30 text-6xl font-serif">P</div>
+          <div class="w-48 h-48 md:w-56 md:h-56 rounded-xl overflow-hidden relative border-2" style="border-color: var(--border); background: linear-gradient(135deg, #2d5a4a 0%, #1a3a2f 100%);">
+            <div class="absolute inset-0 flex items-center justify-center text-white/30 text-6xl font-serif pointer-events-none">P</div>
+            <img
+              src="/avatar.jpg"
+              alt="panda"
+              class="absolute inset-0 w-full h-full object-cover"
+              onerror="this.style.display='none'"
+            />
           </div>
           <div class="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider text-white" style="background-color: var(--primary);" data-i18n="hero.avatar">
-            实验室
+            博主
           </div>
         </div>
 
         <div class="flex-1 max-w-2xl pt-2">
           <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight mb-5" style="color: var(--text);" data-i18n="hero.title">
-            你好，我是 panda-pig。这是我的思想与代码的数字实验室。
+            你好，我是 panda。这是我的想法与代码的数字实验室。
           </h1>
           <p class="text-sm leading-relaxed mb-8 max-w-lg" style="color: var(--text-secondary);" data-i18n="hero.desc">
-            一个探索性项目、技术沉思的档案库，偶尔还有 Web 开发与 AI 交叉领域的突破。
+            一个探索性项目、技术沉思的档案库。
           </p>
           <div class="flex items-center gap-3">
             <a href={`${prefix}/blog`} class="btn-primary">
@@ -66,7 +72,7 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
     </section>
 
     <!-- Info Cards -->
-    <section class="section-container pb-10">
+    <section class="section-container pb-16 md:pb-24">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="card-fluid p-5">
           <div class="flex items-center gap-2 mb-2">
@@ -83,9 +89,9 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
             <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
             </svg>
-            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);" data-i18n="info.stack">技术栈</span>
+            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);" data-i18n="info.stack">兴趣</span>
           </div>
-          <p class="text-sm font-medium" style="color: var(--text);" data-i18n="info.stackVal">Astro + Tailwind</p>
+          <p class="text-sm font-medium" style="color: var(--text);" data-i18n="info.stackVal">模型、吃、拍照</p>
         </div>
 
         <div class="card-fluid p-5">
@@ -95,7 +101,7 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
             </svg>
             <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);" data-i18n="info.focus">聚焦</span>
           </div>
-          <p class="text-sm font-medium" style="color: var(--text);" data-i18n="info.focusVal">Web 开发与人工智能</p>
+          <p class="text-sm font-medium" style="color: var(--text);" data-i18n="info.focusVal">WEB，data，AI</p>
         </div>
 
         <div class="card-fluid p-5">
@@ -114,8 +120,8 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
     </section>
 
     <!-- Recent Musings -->
-    <section class="section-container py-10">
-      <div class="flex items-end justify-between mb-8">
+    <section class="section-container py-16 md:py-24">
+      <div class="flex items-end justify-between mb-10 md:mb-12">
         <div>
           <h2 class="font-serif text-2xl md:text-3xl mb-1" style="color: var(--text);" data-i18n="musing.title">近期思考</h2>
           <p class="text-xs" style="color: var(--text-muted);" data-i18n="musing.subtitle">实验室笔记与理论探索。</p>
@@ -184,31 +190,7 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
           );
         })}
 
-        <div class="card-fluid p-6 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-2 mb-4">
-              <div class="w-8 h-0.5" style="background-color: var(--primary);"></div>
-              <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);" data-i18n="quote.label">直接思考</span>
-            </div>
-            <blockquote class="font-serif text-xl md:text-2xl leading-relaxed mb-4" style="color: var(--text);" data-i18n="quote.text">
-              技术的价值在于连接人心，而最高境界是让技术本身隐形。
-            </blockquote>
-          </div>
-          <div>
-            <p class="text-xs leading-relaxed mb-6" style="color: var(--text-secondary);" data-i18n="quote.desc">
-              我对数字产品设计的理念聚焦于「隐形界面」——界面消融，只留下内容与意图。
-            </p>
-            <div class="flex items-center gap-3 pt-4 border-t" style="border-color: var(--border);">
-              <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background: linear-gradient(135deg, #2d5a4a, #1a3a2f);">
-                P
-              </div>
-              <div>
-                <p class="text-xs font-medium" style="color: var(--text);" data-i18n="quote.author">panda-pig</p>
-                <p class="text-[10px]" style="color: var(--text-muted);" data-i18n="quote.role">首席研究员</p>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
 
       <div class="mt-6 md:hidden text-center">
@@ -222,13 +204,13 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
     </section>
 
     <!-- Interactive Experiments -->
-    <section class="section-container py-10">
+    <section class="section-container py-16 md:py-24">
       <div class="card-fluid p-6 md:p-10">
         <div class="flex flex-col md:flex-row gap-8 md:gap-12">
           <div class="flex-1">
-            <h2 class="font-serif text-2xl md:text-3xl mb-4" style="color: var(--text);" data-i18n="exp.title">交互实验</h2>
+            <h2 class="font-serif text-2xl md:text-3xl mb-4" style="color: var(--text);" data-i18n="exp.title">随手小实验</h2>
             <p class="text-sm leading-relaxed mb-8 max-w-md" style="color: var(--text-secondary);" data-i18n="exp.desc">
-              超越文字，我维护着一个功能原型与开源实验的陈列室，挑战标准的 Web 惯例。
+              一些我做着玩的小工具和原型想法，不一定成熟，但觉得有趣就放在这里了。
             </p>
 
             <div class="space-y-4">
@@ -239,8 +221,8 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-sm font-medium mb-0.5" style="color: var(--text);" data-i18n="exp.canvas">神经画布</h4>
-                  <p class="text-xs" style="color: var(--text-secondary);" data-i18n="exp.canvasDesc">一个用于布局概念化的 AI 驱动草图工具。</p>
+                  <h4 class="text-sm font-medium mb-0.5" style="color: var(--text);" data-i18n="exp.canvas">随手画布</h4>
+                  <p class="text-xs" style="color: var(--text-secondary);" data-i18n="exp.canvasDesc">一个随手涂鸦就能生成 UI 布局原型的 AI 小工具。</p>
                 </div>
               </div>
 
@@ -251,8 +233,8 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-sm font-medium mb-0.5" style="color: var(--text);" data-i18n="exp.chroma">色度档案</h4>
-                  <p class="text-xs" style="color: var(--text-secondary);" data-i18n="exp.chromaDesc">通过历史艺术数据可视化文化色彩趋势。</p>
+                  <h4 class="text-sm font-medium mb-0.5" style="color: var(--text);" data-i18n="exp.chroma">色彩日记</h4>
+                  <p class="text-xs" style="color: var(--text-secondary);" data-i18n="exp.chromaDesc">记录每天看到的颜色，生成个人专属色板。</p>
                 </div>
               </div>
             </div>
@@ -268,7 +250,7 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
               <svg class="w-8 h-8 mb-3 opacity-20" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                 <path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
               </svg>
-              <p class="text-[10px] uppercase tracking-wider" style="color: var(--text-muted);" data-i18n="exp.instance">实验实例 #042</p>
+              <p class="text-[10px] uppercase tracking-wider" style="color: var(--text-muted);" data-i18n="exp.instance">随手实例 #042</p>
             </div>
           </div>
         </div>
@@ -276,9 +258,9 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
     </section>
 
     <!-- Footer -->
-    <footer class="section-container py-12 border-t mt-12" style="border-color: var(--border);">
+    <footer class="section-container py-16 md:py-20 border-t mt-16 md:mt-20" style="border-color: var(--border);">
       <div class="text-center">
-        <p class="font-serif text-lg mb-4" style="color: var(--text);">Panda Lab</p>
+        <p class="font-serif text-lg mb-4" style="color: var(--text);">Panda Blog</p>
         <div class="flex items-center justify-center gap-6 mb-4">
           <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer" class="text-xs transition-colors hover:opacity-70" style="color: var(--text-muted);">Github</a>
           <a href={`${prefix}/blog`} class="text-xs transition-colors hover:opacity-70" style="color: var(--text-muted);">ResearchGate</a>
@@ -292,7 +274,7 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
           </svg>
           <span id="view-counter">加载中...</span>
         </div>
-        <p class="text-[10px]" style="color: var(--text-muted);">© {new Date().getFullYear()} Panda Lab. Developed by panda-pig.</p>
+        <p class="text-[10px]" style="color: var(--text-muted);">© {new Date().getFullYear()} Panda Blog. Developed by panda.</p>
       </div>
     </footer>
 

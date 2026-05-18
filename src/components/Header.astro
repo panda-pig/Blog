@@ -7,18 +7,18 @@ const prefix = lang === 'zh' ? '' : `/${lang}`;
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { href: `${prefix}/`, labelKey: 'nav.lab', labelZh: '实验室' },
-  { href: `${prefix}/blog`, labelKey: 'nav.archive', labelZh: '归档' },
+  { href: `${prefix}/`, labelKey: 'nav.lab', labelZh: '首页' },
+  { href: `${prefix}/blog`, labelKey: 'nav.archive', labelZh: '文章归档' },
   { href: `${prefix}/moments`, labelKey: 'nav.moments', labelZh: '瞬间' },
-  { href: `${prefix}/projects`, labelKey: 'nav.experiments', labelZh: '实验' },
-  { href: `${prefix}/contact`, labelKey: 'nav.communique', labelZh: '通讯' },
+  { href: `${prefix}/projects`, labelKey: 'nav.experiments', labelZh: '项目' },
+  { href: `${prefix}/contact`, labelKey: 'nav.communique', labelZh: '联系' },
 ];
 ---
 
 <header class="sticky top-0 z-50 border-b" style="background-color: rgba(245, 245, 240, 0.85); backdrop-filter: blur(12px); border-color: var(--border);">
   <div class="section-container flex items-center justify-between h-14">
     <a href="/" class="flex items-center gap-2 group">
-      <span class="text-base font-medium tracking-tight" style="color: var(--text);">Panda Lab</span>
+      <span class="text-base font-medium tracking-tight" style="color: var(--text);">Panda Blog</span>
     </a>
 
     <nav class="hidden md:flex items-center gap-8">

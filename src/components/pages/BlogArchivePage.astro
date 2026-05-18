@@ -28,7 +28,7 @@ const displayPosts = Object.entries(postsBySlug)
 const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || []))];
 ---
 
-<BaseLayout title={`归档 — Panda Lab`} description="所有实验室笔记与理论探索。" lang={lang}>
+<BaseLayout title={`归档 — Panda Blog`} description="所有文章笔记与理论探索。" lang={lang}>
   <Header lang={lang} />
 
   <main class="min-h-screen">

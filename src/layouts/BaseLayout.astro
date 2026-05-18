@@ -2,7 +2,7 @@
 import '../styles/global.css';
 
 const { title, description, slug, lang = 'zh' } = Astro.props;
-const siteTitle = title ? title : 'Panda Lab';
+const siteTitle = title ? title : 'Panda Blog';
 const canonicalUrl = `https://blog-beta-kohl-92.vercel.app${slug || ''}`;
 const htmlLang = lang === 'zh' ? 'zh-CN' : lang;
 ---

@@ -64,6 +64,13 @@
     padding-right: 1.5rem;
   }
 
+  @media (min-width: 768px) {
+    .section-container {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
   .font-serif {
     font-family: 'Georgia', 'Times New Roman', 'Songti SC', 'SimSun', serif;
   }

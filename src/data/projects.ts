@@ -15,7 +15,7 @@ export const projectsData = {
       status: '已完成',
     },
     {
-      title: 'Panda Lab 博客',
+      title: 'Panda Blog',
       description: '基于 Astro 构建的个人博客系统，支持暗色模式、全文搜索、评论系统和 RSS 订阅。追求极致性能和优雅设计。',
       tags: ['Astro', 'Tailwind CSS', 'Vercel', 'Pagefind'],
       link: 'https://blog-beta-kohl-92.vercel.app',
@@ -38,7 +38,7 @@ export const projectsData = {
       status: 'Completed',
     },
     {
-      title: 'Panda Lab Blog',
+      title: 'Panda Blog',
       description: 'A personal blog system built with Astro, supporting dark mode, full-text search, comment system, and RSS subscription. Pursuing极致 performance and elegant design.',
       tags: ['Astro', 'Tailwind CSS', 'Vercel', 'Pagefind'],
       link: 'https://blog-beta-kohl-92.vercel.app',
@@ -61,7 +61,7 @@ export const projectsData = {
       status: '完了',
     },
     {
-      title: 'Panda Lab ブログ',
+      title: 'Panda Blog',
       description: 'Astro で構築された個人ブログシステム。ダークモード、全文検索、コメントシステム、RSS 購読に対応。極致のパフォーマンスとエレガントなデザインを追求。',
       tags: ['Astro', 'Tailwind CSS', 'Vercel', 'Pagefind'],
       link: 'https://blog-beta-kohl-92.vercel.app',

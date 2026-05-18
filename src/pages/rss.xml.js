@@ -5,7 +5,7 @@ export async function GET(context) {
   const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
   
   return rss({
-    title: 'Panda Lab',
+      title: 'Panda Blog',
     description: 'panda-pig 的个人博客，记录技术学习与项目实践',
     site: context.site,
     items: sortedPosts.map((post) => ({
