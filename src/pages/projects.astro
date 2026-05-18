@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Sidebar from '../components/Sidebar.astro';
-import DarkModeToggle from '../components/DarkModeToggle.astro';
+import Header from '../components/Header.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 
 const projects = [
@@ -29,33 +28,21 @@ const projects = [
 ];
 ---
 
-<BaseLayout title="项目展示" description="Panda Lab 的项目作品集">
-  <div id="page" class="flex min-h-screen md:mx-10 md:mt-14">
-    <Sidebar />
+<BaseLayout title="Experiments — Panda Lab" description="Functional prototypes and open-source experiments.">
+  <Header />
 
-    <!-- Main Content -->
-    <main class="w-full flex-1 rounded-r-md pb-20" style="background-color: var(--content-bg);">
-      <!-- Mobile Header -->
-      <div class="relative md:hidden">
-        <div class="absolute right-4 top-5 z-10">
-          <DarkModeToggle />
-        </div>
+  <main class="min-h-screen">
+    <div class="section-container pt-10 pb-20">
+      <div class="mb-10">
+        <h1 class="font-serif text-3xl md:text-4xl mb-2" style="color: var(--text);">Experiments</h1>
+        <p class="text-sm" style="color: var(--text-secondary);">Functional prototypes and open-source experiments.</p>
       </div>
 
-      <!-- Page Header -->
-      <div class="px-4 md:px-10 pt-10 pb-6">
-        <h1 class="text-3xl font-bold mb-2" style="color: var(--title);">项目展示</h1>
-        <p class="text-sm" style="color: var(--text-secondary);">把想法快速变成产品，这里是我的实践记录</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((project) => (
+          <ProjectCard {...project} />
+        ))}
       </div>
-
-      <!-- Projects Grid -->
-      <div class="px-4 md:px-10">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <ProjectCard {...project} />
-          ))}
-        </div>
-      </div>
-    </main>
-  </div>
+    </div>
+  </main>
 </BaseLayout>

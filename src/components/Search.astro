@@ -3,20 +3,20 @@
 
 <button
   id="search-trigger"
-  class="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl border text-sm transition-all shadow-sm"
-  style="background-color: var(--content-bg); border-color: var(--content-border); color: var(--text-secondary);"
+  class="w-full flex items-center gap-3 px-4 py-2.5 rounded-lg border text-sm transition-all"
+  style="background-color: var(--surface); border-color: var(--border); color: var(--text-muted);"
   onclick="document.getElementById('search-dialog').showModal()"
 >
   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
     <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
   </svg>
   <span class="flex-1 text-left">搜索文章...</span>
-  <kbd class="px-1.5 py-0.5 text-[11px] font-mono rounded" style="background-color: var(--page-bg); border: 1px solid var(--content-border); color: var(--text-secondary);">Ctrl K</kbd>
+  <kbd class="px-1.5 py-0.5 text-[10px] font-mono rounded border" style="background-color: var(--bg); border-color: var(--border); color: var(--text-muted);">Ctrl K</kbd>
 </button>
 
 <dialog id="search-dialog" class="fixed inset-0 w-full h-full bg-black/20 backdrop-blur-sm p-0 m-0 border-0">
   <div class="absolute top-[15%] left-1/2 -translate-x-1/2 w-full max-w-xl px-4">
-    <div class="rounded-2xl shadow-xl border overflow-hidden" style="background-color: var(--content-bg); border-color: var(--content-border);">
+    <div class="rounded-xl shadow-xl border overflow-hidden" style="background-color: var(--surface); border-color: var(--border);">
       <div id="search-container" class="p-3 min-h-[280px]"></div>
     </div>
   </div>

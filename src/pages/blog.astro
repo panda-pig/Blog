@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Sidebar from '../components/Sidebar.astro';
-import DarkModeToggle from '../components/DarkModeToggle.astro';
+import Header from '../components/Header.astro';
 import Search from '../components/Search.astro';
 
 const posts = await Astro.glob('../content/blog/*.md');
@@ -9,44 +8,34 @@ const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).valueOf() 
 const allTags = [...new Set(posts.flatMap(p => p.frontmatter.tags || []))];
 ---
 
-<BaseLayout title="文章列表" description="Panda Lab 的所有博客文章">
-  <div id="page" class="flex min-h-screen md:mx-10 md:mt-14">
-    <Sidebar />
+<BaseLayout title="Archive — Panda Lab" description="All lab notes and theoretical expeditions.">
+  <Header />
 
-    <!-- Main Content -->
-    <main class="w-full flex-1 rounded-r-md pb-20" style="background-color: var(--content-bg);">
-      <!-- Mobile Header -->
-      <div class="relative md:hidden">
-        <div class="absolute right-4 top-5 z-10">
-          <DarkModeToggle />
-        </div>
-      </div>
-
+  <main class="min-h-screen">
+    <div class="section-container pt-10 pb-20">
       <!-- Page Header -->
-      <div class="px-4 md:px-10 pt-10 pb-6">
-        <h1 class="text-3xl font-bold mb-2" style="color: var(--title);">文章列表</h1>
+      <div class="mb-10">
+        <h1 class="font-serif text-3xl md:text-4xl mb-2" style="color: var(--text);">Archive</h1>
         <p class="text-sm" style="color: var(--text-secondary);">共 {sortedPosts.length} 篇文章，持续更新中</p>
       </div>
 
       <!-- Search -->
-      <div class="px-4 md:px-10 mb-6 max-w-xl">
+      <div class="mb-8 max-w-md">
         <Search />
       </div>
 
       <!-- Tags -->
       {allTags.length > 0 && (
-        <div class="px-4 md:px-10 mb-6">
-          <div class="flex flex-wrap gap-2">
-            <span class="tag-pill cursor-pointer" style="background-color: var(--primary); color: #fff;">全部</span>
-            {allTags.map((tag) => (
-              <span class="tag-pill cursor-pointer">{tag}</span>
-            ))}
-          </div>
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="tag-pill cursor-pointer" style="background-color: var(--primary); color: #fff; border-color: var(--primary);">全部</span>
+          {allTags.map((tag) => (
+            <span class="tag-pill cursor-pointer">{tag}</span>
+          ))}
         </div>
       )}
 
       <!-- Articles -->
-      <div class="px-4 md:px-10">
+      <div class="space-y-0">
         {sortedPosts.map((post) => {
           const slug = post.file.split('/').pop().replace('.md', '');
           const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
@@ -57,34 +46,20 @@ const allTags = [...new Set(posts.flatMap(p => p.frontmatter.tags || []))];
           });
 
           return (
-            <article class="article-item">
-              <div class="flex items-center gap-3 mb-[5px]">
-                <span class="meta-badge">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                  </svg>
-                  {formattedDate}
-                </span>
-                <span class="meta-badge">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                  </svg>
-                  {readingTime} 分钟
-                </span>
+            <article class="py-8 border-b group" style="border-color: var(--border);">
+              <div class="flex items-center gap-3 mb-2 text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">
+                <span>{formattedDate}</span>
+                <span>·</span>
+                <span>{readingTime} min read</span>
               </div>
-
-              <a href={`/blog/${slug}`} class="block mb-2">
-                <h2 class="text-xl font-bold transition-colors hover:opacity-80" style="color: var(--title);">
-                  {post.frontmatter.title}
-                </h2>
+              <a href={`/blog/${slug}`} class="block mb-2 group-hover:opacity-80 transition-opacity">
+                <h2 class="font-serif text-xl" style="color: var(--text);">{post.frontmatter.title}</h2>
               </a>
-
-              <p class="text-sm leading-relaxed mb-3 max-w-[30rem]" style="color: var(--text-secondary);">
+              <p class="text-sm leading-relaxed mb-3" style="color: var(--text-secondary);">
                 {post.frontmatter.description}
               </p>
-
               {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
-                <div class="flex flex-wrap content-center gap-2">
+                <div class="flex gap-1.5">
                   {post.frontmatter.tags.map((tag) => (
                     <span class="tag-pill">{tag}</span>
                   ))}
@@ -93,13 +68,13 @@ const allTags = [...new Set(posts.flatMap(p => p.frontmatter.tags || []))];
             </article>
           );
         })}
-
-        {sortedPosts.length === 0 && (
-          <div class="py-20 text-center" style="color: var(--text-secondary);">
-            <p>还没有文章，开始写作吧！</p>
-          </div>
-        )}
       </div>
-    </main>
-  </div>
+
+      {sortedPosts.length === 0 && (
+        <div class="py-20 text-center" style="color: var(--text-muted);">
+          <p>还没有文章，开始写作吧！</p>
+        </div>
+      )}
+    </div>
+  </main>
 </BaseLayout>

@@ -1,111 +1,284 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Sidebar from '../components/Sidebar.astro';
-import DarkModeToggle from '../components/DarkModeToggle.astro';
+import Header from '../components/Header.astro';
 
 const posts = await Astro.glob('../content/blog/*.md');
 const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+const recentPosts = sortedPosts.slice(0, 3);
 ---
 
-<BaseLayout description="Panda Lab - panda-pig 的个人博客，记录技术学习与项目实践">
-  <div id="page" class="flex min-h-screen md:mx-10 md:mt-14">
-    <Sidebar />
+<BaseLayout description="Panda Lab - panda-pig's digital laboratory for thoughts and code.">
+  <Header />
 
-    <!-- Main Content -->
-    <main class="w-full flex-1 rounded-r-md pb-20" style="background-color: var(--content-bg);">
-      <!-- Mobile Header -->
-      <div class="relative md:hidden">
-        <div class="absolute right-4 top-5 z-10">
-          <DarkModeToggle />
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="section-container pt-12 pb-8 md:pt-16 md:pb-12">
+      <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+        <!-- Left: Profile Image -->
+        <div class="shrink-0 relative">
+          <div class="w-48 h-48 md:w-56 md:h-56 rounded-lg overflow-hidden relative" style="background: linear-gradient(135deg, #2d5a4a 0%, #1a3a2f 100%);">
+            <div class="absolute inset-0 flex items-center justify-center text-white/30 text-6xl font-serif">P</div>
+          </div>
+          <div class="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider text-white" style="background-color: var(--primary);">
+            Lab
+          </div>
         </div>
-      </div>
 
-      <!-- Banner -->
-      <div class="relative">
-        <div class="h-[200px] w-full md:rounded-tr-md" style="background: linear-gradient(to right, #7e91b8, #313c72);"></div>
-        <div class="absolute bottom-5 right-4 md:right-10 flex items-center">
-          <span class="mr-2 flex flex-col">
-            <span class="text-right text-white font-medium">panda-pig</span>
-            <span class="text-right text-xs" style="color: #d6d6d6;">Developer & Creator</span>
-          </span>
-          <div class="size-14 rounded-md flex items-center justify-center text-white text-xl font-bold" style="background-color: var(--primary);">
-            P
+        <!-- Right: Content -->
+        <div class="flex-1 max-w-2xl pt-2">
+          <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight mb-5" style="color: var(--text);">
+            Hello, I'm panda-pig. This is my digital laboratory for thoughts and code.
+          </h1>
+          <p class="text-sm leading-relaxed mb-8 max-w-lg" style="color: var(--text-secondary);">
+            An archive of exploratory projects, technical musings, and the occasional breakthrough in the intersection of Web Development and AI.
+          </p>
+          <div class="flex items-center gap-3">
+            <a href="/blog" class="btn-primary">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              Explore Archive
+            </a>
+            <a href="/contact" class="btn-outline">
+              Say Hello
+            </a>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Feed -->
-      <div class="px-4 md:px-10">
-        {sortedPosts.map((post) => {
+    <!-- Info Cards -->
+    <section class="section-container pb-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- Origin -->
+        <div class="card-fluid p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">Origin</span>
+          </div>
+          <p class="text-sm font-medium" style="color: var(--text);">Beijing, China</p>
+        </div>
+
+        <!-- Stack -->
+        <div class="card-fluid p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+            </svg>
+            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">Stack</span>
+          </div>
+          <p class="text-sm font-medium" style="color: var(--text);">Astro + Tailwind</p>
+        </div>
+
+        <!-- Focus -->
+        <div class="card-fluid p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">Focus</span>
+          </div>
+          <p class="text-sm font-medium" style="color: var(--text);">Web Dev & AI</p>
+        </div>
+
+        <!-- Status -->
+        <div class="card-fluid p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">Status</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full" style="background-color: #4ade80;"></span>
+            <p class="text-sm font-medium" style="color: var(--text);">Open for Research</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Musings -->
+    <section class="section-container py-10">
+      <div class="flex items-end justify-between mb-8">
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl mb-1" style="color: var(--text);">Recent Musings</h2>
+          <p class="text-xs" style="color: var(--text-muted);">Lab notes and theoretical expeditions.</p>
+        </div>
+        <a href="/blog" class="hidden md:flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-secondary);">
+          View all notes
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {recentPosts.map((post, index) => {
           const slug = post.file.split('/').pop().replace('.md', '');
           const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
-          const formattedDate = new Date(post.frontmatter.date).toLocaleDateString('zh-CN', {
-            year: 'numeric',
+          const formattedDate = new Date(post.frontmatter.date).toLocaleDateString('en-US', {
             month: 'short',
             day: 'numeric',
+            year: 'numeric',
           });
+          const category = post.frontmatter.tags?.[0] || 'Note';
 
           return (
-            <article class="article-item">
-              <div class="flex flex-col md:flex-row gap-6 md:gap-0">
-                {/* Text Content */}
-                <div class="flex-1">
-                  {/* Meta row */}
-                  <div class="flex items-center gap-3 mb-[5px]">
-                    <span class="meta-badge">
-                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                      </svg>
-                      {formattedDate}
-                    </span>
-                    <span class="meta-badge">
-                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                      </svg>
-                      {readingTime} 分钟
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <a href={`/blog/${slug}`} class="block mb-2">
-                    <h2 class="text-xl font-bold transition-colors hover:opacity-80" style="color: var(--title);">
-                      {post.frontmatter.title}
-                    </h2>
-                  </a>
-
-                  {/* Description */}
-                  <p class="text-sm leading-relaxed mb-3 max-w-[30rem]" style="color: var(--text-secondary);">
-                    {post.frontmatter.description}
-                  </p>
-
-                  {/* Tags */}
-                  {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
-                    <div class="flex flex-wrap content-center gap-2 mb-3">
-                      {post.frontmatter.tags.map((tag) => (
-                        <span class="tag-pill">{tag}</span>
-                      ))}
-                    </div>
-                  )}
+            <div class="card-fluid group flex flex-col">
+              {/* Image placeholder */}
+              <div class="h-40 w-full relative overflow-hidden" style={`background: linear-gradient(135deg, ${index === 0 ? '#2d5a4a' : index === 1 ? '#3a6b5c' : '#1e3a2f'} 0%, ${index === 0 ? '#1a3a2f' : index === 1 ? '#2d5a4a' : '#0d1f18'} 100%);`}>
+                <div class="absolute top-3 left-3">
+                  <span class="category-badge">{category}</span>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-20">
+                  <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+                    <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                  </svg>
                 </div>
               </div>
-            </article>
+
+              {/* Content */}
+              <div class="p-5 flex flex-col flex-1">
+                <div class="flex items-center gap-2 mb-3 text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">
+                  <span>{formattedDate}</span>
+                  <span>·</span>
+                  <span>{readingTime} min read</span>
+                </div>
+
+                <a href={`/blog/${slug}`} class="block mb-2 group-hover:opacity-80 transition-opacity">
+                  <h3 class="font-serif text-lg leading-snug" style="color: var(--text);">{post.frontmatter.title}</h3>
+                </a>
+
+                <p class="text-xs leading-relaxed mb-4 flex-1" style="color: var(--text-secondary);">
+                  {post.frontmatter.description}
+                </p>
+
+                <div class="flex items-center justify-between pt-4 border-t" style="border-color: var(--border);">
+                  <div class="flex gap-1.5">
+                    {post.frontmatter.tags?.slice(0, 2).map((tag) => (
+                      <span class="tag-pill">{tag}</span>
+                    ))}
+                  </div>
+                  <button class="p-1.5 rounded-md transition-colors hover:opacity-70" style="color: var(--text-muted);" aria-label="Bookmark">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
           );
         })}
 
-        {sortedPosts.length === 0 && (
-          <div class="py-20 text-center" style="color: var(--text-secondary);">
-            <p>还没有文章，开始写作吧！</p>
+        {/* Quote Card */}
+        <div class="card-fluid p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-8 h-0.5" style="background-color: var(--primary);"></div>
+              <span class="text-[10px] font-semibold uppercase tracking-wider" style="color: var(--text-muted);">Direct Thought</span>
+            </div>
+            <blockquote class="font-serif text-xl md:text-2xl leading-relaxed mb-4" style="color: var(--text);">
+              "Technology is best when it brings people together, but it's even better when it stays invisible."
+            </blockquote>
           </div>
-        )}
-      </div>
-
-      <!-- Footer -->
-      <div class="px-4 md:px-10 pt-10 border-t" style="border-color: var(--content-border);">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style="color: var(--text-secondary);">
-          <p>© {new Date().getFullYear()} Panda Lab</p>
-          <p>Crafted with care</p>
+          <div>
+            <p class="text-xs leading-relaxed mb-6" style="color: var(--text-secondary);">
+              My philosophy on digital product design focuses on the 'Invisible UI'—where the interface dissolves to leave only the content and the intent.
+            </p>
+            <div class="flex items-center gap-3 pt-4 border-t" style="border-color: var(--border);">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background: linear-gradient(135deg, #2d5a4a, #1a3a2f);">
+                P
+              </div>
+              <div>
+                <p class="text-xs font-medium" style="color: var(--text);">Panda Pig</p>
+                <p class="text-[10px]" style="color: var(--text-muted);">Lead Researcher</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </main>
-  </div>
+
+      <div class="mt-6 md:hidden text-center">
+        <a href="/blog" class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider" style="color: var(--text-secondary);">
+          View all notes
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Interactive Experiments -->
+    <section class="section-container py-10">
+      <div class="card-fluid p-6 md:p-10">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+          {/* Left Content */}
+          <div class="flex-1">
+            <h2 class="font-serif text-2xl md:text-3xl mb-4" style="color: var(--text);">Interactive Experiments</h2>
+            <p class="text-sm leading-relaxed mb-8 max-w-md" style="color: var(--text-secondary);">
+              Beyond the written word, I maintain a gallery of functional prototypes and open-source experiments that challenge standard web conventions.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background-color: var(--accent-warm);">
+                  <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-medium mb-0.5" style="color: var(--text);">Neural Canvas</h4>
+                  <p class="text-xs" style="color: var(--text-secondary);">An AI-driven sketching tool for layout conceptualization.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background-color: var(--accent-warm);">
+                  <svg class="w-4 h-4" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-medium mb-0.5" style="color: var(--text);">Chroma Archive</h4>
+                  <p class="text-xs" style="color: var(--text-secondary);">Visualizing cultural color trends through historical art data.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Preview */}
+          <div class="shrink-0 w-full md:w-72">
+            <div class="rounded-lg overflow-hidden border p-6 h-48 flex flex-col items-center justify-center" style="background-color: var(--surface); border-color: var(--border);">
+              <div class="flex gap-1.5 mb-4">
+                <span class="w-2 h-2 rounded-full" style="background-color: #ff5f57;"></span>
+                <span class="w-2 h-2 rounded-full" style="background-color: #febc2e;"></span>
+                <span class="w-2 h-2 rounded-full" style="background-color: #28c840;"></span>
+              </div>
+              <svg class="w-8 h-8 mb-3 opacity-20" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+              </svg>
+              <p class="text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">Experimental Instance #042</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-container py-12 border-t mt-12" style="border-color: var(--border);">
+      <div class="text-center">
+        <p class="font-serif text-lg mb-4" style="color: var(--text);">Panda Lab</p>
+        <div class="flex items-center justify-center gap-6 mb-4">
+          <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer" class="text-xs transition-colors hover:opacity-70" style="color: var(--text-muted);">Github</a>
+          <a href="/blog" class="text-xs transition-colors hover:opacity-70" style="color: var(--text-muted);">ResearchGate</a>
+          <a href="/contact" class="text-xs transition-colors hover:opacity-70" style="color: var(--text-muted);">Twitter</a>
+          <a href="/contact" class="text-xs transition-colors hover:opacity-70" style="color: var(--text-muted);">LinkedIn</a>
+        </div>
+        <p class="text-[10px]" style="color: var(--text-muted);">© {new Date().getFullYear()} Panda Lab. Developed by panda-pig.</p>
+      </div>
+    </footer>
+  </main>
 </BaseLayout>

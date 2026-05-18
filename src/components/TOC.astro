@@ -16,9 +16,9 @@ const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 
 {tocHeadings.length > 0 && (
   <nav class="hidden lg:block sticky top-24 w-56 shrink-0 ml-12">
-    <div class="border-l pl-4" style="border-color: var(--content-border);">
-      <p class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-secondary);">
-        目录
+    <div class="border-l pl-4" style="border-color: var(--border);">
+      <p class="text-[10px] font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);">
+        Contents
       </p>
       <ul class="space-y-2">
         {tocHeadings.map((heading) => (
