@@ -18,7 +18,9 @@
     --primary: #00382F;
     --primary-light: rgba(0, 56, 47, 0.1);
     --primary-hover: #002C24;
-    --accent: #19E6C1;
+    --accent: #2DD4BF;
+    --accent-soft: rgba(45, 212, 191, 0.14);
+    --accent-border: rgba(45, 212, 191, 0.28);
     --accent-lime: #d5ff4d;
     --accent-warm: #FFE8C2;
     --badge-bg: rgba(0, 56, 47, 0.08);
@@ -27,6 +29,15 @@
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 25px;
+
+    /* Hero-specific */
+    --hero-bg: #032820;
+    --hero-bg-deep: #011713;
+    --hero-card: rgba(255, 255, 255, 0.035);
+    --hero-text: #F4FFFC;
+    --hero-text-muted: rgba(244, 255, 252, 0.62);
+    --hero-text-soft: rgba(244, 255, 252, 0.42);
+    --hero-border: rgba(255, 255, 255, 0.10);
   }
 
   [data-theme="dark"] {
@@ -40,14 +51,23 @@
     --text: #ffffff;
     --text-secondary: #a1a9b5;
     --text-muted: #6b7280;
-    --primary: #19E6C1;
-    --primary-light: rgba(25, 230, 193, 0.12);
-    --primary-hover: #4defd3;
+    --primary: #2DD4BF;
+    --primary-light: rgba(45, 212, 191, 0.12);
+    --primary-hover: #5EEAD4;
     --accent: #00382F;
     --accent-warm: #2a3544;
-    --badge-bg: rgba(25, 230, 193, 0.1);
+    --badge-bg: rgba(45, 212, 191, 0.1);
     --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
     --card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    /* Hero-specific dark */
+    --hero-bg: #021F1A;
+    --hero-bg-deep: #011713;
+    --hero-card: rgba(255, 255, 255, 0.04);
+    --hero-text: #F4FFFC;
+    --hero-text-muted: rgba(244, 255, 252, 0.6);
+    --hero-text-soft: rgba(244, 255, 252, 0.4);
+    --hero-border: rgba(255, 255, 255, 0.10);
   }
 
   html {
@@ -59,7 +79,7 @@
   body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-family: 'Inter', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
   }
 
   ::selection {
@@ -85,7 +105,7 @@
   }
 
   .font-serif {
-    font-family: 'DM Serif Display', 'Georgia', 'Times New Roman', 'Songti SC', serif;
+    font-family: 'DM Serif Display', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'Georgia', serif;
   }
 
   .btn-primary {
@@ -129,6 +149,51 @@
   .btn-outline:hover {
     border-color: var(--accent);
     color: var(--accent);
+  }
+
+  /* Hero-specific buttons — translucent glass style */
+  .btn-hero-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    background: var(--accent-soft);
+    color: #DFFCF7;
+    border: 1px solid var(--accent-border);
+    transition: all 0.25s ease;
+  }
+
+  .btn-hero-primary:hover {
+    background: rgba(45, 212, 191, 0.24);
+    border-color: rgba(45, 212, 191, 0.42);
+    transform: translateY(-1px);
+  }
+
+  .btn-hero-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    background: transparent;
+    color: var(--hero-text-muted);
+    border: 1px solid var(--hero-border);
+    transition: all 0.25s ease;
+  }
+
+  .btn-hero-secondary:hover {
+    color: var(--hero-text);
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.04);
   }
 
   .card-fluid {
@@ -196,8 +261,8 @@
   }
 
   .nav-link.active {
-    color: var(--accent);
-    background: rgba(25, 230, 193, 0.1);
+    color: #DFFCF7;
+    background: var(--accent-soft);
     font-weight: 600;
   }
 }

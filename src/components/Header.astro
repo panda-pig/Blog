@@ -15,11 +15,11 @@ const navItems = [
 ];
 ---
 
-<header style="background: #002C24;">
+<header style="background: #032820;">
   <div class="section-container flex items-center justify-between h-[72px]">
     <a href="/" class="flex items-center gap-2.5 group shrink-0">
-      <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white text-sm font-bold" style="background: linear-gradient(135deg, #19E6C1, #4defd3);">
-        <span style="color: #002C24;">P</span>
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white text-sm font-bold" style="background: linear-gradient(135deg, #2DD4BF, #5EEAD4);">
+        <span style="color: #032820;">P</span>
       </div>
       <span class="text-lg font-bold tracking-tight" style="color: #ffffff; font-family: 'DM Sans', sans-serif;">Panda Blog</span>
     </a>
@@ -58,7 +58,7 @@ const navItems = [
   </div>
 
   <!-- Mobile nav panel -->
-  <div id="mobile-nav" class="md:hidden hidden" style="background: rgba(0,44,36,0.98); border-top: 1px solid rgba(255,255,255,0.06);">
+  <div id="mobile-nav" class="md:hidden hidden" style="background: rgba(3,40,32,0.98); border-top: 1px solid rgba(255,255,255,0.06);">
     <nav class="section-container py-4 flex flex-col gap-1">
       {navItems.map((item) => {
         const isActive = item.href === '/' ? currentPath === '/' : currentPath.startsWith(item.href);
@@ -67,7 +67,7 @@ const navItems = [
             href={item.href}
             class={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${isActive ? '' : ''}`}
             style={isActive
-              ? 'color: #19E6C1; background: rgba(25,230,193,0.1);'
+              ? 'color: #DFFCF7; background: rgba(45,212,191,0.12);'
               : 'color: rgba(255,255,255,0.7);'}
             data-i18n={item.labelKey}
           >
