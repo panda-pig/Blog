@@ -1,17 +1,17 @@
 ---
 const languages = [
-  { code: 'zh', label: '中' },
-  { code: 'en', label: '英' },
-  { code: 'ja', label: '日' },
+  { code: 'zh', label: '中文' },
+  { code: 'en', label: 'EN' },
+  { code: 'ja', label: '日本語' },
 ];
 ---
 
-<div id="lang-switcher" class="flex items-center gap-0.5 p-0.5 rounded-lg" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);">
+<div id="lang-switcher" class="flex items-center gap-0.5 p-0.5 rounded-lg" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);">
   {languages.map((lang) => (
     <button
-      class="lang-btn px-2 py-1 rounded-md text-[11px] font-medium transition-all"
+      class="lang-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all duration-200"
       data-lang={lang.code}
-      style="color: var(--text-secondary);"
+      style="color: rgba(255,255,255,0.65);"
     >
       {lang.label}
     </button>
@@ -26,11 +26,15 @@ const languages = [
     buttons.forEach((btn) => {
       const isActive = btn.getAttribute('data-lang') === lang;
       if (isActive) {
-        btn.style.backgroundColor = 'var(--primary)';
-        btn.style.color = '#fff';
+        btn.style.backgroundColor = '#19E6C1';
+        btn.style.color = '#002C24';
+        btn.style.fontWeight = '600';
+        btn.style.boxShadow = '0 2px 8px rgba(25,230,193,0.3)';
       } else {
         btn.style.backgroundColor = 'transparent';
-        btn.style.color = 'var(--text-secondary)';
+        btn.style.color = 'rgba(255,255,255,0.65)';
+        btn.style.fontWeight = '500';
+        btn.style.boxShadow = 'none';
       }
     });
   }
