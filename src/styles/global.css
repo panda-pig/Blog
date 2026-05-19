@@ -5,39 +5,49 @@
 @layer base {
   :root {
     --bg: #fff5ee;
+    --bg-warm: #fde8ce;
     --surface: #ffffff;
     --surface-hover: #faf5f0;
+    --surface-alt: #fde8ce;
+    --surface-blue: #bee9f4;
     --border: rgba(15, 22, 30, 0.08);
     --border-hover: rgba(15, 22, 30, 0.15);
     --text: #0f161e;
-    --text-secondary: #777b86;
-    --text-muted: #a3a6af;
+    --text-secondary: #333942;
+    --text-muted: #6b7280;
     --primary: #004038;
     --primary-light: rgba(0, 64, 56, 0.1);
     --primary-hover: #012620;
+    --accent: #00f5dc;
+    --accent-lime: #d5ff4d;
     --accent-warm: #fde8ce;
-    --accent-teal: #00f5dc;
     --badge-bg: rgba(0, 64, 56, 0.08);
-    --card-shadow: 0 2px 8px rgba(15, 22, 30, 0.04);
-    --card-shadow-hover: 0 12px 32px rgba(15, 22, 30, 0.1);
+    --card-shadow: 0 2px 16px rgba(15, 22, 30, 0.06);
+    --card-shadow-hover: 0 8px 32px rgba(15, 22, 30, 0.12);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 25px;
   }
 
   [data-theme="dark"] {
     --bg: #0f161e;
+    --bg-warm: #1a2432;
     --surface: #1a2432;
     --surface-hover: #243042;
+    --surface-alt: #012620;
     --border: rgba(255, 255, 255, 0.08);
     --border-hover: rgba(255, 255, 255, 0.15);
-    --text: #f7f7f8;
+    --text: #ffffff;
     --text-secondary: #a1a9b5;
-    --text-muted: #777b86;
+    --text-muted: #6b7280;
     --primary: #00f5dc;
     --primary-light: rgba(0, 245, 220, 0.12);
     --primary-hover: #7edcaf;
+    --accent: #004038;
     --accent-warm: #2a3544;
     --badge-bg: rgba(0, 245, 220, 0.1);
-    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    --card-shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.3);
+    --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+    --card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
 
   html {
@@ -117,8 +127,8 @@
   }
 
   .btn-outline:hover {
-    border-color: var(--accent-teal);
-    color: var(--accent-teal);
+    border-color: var(--accent);
+    color: var(--accent);
   }
 
   .card-fluid {
@@ -156,6 +166,7 @@
     border-radius: 0.25rem;
     font-size: 0.625rem;
     font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     border: 1px solid var(--border);
@@ -185,7 +196,7 @@
   }
 
   .nav-link.active {
-    color: var(--accent-teal);
+    color: var(--accent);
     background: rgba(0, 245, 220, 0.1);
     font-weight: 600;
   }
