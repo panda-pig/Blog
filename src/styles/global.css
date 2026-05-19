@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    --bg: #fff5ee;
-    --bg-warm: #fde8ce;
+    --bg: #F7F1E8;
+    --bg-warm: #FFE8C2;
     --surface: #ffffff;
     --surface-hover: #faf5f0;
-    --surface-alt: #fde8ce;
+    --surface-alt: #FFE8C2;
     --surface-blue: #bee9f4;
     --border: rgba(15, 22, 30, 0.08);
     --border-hover: rgba(15, 22, 30, 0.15);
     --text: #0f161e;
     --text-secondary: #333942;
     --text-muted: #6b7280;
-    --primary: #004038;
-    --primary-light: rgba(0, 64, 56, 0.1);
-    --primary-hover: #012620;
-    --accent: #00f5dc;
+    --primary: #00382F;
+    --primary-light: rgba(0, 56, 47, 0.1);
+    --primary-hover: #002C24;
+    --accent: #19E6C1;
     --accent-lime: #d5ff4d;
-    --accent-warm: #fde8ce;
-    --badge-bg: rgba(0, 64, 56, 0.08);
+    --accent-warm: #FFE8C2;
+    --badge-bg: rgba(0, 56, 47, 0.08);
     --card-shadow: 0 2px 16px rgba(15, 22, 30, 0.06);
     --card-shadow-hover: 0 8px 32px rgba(15, 22, 30, 0.12);
     --radius-sm: 8px;
@@ -34,18 +34,18 @@
     --bg-warm: #1a2432;
     --surface: #1a2432;
     --surface-hover: #243042;
-    --surface-alt: #012620;
+    --surface-alt: #002C24;
     --border: rgba(255, 255, 255, 0.08);
     --border-hover: rgba(255, 255, 255, 0.15);
     --text: #ffffff;
     --text-secondary: #a1a9b5;
     --text-muted: #6b7280;
-    --primary: #00f5dc;
-    --primary-light: rgba(0, 245, 220, 0.12);
-    --primary-hover: #7edcaf;
-    --accent: #004038;
+    --primary: #19E6C1;
+    --primary-light: rgba(25, 230, 193, 0.12);
+    --primary-hover: #4defd3;
+    --accent: #00382F;
     --accent-warm: #2a3544;
-    --badge-bg: rgba(0, 245, 220, 0.1);
+    --badge-bg: rgba(25, 230, 193, 0.1);
     --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
     --card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
@@ -101,13 +101,13 @@
     background-color: var(--primary);
     color: #ffffff;
     transition: all 0.25s ease;
-    box-shadow: 0 4px 12px rgba(0, 64, 56, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 56, 47, 0.25);
   }
 
   .btn-primary:hover {
     background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 64, 56, 0.35);
+    box-shadow: 0 6px 20px rgba(0, 56, 47, 0.35);
   }
 
   .btn-outline {
@@ -197,7 +197,7 @@
 
   .nav-link.active {
     color: var(--accent);
-    background: rgba(0, 245, 220, 0.1);
+    background: rgba(25, 230, 193, 0.1);
     font-weight: 600;
   }
 }

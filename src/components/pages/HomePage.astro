@@ -93,17 +93,17 @@ const coverDesigns = [
 
   <main class="min-h-screen">
     <!-- Hero Section -->
-    <section style="background: #012620; position: relative; overflow: hidden;">
+    <section style="background: #002C24; position: relative; overflow: hidden;">
       <!-- Decorative glows -->
-      <div style="position: absolute; bottom: -60px; right: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,245,220,0.12), transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+      <div style="position: absolute; bottom: -60px; right: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(25,230,193,0.12), transparent 70%); border-radius: 50%; pointer-events: none;"></div>
       <div style="position: absolute; top: -40px; left: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(213,255,77,0.06), transparent 70%); border-radius: 50%; pointer-events: none;"></div>
 
       <div class="section-container pt-14 pb-20 md:pt-16 md:pb-24" style="position: relative; z-index: 2;">
         <div class="flex flex-col md:flex-row gap-10 md:gap-12 items-center">
           <!-- P3: Identity Card -->
           <div class="shrink-0 relative">
-            <div class="w-32 h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden relative flex flex-col items-center justify-center" style="background: linear-gradient(135deg, #004038, #012620); border: 2px solid rgba(0,245,220,0.15); box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
-              <span class="font-serif text-5xl md:text-6xl font-light leading-none" style="color: rgba(0,245,220,0.2);">P</span>
+            <div class="w-32 h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden relative flex flex-col items-center justify-center" style="background: linear-gradient(135deg, #00382F, #002C24); border: 2px solid rgba(25,230,193,0.15); box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+              <span class="font-serif text-5xl md:text-6xl font-light leading-none" style="color: rgba(25,230,193,0.2);">P</span>
               <img
                 src="/avatar.jpg"
                 alt="panda"
@@ -113,7 +113,7 @@ const coverDesigns = [
             </div>
             <div class="mt-3 text-center md:text-left">
               <div class="text-base font-bold" style="color: #ffffff; letter-spacing: -0.01em;">Panda</div>
-              <div class="text-[11px] font-mono tracking-wider" style="color: rgba(0,245,220,0.7);">Web / Data / AI</div>
+              <div class="text-[11px] font-mono tracking-wider" style="color: rgba(25,230,193,0.7);">Web / Data / AI</div>
             </div>
           </div>
 
@@ -158,7 +158,7 @@ const coverDesigns = [
         </div>
         <div class="card-fluid p-5 md:p-6">
           <div class="text-[11px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);">
-            <span class="inline-block w-2 h-2 rounded-full mr-1.5" style="background: #00f5dc; box-shadow: 0 0 0 3px rgba(0,245,220,0.2);"></span>
+            <span class="inline-block w-2 h-2 rounded-full mr-1.5" style="background: #19E6C1; box-shadow: 0 0 0 3px rgba(25,230,193,0.2);"></span>
             <span data-i18n="info.status">状态</span>
           </div>
           <div class="text-[15px] font-semibold" style="color: var(--text);" data-i18n="info.statusVal">持续构建中</div>
@@ -197,11 +197,11 @@ const coverDesigns = [
           const category = post.frontmatter.tags?.[0] || '随笔';
           const design = coverDesigns[index % coverDesigns.length];
           const gradColors = [
-            ['#004038', '#012620'],
-            ['#00544c', '#004038'],
-            ['#007a6e', '#00544c'],
-            ['#004038', '#012620'],
-            ['#00544c', '#004038'],
+            ['#00382F', '#002C24'],
+            ['#004e46', '#00382F'],
+            ['#007a66', '#004e46'],
+            ['#00382F', '#002C24'],
+            ['#004e46', '#00382F'],
           ];
           const gradient = gradColors[index % gradColors.length];
           // P4: Get first character of title for cover
@@ -280,7 +280,7 @@ const coverDesigns = [
 
             <div class="space-y-3">
               <a href={`${prefix}/projects`} class="flex items-start gap-3 p-3 rounded-xl transition-all hover:translate-x-1" style="background: var(--bg); border: 1px solid var(--border);">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(0,64,56,0.08);">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(0,56,47,0.08);">
                   <span class="text-lg">✏️</span>
                 </div>
                 <div>
@@ -290,7 +290,7 @@ const coverDesigns = [
               </a>
 
               <a href={`${prefix}/projects`} class="flex items-start gap-3 p-3 rounded-xl transition-all hover:translate-x-1" style="background: var(--bg); border: 1px solid var(--border);">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(0,64,56,0.08);">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(0,56,47,0.08);">
                   <span class="text-lg">🎨</span>
                 </div>
                 <div>
@@ -300,7 +300,7 @@ const coverDesigns = [
               </a>
 
               <a href={`${prefix}/projects`} class="flex items-start gap-3 p-3 rounded-xl transition-all hover:translate-x-1" style="background: var(--bg); border: 1px solid var(--border);">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(0,64,56,0.08);">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(0,56,47,0.08);">
                   <span class="text-lg">🧪</span>
                 </div>
                 <div>
@@ -318,7 +318,7 @@ const coverDesigns = [
               <span class="w-2.5 h-2.5 rounded-full" style="background: #28c840;"></span>
             </div>
             <span class="text-4xl opacity-20">🧪</span>
-            <span class="text-[11px] font-mono px-2.5 py-1 rounded-md font-semibold" style="background: rgba(0,64,56,0.08); color: var(--primary);" data-i18n="exp.instance">随手实例 #042</span>
+            <span class="text-[11px] font-mono px-2.5 py-1 rounded-md font-semibold" style="background: rgba(0,56,47,0.08); color: var(--primary);" data-i18n="exp.instance">随手实例 #042</span>
           </div>
         </div>
       </div>
