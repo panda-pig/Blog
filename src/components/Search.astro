@@ -1,61 +1,92 @@
 ---
 ---
 
-<div id="search-wrapper">
-  <button
-    id="search-trigger"
-    class="w-full flex items-center gap-3 px-4 py-2.5 rounded-lg border text-sm transition-all"
-    style="background-color: var(--surface); border-color: var(--border); color: var(--text-muted);"
-  >
-    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<div id="search-wrapper" class="relative">
+  <div class="flex items-center gap-3 px-4 py-2.5 rounded-lg border text-sm transition-all" style="background-color: var(--surface); border-color: var(--border);">
+    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--text-muted);">
       <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
     </svg>
-    <span class="flex-1 text-left" data-i18n="search.placeholder">搜索文章...</span>
-    <kbd class="px-1.5 py-0.5 text-[10px] font-mono rounded border" style="background-color: var(--bg); border-color: var(--border); color: var(--text-muted);" data-i18n="search.ctrlK">Ctrl K</kbd>
-  </button>
-  <div id="search-panel" class="hidden mt-3 rounded-xl border overflow-hidden" style="background-color: var(--surface); border-color: var(--border);">
-    <div id="search-container" class="pagefind-ui p-4"></div>
+    <input
+      id="search-input"
+      type="text"
+      class="flex-1 bg-transparent border-none outline-none text-sm"
+      style="color: var(--text);"
+      data-i18n-placeholder="search.placeholder"
+      placeholder="搜索文章..."
+      autocomplete="off"
+    />
+  </div>
+  <div id="search-results" class="hidden absolute top-full left-0 right-0 mt-2 rounded-xl border overflow-hidden z-50" style="background-color: var(--surface); border-color: var(--border); box-shadow: 0 8px 32px rgba(0,0,0,0.12);">
+    <div id="search-results-inner" class="max-h-80 overflow-y-auto p-2"></div>
   </div>
 </div>
 
-<script>
-  import { PagefindUI } from '@pagefind/default-ui';
+<script is:inline>
+  (function() {
+    var input = document.getElementById('search-input');
+    var results = document.getElementById('search-results');
+    var inner = document.getElementById('search-results-inner');
+    var lang = localStorage.getItem('lang') || 'zh';
+    var timer;
 
-  const trigger = document.getElementById('search-trigger');
-  const panel = document.getElementById('search-panel');
-  const container = document.getElementById('search-container');
+    var labels = {
+      zh: { noResults: '没有找到相关文章', readingTime: '分钟阅读' },
+      en: { noResults: 'No results found', readingTime: 'min read' },
+      ja: { noResults: '該当する記事が見つかりませんでした', readingTime: '分で読める' },
+    };
+    var t = labels[lang] || labels.zh;
 
-  function open() {
-    panel.classList.remove('hidden');
-    if (!container.dataset.initialized) {
-      const lang = localStorage.getItem('lang') || 'zh';
-      const translations = {
-        zh: { placeholder: '搜索文章...', clear_search: '清除', load_more: '加载更多', search_label: '搜索', zero_results: '没有找到相关文章', many_results: '[COUNT] 篇相关文章', one_result: '1 篇相关文章', alt_search: '显示所有结果' },
-        en: { placeholder: 'Search articles...', clear_search: 'Clear', load_more: 'Load more', search_label: 'Search', zero_results: 'No results found', many_results: '[COUNT] results', one_result: '1 result', alt_search: 'Show all results' },
-        ja: { placeholder: '記事を検索...', clear_search: 'クリア', load_more: 'もっと見る', search_label: '検索', zero_results: '該当する記事が見つかりませんでした', many_results: '[COUNT] 件の結果', one_result: '1 件の結果', alt_search: 'すべて表示' },
-      };
-      new PagefindUI({
-        element: '#search-container',
-        showImages: false,
-        showSubResults: true,
-        translations: translations[lang] || translations.zh,
-      });
-      container.dataset.initialized = 'true';
+    input?.addEventListener('input', function() {
+      clearTimeout(timer);
+      var q = input.value.trim();
+      if (!q) { results.classList.add('hidden'); return; }
+      timer = setTimeout(function() { search(q); }, 200);
+    });
+
+    input?.addEventListener('focus', function() {
+      if (inner.children.length > 0) results.classList.remove('hidden');
+    });
+
+    document.addEventListener('click', function(e) {
+      var wrapper = document.getElementById('search-wrapper');
+      if (!wrapper?.contains(e.target)) results.classList.add('hidden');
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); input?.focus(); }
+      if (e.key === 'Escape') results.classList.add('hidden');
+    });
+
+    async function search(query) {
+      inner.innerHTML = '<div class="px-4 py-8 text-center text-sm" style="color: var(--text-muted);">搜索中...</div>';
+      results.classList.remove('hidden');
+      try {
+        var pagefind = await import('/pagefind/pagefind.js');
+        var search = await pagefind.search(query);
+        if (!search || !search.results.length) {
+          inner.innerHTML = '<div class="px-4 py-8 text-center text-sm" style="color: var(--text-muted);">' + t.noResults + '</div>';
+          return;
+        }
+        var html = '';
+        for (var i = 0; i < search.results.length; i++) {
+          var data = await search.results[i].data();
+          var excerpt = data.excerpt ? data.excerpt.replace(/<[^>]+>/g, '').slice(0, 120) : '';
+          var date = data.meta?.date ? new Date(data.meta.date).toLocaleDateString(lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+          var words = data.meta?.words || 0;
+          var mins = Math.max(1, Math.ceil(words / 400));
+          html += '<a href="' + data.url + '" class="block px-4 py-3 rounded-lg transition-colors hover:opacity-80" style="background: transparent;">' +
+            '<div class="text-sm font-semibold mb-1 truncate" style="color: var(--text);">' + (data.meta?.title || '') + '</div>' +
+            (excerpt ? '<div class="text-xs mb-1.5 line-clamp-2" style="color: var(--text-secondary);">' + excerpt + '</div>' : '') +
+            '<div class="flex items-center gap-2 text-[10px]" style="color: var(--text-muted);">' +
+            (date ? '<span>' + date + '</span>' : '') +
+            (date && mins ? '<span>·</span>' : '') +
+            (mins ? '<span>' + mins + ' ' + t.readingTime + '</span>' : '') +
+            '</div></a>';
+        }
+        inner.innerHTML = html;
+      } catch (e) {
+        inner.innerHTML = '<div class="px-4 py-8 text-center text-sm" style="color: var(--text-muted);">搜索出错，请重试</div>';
+      }
     }
-  }
-
-  trigger?.addEventListener('click', () => {
-    if (panel.classList.contains('hidden')) { open(); }
-    else { panel.classList.add('hidden'); }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); open(); }
-    if (e.key === 'Escape') panel?.classList.add('hidden');
-  });
-
-  document.addEventListener('click', (e) => {
-    const wrapper = document.getElementById('search-wrapper');
-    if (!wrapper?.contains(e.target)) panel?.classList.add('hidden');
-  });
+  })();
 </script>
