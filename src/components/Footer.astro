@@ -62,29 +62,8 @@ const prefix = lang === 'zh' ? '' : `/${lang}`;
 
     <!-- Bottom bar -->
     <div class="pt-6 border-t flex items-center justify-between gap-4" style="border-color: var(--border);">
-      <div class="flex items-center gap-2 text-xs" style="color: var(--text-muted);">
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-          <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-        </svg>
-        <span id="view-counter">加载中...</span>
-      </div>
+      <p class="text-xs" style="color: var(--text-muted);">Powered by Astro & Vercel</p>
       <p class="text-xs" style="color: var(--text-muted);" data-i18n="footer.dev">由 panda 开发</p>
     </div>
   </div>
 </footer>
-
-<script is:inline>
-  (function() {
-    var counterEl = document.getElementById('view-counter');
-    if (!counterEl) return;
-    fetch('https://api.countapi.xyz/hit/panda-lab-blog/visits')
-      .then(function(res) { return res.json(); })
-      .then(function(data) {
-        counterEl.textContent = '浏览次数 ' + data.value.toLocaleString();
-      })
-      .catch(function() {
-        counterEl.textContent = '浏览次数 ∞';
-      });
-  })();
-</script>
