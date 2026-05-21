@@ -79,7 +79,7 @@
   body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'Inter', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   }
 
   ::selection {
@@ -105,7 +105,7 @@
   }
 
   .font-serif {
-    font-family: 'DM Serif Display', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'Georgia', serif;
+    font-family: 'Noto Serif', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'Georgia', serif;
   }
 
   .btn-primary {
