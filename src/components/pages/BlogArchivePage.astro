@@ -59,7 +59,7 @@ const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || [
       </div>
 
       <!-- Article list -->
-      <div class="mx-auto" style="max-width: 44rem;">
+      <div class="mx-auto" style="max-width: 44rem;" data-pagefind-body>
         {displayPosts.map((post: any) => {
           const slug = post.resolvedSlug;
           const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
