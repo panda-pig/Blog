@@ -62,8 +62,21 @@ const prefix = lang === 'zh' ? '' : `/${lang}`;
 
     <!-- Bottom bar -->
     <div class="pt-6 border-t flex items-center justify-between gap-4" style="border-color: var(--border);">
-      <p class="text-xs" style="color: var(--text-muted);">Powered by Astro & Vercel</p>
+      <span class="text-xs" id="view-counter" style="color: var(--text-muted);"></span>
       <p class="text-xs" style="color: var(--text-muted);" data-i18n="footer.dev">由 panda 开发</p>
     </div>
   </div>
 </footer>
+
+<script is:inline>
+  (function() {
+    var el = document.getElementById('view-counter');
+    if (!el) return;
+    var ns = 'panda-blog';
+    var key = 'visits';
+    fetch('https://api.counterapi.dev/v1/' + ns + '/' + key + '/up')
+      .then(function(r) { return r.json(); })
+      .then(function(d) { el.textContent = '浏览 ' + (d.count || 0).toLocaleString() + ' 次'; })
+      .catch(function() { el.textContent = ''; });
+  })();
+</script>
