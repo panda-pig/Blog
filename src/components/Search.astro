@@ -1,82 +1,61 @@
 ---
 ---
 
-<button
-  id="search-trigger"
-  class="w-full flex items-center gap-3 px-4 py-2.5 rounded-lg border text-sm transition-all"
-  style="background-color: var(--surface); border-color: var(--border); color: var(--text-muted);"
-  onclick="document.getElementById('search-dialog').showModal()"
->
-  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-  </svg>
-  <span class="flex-1 text-left" data-i18n="search.placeholder">搜索文章...</span>
-  <kbd class="px-1.5 py-0.5 text-[10px] font-mono rounded border" style="background-color: var(--bg); border-color: var(--border); color: var(--text-muted);" data-i18n="search.ctrlK">Ctrl K</kbd>
-</button>
-
-<dialog id="search-dialog" class="fixed inset-0 w-full h-full bg-black/20 backdrop-blur-sm p-0 m-0 border-0">
-  <div class="absolute top-[15%] left-1/2 -translate-x-1/2 w-full max-w-xl px-4">
-    <div class="rounded-xl shadow-xl border overflow-hidden" style="background-color: var(--surface); border-color: var(--border);">
-      <div id="search-container" class="p-3 min-h-[280px]"></div>
-    </div>
+<div id="search-wrapper">
+  <button
+    id="search-trigger"
+    class="w-full flex items-center gap-3 px-4 py-2.5 rounded-lg border text-sm transition-all"
+    style="background-color: var(--surface); border-color: var(--border); color: var(--text-muted);"
+  >
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+    </svg>
+    <span class="flex-1 text-left" data-i18n="search.placeholder">搜索文章...</span>
+    <kbd class="px-1.5 py-0.5 text-[10px] font-mono rounded border" style="background-color: var(--bg); border-color: var(--border); color: var(--text-muted);" data-i18n="search.ctrlK">Ctrl K</kbd>
+  </button>
+  <div id="search-panel" class="hidden mt-3 rounded-xl border overflow-hidden" style="background-color: var(--surface); border-color: var(--border);">
+    <div id="search-container" class="pagefind-ui p-4"></div>
   </div>
-</dialog>
+</div>
 
 <script>
   import { PagefindUI } from '@pagefind/default-ui';
-  const dialog = document.getElementById('search-dialog');
-  dialog?.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
-  document.addEventListener('keydown', (e) => {
-    if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); dialog?.showModal(); }
-    if (e.key === 'Escape') dialog?.close();
-  });
-  const container = document.getElementById('search-container');
-  if (container && !container.dataset.initialized) {
-    const lang = localStorage.getItem('lang') || 'zh';
-    const translations = {
-      zh: {
-        placeholder: '搜索文章...',
-        clear_search: '清除',
-        load_more: '加载更多',
-        search_label: '搜索',
-        zero_results: '没有找到相关文章',
-        many_results: '[COUNT] 篇相关文章',
-        one_result: '1 篇相关文章',
-        alt_search: '显示所有结果',
-      },
-      en: {
-        placeholder: 'Search articles...',
-        clear_search: 'Clear',
-        load_more: 'Load more',
-        search_label: 'Search',
-        zero_results: 'No results found',
-        many_results: '[COUNT] results',
-        one_result: '1 result',
-        alt_search: 'Show all results',
-      },
-      ja: {
-        placeholder: '記事を検索...',
-        clear_search: 'クリア',
-        load_more: 'もっと見る',
-        search_label: '検索',
-        zero_results: '該当する記事が見つかりませんでした',
-        many_results: '[COUNT] 件の結果',
-        one_result: '1 件の結果',
-        alt_search: 'すべて表示',
-      },
-    };
-    const t = translations[lang] || translations.zh;
-    new PagefindUI({
-      element: '#search-container',
-      showImages: false,
-      showSubResults: true,
-      translations: t,
-    });
-    container.dataset.initialized = 'true';
-  }
-</script>
 
-<style>
-  dialog::backdrop { display: none; }
-  dialog[open] { display: flex; align-items: flex-start; justify-content: center; padding-top: 10vh; }
-</style>
+  const trigger = document.getElementById('search-trigger');
+  const panel = document.getElementById('search-panel');
+  const container = document.getElementById('search-container');
+
+  function open() {
+    panel.classList.remove('hidden');
+    if (!container.dataset.initialized) {
+      const lang = localStorage.getItem('lang') || 'zh';
+      const translations = {
+        zh: { placeholder: '搜索文章...', clear_search: '清除', load_more: '加载更多', search_label: '搜索', zero_results: '没有找到相关文章', many_results: '[COUNT] 篇相关文章', one_result: '1 篇相关文章', alt_search: '显示所有结果' },
+        en: { placeholder: 'Search articles...', clear_search: 'Clear', load_more: 'Load more', search_label: 'Search', zero_results: 'No results found', many_results: '[COUNT] results', one_result: '1 result', alt_search: 'Show all results' },
+        ja: { placeholder: '記事を検索...', clear_search: 'クリア', load_more: 'もっと見る', search_label: '検索', zero_results: '該当する記事が見つかりませんでした', many_results: '[COUNT] 件の結果', one_result: '1 件の結果', alt_search: 'すべて表示' },
+      };
+      new PagefindUI({
+        element: '#search-container',
+        showImages: false,
+        showSubResults: true,
+        translations: translations[lang] || translations.zh,
+      });
+      container.dataset.initialized = 'true';
+    }
+  }
+
+  trigger?.addEventListener('click', () => {
+    if (panel.classList.contains('hidden')) { open(); }
+    else { panel.classList.add('hidden'); }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); open(); }
+    if (e.key === 'Escape') panel?.classList.add('hidden');
+  });
+
+  document.addEventListener('click', (e) => {
+    const wrapper = document.getElementById('search-wrapper');
+    if (!wrapper?.contains(e.target)) panel?.classList.add('hidden');
+  });
+</script>
