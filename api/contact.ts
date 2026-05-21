@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 
 export const config = {
-  runtime: 'nodejs22.x',
+  runtime: 'nodejs',
 };
 
 export default async function handler(req: Request): Promise<Response> {
