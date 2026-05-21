@@ -4,6 +4,9 @@ import mdx from '@astrojs/mdx'
 
 export default defineConfig({
   site: 'https://blog-beta-kohl-92.vercel.app',
+  devToolbar: {
+    enabled: false,
+  },
   i18n: {
     defaultLocale: 'zh',
     locales: ['zh', 'en', 'ja'],
