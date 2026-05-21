@@ -3,7 +3,7 @@ const { lang = 'zh' } = Astro.props;
 const prefix = lang === 'zh' ? '' : `/${lang}`;
 ---
 
-<footer style="background: var(--footer-bg); border-top: 2px solid var(--accent-soft);">
+<footer data-pagefind-ignore style="background: var(--footer-bg); border-top: 2px solid var(--accent-soft);">
   <div class="section-container max-w-5xl py-10 md:py-14">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 mb-8">
       <!-- Brand -->
