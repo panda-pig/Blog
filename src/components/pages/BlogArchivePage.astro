@@ -33,28 +33,33 @@ const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || [
   <Header lang={lang} />
 
   <main class="min-h-screen">
-    <div class="section-container pt-10 pb-20">
-      <div class="mb-10">
-        <h1 class="font-serif text-3xl md:text-4xl mb-2" style="color: var(--text);" data-i18n="archive.title">归档</h1>
-        <p class="text-sm" style="color: var(--text-secondary);">
+    <div class="section-container pt-12 md:pt-20 pb-20 md:pb-28">
+      <!-- Header -->
+      <div class="text-center mb-12 md:mb-16">
+        <h1 class="font-serif text-3xl md:text-5xl font-bold mb-3" style="color: var(--text);" data-i18n="archive.title">归档</h1>
+        <p class="text-sm" style="color: var(--text-muted);">
           <span data-i18n="archive.desc">共</span> {displayPosts.length} <span data-i18n="archive.desc2">篇文章，持续更新中</span>
         </p>
       </div>
 
-      <div class="mb-8 max-w-md">
-        <Search />
+      <!-- Search + Tags -->
+      <div class="mx-auto mb-12 md:mb-16" style="max-width: 40rem;">
+        <div class="mb-6">
+          <Search />
+        </div>
+
+        {allTags.length > 0 && (
+          <div class="flex flex-wrap justify-center gap-2">
+            <span class="tag-pill cursor-pointer" style="background-color: var(--primary); color: #fff; border-color: var(--primary);" data-i18n="archive.all">全部</span>
+            {allTags.map((tag) => (
+              <span class="tag-pill cursor-pointer">{tag}</span>
+            ))}
+          </div>
+        )}
       </div>
 
-      {allTags.length > 0 && (
-        <div class="flex flex-wrap gap-2 mb-8">
-          <span class="tag-pill cursor-pointer" style="background-color: var(--primary); color: #fff; border-color: var(--primary);" data-i18n="archive.all">全部</span>
-          {allTags.map((tag) => (
-            <span class="tag-pill cursor-pointer">{tag}</span>
-          ))}
-        </div>
-      )}
-
-      <div class="space-y-0">
+      <!-- Article list -->
+      <div class="mx-auto" style="max-width: 44rem;">
         {displayPosts.map((post: any) => {
           const slug = post.resolvedSlug;
           const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
@@ -65,16 +70,16 @@ const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || [
           });
 
           return (
-            <article class="py-8 border-b group" style="border-color: var(--border);">
-              <div class="flex items-center gap-3 mb-2 text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">
+            <article class="py-10 md:py-12 border-b group" style="border-color: var(--border);">
+              <div class="flex items-center gap-3 mb-3 text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">
                 <span>{formattedDate}</span>
                 <span>·</span>
                 <span>{readingTime} <span data-i18n="archive.minRead">分钟阅读</span></span>
               </div>
-              <a href={`${prefix}/blog/${slug}`} class="block mb-2 group-hover:opacity-80 transition-opacity">
-                <h2 class="font-serif text-xl" style="color: var(--text);">{post.frontmatter.title}</h2>
+              <a href={`${prefix}/blog/${slug}`} class="block mb-3 group-hover:opacity-80 transition-opacity">
+                <h2 class="font-serif text-2xl md:text-3xl font-semibold leading-snug" style="color: var(--text);">{post.frontmatter.title}</h2>
               </a>
-              <p class="text-sm leading-relaxed mb-3" style="color: var(--text-secondary);">
+              <p class="text-base leading-relaxed mb-4" style="color: var(--text-secondary);">
                 {post.frontmatter.description}
               </p>
               {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
@@ -87,6 +92,12 @@ const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || [
             </article>
           );
         })}
+
+        {displayPosts.length === 0 && (
+          <div class="text-center py-20">
+            <p class="text-sm" style="color: var(--text-muted);">还没有文章。</p>
+          </div>
+        )}
       </div>
     </div>
   </main>
