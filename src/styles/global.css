@@ -38,6 +38,9 @@
     --hero-text-muted: rgba(255, 253, 245, 0.74);
     --hero-text-soft: rgba(255, 253, 245, 0.5);
     --hero-border: rgba(245, 245, 243, 0.22);
+
+    /* Footer */
+    --footer-bg: #e8f0f7;
   }
 
   [data-theme="dark"] {
@@ -68,6 +71,9 @@
     --hero-text-muted: rgba(244, 255, 252, 0.6);
     --hero-text-soft: rgba(244, 255, 252, 0.4);
     --hero-border: rgba(255, 255, 255, 0.10);
+
+    /* Footer */
+    --footer-bg: #1a1f24;
   }
 
   html {
