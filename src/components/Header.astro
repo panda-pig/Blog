@@ -15,13 +15,13 @@ const navItems = [
 ];
 ---
 
-<header style="background: #032820;">
+<header style="background: rgba(245,245,243,0.94); border-bottom: 1.5px solid rgba(0,0,0,0.12); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);">
   <div class="section-container flex items-center justify-between h-[72px]">
     <a href="/" class="flex items-center gap-2.5 group shrink-0">
-      <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white text-sm font-bold" style="background: linear-gradient(135deg, #2DD4BF, #5EEAD4);">
-        <span style="color: #032820;">P</span>
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white text-sm font-bold" style="background: #81aed9; border: 1.5px solid #000; box-shadow: 3px -3px 0 rgba(51,51,51,0.75);">
+        <span style="color: #000000;">P</span>
       </div>
-      <span class="text-lg font-bold tracking-tight" style="color: #ffffff; font-family: 'DM Sans', sans-serif;">Panda Blog</span>
+      <span class="site-logo-text text-lg font-bold tracking-tight" style="color: #000000; font-family: 'DM Sans', sans-serif;">Panda Blog</span>
     </a>
 
     <!-- Desktop nav -->
@@ -39,14 +39,14 @@ const navItems = [
     <div class="flex items-center gap-1">
       <LanguageSwitcher />
       <DarkModeToggle />
-      <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex p-2 rounded-lg transition-colors hover:opacity-70" style="color: rgba(255,255,255,0.7);" aria-label="GitHub">
+      <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex p-2 rounded-lg transition-colors hover:opacity-70" style="color: rgba(0,0,0,0.72);" aria-label="GitHub">
         <svg class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
         </svg>
       </a>
 
       <!-- Mobile hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg transition-colors hover:opacity-70" style="color: rgba(255,255,255,0.7);" aria-label="菜单" aria-expanded="false">
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg transition-colors hover:opacity-70" style="color: rgba(0,0,0,0.72);" aria-label="菜单" aria-expanded="false">
         <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -58,7 +58,7 @@ const navItems = [
   </div>
 
   <!-- Mobile nav panel -->
-  <div id="mobile-nav" class="md:hidden hidden" style="background: rgba(3,40,32,0.98); border-top: 1px solid rgba(255,255,255,0.06);">
+  <div id="mobile-nav" class="md:hidden hidden" style="background: rgba(245,245,243,0.98); border-top: 1.5px solid rgba(0,0,0,0.12);">
     <nav class="section-container py-4 flex flex-col gap-1">
       {navItems.map((item) => {
         const isActive = item.href === '/' ? currentPath === '/' : currentPath.startsWith(item.href);
@@ -67,8 +67,8 @@ const navItems = [
             href={item.href}
             class={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${isActive ? '' : ''}`}
             style={isActive
-              ? 'color: #DFFCF7; background: rgba(45,212,191,0.12);'
-              : 'color: rgba(255,255,255,0.7);'}
+              ? 'color: #000000; background: #81aed9; box-shadow: 3px -3px 0 rgba(51,51,51,0.75);'
+              : 'color: rgba(0,0,0,0.72);'}
             data-i18n={item.labelKey}
           >
             {item.labelZh}
@@ -78,6 +78,19 @@ const navItems = [
     </nav>
   </div>
 </header>
+
+<style>
+  @media (max-width: 639px) {
+    header .section-container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .site-logo-text {
+      display: none;
+    }
+  }
+</style>
 
 <script>
   const btn = document.getElementById('mobile-menu-btn');

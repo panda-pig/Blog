@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import TOC from '../../components/TOC.astro';
 import Giscus from '../../components/Giscus.astro';
 import Donate from '../../components/Donate.astro';
@@ -134,4 +135,5 @@ const headings = post.getHeadings ? post.getHeadings() : [];
       </div>
     </article>
   </main>
+  <Footer lang={lang} />
 </BaseLayout>

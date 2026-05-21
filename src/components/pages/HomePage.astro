@@ -1,9 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import dict from '../../i18n/dict.js';
 
 const { lang } = Astro.props;
 const prefix = lang === 'zh' ? '' : `/${lang}`;
+const t = dict[lang] || dict.zh;
 
 const allPosts = await Astro.glob('../../content/blog/*.md');
 const postsBySlug: Record<string, Record<string, any>> = {};
@@ -14,7 +17,7 @@ allPosts.forEach((post: any) => {
   postsBySlug[slug][postLang] = post;
 });
 
-const displayPosts = Object.entries(postsBySlug)
+const recentPosts = Object.entries(postsBySlug)
   .map(([slug, langs]) => {
     const post = langs[lang] || langs['zh'];
     return post ? { ...post, resolvedSlug: slug } : null;
@@ -22,63 +25,8 @@ const displayPosts = Object.entries(postsBySlug)
   .filter(Boolean)
   .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 
-// P1: Mock data to supplement real posts (at least 5 total)
-const mockPosts = [
-  {
-    resolvedSlug: 'jlpt-grammar-cards-idea',
-    frontmatter: {
-      title: '我为什么想做一个 JLPT 语法卡网站',
-      description: '学日语的时候发现语法点太碎，想用卡片的方式重新组织，顺便练一下 React。',
-      date: '2025-03-15',
-      tags: ['日语学习', '项目想法'],
-    },
-    rawContent: '学习日语语法的过程中，我发现传统的教材组织方式并不适合记忆...',
-  },
-  {
-    resolvedSlug: 'vibe-coding-personal-project',
-    frontmatter: {
-      title: '用 Vibe Coding 做个人项目的记录',
-      description: '尝试用 AI 辅助编程的方式快速搭建了这个博客，记录一下过程中的体验和思考。',
-      date: '2025-02-20',
-      tags: ['开发', '经验'],
-    },
-    rawContent: '最近尝试了 Vibe Coding 的方式来做个人项目...',
-  },
-  {
-    resolvedSlug: 'organize-learning-plan',
-    frontmatter: {
-      title: '如何整理自己的学习计划',
-      description: '面对 Web、Data、AI 多条线并行学习，我摸索出了一套自己的节奏和方法。',
-      date: '2025-02-01',
-      tags: ['效率', '方法'],
-    },
-    rawContent: '同时学习多个方向的时候，最怕的就是什么都学一点但什么都不深...',
-  },
-  {
-    resolvedSlug: 'web-data-ai-learning-path',
-    frontmatter: {
-      title: '我的 Web / Data / AI 学习路线',
-      description: '从前端到数据分析再到机器学习，分享我走过的路和踩过的坑。',
-      date: '2025-01-15',
-      tags: ['技术', '学习'],
-    },
-    rawContent: '我的技术学习路线并不是一开始就规划好的...',
-  },
-];
-
-// Merge: real posts first, then fill with mock posts up to 5
-const recentPosts = [...displayPosts];
-const existingSlugs = new Set(recentPosts.map((p: any) => p.resolvedSlug));
-for (const mock of mockPosts) {
-  if (recentPosts.length >= 5) break;
-  if (!existingSlugs.has(mock.resolvedSlug)) {
-    recentPosts.push(mock as any);
-  }
-}
-
 const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
 
-// P4: Cover design data for each post
 const coverDesigns = [
   { label: 'Thinking', number: '01' },
   { label: 'Project', number: '02' },
@@ -93,124 +41,313 @@ const coverDesigns = [
 
   <main class="min-h-screen">
     <!-- Hero Section -->
-    <section style="
-      background:
-        radial-gradient(circle at 70% 20%, rgba(45, 212, 191, 0.08), transparent 35%),
-        linear-gradient(135deg, #032820 0%, #021f1a 55%, #011713 100%);
-      position: relative; overflow: hidden;
-      min-height: 700px; display: flex; align-items: center;
-    ">
-      <!-- Subtle top-right glow -->
-      <div style="position: absolute; top: -80px; right: -120px; width: 480px; height: 480px; background: radial-gradient(circle, rgba(45,212,191,0.06), transparent 65%); border-radius: 50%; pointer-events: none;"></div>
+    <section class="home-cover" aria-labelledby="home-cover-title">
+      <div class="home-cover__image" aria-hidden="true"></div>
+      <div class="home-cover__shade" aria-hidden="true"></div>
+      <div class="home-cover__grain" aria-hidden="true"></div>
 
-      <div class="section-container py-16 md:py-0" style="position: relative; z-index: 2; width: 100%;">
-        <div class="hero-inner" style="display: grid; grid-template-columns: 300px 1fr; gap: 72px; align-items: center;">
-          <!-- Identity Card -->
-          <div class="profile-card" style="
-            background: var(--hero-card);
-            border: 1px solid var(--hero-border);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 28px;
-            padding: 28px;
-          ">
-            <!-- Logo mark -->
-            <div class="logo-mark" style="
-              width: 80px; height: 80px;
-              border-radius: 20px;
-              display: flex; align-items: center; justify-content: center;
-              background: linear-gradient(135deg, rgba(45,212,191,0.18), rgba(45,212,191,0.06));
-              border: 1px solid rgba(45,212,191,0.18);
-              margin-bottom: 24px;
-            ">
-              <span style="font-family: 'DM Serif Display', 'Noto Serif SC', serif; font-size: 44px; color: rgba(45,212,191,0.55); line-height: 1;">P</span>
-            </div>
-
-            <!-- Name + focus -->
-            <div style="margin-bottom: 24px;">
-              <div style="font-size: 20px; font-weight: 700; color: var(--hero-text); letter-spacing: -0.01em; margin-bottom: 4px;">Panda</div>
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; color: var(--accent); letter-spacing: 0.04em;">Web / Data / AI</div>
-            </div>
-
-            <!-- Currently building -->
-            <div>
-              <div style="font-size: 10px; font-weight: 600; color: var(--hero-text-soft); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Currently building</div>
-              <div style="display: flex; flex-direction: column; gap: 6px;">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <span style="width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; background: var(--accent); opacity: 0.6;"></span>
-                  <span style="font-size: 13px; color: var(--hero-text-muted);">JLPT Grammar Cards</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <span style="width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; background: var(--accent); opacity: 0.6;"></span>
-                  <span style="font-size: 13px; color: var(--hero-text-muted);">Personal Blog</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <span style="width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; background: var(--accent); opacity: 0.6;"></span>
-                  <span style="font-size: 13px; color: var(--hero-text-muted);">AI Mini Tools</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Hero Content -->
-          <div>
-            <h1 style="
-              font-family: 'DM Serif Display', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', serif;
-              font-size: clamp(44px, 6vw, 76px);
-              font-weight: 600;
-              line-height: 1.12;
-              letter-spacing: -0.04em;
-              color: var(--hero-text);
-              margin-bottom: 24px;
-              max-width: 880px;
-            ">
-              你好，我是 Panda。<br/>
-              我在这里记录技术学习、<br/>
-              项目实验与生活观察。
-            </h1>
-            <p class="hero-desc" style="
-              max-width: 620px;
-              color: var(--hero-text-muted);
-              font-size: 18px;
-              line-height: 1.8;
-              margin-bottom: 36px;
-            ">
-              关于 Web 开发、数据分析、AI 探索，以及一些做着玩的小东西。
-            </p>
-            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-              <a href={`${prefix}/blog`} class="btn-hero-primary">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                </svg>
-                <span data-i18n="hero.cta1">浏览文章</span>
-              </a>
-              <a href={`${prefix}/contact`} class="btn-hero-secondary">
-                <span data-i18n="hero.cta2">打个招呼</span>
-              </a>
-            </div>
-          </div>
+      <div class="section-container home-cover__content">
+        <div class="home-cover__eyebrow" aria-label="Panda, Web Data AI">
+          <span class="home-cover__mark">P</span>
+          <span>Panda</span>
+          <span class="home-cover__divider"></span>
+          <span>Web / Data / AI</span>
         </div>
+
+        <h1 id="home-cover-title" class="home-cover__title">{t['hero.title']}</h1>
+        <p class="home-cover__typed" aria-label={t['hero.typed']}>
+          <span class="home-cover__typed-text" data-typed-text={t['hero.typed']}>{t['hero.typed']}</span>
+        </p>
+        <p class="home-cover__desc">{t['hero.desc']}</p>
+
+        <div class="home-cover__actions">
+          <a href={`${prefix}/blog`} class="btn-hero-primary">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            <span data-i18n="hero.cta1">浏览文章</span>
+          </a>
+          <a href={`${prefix}/contact`} class="btn-hero-secondary">
+            <span data-i18n="hero.cta2">打个招呼</span>
+          </a>
+        </div>
+
       </div>
+
+      <a href="#home-content" class="home-cover__scroll" aria-label="Scroll to homepage content">
+        <span></span>
+      </a>
     </section>
 
+    <script>
+      const typedEl = document.querySelector('.home-cover__typed-text');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (typedEl instanceof HTMLElement && !prefersReducedMotion) {
+        const text = typedEl.dataset.typedText || typedEl.textContent || '';
+        typedEl.textContent = '';
+        typedEl.classList.add('is-typing');
+
+        let index = 0;
+        const typeNext = () => {
+          typedEl.textContent = text.slice(0, index);
+          index += 1;
+
+          if (index <= text.length) {
+            window.setTimeout(typeNext, 68);
+          } else {
+            typedEl.classList.add('is-complete');
+          }
+        };
+
+        window.setTimeout(typeNext, 420);
+      }
+    </script>
+
     <style>
-      @media (max-width: 768px) {
-        .hero-inner {
-          grid-template-columns: 1fr !important;
-          gap: 40px !important;
+      .home-cover {
+        min-height: calc(100svh - 72px);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        isolation: isolate;
+        background: #1e2328;
+      }
+
+      .home-cover__image,
+      .home-cover__shade,
+      .home-cover__grain {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .home-cover__image {
+        z-index: -4;
+        background-image: url('/images/home-hero-bg.png');
+        background-position: center;
+        background-size: cover;
+        transform: scale(1.02);
+        filter: saturate(0.72) contrast(1.05) brightness(0.92);
+      }
+
+      .home-cover__shade {
+        z-index: -3;
+        background:
+          radial-gradient(ellipse at 50% 43%, rgba(245, 245, 243, 0.15) 0%, rgba(0, 0, 0, 0.36) 42%, rgba(0, 0, 0, 0.72) 100%),
+          linear-gradient(180deg, rgba(245, 245, 243, 0.1) 0%, rgba(0, 0, 0, 0.42) 52%, rgba(0, 0, 0, 0.84) 100%),
+          linear-gradient(90deg, rgba(0, 0, 0, 0.62) 0%, rgba(51, 51, 51, 0.14) 48%, rgba(0, 0, 0, 0.56) 100%);
+        backdrop-filter: saturate(0.72) brightness(0.9);
+        -webkit-backdrop-filter: saturate(0.72) brightness(0.9);
+      }
+
+      .home-cover__grain {
+        z-index: -2;
+        opacity: 0.16;
+        background-image:
+          linear-gradient(rgba(245,245,243,0.075) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(245,245,243,0.06) 1px, transparent 1px),
+          radial-gradient(circle at 1px 1px, rgba(245,245,243,0.16) 1px, transparent 0);
+        background-size: 72px 72px, 72px 72px, 18px 18px;
+        mask-image: linear-gradient(180deg, rgba(0,0,0,0.75), transparent 92%);
+      }
+
+      .home-cover__content {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        padding-top: 72px;
+        padding-bottom: 96px;
+        text-align: center;
+      }
+
+      .home-cover__eyebrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        color: rgba(245, 245, 243, 0.78);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .home-cover__mark {
+        width: 2.25rem;
+        height: 2.25rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.75rem;
+        background: rgba(129, 174, 217, 0.72);
+        border: 1.5px solid rgba(0, 0, 0, 0.8);
+        color: #000000;
+        box-shadow: 3px -3px 0 rgba(0, 0, 0, 0.58);
+        font-family: 'DM Serif Display', 'Noto Serif SC', serif;
+        font-size: 1.4rem;
+        line-height: 1;
+      }
+
+      .home-cover__divider {
+        width: 1px;
+        height: 1rem;
+        background: rgba(245, 245, 243, 0.34);
+      }
+
+      .home-cover__title {
+        max-width: 760px;
+        margin: 0 auto;
+        color: #fffdf5;
+        font-family: 'DM Serif Display', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', serif;
+        font-size: clamp(2.35rem, 5.2vw, 4.8rem);
+        font-weight: 600;
+        line-height: 1.08;
+        letter-spacing: 0;
+        overflow-wrap: anywhere;
+        text-wrap: balance;
+        text-shadow: 0 16px 44px rgba(0, 0, 0, 0.48);
+      }
+
+      .home-cover__typed {
+        max-width: 760px;
+        min-height: 2.4rem;
+        margin: 1.35rem auto 0;
+        color: rgba(255, 253, 245, 0.92);
+        font-size: clamp(1rem, 2.1vw, 1.45rem);
+        line-height: 1.6;
+        font-weight: 500;
+      }
+
+      .home-cover__typed-text {
+        display: inline;
+        text-shadow: 0 10px 32px rgba(0, 0, 0, 0.38);
+      }
+
+      .home-cover__typed-text.is-typing::after {
+        content: '';
+        display: inline-block;
+        width: 2px;
+        height: 1.05em;
+        margin-left: 0.18em;
+        vertical-align: -0.16em;
+        background: #ff8562;
+        animation: home-caret 0.82s steps(1) infinite;
+      }
+
+      .home-cover__typed-text.is-complete::after {
+        opacity: 0.7;
+      }
+
+      .home-cover__desc {
+        width: min(100%, 620px);
+        margin: 1.2rem auto 0;
+        color: rgba(255, 253, 245, 0.74);
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      .home-cover__actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 2.2rem;
+      }
+
+      .home-cover__scroll {
+        position: absolute;
+        left: 50%;
+        bottom: 2.1rem;
+        z-index: 3;
+        width: 2.15rem;
+        height: 2.15rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-50%);
+        border-radius: 999px;
+        border: 1.5px solid rgba(245, 245, 243, 0.46);
+        background: rgba(245, 245, 243, 0.12);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      }
+
+      .home-cover__scroll:hover {
+        transform: translateX(-50%) translateY(2px);
+        border-color: #81aed9;
+        background: rgba(129, 174, 217, 0.24);
+      }
+
+      .home-cover__scroll span {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-right: 2px solid rgba(255, 253, 245, 0.82);
+        border-bottom: 2px solid rgba(255, 253, 245, 0.82);
+        transform: translateY(-2px) rotate(45deg);
+      }
+
+      @keyframes home-caret {
+        50% {
+          opacity: 0;
         }
-        .profile-card {
-          max-width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .home-cover {
+          min-height: calc(100svh - 72px);
+        }
+
+        .home-cover__content {
+          padding-top: 52px;
+          padding-bottom: 92px;
+        }
+
+        .home-cover__eyebrow {
+          gap: 0.55rem;
+          margin-bottom: 1.15rem;
+          font-size: 0.65rem;
+        }
+
+        .home-cover__title {
+          max-width: 18rem;
+          font-size: clamp(1.95rem, 8.4vw, 2.75rem);
+          line-height: 1.16;
+        }
+
+        .home-cover__typed {
+          max-width: 18.5rem;
+          min-height: 4.8rem;
+          margin-top: 1rem;
+          font-size: 1rem;
+        }
+
+        .home-cover__desc {
+          max-width: 18.5rem;
+          font-size: 0.94rem;
+        }
+
+      }
+
+      @media (max-width: 430px) {
+        .home-cover__eyebrow {
+          transform: scale(0.92);
+          transform-origin: center;
         }
       }
     </style>
 
     <!-- P9: Info Cards -->
-    <div class="section-container" style="margin-top: -36px; position: relative; z-index: 10; margin-bottom: 64px;">
+    <div id="home-content" class="section-container" style="margin-top: -36px; position: relative; z-index: 10; margin-bottom: 64px;">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
         <div class="card-fluid p-5 md:p-6">
           <div class="text-[11px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);" data-i18n="info.origin">来源</div>
-          <div class="text-[15px] font-semibold" style="color: var(--text);" data-i18n="info.originVal">地球，目前在日本</div>
+          <div class="text-[15px] font-semibold" style="color: var(--text);" data-i18n="info.originVal">地球🌍</div>
         </div>
         <div class="card-fluid p-5 md:p-6">
           <div class="text-[11px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);" data-i18n="info.stack">兴趣</div>
@@ -222,7 +359,7 @@ const coverDesigns = [
         </div>
         <div class="card-fluid p-5 md:p-6">
           <div class="text-[11px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);">
-            <span class="inline-block w-2 h-2 rounded-full mr-1.5" style="background: #2DD4BF; box-shadow: 0 0 0 3px rgba(45,212,191,0.2);"></span>
+            <span class="inline-block w-2 h-2 rounded-full mr-1.5" style="background: #81aed9; box-shadow: 0 0 0 3px rgba(129,174,217,0.3);"></span>
             <span data-i18n="info.status">状态</span>
           </div>
           <div class="text-[15px] font-semibold" style="color: var(--text);" data-i18n="info.statusVal">持续构建中</div>
@@ -249,7 +386,8 @@ const coverDesigns = [
       </div>
 
       <!-- P8: Responsive grid - single column on mobile -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {recentPosts.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {recentPosts.map((post: any, index: number) => {
           const slug = post.resolvedSlug;
           const readingTime = Math.ceil((post.rawContent?.length || 0) / 400) || 3;
@@ -258,14 +396,14 @@ const coverDesigns = [
             month: 'short',
             day: 'numeric',
           });
-          const category = post.frontmatter.tags?.[0] || '随笔';
+          const category = post.frontmatter.tags?.[0] || t['musing.category'];
           const design = coverDesigns[index % coverDesigns.length];
           const gradColors = [
-            ['#00382F', '#002C24'],
-            ['#004e46', '#00382F'],
-            ['#007a66', '#004e46'],
-            ['#00382F', '#002C24'],
-            ['#004e46', '#00382F'],
+            ['#81aed9', '#4d7fae'],
+            ['#ff8562', '#d95e3e'],
+            ['#333333', '#000000'],
+            ['#f5f5f3', '#cfddee'],
+            ['#55a1ea', '#81aed9'],
           ];
           const gradient = gradColors[index % gradColors.length];
           // P4: Get first character of title for cover
@@ -316,6 +454,17 @@ const coverDesigns = [
           );
         })}
       </div>
+      ) : (
+        <div class="card-fluid p-10 text-center">
+          <p class="text-sm" style="color: var(--text-muted);" data-i18n="musing.empty">还没有文章，稍后再来看看。</p>
+          <a href={`${prefix}/blog`} class="inline-flex items-center gap-1.5 mt-4 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--primary);" data-i18n="musing.viewAll">
+            查看全部
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      )}
 
       <div class="mt-6 md:hidden text-center">
         <a href={`${prefix}/blog`} class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider" style="color: var(--text-secondary);" data-i18n="musing.viewAll">
@@ -344,7 +493,7 @@ const coverDesigns = [
 
             <div class="space-y-3">
               <a href={`${prefix}/projects`} class="flex items-start gap-3 p-3 rounded-xl transition-all hover:translate-x-1" style="background: var(--bg); border: 1px solid var(--border);">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(0,56,47,0.08);">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(129,174,217,0.24);">
                   <span class="text-lg">✏️</span>
                 </div>
                 <div>
@@ -354,7 +503,7 @@ const coverDesigns = [
               </a>
 
               <a href={`${prefix}/projects`} class="flex items-start gap-3 p-3 rounded-xl transition-all hover:translate-x-1" style="background: var(--bg); border: 1px solid var(--border);">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(0,56,47,0.08);">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(255,133,98,0.18);">
                   <span class="text-lg">🎨</span>
                 </div>
                 <div>
@@ -364,7 +513,7 @@ const coverDesigns = [
               </a>
 
               <a href={`${prefix}/projects`} class="flex items-start gap-3 p-3 rounded-xl transition-all hover:translate-x-1" style="background: var(--bg); border: 1px solid var(--border);">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(0,56,47,0.08);">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(129,174,217,0.24);">
                   <span class="text-lg">🧪</span>
                 </div>
                 <div>
@@ -382,10 +531,86 @@ const coverDesigns = [
               <span class="w-2.5 h-2.5 rounded-full" style="background: #28c840;"></span>
             </div>
             <span class="text-4xl opacity-20">🧪</span>
-            <span class="text-[11px] font-mono px-2.5 py-1 rounded-md font-semibold" style="background: rgba(0,56,47,0.08); color: var(--primary);" data-i18n="exp.instance">随手实例 #042</span>
+            <span class="text-[11px] font-mono px-2.5 py-1 rounded-md font-semibold" style="background: rgba(129,174,217,0.24); color: var(--primary);" data-i18n="exp.instance">随手实例 #042</span>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Newsletter -->
+    <section class="section-container pb-24 md:pb-28">
+      <div class="card-fluid p-8 sm:p-12 text-center max-w-3xl mx-auto relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary-light)]/50 via-transparent to-[var(--primary-light)]/30 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background: var(--primary-light);">
+            <svg class="w-6 h-6" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--text);" data-i18n="newsletter.title">订阅我的实践笔记</h2>
+          <p class="mb-8 max-w-md mx-auto" style="color: var(--text-secondary);" data-i18n="newsletter.desc">
+            每周分享技术见解、项目心得和学习资源。无垃圾邮件，随时取消订阅。
+          </p>
+          <form
+            id="newsletter-form"
+            class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            data-buttondown-url={import.meta.env.PUBLIC_BUTTONDOWN_URL || ''}
+          >
+            <input
+              type="email"
+              name="email"
+              class="flex-1 px-4 py-3 rounded-xl text-sm transition-all focus:outline-none focus:ring-2"
+              style="background: var(--surface); border: 1px solid var(--border); color: var(--text); --tw-ring-color: var(--primary);"
+              data-i18n-placeholder="newsletter.placeholder"
+              placeholder="输入你的邮箱地址"
+              required
+            />
+            <button type="submit" class="btn-primary whitespace-nowrap" data-i18n="newsletter.btn">
+              立即订阅
+            </button>
+          </form>
+          <p id="newsletter-status" class="text-xs mt-4 hidden" style="color: var(--text-muted);"></p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const newsletterForm = document.getElementById('newsletter-form');
+      const buttondownUrl = newsletterForm?.dataset.buttondownUrl;
+      newsletterForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = newsletterForm.querySelector('button');
+        const statusEl = document.getElementById('newsletter-status');
+        if (!buttondownUrl) {
+          statusEl.classList.remove('hidden');
+          statusEl.textContent = '订阅功能即将上线';
+          return;
+        }
+        btn.disabled = true;
+        btn.textContent = '...';
+        statusEl.classList.add('hidden');
+        try {
+          const formData = new FormData();
+          formData.append('email', newsletterForm.email.value);
+          const res = await fetch(buttondownUrl, { method: 'POST', body: formData });
+          if (res.ok) {
+            statusEl.classList.remove('hidden');
+            statusEl.style.color = '#1a7a2e';
+            statusEl.textContent = '订阅成功！请检查邮箱确认。';
+            newsletterForm.reset();
+          } else {
+            throw new Error('Failed');
+          }
+        } catch {
+          statusEl.classList.remove('hidden');
+          statusEl.style.color = '#c41e3a';
+          statusEl.textContent = '订阅失败，请稍后重试。';
+        } finally {
+          btn.disabled = false;
+          btn.textContent = '立即订阅';
+        }
+      });
+    </script>
   </main>
+  <Footer lang={lang} />
 </BaseLayout>

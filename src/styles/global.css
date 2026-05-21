@@ -4,59 +4,59 @@
 
 @layer base {
   :root {
-    --bg: #F7F1E8;
-    --bg-warm: #FFE8C2;
+    --bg: #f5f5f3;
+    --bg-warm: #f1eee8;
     --surface: #ffffff;
-    --surface-hover: #faf5f0;
-    --surface-alt: #FFE8C2;
-    --surface-blue: #bee9f4;
-    --border: rgba(15, 22, 30, 0.08);
-    --border-hover: rgba(15, 22, 30, 0.15);
-    --text: #0f161e;
-    --text-secondary: #333942;
-    --text-muted: #6b7280;
-    --primary: #00382F;
-    --primary-light: rgba(0, 56, 47, 0.1);
-    --primary-hover: #002C24;
-    --accent: #2DD4BF;
-    --accent-soft: rgba(45, 212, 191, 0.14);
-    --accent-border: rgba(45, 212, 191, 0.28);
-    --accent-lime: #d5ff4d;
-    --accent-warm: #FFE8C2;
-    --badge-bg: rgba(0, 56, 47, 0.08);
-    --card-shadow: 0 2px 16px rgba(15, 22, 30, 0.06);
-    --card-shadow-hover: 0 8px 32px rgba(15, 22, 30, 0.12);
+    --surface-hover: #f0efec;
+    --surface-alt: #f5f5f3;
+    --surface-blue: #d7e7f6;
+    --border: rgba(0, 0, 0, 0.14);
+    --border-hover: rgba(0, 0, 0, 0.28);
+    --text: #000000;
+    --text-secondary: #333333;
+    --text-muted: #5e5e5a;
+    --primary: #000000;
+    --primary-light: rgba(129, 174, 217, 0.2);
+    --primary-hover: #333333;
+    --accent: #81aed9;
+    --accent-soft: rgba(129, 174, 217, 0.28);
+    --accent-border: rgba(0, 0, 0, 0.28);
+    --accent-lime: #ff8562;
+    --accent-warm: #ff8562;
+    --badge-bg: rgba(129, 174, 217, 0.26);
+    --card-shadow: 4px -4px 0 rgba(51, 51, 51, 0.18);
+    --card-shadow-hover: 6px -6px 0 rgba(51, 51, 51, 0.28);
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 25px;
 
     /* Hero-specific */
-    --hero-bg: #032820;
-    --hero-bg-deep: #011713;
-    --hero-card: rgba(255, 255, 255, 0.035);
-    --hero-text: #F4FFFC;
-    --hero-text-muted: rgba(244, 255, 252, 0.62);
-    --hero-text-soft: rgba(244, 255, 252, 0.42);
-    --hero-border: rgba(255, 255, 255, 0.10);
+    --hero-bg: #1e2328;
+    --hero-bg-deep: #0f1113;
+    --hero-card: rgba(245, 245, 243, 0.1);
+    --hero-text: #fffdf5;
+    --hero-text-muted: rgba(255, 253, 245, 0.74);
+    --hero-text-soft: rgba(255, 253, 245, 0.5);
+    --hero-border: rgba(245, 245, 243, 0.22);
   }
 
   [data-theme="dark"] {
-    --bg: #0f161e;
-    --bg-warm: #1a2432;
-    --surface: #1a2432;
-    --surface-hover: #243042;
-    --surface-alt: #002C24;
+    --bg: #1d2024;
+    --bg-warm: #272420;
+    --surface: #24272b;
+    --surface-hover: #2f3338;
+    --surface-alt: #333333;
     --border: rgba(255, 255, 255, 0.08);
     --border-hover: rgba(255, 255, 255, 0.15);
-    --text: #ffffff;
-    --text-secondary: #a1a9b5;
-    --text-muted: #6b7280;
-    --primary: #2DD4BF;
-    --primary-light: rgba(45, 212, 191, 0.12);
-    --primary-hover: #5EEAD4;
-    --accent: #00382F;
+    --text: #fffdf5;
+    --text-secondary: #d6d0c7;
+    --text-muted: #9f9a91;
+    --primary: #81aed9;
+    --primary-light: rgba(129, 174, 217, 0.18);
+    --primary-hover: #9fc3e4;
+    --accent: #ff8562;
     --accent-warm: #2a3544;
-    --badge-bg: rgba(45, 212, 191, 0.1);
+    --badge-bg: rgba(129, 174, 217, 0.16);
     --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
     --card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.3);
 
@@ -121,13 +121,13 @@
     background-color: var(--primary);
     color: #ffffff;
     transition: all 0.25s ease;
-    box-shadow: 0 4px 12px rgba(0, 56, 47, 0.25);
+    box-shadow: 4px -4px 0 rgba(129, 174, 217, 0.65);
   }
 
   .btn-primary:hover {
     background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 56, 47, 0.35);
+    box-shadow: 6px -6px 0 rgba(129, 174, 217, 0.75);
   }
 
   .btn-outline {
@@ -151,7 +151,7 @@
     color: var(--accent);
   }
 
-  /* Hero-specific buttons — translucent glass style */
+  /* Hero-specific buttons — blueprint paper style */
   .btn-hero-primary {
     display: inline-flex;
     align-items: center;
@@ -162,16 +162,17 @@
     font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: -0.01em;
-    background: var(--accent-soft);
-    color: #DFFCF7;
-    border: 1px solid var(--accent-border);
+    background: var(--accent);
+    color: #000000;
+    border: 1.5px solid #000000;
+    box-shadow: 4px -4px 0 rgba(0, 0, 0, 0.5);
     transition: all 0.25s ease;
   }
 
   .btn-hero-primary:hover {
-    background: rgba(45, 212, 191, 0.24);
-    border-color: rgba(45, 212, 191, 0.42);
-    transform: translateY(-1px);
+    background: #9fc3e4;
+    transform: translate(1px, -1px);
+    box-shadow: 5px -5px 0 rgba(0, 0, 0, 0.62);
   }
 
   .btn-hero-secondary {
@@ -184,30 +185,30 @@
     font-size: 0.875rem;
     font-weight: 500;
     letter-spacing: -0.01em;
-    background: transparent;
-    color: var(--hero-text-muted);
-    border: 1px solid var(--hero-border);
+    background: rgba(245, 245, 243, 0.12);
+    color: rgba(255, 253, 245, 0.86);
+    border: 1.5px solid rgba(245, 245, 243, 0.42);
     transition: all 0.25s ease;
   }
 
   .btn-hero-secondary:hover {
-    color: var(--hero-text);
-    border-color: rgba(255, 255, 255, 0.25);
-    background: rgba(255, 255, 255, 0.04);
+    color: #fffdf5;
+    border-color: #fffdf5;
+    background: rgba(245, 245, 243, 0.18);
   }
 
   .card-fluid {
     background-color: var(--surface);
     border-radius: 1rem;
     box-shadow: var(--card-shadow);
-    border: 1px solid var(--border);
+    border: 1.5px solid var(--border);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     overflow: hidden;
   }
 
   .card-fluid:hover {
     box-shadow: var(--card-shadow-hover);
-    transform: translateY(-3px);
+    transform: translate(1px, -3px);
     border-color: var(--border-hover);
   }
 
@@ -247,7 +248,7 @@
   .nav-link {
     font-size: 0.875rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.66);
     text-decoration: none;
     padding: 0.5rem 0.875rem;
     border-radius: 9999px;
@@ -256,13 +257,14 @@
   }
 
   .nav-link:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.08);
+    color: #000000;
+    background: rgba(129, 174, 217, 0.2);
   }
 
   .nav-link.active {
-    color: #DFFCF7;
-    background: var(--accent-soft);
+    color: #000000;
+    background: var(--accent);
+    box-shadow: 3px -3px 0 rgba(51, 51, 51, 0.75);
     font-weight: 600;
   }
 }

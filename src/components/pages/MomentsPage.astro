@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import { momentsData } from '../../data/moments';
 
 const { lang } = Astro.props;
@@ -134,4 +135,5 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
       </div>
     </div>
   </main>
+  <Footer lang={lang} />
 </BaseLayout>

@@ -1,20 +1,45 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 
 const { lang } = Astro.props;
+const prefix = lang === 'zh' ? '' : `/${lang}`;
 ---
 
-<BaseLayout title="联系 — Panda Blog" description="联系 panda。" lang={lang}>
+<BaseLayout title="关于 — Panda Blog" description="关于 panda 与数字实验室。" lang={lang}>
   <Header lang={lang} />
 
   <main class="min-h-screen">
-    <div class="section-container pt-10 pb-20 max-w-xl">
-      <h1 class="font-serif text-3xl md:text-4xl mb-4" style="color: var(--text);" data-i18n="contact.title">通讯</h1>
-      <p class="mb-10" style="color: var(--text-secondary);" data-i18n="contact.desc">有任何问题或合作意向？欢迎随时联系我。</p>
+    <div class="section-container pt-10 pb-20 max-w-2xl">
+      <h1 class="font-serif text-3xl md:text-4xl mb-8" style="color: var(--text);" data-i18n="contact.title">关于</h1>
+
+      <!-- About intro -->
+      <div class="prose prose-lg max-w-none mb-14">
+        <p class="text-lg leading-relaxed mb-6" style="color: var(--text-secondary);" data-i18n="about.intro">
+          你好，我是 panda，一个热爱技术与创造的开发者。我相信好的产品是技术与设计的完美结合，而持续学习是成长的唯一路径。
+        </p>
+
+        <h2 style="color: var(--text);" data-i18n="about.doing">我在做什么</h2>
+        <p class="mb-5 leading-7" style="color: var(--text-secondary);" data-i18n="about.doingDesc">
+          目前专注于 Web 开发和 AI 应用。我喜欢探索新技术，并将其应用到实际项目中。Panda Blog 是我记录学习和分享成果的地方。
+        </p>
+
+        <h2 style="color: var(--text);" data-i18n="about.stack">技术栈</h2>
+        <ul class="mb-5 pl-5" style="color: var(--text-secondary);">
+          <li class="mb-2"><strong style="color: var(--text);" data-i18n="about.stackFE">前端：</strong>React, Next.js, Astro, Tailwind CSS, TypeScript</li>
+          <li class="mb-2"><strong style="color: var(--text);" data-i18n="about.stackBE">后端：</strong>Node.js, Python, PostgreSQL</li>
+          <li class="mb-2"><strong style="color: var(--text);" data-i18n="about.stackAI">AI/ML：</strong>TensorFlow, PyTorch, OpenAI API</li>
+          <li class="mb-2"><strong style="color: var(--text);" data-i18n="about.stackTools">工具：</strong>Git, Docker, Vercel, Figma</li>
+        </ul>
+      </div>
+
+      <!-- Contact form -->
+      <h2 class="font-serif text-2xl mb-4" style="color: var(--text);" data-i18n="about.contact">联系我</h2>
+      <p class="mb-6" style="color: var(--text-secondary);" data-i18n="contact.desc">有任何问题或合作意向？欢迎随时联系我。</p>
 
       <div class="card-fluid p-8">
-        <form class="space-y-6" onsubmit="event.preventDefault(); alert('表单提交功能即将上线！');">
+        <form id="contact-form" class="space-y-6">
           <div>
             <label for="name" class="block text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--text);" data-i18n="contact.name">姓名</label>
             <input
@@ -54,7 +79,8 @@ const { lang } = Astro.props;
               required
             ></textarea>
           </div>
-          <button type="submit" class="btn-primary w-full" data-i18n="contact.send">发送消息</button>
+          <div id="form-status" class="hidden text-sm px-4 py-3 rounded-lg"></div>
+          <button type="submit" id="submit-btn" class="btn-primary w-full" data-i18n="contact.send">发送消息</button>
         </form>
       </div>
 
@@ -70,4 +96,58 @@ const { lang } = Astro.props;
       </div>
     </div>
   </main>
+  <Footer lang={lang} />
 </BaseLayout>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const statusEl = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+
+  function getDict() {
+    const lang = localStorage.getItem('lang') || 'zh';
+    const dict = window.i18nDict?.[lang] || window.i18nDict?.zh || {};
+    return dict;
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const dict = getDict();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = dict['contact.sending'] || 'Sending...';
+    statusEl.classList.add('hidden');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name.value,
+          email: form.email.value,
+          message: form.message.value,
+        }),
+      });
+
+      if (res.ok) {
+        statusEl.classList.remove('hidden');
+        statusEl.style.backgroundColor = 'rgba(40,200,64,0.12)';
+        statusEl.style.color = '#1a7a2e';
+        statusEl.style.border = '1px solid rgba(40,200,64,0.3)';
+        statusEl.textContent = dict['contact.success'] || 'Message sent!';
+        form.reset();
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
+      statusEl.classList.remove('hidden');
+      statusEl.style.backgroundColor = 'rgba(255,95,87,0.1)';
+      statusEl.style.color = '#c41e3a';
+      statusEl.style.border = '1px solid rgba(255,95,87,0.25)';
+      statusEl.textContent = dict['contact.error'] || 'Failed to send.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = dict['contact.send'] || 'Send Message';
+    }
+  });
+</script>

@@ -1,5 +1,5 @@
 // i18n dictionary for Panda Blog
-export default {
+const dict = {
   zh: {
     // Nav
     'nav.lab': '首页',
@@ -8,14 +8,15 @@ export default {
     'nav.experiments': '项目',
     'nav.communique': '关于',
     // Hero
-    'hero.title': '你好，我是 Panda。我在这里记录技术学习、项目实验与生活观察。',
+    'hero.title': "Hello, I'm Panda.",
+    'hero.typed': '我在这里记录技术学习、项目实验与生活观察。',
     'hero.desc': '关于 Web 开发、数据分析、AI 探索，以及一些做着玩的小东西。',
     'hero.cta1': '浏览文章',
     'hero.cta2': '打个招呼',
     'hero.avatar': '博主',
     // Info cards
     'info.origin': '来源',
-    'info.originVal': '地球，目前在日本',
+    'info.originVal': '地球🌍',
     'info.stack': '兴趣',
     'info.stackVal': '摄影、模型、美食、旅行',
     'info.focus': '聚焦',
@@ -28,6 +29,7 @@ export default {
     'musing.viewAll': '查看全部',
     'musing.category': '随笔',
     'musing.minRead': '分钟阅读',
+    'musing.empty': '还没有文章，稍后再来看看。',
     // Quote
     'quote.label': '直接思考',
     'quote.text': '技术的价值在于连接人心，而最高境界是让技术本身隐形。',
@@ -52,6 +54,9 @@ export default {
     'archive.all': '全部',
     'archive.back': '返回归档',
     'archive.minRead': '分钟阅读',
+    // Moments
+    'moments.title': '瞬间',
+    'moments.desc': '记录生活中的美好瞬间、旅行见闻与文字碎片。按时间轴陈列，每一刻都值得被记住。',
     // Article page
     'article.back': '返回归档',
     'article.minRead': '分钟阅读',
@@ -61,8 +66,8 @@ export default {
     'proj.title': '实验',
     'proj.desc': '功能原型与开源实验。',
     'proj.view': '查看项目',
-    // About
-    'about.title': '关于',
+    // About (merged into contact)
+    'about.intro': '你好，我是 panda，一个热爱技术与创造的开发者。我相信好的产品是技术与设计的完美结合，而持续学习是成长的唯一路径。',
     'about.doing': '我在做什么',
     'about.doingDesc': '目前专注于 Web 开发和 AI 应用。我喜欢探索新技术，并将其应用到实际项目中。Panda Blog 是我记录学习和分享成果的地方。',
     'about.stack': '技术栈',
@@ -81,9 +86,18 @@ export default {
     'contact.email': '邮箱',
     'contact.msg': '留言',
     'contact.send': '发送消息',
+    'contact.sending': '发送中...',
+    'contact.success': '消息已发送，感谢你的留言！',
+    'contact.error': '发送失败，请稍后重试或直接发送邮件。',
     'contact.placeholderName': '你的名字',
     'contact.placeholderEmail': 'your@email.com',
     'contact.placeholderMsg': '你想说什么...',
+    // Newsletter
+    'newsletter.title': '订阅我的实践笔记',
+    'newsletter.desc': '每周分享技术见解、项目心得和学习资源。无垃圾邮件，随时取消订阅。',
+    'newsletter.placeholder': '输入你的邮箱地址',
+    'newsletter.btn': '立即订阅',
+    'newsletter.comingSoon': '订阅功能即将上线',
     // Footer
     'footer.tagline': '一个思想与代码的数字花园。',
     'footer.nav': '导航',
@@ -112,14 +126,15 @@ export default {
     'nav.experiments': 'Projects',
     'nav.communique': 'About',
     // Hero
-    'hero.title': "Hello, I'm Panda. I document my tech learning, project experiments, and life observations here.",
+    'hero.title': "Hello, I'm Panda.",
+    'hero.typed': 'I document my tech learning, project experiments, and life observations here.',
     'hero.desc': 'Web development, data analysis, AI exploration, and some fun little things.',
     'hero.cta1': 'Browse Articles',
     'hero.cta2': 'Say Hello',
     'hero.avatar': 'Blogger',
     // Info cards
     'info.origin': 'Origin',
-    'info.originVal': 'Earth, currently in Japan',
+    'info.originVal': 'Earth 🌍',
     'info.stack': 'Interests',
     'info.stackVal': 'Photography, Models, Food, Travel',
     'info.focus': 'Focus',
@@ -132,9 +147,10 @@ export default {
     'musing.viewAll': 'View all notes',
     'musing.category': 'Essay',
     'musing.minRead': 'min read',
+    'musing.empty': 'No articles yet. Check back soon.',
     // Quote
     'quote.label': 'Direct Thought',
-    'quote.text': 'Technology is best when it brings people together, but it\'s even better when it stays invisible.',
+    'quote.text': "Technology is best when it brings people together, but it's even better when it stays invisible.",
     'quote.desc': 'My philosophy on digital product design focuses on the "Invisible UI"—where the interface dissolves to leave only the content and the intent.',
     'quote.author': 'panda-pig',
     'quote.role': 'Lead Researcher',
@@ -156,6 +172,9 @@ export default {
     'archive.all': 'All',
     'archive.back': 'Back to Archive',
     'archive.minRead': 'min read',
+    // Moments
+    'moments.title': 'Moments',
+    'moments.desc': 'Recording beautiful moments, travel stories, and fragments of text from life. Displayed on a timeline, every moment deserves to be remembered.',
     // Article page
     'article.back': 'Back to Archive',
     'article.minRead': 'min read',
@@ -165,8 +184,8 @@ export default {
     'proj.title': 'Experiments',
     'proj.desc': 'Functional prototypes and open-source experiments.',
     'proj.view': 'View Project',
-    // About
-    'about.title': 'About',
+    // About (merged into contact)
+    'about.intro': "Hello, I'm panda, a developer passionate about technology and creation. I believe great products are the perfect blend of technology and design, and continuous learning is the only path to growth.",
     'about.doing': 'What I Do',
     'about.doingDesc': 'Currently focused on Web development and AI applications. I love exploring new technologies and applying them to real projects. Panda Blog is where I record my learning and share results.',
     'about.stack': 'Stack',
@@ -179,15 +198,24 @@ export default {
     'about.gh': 'GitHub',
     'about.email': 'Email',
     // Contact
-    'contact.title': 'Communique',
+    'contact.title': 'About',
     'contact.desc': 'Have a question or collaboration idea? Get in touch.',
     'contact.name': 'Name',
     'contact.email': 'Email',
     'contact.msg': 'Message',
     'contact.send': 'Send Message',
+    'contact.sending': 'Sending...',
+    'contact.success': 'Message sent! Thank you for reaching out.',
+    'contact.error': 'Failed to send. Please try again later or email directly.',
     'contact.placeholderName': 'Your name',
     'contact.placeholderEmail': 'your@email.com',
     'contact.placeholderMsg': 'What do you want to say...',
+    // Newsletter
+    'newsletter.title': 'Subscribe to My Notes',
+    'newsletter.desc': 'Weekly insights on tech, projects, and learning resources. No spam, unsubscribe anytime.',
+    'newsletter.placeholder': 'Enter your email',
+    'newsletter.btn': 'Subscribe',
+    'newsletter.comingSoon': 'Newsletter coming soon',
     // Footer
     'footer.tagline': 'A digital garden for thoughts and code.',
     'footer.nav': 'Navigation',
@@ -216,14 +244,15 @@ export default {
     'nav.experiments': 'プロジェクト',
     'nav.communique': 'について',
     // Hero
-    'hero.title': 'こんにちは、Panda です。技術の学び、プロジェクト実験、日常の観察をここに記録しています。',
+    'hero.title': "Hello, I'm Panda.",
+    'hero.typed': '技術の学び、プロジェクト実験、日常の観察をここに記録しています。',
     'hero.desc': 'Web 開発、データ分析、AI 探索、そして遊び心のある小さなプロジェクト。',
     'hero.cta1': '記事を見る',
     'hero.cta2': '挨拶する',
     'hero.avatar': 'ブロガー',
     // Info cards
     'info.origin': '出身',
-    'info.originVal': '地球、現在日本在住',
+    'info.originVal': '地球🌍',
     'info.stack': '趣味',
     'info.stackVal': '写真、模型、グルメ、旅行',
     'info.focus': 'フォーカス',
@@ -236,6 +265,7 @@ export default {
     'musing.viewAll': 'すべて表示',
     'musing.category': '随筆',
     'musing.minRead': '分で読める',
+    'musing.empty': 'まだ記事がありません。また後で見に来てください。',
     // Quote
     'quote.label': '直接思考',
     'quote.text': '技術は人々をつなげる時に最高の価値を持ち、しかし、それ自体が目に見えない時にさらに優れている。',
@@ -260,6 +290,9 @@ export default {
     'archive.all': 'すべて',
     'archive.back': 'アーカイブに戻る',
     'archive.minRead': '分で読める',
+    // Moments
+    'moments.title': '瞬間',
+    'moments.desc': '生活中の美しい瞬間、旅行の思い出、文字の断片を記録します。タイムラインで陳列し、すべての瞬間が記憶に値します。',
     // Article page
     'article.back': 'アーカイブに戻る',
     'article.minRead': '分で読める',
@@ -269,8 +302,8 @@ export default {
     'proj.title': '実験',
     'proj.desc': '機能プロトタイプとオープンソース実験。',
     'proj.view': 'プロジェクトを見る',
-    // About
-    'about.title': 'について',
+    // About (merged into contact)
+    'about.intro': 'こんにちは、panda です。技術と創造を愛する開発者です。良いプロダクトは技術とデザインの完璧な融合であり、継続的な学習が成長への唯一の道だと信じています。',
     'about.doing': '現在の活動',
     'about.doingDesc': '現在、Web 開発と AI アプリケーションに注力しています。新しい技術を探求し、実際のプロジェクトに応用することが好きです。Panda Blog は、学習を記録し、成果を共有する場所です。',
     'about.stack': '技術スタック',
@@ -283,15 +316,24 @@ export default {
     'about.gh': 'GitHub',
     'about.email': 'メール',
     // Contact
-    'contact.title': '連絡',
+    'contact.title': 'について',
     'contact.desc': '質問や協力のご提案がありますか？お気軽にご連絡ください。',
     'contact.name': '名前',
     'contact.email': 'メール',
     'contact.msg': 'メッセージ',
     'contact.send': '送信',
+    'contact.sending': '送信中...',
+    'contact.success': 'メッセージが送信されました。ご連絡ありがとうございます！',
+    'contact.error': '送信に失敗しました。後でもう一度お試しいただくか、直接メールでご連絡ください。',
     'contact.placeholderName': 'あなたの名前',
     'contact.placeholderEmail': 'your@email.com',
     'contact.placeholderMsg': '何か言いたいこと...',
+    // Newsletter
+    'newsletter.title': '実践ノートを購読',
+    'newsletter.desc': '技術的な洞察、プロジェクトの心得、学習リソースを毎週共有。迷惑メールなし、いつでも購読解除できます。',
+    'newsletter.placeholder': 'メールアドレスを入力',
+    'newsletter.btn': '購読する',
+    'newsletter.comingSoon': '購読機能はまもなく開始',
     // Footer
     'footer.tagline': '思考とコードのためのデジタルガーデン。',
     'footer.nav': 'ナビゲーション',
@@ -313,3 +355,5 @@ export default {
     'search.ctrlK': 'Ctrl K',
   },
 };
+
+export default dict;

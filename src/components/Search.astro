@@ -33,7 +33,7 @@
   const container = document.getElementById('search-container');
   if (container && !container.dataset.initialized) {
     const lang = localStorage.getItem('lang') || 'zh';
-    const t = {
+    const translations = {
       zh: {
         placeholder: '搜索文章...',
         clear_search: '清除',
@@ -64,7 +64,8 @@
         one_result: '1 件の結果',
         alt_search: 'すべて表示',
       },
-    }[lang] || t.zh;
+    };
+    const t = translations[lang] || translations.zh;
     new PagefindUI({
       element: '#search-container',
       showImages: false,

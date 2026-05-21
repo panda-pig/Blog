@@ -6,12 +6,12 @@ const languages = [
 ];
 ---
 
-<div id="lang-switcher" class="flex items-center gap-0.5 p-0.5 rounded-lg" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);">
+<div id="lang-switcher" class="flex items-center gap-0.5 p-0.5 rounded-lg" style="background: rgba(255,255,255,0.72); border: 1.5px solid rgba(0,0,0,0.22);">
   {languages.map((lang) => (
     <button
       class="lang-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all duration-200"
       data-lang={lang.code}
-      style="color: rgba(255,255,255,0.65);"
+      style="color: rgba(0,0,0,0.62);"
     >
       {lang.label}
     </button>
@@ -26,13 +26,13 @@ const languages = [
     buttons.forEach((btn) => {
       const isActive = btn.getAttribute('data-lang') === lang;
       if (isActive) {
-        btn.style.backgroundColor = '#2DD4BF';
-        btn.style.color = '#032820';
+        btn.style.backgroundColor = '#81aed9';
+        btn.style.color = '#000000';
         btn.style.fontWeight = '600';
-        btn.style.boxShadow = '0 2px 8px rgba(45,212,191,0.3)';
+        btn.style.boxShadow = '2px -2px 0 rgba(51,51,51,0.75)';
       } else {
         btn.style.backgroundColor = 'transparent';
-        btn.style.color = 'rgba(255,255,255,0.65)';
+        btn.style.color = 'rgba(0,0,0,0.62)';
         btn.style.fontWeight = '500';
         btn.style.boxShadow = 'none';
       }

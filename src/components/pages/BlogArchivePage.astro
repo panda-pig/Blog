@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../Header.astro';
+import Footer from '../Footer.astro';
 import Search from '../Search.astro';
 
 const { lang } = Astro.props;
@@ -89,4 +90,5 @@ const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || [
       </div>
     </div>
   </main>
+  <Footer lang={lang} />
 </BaseLayout>

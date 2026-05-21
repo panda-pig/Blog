@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import dict from '../i18n/dict.js';
 
 const { title, description, slug, lang = 'zh' } = Astro.props;
 const siteTitle = title ? title : 'Panda Blog';
@@ -34,7 +35,9 @@ const htmlLang = lang === 'zh' ? 'zh-CN' : lang;
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
-    <script is:inline src="/i18n/dict.js"></script>
+    <script is:inline define:vars={{ i18nJSON: JSON.stringify(dict) }}>
+      window.i18nDict = JSON.parse(i18nJSON);
+    </script>
     <script is:inline>
       (function() {
         function applyI18n() {
