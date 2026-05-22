@@ -98,6 +98,8 @@ const dict = {
     'newsletter.placeholder': '输入你的邮箱地址',
     'newsletter.btn': '立即订阅',
     'newsletter.comingSoon': '订阅功能即将上线',
+    'newsletter.success': '订阅成功！请检查邮箱确认。',
+    'newsletter.error': '订阅失败，请稍后重试。',
     // Footer
     'footer.tagline': '一个思想与代码的数字花园。',
     'footer.nav': '导航',
@@ -216,6 +218,8 @@ const dict = {
     'newsletter.placeholder': 'Enter your email',
     'newsletter.btn': 'Subscribe',
     'newsletter.comingSoon': 'Newsletter coming soon',
+    'newsletter.success': 'Subscribed! Please check your email to confirm.',
+    'newsletter.error': 'Subscription failed. Please try again later.',
     // Footer
     'footer.tagline': 'A digital garden for thoughts and code.',
     'footer.nav': 'Navigation',
@@ -334,6 +338,8 @@ const dict = {
     'newsletter.placeholder': 'メールアドレスを入力',
     'newsletter.btn': '購読する',
     'newsletter.comingSoon': '購読機能はまもなく開始',
+    'newsletter.success': '購読完了！確認メールをご確認ください。',
+    'newsletter.error': '購読に失敗しました。後でもう一度お試しください。',
     // Footer
     'footer.tagline': '思考とコードのためのデジタルガーデン。',
     'footer.nav': 'ナビゲーション',

@@ -1,13 +1,17 @@
 ---
+import dict from '../i18n/dict.js';
+
 interface Props {
   title: string;
   description: string;
   tags: string[];
   link?: string;
   status?: string;
+  lang?: string;
 }
 
-const { title, description, tags, link = '#', status = '进行中' } = Astro.props;
+const { title, description, tags, link = '#', status = '进行中', lang = 'zh' } = Astro.props;
+const t = dict[lang] || dict.zh;
 ---
 
 <div class="card-fluid p-6 flex flex-col h-full">
@@ -18,7 +22,7 @@ const { title, description, tags, link = '#', status = '进行中' } = Astro.pro
       </svg>
     </div>
     <span class="text-[10px] px-2 py-0.5 rounded-full font-medium border uppercase tracking-wider"
-      style={status === '已完成' 
+      style={status === '已完成' || status === 'Completed' || status === '完了'
         ? 'background-color: var(--badge-bg); color: var(--primary); border-color: var(--primary-light);'
         : 'background-color: var(--accent-warm); color: var(--text-secondary); border-color: var(--border);'
       }
@@ -36,8 +40,8 @@ const { title, description, tags, link = '#', status = '进行中' } = Astro.pro
     ))}
   </div>
 
-  <a href={link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--primary);" data-i18n="proj.view">
-    查看项目
+  <a href={link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--primary);">
+    {t['proj.view']}
     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path d="M7 17L17 7M17 7H7M17 7v10"/>
     </svg>

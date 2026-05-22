@@ -4,9 +4,11 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import { projectsData } from '../../data/projects';
+import dict from '../../i18n/dict.js';
 
 const { lang } = Astro.props;
 const projects = projectsData[lang as 'zh' | 'en' | 'ja'] || projectsData.zh;
+const t = dict[lang] || dict.zh;
 ---
 
 <BaseLayout title={`项目 — Panda Blog`} description="功能原型与开源实验。" lang={lang}>
@@ -15,13 +17,13 @@ const projects = projectsData[lang as 'zh' | 'en' | 'ja'] || projectsData.zh;
   <main class="min-h-screen">
     <div class="section-container pt-10 pb-20">
       <div class="mb-10">
-        <h1 class="font-serif text-3xl md:text-4xl mb-2" style="color: var(--text);" data-i18n="proj.title">实验</h1>
-        <p class="text-sm" style="color: var(--text-secondary);" data-i18n="proj.desc">功能原型与开源实验。</p>
+        <h1 class="font-serif text-3xl md:text-4xl mb-2" style="color: var(--text);">{t['proj.title']}</h1>
+        <p class="text-sm" style="color: var(--text-secondary);">{t['proj.desc']}</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
-          <ProjectCard {...project} />
+          <ProjectCard {...project} lang={lang} />
         ))}
       </div>
     </div>

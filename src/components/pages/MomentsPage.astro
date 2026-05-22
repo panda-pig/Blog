@@ -3,9 +3,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { momentsData } from '../../data/moments';
+import dict from '../../i18n/dict.js';
 
 const { lang } = Astro.props;
 const moments = momentsData[lang as 'zh' | 'en' | 'ja'] || momentsData.zh;
+const t = dict[lang] || dict.zh;
 
 function formatDate(dateStr: string, locale: string) {
   const d = new Date(dateStr);
@@ -48,9 +50,9 @@ const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
     <div class="section-container pt-12 md:pt-20 pb-20 md:pb-28">
       <!-- Page header -->
       <div class="mb-12 md:mb-20 text-center md:text-left">
-        <h1 class="font-serif text-3xl md:text-5xl font-bold mb-4" style="color: var(--text);" data-i18n="moments.title">瞬间</h1>
-        <p class="text-sm md:text-base max-w-md" style="color: var(--text-secondary);" data-i18n="moments.desc">
-          记录生活中的美好瞬间、旅行见闻与文字碎片。按时间轴陈列，每一刻都值得被记住。
+        <h1 class="font-serif text-3xl md:text-5xl font-bold mb-4" style="color: var(--text);">{t['moments.title']}</h1>
+        <p class="text-sm md:text-base max-w-md" style="color: var(--text-secondary);">
+          {t['moments.desc']}
         </p>
       </div>
 

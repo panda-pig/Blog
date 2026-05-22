@@ -112,12 +112,12 @@ const headings = post.getHeadings ? post.getHeadings() : [];
           <!-- Divider -->
           <div class="my-16 md:my-24 border-t" style="border-color: var(--border);"></div>
 
-          <Donate />
+          <Donate lang={lang} />
 
           <!-- Divider -->
           <div class="my-16 md:my-24 border-t" style="border-color: var(--border);"></div>
 
-          <Giscus slug={post.url} />
+          <Giscus slug={post.url} lang={lang} />
         </div>
         
         <!-- TOC Sidebar -->

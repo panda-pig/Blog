@@ -2,73 +2,98 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import dict from '../../i18n/dict.js';
 
 const { lang } = Astro.props;
 const prefix = lang === 'zh' ? '' : `/${lang}`;
+const t = dict[lang] || dict.zh;
 ---
 
-<BaseLayout title="关于 — Panda Blog" description="关于 panda 与数字实验室。" lang={lang}>
+<BaseLayout title={`${t['contact.title']} — Panda Blog`} description="关于 panda 与数字实验室。" lang={lang}>
   <Header lang={lang} />
 
   <main class="min-h-screen">
     <div class="section-container pt-10 pb-20 max-w-2xl">
-      <h1 class="font-serif text-3xl md:text-4xl mb-8" style="color: var(--text);" data-i18n="contact.title">关于</h1>
+      <h1 class="font-serif text-3xl md:text-4xl mb-8" style="color: var(--text);">{t['contact.title']}</h1>
 
       <!-- About intro -->
       <div class="prose prose-lg max-w-none mb-14">
-        <p class="text-lg leading-relaxed mb-6" style="color: var(--text-secondary);" data-i18n="about.intro">
-          你好，我是 panda，一个热爱技术与创造的开发者。我相信好的产品是技术与设计的完美结合，而持续学习是成长的唯一路径。
+        <p class="text-lg leading-relaxed mb-6" style="color: var(--text-secondary);">
+          {t['about.intro']}
         </p>
 
       </div>
 
+      <!-- About section -->
+      <h2 class="font-serif text-2xl mb-4" style="color: var(--text);">{t['about.doing']}</h2>
+      <p class="mb-6 text-sm leading-relaxed" style="color: var(--text-secondary);">
+        {t['about.doingDesc']}
+      </p>
+
+      <h2 class="font-serif text-2xl mb-4 mt-10" style="color: var(--text);">{t['about.stack']}</h2>
+      <div class="grid grid-cols-2 gap-3 mb-10">
+        <div class="card-fluid p-4">
+          <div class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">{t['about.stackFE']}</div>
+          <div class="text-sm" style="color: var(--text);">React, Vue, Astro, Tailwind CSS</div>
+        </div>
+        <div class="card-fluid p-4">
+          <div class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">{t['about.stackBE']}</div>
+          <div class="text-sm" style="color: var(--text);">Node.js, Python, Express</div>
+        </div>
+        <div class="card-fluid p-4">
+          <div class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">{t['about.stackAI']}</div>
+          <div class="text-sm" style="color: var(--text);">TensorFlow, PyTorch, LangChain</div>
+        </div>
+        <div class="card-fluid p-4">
+          <div class="text-xs font-semibold uppercase tracking-wider mb-1" style="color: var(--text-muted);">{t['about.stackTools']}</div>
+          <div class="text-sm" style="color: var(--text);">Git, Docker, Vercel, Figma</div>
+        </div>
+      </div>
+
       <!-- Contact form -->
-      <h2 class="font-serif text-2xl mb-4" style="color: var(--text);" data-i18n="about.contact">联系我</h2>
-      <p class="mb-6" style="color: var(--text-secondary);" data-i18n="contact.desc">有任何问题或合作意向？欢迎随时联系我。</p>
+      <h2 class="font-serif text-2xl mb-4" style="color: var(--text);">{t['about.contact']}</h2>
+      <p class="mb-6" style="color: var(--text-secondary);">{t['contact.desc']}</p>
 
       <div class="card-fluid p-8">
         <form id="contact-form" class="space-y-6">
           <div>
-            <label for="name" class="block text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--text);" data-i18n="contact.name">姓名</label>
+            <label for="name" class="block text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--text);">{t['contact.name']}</label>
             <input
               type="text"
               id="name"
               name="name"
               class="w-full px-4 py-3 rounded-lg text-sm transition-all focus:outline-none focus:ring-2"
               style="background-color: var(--surface); border: 1px solid var(--border); color: var(--text); --tw-ring-color: var(--primary);"
-              placeholder="你的名字"
-              data-i18n-placeholder="contact.placeholderName"
+              placeholder={t['contact.placeholderName']}
               required
             />
           </div>
           <div>
-            <label for="email" class="block text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--text);" data-i18n="contact.email">邮箱</label>
+            <label for="email" class="block text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--text);">{t['contact.email']}</label>
             <input
               type="email"
               id="email"
               name="email"
               class="w-full px-4 py-3 rounded-lg text-sm transition-all focus:outline-none focus:ring-2"
               style="background-color: var(--surface); border: 1px solid var(--border); color: var(--text); --tw-ring-color: var(--primary);"
-              placeholder="your@email.com"
-              data-i18n-placeholder="contact.placeholderEmail"
+              placeholder={t['contact.placeholderEmail']}
               required
             />
           </div>
           <div>
-            <label for="message" class="block text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--text);" data-i18n="contact.msg">留言</label>
+            <label for="message" class="block text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--text);">{t['contact.msg']}</label>
             <textarea
               id="message"
               name="message"
               rows="5"
               class="w-full px-4 py-3 rounded-lg text-sm transition-all focus:outline-none focus:ring-2 resize-none"
               style="background-color: var(--surface); border: 1px solid var(--border); color: var(--text); --tw-ring-color: var(--primary);"
-              placeholder="你想说什么..."
-              data-i18n-placeholder="contact.placeholderMsg"
+              placeholder={t['contact.placeholderMsg']}
               required
             ></textarea>
           </div>
           <div id="form-status" class="hidden text-sm px-4 py-3 rounded-lg"></div>
-          <button type="submit" id="submit-btn" class="btn-primary w-full" data-i18n="contact.send">发送消息</button>
+          <button type="submit" id="submit-btn" class="btn-primary w-full">{t['contact.send']}</button>
         </form>
       </div>
 

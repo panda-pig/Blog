@@ -550,9 +550,10 @@ const coverDesigns = [
         e.preventDefault();
         const btn = newsletterForm.querySelector('button');
         const statusEl = document.getElementById('newsletter-status');
+        const dict = window.i18nDict?.[localStorage.getItem('lang') || 'zh'] || window.i18nDict?.zh || {};
         if (!buttondownUrl) {
           statusEl.classList.remove('hidden');
-          statusEl.textContent = '订阅功能即将上线';
+          statusEl.textContent = dict['newsletter.comingSoon'] || '订阅功能即将上线';
           return;
         }
         btn.disabled = true;
@@ -565,7 +566,7 @@ const coverDesigns = [
           if (res.ok) {
             statusEl.classList.remove('hidden');
             statusEl.style.color = '#1a7a2e';
-            statusEl.textContent = '订阅成功！请检查邮箱确认。';
+            statusEl.textContent = dict['newsletter.success'] || '订阅成功！请检查邮箱确认。';
             newsletterForm.reset();
           } else {
             throw new Error('Failed');
@@ -573,10 +574,10 @@ const coverDesigns = [
         } catch {
           statusEl.classList.remove('hidden');
           statusEl.style.color = '#c41e3a';
-          statusEl.textContent = '订阅失败，请稍后重试。';
+          statusEl.textContent = dict['newsletter.error'] || '订阅失败，请稍后重试。';
         } finally {
           btn.disabled = false;
-          btn.textContent = '立即订阅';
+          btn.textContent = dict['newsletter.btn'] || '立即订阅';
         }
       });
     </script>
