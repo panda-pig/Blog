@@ -25,12 +25,6 @@ function formatYear(dateStr: string) {
 }
 
 const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
-const interactionLabels = {
-  'zh-CN': { like: '喜欢', comment: '评论', share: '分享' },
-  'en-US': { like: 'Likes', comment: 'Comments', share: 'Share' },
-  'ja-JP': { like: 'いいね', comment: 'コメント', share: 'シェア' },
-};
-const il = interactionLabels[localeStr] || interactionLabels['zh-CN'];
 
 let lastYear = '';
 ---
@@ -126,27 +120,6 @@ let lastYear = '';
                     ))}
                   </div>
 
-                  <!-- Interaction bar -->
-                  <div class="feed-actions">
-                    <span class="feed-action">
-                      <svg class="feed-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
-                      </svg>
-                      {moment.likes}
-                    </span>
-                    <span class="feed-action">
-                      <svg class="feed-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-                      </svg>
-                      {moment.comments}
-                    </span>
-                    <span class="feed-action feed-action-share">
-                      <svg class="feed-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/>
-                      </svg>
-                      {il.share}
-                    </span>
-                  </div>
                 </article>
               </div>
             </div>
@@ -478,42 +451,6 @@ let lastYear = '';
     background: rgba(126, 200, 184, 0.1);
   }
 
-  /* Interaction bar */
-  .feed-actions {
-    display: flex;
-    gap: 18px;
-    padding-top: 12px;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-  }
-
-  [data-theme="dark"] .feed-actions {
-    border-top-color: rgba(255, 255, 255, 0.08);
-  }
-
-  .feed-action {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 0.82rem;
-    cursor: default;
-    user-select: none;
-  }
-
-  [data-theme="dark"] .feed-action {
-    color: rgba(255, 253, 245, 0.38);
-  }
-
-  .feed-action-icon {
-    width: 15px;
-    height: 15px;
-    opacity: 0.55;
-  }
-
-  .feed-action-share {
-    margin-left: auto;
-  }
-
   /* Mobile */
   @media (max-width: 640px) {
     .moments-container {
@@ -606,12 +543,5 @@ let lastYear = '';
       padding: 2px 7px;
     }
 
-    .feed-actions {
-      gap: 12px;
-    }
-
-    .feed-action {
-      font-size: 0.78rem;
-    }
   }
 </style>
