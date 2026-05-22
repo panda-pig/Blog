@@ -21,7 +21,7 @@ export const momentsData: Record<string, Moment[]> = {
       date: '2026-05-22',
       location: '东京，日本',
       tags: ['日常', '周五', '博客'],
-      images: [],
+      images: ['/images/moments/friday.jpg'],
       likes: 3,
       comments: 1,
     },
