@@ -61,35 +61,41 @@ const languages = [
 </style>
 
 <script>
-  const buttons = document.querySelectorAll('#lang-switcher .lang-btn');
+  function initLangSwitcher() {
+    const buttons = document.querySelectorAll('#lang-switcher .lang-btn');
+    if (!buttons.length) return;
 
-  function updateActive() {
-    const lang = localStorage.getItem('lang') || 'zh';
+    function updateActive() {
+      const lang = localStorage.getItem('lang') || 'zh';
+      buttons.forEach((btn) => {
+        const isActive = btn.getAttribute('data-lang') === lang;
+        btn.classList.toggle('active', isActive);
+      });
+    }
+
+    updateActive();
+
     buttons.forEach((btn) => {
-      const isActive = btn.getAttribute('data-lang') === lang;
-      btn.classList.toggle('active', isActive);
+      btn.addEventListener('click', () => {
+        const targetLang = btn.getAttribute('data-lang');
+        if (!targetLang) return;
+        localStorage.setItem('lang', targetLang);
+        updateActive();
+
+        const url = new URL(window.location.href);
+        let cleanPath = url.pathname.replace(/^\/(en|ja)(?=\/|$)/, '');
+        if (!cleanPath || cleanPath === '') cleanPath = '/';
+
+        if (targetLang === 'zh') {
+          url.pathname = cleanPath;
+        } else {
+          url.pathname = '/' + targetLang + cleanPath;
+        }
+
+        window.location.href = url.toString();
+      });
     });
   }
 
-  updateActive();
-
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const targetLang = btn.getAttribute('data-lang');
-      localStorage.setItem('lang', targetLang);
-      updateActive();
-
-      const url = new URL(window.location.href);
-      let cleanPath = url.pathname.replace(/^\/(en|ja)(?=\/|$)/, '');
-      if (!cleanPath || cleanPath === '') cleanPath = '/';
-
-      if (targetLang === 'zh') {
-        url.pathname = cleanPath;
-      } else {
-        url.pathname = '/' + targetLang + cleanPath;
-      }
-
-      window.location.href = url.toString();
-    });
-  });
+  document.addEventListener('astro:page-load', initLangSwitcher);
 </script>

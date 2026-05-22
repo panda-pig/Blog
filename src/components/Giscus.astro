@@ -39,14 +39,19 @@ const giscusLang = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja' : 'en';
 </div>
 
 <script>
-  function updateGiscusTheme() {
-    const iframe = document.querySelector('iframe.giscus-frame');
-    if (!iframe) return;
-    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-    iframe.contentWindow?.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app');
+  let giscusObserver = null;
+  function initGiscusTheme() {
+    if (giscusObserver) return;
+    function updateGiscusTheme() {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (!iframe) return;
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      iframe.contentWindow?.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app');
+    }
+    giscusObserver = new MutationObserver((mutations) => {
+      mutations.forEach((m) => { if (m.attributeName === 'data-theme') updateGiscusTheme(); });
+    });
+    giscusObserver.observe(document.documentElement, { attributes: true });
   }
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach((m) => { if (m.attributeName === 'data-theme') updateGiscusTheme(); });
-  });
-  observer.observe(document.documentElement, { attributes: true });
+  document.addEventListener('astro:page-load', initGiscusTheme);
 </script>

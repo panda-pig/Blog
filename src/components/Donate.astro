@@ -54,8 +54,11 @@ const t = dict[lang] || dict.zh;
 </div>
 
 <script>
-  const trigger = document.getElementById('donate-trigger');
-  const dialog = document.getElementById('donate-dialog');
-  trigger?.addEventListener('click', () => dialog?.showModal());
-  dialog?.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+  function initDonate() {
+    const trigger = document.getElementById('donate-trigger');
+    const dialog = document.getElementById('donate-dialog');
+    trigger?.addEventListener('click', () => dialog?.showModal());
+    dialog?.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+  }
+  document.addEventListener('astro:page-load', initDonate);
 </script>

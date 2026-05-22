@@ -198,23 +198,28 @@ const navItems = [
 </style>
 
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const panel = document.getElementById('mobile-nav');
-  const iconOpen = document.getElementById('menu-icon-open');
-  const iconClose = document.getElementById('menu-icon-close');
+  function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const panel = document.getElementById('mobile-nav');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+    if (!btn || !panel) return;
 
-  btn?.addEventListener('click', () => {
-    const isOpen = !panel.classList.contains('hidden');
-    if (isOpen) {
-      panel.classList.add('hidden');
-      iconOpen.classList.remove('hidden');
-      iconClose.classList.add('hidden');
-      btn.setAttribute('aria-expanded', 'false');
-    } else {
-      panel.classList.remove('hidden');
-      iconOpen.classList.add('hidden');
-      iconClose.classList.remove('hidden');
-      btn.setAttribute('aria-expanded', 'true');
-    }
-  });
+    btn.addEventListener('click', () => {
+      const isOpen = !panel.classList.contains('hidden');
+      if (isOpen) {
+        panel.classList.add('hidden');
+        iconOpen?.classList.remove('hidden');
+        iconClose?.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        panel.classList.remove('hidden');
+        iconOpen?.classList.add('hidden');
+        iconClose?.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  }
+
+  document.addEventListener('astro:page-load', initMobileMenu);
 </script>

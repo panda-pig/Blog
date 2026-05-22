@@ -66,10 +66,12 @@ const coverDesigns = [
     </section>
 
     <script>
-      const typedEl = document.querySelector('.home-cover__typed-text');
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function initTypewriter() {
+        const typedEl = document.querySelector('.home-cover__typed-text');
+        if (!typedEl || typedEl.classList.contains('is-typing') || typedEl.classList.contains('is-complete')) return;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) return;
 
-      if (typedEl instanceof HTMLElement && !prefersReducedMotion) {
         const text = typedEl.dataset.typedText || typedEl.textContent || '';
         typedEl.textContent = '';
         typedEl.classList.add('is-typing');
@@ -78,7 +80,6 @@ const coverDesigns = [
         const typeNext = () => {
           typedEl.textContent = text.slice(0, index);
           index += 1;
-
           if (index <= text.length) {
             window.setTimeout(typeNext, 68);
           } else {
@@ -88,6 +89,7 @@ const coverDesigns = [
 
         window.setTimeout(typeNext, 420);
       }
+      document.addEventListener('astro:page-load', initTypewriter);
     </script>
 
     <style>
@@ -544,42 +546,46 @@ const coverDesigns = [
     </section>
 
     <script>
-      const newsletterForm = document.getElementById('newsletter-form');
-      const buttondownUrl = newsletterForm?.dataset.buttondownUrl;
-      newsletterForm?.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btn = newsletterForm.querySelector('button');
-        const statusEl = document.getElementById('newsletter-status');
-        const dict = window.i18nDict?.[localStorage.getItem('lang') || 'zh'] || window.i18nDict?.zh || {};
-        if (!buttondownUrl) {
-          statusEl.classList.remove('hidden');
-          statusEl.textContent = dict['newsletter.comingSoon'] || '订阅功能即将上线';
-          return;
-        }
-        btn.disabled = true;
-        btn.textContent = '...';
-        statusEl.classList.add('hidden');
-        try {
-          const formData = new FormData();
-          formData.append('email', newsletterForm.email.value);
-          const res = await fetch(buttondownUrl, { method: 'POST', body: formData });
-          if (res.ok) {
+      function initNewsletter() {
+        const newsletterForm = document.getElementById('newsletter-form');
+        if (!newsletterForm) return;
+        const buttondownUrl = newsletterForm.dataset.buttondownUrl;
+        newsletterForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const btn = newsletterForm.querySelector('button');
+          const statusEl = document.getElementById('newsletter-status');
+          const dict = window.i18nDict?.[localStorage.getItem('lang') || 'zh'] || window.i18nDict?.zh || {};
+          if (!buttondownUrl) {
             statusEl.classList.remove('hidden');
-            statusEl.style.color = '#1a7a2e';
-            statusEl.textContent = dict['newsletter.success'] || '订阅成功！请检查邮箱确认。';
-            newsletterForm.reset();
-          } else {
-            throw new Error('Failed');
+            statusEl.textContent = dict['newsletter.comingSoon'] || '订阅功能即将上线';
+            return;
           }
-        } catch {
-          statusEl.classList.remove('hidden');
-          statusEl.style.color = '#c41e3a';
-          statusEl.textContent = dict['newsletter.error'] || '订阅失败，请稍后重试。';
-        } finally {
-          btn.disabled = false;
-          btn.textContent = dict['newsletter.btn'] || '立即订阅';
-        }
-      });
+          btn.disabled = true;
+          btn.textContent = '...';
+          statusEl.classList.add('hidden');
+          try {
+            const formData = new FormData();
+            formData.append('email', newsletterForm.email.value);
+            const res = await fetch(buttondownUrl, { method: 'POST', body: formData });
+            if (res.ok) {
+              statusEl.classList.remove('hidden');
+              statusEl.style.color = '#1a7a2e';
+              statusEl.textContent = dict['newsletter.success'] || '订阅成功！请检查邮箱确认。';
+              newsletterForm.reset();
+            } else {
+              throw new Error('Failed');
+            }
+          } catch {
+            statusEl.classList.remove('hidden');
+            statusEl.style.color = '#c41e3a';
+            statusEl.textContent = dict['newsletter.error'] || '订阅失败，请稍后重试。';
+          } finally {
+            btn.disabled = false;
+            btn.textContent = dict['newsletter.btn'] || '立即订阅';
+          }
+        });
+      }
+      document.addEventListener('astro:page-load', initNewsletter);
     </script>
   </main>
   <Footer lang={lang} />

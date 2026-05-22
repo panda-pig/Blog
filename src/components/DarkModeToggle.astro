@@ -30,26 +30,30 @@
 </style>
 
 <script>
-  const toggle = document.getElementById('theme-toggle');
-  const sunIcon = document.getElementById('sun-icon');
-  const moonIcon = document.getElementById('moon-icon');
-  const html = document.documentElement;
+  function initThemeToggle() {
+    const toggle = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+    const html = document.documentElement;
 
-  function updateIcons() {
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    if (sunIcon && moonIcon) {
-      sunIcon.classList.toggle('hidden', !isDark);
-      moonIcon.classList.toggle('hidden', isDark);
+    function updateIcons() {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      if (sunIcon && moonIcon) {
+        sunIcon.classList.toggle('hidden', !isDark);
+        moonIcon.classList.toggle('hidden', isDark);
+      }
     }
+
+    updateIcons();
+
+    toggle?.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      const newTheme = isDark ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateIcons();
+    });
   }
 
-  updateIcons();
-
-  toggle?.addEventListener('click', () => {
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    const newTheme = isDark ? 'light' : 'dark';
-    html.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateIcons();
-  });
+  document.addEventListener('astro:page-load', initThemeToggle);
 </script>

@@ -113,17 +113,19 @@ const t = dict[lang] || dict.zh;
 </BaseLayout>
 
 <script>
-  const form = document.getElementById('contact-form');
-  const statusEl = document.getElementById('form-status');
-  const submitBtn = document.getElementById('submit-btn');
+  function initContactForm() {
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+    if (!form || !submitBtn) return;
 
-  function getDict() {
-    const lang = localStorage.getItem('lang') || 'zh';
-    const dict = window.i18nDict?.[lang] || window.i18nDict?.zh || {};
-    return dict;
-  }
+    function getDict() {
+      const lang = localStorage.getItem('lang') || 'zh';
+      const dict = window.i18nDict?.[lang] || window.i18nDict?.zh || {};
+      return dict;
+    }
 
-  form?.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const dict = getDict();
 
@@ -162,5 +164,7 @@ const t = dict[lang] || dict.zh;
       submitBtn.disabled = false;
       submitBtn.textContent = dict['contact.send'] || 'Send Message';
     }
-  });
+    });
+  }
+  document.addEventListener('astro:page-load', initContactForm);
 </script>
