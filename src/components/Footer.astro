@@ -69,7 +69,7 @@ const year = new Date().getFullYear();
 </footer>
 
 <script is:inline>
-  (function() {
+  function initViewCounter() {
     var el = document.getElementById('view-counter');
     if (!el) return;
     var ns = 'panda-blog';
@@ -78,5 +78,8 @@ const year = new Date().getFullYear();
       .then(function(r) { return r.json(); })
       .then(function(d) { el.textContent = '浏览 ' + (d.count || 0).toLocaleString() + ' 次'; })
       .catch(function() { el.textContent = ''; });
-  })();
+  }
+
+  initViewCounter();
+  document.addEventListener('astro:page-load', initViewCounter);
 </script>
