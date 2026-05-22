@@ -21,7 +21,7 @@ const dict = {
     'info.stackVal': '摄影、模型、美食、旅行',
     'info.focus': '🔬 聚焦',
     'info.focusVal': 'Web / Data / AI / 语言学习',
-    'info.status': '🟢 状态',
+    'info.status': '状态',
     'info.statusVal': '持续构建中',
     // Recent Musings
     'musing.title': '近期思考',
