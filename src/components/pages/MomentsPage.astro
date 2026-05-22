@@ -82,6 +82,12 @@ let lastYear = '';
                     </div>
                   </div>
 
+                  <!-- Body -->
+                  <div class="feed-body">
+                    <h3 class="feed-title">{moment.title}</h3>
+                    <p class="feed-text">{moment.content}</p>
+                  </div>
+
                   <!-- Images -->
                   {moment.images && moment.images.length > 0 && (
                     <div class="feed-images">
@@ -97,12 +103,6 @@ let lastYear = '';
                       ))}
                     </div>
                   )}
-
-                  <!-- Body -->
-                  <div class="feed-body">
-                    <h3 class="feed-title">{moment.title}</h3>
-                    <p class="feed-text">{moment.content}</p>
-                  </div>
 
                   <!-- Tags -->
                   <div class="feed-tags">
