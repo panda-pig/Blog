@@ -56,7 +56,7 @@ const dict = {
     'archive.minRead': '分钟阅读',
     // Moments
     'moments.title': '瞬间',
-    'moments.desc': '记录生活中的美好瞬间、旅行见闻与文字碎片。按时间轴陈列，每一刻都值得被记住。',
+    'moments.desc': '记录生活中的美好瞬间、旅行见闻与文字碎片。',
     // Article page
     'article.back': '返回归档',
     'article.minRead': '分钟阅读',
@@ -176,7 +176,7 @@ const dict = {
     'archive.minRead': 'min read',
     // Moments
     'moments.title': 'Moments',
-    'moments.desc': 'Recording beautiful moments, travel stories, and fragments of text from life. Displayed on a timeline, every moment deserves to be remembered.',
+    'moments.desc': 'Recording beautiful moments, travel stories, and fragments of text from life.',
     // Article page
     'article.back': 'Back to Archive',
     'article.minRead': 'min read',
@@ -296,7 +296,7 @@ const dict = {
     'archive.minRead': '分で読める',
     // Moments
     'moments.title': '瞬間',
-    'moments.desc': '生活中の美しい瞬間、旅行の思い出、文字の断片を記録します。タイムラインで陳列し、すべての瞬間が記憶に値します。',
+    'moments.desc': '生活中の美しい瞬間、旅行の思い出、文字の断片を記録します。',
     // Article page
     'article.back': 'アーカイブに戻る',
     'article.minRead': '分で読める',
