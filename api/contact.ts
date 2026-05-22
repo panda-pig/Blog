@@ -34,7 +34,7 @@ export default async function handler(req: Request): Promise<Response> {
 
     await resend.emails.send({
       from: 'Panda Blog <noreply@blog.pandapig.dev>',
-      to: 'contact@example.com',
+      to: process.env.CONTACT_EMAIL || 'contact@example.com',
       subject: `[Panda Blog] 来自 ${name} 的留言`,
       text: `姓名: ${name}\n邮箱: ${email}\n留言:\n${message}`,
     });

@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import dict from '../i18n/dict.js';
+import { ViewTransitions } from 'astro:transitions';
 
 const { title, description, slug, lang = 'zh' } = Astro.props;
 const siteTitle = title ? title : 'Panda Blog';
@@ -11,6 +12,7 @@ const htmlLang = lang === 'zh' ? 'zh-CN' : lang;
 <!doctype html>
 <html lang={htmlLang} class="scroll-smooth">
   <head>
+    <ViewTransitions />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description || 'panda 的个人博客'} />
@@ -37,34 +39,6 @@ const htmlLang = lang === 'zh' ? 'zh-CN' : lang;
     </script>
     <script is:inline define:vars={{ i18nJSON: JSON.stringify(dict) }}>
       window.i18nDict = JSON.parse(i18nJSON);
-    </script>
-    <script is:inline>
-      (function() {
-        function applyI18n() {
-          var dict = window.i18nDict;
-          if (!dict) return;
-          var lang = localStorage.getItem('lang') || 'zh';
-          var t = dict[lang] || dict.zh;
-          var year = new Date().getFullYear();
-          document.querySelectorAll('[data-i18n]').forEach(function(el) {
-            var key = el.getAttribute('data-i18n');
-            if (typeof t[key] === 'string') el.textContent = t[key].replace(/\{year\}/g, year);
-          });
-          document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
-            var key = el.getAttribute('data-i18n-html');
-            if (typeof t[key] === 'string') el.innerHTML = t[key].replace(/\{year\}/g, year);
-          });
-          document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
-            var key = el.getAttribute('data-i18n-placeholder');
-            if (typeof t[key] === 'string') el.setAttribute('placeholder', t[key].replace(/\{year\}/g, year));
-          });
-        }
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', applyI18n);
-        } else {
-          applyI18n();
-        }
-      })();
     </script>
   </head>
   <body class="min-h-screen">

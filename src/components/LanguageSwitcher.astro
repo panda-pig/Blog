@@ -6,34 +6,68 @@ const languages = [
 ];
 ---
 
-<div id="lang-switcher" class="flex items-center gap-0.5 p-0.5 rounded-lg" style="background: rgba(255,255,255,0.72); border: 1.5px solid rgba(0,0,0,0.22);">
+<div id="lang-switcher" class="lang-switcher">
   {languages.map((lang) => (
     <button
-      class="lang-btn px-2.5 py-1.5 rounded-md text-xs font-medium transition-all duration-200"
+      class="lang-btn"
       data-lang={lang.code}
-      style="color: rgba(0,0,0,0.62);"
     >
       {lang.label}
     </button>
   ))}
 </div>
 
+<style>
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    padding: 0.125rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1.5px solid rgba(0, 0, 0, 0.22);
+  }
+
+  [data-theme="dark"] .lang-switcher {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .lang-btn {
+    padding: 0.375rem 0.625rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    color: rgba(0, 0, 0, 0.62);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  [data-theme="dark"] .lang-btn {
+    color: rgba(255, 253, 245, 0.62);
+  }
+
+  .lang-btn.active {
+    background-color: #81aed9;
+    color: #000000;
+    font-weight: 600;
+  }
+
+  [data-theme="dark"] .lang-btn.active {
+    color: #000000;
+  }
+</style>
+
 <script>
-  const buttons = document.querySelectorAll('.lang-btn');
+  const buttons = document.querySelectorAll('#lang-switcher .lang-btn');
 
   function updateActive() {
     const lang = localStorage.getItem('lang') || 'zh';
     buttons.forEach((btn) => {
       const isActive = btn.getAttribute('data-lang') === lang;
-      if (isActive) {
-        btn.style.backgroundColor = '#81aed9';
-        btn.style.color = '#000000';
-        btn.style.fontWeight = '600';
-      } else {
-        btn.style.backgroundColor = 'transparent';
-        btn.style.color = 'rgba(0,0,0,0.62)';
-        btn.style.fontWeight = '500';
-      }
+      btn.classList.toggle('active', isActive);
     });
   }
 

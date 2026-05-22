@@ -1,7 +1,6 @@
 <button
   id="theme-toggle"
-  class="p-2 rounded-lg transition-colors"
-  style="color: rgba(0,0,0,0.72); border: 1.5px solid rgba(0,0,0,0.22); background: rgba(255,255,255,0.58);"
+  class="theme-toggle"
   aria-label="Toggle theme"
 >
   <svg id="sun-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -11,6 +10,24 @@
     <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
   </svg>
 </button>
+
+<style>
+  .theme-toggle {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: color 0.2s;
+    color: rgba(0, 0, 0, 0.72);
+    border: 1.5px solid rgba(0, 0, 0, 0.22);
+    background: rgba(255, 255, 255, 0.58);
+    cursor: pointer;
+  }
+
+  [data-theme="dark"] .theme-toggle {
+    color: rgba(255, 253, 245, 0.72);
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+  }
+</style>
 
 <script>
   const toggle = document.getElementById('theme-toggle');

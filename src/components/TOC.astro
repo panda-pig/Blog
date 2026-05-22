@@ -1,4 +1,6 @@
 ---
+import dict from '../i18n/dict.js';
+
 interface Heading {
   depth: number;
   slug: string;
@@ -7,9 +9,11 @@ interface Heading {
 
 interface Props {
   headings: Heading[];
+  lang?: string;
 }
 
-const { headings } = Astro.props;
+const { headings, lang = 'zh' } = Astro.props;
+const t = dict[lang] || dict.zh;
 
 const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 ---
@@ -17,8 +21,8 @@ const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 {tocHeadings.length > 0 && (
   <nav class="hidden lg:block sticky top-28 w-64 shrink-0">
     <div class="border-l-2 pl-5" style="border-color: var(--border);">
-      <p class="text-xs font-semibold uppercase tracking-wider mb-4" style="color: var(--text-muted);" data-i18n="article.toc">
-        目录
+      <p class="text-xs font-semibold uppercase tracking-wider mb-4" style="color: var(--text-muted);">
+        {t['article.toc']}
       </p>
       <ul class="space-y-3">
         {tocHeadings.map((heading) => (

@@ -3,28 +3,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../Header.astro';
 import Footer from '../Footer.astro';
 import Search from '../Search.astro';
+import { groupPostsBySlug, getLocalizedPosts, getReadingTime, formatDate } from '../../lib/posts.js';
+import dict from '../../i18n/dict.js';
 
 const { lang } = Astro.props;
 const prefix = lang === 'zh' ? '' : `/${lang}`;
+const t = dict[lang] || dict.zh;
 
-// Load all posts and group by slug for locale filtering with fallback
 const allPosts = await Astro.glob('../../content/blog/*.md');
-
-const postsBySlug: Record<string, Record<string, any>> = {};
-allPosts.forEach((post: any) => {
-  const slug = post.frontmatter.slug || post.file.split('/').pop().replace('.md', '').replace(/\.(en|ja)$/, '');
-  const postLang = post.frontmatter.lang || 'zh';
-  if (!postsBySlug[slug]) postsBySlug[slug] = {};
-  postsBySlug[slug][postLang] = post;
-});
-
-const displayPosts = Object.entries(postsBySlug)
-  .map(([slug, langs]) => {
-    const post = langs[lang] || langs['zh'];
-    return post ? { ...post, resolvedSlug: slug } : null;
-  })
-  .filter(Boolean)
-  .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+const postsBySlug = groupPostsBySlug(allPosts);
+const displayPosts = getLocalizedPosts(postsBySlug, lang);
 
 const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || []))];
 ---
@@ -36,21 +24,21 @@ const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || [
     <div class="section-container pt-12 md:pt-20 pb-20 md:pb-28">
       <!-- Header -->
       <div class="text-center mb-12 md:mb-16">
-        <h1 class="font-serif text-3xl md:text-5xl font-bold mb-3" style="color: var(--text);" data-i18n="archive.title">归档</h1>
+        <h1 class="font-serif text-3xl md:text-5xl font-bold mb-3" style="color: var(--text);" >{t['archive.title']}</h1>
         <p class="text-sm" style="color: var(--text-muted);">
-          <span data-i18n="archive.desc">共</span> {displayPosts.length} <span data-i18n="archive.desc2">篇文章，持续更新中</span>
+          <span >{t['archive.desc']}</span> {displayPosts.length} <span >{t['archive.desc2']}</span>
         </p>
       </div>
 
       <!-- Search + Tags -->
       <div class="mx-auto mb-12 md:mb-16" style="max-width: 40rem;">
         <div class="mb-6">
-          <Search />
+          <Search lang={lang} />
         </div>
 
         {allTags.length > 0 && (
           <div class="flex flex-wrap justify-center gap-2">
-            <span class="tag-pill cursor-pointer" style="background-color: var(--primary); color: #fff; border-color: var(--primary);" data-i18n="archive.all">全部</span>
+            <span class="tag-pill cursor-pointer" style="background-color: var(--primary); color: #fff; border-color: var(--primary);" >{t['archive.all']}</span>
             {allTags.map((tag) => (
               <span class="tag-pill cursor-pointer">{tag}</span>
             ))}
@@ -62,19 +50,15 @@ const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || [
       <div class="mx-auto" style="max-width: 44rem;" data-pagefind-body>
         {displayPosts.map((post: any) => {
           const slug = post.resolvedSlug;
-          const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
-          const formattedDate = new Date(post.frontmatter.date).toLocaleDateString(lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          });
+          const readingTime = getReadingTime(post.rawContent);
+          const formattedDate = formatDate(post.frontmatter.date, lang);
 
           return (
             <article class="py-10 md:py-12 border-b group" style="border-color: var(--border);">
               <div class="flex items-center gap-3 mb-3 text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">
                 <span>{formattedDate}</span>
                 <span>·</span>
-                <span>{readingTime} <span data-i18n="archive.minRead">分钟阅读</span></span>
+                <span>{readingTime} <span >{t['archive.minRead']}</span></span>
               </div>
               <a href={`${prefix}/blog/${slug}`} class="block mb-3 group-hover:opacity-80 transition-opacity">
                 <h2 class="font-serif text-2xl md:text-3xl font-semibold leading-snug" style="color: var(--text);">{post.frontmatter.title}</h2>

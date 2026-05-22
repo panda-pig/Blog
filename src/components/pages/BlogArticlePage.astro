@@ -5,20 +5,16 @@ import Footer from '../../components/Footer.astro';
 import TOC from '../../components/TOC.astro';
 import Giscus from '../../components/Giscus.astro';
 import Donate from '../../components/Donate.astro';
+import { groupPostsBySlug, getReadingTime, formatDate } from '../../lib/posts.js';
+import dict from '../../i18n/dict.js';
 
 const { slug } = Astro.params;
 const { lang } = Astro.props;
 const prefix = lang === 'zh' ? '' : `/${lang}`;
+const t = dict[lang] || dict.zh;
 
 const allPosts = await Astro.glob('../../content/blog/*.md');
-
-const postsBySlug: Record<string, Record<string, any>> = {};
-allPosts.forEach((post: any) => {
-  const postSlug = post.frontmatter.slug || post.file.split('/').pop().replace('.md', '').replace(/\.(en|ja)$/, '');
-  const postLang = post.frontmatter.lang || 'zh';
-  if (!postsBySlug[postSlug]) postsBySlug[postSlug] = {};
-  postsBySlug[postSlug][postLang] = post;
-});
+const postsBySlug = groupPostsBySlug(allPosts);
 
 const availableLangs = Object.keys(postsBySlug[slug] || {});
 const post = postsBySlug[slug]?.[lang] || postsBySlug[slug]?.['zh'];
@@ -28,12 +24,8 @@ if (!post) {
 }
 
 const { Content } = post;
-const readingTime = Math.ceil((post.rawContent?.length || 0) / 400);
-const formattedDate = new Date(post.frontmatter.date).toLocaleDateString(lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const readingTime = getReadingTime(post.rawContent);
+const formattedDate = formatDate(post.frontmatter.date, lang);
 
 const headings = post.getHeadings ? post.getHeadings() : [];
 ---
@@ -47,9 +39,7 @@ const headings = post.getHeadings ? post.getHeadings() : [];
       
       <!-- Back link -->
       <div class="mb-8 md:mb-12">
-        <a href={`${prefix}/blog`} class="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-muted);" data-i18n="article.back">
-          返回归档
-        </a>
+        <a href={`${prefix}/blog`} class="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-muted);" >{t['article.back']}</a>
       </div>
 
       <!-- Language switcher -->
@@ -107,7 +97,7 @@ const headings = post.getHeadings ? post.getHeadings() : [];
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
           </svg>
-          {readingTime} <span data-i18n="article.minRead">分钟阅读</span>
+          {readingTime} <span >{t['article.minRead']}</span>
         </span>
       </div>
 
@@ -131,7 +121,7 @@ const headings = post.getHeadings ? post.getHeadings() : [];
         </div>
         
         <!-- TOC Sidebar -->
-        <TOC headings={headings} />
+        <TOC headings={headings} lang={lang} />
       </div>
     </article>
   </main>

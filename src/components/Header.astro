@@ -1,27 +1,29 @@
 ---
 import DarkModeToggle from './DarkModeToggle.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
+import dict from '../i18n/dict.js';
 
 const { lang = 'zh' } = Astro.props;
 const prefix = lang === 'zh' ? '' : `/${lang}`;
 const currentPath = Astro.url.pathname;
+const t = dict[lang] || dict.zh;
 
 const navItems = [
-  { href: `${prefix}/`, labelKey: 'nav.lab', labelZh: '首页' },
-  { href: `${prefix}/blog`, labelKey: 'nav.archive', labelZh: '文章' },
-  { href: `${prefix}/moments`, labelKey: 'nav.moments', labelZh: '随手记' },
-  { href: `${prefix}/projects`, labelKey: 'nav.experiments', labelZh: '项目' },
-  { href: `${prefix}/contact`, labelKey: 'nav.communique', labelZh: '关于' },
+  { href: `${prefix}/`, labelKey: 'nav.lab' },
+  { href: `${prefix}/blog`, labelKey: 'nav.archive' },
+  { href: `${prefix}/moments`, labelKey: 'nav.moments' },
+  { href: `${prefix}/projects`, labelKey: 'nav.experiments' },
+  { href: `${prefix}/contact`, labelKey: 'nav.communique' },
 ];
 ---
 
-<header data-pagefind-ignore style="background: rgba(245,245,243,0.94); border-bottom: 1.5px solid rgba(0,0,0,0.12); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);">
+<header class="site-header" data-pagefind-ignore>
   <div class="section-container flex items-center justify-between h-[72px]">
     <a href="/" class="flex items-center gap-2.5 group shrink-0">
-      <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white text-sm font-bold" style="background: #81aed9; border: 1.5px solid #000; box-shadow: 3px -3px 0 rgba(51,51,51,0.75);">
-        <span style="color: #000000;">P</span>
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold logo-mark">
+        <span>P</span>
       </div>
-      <span class="site-logo-text text-lg font-bold tracking-tight" style="color: #000000;">Panda Blog</span>
+      <span class="site-logo-text text-lg font-bold tracking-tight logo-text">Panda Blog</span>
     </a>
 
     <!-- Desktop nav -->
@@ -29,8 +31,8 @@ const navItems = [
       {navItems.map((item) => {
         const isActive = item.href === '/' ? currentPath === '/' : currentPath.startsWith(item.href);
         return (
-          <a href={item.href} class={`nav-link ${isActive ? 'active' : ''}`} data-i18n={item.labelKey}>
-            {item.labelZh}
+          <a href={item.href} class={`nav-link ${isActive ? 'active' : ''}`}>
+            {t[item.labelKey]}
           </a>
         );
       })}
@@ -39,14 +41,14 @@ const navItems = [
     <div class="flex items-center gap-1">
       <LanguageSwitcher />
       <DarkModeToggle />
-      <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex p-2 rounded-lg transition-colors hover:opacity-70" style="color: rgba(0,0,0,0.72);" aria-label="GitHub">
+      <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex p-2 rounded-lg transition-colors header-icon-btn" aria-label="GitHub">
         <svg class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
         </svg>
       </a>
 
       <!-- Mobile hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg transition-colors hover:opacity-70" style="color: rgba(0,0,0,0.72);" aria-label="菜单" aria-expanded="false">
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg transition-colors header-icon-btn" aria-label="菜单" aria-expanded="false">
         <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -58,20 +60,16 @@ const navItems = [
   </div>
 
   <!-- Mobile nav panel -->
-  <div id="mobile-nav" class="md:hidden hidden" style="background: rgba(245,245,243,0.98); border-top: 1.5px solid rgba(0,0,0,0.12);">
+  <div id="mobile-nav" class="md:hidden hidden mobile-nav-panel">
     <nav class="section-container py-4 flex flex-col gap-1">
       {navItems.map((item) => {
         const isActive = item.href === '/' ? currentPath === '/' : currentPath.startsWith(item.href);
         return (
           <a
             href={item.href}
-            class={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${isActive ? '' : ''}`}
-            style={isActive
-              ? 'color: #000000; background: #81aed9; box-shadow: 3px -3px 0 rgba(51,51,51,0.75);'
-              : 'color: rgba(0,0,0,0.72);'}
-            data-i18n={item.labelKey}
+            class={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${isActive ? 'mobile-nav-active' : 'mobile-nav-link'}`}
           >
-            {item.labelZh}
+            {t[item.labelKey]}
           </a>
         );
       })}
@@ -80,6 +78,113 @@ const navItems = [
 </header>
 
 <style>
+  .site-header {
+    background: rgba(245, 245, 243, 0.94);
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  [data-theme="dark"] .site-header {
+    background: rgba(29, 32, 36, 0.94);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .logo-mark {
+    background: #81aed9;
+    border: 1.5px solid #000;
+    box-shadow: 3px -3px 0 rgba(51, 51, 51, 0.75);
+    color: #000000;
+  }
+
+  [data-theme="dark"] .logo-mark {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 3px -3px 0 rgba(129, 174, 217, 0.4);
+  }
+
+  .logo-text {
+    color: #000000;
+  }
+
+  [data-theme="dark"] .logo-text {
+    color: #fffdf5;
+  }
+
+  .header-icon-btn {
+    color: rgba(0, 0, 0, 0.72);
+  }
+
+  [data-theme="dark"] .header-icon-btn {
+    color: rgba(255, 253, 245, 0.72);
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.66);
+    text-decoration: none;
+    padding: 0.5rem 0.875rem;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: #000000;
+    background: rgba(129, 174, 217, 0.2);
+  }
+
+  [data-theme="dark"] .nav-link {
+    color: rgba(255, 253, 245, 0.66);
+  }
+
+  [data-theme="dark"] .nav-link:hover {
+    color: #fffdf5;
+    background: rgba(129, 174, 217, 0.18);
+  }
+
+  .nav-link.active {
+    color: #000000;
+    background: #81aed9;
+    box-shadow: 3px -3px 0 rgba(51, 51, 51, 0.75);
+    font-weight: 600;
+  }
+
+  [data-theme="dark"] .nav-link.active {
+    color: #000000;
+    background: #81aed9;
+    box-shadow: 3px -3px 0 rgba(129, 174, 217, 0.5);
+  }
+
+  .mobile-nav-panel {
+    background: rgba(245, 245, 243, 0.98);
+    border-top: 1.5px solid rgba(0, 0, 0, 0.12);
+  }
+
+  [data-theme="dark"] .mobile-nav-panel {
+    background: rgba(29, 32, 36, 0.98);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-nav-link {
+    color: rgba(0, 0, 0, 0.72);
+  }
+
+  [data-theme="dark"] .mobile-nav-link {
+    color: rgba(255, 253, 245, 0.72);
+  }
+
+  .mobile-nav-active {
+    color: #000000;
+    background: #81aed9;
+    box-shadow: 3px -3px 0 rgba(51, 51, 51, 0.75);
+  }
+
+  [data-theme="dark"] .mobile-nav-active {
+    color: #000000;
+    box-shadow: 3px -3px 0 rgba(129, 174, 217, 0.5);
+  }
+
   @media (max-width: 639px) {
     header .section-container {
       padding-left: 1rem;

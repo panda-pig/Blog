@@ -3,29 +3,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import dict from '../../i18n/dict.js';
+import { groupPostsBySlug, getLocalizedPosts, getReadingTime, formatDate } from '../../lib/posts.js';
 
 const { lang } = Astro.props;
 const prefix = lang === 'zh' ? '' : `/${lang}`;
 const t = dict[lang] || dict.zh;
 
 const allPosts = await Astro.glob('../../content/blog/*.md');
-const postsBySlug: Record<string, Record<string, any>> = {};
-allPosts.forEach((post: any) => {
-  const slug = post.frontmatter.slug || post.file.split('/').pop().replace('.md', '').replace(/\.(en|ja)$/, '');
-  const postLang = post.frontmatter.lang || 'zh';
-  if (!postsBySlug[slug]) postsBySlug[slug] = {};
-  postsBySlug[slug][postLang] = post;
-});
-
-const recentPosts = Object.entries(postsBySlug)
-  .map(([slug, langs]) => {
-    const post = langs[lang] || langs['zh'];
-    return post ? { ...post, resolvedSlug: slug } : null;
-  })
-  .filter(Boolean)
-  .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
-
-const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
+const postsBySlug = groupPostsBySlug(allPosts);
+const recentPosts = getLocalizedPosts(postsBySlug, lang);
 
 const coverDesigns = [
   { label: 'Thinking', number: '01' },
@@ -65,10 +51,10 @@ const coverDesigns = [
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
             </svg>
-            <span data-i18n="hero.cta1">浏览文章</span>
+            <span>{t['hero.cta1']}</span>
           </a>
           <a href={`${prefix}/contact`} class="btn-hero-secondary">
-            <span data-i18n="hero.cta2">打个招呼</span>
+            <span >{t['hero.cta2']}</span>
           </a>
         </div>
 
@@ -346,23 +332,23 @@ const coverDesigns = [
     <div id="home-content" class="section-container" style="margin-top: -36px; position: relative; z-index: 10; margin-bottom: 64px;">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
         <div class="card-fluid p-5 md:p-6">
-          <div class="text-[11px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);" data-i18n="info.origin">来源</div>
-          <div class="text-[15px] font-semibold" style="color: var(--text);" data-i18n="info.originVal">地球🌍</div>
+          <div class="text-[11px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);" >{t['info.origin']}</div>
+          <div class="text-[15px] font-semibold" style="color: var(--text);" >{t['info.originVal']}</div>
         </div>
         <div class="card-fluid p-5 md:p-6">
-          <div class="text-[11px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);" data-i18n="info.stack">兴趣</div>
-          <div class="text-[15px] font-semibold" style="color: var(--text);" data-i18n="info.stackVal">摄影、模型、美食、旅行</div>
+          <div class="text-[11px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);" >{t['info.stack']}</div>
+          <div class="text-[15px] font-semibold" style="color: var(--text);" >{t['info.stackVal']}</div>
         </div>
         <div class="card-fluid p-5 md:p-6">
-          <div class="text-[11px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);" data-i18n="info.focus">聚焦</div>
-          <div class="text-[15px] font-semibold" style="color: var(--text);" data-i18n="info.focusVal">Web / Data / AI / 语言学习</div>
+          <div class="text-[11px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);" >{t['info.focus']}</div>
+          <div class="text-[15px] font-semibold" style="color: var(--text);" >{t['info.focusVal']}</div>
         </div>
         <div class="card-fluid p-5 md:p-6">
           <div class="text-[11px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);">
             <span class="inline-block w-2 h-2 rounded-full mr-1.5" style="background: #81aed9; box-shadow: 0 0 0 3px rgba(129,174,217,0.3);"></span>
-            <span data-i18n="info.status">状态</span>
+            <span >{t['info.status']}</span>
           </div>
-          <div class="text-[15px] font-semibold" style="color: var(--text);" data-i18n="info.statusVal">持续构建中</div>
+          <div class="text-[15px] font-semibold" style="color: var(--text);" >{t['info.statusVal']}</div>
         </div>
       </div>
     </div>
@@ -373,13 +359,11 @@ const coverDesigns = [
         <div>
           <div class="flex items-center gap-3 mb-1">
             <div class="w-5 h-[2px] rounded-full" style="background: var(--primary);"></div>
-            <h2 class="text-xs font-bold uppercase tracking-[0.12em]" style="color: var(--text-muted);" data-i18n="musing.title">近期思考</h2>
+            <h2 class="text-xs font-bold uppercase tracking-[0.12em]" style="color: var(--text-muted);" >{t['musing.title']}</h2>
           </div>
-          <p class="text-xs" style="color: var(--text-muted);" data-i18n="musing.subtitle">实验室笔记与理论探索。</p>
+          <p class="text-xs" style="color: var(--text-muted);" >{t['musing.subtitle']}</p>
         </div>
-        <a href={`${prefix}/blog`} class="hidden md:flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-secondary);" data-i18n="musing.viewAll">
-          查看全部
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <a href={`${prefix}/blog`} class="hidden md:flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-secondary);" >{t['musing.viewAll']}<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
         </a>
@@ -390,12 +374,8 @@ const coverDesigns = [
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {recentPosts.map((post: any, index: number) => {
           const slug = post.resolvedSlug;
-          const readingTime = Math.ceil((post.rawContent?.length || 0) / 400) || 3;
-          const formattedDate = new Date(post.frontmatter.date).toLocaleDateString(localeStr, {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          });
+          const readingTime = getReadingTime(post.rawContent);
+          const formattedDate = formatDate(post.frontmatter.date, lang);
           const category = post.frontmatter.tags?.[0] || t['musing.category'];
           const design = coverDesigns[index % coverDesigns.length];
           const gradColors = [
@@ -419,7 +399,7 @@ const coverDesigns = [
                 <span class="absolute bottom-2 right-4 font-serif text-6xl font-light leading-none" style="color: rgba(255,255,255,0.08);">{titleInitial}</span>
                 <!-- Category badge -->
                 <div class="absolute top-3 left-3">
-                  <span class="category-badge" data-i18n="musing.category">{category}</span>
+                  <span class="category-badge" >{t['musing.category']}</span>
                 </div>
                 <!-- Number indicator -->
                 <div class="absolute top-3 right-3">
@@ -431,7 +411,7 @@ const coverDesigns = [
                 <div class="flex items-center gap-2 mb-3 text-[11px] uppercase tracking-wider" style="color: var(--text-muted);">
                   <span>{formattedDate}</span>
                   <span>·</span>
-                  <span>{readingTime} <span data-i18n="musing.minRead">分钟阅读</span></span>
+                  <span>{readingTime} <span >{t['musing.minRead']}</span></span>
                 </div>
 
                 <a href={`${prefix}/blog/${slug}`} class="block mb-2 group-hover:opacity-80 transition-opacity">
@@ -456,10 +436,8 @@ const coverDesigns = [
       </div>
       ) : (
         <div class="card-fluid p-10 text-center">
-          <p class="text-sm" style="color: var(--text-muted);" data-i18n="musing.empty">还没有文章，稍后再来看看。</p>
-          <a href={`${prefix}/blog`} class="inline-flex items-center gap-1.5 mt-4 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--primary);" data-i18n="musing.viewAll">
-            查看全部
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <p class="text-sm" style="color: var(--text-muted);" >{t['musing.empty']}</p>
+          <a href={`${prefix}/blog`} class="inline-flex items-center gap-1.5 mt-4 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--primary);" >{t['musing.viewAll']}<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
@@ -467,9 +445,7 @@ const coverDesigns = [
       )}
 
       <div class="mt-6 md:hidden text-center">
-        <a href={`${prefix}/blog`} class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider" style="color: var(--text-secondary);" data-i18n="musing.viewAll">
-          查看全部
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <a href={`${prefix}/blog`} class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider" style="color: var(--text-secondary);" >{t['musing.viewAll']}<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
         </a>
@@ -480,16 +456,14 @@ const coverDesigns = [
     <section class="section-container pb-20 md:pb-24">
       <div class="flex items-center gap-3 mb-7">
         <div class="w-5 h-[2px] rounded-full" style="background: var(--primary);"></div>
-        <h2 class="text-xs font-bold uppercase tracking-[0.12em]" style="color: var(--text-muted);" data-i18n="exp.title">随手小实验</h2>
+        <h2 class="text-xs font-bold uppercase tracking-[0.12em]" style="color: var(--text-muted);" >{t['exp.title']}</h2>
       </div>
 
       <div style="background: var(--accent-warm); border-radius: 1rem; padding: 28px; border: 1px solid var(--border);">
         <div class="flex flex-col md:flex-row gap-8 md:gap-10">
           <div class="flex-1">
-            <h2 class="font-serif text-2xl md:text-[28px] font-normal mb-2" style="color: var(--text); letter-spacing: -0.01em;" data-i18n="exp.title">随手小实验</h2>
-            <p class="text-[15px] leading-relaxed mb-6 max-w-md" style="color: var(--text-secondary);" data-i18n="exp.desc">
-              这里收集一些我做着玩的原型、小工具和灵感实验。不一定成熟，但都是真实想法的试作品。
-            </p>
+            <h2 class="font-serif text-2xl md:text-[28px] font-normal mb-2" style="color: var(--text); letter-spacing: -0.01em;" >{t['exp.title']}</h2>
+            <p class="text-[15px] leading-relaxed mb-6 max-w-md" style="color: var(--text-secondary);" >{t['exp.desc']}</p>
 
             <div class="space-y-3">
               <a href={`${prefix}/projects`} class="flex items-start gap-3 p-3 rounded-xl transition-all hover:translate-x-1" style="background: var(--bg); border: 1px solid var(--border);">
@@ -497,8 +471,8 @@ const coverDesigns = [
                   <span class="text-lg">✏️</span>
                 </div>
                 <div>
-                  <h4 class="text-sm font-semibold mb-0.5" style="color: var(--text);" data-i18n="exp.canvas">随手画布</h4>
-                  <p class="text-xs" style="color: var(--text-secondary);" data-i18n="exp.canvasDesc">一个随手涂鸦就能生成 UI 布局原型的 AI 小工具。</p>
+                  <h4 class="text-sm font-semibold mb-0.5" style="color: var(--text);" >{t['exp.canvas']}</h4>
+                  <p class="text-xs" style="color: var(--text-secondary);" >{t['exp.canvasDesc']}</p>
                 </div>
               </a>
 
@@ -507,8 +481,8 @@ const coverDesigns = [
                   <span class="text-lg">🎨</span>
                 </div>
                 <div>
-                  <h4 class="text-sm font-semibold mb-0.5" style="color: var(--text);" data-i18n="exp.chroma">色彩日记</h4>
-                  <p class="text-xs" style="color: var(--text-secondary);" data-i18n="exp.chromaDesc">记录每天看到的颜色，生成个人专属色板。</p>
+                  <h4 class="text-sm font-semibold mb-0.5" style="color: var(--text);" >{t['exp.chroma']}</h4>
+                  <p class="text-xs" style="color: var(--text-secondary);" >{t['exp.chromaDesc']}</p>
                 </div>
               </a>
 
@@ -517,8 +491,8 @@ const coverDesigns = [
                   <span class="text-lg">🧪</span>
                 </div>
                 <div>
-                  <h4 class="text-sm font-semibold mb-0.5" style="color: var(--text);" data-i18n="exp.jlpt">JLPT 语法卡</h4>
-                  <p class="text-xs" style="color: var(--text-secondary);" data-i18n="exp.jlptDesc">把日语语法点做成间隔重复卡片，边学边记。</p>
+                  <h4 class="text-sm font-semibold mb-0.5" style="color: var(--text);" >{t['exp.jlpt']}</h4>
+                  <p class="text-xs" style="color: var(--text-secondary);" >{t['exp.jlptDesc']}</p>
                 </div>
               </a>
             </div>
@@ -531,7 +505,7 @@ const coverDesigns = [
               <span class="w-2.5 h-2.5 rounded-full" style="background: #28c840;"></span>
             </div>
             <span class="text-4xl opacity-20">🧪</span>
-            <span class="text-[11px] font-mono px-2.5 py-1 rounded-md font-semibold" style="background: rgba(129,174,217,0.24); color: var(--primary);" data-i18n="exp.instance">随手实例 #042</span>
+            <span class="text-[11px] font-mono px-2.5 py-1 rounded-md font-semibold" style="background: rgba(129,174,217,0.24); color: var(--primary);" >{t['exp.instance']}</span>
           </div>
         </div>
       </div>
@@ -547,10 +521,8 @@ const coverDesigns = [
               <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
           </div>
-          <h2 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--text);" data-i18n="newsletter.title">订阅我的实践笔记</h2>
-          <p class="mb-8 max-w-md mx-auto" style="color: var(--text-secondary);" data-i18n="newsletter.desc">
-            每周分享技术见解、项目心得和学习资源。无垃圾邮件，随时取消订阅。
-          </p>
+          <h2 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--text);" >{t['newsletter.title']}</h2>
+          <p class="mb-8 max-w-md mx-auto" style="color: var(--text-secondary);" >{t['newsletter.desc']}</p>
           <form
             id="newsletter-form"
             class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
@@ -561,13 +533,10 @@ const coverDesigns = [
               name="email"
               class="flex-1 px-4 py-3 rounded-xl text-sm transition-all focus:outline-none focus:ring-2"
               style="background: var(--surface); border: 1px solid var(--border); color: var(--text); --tw-ring-color: var(--primary);"
-              data-i18n-placeholder="newsletter.placeholder"
-              placeholder="输入你的邮箱地址"
+              placeholder={t["newsletter.placeholder"]}
               required
             />
-            <button type="submit" class="btn-primary whitespace-nowrap" data-i18n="newsletter.btn">
-              立即订阅
-            </button>
+            <button type="submit" class="btn-primary whitespace-nowrap" >{t['newsletter.btn']}</button>
           </form>
           <p id="newsletter-status" class="text-xs mt-4 hidden" style="color: var(--text-muted);"></p>
         </div>

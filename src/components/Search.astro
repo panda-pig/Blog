@@ -1,4 +1,8 @@
 ---
+import dict from '../i18n/dict.js';
+
+const { lang = 'zh' } = Astro.props;
+const t = dict[lang] || dict.zh;
 ---
 
 <div id="search-wrapper" class="relative">
@@ -11,8 +15,7 @@
       type="text"
       class="flex-1 bg-transparent border-none outline-none text-sm"
       style="color: var(--text);"
-      data-i18n-placeholder="search.placeholder"
-      placeholder="搜索文章..."
+      placeholder={t['search.placeholder']}
       autocomplete="off"
     />
   </div>

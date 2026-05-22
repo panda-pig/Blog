@@ -1,6 +1,10 @@
 ---
+import dict from '../i18n/dict.js';
+
 const { lang = 'zh' } = Astro.props;
 const prefix = lang === 'zh' ? '' : `/${lang}`;
+const t = dict[lang] || dict.zh;
+const year = new Date().getFullYear();
 ---
 
 <footer data-pagefind-ignore style="background: var(--footer-bg); border-top: 2px solid var(--accent-soft);">
@@ -14,29 +18,25 @@ const prefix = lang === 'zh' ? '' : `/${lang}`;
           </div>
           <span class="text-lg font-bold" style="color: var(--text);">Panda Blog</span>
         </a>
-        <p class="text-sm leading-relaxed mb-4" style="color: var(--text-muted);" data-i18n="footer.tagline">
-          一个思想与代码的数字实验室。
-        </p>
-        <p class="text-xs" style="color: var(--text-muted);" data-i18n="footer.copyright">
-          &copy; {new Date().getFullYear()} Panda Blog
-        </p>
+        <p class="text-sm leading-relaxed mb-4" style="color: var(--text-muted);">{t['footer.tagline']}</p>
+        <p class="text-xs" style="color: var(--text-muted);">&copy; {year} Panda Blog</p>
       </div>
 
       <!-- Nav links -->
       <div>
-        <h4 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);" data-i18n="footer.nav">导航</h4>
+        <h4 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);">{t['footer.nav']}</h4>
         <ul class="space-y-1.5">
-          <li><a href={`${prefix}/`} class="text-sm transition-colors hover:opacity-70" style="color: var(--text-secondary);" data-i18n="nav.lab">首页</a></li>
-          <li><a href={`${prefix}/blog`} class="text-sm transition-colors hover:opacity-70" style="color: var(--text-secondary);" data-i18n="nav.archive">文章</a></li>
-          <li><a href={`${prefix}/moments`} class="text-sm transition-colors hover:opacity-70" style="color: var(--text-secondary);" data-i18n="nav.moments">随手记</a></li>
-          <li><a href={`${prefix}/projects`} class="text-sm transition-colors hover:opacity-70" style="color: var(--text-secondary);" data-i18n="nav.experiments">项目</a></li>
-          <li><a href={`${prefix}/contact`} class="text-sm transition-colors hover:opacity-70" style="color: var(--text-secondary);" data-i18n="nav.communique">关于</a></li>
+          <li><a href={`${prefix}/`} class="text-sm transition-colors hover:opacity-70" style="color: var(--text-secondary);">{t['nav.lab']}</a></li>
+          <li><a href={`${prefix}/blog`} class="text-sm transition-colors hover:opacity-70" style="color: var(--text-secondary);">{t['nav.archive']}</a></li>
+          <li><a href={`${prefix}/moments`} class="text-sm transition-colors hover:opacity-70" style="color: var(--text-secondary);">{t['nav.moments']}</a></li>
+          <li><a href={`${prefix}/projects`} class="text-sm transition-colors hover:opacity-70" style="color: var(--text-secondary);">{t['nav.experiments']}</a></li>
+          <li><a href={`${prefix}/contact`} class="text-sm transition-colors hover:opacity-70" style="color: var(--text-secondary);">{t['nav.communique']}</a></li>
         </ul>
       </div>
 
       <!-- Connect -->
       <div>
-        <h4 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);" data-i18n="footer.connect">联系</h4>
+        <h4 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);">{t['footer.connect']}</h4>
         <ul class="space-y-1.5">
           <li>
             <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer" class="text-sm transition-colors hover:opacity-70 flex items-center gap-2" style="color: var(--text-secondary);">
@@ -45,7 +45,7 @@ const prefix = lang === 'zh' ? '' : `/${lang}`;
             </a>
           </li>
           <li>
-            <a href="/rss.xml" class="text-sm transition-colors hover:opacity-70 flex items-center gap-2" style="color: var(--text-secondary);">
+            <a href={`${prefix}/rss.xml`} class="text-sm transition-colors hover:opacity-70 flex items-center gap-2" style="color: var(--text-secondary);">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 11a9 9 0 019 9M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg>
               RSS
             </a>
@@ -63,7 +63,7 @@ const prefix = lang === 'zh' ? '' : `/${lang}`;
     <!-- Bottom bar -->
     <div class="pt-6 border-t flex items-center justify-between gap-4" style="border-color: var(--border);">
       <span class="text-xs" id="view-counter" style="color: var(--text-muted);"></span>
-      <p class="text-xs" style="color: var(--text-muted);" data-i18n="footer.dev">由 panda 开发</p>
+      <p class="text-xs" style="color: var(--text-muted);">{t['footer.dev']}</p>
     </div>
   </div>
 </footer>
