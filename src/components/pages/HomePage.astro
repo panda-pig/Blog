@@ -34,7 +34,9 @@ const coverDesigns = [
 
       <div class="section-container home-cover__content">
         <div class="home-cover__eyebrow" aria-label="Panda, Web Data AI">
-          <span class="home-cover__mark">P</span>
+          <span class="home-cover__mark">
+            <img src="/images/avatar.jpg" alt="Panda" class="w-full h-full object-cover rounded-xl" />
+          </span>
           <span>Panda</span>
           <span class="home-cover__divider"></span>
           <span>Web / Data / AI</span>
@@ -165,19 +167,15 @@ const coverDesigns = [
       }
 
       .home-cover__mark {
-        width: 2.25rem;
-        height: 2.25rem;
+        width: 2.5rem;
+        height: 2.5rem;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         border-radius: 0.75rem;
-        background: rgba(129, 174, 217, 0.72);
+        overflow: hidden;
         border: 1.5px solid rgba(0, 0, 0, 0.8);
-        color: #000000;
         box-shadow: 3px -3px 0 rgba(0, 0, 0, 0.58);
-        font-family: 'Noto Serif', 'Noto Serif SC', serif;
-        font-size: 1.4rem;
-        line-height: 1;
       }
 
       .home-cover__divider {
