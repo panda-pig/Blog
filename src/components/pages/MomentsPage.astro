@@ -9,133 +9,430 @@ const { lang } = Astro.props;
 const moments = momentsData[lang as 'zh' | 'en' | 'ja'] || momentsData.zh;
 const t = dict[lang] || dict.zh;
 
-function formatDate(dateStr: string, locale: string) {
+function formatFeedDate(dateStr: string, locale: string) {
   const d = new Date(dateStr);
-  return d.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
-}
-
-function formatTimelineDate(dateStr: string, locale: string) {
-  const d = new Date(dateStr);
-  if (locale === 'zh-CN') {
-    return `${d.getMonth() + 1}月${d.getDate()}日`;
-  }
-  if (locale === 'ja-JP') {
-    return `${d.getMonth() + 1}月${d.getDate()}日`;
-  }
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
-}
-
-function formatYear(dateStr: string) {
-  return new Date(dateStr).getFullYear().toString();
-}
-
-function formatDay(dateStr: string) {
-  return new Date(dateStr).getDate().toString().padStart(2, '0');
-}
-
-function formatMonth(dateStr: string, locale: string) {
-  const d = new Date(dateStr);
-  if (locale === 'zh-CN') return `${d.getMonth() + 1}月`;
-  if (locale === 'ja-JP') return `${d.getMonth() + 1}月`;
-  return d.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+  const year = d.getFullYear();
+  const month = d.getMonth() + 1;
+  const day = d.getDate();
+  if (locale === 'zh-CN') return `${year}年${month}月${day}日`;
+  if (locale === 'ja-JP') return `${year}年${month}月${day}日`;
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
 const localeStr = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja-JP' : 'en-US';
+const interactionLabels = {
+  'zh-CN': { like: '喜欢', comment: '评论', share: '分享' },
+  'en-US': { like: 'Likes', comment: 'Comments', share: 'Share' },
+  'ja-JP': { like: 'いいね', comment: 'コメント', share: 'シェア' },
+};
+const il = interactionLabels[localeStr] || interactionLabels['zh-CN'];
 ---
 
-<BaseLayout title="瞬间 — Panda Blog" description="记录生活中的美好瞬间与文字碎片。" lang={lang}>
+<BaseLayout title={`${t['moments.title']} — Panda Blog`} description={t['moments.desc']} lang={lang}>
   <Header lang={lang} />
 
-  <main class="min-h-screen">
-    <div class="section-container pt-12 md:pt-20 pb-20 md:pb-28">
+  <main class="moments-page">
+    <div class="moments-container">
       <!-- Page header -->
-      <div class="mb-12 md:mb-20 text-center md:text-left">
-        <h1 class="font-serif text-3xl md:text-5xl font-bold mb-4" style="color: var(--text);">{t['moments.title']}</h1>
-        <p class="text-sm md:text-base max-w-md" style="color: var(--text-secondary);">
-          {t['moments.desc']}
-        </p>
+      <div class="moments-header">
+        <h1 class="moments-title">{t['moments.title']}</h1>
+        <p class="moments-subtitle">{t['moments.desc']}</p>
       </div>
 
-      <!-- Timeline -->
-      <div class="relative">
-        {moments.map((moment, index) => {
-          const isFirst = index === 0;
-          const isLast = index === moments.length - 1;
-          return (
-            <div class="flex gap-6 md:gap-10 mb-16 md:mb-24 relative">
-              {/* Left: Timeline axis */}
-              <div class="flex flex-col items-end shrink-0 w-16 md:w-24 relative">
-                {/* Date display */}
-                <div class="text-right">
-                  <div class="text-[10px] md:text-xs font-medium uppercase tracking-wider" style="color: var(--text-muted);">
-                    {formatMonth(moment.date, localeStr)}
-                  </div>
-                  <div class="text-xl md:text-3xl font-serif font-bold leading-none mt-0.5" style="color: var(--text);">
-                    {formatDay(moment.date)}
-                  </div>
-                  <div class="text-[10px] md:text-xs mt-1" style="color: var(--text-muted);">
-                    {formatYear(moment.date)}
-                  </div>
-                </div>
-                
-                {/* Dot on timeline */}
-                <div class="absolute top-2 -right-[11px] md:-right-[15px] w-[9px] h-[9px] md:w-[11px] md:h-[11px] rounded-full border-2" style="background-color: var(--bg); border-color: var(--primary);"></div>
-              </div>
-
-              {/* Vertical line */}
-              <div class="absolute left-8 md:left-12 top-6 bottom-[-4rem] md:bottom-[-6rem] w-px" style="background-color: var(--border);" class:list={[{ 'hidden': isLast }]}></div>
-
-              {/* Right: Content card */}
-              <div class="flex-1 min-w-0 pt-0.5">
-                <div class="card-fluid p-5 md:p-8">
-                  {/* Title */}
-                  <h2 class="font-serif text-xl md:text-2xl font-bold mb-3 md:mb-4" style="color: var(--text);">
-                    {moment.title}
-                  </h2>
-
-                  {/* Images */}
-                  {moment.images && moment.images.length > 0 && (
-                    <div class="mb-4 md:mb-6">
-                      {moment.images.map((img: string) => (
-                        <div class="rounded-xl overflow-hidden border" style="border-color: var(--border);">
-                          <img 
-                            src={img} 
-                            alt={moment.title}
-                            class="w-full h-48 md:h-72 object-cover"
-                            onerror="this.style.display='none'"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Description */}
-                  <p class="text-sm md:text-base leading-relaxed mb-4 md:mb-6" style="color: var(--text-secondary);">
-                    {moment.description}
-                  </p>
-
-                  {/* Meta: location + tags */}
-                  <div class="flex flex-wrap items-center justify-between gap-3 pt-4 md:pt-6 border-t" style="border-color: var(--border);">
-                    <div class="flex items-center gap-1.5 text-xs" style="color: var(--text-muted);">
-                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                      </svg>
+      <!-- Feed -->
+      <div class="moments-feed">
+        {moments.map((moment) => (
+          <article class="feed-card">
+            <!-- Header: avatar + identity -->
+            <div class="feed-card-header">
+              <div class="feed-avatar">P</div>
+              <div class="feed-identity">
+                <div class="feed-name">Panda</div>
+                <div class="feed-meta">
+                  <span>@panda</span>
+                  <span class="feed-dot">·</span>
+                  <span>{formatFeedDate(moment.date, localeStr)}</span>
+                  {moment.location && (
+                    <>
+                      <span class="feed-dot">·</span>
                       <span>{moment.location}</span>
-                    </div>
-                    <div class="flex gap-1.5">
-                      {moment.tags.map((tag: string) => (
-                        <span class="tag-pill text-[10px]">{tag}</span>
-                      ))}
-                    </div>
-                  </div>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
-          );
-        })}
+
+            <!-- Body -->
+            <div class="feed-body">
+              <h3 class="feed-title">{moment.title}</h3>
+              <p class="feed-text">{moment.content}</p>
+            </div>
+
+            <!-- Images -->
+            {moment.images && moment.images.length > 0 && (
+              <div class={`feed-images grid-${moment.images.length >= 3 ? '3' : moment.images.length === 2 ? '2' : '1'}`}>
+                {moment.images.map((img: string) => (
+                  <div class="feed-image-placeholder">
+                    <img
+                      src={img}
+                      alt={moment.title}
+                      class="feed-image"
+                      loading="lazy"
+                      onerror="this.style.display='none'"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Placeholder image area for posts without images — decorative gradient */}
+            {(!moment.images || moment.images.length === 0) && (
+              <div class="feed-images grid-3">
+                <div class="feed-image-placeholder" style="background: linear-gradient(135deg, #DDEFE7, #C8DFD6);"></div>
+                <div class="feed-image-placeholder" style="background: linear-gradient(135deg, #F7E7C6, #E8D5B0);"></div>
+                <div class="feed-image-placeholder" style="background: linear-gradient(135deg, #D4E7F7, #B8D4E8);"></div>
+              </div>
+            )}
+
+            <!-- Tags -->
+            <div class="feed-tags">
+              {moment.tags.map((tag: string) => (
+                <span class="feed-tag">#{tag}</span>
+              ))}
+            </div>
+
+            <!-- Interaction bar -->
+            <div class="feed-actions">
+              <span class="feed-action">
+                <svg class="feed-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                </svg>
+                {moment.likes}
+              </span>
+              <span class="feed-action">
+                <svg class="feed-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                </svg>
+                {moment.comments}
+              </span>
+              <span class="feed-action feed-action-share">
+                <svg class="feed-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/>
+                </svg>
+                {il.share}
+              </span>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </main>
   <Footer lang={lang} />
 </BaseLayout>
+
+<style>
+  .moments-page {
+    min-height: 100vh;
+    background: #FAF8F3;
+    padding-bottom: 80px;
+  }
+
+  [data-theme="dark"] .moments-page {
+    background: #1a1d21;
+  }
+
+  .moments-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Page header */
+  .moments-header {
+    text-align: center;
+    padding: 64px 0 40px;
+  }
+
+  .moments-title {
+    font-family: 'Noto Serif', 'Noto Serif SC', serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  [data-theme="dark"] .moments-title {
+    color: #fffdf5;
+  }
+
+  .moments-subtitle {
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.48);
+    line-height: 1.7;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  [data-theme="dark"] .moments-subtitle {
+    color: rgba(255, 253, 245, 0.45);
+  }
+
+  /* Feed */
+  .moments-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* Card */
+  .feed-card {
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(20, 20, 20, 0.08);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .feed-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+  }
+
+  [data-theme="dark"] .feed-card {
+    background: rgba(36, 39, 43, 0.92);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  [data-theme="dark"] .feed-card:hover {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Card header: avatar + identity */
+  .feed-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .feed-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: #A7C7E7;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Noto Serif', 'Noto Serif SC', serif;
+  }
+
+  .feed-identity {
+    min-width: 0;
+  }
+
+  .feed-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.3;
+  }
+
+  [data-theme="dark"] .feed-name {
+    color: #fffdf5;
+  }
+
+  .feed-meta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.78rem;
+    color: rgba(0, 0, 0, 0.42);
+    flex-wrap: wrap;
+  }
+
+  [data-theme="dark"] .feed-meta {
+    color: rgba(255, 253, 245, 0.4);
+  }
+
+  .feed-dot {
+    opacity: 0.4;
+  }
+
+  /* Card body */
+  .feed-body {
+    margin-bottom: 18px;
+  }
+
+  .feed-title {
+    font-family: 'Noto Serif', 'Noto Serif SC', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  [data-theme="dark"] .feed-title {
+    color: #fffdf5;
+  }
+
+  .feed-text {
+    font-size: 0.92rem;
+    line-height: 1.78;
+    color: rgba(0, 0, 0, 0.68);
+  }
+
+  [data-theme="dark"] .feed-text {
+    color: rgba(255, 253, 245, 0.62);
+  }
+
+  /* Images */
+  .feed-images {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .feed-images.grid-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .feed-images.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feed-images.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .feed-image-placeholder {
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #DDEFE7, #F7E7C6);
+  }
+
+  .feed-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Tags */
+  .feed-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .feed-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    color: #2F6F64;
+    background: rgba(47, 111, 100, 0.08);
+    font-weight: 500;
+  }
+
+  [data-theme="dark"] .feed-tag {
+    color: #7EC8B8;
+    background: rgba(126, 200, 184, 0.1);
+  }
+
+  /* Interaction bar */
+  .feed-actions {
+    display: flex;
+    gap: 20px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  [data-theme="dark"] .feed-actions {
+    border-top-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .feed-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: rgba(0, 0, 0, 0.42);
+    font-size: 0.85rem;
+    cursor: default;
+    user-select: none;
+  }
+
+  [data-theme="dark"] .feed-action {
+    color: rgba(255, 253, 245, 0.4);
+  }
+
+  .feed-action-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .feed-action-share {
+    margin-left: auto;
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .moments-container {
+      padding: 0 16px;
+    }
+
+    .moments-header {
+      padding: 40px 0 28px;
+    }
+
+    .moments-title {
+      font-size: 1.75rem;
+    }
+
+    .moments-subtitle {
+      font-size: 0.82rem;
+      max-width: 300px;
+    }
+
+    .feed-card {
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .feed-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+    }
+
+    .feed-title {
+      font-size: 1.05rem;
+    }
+
+    .feed-text {
+      font-size: 0.88rem;
+    }
+
+    .feed-images {
+      gap: 6px;
+    }
+
+    .feed-image-placeholder {
+      border-radius: 10px;
+    }
+
+    .feed-actions {
+      gap: 14px;
+    }
+  }
+</style>
