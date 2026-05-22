@@ -160,12 +160,12 @@ let lastYear = '';
 <style>
   .moments-page {
     min-height: 100vh;
-    background: #FAF8F3;
+    background: #F5F1EB;
     padding-bottom: 80px;
   }
 
   [data-theme="dark"] .moments-page {
-    background: #1a1d21;
+    background: #16181c;
   }
 
   .moments-container {
@@ -276,29 +276,28 @@ let lastYear = '';
     height: 9px;
     border-radius: 50%;
     background: #A7C7E7;
-    border: 2px solid #FAF8F3;
+    border: 2px solid #F5F1EB;
     position: absolute;
     right: -4.5px;
     top: 4px;
     z-index: 2;
-    box-shadow: 0 0 0 0px rgba(167, 199, 231, 0);
   }
 
   [data-theme="dark"] .tl-dot {
-    border-color: #1a1d21;
+    border-color: #16181c;
     background: #6a9cc4;
   }
 
   .tl-line {
     flex: 1;
     width: 1px;
-    background: rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.1);
     margin-top: 12px;
     min-height: 24px;
   }
 
   [data-theme="dark"] .tl-line {
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.1);
   }
 
   /* Timeline content (right) */
@@ -310,27 +309,27 @@ let lastYear = '';
 
   /* Feed card */
   .feed-card {
-    background: rgba(255, 255, 255, 0.86);
-    border: 1px solid rgba(20, 20, 20, 0.08);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 24px 26px;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.035);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .feed-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.055);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   }
 
   [data-theme="dark"] .feed-card {
-    background: rgba(36, 39, 43, 0.92);
-    border-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+    background: #24272b;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   }
 
   [data-theme="dark"] .feed-card:hover {
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   }
 
   /* Card header */
@@ -477,11 +476,11 @@ let lastYear = '';
     display: flex;
     gap: 18px;
     padding-top: 12px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   [data-theme="dark"] .feed-actions {
-    border-top-color: rgba(255, 255, 255, 0.05);
+    border-top-color: rgba(255, 255, 255, 0.08);
   }
 
   .feed-action {
