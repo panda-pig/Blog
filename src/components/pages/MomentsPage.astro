@@ -82,13 +82,7 @@ let lastYear = '';
                     </div>
                   </div>
 
-                  <!-- Body -->
-                  <div class="feed-body">
-                    <h3 class="feed-title">{moment.title}</h3>
-                    <p class="feed-text">{moment.content}</p>
-                  </div>
-
-                  <!-- Images -->
+                  <!-- Images - above body, prominent -->
                   {moment.images && moment.images.length > 0 && (
                     <div class="feed-images">
                       {moment.images.map((img: string) => (
@@ -104,14 +98,11 @@ let lastYear = '';
                     </div>
                   )}
 
-                  <!-- Placeholder gradients for posts without images -->
-                  {(!moment.images || moment.images.length === 0) && (
-                    <div class="feed-images feed-images-placeholder">
-                      <div class="feed-image-ph" style="background: linear-gradient(135deg, #DDEFE7, #C8DFD6);"></div>
-                      <div class="feed-image-ph" style="background: linear-gradient(135deg, #F7E7C6, #E8D5B0);"></div>
-                      <div class="feed-image-ph" style="background: linear-gradient(135deg, #D4E7F7, #B8D4E8);"></div>
-                    </div>
-                  )}
+                  <!-- Body -->
+                  <div class="feed-body">
+                    <h3 class="feed-title">{moment.title}</h3>
+                    <p class="feed-text">{moment.content}</p>
+                  </div>
 
                   <!-- Tags -->
                   <div class="feed-tags">
@@ -289,6 +280,7 @@ let lastYear = '';
     padding: 24px 26px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
   }
 
   .feed-card:hover {
@@ -388,43 +380,30 @@ let lastYear = '';
     color: rgba(255, 253, 245, 0.6);
   }
 
-  /* Images */
+  /* Images - full bleed from card edges */
   .feed-images {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
-
-  .feed-images-placeholder {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 7px;
+    gap: 4px;
+    margin: 0 -26px 14px;
+    overflow: hidden;
   }
 
   .feed-image-link {
     display: block;
-    border-radius: 12px;
-    overflow: hidden;
     cursor: pointer;
     transition: opacity 0.2s ease;
   }
 
   .feed-image-link:hover {
-    opacity: 0.92;
+    opacity: 0.95;
   }
 
   .feed-image {
     display: block;
     width: 100%;
-    max-height: 320px;
+    max-height: 420px;
     object-fit: cover;
-    border-radius: 12px;
-  }
-
-  .feed-image-ph {
-    aspect-ratio: 1 / 1;
-    border-radius: 12px;
   }
 
   /* Tags */
@@ -521,21 +500,12 @@ let lastYear = '';
       font-size: 0.85rem;
     }
 
+    .feed-images {
+      margin: 0 -18px 12px;
+    }
+
     .feed-image {
-      max-height: 240px;
-      border-radius: 10px;
-    }
-
-    .feed-image-link {
-      border-radius: 10px;
-    }
-
-    .feed-images-placeholder {
-      gap: 5px;
-    }
-
-    .feed-image-ph {
-      border-radius: 8px;
+      max-height: 300px;
     }
 
     .feed-tag {
