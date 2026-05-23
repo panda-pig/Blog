@@ -7,8 +7,6 @@ export interface Moment {
   location: string;
   tags: string[];
   images: string[];
-  likes: number;
-  comments: number;
 }
 
 export const momentsData: Record<string, Moment[]> = {
@@ -22,8 +20,6 @@ export const momentsData: Record<string, Moment[]> = {
       location: '东京，日本',
       tags: ['日常', '周五', '博客'],
       images: ['/images/moments/friday.jpg'],
-      likes: 3,
-      comments: 1,
     },
   ],
   en: [
@@ -36,8 +32,6 @@ export const momentsData: Record<string, Moment[]> = {
       location: 'Tokyo, Japan',
       tags: ['Daily', 'Friday', 'Blog'],
       images: ['/images/moments/friday.jpg'],
-      likes: 3,
-      comments: 1,
     },
   ],
   ja: [
@@ -50,8 +44,6 @@ export const momentsData: Record<string, Moment[]> = {
       location: '東京，日本',
       tags: ['日常', '金曜日', 'ブログ'],
       images: ['/images/moments/friday.jpg'],
-      likes: 3,
-      comments: 1,
     },
   ],
 };
