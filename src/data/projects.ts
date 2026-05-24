@@ -39,7 +39,7 @@ export const projectsData = {
     },
     {
       title: 'Panda Blog',
-      description: 'A personal blog system built with Astro, supporting dark mode, full-text search, comment system, and RSS subscription. Pursuing极致 performance and elegant design.',
+      description: 'A personal blog system built with Astro, supporting dark mode, full-text search, comment system, and RSS subscription. Pursuing ultimate performance and elegant design.',
       tags: ['Astro', 'Tailwind CSS', 'Vercel', 'Pagefind'],
       link: 'https://blog-beta-kohl-92.vercel.app',
       status: 'Completed',

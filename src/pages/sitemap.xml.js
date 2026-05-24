@@ -4,21 +4,21 @@ export async function GET() {
   const baseUrl = 'https://blog-beta-kohl-92.vercel.app';
 
   const pages = [
-    { url: baseUrl, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/blog`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/moments`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/projects`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/contact`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/en`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/en/blog`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/en/moments`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/en/projects`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/en/contact`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/ja`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/ja/blog`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/ja/moments`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/ja/projects`, lastmod: new Date().toISOString() },
-    { url: `${baseUrl}/ja/contact`, lastmod: new Date().toISOString() },
+    { url: baseUrl },
+    { url: `${baseUrl}/blog` },
+    { url: `${baseUrl}/moments` },
+    { url: `${baseUrl}/projects` },
+    { url: `${baseUrl}/contact` },
+    { url: `${baseUrl}/en` },
+    { url: `${baseUrl}/en/blog` },
+    { url: `${baseUrl}/en/moments` },
+    { url: `${baseUrl}/en/projects` },
+    { url: `${baseUrl}/en/contact` },
+    { url: `${baseUrl}/ja` },
+    { url: `${baseUrl}/ja/blog` },
+    { url: `${baseUrl}/ja/moments` },
+    { url: `${baseUrl}/ja/projects` },
+    { url: `${baseUrl}/ja/contact` },
   ];
 
   const slugs = new Set();
@@ -41,8 +41,7 @@ export async function GET() {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map((p) => `  <url>
-    <loc>${p.url}</loc>
-    <lastmod>${p.lastmod.split('T')[0]}</lastmod>
+    <loc>${p.url}</loc>${p.lastmod ? `\n    <lastmod>${p.lastmod.split('T')[0]}</lastmod>` : ''}
   </url>`).join('\n')}
 </urlset>`;
 
