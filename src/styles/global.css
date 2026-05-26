@@ -10,22 +10,22 @@
     --surface-hover: #f0efec;
     --surface-alt: #f5f5f3;
     --surface-blue: #d7e7f6;
-    --border: rgba(0, 0, 0, 0.14);
-    --border-hover: rgba(0, 0, 0, 0.28);
-    --text: #000000;
-    --text-secondary: #333333;
-    --text-muted: #5e5e5a;
-    --primary: #000000;
-    --primary-light: rgba(129, 174, 217, 0.2);
-    --primary-hover: #333333;
-    --accent: #81aed9;
-    --accent-soft: rgba(129, 174, 217, 0.28);
-    --accent-border: rgba(0, 0, 0, 0.28);
+    --border: rgba(31, 42, 61, 0.1);
+    --border-hover: rgba(31, 42, 61, 0.18);
+    --text: #1f2a3d;
+    --text-secondary: #445066;
+    --text-muted: #6e788a;
+    --primary: #24324d;
+    --primary-light: rgba(129, 157, 210, 0.22);
+    --primary-hover: #30405f;
+    --accent: #86a6dd;
+    --accent-soft: rgba(134, 166, 221, 0.26);
+    --accent-border: rgba(134, 166, 221, 0.32);
     --accent-lime: #ff8562;
     --accent-warm: #ff8562;
     --badge-bg: rgba(129, 174, 217, 0.26);
-    --card-shadow: 4px -4px 0 rgba(51, 51, 51, 0.18);
-    --card-shadow-hover: 6px -6px 0 rgba(51, 51, 51, 0.28);
+    --card-shadow: 0 18px 44px rgba(52, 70, 100, 0.12);
+    --card-shadow-hover: 0 24px 58px rgba(52, 70, 100, 0.18);
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 25px;
@@ -127,13 +127,13 @@
     background-color: var(--primary);
     color: #ffffff;
     transition: all 0.25s ease;
-    box-shadow: 4px -4px 0 rgba(129, 174, 217, 0.65);
+    box-shadow: 0 14px 30px rgba(76, 102, 146, 0.2);
   }
 
   .btn-primary:hover {
     background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 6px -6px 0 rgba(129, 174, 217, 0.75);
+    box-shadow: 0 18px 38px rgba(76, 102, 146, 0.24);
   }
 
   .btn-outline {
@@ -157,7 +157,7 @@
     color: var(--accent);
   }
 
-  /* Hero-specific buttons — blueprint paper style */
+  /* Hero-specific buttons */
   .btn-hero-primary {
     display: inline-flex;
     align-items: center;
@@ -168,17 +168,17 @@
     font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: -0.01em;
-    background: var(--accent);
-    color: #000000;
-    border: 1.5px solid #000000;
-    box-shadow: 4px -4px 0 rgba(0, 0, 0, 0.5);
+    background: #7fa3dc;
+    color: #ffffff;
+    border: 1px solid #6f93cc;
+    box-shadow: 0 12px 26px rgba(82, 111, 164, 0.26);
     transition: all 0.25s ease;
   }
 
   .btn-hero-primary:hover {
-    background: #9fc3e4;
-    transform: translate(1px, -1px);
-    box-shadow: 5px -5px 0 rgba(0, 0, 0, 0.62);
+    background: #7197d3;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(82, 111, 164, 0.32);
   }
 
   .btn-hero-secondary {
@@ -189,32 +189,34 @@
     padding: 0.75rem 1.75rem;
     border-radius: 9999px;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -0.01em;
-    background: rgba(245, 245, 243, 0.12);
-    color: rgba(255, 253, 245, 0.86);
-    border: 1.5px solid rgba(245, 245, 243, 0.42);
+    background: #ffffff;
+    color: #3f4c5f;
+    border: 1px solid #b7c1cf;
+    box-shadow: 0 10px 22px rgba(52, 70, 100, 0.12);
     transition: all 0.25s ease;
   }
 
   .btn-hero-secondary:hover {
-    color: #fffdf5;
-    border-color: #fffdf5;
-    background: rgba(245, 245, 243, 0.18);
+    color: #24324d;
+    border-color: #94a3b8;
+    background: #f8fafc;
+    transform: translateY(-2px);
   }
 
   .card-fluid {
     background-color: var(--surface);
     border-radius: 1rem;
     box-shadow: var(--card-shadow);
-    border: 1.5px solid var(--border);
+    border: 1px solid var(--border);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     overflow: hidden;
   }
 
   .card-fluid:hover {
     box-shadow: var(--card-shadow-hover);
-    transform: translate(1px, -3px);
+    transform: translateY(-3px);
     border-color: var(--border-hover);
   }
 
@@ -269,8 +271,8 @@
 
   .nav-link.active {
     color: #000000;
-    background: var(--accent);
-    box-shadow: 3px -3px 0 rgba(51, 51, 51, 0.75);
+    background: #dbe7fb;
+    box-shadow: 0 10px 24px rgba(82, 111, 164, 0.16);
     font-weight: 600;
   }
 }

@@ -33,33 +33,36 @@ const coverDesigns = [
       <div class="home-cover__grain" aria-hidden="true"></div>
 
       <div class="section-container home-cover__content">
-        <div class="home-cover__eyebrow" aria-label="Panda, Web Data AI">
-          <span class="home-cover__mark">
-            <img src="/images/avatar.jpg" alt="Panda" class="w-full h-full object-cover rounded-xl" />
-          </span>
-          <span>Panda</span>
-          <span class="home-cover__divider"></span>
-          <span>Web / Data / AI</span>
+        <div class="home-cover__copy">
+          <div class="home-cover__eyebrow" aria-label="Panda's digital garden">
+            <span class="home-cover__mark">
+              <img src="/images/avatar.jpg" alt="Panda" class="w-full h-full object-cover rounded-xl" />
+            </span>
+            <span class="home-cover__eyebrow-copy">
+              <span class="home-cover__eyebrow-title">PANDA</span>
+              <span class="home-cover__eyebrow-meta">WEB / DATA / AI</span>
+            </span>
+          </div>
+
+          <h1 id="home-cover-title" class="home-cover__title">{t['hero.title']}</h1>
+          <p class="home-cover__typed" aria-label={t['hero.typed']}>
+            <span class="home-cover__typed-text" data-typed-text={t['hero.typed']}>{t['hero.typed']}</span>
+          </p>
+          <p class="home-cover__desc">{t['hero.desc']}</p>
+
+          <div class="home-cover__actions">
+            <a href={`${prefix}/blog`} class="btn-hero-primary">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              <span>{t['hero.cta1']}</span>
+            </a>
+            <a href={`${prefix}/contact`} class="btn-hero-secondary">
+              <span >{t['hero.cta2']}</span>
+            </a>
+          </div>
+
         </div>
-
-        <h1 id="home-cover-title" class="home-cover__title">{t['hero.title']}</h1>
-        <p class="home-cover__typed" aria-label={t['hero.typed']}>
-          <span class="home-cover__typed-text" data-typed-text={t['hero.typed']}>{t['hero.typed']}</span>
-        </p>
-        <p class="home-cover__desc">{t['hero.desc']}</p>
-
-        <div class="home-cover__actions">
-          <a href={`${prefix}/blog`} class="btn-hero-primary">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-            </svg>
-            <span>{t['hero.cta1']}</span>
-          </a>
-          <a href={`${prefix}/contact`} class="btn-hero-secondary">
-            <span >{t['hero.cta2']}</span>
-          </a>
-        </div>
-
       </div>
 
       <a href="#home-content" class="home-cover__scroll" aria-label="Scroll to homepage content">
@@ -96,13 +99,13 @@ const coverDesigns = [
 
     <style>
       .home-cover {
-        min-height: calc(100svh - 72px);
+        min-height: clamp(560px, calc(100svh - 72px), 760px);
         position: relative;
         overflow: hidden;
         display: flex;
-        align-items: center;
+        align-items: stretch;
         isolation: isolate;
-        background: #1e2328;
+        background: #eef2f7;
       }
 
       .home-cover__image,
@@ -115,30 +118,28 @@ const coverDesigns = [
 
       .home-cover__image {
         z-index: -4;
-        background-image: url('/images/home-hero-bg.png');
+        background-image: url('/images/home-hero-bg-v2.png');
         background-position: center;
         background-size: cover;
-        transform: scale(1.02);
-        filter: saturate(0.72) contrast(1.05) brightness(0.92);
+        filter: saturate(0.9) contrast(1.02) brightness(1.07);
       }
 
       .home-cover__shade {
         z-index: -3;
         background:
-          radial-gradient(ellipse at 50% 43%, rgba(245, 245, 243, 0.12) 0%, rgba(0, 0, 0, 0.15) 42%, rgba(0, 0, 0, 0.35) 100%),
-          linear-gradient(180deg, rgba(245, 245, 243, 0.08) 0%, rgba(0, 0, 0, 0.18) 52%, rgba(0, 0, 0, 0.45) 100%);
-        backdrop-filter: saturate(0.8) brightness(1.0);
-        -webkit-backdrop-filter: saturate(0.8) brightness(1.0);
+          radial-gradient(ellipse at 72% 44%, rgba(255, 252, 244, 0.58) 0%, rgba(255, 252, 244, 0.32) 36%, rgba(255, 252, 244, 0) 68%),
+          linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 36%, rgba(250, 248, 242, 0.24) 56%, rgba(250, 248, 242, 0.36) 100%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 252, 244, 0.05) 42%, rgba(245, 245, 243, 0.22) 100%);
       }
 
       .home-cover__grain {
         z-index: -2;
-        opacity: 0.16;
+        opacity: 0.025;
         background-image:
-          linear-gradient(rgba(245,245,243,0.075) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(245,245,243,0.06) 1px, transparent 1px),
-          radial-gradient(circle at 1px 1px, rgba(245,245,243,0.16) 1px, transparent 0);
-        background-size: 72px 72px, 72px 72px, 18px 18px;
+          linear-gradient(rgba(58, 71, 91, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(58, 71, 91, 0.045) 1px, transparent 1px),
+          radial-gradient(circle at 1px 1px, rgba(58, 71, 91, 0.1) 1px, transparent 0);
+        background-size: 80px 80px, 80px 80px, 18px 18px;
         mask-image: linear-gradient(180deg, rgba(0,0,0,0.75), transparent 92%);
       }
 
@@ -146,35 +147,57 @@ const coverDesigns = [
         width: 100%;
         position: relative;
         z-index: 2;
-        padding-top: 72px;
-        padding-bottom: 96px;
-        text-align: center;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(520px, 640px);
+        align-items: center;
+        padding-top: 76px;
+        padding-bottom: 104px;
+      }
+
+      .home-cover__copy {
+        grid-column: 2;
+        max-width: 640px;
+        text-align: left;
       }
 
       .home-cover__eyebrow {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-        margin-bottom: 1.5rem;
-        color: rgba(245, 245, 243, 0.78);
+        justify-content: flex-start;
+        gap: 0.85rem;
+        margin-bottom: 1.35rem;
+        color: #24304a;
         font-family: 'JetBrains Mono', monospace;
-        font-size: 0.72rem;
-        font-weight: 500;
-        letter-spacing: 0.04em;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
       }
 
       .home-cover__mark {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2.35rem;
+        height: 2.35rem;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border-radius: 0.75rem;
+        border-radius: 0.7rem;
         overflow: hidden;
-        border: 1.5px solid rgba(0, 0, 0, 0.8);
-        box-shadow: 3px -3px 0 rgba(0, 0, 0, 0.58);
+        border: 1px solid rgba(33, 47, 69, 0.18);
+        box-shadow: 0 12px 28px rgba(56, 70, 96, 0.16);
+      }
+
+      .home-cover__eyebrow-copy {
+        display: grid;
+        gap: 0.26rem;
+      }
+
+      .home-cover__eyebrow-title {
+        color: #253149;
+      }
+
+      .home-cover__eyebrow-meta {
+        color: #7891b6;
+        letter-spacing: 0.12em;
       }
 
       .home-cover__divider {
@@ -184,32 +207,32 @@ const coverDesigns = [
       }
 
       .home-cover__title {
-        max-width: 760px;
-        margin: 0 auto;
-        color: #fffdf5;
+        max-width: 640px;
+        margin: 0;
+        color: #182338;
         font-family: 'Noto Serif', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', serif;
-        font-size: clamp(2.35rem, 5.2vw, 4.8rem);
+        font-size: clamp(2.55rem, 4.05vw, 4rem);
         font-weight: 600;
-        line-height: 1.08;
+        line-height: 1.04;
         letter-spacing: 0;
-        overflow-wrap: anywhere;
-        text-wrap: balance;
-        text-shadow: 0 16px 44px rgba(0, 0, 0, 0.48);
+        white-space: nowrap;
+        overflow-wrap: normal;
+        text-shadow: 0 18px 46px rgba(255, 255, 255, 0.72);
       }
 
       .home-cover__typed {
-        max-width: 760px;
-        min-height: 2.4rem;
-        margin: 1.35rem auto 0;
-        color: rgba(255, 253, 245, 0.92);
-        font-size: clamp(1rem, 2.1vw, 1.45rem);
-        line-height: 1.6;
-        font-weight: 500;
+        max-width: 540px;
+        min-height: 3.9rem;
+        margin: 1.15rem 0 0;
+        color: #4f5d72;
+        font-size: clamp(1.08rem, 1.78vw, 1.36rem);
+        line-height: 1.58;
+        font-weight: 600;
       }
 
       .home-cover__typed-text {
         display: inline;
-        text-shadow: 0 10px 32px rgba(0, 0, 0, 0.38);
+        text-shadow: 0 12px 30px rgba(255, 255, 255, 0.78);
       }
 
       .home-cover__typed-text.is-typing::after {
@@ -219,7 +242,7 @@ const coverDesigns = [
         height: 1.05em;
         margin-left: 0.18em;
         vertical-align: -0.16em;
-        background: #ff8562;
+        background: #76a0d7;
         animation: home-caret 0.82s steps(1) infinite;
       }
 
@@ -228,20 +251,21 @@ const coverDesigns = [
       }
 
       .home-cover__desc {
-        width: min(100%, 620px);
-        margin: 1.2rem auto 0;
-        color: rgba(255, 253, 245, 0.74);
-        font-size: 1rem;
+        max-width: 540px;
+        margin: 0.65rem 0 0;
+        color: #667286;
+        font-size: clamp(0.94rem, 1.35vw, 1.08rem);
         line-height: 1.8;
+        font-weight: 500;
       }
 
       .home-cover__actions {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 0.75rem;
         flex-wrap: wrap;
-        margin-top: 2.2rem;
+        margin-top: 1.7rem;
       }
 
       .home-cover__scroll {
@@ -256,8 +280,9 @@ const coverDesigns = [
         justify-content: center;
         transform: translateX(-50%);
         border-radius: 999px;
-        border: 1.5px solid rgba(245, 245, 243, 0.46);
-        background: rgba(245, 245, 243, 0.12);
+        border: 1px solid rgba(31, 42, 61, 0.14);
+        background: rgba(255, 255, 255, 0.62);
+        box-shadow: 0 14px 34px rgba(55, 72, 100, 0.14);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
@@ -272,8 +297,8 @@ const coverDesigns = [
       .home-cover__scroll span {
         width: 0.55rem;
         height: 0.55rem;
-        border-right: 2px solid rgba(255, 253, 245, 0.82);
-        border-bottom: 2px solid rgba(255, 253, 245, 0.82);
+        border-right: 2px solid rgba(31, 42, 61, 0.68);
+        border-bottom: 2px solid rgba(31, 42, 61, 0.68);
         transform: translateY(-2px) rotate(45deg);
       }
 
@@ -288,9 +313,29 @@ const coverDesigns = [
           min-height: calc(100svh - 72px);
         }
 
+        .home-cover__image {
+          background-position: 37% center;
+          filter: saturate(0.86) contrast(1.02) brightness(1.06);
+        }
+
+        .home-cover__shade {
+          background:
+            radial-gradient(ellipse at 48% 34%, rgba(255, 252, 244, 0.42) 0%, rgba(255, 252, 244, 0.2) 42%, rgba(255, 252, 244, 0) 72%),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.34) 0%, rgba(250, 252, 255, 0.1) 44%, rgba(245, 245, 243, 0.34) 100%),
+            linear-gradient(90deg, rgba(248, 250, 253, 0.28), rgba(248, 250, 253, 0.06));
+        }
+
         .home-cover__content {
+          display: block;
           padding-top: 52px;
           padding-bottom: 92px;
+        }
+
+        .home-cover__copy {
+          width: 100%;
+          max-width: min(100%, 18.75rem);
+          margin: 0 auto 0 0;
+          text-align: left;
         }
 
         .home-cover__eyebrow {
@@ -300,21 +345,28 @@ const coverDesigns = [
         }
 
         .home-cover__title {
-          max-width: 18rem;
-          font-size: clamp(1.95rem, 8.4vw, 2.75rem);
+          max-width: 18.75rem;
+          font-size: clamp(1.62rem, 7vw, 2.05rem);
           line-height: 1.16;
         }
 
         .home-cover__typed {
-          max-width: 18.5rem;
-          min-height: 4.8rem;
+          max-width: 18.75rem;
+          min-height: 4.5rem;
           margin-top: 1rem;
-          font-size: 1rem;
+          font-size: 0.98rem;
+          overflow-wrap: anywhere;
         }
 
         .home-cover__desc {
-          max-width: 18.5rem;
-          font-size: 0.94rem;
+          max-width: 18.75rem;
+          font-size: 0.88rem;
+          overflow-wrap: anywhere;
+        }
+
+        .home-cover__actions {
+          justify-content: flex-start;
+          margin-top: 1.45rem;
         }
 
       }

@@ -23,9 +23,10 @@ const languages = [
     align-items: center;
     gap: 0.125rem;
     padding: 0.125rem;
-    border-radius: 0.5rem;
-    background: rgba(255, 255, 255, 0.72);
-    border: 1.5px solid rgba(0, 0, 0, 0.22);
+    border-radius: 0.55rem;
+    background: rgba(255, 255, 255, 0.66);
+    border: 1px solid rgba(31, 42, 61, 0.12);
+    box-shadow: 0 10px 24px rgba(52, 70, 100, 0.08);
   }
 
   [data-theme="dark"] .lang-switcher {
@@ -39,7 +40,7 @@ const languages = [
     font-size: 0.75rem;
     font-weight: 500;
     transition: all 0.2s;
-    color: rgba(0, 0, 0, 0.62);
+    color: rgba(31, 42, 61, 0.62);
     background: transparent;
     border: none;
     cursor: pointer;
@@ -50,9 +51,10 @@ const languages = [
   }
 
   .lang-btn.active {
-    background-color: #81aed9;
-    color: #000000;
+    background-color: #dbe7fb;
+    color: #1f2a3d;
     font-weight: 600;
+    box-shadow: 0 8px 18px rgba(82, 111, 164, 0.14);
   }
 
   [data-theme="dark"] .lang-btn.active {
