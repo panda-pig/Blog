@@ -5,7 +5,8 @@ import { ViewTransitions } from 'astro:transitions';
 
 const { title, description, slug, lang = 'zh' } = Astro.props;
 const siteTitle = title ? title : 'Panda Blog';
-const canonicalUrl = `https://blog-beta-kohl-92.vercel.app${slug || ''}`;
+const siteUrl = 'https://panda-blog.com';
+const canonicalUrl = `${siteUrl}${slug || ''}`;
 const htmlLang = lang === 'zh' ? 'zh-CN' : lang;
 ---
 
@@ -28,8 +29,9 @@ const htmlLang = lang === 'zh' ? 'zh-CN' : lang;
     <meta property="og:type" content="website" />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description || 'panda 的个人博客'} />
+    <meta property="og:url" content={canonicalUrl} />
 
-    <script defer data-domain="blog-beta-kohl-92.vercel.app" src="https://plausible.io/js/script.js"></script>
+    <script defer data-domain="panda-blog.com" src="https://plausible.io/js/script.js"></script>
 
     <script is:inline>
       (function() {

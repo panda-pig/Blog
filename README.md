@@ -2,7 +2,7 @@
 
 我的个人博客，记录想法、技术和生活碎片。
 
-**在线地址**: [https://blog-beta-kohl-92.vercel.app](https://blog-beta-kohl-92.vercel.app)
+**在线地址**: [https://panda-blog.com](https://panda-blog.com)
 
 ## 关于
 

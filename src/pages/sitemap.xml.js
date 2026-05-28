@@ -1,7 +1,7 @@
 export async function GET() {
   const allPosts = Object.values(await import.meta.glob('../content/blog/*.md', { eager: true }));
 
-  const baseUrl = 'https://blog-beta-kohl-92.vercel.app';
+  const baseUrl = 'https://panda-blog.com';
 
   const pages = [
     { url: baseUrl },
