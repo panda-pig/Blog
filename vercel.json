@@ -4,6 +4,17 @@
   "outputDirectory": "dist",
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.panda-blog.com"
+        }
+      ],
+      "destination": "https://panda-blog.com",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
