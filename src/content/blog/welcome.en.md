@@ -3,7 +3,7 @@ slug: welcome
 lang: en
 title: "Welcome to My Blog Journey"
 description: "This is my first blog post, sharing why I started blogging and what this blog will cover."
-date: 2025-01-01
+date: 2026-05-01
 tags: ["Essay", "Start"]
 ---
 
