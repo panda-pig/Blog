@@ -11,7 +11,7 @@ export const projectsData = {
       title: 'AI 手相分析网站',
       description: '结合计算机视觉和深度学习的趣味项目，上传手掌照片即可获取个性化的分析报告。使用 TensorFlow.js 在浏览器端运行模型。',
       tags: ['Python', 'TensorFlow', 'Next.js', 'Tailwind CSS'],
-      link: '#',
+      link: 'https://github.com/panda-pig',
       status: '已完成',
     },
     {
@@ -34,7 +34,7 @@ export const projectsData = {
       title: 'AI Palmistry Website',
       description: 'A fun project combining computer vision and deep learning. Upload a palm photo to get a personalized analysis report. Uses TensorFlow.js to run models in the browser.',
       tags: ['Python', 'TensorFlow', 'Next.js', 'Tailwind CSS'],
-      link: '#',
+      link: 'https://github.com/panda-pig',
       status: 'Completed',
     },
     {
@@ -57,7 +57,7 @@ export const projectsData = {
       title: 'AI 手相分析ウェブサイト',
       description: 'コンピュータビジョンと深層学習を組み合わせた趣味プロジェクト。手のひらの写真をアップロードすると、パーソナライズされた分析レポートを取得できます。TensorFlow.js でブラウザ上でモデルを実行。',
       tags: ['Python', 'TensorFlow', 'Next.js', 'Tailwind CSS'],
-      link: '#',
+      link: 'https://github.com/panda-pig',
       status: '完了',
     },
     {

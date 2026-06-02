@@ -116,6 +116,10 @@ const dict = {
     'donate.wechat': '微信支付',
     'donate.alipay': '支付宝',
     'donate.qrPlaceholder': '收款码',
+    // Archive page SEO
+    'archive.pageDesc': '所有文章笔记与理论探索。',
+    // Article lang switcher
+    'article.langSwitch': '多语言',
     // Search
     'search.placeholder': '搜索文章...',
     'search.ctrlK': 'Ctrl K',
@@ -236,6 +240,10 @@ const dict = {
     'donate.wechat': 'WeChat Pay',
     'donate.alipay': 'Alipay',
     'donate.qrPlaceholder': 'QR Code',
+    // Archive page SEO
+    'archive.pageDesc': 'All articles, notes, and explorations.',
+    // Article lang switcher
+    'article.langSwitch': 'Multilingual',
     // Search
     'search.placeholder': 'Search articles...',
     'search.ctrlK': 'Ctrl K',
@@ -356,6 +364,10 @@ const dict = {
     'donate.wechat': 'WeChat Pay',
     'donate.alipay': 'Alipay',
     'donate.qrPlaceholder': 'QRコード',
+    // Archive page SEO
+    'archive.pageDesc': 'すべての記事とノート、理論的探求。',
+    // Article lang switcher
+    'article.langSwitch': '多言語',
     // Search
     'search.placeholder': '記事を検索...',
     'search.ctrlK': 'Ctrl K',

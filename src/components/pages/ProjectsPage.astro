@@ -11,7 +11,7 @@ const projects = projectsData[lang as 'zh' | 'en' | 'ja'] || projectsData.zh;
 const t = dict[lang] || dict.zh;
 ---
 
-<BaseLayout title={`项目 — Panda Blog`} description="功能原型与开源实验。" lang={lang}>
+<BaseLayout title={`${t['proj.title']} — Panda Blog`} description={t['proj.desc']} lang={lang}>
   <Header lang={lang} />
 
   <main class="min-h-screen">

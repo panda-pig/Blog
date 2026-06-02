@@ -67,11 +67,18 @@ const languages = [
     const buttons = document.querySelectorAll('#lang-switcher .lang-btn');
     if (!buttons.length) return;
 
+    function getCurrentLang() {
+      const path = window.location.pathname;
+      if (path.startsWith('/en')) return 'en';
+      if (path.startsWith('/ja')) return 'ja';
+      return 'zh';
+    }
+
     function updateActive() {
-      const lang = localStorage.getItem('lang') || 'zh';
+      const lang = getCurrentLang();
+      localStorage.setItem('lang', lang); // 保持 localStorage 与 URL 同步
       buttons.forEach((btn) => {
-        const isActive = btn.getAttribute('data-lang') === lang;
-        btn.classList.toggle('active', isActive);
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
       });
     }
 

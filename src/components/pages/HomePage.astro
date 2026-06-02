@@ -592,22 +592,33 @@ const coverDesigns = [
           </div>
           <h2 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--text);" >{t['newsletter.title']}</h2>
           <p class="mb-8 max-w-md mx-auto" style="color: var(--text-secondary);" >{t['newsletter.desc']}</p>
-          <form
-            id="newsletter-form"
-            class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-            data-buttondown-url={import.meta.env.PUBLIC_BUTTONDOWN_URL || ''}
-          >
-            <input
-              type="email"
-              name="email"
-              class="flex-1 px-4 py-3 rounded-xl text-sm transition-all focus:outline-none focus:ring-2"
-              style="background: var(--surface); border: 1px solid var(--border); color: var(--text); --tw-ring-color: var(--primary);"
-              placeholder={t["newsletter.placeholder"]}
-              required
-            />
-            <button type="submit" class="btn-primary whitespace-nowrap" >{t['newsletter.btn']}</button>
-          </form>
-          <p id="newsletter-status" class="text-xs mt-4 hidden" style="color: var(--text-muted);"></p>
+          {import.meta.env.PUBLIC_BUTTONDOWN_URL ? (
+            <>
+              <form
+                id="newsletter-form"
+                class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+                data-buttondown-url={import.meta.env.PUBLIC_BUTTONDOWN_URL}
+              >
+                <input
+                  type="email"
+                  name="email"
+                  class="flex-1 px-4 py-3 rounded-xl text-sm transition-all focus:outline-none focus:ring-2"
+                  style="background: var(--surface); border: 1px solid var(--border); color: var(--text); --tw-ring-color: var(--primary);"
+                  placeholder={t["newsletter.placeholder"]}
+                  required
+                />
+                <button type="submit" class="btn-primary whitespace-nowrap">{t['newsletter.btn']}</button>
+              </form>
+              <p id="newsletter-status" class="text-xs mt-4 hidden" style="color: var(--text-muted);"></p>
+            </>
+          ) : (
+            <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm" style="background: var(--surface); border: 1px solid var(--border); color: var(--text-muted);">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>{t['newsletter.comingSoon']}</span>
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -16,61 +16,64 @@ const giscusLang = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja' : 'en';
     <h3 class="text-xl font-medium font-serif" style="color: var(--text);">{t['article.comments']}</h3>
   </div>
   <div class="rounded-2xl border p-2" style="background-color: var(--surface); border-color: var(--border);">
-    <div class="rounded-xl overflow-hidden">
-      <script
-        src="https://giscus.app/client.js"
-        data-repo="panda-pig/Blog"
-        data-repo-id="R_kgDOSdLFcA"
-        data-category="Blog Comments"
-        data-category-id="DIC_kwDOSdLFcM4C9BwJ"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="light"
-        data-lang={giscusLang}
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async
-      ></script>
-    </div>
+    <div class="rounded-xl overflow-hidden giscus-container" data-giscus-lang={giscusLang}></div>
   </div>
 </div>
 
 <script>
-  let giscusObserver = null;
-  let giscusLoadBound = false;
+  let giscusObserver: MutationObserver | null = null;
 
   function getSiteGiscusTheme() {
     return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
   }
 
   function updateGiscusTheme() {
-    const iframe = document.querySelector('iframe.giscus-frame');
+    const iframe = document.querySelector('iframe.giscus-frame') as HTMLIFrameElement | null;
     if (!iframe) return;
     iframe.contentWindow?.postMessage({ giscus: { setConfig: { theme: getSiteGiscusTheme() } } }, 'https://giscus.app');
   }
 
-  function bindGiscusLoad() {
-    const iframe = document.querySelector('iframe.giscus-frame');
-    if (!iframe || giscusLoadBound) return;
-    giscusLoadBound = true;
-    iframe.addEventListener('load', updateGiscusTheme);
-  }
+  function initGiscus() {
+    const container = document.querySelector('.giscus-container') as HTMLElement | null;
+    if (!container) return;
 
-  function initGiscusTheme() {
-    updateGiscusTheme();
-    bindGiscusLoad();
-    window.setTimeout(() => {
-      bindGiscusLoad();
-      updateGiscusTheme();
-    }, 500);
-    if (giscusObserver) return;
+    // 避免重复注入（ViewTransitions 每次导航会重建 DOM，所以这里不会误判）
+    if (container.querySelector('script')) return;
+
+    const theme = getSiteGiscusTheme();
+    const lang = container.dataset.giscusLang || 'zh-CN';
+
+    const s = document.createElement('script');
+    s.src = 'https://giscus.app/client.js';
+    s.dataset.repo = 'panda-pig/Blog';
+    s.dataset.repoId = 'R_kgDOSdLFcA';
+    s.dataset.category = 'Blog Comments';
+    s.dataset.categoryId = 'DIC_kwDOSdLFcM4C9BwJ';
+    s.dataset.mapping = 'pathname';
+    s.dataset.strict = '0';
+    s.dataset.reactionsEnabled = '1';
+    s.dataset.emitMetadata = '0';
+    s.dataset.inputPosition = 'top';
+    s.dataset.theme = theme;
+    s.dataset.lang = lang;
+    s.dataset.loading = 'lazy';
+    s.crossOrigin = 'anonymous';
+    s.async = true;
+
+    // iframe 加载完成后再同步一次主题，确保一致
+    s.addEventListener('load', () => {
+      window.setTimeout(updateGiscusTheme, 300);
+    });
+
+    container.appendChild(s);
+
+    // 监听站点主题切换，同步到 Giscus iframe
+    if (giscusObserver) giscusObserver.disconnect();
     giscusObserver = new MutationObserver((mutations) => {
       mutations.forEach((m) => { if (m.attributeName === 'data-theme') updateGiscusTheme(); });
     });
     giscusObserver.observe(document.documentElement, { attributes: true });
   }
-  document.addEventListener('astro:page-load', initGiscusTheme);
+
+  document.addEventListener('astro:page-load', initGiscus);
 </script>

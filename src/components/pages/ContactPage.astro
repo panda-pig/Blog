@@ -9,7 +9,7 @@ const prefix = lang === 'zh' ? '' : `/${lang}`;
 const t = dict[lang] || dict.zh;
 ---
 
-<BaseLayout title={`${t['contact.title']} — Panda Blog`} description="关于 panda 与数字实验室。" lang={lang}>
+<BaseLayout title={`${t['contact.title']} — Panda Blog`} description={t['contact.desc']} lang={lang}>
   <Header lang={lang} />
 
   <main class="min-h-screen">

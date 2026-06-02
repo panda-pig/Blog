@@ -17,7 +17,7 @@ const displayPosts = getLocalizedPosts(postsBySlug, lang);
 const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || []))];
 ---
 
-<BaseLayout title={`归档 — Panda Blog`} description="所有文章笔记与理论探索。" lang={lang}>
+<BaseLayout title={`${t['archive.title']} — Panda Blog`} description={t['archive.pageDesc']} lang={lang}>
   <Header lang={lang} />
 
   <main class="min-h-screen">
@@ -37,10 +37,10 @@ const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || [
         </div>
 
         {allTags.length > 0 && (
-          <div class="flex flex-wrap justify-center gap-2">
-            <span class="tag-pill cursor-pointer" style="background-color: var(--primary); color: #fff; border-color: var(--primary);" >{t['archive.all']}</span>
+          <div class="flex flex-wrap justify-center gap-2" id="tag-filter-bar">
+            <span class="tag-pill cursor-pointer tag-filter-btn tag-filter-active" data-tag="all" style="background-color: var(--primary); color: #fff; border-color: var(--primary);">{t['archive.all']}</span>
             {allTags.map((tag) => (
-              <span class="tag-pill cursor-pointer">{tag}</span>
+              <span class="tag-pill cursor-pointer tag-filter-btn" data-tag={tag}>{tag}</span>
             ))}
           </div>
         )}
@@ -54,7 +54,7 @@ const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || [
           const formattedDate = formatDate(post.frontmatter.date, lang);
 
           return (
-            <article class="py-10 md:py-12 border-b group" style="border-color: var(--border);">
+            <article class="py-10 md:py-12 border-b group archive-article" data-tags={(post.frontmatter.tags || []).join(',')} style="border-color: var(--border);">
               <div class="flex items-center gap-3 mb-3 text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">
                 <span>{formattedDate}</span>
                 <span>·</span>
@@ -79,7 +79,7 @@ const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || [
 
         {displayPosts.length === 0 && (
           <div class="text-center py-20">
-            <p class="text-sm" style="color: var(--text-muted);">还没有文章。</p>
+            <p class="text-sm" style="color: var(--text-muted);">{t['musing.empty']}</p>
           </div>
         )}
       </div>
@@ -87,3 +87,44 @@ const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || [
   </main>
   <Footer lang={lang} />
 </BaseLayout>
+
+<script>
+  function initTagFilter() {
+    const tagBtns = document.querySelectorAll<HTMLElement>('.tag-filter-btn');
+    const articles = document.querySelectorAll<HTMLElement>('.archive-article');
+    if (!tagBtns.length || !articles.length) return;
+
+    function setActive(activeBtn: HTMLElement) {
+      tagBtns.forEach((btn) => {
+        const isActive = btn === activeBtn;
+        if (isActive) {
+          btn.style.setProperty('background-color', 'var(--primary)');
+          btn.style.setProperty('color', '#fff');
+          btn.style.setProperty('border-color', 'var(--primary)');
+        } else {
+          btn.style.removeProperty('background-color');
+          btn.style.removeProperty('color');
+          btn.style.removeProperty('border-color');
+        }
+      });
+    }
+
+    tagBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const tag = btn.dataset.tag || 'all';
+        setActive(btn);
+
+        articles.forEach((article) => {
+          if (tag === 'all') {
+            article.style.display = '';
+          } else {
+            const tags = (article.dataset.tags || '').split(',').map((t) => t.trim());
+            article.style.display = tags.includes(tag) ? '' : 'none';
+          }
+        });
+      });
+    });
+  }
+
+  document.addEventListener('astro:page-load', initTagFilter);
+</script>
