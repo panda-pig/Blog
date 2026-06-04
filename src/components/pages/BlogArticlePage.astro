@@ -35,11 +35,11 @@ const headings = post.getHeadings ? post.getHeadings() : [];
 
   <main class="min-h-screen">
     <!-- Outer wrapper: wide container for desktop TOC sidebar -->
-    <article class="section-container pt-12 md:pt-20 pb-20 md:pb-28 mx-auto" style="max-width: 72rem;">
+    <article class="section-container pt-8 md:pt-20 pb-16 md:pb-28 mx-auto" style="max-width: 72rem;">
       
       <!-- Back link -->
-      <div class="mb-8 md:mb-12">
-        <a href={`${prefix}/blog`} class="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-muted);" >{t['article.back']}</a>
+      <div class="mb-6 md:mb-12">
+        <a href={`${prefix}/blog`} class="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider transition-colors hover:opacity-70 py-1" style="color: var(--text-muted);" >{t['article.back']}</a>
       </div>
 
       <!-- Language switcher -->
@@ -73,13 +73,13 @@ const headings = post.getHeadings ? post.getHeadings() : [];
       )}
 
       <!-- Title -->
-      <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-5 md:mb-8 leading-tight" style="color: var(--text);">
+      <h1 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-8 leading-tight" style="color: var(--text);">
         {post.frontmatter.title}
       </h1>
 
       <!-- Description -->
       {post.frontmatter.description && (
-        <p class="text-lg md:text-xl leading-relaxed mb-8 md:mb-12" style="color: var(--text-secondary);">
+        <p class="text-base md:text-xl leading-relaxed mb-6 md:mb-12" style="color: var(--text-secondary);">
           {post.frontmatter.description}
         </p>
       )}

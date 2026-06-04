@@ -340,53 +340,57 @@ const coverDesigns = [
 
         .home-cover__content {
           display: block;
-          padding-top: 52px;
-          padding-bottom: 92px;
+          padding-top: 48px;
+          padding-bottom: 80px;
         }
 
+        /* 移动端放开宽度限制，让文字使用完整屏幕宽度 */
         .home-cover__copy {
           width: 100%;
-          max-width: min(100%, 18.75rem);
-          margin: 0 auto 0 0;
+          max-width: 100%;
+          margin: 0;
           text-align: left;
         }
 
         .home-cover__copy::before {
-          inset: -1.2rem -0.9rem -1rem -0.85rem;
+          inset: -1rem -1.5rem -1rem -0.5rem;
           background:
-            radial-gradient(ellipse at 42% 42%, rgba(255, 252, 244, 0.32) 0%, rgba(255, 252, 244, 0.15) 48%, rgba(255, 252, 244, 0) 76%),
-            linear-gradient(90deg, rgba(255, 252, 244, 0.08), rgba(255, 252, 244, 0));
+            radial-gradient(ellipse at 38% 42%, rgba(255, 252, 244, 0.38) 0%, rgba(255, 252, 244, 0.18) 52%, rgba(255, 252, 244, 0) 78%),
+            linear-gradient(90deg, rgba(255, 252, 244, 0.1), rgba(255, 252, 244, 0));
         }
 
         .home-cover__eyebrow {
           gap: 0.55rem;
-          margin-bottom: 1.15rem;
+          margin-bottom: 1rem;
           font-size: 0.65rem;
         }
 
         .home-cover__title {
-          max-width: 18.75rem;
-          font-size: clamp(1.62rem, 7vw, 2.05rem);
-          line-height: 1.16;
+          max-width: 100%;
+          white-space: normal;
+          font-size: clamp(1.75rem, 8vw, 2.2rem);
+          line-height: 1.14;
         }
 
         .home-cover__typed {
-          max-width: 18.75rem;
-          min-height: 4.5rem;
-          margin-top: 1rem;
-          font-size: 0.98rem;
+          max-width: 100%;
+          min-height: 5rem;
+          margin-top: 0.9rem;
+          font-size: clamp(0.93rem, 4vw, 1rem);
           overflow-wrap: anywhere;
         }
 
         .home-cover__desc {
-          max-width: 18.75rem;
-          font-size: 0.88rem;
+          max-width: 100%;
+          font-size: 0.875rem;
           overflow-wrap: anywhere;
+          line-height: 1.7;
         }
 
         .home-cover__actions {
           justify-content: flex-start;
-          margin-top: 1.45rem;
+          margin-top: 1.35rem;
+          gap: 0.625rem;
         }
 
       }
@@ -413,33 +417,34 @@ const coverDesigns = [
 
       @media (max-width: 768px) {
         .home-cover__motto {
-          max-width: 18.75rem;
+          max-width: 100%;
           font-size: 0.75rem;
+          margin-top: 1.1rem;
         }
       }
     </style>
 
     <!-- P9: Info Cards -->
-    <div id="home-content" class="section-container" style="margin-top: -36px; position: relative; z-index: 10; margin-bottom: 64px;">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-        <div class="card-fluid p-5 md:p-6">
-          <div class="text-[16px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);" >{t['info.origin']}</div>
-          <div class="text-[15px] font-semibold" style="color: var(--text);" >{t['info.originVal']}</div>
+    <div id="home-content" class="section-container" style="margin-top: -28px; position: relative; z-index: 10; margin-bottom: 48px;">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-4">
+        <div class="card-fluid p-4 md:p-6">
+          <div class="text-[13px] md:text-[14px] font-semibold uppercase tracking-wider mb-1.5" style="color: var(--text-muted);" >{t['info.origin']}</div>
+          <div class="text-[13px] md:text-[15px] font-semibold" style="color: var(--text);" >{t['info.originVal']}</div>
         </div>
-        <div class="card-fluid p-5 md:p-6">
-          <div class="text-[16px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);" >{t['info.stack']}</div>
-          <div class="text-[15px] font-semibold" style="color: var(--text);" >{t['info.stackVal']}</div>
+        <div class="card-fluid p-4 md:p-6">
+          <div class="text-[13px] md:text-[14px] font-semibold uppercase tracking-wider mb-1.5" style="color: var(--text-muted);" >{t['info.stack']}</div>
+          <div class="text-[13px] md:text-[15px] font-semibold" style="color: var(--text);" >{t['info.stackVal']}</div>
         </div>
-        <div class="card-fluid p-5 md:p-6">
-          <div class="text-[16px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);" >{t['info.focus']}</div>
-          <div class="text-[15px] font-semibold" style="color: var(--text);" >{t['info.focusVal']}</div>
+        <div class="card-fluid p-4 md:p-6">
+          <div class="text-[13px] md:text-[14px] font-semibold uppercase tracking-wider mb-1.5" style="color: var(--text-muted);" >{t['info.focus']}</div>
+          <div class="text-[13px] md:text-[15px] font-semibold" style="color: var(--text);" >{t['info.focusVal']}</div>
         </div>
-        <div class="card-fluid p-5 md:p-6">
-          <div class="text-[16px] font-semibold uppercase tracking-wider mb-2" style="color: var(--text-muted);">
+        <div class="card-fluid p-4 md:p-6">
+          <div class="text-[13px] md:text-[14px] font-semibold uppercase tracking-wider mb-1.5" style="color: var(--text-muted);">
             <span class="inline-block w-2 h-2 rounded-full mr-1.5" style="background: #81aed9; box-shadow: 0 0 0 3px rgba(129,174,217,0.3);"></span>
             <span >{t['info.status']}</span>
           </div>
-          <div class="text-[15px] font-semibold" style="color: var(--text);" >{t['info.statusVal']}</div>
+          <div class="text-[13px] md:text-[15px] font-semibold" style="color: var(--text);" >{t['info.statusVal']}</div>
         </div>
       </div>
     </div>
