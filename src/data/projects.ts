@@ -2,17 +2,17 @@ export const projectsData = {
   zh: [
     {
       title: 'JLPT 语法词卡',
-      description: '一个基于 React + TypeScript 的 JLPT 语法学习工具，将复杂语法知识点拆解为易于记忆的记忆卡片。支持按 N1-N5 等级筛选、搜索和收藏，采用间隔重复算法优化学习效率。',
+      description: '基于 React + TypeScript 的 JLPT 语法学习工具，将复杂语法知识点拆解为易于记忆的卡片。支持 N1-N5 等级筛选、搜索和收藏，采用间隔重复算法优化学习效率。',
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
       link: 'https://github.com/panda-pig/jlpt-grammar-cards',
       status: '进行中',
     },
     {
-      title: 'AI 手相分析网站',
-      description: '结合计算机视觉和深度学习的趣味项目，上传手掌照片即可获取个性化的分析报告。使用 TensorFlow.js 在浏览器端运行模型。',
-      tags: ['Python', 'TensorFlow', 'Next.js', 'Tailwind CSS'],
-      link: 'https://github.com/panda-pig',
-      status: '已完成',
+      title: 'JLPT 备考计划台',
+      description: '基于 React + TypeScript 的 JLPT 备考工作台，支持考试倒计时、每日学习记录、智能复盘分析与计划导出。帮助考生建立可持续的备考节奏。',
+      tags: ['React', 'TypeScript', 'Vite', 'Vercel'],
+      link: 'https://jlpt-sprint-desk.vercel.app',
+      status: '进行中',
     },
     {
       title: 'Panda Blog',
@@ -25,17 +25,17 @@ export const projectsData = {
   en: [
     {
       title: 'JLPT Grammar Cards',
-      description: 'A React + TypeScript JLPT grammar learning tool that breaks down complex grammar points into bite-sized memory cards. Supports filtering by N1-N5 levels, search, and bookmarking with spaced repetition optimization.',
+      description: 'A React + TypeScript JLPT grammar learning tool that breaks down complex grammar points into bite-sized memory cards. Supports N1-N5 filtering, search, and bookmarking with spaced repetition.',
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
       link: 'https://github.com/panda-pig/jlpt-grammar-cards',
       status: 'In Progress',
     },
     {
-      title: 'AI Palmistry Website',
-      description: 'A fun project combining computer vision and deep learning. Upload a palm photo to get a personalized analysis report. Uses TensorFlow.js to run models in the browser.',
-      tags: ['Python', 'TensorFlow', 'Next.js', 'Tailwind CSS'],
-      link: 'https://github.com/panda-pig',
-      status: 'Completed',
+      title: 'JLPT Sprint Desk',
+      description: 'A React + TypeScript JLPT study planner with exam countdown, daily learning logs, smart review analysis, and plan exports. Helps build a sustainable study rhythm.',
+      tags: ['React', 'TypeScript', 'Vite', 'Vercel'],
+      link: 'https://jlpt-sprint-desk.vercel.app',
+      status: 'In Progress',
     },
     {
       title: 'Panda Blog',
@@ -48,17 +48,17 @@ export const projectsData = {
   ja: [
     {
       title: 'JLPT 文法カード',
-      description: 'React + TypeScript で構築された JLPT 文法学習ツール。複雑な文法知識を覚えやすいメモリーカードに分解。N1～N5 のレベル別フィルタリング、検索、お気に入り機能に対応し、間隔反復アルゴリズムで学習効率を最適化。',
+      description: 'React + TypeScript で構築された JLPT 文法学習ツール。複雑な文法知識を覚えやすいメモリーカードに分解。N1～N5 フィルタリング、検索、お気に入り機能と間隔反復アルゴリズムに対応。',
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
       link: 'https://github.com/panda-pig/jlpt-grammar-cards',
       status: '進行中',
     },
     {
-      title: 'AI 手相分析ウェブサイト',
-      description: 'コンピュータビジョンと深層学習を組み合わせた趣味プロジェクト。手のひらの写真をアップロードすると、パーソナライズされた分析レポートを取得できます。TensorFlow.js でブラウザ上でモデルを実行。',
-      tags: ['Python', 'TensorFlow', 'Next.js', 'Tailwind CSS'],
-      link: 'https://github.com/panda-pig',
-      status: '完了',
+      title: 'JLPT スプリントデスク',
+      description: 'React + TypeScript で構築された JLPT 学習計画ワークベンチ。試験カウントダウン、毎日の学習記録、スマートな復習分析、計画エクスポートに対応。継続的な学習リズムを構築します。',
+      tags: ['React', 'TypeScript', 'Vite', 'Vercel'],
+      link: 'https://jlpt-sprint-desk.vercel.app',
+      status: '進行中',
     },
     {
       title: 'Panda Blog',
