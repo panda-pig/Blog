@@ -29,13 +29,14 @@ const t = dict[lang] || dict.zh;
     var input = document.getElementById('search-input');
     var results = document.getElementById('search-results');
     var inner = document.getElementById('search-results-inner');
-    var lang = localStorage.getItem('lang') || 'zh';
+    var htmlLang = document.documentElement.lang || 'zh-CN';
+    var lang = htmlLang.startsWith('en') ? 'en' : htmlLang.startsWith('ja') ? 'ja' : 'zh';
     var timer;
 
     var labels = {
-      zh: { noResults: '没有找到相关文章', readingTime: '分钟阅读' },
-      en: { noResults: 'No results found', readingTime: 'min read' },
-      ja: { noResults: '該当する記事が見つかりませんでした', readingTime: '分で読める' },
+      zh: { noResults: '没有找到相关文章', readingTime: '分钟阅读', loading: '搜索中...', error: '搜索出错，请重试' },
+      en: { noResults: 'No results found', readingTime: 'min read', loading: 'Searching...', error: 'Search failed, please retry.' },
+      ja: { noResults: '該当する記事が見つかりませんでした', readingTime: '分で読める', loading: '検索中...', error: '検索に失敗しました。' },
     };
     var t = labels[lang] || labels.zh;
 
@@ -61,7 +62,7 @@ const t = dict[lang] || dict.zh;
     });
 
     async function search(query) {
-      inner.innerHTML = '<div class="px-4 py-8 text-center text-sm" style="color: var(--text-muted);">搜索中...</div>';
+      inner.innerHTML = '<div class="px-4 py-8 text-center text-sm" style="color: var(--text-muted);">' + t.loading + '</div>';
       results.classList.remove('hidden');
       try {
         var pagefind = await import('/pagefind/pagefind.js');
@@ -88,7 +89,7 @@ const t = dict[lang] || dict.zh;
         }
         inner.innerHTML = html;
       } catch (e) {
-        inner.innerHTML = '<div class="px-4 py-8 text-center text-sm" style="color: var(--text-muted);">搜索出错，请重试</div>';
+        inner.innerHTML = '<div class="px-4 py-8 text-center text-sm" style="color: var(--text-muted);">' + t.error + '</div>';
       }
     }
   })();

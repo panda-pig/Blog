@@ -94,9 +94,9 @@ const t = dict[lang] || dict.zh;
     if (!form || !submitBtn) return;
 
     function getDict() {
-      const lang = localStorage.getItem('lang') || 'zh';
-      const dict = window.i18nDict?.[lang] || window.i18nDict?.zh || {};
-      return dict;
+      const htmlLang = document.documentElement.lang || 'zh-CN';
+      const lang = htmlLang.startsWith('en') ? 'en' : htmlLang.startsWith('ja') ? 'ja' : 'zh';
+      return window.i18nDict?.[lang] || window.i18nDict?.zh || {};
     }
 
     form.addEventListener('submit', async (e) => {

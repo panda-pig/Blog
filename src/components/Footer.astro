@@ -12,7 +12,7 @@ const year = new Date().getFullYear();
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 mb-8">
       <!-- Brand -->
       <div class="sm:col-span-1">
-        <a href="/" class="flex items-center gap-2.5 mb-3">
+        <a href={prefix || '/'} class="flex items-center gap-2.5 mb-3">
           <div class="w-9 h-9 rounded-lg overflow-hidden flex items-center justify-center">
             <img src="/images/avatar.jpg" alt="Panda" class="w-full h-full object-cover" />
           </div>
@@ -72,11 +72,21 @@ const year = new Date().getFullYear();
   function initViewCounter() {
     var el = document.getElementById('view-counter');
     if (!el) return;
+
+    var htmlLang = document.documentElement.lang || 'zh-CN';
+    var labels = {
+      zh: function(n) { return '浏览 ' + n + ' 次'; },
+      en: function(n) { return n + ' views'; },
+      ja: function(n) { return '閲覧 ' + n + ' 回'; },
+    };
+    var lang = htmlLang.startsWith('en') ? 'en' : htmlLang.startsWith('ja') ? 'ja' : 'zh';
+    var fmt = labels[lang];
+
     var ns = 'panda-blog';
     var key = 'visits';
     fetch('https://api.counterapi.dev/v1/' + ns + '/' + key + '/up')
       .then(function(r) { return r.json(); })
-      .then(function(d) { el.textContent = '浏览 ' + (d.count || 0).toLocaleString() + ' 次'; })
+      .then(function(d) { el.textContent = fmt((d.count || 0).toLocaleString()); })
       .catch(function() { el.textContent = ''; });
   }
 

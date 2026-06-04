@@ -22,7 +22,7 @@ const coverDesigns = [
 ];
 ---
 
-<BaseLayout description="Panda Blog - panda 的想法与代码数字实验室" lang={lang}>
+<BaseLayout description={t['hero.desc']} lang={lang}>
   <Header lang={lang} />
 
   <main class="min-h-screen">
@@ -632,7 +632,9 @@ const coverDesigns = [
           e.preventDefault();
           const btn = newsletterForm.querySelector('button');
           const statusEl = document.getElementById('newsletter-status');
-          const dict = window.i18nDict?.[localStorage.getItem('lang') || 'zh'] || window.i18nDict?.zh || {};
+          const htmlLang = document.documentElement.lang || 'zh-CN';
+          const currentLang = htmlLang.startsWith('en') ? 'en' : htmlLang.startsWith('ja') ? 'ja' : 'zh';
+          const dict = window.i18nDict?.[currentLang] || window.i18nDict?.zh || {};
           if (!buttondownUrl) {
             statusEl.classList.remove('hidden');
             statusEl.textContent = dict['newsletter.comingSoon'] || '订阅功能即将上线';
