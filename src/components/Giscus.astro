@@ -75,5 +75,11 @@ const giscusLang = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja' : 'en';
     giscusObserver.observe(document.documentElement, { attributes: true });
   }
 
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGiscus, { once: true });
+  } else {
+    initGiscus();
+  }
+
   document.addEventListener('astro:page-load', initGiscus);
 </script>

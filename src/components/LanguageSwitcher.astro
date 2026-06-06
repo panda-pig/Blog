@@ -1,8 +1,8 @@
 ---
 const languages = [
-  { code: 'zh', label: '中文' },
-  { code: 'en', label: 'EN' },
-  { code: 'ja', label: '日本語' },
+  { code: 'zh', label: '中文', shortLabel: '中' },
+  { code: 'en', label: 'EN', shortLabel: 'EN' },
+  { code: 'ja', label: '日本語', shortLabel: '日' },
 ];
 ---
 
@@ -12,7 +12,8 @@ const languages = [
       class="lang-btn"
       data-lang={lang.code}
     >
-      {lang.label}
+      <span class="lang-label-full">{lang.label}</span>
+      <span class="lang-label-short">{lang.shortLabel}</span>
     </button>
   ))}
 </div>
@@ -35,6 +36,7 @@ const languages = [
   }
 
   .lang-btn {
+    min-width: 2.35rem;
     padding: 0.375rem 0.625rem;
     border-radius: 0.375rem;
     font-size: 0.75rem;
@@ -44,6 +46,10 @@ const languages = [
     background: transparent;
     border: none;
     cursor: pointer;
+  }
+
+  .lang-label-short {
+    display: none;
   }
 
   [data-theme="dark"] .lang-btn {
@@ -59,6 +65,28 @@ const languages = [
 
   [data-theme="dark"] .lang-btn.active {
     color: #000000;
+  }
+
+  @media (max-width: 639px) {
+    .lang-switcher {
+      gap: 0;
+      padding: 0.1rem;
+      border-radius: 0.5rem;
+    }
+
+    .lang-btn {
+      min-width: 1.95rem;
+      padding: 0.32rem 0.42rem;
+      font-size: 0.68rem;
+    }
+
+    .lang-label-full {
+      display: none;
+    }
+
+    .lang-label-short {
+      display: inline;
+    }
   }
 </style>
 
