@@ -2,8 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
 import dict from '../../i18n/dict.js';
 import { groupPostsBySlug, getLocalizedPosts, getReadingTime, formatDate } from '../../lib/posts.js';
+import { projectsData } from '../../data/projects';
 
 const { lang } = Astro.props;
 const prefix = lang === 'zh' ? '' : `/${lang}`;
@@ -12,14 +14,8 @@ const t = dict[lang] || dict.zh;
 const allPosts = await Astro.glob('../../content/blog/*.md');
 const postsBySlug = groupPostsBySlug(allPosts);
 const recentPosts = getLocalizedPosts(postsBySlug, lang);
+const homeProjects = projectsData[lang as 'zh' | 'en' | 'ja'] || projectsData.zh;
 
-const coverDesigns = [
-  { label: 'Thinking', number: '01' },
-  { label: 'Project', number: '02' },
-  { label: 'Blog', number: '03' },
-  { label: 'Thinking', number: '04' },
-  { label: 'Learning', number: '05' },
-];
 ---
 
 <BaseLayout description={t['hero.desc']} lang={lang}>
@@ -347,7 +343,7 @@ const coverDesigns = [
         /* 移动端放开宽度限制，让文字使用完整屏幕宽度 */
         .home-cover__copy {
           width: 100%;
-          max-width: 100%;
+          max-width: calc(100vw - 3rem);
           margin: 0;
           text-align: left;
         }
@@ -373,17 +369,23 @@ const coverDesigns = [
         }
 
         .home-cover__typed {
-          max-width: 100%;
+          width: 100%;
+          max-width: calc(100vw - 3rem);
           min-height: 5rem;
           margin-top: 0.9rem;
           font-size: clamp(0.93rem, 4vw, 1rem);
-          overflow-wrap: anywhere;
+          overflow-wrap: break-word;
+          white-space: normal;
+          word-break: normal;
         }
 
         .home-cover__desc {
-          max-width: 100%;
+          width: 100%;
+          max-width: calc(100vw - 3rem);
           font-size: 0.875rem;
-          overflow-wrap: anywhere;
+          overflow-wrap: break-word;
+          white-space: normal;
+          word-break: normal;
           line-height: 1.7;
         }
 
@@ -399,6 +401,14 @@ const coverDesigns = [
         .home-cover__eyebrow {
           transform: scale(0.92);
           transform-origin: center;
+        }
+      }
+
+      @media (max-width: 639px) {
+        .home-cover__copy,
+        .home-cover__typed,
+        .home-cover__desc {
+          max-width: min(100%, 21rem);
         }
       }
 
@@ -420,6 +430,12 @@ const coverDesigns = [
           max-width: 100%;
           font-size: 0.75rem;
           margin-top: 1.1rem;
+        }
+      }
+
+      @media (max-width: 639px) {
+        .home-cover__motto {
+          max-width: min(100%, 21rem);
         }
       }
     </style>
@@ -473,60 +489,30 @@ const coverDesigns = [
           const readingTime = getReadingTime(post.rawContent);
           const formattedDate = formatDate(post.frontmatter.date, lang);
           const category = post.frontmatter.tags?.[0] || t['musing.category'];
-          const design = coverDesigns[index % coverDesigns.length];
-          const gradColors = [
-            ['#81aed9', '#4d7fae'],
-            ['#ff8562', '#d95e3e'],
-            ['#333333', '#000000'],
-            ['#f5f5f3', '#cfddee'],
-            ['#55a1ea', '#81aed9'],
-          ];
-          const gradient = gradColors[index % gradColors.length];
-          // P4: Get first character of title for cover
-          const titleInitial = post.frontmatter.title?.charAt(0) || '#';
+          const borderColors = ['#81aed9', '#ff8562', '#4a6ea8'];
+          const borderColor = borderColors[index % borderColors.length];
 
           return (
-            <div class="card-fluid group flex flex-col">
-              <!-- P4: Enhanced cover with category label, number, and title initial -->
-              <div class="h-44 w-full relative overflow-hidden" style={`background: linear-gradient(135deg, ${gradient[0]} 0%, ${gradient[1]} 100%);`}>
-                <!-- Dot pattern overlay -->
-                <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 24px 24px;"></div>
-                <!-- Large title initial -->
-                <span class="absolute bottom-2 right-4 font-serif text-6xl font-light leading-none" style="color: rgba(255,255,255,0.08);">{titleInitial}</span>
-                <!-- Category badge -->
-                <div class="absolute top-3 left-3">
-                  <span class="category-badge" >{t['musing.category']}</span>
-                </div>
-                <!-- Number indicator -->
-                <div class="absolute top-3 right-3">
-                  <span class="text-[11px] font-mono font-semibold tracking-wider" style="color: rgba(255,255,255,0.35);">{design.number}</span>
-                </div>
-              </div>
-
-              <div class="p-6 flex flex-col flex-1">
-                <div class="flex items-center gap-2 mb-3 text-[11px] uppercase tracking-wider" style="color: var(--text-muted);">
-                  <span>{formattedDate}</span>
-                  <span>·</span>
-                  <span>{readingTime} <span >{t['musing.minRead']}</span></span>
+            <a href={`${prefix}/blog/${slug}`} class="card-fluid group flex flex-col" style={`border-left: 4px solid ${borderColor};`}>
+              <div class="p-5 md:p-6 flex flex-col flex-1">
+                <div class="flex items-center gap-2 mb-3 flex-wrap">
+                  <span class="category-badge">{category}</span>
+                  <span class="text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">{formattedDate} · {readingTime} {t['musing.minRead']}</span>
                 </div>
 
-                <a href={`${prefix}/blog/${slug}`} class="block mb-2 group-hover:opacity-80 transition-opacity">
-                  <h3 class="font-serif text-lg font-semibold leading-snug" style="color: var(--text);">{post.frontmatter.title}</h3>
-                </a>
+                <h3 class="font-serif text-[15.5px] font-semibold leading-snug mb-2.5 group-hover:opacity-75 transition-opacity" style="color: var(--text);">{post.frontmatter.title}</h3>
 
-                <p class="text-sm leading-relaxed mb-4 flex-1" style="color: var(--text-secondary);">
+                <p class="text-[13px] leading-relaxed mb-4 flex-1" style="color: var(--text-secondary);">
                   {post.frontmatter.description}
                 </p>
 
-                <div class="flex items-center justify-between pt-4 border-t" style="border-color: var(--border);">
-                  <div class="flex gap-1.5">
-                    {post.frontmatter.tags?.slice(0, 2).map((tag: string) => (
-                      <span class="tag-pill">{tag}</span>
-                    ))}
-                  </div>
+                <div class="flex gap-1.5 pt-3 border-t" style="border-color: var(--border);">
+                  {post.frontmatter.tags?.slice(0, 2).map((tag: string) => (
+                    <span class="tag-pill">{tag}</span>
+                  ))}
                 </div>
               </div>
-            </div>
+            </a>
           );
         })}
       </div>
@@ -548,104 +534,97 @@ const coverDesigns = [
       </div>
     </section>
 
-    <!-- P6: Interactive Experiments -->
+    <!-- Projects -->
     <section class="section-container pb-20 md:pb-24">
-      <div class="flex items-center gap-3 mb-7">
-        <div class="w-5 h-[2px] rounded-full" style="background: var(--primary);"></div>
-        <h2 class="text-xs font-bold uppercase tracking-[0.12em]" style="color: var(--text-muted);" >{t['exp.title']}</h2>
+      <div class="flex items-center justify-between mb-7">
+        <div class="flex items-center gap-3">
+          <div class="w-5 h-[2px] rounded-full" style="background: var(--primary);"></div>
+          <h2 class="text-xs font-bold uppercase tracking-[0.12em]" style="color: var(--text-muted);">{t['proj.title']}</h2>
+        </div>
+        <a href={`${prefix}/projects`} class="hidden md:flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--text-secondary);">
+          {t['musing.viewAll']}
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
-      <div style="background: var(--accent-warm); border-radius: 1rem; padding: 28px; border: 1px solid var(--border);">
-        <div class="flex flex-col md:flex-row gap-8 md:gap-10">
-          <div class="flex-1">
-            <h2 class="font-serif text-2xl md:text-[28px] font-normal mb-2" style="color: var(--text); letter-spacing: -0.01em;" >{t['exp.title']}</h2>
-            <p class="text-[15px] leading-relaxed mb-6 max-w-md" style="color: var(--text-secondary);" >{t['exp.desc']}</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+        {homeProjects.map((project) => (
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            tags={project.tags}
+            link={project.link}
+            status={project.status}
+            lang={lang}
+          />
+        ))}
+      </div>
 
-            <div class="space-y-3">
-              <a href={`${prefix}/projects`} class="flex items-start gap-3 p-3 rounded-xl transition-all hover:translate-x-1" style="background: var(--bg); border: 1px solid var(--border);">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(129,174,217,0.24);">
-                  <span class="text-lg">✏️</span>
-                </div>
-                <div>
-                  <h4 class="text-sm font-semibold mb-0.5" style="color: var(--text);" >{t['exp.canvas']}</h4>
-                  <p class="text-xs" style="color: var(--text-secondary);" >{t['exp.canvasDesc']}</p>
-                </div>
-              </a>
-
-              <a href={`${prefix}/projects`} class="flex items-start gap-3 p-3 rounded-xl transition-all hover:translate-x-1" style="background: var(--bg); border: 1px solid var(--border);">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(255,133,98,0.18);">
-                  <span class="text-lg">🎨</span>
-                </div>
-                <div>
-                  <h4 class="text-sm font-semibold mb-0.5" style="color: var(--text);" >{t['exp.chroma']}</h4>
-                  <p class="text-xs" style="color: var(--text-secondary);" >{t['exp.chromaDesc']}</p>
-                </div>
-              </a>
-
-              <a href={`${prefix}/projects`} class="flex items-start gap-3 p-3 rounded-xl transition-all hover:translate-x-1" style="background: var(--bg); border: 1px solid var(--border);">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(129,174,217,0.24);">
-                  <span class="text-lg">🧪</span>
-                </div>
-                <div>
-                  <h4 class="text-sm font-semibold mb-0.5" style="color: var(--text);" >{t['exp.jlpt']}</h4>
-                  <p class="text-xs" style="color: var(--text-secondary);" >{t['exp.jlptDesc']}</p>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="shrink-0 w-full md:w-56 h-44 hidden md:flex flex-col items-center justify-center gap-3" style="background: var(--bg); border-radius: 1rem; border: 1px solid var(--border);">
-            <div class="flex gap-1.5">
-              <span class="w-2.5 h-2.5 rounded-full" style="background: #ff5f57;"></span>
-              <span class="w-2.5 h-2.5 rounded-full" style="background: #febc2e;"></span>
-              <span class="w-2.5 h-2.5 rounded-full" style="background: #28c840;"></span>
-            </div>
-            <span class="text-4xl opacity-20">🧪</span>
-            <span class="text-[11px] font-mono px-2.5 py-1 rounded-md font-semibold" style="background: rgba(129,174,217,0.24); color: var(--primary);" >{t['exp.instance']}</span>
-          </div>
-        </div>
+      <div class="mt-5 md:hidden text-center">
+        <a href={`${prefix}/projects`} class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider" style="color: var(--text-secondary);">
+          {t['musing.viewAll']}
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </section>
 
     <!-- Newsletter -->
     <section class="section-container pb-24 md:pb-28">
-      <div class="card-fluid p-8 sm:p-12 text-center max-w-3xl mx-auto relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary-light)]/50 via-transparent to-[var(--primary-light)]/30 pointer-events-none"></div>
-        <div class="relative z-10">
-          <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background: var(--primary-light);">
-            <svg class="w-6 h-6" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-bold mb-3" style="color: var(--text);" >{t['newsletter.title']}</h2>
-          <p class="mb-8 max-w-md mx-auto" style="color: var(--text-secondary);" >{t['newsletter.desc']}</p>
-          {import.meta.env.PUBLIC_BUTTONDOWN_URL ? (
-            <>
-              <form
-                id="newsletter-form"
-                class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-                data-buttondown-url={import.meta.env.PUBLIC_BUTTONDOWN_URL}
-              >
-                <input
-                  type="email"
-                  name="email"
-                  class="flex-1 px-4 py-3 rounded-xl text-sm transition-all focus:outline-none focus:ring-2"
-                  style="background: var(--surface); border: 1px solid var(--border); color: var(--text); --tw-ring-color: var(--primary);"
-                  placeholder={t["newsletter.placeholder"]}
-                  required
-                />
-                <button type="submit" class="btn-primary whitespace-nowrap">{t['newsletter.btn']}</button>
-              </form>
-              <p id="newsletter-status" class="text-xs mt-4 hidden" style="color: var(--text-muted);"></p>
-            </>
-          ) : (
-            <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm" style="background: var(--surface); border: 1px solid var(--border); color: var(--text-muted);">
-              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      <div class="card-fluid p-7 md:p-10 relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(129,174,217,0.07) 0%, transparent 55%);"></div>
+        <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
+
+          <!-- Left: icon + copy -->
+          <div class="flex items-start gap-4 flex-1 min-w-0">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 mt-0.5" style="background: var(--primary-light);">
+              <svg class="w-5 h-5" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>
-              <span>{t['newsletter.comingSoon']}</span>
             </div>
-          )}
+            <div class="min-w-0">
+              <h2 class="text-lg md:text-xl font-bold mb-1.5" style="color: var(--text);">{t['newsletter.title']}</h2>
+              <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{t['newsletter.desc']}</p>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div class="shrink-0 w-full md:w-auto">
+            {import.meta.env.PUBLIC_BUTTONDOWN_URL ? (
+              <>
+                <form
+                  id="newsletter-form"
+                  class="flex gap-2"
+                  data-buttondown-url={import.meta.env.PUBLIC_BUTTONDOWN_URL}
+                >
+                  <input
+                    type="email"
+                    name="email"
+                    class="flex-1 md:w-56 px-4 py-2.5 rounded-xl text-sm transition-all focus:outline-none focus:ring-2"
+                    style="background: var(--bg); border: 1px solid var(--border); color: var(--text); --tw-ring-color: var(--primary);"
+                    placeholder={t["newsletter.placeholder"]}
+                    required
+                  />
+                  <button type="submit" class="btn-primary whitespace-nowrap">{t['newsletter.btn']}</button>
+                </form>
+                <p id="newsletter-status" class="text-xs mt-2 hidden" style="color: var(--text-muted);"></p>
+              </>
+            ) : (
+              <div class="flex flex-col gap-2">
+                <div class="flex gap-2">
+                  <input
+                    type="email"
+                    disabled
+                    class="flex-1 md:w-56 px-4 py-2.5 rounded-xl text-sm opacity-50 cursor-not-allowed"
+                    style="background: var(--bg); border: 1px solid var(--border); color: var(--text);"
+                    placeholder={t["newsletter.placeholder"]}
+                  />
+                  <button disabled class="btn-primary whitespace-nowrap opacity-60 cursor-not-allowed">{t['newsletter.btn']}</button>
+                </div>
+                <p class="text-xs" style="color: var(--text-muted);">{t['newsletter.comingSoon']}</p>
+              </div>
+            )}
+          </div>
+
         </div>
       </div>
     </section>

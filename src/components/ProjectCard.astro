@@ -12,37 +12,47 @@ interface Props {
 
 const { title, description, tags, link = '#', status = '进行中', lang = 'zh' } = Astro.props;
 const t = dict[lang] || dict.zh;
+const isDone = status === '已完成' || status === 'Completed' || status === '完了';
 ---
 
 <div class="card-fluid p-6 flex flex-col h-full">
-  <div class="flex items-start justify-between gap-4 mb-4">
-    <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background-color: var(--primary-light);">
-      <svg class="w-5 h-5" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+  <!-- Header: icon + status -->
+  <div class="flex items-start justify-between gap-3 mb-4">
+    <div class="w-[38px] h-[38px] rounded-xl flex items-center justify-center shrink-0" style="background-color: var(--primary-light);">
+      <svg class="w-[18px] h-[18px]" style="color: var(--primary);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
       </svg>
     </div>
-    <span class="text-[10px] px-2 py-0.5 rounded-full font-medium border uppercase tracking-wider"
-      style={status === '已完成' || status === 'Completed' || status === '完了'
-        ? 'background-color: var(--badge-bg); color: var(--primary); border-color: var(--primary-light);'
-        : 'background-color: var(--accent-warm); color: var(--text-secondary); border-color: var(--border);'
+    <span
+      class="text-[9.5px] px-2.5 py-[3px] rounded-full font-semibold border tracking-wider"
+      style={isDone
+        ? 'background-color: var(--primary-light); color: var(--primary); border-color: transparent;'
+        : 'background-color: transparent; color: var(--text-muted); border-color: var(--border);'
       }
     >
       {status}
     </span>
   </div>
 
-  <h3 class="text-base font-medium mb-2" style="color: var(--text);">{title}</h3>
-  <p class="text-xs leading-relaxed mb-4 flex-1" style="color: var(--text-secondary);">{description}</p>
+  <!-- Title -->
+  <h3 class="text-[14.5px] font-semibold mb-2 leading-snug" style="color: var(--text);">{title}</h3>
 
-  <div class="flex flex-wrap gap-1.5 mb-4">
+  <!-- Description -->
+  <p class="text-[12.5px] leading-relaxed mb-4 flex-1" style="color: var(--text-secondary);">{description}</p>
+
+  <!-- Tags -->
+  <div class="flex flex-wrap gap-[5px] mb-4">
     {tags.map((tag) => (
       <span class="tag-pill">{tag}</span>
     ))}
   </div>
 
-  <a href={link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider transition-colors hover:opacity-70" style="color: var(--primary);">
+  <!-- Link -->
+  <a href={link} target="_blank" rel="noopener noreferrer"
+     class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider transition-opacity hover:opacity-70"
+     style="color: var(--primary);">
     {t['proj.view']}
-    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
       <path d="M7 17L17 7M17 7H7M17 7v10"/>
     </svg>
   </a>
