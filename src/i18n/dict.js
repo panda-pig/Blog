@@ -13,7 +13,6 @@ const dict = {
     'hero.desc': '关于 Web 开发、数据分析、AI 探索，以及一些做着玩的小东西。',
     'hero.cta1': '浏览文章',
     'hero.cta2': '打个招呼',
-    'hero.avatar': '博主',
     // Info cards
     'info.origin': '📍 来源',
     'info.originVal': '地球🌍',
@@ -30,29 +29,11 @@ const dict = {
     'musing.category': '随笔',
     'musing.minRead': '分钟阅读',
     'musing.empty': '还没有文章，稍后再来看看。',
-    // Quote
-    'quote.label': '直接思考',
-    'quote.text': '技术的价值在于连接人心，而最高境界是让技术本身隐形。',
-    'quote.desc': '我对数字产品设计的理念聚焦于「隐形界面」——界面消融，只留下内容与意图。',
-    'quote.author': 'panda-pig',
-    'quote.role': '首席研究员',
-    // Experiments
-    'exp.title': '随手小实验',
-    'exp.desc': '这里收集一些我做着玩的原型、小工具和灵感实验。不一定成熟，但都是真实想法的试作品。',
-    'exp.canvas': '随手画布',
-    'exp.canvasDesc': '一个随手涂鸦就能生成 UI 布局原型的 AI 小工具。',
-    'exp.chroma': '色彩日记',
-    'exp.chromaDesc': '记录每天看到的颜色，生成个人专属色板。',
-    'exp.jlpt': 'JLPT 语法卡',
-    'exp.jlptDesc': '把日语语法点做成间隔重复卡片，边学边记。',
-    'exp.instance': '随手实例',
     // Archive page
     'archive.title': '归档',
     'archive.desc': '共',
     'archive.desc2': '篇文章，持续更新中',
-    'archive.search': '搜索文章...',
     'archive.all': '全部',
-    'archive.back': '返回归档',
     'archive.minRead': '分钟阅读',
     // Moments
     'moments.title': '瞬间',
@@ -68,17 +49,7 @@ const dict = {
     'proj.view': '查看项目',
     // About (merged into contact)
     'about.intro': '你好，我是 panda，一个热爱技术与创造的开发者。我相信好的产品是技术与设计的完美结合，而持续学习是成长的唯一路径。',
-    'about.doing': '我在做什么',
-    'about.doingDesc': '目前专注于 Web 开发和 AI 应用。我喜欢探索新技术，并将其应用到实际项目中。Panda Blog 是我记录学习和分享成果的地方。',
-    'about.stack': '技术栈',
-    'about.stackFE': '前端',
-    'about.stackBE': '后端',
-    'about.stackAI': 'AI/ML',
-    'about.stackTools': '工具',
     'about.contact': '联系我',
-    'about.contactDesc': '如果你有任何问题或合作意向，欢迎通过以下方式联系我：',
-    'about.gh': 'GitHub',
-    'about.email': 'Email',
     // Contact
     'contact.title': '关于',
     'contact.desc': '有任何问题或合作意向？欢迎随时联系我。',
@@ -103,9 +74,7 @@ const dict = {
     // Footer
     'footer.tagline': '一个思想与代码的数字花园。',
     'footer.nav': '导航',
-    'footer.resources': '资源',
     'footer.connect': '联系',
-    'footer.copyright': '© {year} Panda Blog',
     'footer.dev': '由 panda 开发',
     // Donate
     'donate.title': '喜欢这篇文章？',
@@ -122,7 +91,6 @@ const dict = {
     'article.langSwitch': '多语言',
     // Search
     'search.placeholder': '搜索文章...',
-    'search.ctrlK': 'Ctrl K',
   },
   en: {
     // Nav
@@ -137,7 +105,6 @@ const dict = {
     'hero.desc': 'Web development, data analysis, AI exploration, and some fun little things.',
     'hero.cta1': 'Browse Articles',
     'hero.cta2': 'Say Hello',
-    'hero.avatar': 'Blogger',
     // Info cards
     'info.origin': '📍 Origin',
     'info.originVal': 'Earth 🌍',
@@ -154,29 +121,11 @@ const dict = {
     'musing.category': 'Essay',
     'musing.minRead': 'min read',
     'musing.empty': 'No articles yet. Check back soon.',
-    // Quote
-    'quote.label': 'Direct Thought',
-    'quote.text': "Technology is best when it brings people together, but it's even better when it stays invisible.",
-    'quote.desc': 'My philosophy on digital product design focuses on the "Invisible UI"—where the interface dissolves to leave only the content and the intent.',
-    'quote.author': 'panda-pig',
-    'quote.role': 'Lead Researcher',
-    // Experiments
-    'exp.title': 'Side Projects',
-    'exp.desc': 'A collection of prototypes, small tools, and inspiration experiments. Not always polished, but each is a real attempt at an idea.',
-    'exp.canvas': 'Sketch Canvas',
-    'exp.canvasDesc': 'An AI doodle tool that turns rough sketches into UI layout prototypes.',
-    'exp.chroma': 'Color Journal',
-    'exp.chromaDesc': 'Records colors seen each day and generates a personal color palette.',
-    'exp.jlpt': 'JLPT Grammar Cards',
-    'exp.jlptDesc': 'Spaced repetition flashcards for Japanese grammar points.',
-    'exp.instance': 'Side Project',
     // Archive page
     'archive.title': 'Archive',
     'archive.desc': '',
     'archive.desc2': 'articles and counting',
-    'archive.search': 'Search articles...',
     'archive.all': 'All',
-    'archive.back': 'Back to Archive',
     'archive.minRead': 'min read',
     // Moments
     'moments.title': 'Moments',
@@ -192,17 +141,7 @@ const dict = {
     'proj.view': 'View Project',
     // About (merged into contact)
     'about.intro': "Hello, I'm panda, a developer passionate about technology and creation. I believe great products are the perfect blend of technology and design, and continuous learning is the only path to growth.",
-    'about.doing': 'What I Do',
-    'about.doingDesc': 'Currently focused on Web development and AI applications. I love exploring new technologies and applying them to real projects. Panda Blog is where I record my learning and share results.',
-    'about.stack': 'Stack',
-    'about.stackFE': 'Frontend',
-    'about.stackBE': 'Backend',
-    'about.stackAI': 'AI/ML',
-    'about.stackTools': 'Tools',
     'about.contact': 'Contact',
-    'about.contactDesc': 'If you have any questions or collaboration ideas, feel free to reach out:',
-    'about.gh': 'GitHub',
-    'about.email': 'Email',
     // Contact
     'contact.title': 'About',
     'contact.desc': 'Have a question or collaboration idea? Get in touch.',
@@ -227,9 +166,7 @@ const dict = {
     // Footer
     'footer.tagline': 'A digital garden for thoughts and code.',
     'footer.nav': 'Navigation',
-    'footer.resources': 'Resources',
     'footer.connect': 'Connect',
-    'footer.copyright': '© {year} Panda Blog',
     'footer.dev': 'Developed by panda',
     // Donate
     'donate.title': 'Enjoy this article?',
@@ -246,7 +183,6 @@ const dict = {
     'article.langSwitch': 'Multilingual',
     // Search
     'search.placeholder': 'Search articles...',
-    'search.ctrlK': 'Ctrl K',
   },
   ja: {
     // Nav
@@ -261,7 +197,6 @@ const dict = {
     'hero.desc': 'Web 開発、データ分析、AI 探索、そして遊び心のある小さなプロジェクト。',
     'hero.cta1': '記事を見る',
     'hero.cta2': '挨拶する',
-    'hero.avatar': 'ブロガー',
     // Info cards
     'info.origin': '📍 出身',
     'info.originVal': '地球🌍',
@@ -278,29 +213,11 @@ const dict = {
     'musing.category': '随筆',
     'musing.minRead': '分で読める',
     'musing.empty': 'まだ記事がありません。また後で見に来てください。',
-    // Quote
-    'quote.label': '直接思考',
-    'quote.text': '技術は人々をつなげる時に最高の価値を持ち、しかし、それ自体が目に見えない時にさらに優れている。',
-    'quote.desc': '私のデジタル製品デザインの哲学は「不可視 UI」に焦点を当てています——インターフェースが消え、コンテンツと意図だけが残る状態。',
-    'quote.author': 'panda-pig',
-    'quote.role': '主任研究員',
-    // Experiments
-    'exp.title': 'お手軽実験',
-    'exp.desc': 'プロトタイプや小さなツール、インスピレーション実験のコレクションです。完成度は様々ですが、どれも本当のアイデアの試作品です。',
-    'exp.canvas': 'スケッチキャンバス',
-    'exp.canvasDesc': 'ラフな落書きから UI レイアウト原型を生成する AI ツール。',
-    'exp.chroma': 'カラージャーナル',
-    'exp.chromaDesc': '毎日見た色を記録して、個人専用のカラーパレットを生成します。',
-    'exp.jlpt': 'JLPT 文法カード',
-    'exp.jlptDesc': '日本語の文法ポイントを間隔反復カードで学習。',
-    'exp.instance': 'お手軽実例',
     // Archive page
     'archive.title': 'アーカイブ',
     'archive.desc': '計',
     'archive.desc2': '記事、継続更新中',
-    'archive.search': '記事を検索...',
     'archive.all': 'すべて',
-    'archive.back': 'アーカイブに戻る',
     'archive.minRead': '分で読める',
     // Moments
     'moments.title': '瞬間',
@@ -316,17 +233,7 @@ const dict = {
     'proj.view': 'プロジェクトを見る',
     // About (merged into contact)
     'about.intro': 'こんにちは、panda です。技術と創造を愛する開発者です。良いプロダクトは技術とデザインの完璧な融合であり、継続的な学習が成長への唯一の道だと信じています。',
-    'about.doing': '現在の活動',
-    'about.doingDesc': '現在、Web 開発と AI アプリケーションに注力しています。新しい技術を探求し、実際のプロジェクトに応用することが好きです。Panda Blog は、学習を記録し、成果を共有する場所です。',
-    'about.stack': '技術スタック',
-    'about.stackFE': 'フロントエンド',
-    'about.stackBE': 'バックエンド',
-    'about.stackAI': 'AI/ML',
-    'about.stackTools': 'ツール',
     'about.contact': '連絡先',
-    'about.contactDesc': '質問や協力のご提案があれば、以下からお気軽にご連絡ください：',
-    'about.gh': 'GitHub',
-    'about.email': 'メール',
     // Contact
     'contact.title': 'について',
     'contact.desc': '質問や協力のご提案がありますか？お気軽にご連絡ください。',
@@ -351,9 +258,7 @@ const dict = {
     // Footer
     'footer.tagline': '思考とコードのためのデジタルガーデン。',
     'footer.nav': 'ナビゲーション',
-    'footer.resources': 'リソース',
     'footer.connect': '連絡',
-    'footer.copyright': '© {year} Panda Blog',
     'footer.dev': 'panda によって開発されました',
     // Donate
     'donate.title': 'この記事を楽しんでいただけましたか？',
@@ -370,7 +275,6 @@ const dict = {
     'article.langSwitch': '多言語',
     // Search
     'search.placeholder': '記事を検索...',
-    'search.ctrlK': 'Ctrl K',
   },
 };
 
