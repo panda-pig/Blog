@@ -40,7 +40,7 @@
     --hero-border: rgba(245, 245, 243, 0.22);
 
     /* Footer */
-    --footer-bg: #e8f0f7;
+    --footer-bg: #eae7e0;
   }
 
   [data-theme="dark"] {
@@ -128,7 +128,7 @@
     letter-spacing: -0.01em;
     background-color: var(--primary);
     color: #ffffff;
-    transition: all 0.25s ease;
+    transition: all 0.22s ease;
     box-shadow: 0 14px 30px rgba(76, 102, 146, 0.2);
   }
 
@@ -136,6 +136,11 @@
     background-color: var(--primary-hover);
     transform: translateY(-2px);
     box-shadow: 0 18px 38px rgba(76, 102, 146, 0.24);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 8px 18px rgba(76, 102, 146, 0.18);
   }
 
   .btn-outline {
@@ -183,6 +188,10 @@
     box-shadow: 0 16px 34px rgba(82, 111, 164, 0.32);
   }
 
+  .btn-hero-primary:active {
+    transform: translateY(0) scale(0.98);
+  }
+
   .btn-hero-secondary {
     display: inline-flex;
     align-items: center;
@@ -207,19 +216,63 @@
     transform: translateY(-2px);
   }
 
+  .btn-hero-secondary:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* Secondary button — light-background contexts (e.g. 404 page) */
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    border: 1.5px solid var(--border-hover);
+    color: var(--text-secondary);
+    background-color: var(--surface);
+    transition: all 0.22s ease;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--text);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary:active {
+    transform: translateY(0) scale(0.98);
+  }
+
   .card-fluid {
     background-color: var(--surface);
     border-radius: 1rem;
     box-shadow: var(--card-shadow);
     border: 1px solid var(--border);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
     overflow: hidden;
   }
 
   .card-fluid:hover {
     box-shadow: var(--card-shadow-hover);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border-color: var(--border-hover);
+  }
+
+  /* Lightweight info card — no shadow, just border */
+  .info-card {
+    background-color: var(--surface);
+    border-radius: 0.875rem;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .info-card:hover {
+    border-color: var(--border-hover);
+    background-color: var(--surface-hover);
   }
 
   .category-badge {

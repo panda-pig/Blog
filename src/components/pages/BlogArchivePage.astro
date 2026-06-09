@@ -14,7 +14,7 @@ const allPosts = await Astro.glob('../../content/blog/*.md');
 const postsBySlug = groupPostsBySlug(allPosts);
 const displayPosts = getLocalizedPosts(postsBySlug, lang);
 
-const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || []))];
+const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags || []))];
 ---
 
 <BaseLayout title={`${t['archive.title']} — Panda Blog`} description={t['archive.pageDesc']} lang={lang}>
@@ -61,7 +61,7 @@ const allTags = [...new Set(allPosts.flatMap((p: any) => p.frontmatter.tags || [
                 <span>{readingTime} <span >{t['archive.minRead']}</span></span>
               </div>
               <a href={`${prefix}/blog/${slug}`} class="block mb-3 group-hover:opacity-80 transition-opacity">
-                <h2 class="font-serif text-xl md:text-3xl font-semibold leading-snug" style="color: var(--text);">{post.frontmatter.title}</h2>
+                <h2 class="font-serif text-xl md:text-3xl font-semibold leading-snug" style="color: var(--text); text-wrap: balance;">{post.frontmatter.title}</h2>
               </a>
               <p class="text-[15px] leading-relaxed mb-4" style="color: var(--text-secondary);">
                 {post.frontmatter.description}
