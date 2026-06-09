@@ -42,6 +42,10 @@ const htmlLang = lang === 'zh' ? 'zh-CN' : lang;
       (function() {
         const theme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', theme);
+        // 禁用浏览器滚动恢复，确保每次打开页面都从顶部开始
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual';
+        }
       })();
     </script>
     <script is:inline define:vars={{ i18nJSON: JSON.stringify(dict) }}>
