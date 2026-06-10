@@ -136,6 +136,27 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"jlpt-sprint-desk-study-loop.en.md": {
+	id: "jlpt-sprint-desk-study-loop.en.md";
+  slug: "jlpt-sprint-desk-study-loop";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"jlpt-sprint-desk-study-loop.ja.md": {
+	id: "jlpt-sprint-desk-study-loop.ja.md";
+  slug: "jlpt-sprint-desk-study-loop";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"jlpt-sprint-desk-study-loop.md": {
+	id: "jlpt-sprint-desk-study-loop.md";
+  slug: "jlpt-sprint-desk-study-loop";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "welcome.en.md": {
 	id: "welcome.en.md";
   slug: "welcome";
