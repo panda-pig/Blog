@@ -136,6 +136,27 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"jlpt-grammar-deck-study-cards.en.md": {
+	id: "jlpt-grammar-deck-study-cards.en.md";
+  slug: "jlpt-grammar-deck-study-cards";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"jlpt-grammar-deck-study-cards.ja.md": {
+	id: "jlpt-grammar-deck-study-cards.ja.md";
+  slug: "jlpt-grammar-deck-study-cards";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"jlpt-grammar-deck-study-cards.md": {
+	id: "jlpt-grammar-deck-study-cards.md";
+  slug: "jlpt-grammar-deck-study-cards";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "jlpt-sprint-desk-study-loop.en.md": {
 	id: "jlpt-sprint-desk-study-loop.en.md";
   slug: "jlpt-sprint-desk-study-loop";
