@@ -116,6 +116,19 @@
     font-family: 'Noto Serif', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'Georgia', serif;
   }
 
+  .article-measure {
+    max-width: 52rem;
+  }
+
+  .article-title {
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .article-description {
+    text-wrap: pretty;
+  }
+
   .btn-primary {
     display: inline-flex;
     align-items: center;

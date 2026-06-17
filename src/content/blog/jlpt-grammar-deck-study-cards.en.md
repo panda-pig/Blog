@@ -2,7 +2,7 @@
 slug: jlpt-grammar-deck-study-cards
 lang: en
 title: "Turning Japanese Grammar Into Daily Review Cards: A JLPT Grammar Deck UI Note"
-description: "The third project post: how JLPT Grammar Deck turns N1-N5 grammar material into a browsable, collectable, practiceable, and reviewable study desk."
+description: "How JLPT Grammar Deck turns N1-N5 grammar material into a browsable, collectable, practiceable, and reviewable study desk."
 date: 2026-06-17
 tags: ["Project Notes", "Study Tools", "JLPT"]
 ---

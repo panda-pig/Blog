@@ -65,7 +65,7 @@ const headings = post.getHeadings ? post.getHeadings() : [];
 
       <!-- Tags -->
       {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
-        <div class="flex flex-wrap gap-2 mb-5 md:mb-8">
+        <div class="article-measure flex flex-wrap gap-2 mb-5 md:mb-8">
           {post.frontmatter.tags.map((tag: string) => (
             <span class="category-badge">{tag}</span>
           ))}
@@ -73,19 +73,19 @@ const headings = post.getHeadings ? post.getHeadings() : [];
       )}
 
       <!-- Title -->
-      <h1 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-8 leading-tight" style="color: var(--text);">
+      <h1 class="article-measure article-title font-serif text-2xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-8 leading-tight" style="color: var(--text);">
         {post.frontmatter.title}
       </h1>
 
       <!-- Description -->
       {post.frontmatter.description && (
-        <p class="text-base md:text-xl leading-relaxed mb-6 md:mb-12" style="color: var(--text-secondary);">
+        <p class="article-measure article-description text-base md:text-xl leading-relaxed mb-6 md:mb-12" style="color: var(--text-secondary);">
           {post.frontmatter.description}
         </p>
       )}
 
       <!-- Meta info -->
-      <div class="flex flex-wrap items-center gap-4 md:gap-5 text-xs md:text-sm uppercase tracking-wider mb-12 md:mb-16 pb-8 md:pb-12 border-b" style="color: var(--text-muted); border-color: var(--border);">
+      <div class="article-measure flex flex-wrap items-center gap-4 md:gap-5 text-xs md:text-sm uppercase tracking-wider mb-12 md:mb-16 pb-8 md:pb-12 border-b" style="color: var(--text-muted); border-color: var(--border);">
         <span class="flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>

@@ -2,7 +2,7 @@
 slug: jlpt-grammar-deck-study-cards
 lang: zh
 title: "把日语语法变成每天能复习的词卡：JLPT Grammar Deck 界面设计小记"
-description: "第三篇项目博客：记录 JLPT Grammar Deck 如何把 N1-N5 语法资料整理成可浏览、可收藏、可练习、可复习的学习桌面。"
+description: "记录 JLPT Grammar Deck 如何把 N1-N5 语法资料整理成可浏览、可收藏、可练习、可复习的学习桌面。"
 date: 2026-06-17
 tags: ["项目复盘", "学习工具", "JLPT"]
 ---

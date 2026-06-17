@@ -2,7 +2,7 @@
 slug: jlpt-grammar-deck-study-cards
 lang: ja
 title: "日本語文法を毎日復習できるカードへ：JLPT Grammar Deck の UI 記録"
-description: "三本目のプロジェクト記事。JLPT Grammar Deck が N1-N5 の文法を、閲覧・保存・練習・復習できる学習デスクへ変えるまで。"
+description: "JLPT Grammar Deck が N1-N5 の文法を、閲覧・保存・練習・復習できる学習デスクへ変えるまで。"
 date: 2026-06-17
 tags: ["プロジェクト記録", "学習ツール", "JLPT"]
 ---
