@@ -21,10 +21,14 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
   <Header lang={lang} />
 
   <main class="min-h-screen">
-    <div class="section-container pt-10 md:pt-20 pb-16 md:pb-28">
+    <div class="section-container archive-page pt-10 md:pt-20 pb-16 md:pb-28">
       <!-- Header -->
-      <div class="text-center mb-12 md:mb-16">
-        <h1 class="font-serif text-3xl md:text-5xl font-bold mb-3" style="color: var(--text);" >{t['archive.title']}</h1>
+      <div class="archive-title-wrap text-center mb-12 md:mb-16">
+        <div class="archive-title-ribbon">
+          <span class="archive-title-ribbon__tail" aria-hidden="true"></span>
+          <h1 class="font-serif text-3xl md:text-5xl font-bold" style="color: var(--text);" >{t['archive.title']}</h1>
+          <span class="archive-title-ribbon__tail archive-title-ribbon__tail--right" aria-hidden="true"></span>
+        </div>
         <p class="text-sm" style="color: var(--text-muted);">
           <span >{t['archive.desc']}</span> {displayPosts.length} <span >{t['archive.desc2']}</span>
         </p>
@@ -37,10 +41,16 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
         </div>
 
         {allTags.length > 0 && (
-          <div class="flex flex-wrap justify-center gap-2" id="tag-filter-bar">
-            <span class="tag-pill cursor-pointer tag-filter-btn tag-filter-active" data-tag="all" style="background-color: var(--primary); color: #fff; border-color: var(--primary);">{t['archive.all']}</span>
+          <div class="archive-tabs" id="tag-filter-bar">
+            <span class="archive-tab cursor-pointer tag-filter-btn tag-filter-active" data-tag="all">
+              <span class="archive-tab__dot" aria-hidden="true"></span>
+              {t['archive.all']}
+            </span>
             {allTags.map((tag) => (
-              <span class="tag-pill cursor-pointer tag-filter-btn" data-tag={tag}>{tag}</span>
+              <span class="archive-tab cursor-pointer tag-filter-btn" data-tag={tag}>
+                <span class="archive-tab__dot" aria-hidden="true"></span>
+                {tag}
+              </span>
             ))}
           </div>
         )}
@@ -69,7 +79,7 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
               {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
                 <div class="flex flex-wrap gap-1.5">
                   {post.frontmatter.tags.map((tag: string) => (
-                    <span class="tag-pill">{tag}</span>
+                    <span class="archive-card-tag">{tag}</span>
                   ))}
                 </div>
               )}
@@ -98,13 +108,9 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
       tagBtns.forEach((btn) => {
         const isActive = btn === activeBtn;
         if (isActive) {
-          btn.style.setProperty('background-color', 'var(--primary)');
-          btn.style.setProperty('color', '#fff');
-          btn.style.setProperty('border-color', 'var(--primary)');
+          btn.classList.add('tag-filter-active');
         } else {
-          btn.style.removeProperty('background-color');
-          btn.style.removeProperty('color');
-          btn.style.removeProperty('border-color');
+          btn.classList.remove('tag-filter-active');
         }
       });
     }
@@ -128,3 +134,130 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
 
   document.addEventListener('astro:page-load', initTagFilter);
 </script>
+
+<style>
+  .archive-page {
+    --tab-shadow: 0 5px 0 rgba(52, 70, 100, 0.11);
+  }
+
+  .archive-title-wrap {
+    position: relative;
+  }
+
+  .archive-title-ribbon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.75rem 0.85rem;
+    margin-bottom: 0.85rem;
+    border-radius: 0.45rem;
+    background: var(--surface-blue);
+    box-shadow: 0 7px 0 rgba(82, 111, 164, 0.16);
+  }
+
+  .archive-title-ribbon__tail {
+    position: absolute;
+    left: -1.25rem;
+    bottom: -0.38rem;
+    width: 1.7rem;
+    height: 1.35rem;
+    background: #9db8df;
+    clip-path: polygon(0 0, 100% 0, 74% 50%, 100% 100%, 0 100%);
+    z-index: -1;
+  }
+
+  .archive-title-ribbon__tail--right {
+    left: auto;
+    right: -1.25rem;
+    transform: scaleX(-1);
+  }
+
+  .archive-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+    padding: 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    background: var(--surface);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  }
+
+  .archive-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+    min-height: 2.2rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid transparent;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  .archive-tab:hover {
+    color: var(--text);
+    background: var(--surface-hover);
+    transform: translateY(-1px);
+  }
+
+  .archive-tab.tag-filter-active {
+    color: #ffffff;
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: var(--tab-shadow);
+  }
+
+  .archive-tab__dot {
+    width: 0.48rem;
+    height: 0.48rem;
+    border-radius: 999px;
+    background: var(--accent-warm);
+    box-shadow: inset 0 -1px 0 rgba(31, 42, 61, 0.18);
+  }
+
+  .archive-tab:not(.tag-filter-active) .archive-tab__dot {
+    background: transparent;
+    border: 1px solid var(--accent-warm);
+  }
+
+  .archive-card-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.64rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: var(--primary-light);
+    border: 1px dashed var(--accent-border);
+  }
+
+  @media (max-width: 640px) {
+    .archive-title-ribbon {
+      padding-left: 1.1rem;
+      padding-right: 1.1rem;
+    }
+
+    .archive-tabs {
+      justify-content: flex-start;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .archive-tab {
+      flex: 0 0 auto;
+    }
+  }
+</style>
