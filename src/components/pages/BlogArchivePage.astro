@@ -4,6 +4,7 @@ import Header from '../Header.astro';
 import Footer from '../Footer.astro';
 import Search from '../Search.astro';
 import { groupPostsBySlug, getLocalizedPosts, getReadingTime, formatDate } from '../../lib/posts.js';
+import { getArticleEmoji } from '../../lib/animalIcons.js';
 import dict from '../../i18n/dict.js';
 
 const { lang } = Astro.props;
@@ -24,12 +25,17 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
     <div class="section-container archive-page pt-10 md:pt-20 pb-16 md:pb-28">
       <!-- Header -->
       <div class="archive-title-wrap text-center mb-12 md:mb-16">
-        <div class="archive-title-ribbon">
-          <span class="archive-title-ribbon__tail" aria-hidden="true"></span>
-          <h1 class="font-serif text-3xl md:text-5xl font-bold" style="color: var(--text);" >{t['archive.title']}</h1>
-          <span class="archive-title-ribbon__tail archive-title-ribbon__tail--right" aria-hidden="true"></span>
-        </div>
-        <p class="text-sm" style="color: var(--text-muted);">
+        <h1 class="archive-animal-title">
+          <span class="archive-ribbon">
+            <span class="archive-ribbon__back archive-ribbon__back--left" aria-hidden="true"></span>
+            <span class="archive-ribbon__back archive-ribbon__back--right" aria-hidden="true"></span>
+            <span class="archive-ribbon__fold archive-ribbon__fold--left" aria-hidden="true"></span>
+            <span class="archive-ribbon__fold archive-ribbon__fold--right" aria-hidden="true"></span>
+            <span class="archive-ribbon__front" aria-hidden="true"></span>
+            <span class="archive-ribbon__text">{t['archive.title']}</span>
+          </span>
+        </h1>
+        <p class="archive-title-desc text-sm" style="color: var(--text-muted);">
           <span >{t['archive.desc']}</span> {displayPosts.length} <span >{t['archive.desc2']}</span>
         </p>
       </div>
@@ -58,31 +64,41 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
 
       <!-- Article list -->
       <div class="mx-auto" style="max-width: 44rem;" data-pagefind-body>
-        {displayPosts.map((post: any) => {
+        {displayPosts.map((post: any, index: number) => {
           const slug = post.resolvedSlug;
           const readingTime = getReadingTime(post.rawContent);
           const formattedDate = formatDate(post.frontmatter.date, lang);
+          const icon = getArticleEmoji(slug, index);
 
           return (
-            <article class="py-7 md:py-12 border-b group archive-article" data-tags={(post.frontmatter.tags || []).join(',')} style="border-color: var(--border);">
-              <div class="flex items-center gap-3 mb-3 text-[10px] uppercase tracking-wider" style="color: var(--text-muted);">
-                <span>{formattedDate}</span>
-                <span>·</span>
-                <span>{readingTime} <span >{t['archive.minRead']}</span></span>
+            <article class="archive-note-card group archive-article" data-tags={(post.frontmatter.tags || []).join(',')}>
+              <div class="archive-note-icon" aria-hidden="true">
+                <span class="archive-note-emoji" aria-label={icon.label}>{icon.emoji}</span>
               </div>
-              <a href={`${prefix}/blog/${slug}`} class="block mb-3 group-hover:opacity-80 transition-opacity">
-                <h2 class="font-serif text-xl md:text-3xl font-semibold leading-snug" style="color: var(--text); text-wrap: balance;">{post.frontmatter.title}</h2>
-              </a>
-              <p class="text-[15px] leading-relaxed mb-4" style="color: var(--text-secondary);">
-                {post.frontmatter.description}
-              </p>
-              {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
-                <div class="flex flex-wrap gap-1.5">
-                  {post.frontmatter.tags.map((tag: string) => (
-                    <span class="archive-card-tag">{tag}</span>
-                  ))}
+
+              <div class="archive-note-body">
+                <div class="archive-note-meta">
+                  <span>{formattedDate}</span>
+                  <span aria-hidden="true">·</span>
+                  <span>{readingTime} <span >{t['archive.minRead']}</span></span>
                 </div>
-              )}
+
+                <a href={`${prefix}/blog/${slug}`} class="block mb-3 group-hover:opacity-85 transition-opacity">
+                  <h2 class="archive-note-title font-serif">{post.frontmatter.title}</h2>
+                </a>
+
+                <p class="archive-note-desc">
+                  {post.frontmatter.description}
+                </p>
+
+                {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
+                  <div class="archive-note-tags">
+                    {post.frontmatter.tags.map((tag: string) => (
+                      <span class="archive-card-tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </article>
           );
         })}
@@ -144,33 +160,108 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
     position: relative;
   }
 
-  .archive-title-ribbon {
+  .archive-animal-title {
+    display: inline-block;
+    margin: 0 0 1.15rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: clamp(1.65rem, 4.1vw, 2.75rem);
+    font-weight: 900;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .archive-ribbon {
+    --rf: var(--surface-blue);
+    --rb: #9db8df;
+    --rk: #526fa4;
+    --rt: var(--text);
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.65rem 1.75rem 0.85rem;
-    margin-bottom: 0.85rem;
-    border-radius: 0.45rem;
-    background: var(--surface-blue);
-    box-shadow: 0 7px 0 rgba(82, 111, 164, 0.16);
+    height: 1.82em;
+    padding: 0 1.45em;
+    color: var(--rt);
+    font-weight: 900;
+    letter-spacing: 0;
+    white-space: nowrap;
+    filter: drop-shadow(0 0.08em 0.12em rgba(82, 111, 164, 0.1));
   }
 
-  .archive-title-ribbon__tail {
+  [data-theme="dark"] .archive-ribbon {
+    --rf: rgba(129, 174, 217, 0.24);
+    --rb: rgba(129, 174, 217, 0.18);
+    --rk: rgba(129, 174, 217, 0.34);
+    --rt: var(--text);
+  }
+
+  .archive-ribbon__text {
+    position: relative;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    height: 1.82em;
+    padding-top: 0.11em;
+    color: var(--rt);
+    text-shadow: 0 0.04em 0.08em rgba(255, 255, 255, 0.18);
+  }
+
+  .archive-ribbon__back {
     position: absolute;
-    left: -1.25rem;
-    bottom: -0.38rem;
-    width: 1.7rem;
-    height: 1.35rem;
-    background: #9db8df;
-    clip-path: polygon(0 0, 100% 0, 74% 50%, 100% 100%, 0 100%);
-    z-index: -1;
+    bottom: -0.32em;
+    width: 1.45em;
+    height: 1.45em;
+    background: var(--rb);
+    z-index: 1;
   }
 
-  .archive-title-ribbon__tail--right {
-    left: auto;
-    right: -1.25rem;
-    transform: scaleX(-1);
+  .archive-ribbon__back--left {
+    left: -0.52em;
+    border-radius: 0.08em 0 0 0.08em;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 30% 50%, 0% 0%);
+  }
+
+  .archive-ribbon__back--right {
+    right: -0.52em;
+    border-radius: 0 0.08em 0.08em 0;
+    clip-path: polygon(0% 0%, 100% 0%, 70% 50%, 100% 100%, 0% 100%);
+  }
+
+  .archive-ribbon__fold {
+    position: absolute;
+    top: calc(100% - 0.04em);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    z-index: 2;
+  }
+
+  .archive-ribbon__fold--left {
+    left: 0.15em;
+    border-width: 0 0.78em 0.34em 0;
+    border-color: transparent var(--rk) transparent transparent;
+  }
+
+  .archive-ribbon__fold--right {
+    right: 0.16em;
+    border-width: 0 0 0.34em 0.78em;
+    border-color: transparent transparent transparent var(--rk);
+  }
+
+  .archive-ribbon__front {
+    position: absolute;
+    inset: 0 0.1em;
+    z-index: 3;
+    border-radius: 0.2em;
+    background: var(--rf);
+    box-shadow: inset 0 -0.06em rgba(31, 42, 61, 0.06);
+    pointer-events: none;
+    transform: perspective(11.5em) rotateX(3deg);
+  }
+
+  .archive-title-desc {
+    margin-top: 0.15rem;
+    line-height: 1.8;
   }
 
   .archive-tabs {
@@ -243,10 +334,104 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
     border: 1px dashed var(--accent-border);
   }
 
+  .archive-note-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1rem;
+    padding: clamp(1rem, 2.5vw, 1.35rem);
+    margin-bottom: 1.05rem;
+    border: 1px solid var(--border);
+    border-radius: 1.35rem;
+    background:
+      radial-gradient(circle at 95% 14%, rgba(134, 166, 221, 0.12), transparent 22%),
+      var(--surface);
+    box-shadow: 0 5px 0 rgba(82, 111, 164, 0.08), 0 18px 34px rgba(52, 70, 100, 0.08);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    overflow: hidden;
+  }
+
+  .archive-note-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.34rem;
+    background:
+      radial-gradient(circle at 0.45rem 50%, var(--surface-blue) 0 0.2rem, transparent 0.22rem) 0 0 / 1.1rem 100% repeat-x;
+    opacity: 0.72;
+  }
+
+  .archive-note-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-hover);
+    box-shadow: 0 7px 0 rgba(82, 111, 164, 0.1), 0 24px 42px rgba(52, 70, 100, 0.12);
+  }
+
+  .archive-note-icon {
+    width: 3rem;
+    height: 3rem;
+    display: grid;
+    place-items: center;
+    border-radius: 0.9rem;
+    background: var(--surface-blue);
+    box-shadow: 0 4px 0 rgba(82, 111, 164, 0.13);
+    transition: transform 0.2s ease;
+  }
+
+  .archive-note-card:hover .archive-note-icon {
+    transform: translateY(-2px) rotate(-3deg);
+  }
+
+  .archive-note-emoji {
+    display: block;
+    font-size: 1.65rem;
+    line-height: 1;
+  }
+
+  .archive-note-body {
+    min-width: 0;
+  }
+
+  .archive-note-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.7rem;
+    margin-bottom: 0.55rem;
+    color: var(--text-muted);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .archive-note-title {
+    color: var(--text);
+    font-size: clamp(1.2rem, 3vw, 1.85rem);
+    font-weight: 800;
+    line-height: 1.24;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  .archive-note-desc {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.94rem;
+    line-height: 1.76;
+  }
+
+  .archive-note-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.42rem;
+    padding-top: 0.8rem;
+    border-top: 1px dashed var(--accent-border);
+  }
+
   @media (max-width: 640px) {
-    .archive-title-ribbon {
-      padding-left: 1.1rem;
-      padding-right: 1.1rem;
+    .archive-animal-title {
+      font-size: clamp(1.45rem, 8vw, 2.1rem);
     }
 
     .archive-tabs {
@@ -258,6 +443,16 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
 
     .archive-tab {
       flex: 0 0 auto;
+    }
+
+    .archive-note-card {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .archive-note-icon {
+      width: 2.75rem;
+      height: 2.75rem;
     }
   }
 </style>

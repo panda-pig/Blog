@@ -36,8 +36,18 @@ let lastYear = '';
     <div class="moments-container">
       <!-- Page header -->
       <div class="moments-header">
-        <h1 class="moments-title">{t['moments.title']}</h1>
+        <h1 class="moments-title">
+          <span class="moments-title-ribbon">
+            <span class="moments-title-ribbon__back moments-title-ribbon__back--left" aria-hidden="true"></span>
+            <span class="moments-title-ribbon__back moments-title-ribbon__back--right" aria-hidden="true"></span>
+            <span class="moments-title-ribbon__fold moments-title-ribbon__fold--left" aria-hidden="true"></span>
+            <span class="moments-title-ribbon__fold moments-title-ribbon__fold--right" aria-hidden="true"></span>
+            <span class="moments-title-ribbon__front" aria-hidden="true"></span>
+            <span class="moments-title-ribbon__text">{t['moments.title']}</span>
+          </span>
+        </h1>
         <p class="moments-subtitle">{t['moments.desc']}</p>
+        <div class="moments-divider" aria-hidden="true"></div>
       </div>
 
       <!-- Timeline + Feed -->
@@ -125,16 +135,24 @@ let lastYear = '';
 <style>
   .moments-page {
     min-height: 100vh;
-    background: #F5F1EB;
+    background:
+      radial-gradient(circle at 16% 8%, rgba(215, 231, 246, 0.52), transparent 24rem),
+      radial-gradient(circle at 84% 18%, rgba(255, 133, 98, 0.08), transparent 18rem),
+      #F5F1EB;
+    overflow-x: clip;
     padding-bottom: 80px;
   }
 
   [data-theme="dark"] .moments-page {
-    background: #16181c;
+    background:
+      radial-gradient(circle at 16% 8%, rgba(129, 174, 217, 0.12), transparent 24rem),
+      #16181c;
   }
 
   .moments-container {
+    width: 100%;
     max-width: 960px;
+    box-sizing: border-box;
     margin: 0 auto;
     padding: 0 24px;
   }
@@ -142,20 +160,103 @@ let lastYear = '';
   /* Page header */
   .moments-header {
     text-align: center;
-    padding: 64px 0 48px;
+    padding: 64px 0 42px;
   }
 
   .moments-title {
-    font-family: 'Noto Serif', 'Noto Serif SC', serif;
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
+    display: inline-block;
+    margin: 0 0 1.15rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: clamp(1.55rem, 4vw, 2.5rem);
+    font-weight: 900;
+    line-height: 1;
+    user-select: none;
   }
 
-  [data-theme="dark"] .moments-title {
-    color: #fffdf5;
+  .moments-title-ribbon {
+    --rf: #FADDE8;
+    --rb: #F4AFC7;
+    --rk: #D47F9B;
+    --rt: var(--text);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.78em;
+    padding: 0 1.35em;
+    color: var(--rt);
+    white-space: nowrap;
+    filter: drop-shadow(0 0.08em 0.12em rgba(82, 111, 164, 0.1));
+  }
+
+  [data-theme="dark"] .moments-title-ribbon {
+    --rf: rgba(244, 175, 199, 0.24);
+    --rb: rgba(244, 175, 199, 0.18);
+    --rk: rgba(244, 175, 199, 0.34);
+    --rt: var(--text);
+  }
+
+  .moments-title-ribbon__text {
+    position: relative;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    height: 1.78em;
+    padding-top: 0.1em;
+    color: var(--rt);
+  }
+
+  .moments-title-ribbon__back {
+    position: absolute;
+    bottom: -0.3em;
+    width: 1.36em;
+    height: 1.36em;
+    background: var(--rb);
+    z-index: 1;
+  }
+
+  .moments-title-ribbon__back--left {
+    left: -0.48em;
+    border-radius: 0.08em 0 0 0.08em;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 30% 50%, 0% 0%);
+  }
+
+  .moments-title-ribbon__back--right {
+    right: -0.48em;
+    border-radius: 0 0.08em 0.08em 0;
+    clip-path: polygon(0% 0%, 100% 0%, 70% 50%, 100% 100%, 0% 100%);
+  }
+
+  .moments-title-ribbon__fold {
+    position: absolute;
+    top: calc(100% - 0.04em);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    z-index: 2;
+  }
+
+  .moments-title-ribbon__fold--left {
+    left: 0.14em;
+    border-width: 0 0.72em 0.3em 0;
+    border-color: transparent var(--rk) transparent transparent;
+  }
+
+  .moments-title-ribbon__fold--right {
+    right: 0.14em;
+    border-width: 0 0 0.3em 0.72em;
+    border-color: transparent transparent transparent var(--rk);
+  }
+
+  .moments-title-ribbon__front {
+    position: absolute;
+    inset: 0 0.1em;
+    z-index: 3;
+    border-radius: 0.22em;
+    background: var(--rf);
+    box-shadow: inset 0 -0.06em rgba(31, 42, 61, 0.06);
+    pointer-events: none;
+    transform: perspective(11.5em) rotateX(3deg);
   }
 
   .moments-subtitle {
@@ -163,11 +264,20 @@ let lastYear = '';
     color: rgba(0, 0, 0, 0.45);
     line-height: 1.7;
     max-width: 420px;
-    margin: 0 auto;
+    margin: 0 auto 1.05rem;
   }
 
   [data-theme="dark"] .moments-subtitle {
     color: rgba(255, 253, 245, 0.42);
+  }
+
+  .moments-divider {
+    width: min(16rem, 64%);
+    height: 0.75rem;
+    margin: 0 auto;
+    background:
+      radial-gradient(circle at 0.4rem 50%, var(--surface-blue) 0 0.2rem, transparent 0.22rem) 0 0 / 1.05rem 100% repeat-x;
+    opacity: 0.85;
   }
 
   /* Timeline */
@@ -196,15 +306,22 @@ let lastYear = '';
   }
 
   .tl-year {
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.3);
-    letter-spacing: 0.06em;
-    margin-bottom: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.16rem 0.5rem;
+    border: 1px dashed var(--accent-border);
+    border-radius: 999px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.42rem;
   }
 
   [data-theme="dark"] .tl-year {
-    color: rgba(255, 253, 245, 0.28);
+    color: var(--text-secondary);
   }
 
   .tl-date {
@@ -212,6 +329,14 @@ let lastYear = '';
     flex-direction: column;
     align-items: flex-end;
     line-height: 1.1;
+    padding: 0.48rem 0.56rem;
+    border-radius: 0.85rem;
+    background: rgba(255, 255, 255, 0.64);
+    box-shadow: inset 0 -2px rgba(31, 42, 61, 0.04);
+  }
+
+  [data-theme="dark"] .tl-date {
+    background: rgba(255, 253, 245, 0.06);
   }
 
   .tl-month {
@@ -237,32 +362,34 @@ let lastYear = '';
   }
 
   .tl-dot {
-    width: 9px;
-    height: 9px;
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
-    background: #A7C7E7;
-    border: 2px solid #F5F1EB;
+    background: var(--accent-warm);
+    border: 3px solid #F5F1EB;
     position: absolute;
-    right: -4.5px;
-    top: 4px;
+    right: -6.5px;
+    top: 10px;
     z-index: 2;
+    box-shadow: 0 0 0 5px rgba(255, 133, 98, 0.14);
   }
 
   [data-theme="dark"] .tl-dot {
     border-color: #16181c;
-    background: #6a9cc4;
+    background: var(--accent-warm);
+    box-shadow: 0 0 0 5px rgba(255, 183, 132, 0.11);
   }
 
   .tl-line {
     flex: 1;
-    width: 1px;
-    background: rgba(0, 0, 0, 0.1);
-    margin-top: 12px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-border) 0 45%, transparent 45% 100%) 0 0 / 100% 12px repeat-y;
+    margin-top: 18px;
     min-height: 24px;
   }
 
   [data-theme="dark"] .tl-line {
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to bottom, rgba(129, 174, 217, 0.28) 0 45%, transparent 45% 100%) 0 0 / 100% 12px repeat-y;
   }
 
   /* Timeline content (right) */
@@ -274,27 +401,48 @@ let lastYear = '';
 
   /* Feed card */
   .feed-card {
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    padding: 24px 26px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 100% 0%, rgba(215, 231, 246, 0.55), transparent 11rem),
+      #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 1.35rem;
+    padding: 1.35rem 1.45rem 1.55rem;
+    box-shadow: 0 13px 32px rgba(31, 42, 61, 0.08), 0 4px 0 rgba(31, 42, 61, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .feed-card::after {
+    content: '';
+    position: absolute;
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 0.46rem;
+    height: 0.42rem;
+    background:
+      radial-gradient(circle, var(--surface-blue) 0 0.2rem, transparent 0.22rem) 0 0 / 1rem 100% repeat-x;
+    opacity: 0.6;
+    pointer-events: none;
   }
 
   .feed-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--border-hover);
+    box-shadow: 0 18px 36px rgba(31, 42, 61, 0.12), 0 5px 0 rgba(31, 42, 61, 0.07);
   }
 
   [data-theme="dark"] .feed-card {
-    background: #24272b;
-    border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    background:
+      radial-gradient(circle at 100% 0%, rgba(129, 174, 217, 0.14), transparent 11rem),
+      #24272b;
+    border-color: rgba(255, 255, 255, 0.11);
+    box-shadow: 0 13px 32px rgba(0, 0, 0, 0.26), 0 4px 0 rgba(0, 0, 0, 0.18);
   }
 
   [data-theme="dark"] .feed-card:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    border-color: rgba(129, 174, 217, 0.34);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.34), 0 5px 0 rgba(0, 0, 0, 0.2);
   }
 
   /* Card header */
@@ -308,9 +456,11 @@ let lastYear = '';
   .feed-avatar {
     width: 40px;
     height: 40px;
-    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 14px;
     overflow: hidden;
     flex-shrink: 0;
+    box-shadow: 0 5px 12px rgba(31, 42, 61, 0.1);
   }
 
   .feed-avatar img {
@@ -358,10 +508,10 @@ let lastYear = '';
 
   .feed-title {
     font-family: 'Noto Serif', 'Noto Serif SC', serif;
-    font-size: 1.08rem;
-    font-weight: 600;
+    font-size: 1.12rem;
+    font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 6px;
+    margin-bottom: 0.42rem;
     line-height: 1.5;
   }
 
@@ -371,8 +521,9 @@ let lastYear = '';
 
   .feed-text {
     font-size: 0.9rem;
-    line-height: 1.75;
+    line-height: 1.85;
     color: rgba(0, 0, 0, 0.65);
+    overflow-wrap: anywhere;
   }
 
   [data-theme="dark"] .feed-text {
@@ -383,21 +534,32 @@ let lastYear = '';
   .feed-images {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-    margin-bottom: 16px;
+    gap: 0.45rem;
+    margin-bottom: 1rem;
   }
 
   .feed-image-link {
     display: block;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    border-radius: 10px;
+    border: 1px solid var(--border);
+    border-radius: 0.9rem;
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    box-shadow: 0 5px 14px rgba(31, 42, 61, 0.08);
+    transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
   .feed-image-link:hover {
     opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .feed-image-link:only-child {
+    max-width: 18rem;
+  }
+
+  .feed-images:has(.feed-image-link:only-child) {
+    grid-template-columns: minmax(0, 18rem);
   }
 
   .feed-image {
@@ -412,7 +574,9 @@ let lastYear = '';
     display: flex;
     flex-wrap: wrap;
     gap: 7px;
-    margin-bottom: 14px;
+    padding-top: 0.85rem;
+    border-top: 1px dashed var(--accent-border);
+    margin-bottom: 0.4rem;
   }
 
   .feed-tag {
@@ -422,19 +586,25 @@ let lastYear = '';
     border-radius: 999px;
     font-size: 0.78rem;
     color: #2F6F64;
+    border: 1px dashed rgba(47, 111, 100, 0.22);
     background: rgba(47, 111, 100, 0.08);
-    font-weight: 500;
+    font-weight: 700;
   }
 
   [data-theme="dark"] .feed-tag {
     color: #7EC8B8;
+    border-color: rgba(126, 200, 184, 0.2);
     background: rgba(126, 200, 184, 0.1);
   }
 
   /* Mobile */
   @media (max-width: 640px) {
     .moments-container {
-      padding: 0 12px;
+      padding: 0 14px 0 8px;
+    }
+
+    .tl-row {
+      display: block;
     }
 
     .moments-header {
@@ -442,7 +612,7 @@ let lastYear = '';
     }
 
     .moments-title {
-      font-size: 1.75rem;
+      font-size: clamp(1.35rem, 8vw, 2rem);
     }
 
     .moments-subtitle {
@@ -451,8 +621,12 @@ let lastYear = '';
     }
 
     .tl-axis {
-      width: 56px;
-      padding-right: 12px;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.45rem;
+      padding: 0 0 0.65rem 0;
     }
 
     .tl-month {
@@ -465,22 +639,53 @@ let lastYear = '';
 
     .tl-year {
       font-size: 0.65rem;
+      padding: 0.12rem 0.42rem;
+      margin-bottom: 0;
     }
 
     .tl-dot {
-      width: 7px;
-      height: 7px;
-      right: -3.5px;
-      top: 3px;
+      position: static;
+      width: 10px;
+      height: 10px;
+      border-width: 2px;
+      box-shadow: 0 0 0 3px rgba(255, 133, 98, 0.14);
+    }
+
+    .tl-date {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.18rem;
+      padding: 0.4rem 0.46rem;
+      border-radius: 0.7rem;
+    }
+
+    .tl-line {
+      display: none;
     }
 
     .tl-content {
+      min-width: 0;
+      width: calc(100vw - 56px);
+      max-width: calc(100vw - 56px);
       padding-bottom: 32px;
     }
 
     .feed-card {
-      border-radius: 16px;
-      padding: 18px 16px;
+      width: calc(100vw - 56px);
+      max-width: calc(100vw - 56px);
+      box-sizing: border-box;
+      border-radius: 1.1rem;
+      padding: 1rem 0.95rem 1.2rem;
+    }
+
+    .feed-card-header {
+      gap: 8px;
+    }
+
+    .feed-card::after {
+      left: 0.85rem;
+      right: 0.85rem;
+      bottom: 0.38rem;
     }
 
     .feed-avatar {
@@ -493,8 +698,13 @@ let lastYear = '';
       font-size: 0.85rem;
     }
 
+    .feed-meta {
+      font-size: 0.7rem;
+    }
+
     .feed-title {
       font-size: 1rem;
+      overflow-wrap: anywhere;
     }
 
     .feed-text {
@@ -507,6 +717,14 @@ let lastYear = '';
 
     .feed-image-link {
       border-radius: 8px;
+    }
+
+    .feed-image-link:only-child {
+      max-width: 10rem;
+    }
+
+    .feed-images:has(.feed-image-link:only-child) {
+      grid-template-columns: minmax(0, 10rem);
     }
 
     .feed-tag {
