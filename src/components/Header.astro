@@ -3,7 +3,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import dict from '../i18n/dict.js';
 
-const { lang = 'zh' } = Astro.props;
+const { lang = 'zh', overlay = false } = Astro.props;
 const prefix = lang === 'zh' ? '' : `/${lang}`;
 const currentPath = Astro.url.pathname;
 const t = dict[lang] || dict.zh;
@@ -17,7 +17,7 @@ const navItems = [
 ];
 ---
 
-<header class="site-header" data-pagefind-ignore>
+<header class={`site-header ${overlay ? 'site-header--overlay' : ''}`} data-pagefind-ignore>
   <div class="section-container flex items-center justify-between h-[72px]">
     <a href={prefix || '/'} class="flex items-center gap-2.5 group shrink-0">
       <div class="w-9 h-9 rounded-xl overflow-hidden flex items-center justify-center logo-mark">
@@ -49,7 +49,7 @@ const navItems = [
       </a>
 
       <!-- Mobile hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg transition-colors header-icon-btn" aria-label="菜单" aria-expanded="false">
+      <button id="mobile-menu-btn" class="rounded-lg header-icon-btn" aria-label="菜单" aria-expanded="false">
         <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -80,27 +80,68 @@ const navItems = [
 
 <style>
   .site-header {
-    background: rgba(255, 255, 255, 0.72);
-    border-bottom: 1px solid rgba(31, 42, 61, 0.08);
-    backdrop-filter: blur(24px) saturate(1.28);
-    -webkit-backdrop-filter: blur(24px) saturate(1.28);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.32)),
+      linear-gradient(90deg, rgba(134, 166, 221, 0.16), rgba(255, 255, 255, 0.08) 42%, rgba(255, 133, 98, 0.1));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.62);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.82),
+      0 14px 42px rgba(52, 70, 100, 0.08);
+    backdrop-filter: blur(28px) saturate(1.38);
+    -webkit-backdrop-filter: blur(28px) saturate(1.38);
   }
 
   [data-theme="dark"] .site-header {
-    background: rgba(24, 26, 30, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    background:
+      linear-gradient(180deg, rgba(29, 32, 36, 0.62), rgba(29, 32, 36, 0.34)),
+      linear-gradient(90deg, rgba(129, 174, 217, 0.12), rgba(255, 255, 255, 0.03) 46%, rgba(255, 133, 98, 0.08));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 14px 42px rgba(0, 0, 0, 0.2);
+  }
+
+  .site-header--overlay {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.2)),
+      linear-gradient(90deg, rgba(134, 166, 221, 0.12), rgba(255, 255, 255, 0.05) 44%, rgba(255, 133, 98, 0.08));
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.72),
+      0 14px 42px rgba(52, 70, 100, 0.05);
+  }
+
+  [data-theme="dark"] .site-header--overlay {
+    background:
+      linear-gradient(180deg, rgba(29, 32, 36, 0.48), rgba(29, 32, 36, 0.2)),
+      linear-gradient(90deg, rgba(129, 174, 217, 0.1), rgba(255, 255, 255, 0.02) 46%, rgba(255, 133, 98, 0.06));
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 14px 42px rgba(0, 0, 0, 0.16);
   }
 
   .logo-mark {
-    background: #dbe7fb;
-    border: 1px solid rgba(31, 42, 61, 0.14);
-    box-shadow: 0 10px 24px rgba(52, 70, 100, 0.16);
+    background: rgba(219, 231, 251, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.78),
+      0 10px 24px rgba(52, 70, 100, 0.13);
     color: #1f2a3d;
   }
 
   [data-theme="dark"] .logo-mark {
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.14),
+      0 10px 24px rgba(0, 0, 0, 0.28);
   }
 
   .logo-text {
@@ -112,11 +153,36 @@ const navItems = [
   }
 
   .header-icon-btn {
+    border: 1px solid transparent;
     color: rgba(31, 42, 61, 0.72);
+    transition: transform 0.22s ease, color 0.22s ease, background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  #mobile-menu-btn {
+    display: none;
+  }
+
+  .header-icon-btn:hover {
+    color: #1f2a3d;
+    background: rgba(255, 255, 255, 0.42);
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 8px 20px rgba(52, 70, 100, 0.1);
+    transform: translateY(-1px);
+  }
+
+  .header-icon-btn:active {
+    transform: translateY(0) scale(0.97);
   }
 
   [data-theme="dark"] .header-icon-btn {
     color: rgba(255, 253, 245, 0.72);
+  }
+
+  [data-theme="dark"] .header-icon-btn:hover {
+    color: #fffdf5;
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 8px 20px rgba(0, 0, 0, 0.18);
   }
 
   .nav-link {
@@ -126,13 +192,17 @@ const navItems = [
     text-decoration: none;
     padding: 0.5rem 0.875rem;
     border-radius: 9999px;
-    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    transition: transform 0.22s ease, color 0.22s ease, background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
     position: relative;
   }
 
   .nav-link:hover {
     color: #1f2a3d;
-    background: rgba(129, 157, 210, 0.18);
+    background: rgba(255, 255, 255, 0.34);
+    border-color: rgba(255, 255, 255, 0.62);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68), 0 8px 18px rgba(82, 111, 164, 0.08);
+    transform: translateY(-1px);
   }
 
   [data-theme="dark"] .nav-link {
@@ -141,32 +211,45 @@ const navItems = [
 
   [data-theme="dark"] .nav-link:hover {
     color: #fffdf5;
-    background: rgba(129, 174, 217, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 18px rgba(0, 0, 0, 0.18);
   }
 
   .nav-link.active {
     color: #1f2a3d;
-    background: #dbe7fb;
-    box-shadow: 0 10px 24px rgba(82, 111, 164, 0.16);
+    background:
+      linear-gradient(180deg, rgba(219, 231, 251, 0.82), rgba(219, 231, 251, 0.56)),
+      rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.78);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.84),
+      inset 0 -1px 0 rgba(82, 111, 164, 0.08),
+      0 10px 24px rgba(82, 111, 164, 0.13);
     font-weight: 600;
   }
 
   [data-theme="dark"] .nav-link.active {
-    color: #000000;
-    background: #9fc3e4;
-    box-shadow: 0 10px 24px rgba(129, 174, 217, 0.22);
+    color: #fffdf5;
+    background: linear-gradient(180deg, rgba(129, 174, 217, 0.28), rgba(129, 174, 217, 0.16));
+    border-color: rgba(159, 195, 228, 0.28);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 10px 24px rgba(0, 0, 0, 0.22);
   }
 
   .mobile-nav-panel {
-    background: rgba(255, 255, 255, 0.86);
-    border-top: 1px solid rgba(31, 42, 61, 0.08);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.52);
+    border-top: 1px solid rgba(255, 255, 255, 0.62);
+    box-shadow: 0 18px 38px rgba(52, 70, 100, 0.1);
+    backdrop-filter: blur(26px) saturate(1.28);
+    -webkit-backdrop-filter: blur(26px) saturate(1.28);
   }
 
   [data-theme="dark"] .mobile-nav-panel {
-    background: rgba(24, 26, 30, 0.78);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(24, 26, 30, 0.58);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
   }
 
   .mobile-nav-link {
@@ -179,16 +262,19 @@ const navItems = [
 
   .mobile-nav-active {
     color: #1f2a3d;
-    background: #dbe7fb;
-    box-shadow: 0 10px 24px rgba(82, 111, 164, 0.16);
+    background: rgba(219, 231, 251, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.74);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78), 0 10px 24px rgba(82, 111, 164, 0.12);
   }
 
   [data-theme="dark"] .mobile-nav-active {
-    color: #000000;
-    box-shadow: 0 10px 24px rgba(129, 174, 217, 0.22);
+    color: #fffdf5;
+    background: rgba(129, 174, 217, 0.2);
+    border-color: rgba(159, 195, 228, 0.24);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.11), 0 10px 24px rgba(0, 0, 0, 0.2);
   }
 
-  @media (max-width: 639px) {
+  @media (max-width: 767px) {
     header .section-container {
       padding-left: 0.85rem;
       padding-right: 0.85rem;
@@ -202,6 +288,29 @@ const navItems = [
     .header-actions {
       gap: 0.2rem;
       min-width: 0;
+    }
+
+    #mobile-menu-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0.85rem;
+      right: 0.85rem;
+      width: 2.35rem;
+      height: 2.35rem;
+      padding: 0;
+      background: rgba(255, 255, 255, 0.32);
+      border: 1px solid rgba(255, 255, 255, 0.68);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 10px 24px rgba(52, 70, 100, 0.08);
+      backdrop-filter: blur(18px) saturate(1.24);
+      -webkit-backdrop-filter: blur(18px) saturate(1.24);
+    }
+
+    [data-theme="dark"] #mobile-menu-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.14);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 10px 24px rgba(0, 0, 0, 0.18);
     }
 
     .header-actions :global(.lang-switcher),
@@ -228,7 +337,10 @@ const navItems = [
     }
 
     #mobile-menu-btn {
-      padding: 0.42rem;
+      width: 2.15rem;
+      height: 2.15rem;
+      top: 0.78rem;
+      right: 0.75rem;
     }
 
     #mobile-menu-btn svg {
