@@ -14,8 +14,8 @@ export const momentsData: Record<string, Moment[]> = {
     {
       id: 3,
       type: 'project',
-      title: 'Codebase Memory MCP',
-      content: 'codebase-memory-mcp牛逼',
+      title: 'codebase-memory-mcp',
+      content: '牛逼',
       date: '2026-06-30',
       location: '东京，日本',
       tags: ['工具', 'MCP', 'Codebase Memory'],
@@ -46,8 +46,8 @@ export const momentsData: Record<string, Moment[]> = {
     {
       id: 3,
       type: 'project',
-      title: 'Codebase Memory MCP',
-      content: 'codebase-memory-mcp rocks',
+      title: 'codebase-memory-mcp',
+      content: 'rocks',
       date: '2026-06-30',
       location: 'Tokyo, Japan',
       tags: ['Tools', 'MCP', 'Codebase Memory'],
@@ -78,8 +78,8 @@ export const momentsData: Record<string, Moment[]> = {
     {
       id: 3,
       type: 'project',
-      title: 'Codebase Memory MCP',
-      content: 'codebase-memory-mcp最高',
+      title: 'codebase-memory-mcp',
+      content: '最高',
       date: '2026-06-30',
       location: '東京，日本',
       tags: ['ツール', 'MCP', 'Codebase Memory'],
