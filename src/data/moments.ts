@@ -12,6 +12,16 @@ export interface Moment {
 export const momentsData: Record<string, Moment[]> = {
   zh: [
     {
+      id: 3,
+      type: 'project',
+      title: 'Codebase Memory MCP',
+      content: 'codebase-memory-mcp牛逼',
+      date: '2026-06-30',
+      location: '东京，日本',
+      tags: ['工具', 'MCP', 'Codebase Memory'],
+      images: ['/images/moments/codebase-memory-mcp.jpg'],
+    },
+    {
       id: 2,
       type: 'daily',
       title: '耳机以身殉职',
@@ -34,6 +44,16 @@ export const momentsData: Record<string, Moment[]> = {
   ],
   en: [
     {
+      id: 3,
+      type: 'project',
+      title: 'Codebase Memory MCP',
+      content: 'codebase-memory-mcp牛逼',
+      date: '2026-06-30',
+      location: 'Tokyo, Japan',
+      tags: ['Tools', 'MCP', 'Codebase Memory'],
+      images: ['/images/moments/codebase-memory-mcp.jpg'],
+    },
+    {
       id: 2,
       type: 'daily',
       title: 'My Earbud Died in the Line of Duty',
@@ -55,6 +75,16 @@ export const momentsData: Record<string, Moment[]> = {
     },
   ],
   ja: [
+    {
+      id: 3,
+      type: 'project',
+      title: 'Codebase Memory MCP',
+      content: 'codebase-memory-mcp牛逼',
+      date: '2026-06-30',
+      location: '東京，日本',
+      tags: ['ツール', 'MCP', 'Codebase Memory'],
+      images: ['/images/moments/codebase-memory-mcp.jpg'],
+    },
     {
       id: 2,
       type: 'daily',
