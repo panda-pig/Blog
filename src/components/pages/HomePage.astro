@@ -15,16 +15,49 @@ const allPosts = await Astro.glob('../../content/blog/*.md');
 const postsBySlug = groupPostsBySlug(allPosts);
 const recentPosts = getLocalizedPosts(postsBySlug, lang);
 const homeProjects = projectsData[lang as 'zh' | 'en' | 'ja'] || projectsData.zh;
+const heroImageSrcSet = '/images/home-hero-bg-v4-960.webp 960w, /images/home-hero-bg-v4-1672.webp 1672w';
 
 ---
 
-<BaseLayout description={t['hero.desc']} lang={lang}>
+<BaseLayout
+  description={t['hero.desc']}
+  lang={lang}
+  heroPreload={{
+    href: '/images/home-hero-bg-v4-1672.webp',
+    srcset: heroImageSrcSet,
+    sizes: '100vw',
+    type: 'image/webp',
+  }}
+>
   <Header lang={lang} overlay />
 
   <main class="min-h-screen">
     <!-- Hero Section -->
     <section class="home-cover" aria-labelledby="home-cover-title">
-      <div class="home-cover__image" aria-hidden="true"></div>
+      <picture class="home-cover__image" aria-hidden="true">
+        <source
+          type="image/webp"
+          srcset={heroImageSrcSet}
+          sizes="100vw"
+        />
+        <source
+          type="image/jpeg"
+          srcset="/images/home-hero-bg-v4-960.jpg 960w, /images/home-hero-bg-v4-1672.jpg 1672w"
+          sizes="100vw"
+        />
+        <img
+          class="home-cover__image-img"
+          src="/images/home-hero-bg-v4-1672.jpg"
+          srcset="/images/home-hero-bg-v4-960.jpg 960w, /images/home-hero-bg-v4-1672.jpg 1672w"
+          sizes="100vw"
+          width="1672"
+          height="941"
+          alt=""
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </picture>
       <div class="home-cover__shade" aria-hidden="true"></div>
       <div class="home-cover__grain" aria-hidden="true"></div>
 
@@ -117,9 +150,16 @@ const homeProjects = projectsData[lang as 'zh' | 'en' | 'ja'] || projectsData.zh
 
       .home-cover__image {
         z-index: -4;
-        background-image: url('/images/home-hero-bg-v4.png');
-        background-position: center;
-        background-size: cover;
+        display: block;
+        overflow: hidden;
+      }
+
+      .home-cover__image-img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
         filter: saturate(0.94) contrast(1.01) brightness(1.03);
       }
 
@@ -324,8 +364,8 @@ const homeProjects = projectsData[lang as 'zh' | 'en' | 'ja'] || projectsData.zh
           min-height: calc(100svh - 72px);
         }
 
-        .home-cover__image {
-          background-position: 37% center;
+        .home-cover__image-img {
+          object-position: 37% center;
           filter: saturate(0.92) contrast(1.01) brightness(1.03);
         }
 

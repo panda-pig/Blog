@@ -3,7 +3,7 @@ import '../styles/global.css';
 import dict from '../i18n/dict.js';
 import { ViewTransitions } from 'astro:transitions';
 
-const { title, description, slug, lang = 'zh' } = Astro.props;
+const { title, description, slug, lang = 'zh', heroPreload } = Astro.props;
 const siteTitle = title ? title : 'Panda Blog';
 const siteUrl = 'https://panda-blog.com';
 const canonicalUrl = `${siteUrl}${slug || ''}`;
@@ -20,6 +20,17 @@ const htmlLang = lang === 'zh' ? 'zh-CN' : lang;
     <meta name="author" content="panda" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    {heroPreload && (
+      <link
+        rel="preload"
+        as="image"
+        href={heroPreload.href}
+        imagesrcset={heroPreload.srcset}
+        imagesizes={heroPreload.sizes || '100vw'}
+        type={heroPreload.type}
+        fetchpriority="high"
+      />
+    )}
     <title>{siteTitle}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
