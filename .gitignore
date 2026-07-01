@@ -23,3 +23,6 @@ yarn-error.log*
 # pagefind
 pagefind/
 .vercel
+
+# AI agent context (local only)
+AGENT.md
