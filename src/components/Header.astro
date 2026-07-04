@@ -16,6 +16,18 @@ const navItems = [
   { href: `${prefix}/projects`, labelKey: 'nav.experiments' },
   { href: `${prefix}/contact`, labelKey: 'nav.communique' },
 ];
+
+const cleanPath = currentPath.replace(/^\/(en|ja)(?=\/|$)/, '') || '/';
+const languageItems = [
+  { code: 'zh', label: '中文', href: cleanPath },
+  { code: 'en', label: 'EN', href: `/en${cleanPath === '/' ? '/' : cleanPath}` },
+  { code: 'ja', label: '日本語', href: `/ja${cleanPath === '/' ? '/' : cleanPath}` },
+];
+const mobileLanguageLabel = {
+  zh: '语言',
+  en: 'Language',
+  ja: '言語',
+}[lang] || '语言';
 ---
 
 <header class={`site-header ${overlay ? 'site-header--overlay' : ''}`} data-pagefind-ignore>
@@ -82,6 +94,20 @@ const navItems = [
           </a>
         );
       })}
+      <div class="mobile-nav-language" aria-label={mobileLanguageLabel}>
+        <span class="mobile-nav-language-label">{mobileLanguageLabel}</span>
+        <div class="mobile-nav-language-options">
+          {languageItems.map((item) => (
+            <a
+              href={item.href}
+              class={`mobile-nav-language-link ${lang === item.code ? 'active' : ''}`}
+              aria-current={lang === item.code ? 'true' : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
     </nav>
   </div>
 </header>
@@ -294,6 +320,10 @@ const navItems = [
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.11), 0 10px 24px rgba(0, 0, 0, 0.2);
   }
 
+  .mobile-nav-language {
+    display: none;
+  }
+
   @media (max-width: 767px) {
     .site-header {
       --mobile-header-height: 72px;
@@ -338,6 +368,83 @@ const navItems = [
       right: 0;
       z-index: 49;
       background: #f8fbff;
+    }
+
+    .mobile-nav-language {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-top: 0.35rem;
+      padding: 0.75rem 0.85rem;
+      border-radius: 0.9rem;
+      background: #ffffff;
+      border: 1px solid rgba(31, 42, 61, 0.08);
+      box-shadow: 0 8px 18px rgba(52, 70, 100, 0.07);
+    }
+
+    [data-theme="dark"] .mobile-nav-language {
+      background: #222831;
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .mobile-nav-language-label {
+      color: rgba(31, 42, 61, 0.68);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    [data-theme="dark"] .mobile-nav-language-label {
+      color: rgba(255, 253, 245, 0.68);
+    }
+
+    .mobile-nav-language-options {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      padding: 0.16rem;
+      border-radius: 0.62rem;
+      background: #f1f5fb;
+      border: 1px solid rgba(31, 42, 61, 0.06);
+    }
+
+    [data-theme="dark"] .mobile-nav-language-options {
+      background: #171b22;
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-nav-language-link {
+      min-width: 2.45rem;
+      padding: 0.36rem 0.55rem;
+      border-radius: 0.46rem;
+      color: rgba(31, 42, 61, 0.68);
+      font-size: 0.72rem;
+      font-weight: 600;
+      line-height: 1;
+      text-align: center;
+      text-decoration: none;
+      transition: color 0.22s ease, background 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .mobile-nav-language-link:active {
+      transform: scale(0.96);
+    }
+
+    .mobile-nav-language-link.active {
+      color: #1f2a3d;
+      background: #dbe7fb;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 6px 14px rgba(82, 111, 164, 0.12);
+    }
+
+    [data-theme="dark"] .mobile-nav-language-link {
+      color: rgba(255, 253, 245, 0.68);
+    }
+
+    [data-theme="dark"] .mobile-nav-language-link.active {
+      color: #fffdf5;
+      background: #304459;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.11), 0 6px 14px rgba(0, 0, 0, 0.18);
     }
 
     header .section-container {
