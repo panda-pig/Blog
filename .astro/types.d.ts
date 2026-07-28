@@ -178,6 +178,27 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"macos-chatgpt-codex-flickering-fix.en.md": {
+	id: "macos-chatgpt-codex-flickering-fix.en.md";
+  slug: "macos-chatgpt-codex-flickering-fix";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"macos-chatgpt-codex-flickering-fix.ja.md": {
+	id: "macos-chatgpt-codex-flickering-fix.ja.md";
+  slug: "macos-chatgpt-codex-flickering-fix";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"macos-chatgpt-codex-flickering-fix.md": {
+	id: "macos-chatgpt-codex-flickering-fix.md";
+  slug: "macos-chatgpt-codex-flickering-fix";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "welcome.en.md": {
 	id: "welcome.en.md";
   slug: "welcome";
