@@ -6,11 +6,17 @@ const languages = [
 ];
 ---
 
-<div id="lang-switcher" class="lang-switcher">
+<div
+  id="lang-switcher"
+  class="lang-switcher"
+  role="group"
+  aria-label="Language / 语言 / 言語"
+>
   {languages.map((lang) => (
     <button
       class="lang-btn"
       data-lang={lang.code}
+      aria-pressed="false"
     >
       <span class="lang-label-full">{lang.label}</span>
       <span class="lang-label-short">{lang.shortLabel}</span>
@@ -136,7 +142,9 @@ const languages = [
       const lang = getCurrentLang();
       localStorage.setItem('lang', lang); // 保持 localStorage 与 URL 同步
       buttons.forEach((btn) => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        const isActive = btn.getAttribute('data-lang') === lang;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
       });
     }
 

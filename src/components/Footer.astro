@@ -7,7 +7,7 @@ const t = dict[lang] || dict.zh;
 const year = new Date().getFullYear();
 ---
 
-<footer data-pagefind-ignore style="background: var(--footer-bg); border-top: 1px solid var(--border);">
+<footer class="site-footer" data-pagefind-ignore style="background: var(--footer-bg); border-top: 1px solid var(--border);">
   <div class="section-container max-w-5xl py-8 md:py-14">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-12 mb-6 md:mb-8">
       <!-- Brand -->
@@ -24,7 +24,7 @@ const year = new Date().getFullYear();
 
       <!-- Nav links -->
       <div>
-        <h4 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);">{t['footer.nav']}</h4>
+        <h2 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);">{t['footer.nav']}</h2>
         <ul class="space-y-1.5">
           <li><a href={`${prefix}/`} class="text-sm transition-colors hover:opacity-70" style="color: var(--text-secondary);">{t['nav.lab']}</a></li>
           <li><a href={`${prefix}/blog`} class="text-sm transition-colors hover:opacity-70" style="color: var(--text-secondary);">{t['nav.archive']}</a></li>
@@ -37,7 +37,7 @@ const year = new Date().getFullYear();
 
       <!-- Connect -->
       <div>
-        <h4 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);">{t['footer.connect']}</h4>
+        <h2 class="text-xs font-semibold uppercase tracking-wider mb-3" style="color: var(--text-muted);">{t['footer.connect']}</h2>
         <ul class="space-y-1.5">
           <li>
             <a href="https://github.com/panda-pig" target="_blank" rel="noopener noreferrer" class="text-sm transition-colors hover:opacity-70 flex items-center gap-2" style="color: var(--text-secondary);">
@@ -94,3 +94,17 @@ const year = new Date().getFullYear();
   initViewCounter();
   document.addEventListener('astro:page-load', initViewCounter);
 </script>
+
+<style>
+  @media (max-width: 767px) {
+    .site-footer a {
+      min-height: 2.75rem;
+    }
+
+    .site-footer li a {
+      display: flex;
+      align-items: center;
+      padding-block: 0.65rem;
+    }
+  }
+</style>

@@ -111,7 +111,7 @@ const searchItems = [
                   {copy.localName !== domain.name && <small>{copy.localName}</small>}
                 </h3>
                 <p>{copy.description}</p>
-                <div class="aws-service-chips" aria-label="代表服务">
+                <div class="aws-service-chips" aria-label={t.representativeServicesLabel}>
                   {domain.services.map((service) => <span>{service}</span>)}
                 </div>
               </div>
@@ -188,7 +188,7 @@ const searchItems = [
 
 <style>
   .aws-notes-page {
-    --aws-orange: #f08a00;
+    --aws-orange: #a85d00;
     --aws-orange-soft: rgba(240, 138, 0, 0.1);
     --aws-ink: #233752;
     position: relative;
@@ -238,14 +238,22 @@ const searchItems = [
     width: min(100%, 48rem);
   }
 
-  .aws-eyebrow,
-  .aws-section-kicker {
+  .aws-eyebrow {
     margin: 0;
     color: var(--aws-orange);
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.14em;
+  }
+
+  .aws-section-kicker {
+    margin: 0;
+    color: var(--text-muted);
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.035em;
   }
 
   .aws-hero h1 {
@@ -255,7 +263,7 @@ const searchItems = [
     font-size: clamp(3rem, 7vw, 5.15rem);
     font-weight: 700;
     line-height: 1.02;
-    letter-spacing: -0.055em;
+    letter-spacing: -0.04em;
   }
 
   .aws-hero h1 span {

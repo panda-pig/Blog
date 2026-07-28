@@ -14,7 +14,7 @@
     --border-hover: rgba(31, 42, 61, 0.18);
     --text: #1f2a3d;
     --text-secondary: #445066;
-    --text-muted: #6e788a;
+    --text-muted: #596579;
     --primary: #24324d;
     --primary-light: rgba(129, 157, 210, 0.22);
     --primary-hover: #30405f;
@@ -93,6 +93,21 @@
   ::selection {
     background-color: var(--primary-light);
     color: var(--primary);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 

@@ -57,7 +57,7 @@ const noteByTitle = new Map(categoryNotes.map((note: any) => [note.frontmatter.t
 
   <main class={`aws-category aws-category--${tone}`} data-pagefind-body>
     <div class="section-container aws-category__container">
-      <nav class="aws-breadcrumb" aria-label="面包屑">
+      <nav class="aws-breadcrumb" aria-label={t.breadcrumbLabel}>
         <a href={`${prefix}/aws`}>{t.siteTitle}</a>
         <span aria-hidden="true">/</span>
         <span>{title}</span>
@@ -79,7 +79,7 @@ const noteByTitle = new Map(categoryNotes.map((note: any) => [note.frontmatter.t
       </header>
 
       <div class="aws-category-layout">
-        <aside class="aws-domain-nav" aria-label="AWS 领域目录">
+        <aside class="aws-domain-nav" aria-label={t.domainDirectoryLabel}>
           <p>{t.coreDomains}</p>
           <nav>
             {awsDomains.map((item) => {
@@ -594,6 +594,7 @@ const noteByTitle = new Map(categoryNotes.map((note: any) => [note.frontmatter.t
 
     .aws-domain-nav a {
       min-width: max-content;
+      min-height: 2.75rem;
     }
   }
 
@@ -620,6 +621,14 @@ const noteByTitle = new Map(categoryNotes.map((note: any) => [note.frontmatter.t
     .aws-category-layout {
       margin-top: 1.7rem;
       gap: 1.8rem;
+    }
+
+    .aws-breadcrumb a {
+      display: inline-flex;
+      align-items: center;
+      min-width: 2.75rem;
+      min-height: 2.75rem;
+      justify-content: center;
     }
 
     .aws-category-note-grid {

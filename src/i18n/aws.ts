@@ -35,6 +35,9 @@ const awsUi = {
     recentlyOrganized: '最近整理',
     keepReading: 'KEEP READING',
     relatedNotes: '相关笔记',
+    breadcrumbLabel: '面包屑',
+    domainDirectoryLabel: 'AWS 领域目录',
+    representativeServicesLabel: '代表服务',
   },
   en: {
     siteTitle: 'AWS Study Handbook',
@@ -72,6 +75,9 @@ const awsUi = {
     recentlyOrganized: 'Last organized',
     keepReading: 'KEEP READING',
     relatedNotes: 'Related Notes',
+    breadcrumbLabel: 'Breadcrumb',
+    domainDirectoryLabel: 'AWS domain directory',
+    representativeServicesLabel: 'Representative services',
   },
   ja: {
     siteTitle: 'AWS 学習ハンドブック',
@@ -109,6 +115,9 @@ const awsUi = {
     recentlyOrganized: '最終整理',
     keepReading: 'KEEP READING',
     relatedNotes: '関連ノート',
+    breadcrumbLabel: 'パンくずリスト',
+    domainDirectoryLabel: 'AWS 分野一覧',
+    representativeServicesLabel: '代表的なサービス',
   },
 };
 

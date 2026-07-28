@@ -13,10 +13,22 @@ const {
       <path d="m20 20-4-4"></path>
     </svg>
     <span class="sr-only">{placeholder}</span>
-    <input type="search" placeholder={placeholder} autocomplete="off" />
+    <input
+      type="search"
+      placeholder={placeholder}
+      autocomplete="off"
+      aria-controls="aws-search-results"
+      aria-expanded="false"
+    />
     <kbd>⌘ K</kbd>
   </label>
-  <div class="aws-search__results" data-no-results={noResults} hidden></div>
+  <div
+    id="aws-search-results"
+    class="aws-search__results"
+    data-no-results={noResults}
+    aria-live="polite"
+    hidden
+  ></div>
 </div>
 
 <script>
@@ -33,6 +45,7 @@ const {
       const close = () => {
         results.hidden = true;
         results.innerHTML = '';
+        input.setAttribute('aria-expanded', 'false');
       };
 
       const render = (query: string) => {
@@ -63,6 +76,7 @@ const {
               .join('')
           : `<p class="aws-search__empty">${results.dataset.noResults || ''}</p>`;
         results.hidden = false;
+        input.setAttribute('aria-expanded', 'true');
       };
 
       input.addEventListener('input', () => render(input.value));
@@ -130,6 +144,7 @@ const {
   .aws-search__field input {
     width: 100%;
     min-width: 0;
+    min-height: 2.75rem;
     margin: 0 0.8rem;
     border: 0;
     outline: 0;
@@ -141,7 +156,7 @@ const {
 
   .aws-search__field input::placeholder {
     color: var(--text-muted);
-    opacity: 0.78;
+    opacity: 1;
   }
 
   .aws-search__field kbd {

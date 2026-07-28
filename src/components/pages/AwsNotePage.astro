@@ -57,7 +57,7 @@ const relatedNotes = notes
 
   <main class={`aws-note-page aws-note-page--${domain?.tone || 'blue'}`}>
     <div class="section-container aws-note-shell">
-      <nav class="aws-note-breadcrumb" aria-label="面包屑">
+      <nav class="aws-note-breadcrumb" aria-label={t.breadcrumbLabel}>
         <a href={`${prefix}/aws`}>{t.siteTitle}</a>
         <span aria-hidden="true">/</span>
         <a href={`${prefix}/aws/${category}`}>{domainCopy?.localName || t.specialTopics}</a>
@@ -91,7 +91,7 @@ const relatedNotes = notes
       <p class="aws-note-lead">{note.frontmatter.description}</p>
 
       <div class="aws-note-layout">
-        <aside class="aws-note-domains" aria-label="AWS 领域目录">
+        <aside class="aws-note-domains" aria-label={t.domainDirectoryLabel}>
           <p>{t.domainDirectory}</p>
           <nav>
             {awsDomains.map((item) => {
@@ -613,6 +613,7 @@ const relatedNotes = notes
 
     .aws-note-domains a {
       min-width: max-content;
+      min-height: 2.75rem;
     }
   }
 
@@ -621,6 +622,14 @@ const relatedNotes = notes
       padding-left: 1rem;
       padding-right: 1rem;
       padding-bottom: 4rem;
+    }
+
+    .aws-note-breadcrumb a {
+      display: inline-flex;
+      align-items: center;
+      min-width: 2.75rem;
+      min-height: 2.75rem;
+      justify-content: center;
     }
 
     .aws-note-hero {
