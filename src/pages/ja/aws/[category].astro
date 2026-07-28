@@ -1,0 +1,12 @@
+---
+import AwsCategoryPage from '../../../components/pages/AwsCategoryPage.astro';
+import { awsDomains, awsSpecials } from '../../../data/aws';
+
+export function getStaticPaths() {
+  return [...awsDomains, ...awsSpecials].map((item) => ({
+    params: { category: item.slug },
+  }));
+}
+---
+
+<AwsCategoryPage lang="ja" />

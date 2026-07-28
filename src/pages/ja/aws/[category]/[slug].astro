@@ -1,0 +1,24 @@
+---
+import AwsNotePage from '../../../../components/pages/AwsNotePage.astro';
+import { getAwsNoteSlug } from '../../../../lib/aws';
+
+export async function getStaticPaths() {
+  const notes = await Astro.glob('../../../../content/aws/**/*.md');
+  const seen = new Set<string>();
+
+  return notes
+    .map((note) => ({
+      category: note.frontmatter.category,
+      slug: note.frontmatter.slug || getAwsNoteSlug(note.file),
+    }))
+    .filter((item) => {
+      const key = `${item.category}/${item.slug}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .map((item) => ({ params: item }));
+}
+---
+
+<AwsNotePage lang="ja" />

@@ -1,0 +1,138 @@
+---
+const { name, size = 'md' } = Astro.props;
+---
+
+<span class={`aws-domain-icon aws-domain-icon--${size}`} aria-hidden="true">
+  {name === 'compute' && (
+    <svg viewBox="0 0 48 48">
+      <rect x="13" y="13" width="22" height="22" rx="3" />
+      <rect x="19" y="19" width="10" height="10" rx="1" />
+      <path d="M18 8v5m6-5v5m6-5v5M18 35v5m6-5v5m6-5v5M8 18h5m-5 6h5m-5 6h5m22-12h5m-5 6h5m-5 6h5" />
+    </svg>
+  )}
+  {name === 'storage' && (
+    <svg viewBox="0 0 48 48">
+      <path d="M13 13h22l-2.5 25h-17L13 13Z" />
+      <path d="M12 13c0-3 5.4-5 12-5s12 2 12 5-5.4 5-12 5-12-2-12-5Z" />
+      <path d="M18 25c4-2.8 8-2.8 12 0" />
+    </svg>
+  )}
+  {name === 'database' && (
+    <svg viewBox="0 0 48 48">
+      <ellipse cx="24" cy="12" rx="12" ry="5" />
+      <path d="M12 12v12c0 2.8 5.4 5 12 5s12-2.2 12-5V12M12 24v12c0 2.8 5.4 5 12 5s12-2.2 12-5V24" />
+    </svg>
+  )}
+  {name === 'networking' && (
+    <svg viewBox="0 0 48 48">
+      <path d="M15 22a9 9 0 0 1 17-3 7 7 0 0 1 1 14H15a5.5 5.5 0 0 1 0-11Z" />
+      <path d="M24 33v6m-12 0h24M12 39v4m12-4v4m12-4v4" />
+    </svg>
+  )}
+  {name === 'security' && (
+    <svg viewBox="0 0 48 48">
+      <path d="M24 6 38 12v10c0 9-5.8 16.5-14 20-8.2-3.5-14-11-14-20V12L24 6Z" />
+      <rect x="18" y="22" width="12" height="10" rx="2" />
+      <path d="M20.5 22v-3a3.5 3.5 0 0 1 7 0v3m-3.5 4v3" />
+    </svg>
+  )}
+  {name === 'messaging' && (
+    <svg viewBox="0 0 48 48">
+      <rect x="7" y="11" width="34" height="26" rx="4" />
+      <path d="m9 14 15 12 15-12M9 35l11-12m19 12L28 23" />
+    </svg>
+  )}
+  {name === 'monitoring' && (
+    <svg viewBox="0 0 48 48">
+      <rect x="7" y="8" width="34" height="27" rx="3" />
+      <path d="M12 24h6l4-9 6 15 4-8h5M18 41h12m-6-6v6" />
+    </svg>
+  )}
+  {name === 'devops' && (
+    <svg viewBox="0 0 48 48">
+      <path d="M13 31c-5 0-8-3-8-7s3-7 8-7c7 0 14 14 22 14 5 0 8-3 8-7s-3-7-8-7c-8 0-15 14-22 14Z" />
+    </svg>
+  )}
+  {name === 'migration' && (
+    <svg viewBox="0 0 48 48">
+      <path d="M13 34a9 9 0 0 1 1-18 12 12 0 0 1 23 4 7 7 0 0 1-1 14" />
+      <path d="M24 42V22m-7 7 7-7 7 7" />
+    </svg>
+  )}
+  {name === 'analytics' && (
+    <svg viewBox="0 0 48 48">
+      <path d="M8 40h33" />
+      <rect x="12" y="24" width="6" height="16" rx="1" />
+      <rect x="22" y="16" width="6" height="24" rx="1" />
+      <rect x="32" y="8" width="6" height="32" rx="1" />
+    </svg>
+  )}
+  {name === 'ai' && (
+    <svg viewBox="0 0 48 48">
+      <path d="M18 10a6 6 0 0 0-6 6v2a6 6 0 0 0-2 11 7 7 0 0 0 8 10h6V9a6 6 0 0 0-6 1Zm12 0a6 6 0 0 1 6 6v2a6 6 0 0 1 2 11 7 7 0 0 1-8 10h-6V9a6 6 0 0 1 6 1Z" />
+      <path d="M16 18h3m10 0h3m-16 9h4m8 0h4m-14 7h6m6 0h-6" />
+    </svg>
+  )}
+  {name === 'architecture' && (
+    <svg viewBox="0 0 48 48">
+      <rect x="7" y="8" width="34" height="32" rx="3" />
+      <path d="M14 16h10v8H14zM28 28h7v6h-7zM24 20h8v8m-13-4v7h9M14 34h8" />
+    </svg>
+  )}
+  {name === 'compare' && (
+    <svg viewBox="0 0 48 48">
+      <path d="M24 9v30M11 14h26M15 14 8 28h14l-7-14Zm18 0-7 14h14l-7-14Z" />
+      <path d="M8 28c1.5 4 4 6 7 6s5.5-2 7-6m4 0c1.5 4 4 6 7 6s5.5-2 7-6M16 39h16" />
+    </svg>
+  )}
+  {name === 'foundation' && (
+    <svg viewBox="0 0 48 48">
+      <path d="m5 18 19-10 19 10-19 10L5 18Z" />
+      <path d="M12 22v11c7 5 17 5 24 0V22m7-4v15" />
+    </svg>
+  )}
+  {name === 'badge' && (
+    <svg viewBox="0 0 48 48">
+      <circle cx="24" cy="20" r="13" />
+      <path d="m16 31-2 12 10-5 10 5-2-12M24 12l2.3 4.7 5.2.8-3.7 3.6.9 5.2-4.7-2.5-4.7 2.5.9-5.2-3.7-3.6 5.2-.8L24 12Z" />
+    </svg>
+  )}
+  {name === 'book' && (
+    <svg viewBox="0 0 48 48">
+      <path d="M7 10h12c3 0 5 2 5 5v25c0-3-2-5-5-5H7V10Zm34 0H29c-3 0-5 2-5 5v25c0-3 2-5 5-5h12V10Z" />
+    </svg>
+  )}
+</span>
+
+<style>
+  .aws-domain-icon {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+  }
+
+  .aws-domain-icon--sm {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .aws-domain-icon--md {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  .aws-domain-icon--lg {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.65;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+</style>

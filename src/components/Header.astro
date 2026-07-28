@@ -14,6 +14,7 @@ const navItems = [
   { href: `${prefix}/blog`, labelKey: 'nav.archive' },
   { href: `${prefix}/moments`, labelKey: 'nav.moments' },
   { href: `${prefix}/projects`, labelKey: 'nav.experiments' },
+  { href: `${prefix}/aws`, labelKey: 'nav.aws' },
   { href: `${prefix}/contact`, labelKey: 'nav.communique' },
 ];
 
@@ -488,6 +489,18 @@ const mobileLanguageLabel = {
     .header-actions :global(.lang-switcher),
     :global(.theme-toggle) {
       display: none;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1020px) {
+    .site-logo-text {
+      display: none;
+    }
+
+    .nav-link {
+      padding-left: 0.68rem;
+      padding-right: 0.68rem;
+      font-size: 0.8rem;
     }
   }
 

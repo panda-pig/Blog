@@ -135,7 +135,177 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"blog": {
+		"aws": {
+"compare/security-group-vs-nacl.en.md": {
+	id: "compare/security-group-vs-nacl.en.md";
+  slug: "compare/security-group-vs-naclen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/security-group-vs-nacl.ja.md": {
+	id: "compare/security-group-vs-nacl.ja.md";
+  slug: "compare/security-group-vs-naclja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/security-group-vs-nacl.md": {
+	id: "compare/security-group-vs-nacl.md";
+  slug: "compare/security-group-vs-nacl";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-ec2.en.md": {
+	id: "compute/amazon-ec2.en.md";
+  slug: "compute/amazon-ec2en";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-ec2.ja.md": {
+	id: "compute/amazon-ec2.ja.md";
+  slug: "compute/amazon-ec2ja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-ec2.md": {
+	id: "compute/amazon-ec2.md";
+  slug: "compute/amazon-ec2";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/amazon-vpc.en.md": {
+	id: "networking/amazon-vpc.en.md";
+  slug: "networking/amazon-vpcen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/amazon-vpc.ja.md": {
+	id: "networking/amazon-vpc.ja.md";
+  slug: "networking/amazon-vpcja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/amazon-vpc.md": {
+	id: "networking/amazon-vpc.md";
+  slug: "networking/amazon-vpc";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/internet-gateway.en.md": {
+	id: "networking/internet-gateway.en.md";
+  slug: "networking/internet-gatewayen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/internet-gateway.ja.md": {
+	id: "networking/internet-gateway.ja.md";
+  slug: "networking/internet-gatewayja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/internet-gateway.md": {
+	id: "networking/internet-gateway.md";
+  slug: "networking/internet-gateway";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/nat-gateway.en.md": {
+	id: "networking/nat-gateway.en.md";
+  slug: "networking/nat-gatewayen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/nat-gateway.ja.md": {
+	id: "networking/nat-gateway.ja.md";
+  slug: "networking/nat-gatewayja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/nat-gateway.md": {
+	id: "networking/nat-gateway.md";
+  slug: "networking/nat-gateway";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/network-acl.en.md": {
+	id: "networking/network-acl.en.md";
+  slug: "networking/network-aclen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/network-acl.ja.md": {
+	id: "networking/network-acl.ja.md";
+  slug: "networking/network-aclja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/network-acl.md": {
+	id: "networking/network-acl.md";
+  slug: "networking/network-acl";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/security-group.en.md": {
+	id: "networking/security-group.en.md";
+  slug: "networking/security-groupen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/security-group.ja.md": {
+	id: "networking/security-group.ja.md";
+  slug: "networking/security-groupja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/security-group.md": {
+	id: "networking/security-group.md";
+  slug: "networking/security-group";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/subnet-route-table.en.md": {
+	id: "networking/subnet-route-table.en.md";
+  slug: "networking/subnet-route-tableen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/subnet-route-table.ja.md": {
+	id: "networking/subnet-route-table.ja.md";
+  slug: "networking/subnet-route-tableja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/subnet-route-table.md": {
+	id: "networking/subnet-route-table.md";
+  slug: "networking/subnet-route-table";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+};
+"blog": {
 "jlpt-grammar-deck-study-cards.en.md": {
 	id: "jlpt-grammar-deck-study-cards.en.md";
   slug: "jlpt-grammar-deck-study-cards";

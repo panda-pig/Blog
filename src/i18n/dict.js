@@ -6,6 +6,7 @@ const dict = {
     'nav.archive': '文章',
     'nav.moments': '随手记',
     'nav.experiments': '项目',
+    'nav.aws': 'AWS 笔记',
     'nav.communique': '关于',
     // Hero
     'hero.title': "Hello, I'm Panda.",
@@ -98,6 +99,7 @@ const dict = {
     'nav.archive': 'Articles',
     'nav.moments': 'Notes',
     'nav.experiments': 'Projects',
+    'nav.aws': 'AWS Notes',
     'nav.communique': 'About',
     // Hero
     'hero.title': "Hello, I'm Panda.",
@@ -190,6 +192,7 @@ const dict = {
     'nav.archive': '記事',
     'nav.moments': 'ノート',
     'nav.experiments': 'プロジェクト',
+    'nav.aws': 'AWSノート',
     'nav.communique': 'について',
     // Hero
     'hero.title': "Hello, I'm Panda.",

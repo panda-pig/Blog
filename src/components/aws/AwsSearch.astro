@@ -1,0 +1,264 @@
+---
+const {
+  items = [],
+  placeholder = '搜索服务、术语或知识点…',
+  noResults = '没有找到相关内容',
+} = Astro.props;
+---
+
+<div class="aws-search" data-aws-search data-items={JSON.stringify(items)}>
+  <label class="aws-search__field">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"></circle>
+      <path d="m20 20-4-4"></path>
+    </svg>
+    <span class="sr-only">{placeholder}</span>
+    <input type="search" placeholder={placeholder} autocomplete="off" />
+    <kbd>⌘ K</kbd>
+  </label>
+  <div class="aws-search__results" data-no-results={noResults} hidden></div>
+</div>
+
+<script>
+  function initAwsSearch() {
+    document.querySelectorAll<HTMLElement>('[data-aws-search]').forEach((root) => {
+      if (root.dataset.ready === 'true') return;
+      root.dataset.ready = 'true';
+
+      const input = root.querySelector<HTMLInputElement>('input');
+      const results = root.querySelector<HTMLElement>('.aws-search__results');
+      const items = JSON.parse(root.dataset.items || '[]');
+      if (!input || !results) return;
+
+      const close = () => {
+        results.hidden = true;
+        results.innerHTML = '';
+      };
+
+      const render = (query: string) => {
+        const normalized = query.trim().toLocaleLowerCase();
+        if (!normalized) {
+          close();
+          return;
+        }
+
+        const matches = items
+          .filter((item: any) => item.searchText.toLocaleLowerCase().includes(normalized))
+          .slice(0, 8);
+
+        results.innerHTML = matches.length
+          ? matches
+              .map(
+                (item: any) => `
+                  <a class="aws-search-result" href="${item.href}">
+                    <span class="aws-search-result__type">${item.type}</span>
+                    <span class="aws-search-result__copy">
+                      <strong>${item.title}</strong>
+                      <small>${item.description || ''}</small>
+                    </span>
+                    <span class="aws-search-result__arrow" aria-hidden="true">→</span>
+                  </a>
+                `,
+              )
+              .join('')
+          : `<p class="aws-search__empty">${results.dataset.noResults || ''}</p>`;
+        results.hidden = false;
+      };
+
+      input.addEventListener('input', () => render(input.value));
+      input.addEventListener('focus', () => {
+        if (input.value.trim()) render(input.value);
+      });
+      document.addEventListener('click', (event) => {
+        if (!root.contains(event.target as Node)) close();
+      });
+      document.addEventListener('keydown', (event) => {
+        if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+          event.preventDefault();
+          input.focus();
+        }
+        if (event.key === 'Escape') close();
+      });
+    });
+  }
+
+  initAwsSearch();
+  document.addEventListener('astro:page-load', initAwsSearch);
+</script>
+
+<style>
+  .aws-search {
+    position: relative;
+    z-index: 12;
+    width: min(100%, 46rem);
+  }
+
+  .aws-search__field {
+    display: flex;
+    align-items: center;
+    min-height: 3.65rem;
+    padding: 0 0.9rem 0 1.15rem;
+    border: 1px solid rgba(67, 88, 116, 0.18);
+    border-radius: 1.05rem;
+    color: var(--text-muted);
+    background: color-mix(in srgb, var(--surface) 90%, transparent);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.82),
+      0 13px 30px rgba(52, 70, 100, 0.11);
+    backdrop-filter: blur(18px);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .aws-search__field:focus-within {
+    border-color: rgba(255, 153, 0, 0.52);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.82),
+      0 16px 36px rgba(52, 70, 100, 0.14),
+      0 0 0 4px rgba(255, 153, 0, 0.08);
+    transform: translateY(-1px);
+  }
+
+  .aws-search__field svg {
+    width: 1.35rem;
+    height: 1.35rem;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+  }
+
+  .aws-search__field input {
+    width: 100%;
+    min-width: 0;
+    margin: 0 0.8rem;
+    border: 0;
+    outline: 0;
+    color: var(--text);
+    background: transparent;
+    font: inherit;
+    font-size: 0.92rem;
+  }
+
+  .aws-search__field input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.78;
+  }
+
+  .aws-search__field kbd {
+    display: inline-flex;
+    align-items: center;
+    min-width: 2.25rem;
+    min-height: 1.75rem;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    color: var(--text-muted);
+    background: var(--surface-alt);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    box-shadow: inset 0 -1px 0 rgba(31, 42, 61, 0.08);
+  }
+
+  .aws-search__results {
+    position: absolute;
+    top: calc(100% + 0.65rem);
+    left: 0;
+    right: 0;
+    max-height: 27rem;
+    padding: 0.5rem;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: color-mix(in srgb, var(--surface) 96%, transparent);
+    box-shadow: 0 24px 56px rgba(36, 50, 77, 0.18);
+    backdrop-filter: blur(24px);
+  }
+
+  .aws-search__empty {
+    margin: 0;
+    padding: 1.25rem;
+    color: var(--text-muted);
+    text-align: center;
+    font-size: 0.84rem;
+  }
+
+  :global(.aws-search-result) {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.85rem;
+    align-items: center;
+    padding: 0.8rem;
+    border-radius: 0.75rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.18s ease, transform 0.18s ease;
+  }
+
+  :global(.aws-search-result:hover) {
+    background: var(--surface-hover);
+    transform: translateX(2px);
+  }
+
+  :global(.aws-search-result__type) {
+    padding: 0.28rem 0.48rem;
+    border-radius: 0.42rem;
+    color: #a55f00;
+    background: rgba(255, 153, 0, 0.11);
+    font-size: 0.62rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  :global(.aws-search-result__copy) {
+    min-width: 0;
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  :global(.aws-search-result__copy strong) {
+    overflow: hidden;
+    font-size: 0.84rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  :global(.aws-search-result__copy small) {
+    overflow: hidden;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  :global(.aws-search-result__arrow) {
+    color: #e98300;
+    font-size: 1rem;
+  }
+
+  [data-theme='dark'] .aws-search__field {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      0 13px 30px rgba(0, 0, 0, 0.22);
+  }
+
+  [data-theme='dark'] .aws-search__field:focus-within {
+    border-color: rgba(255, 170, 42, 0.52);
+  }
+
+  [data-theme='dark'] :global(.aws-search-result__type) {
+    color: #ffb44d;
+    background: rgba(255, 153, 0, 0.13);
+  }
+
+  @media (max-width: 520px) {
+    .aws-search__field {
+      min-height: 3.35rem;
+      padding-left: 0.9rem;
+    }
+
+    .aws-search__field kbd {
+      display: none;
+    }
+  }
+</style>

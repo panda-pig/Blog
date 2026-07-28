@@ -1,0 +1,660 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../Header.astro';
+import Footer from '../Footer.astro';
+import TOC from '../TOC.astro';
+import AwsDomainIcon from '../aws/AwsDomainIcon.astro';
+import { awsDomains, awsSpecials, getAwsDomain } from '../../data/aws';
+import {
+  normalizeAwsNotes,
+  getLocalizedAwsNotes,
+  getAwsNoteVariants,
+  getAwsNoteHref,
+  formatAwsDate,
+  getAwsPrefix,
+} from '../../lib/aws';
+import { getAwsUi, getAwsDomainCopy, getAwsSpecialCopy } from '../../i18n/aws';
+
+const { category, slug } = Astro.params;
+const { lang = 'zh' } = Astro.props;
+const prefix = getAwsPrefix(lang);
+const t = getAwsUi(lang);
+const allNoteModules = await Astro.glob('../../content/aws/**/*.md');
+const allNotes = normalizeAwsNotes(allNoteModules);
+const notes = getLocalizedAwsNotes(allNotes, lang);
+const variants = getAwsNoteVariants(allNotes, category || '', slug || '');
+const note =
+  variants.find((item: any) => item.resolvedLang === lang) ||
+  variants.find((item: any) => item.resolvedLang === 'zh');
+
+if (!note) {
+  throw new Error(`AWS note not found: ${category}/${slug}`);
+}
+
+const domain = getAwsDomain(category || '');
+const domainCopy = domain ? getAwsDomainCopy(domain, lang) : undefined;
+const { Content } = note;
+const headings = note.getHeadings ? note.getHeadings() : [];
+const relatedNotes = notes
+  .filter(
+    (item: any) =>
+      item !== note &&
+      (item.frontmatter.category === category ||
+        (item.frontmatter.tags || []).some((tag: string) =>
+          (note.frontmatter.tags || []).includes(tag),
+        )),
+  )
+  .slice(0, 3);
+---
+
+<BaseLayout
+  title={`${note.frontmatter.title} — ${t.siteTitle}`}
+  description={note.frontmatter.description}
+  slug={`${prefix}/aws/${category}/${slug}`}
+  lang={lang}
+>
+  <Header lang={lang} />
+
+  <main class={`aws-note-page aws-note-page--${domain?.tone || 'blue'}`}>
+    <div class="section-container aws-note-shell">
+      <nav class="aws-note-breadcrumb" aria-label="面包屑">
+        <a href={`${prefix}/aws`}>{t.siteTitle}</a>
+        <span aria-hidden="true">/</span>
+        <a href={`${prefix}/aws/${category}`}>{domainCopy?.localName || t.specialTopics}</a>
+        <span aria-hidden="true">/</span>
+        <span>{note.frontmatter.title}</span>
+      </nav>
+
+      <header class="aws-note-hero">
+        <div class="aws-note-hero__icon">
+          <AwsDomainIcon name={domain?.icon || 'book'} size="lg" />
+        </div>
+        <div class="aws-note-hero__body">
+          <div class="aws-note-hero__eyebrow">
+            <span>{note.frontmatter.service || domain?.name}</span>
+            {note.frontmatter.frequency && <span>{note.frontmatter.frequency}</span>}
+          </div>
+          <h1>{note.frontmatter.title}</h1>
+          {note.frontmatter.fullName && <p>{note.frontmatter.fullName}</p>}
+          <div class="aws-note-hero__tags">
+            {(note.frontmatter.tags || []).map((tag: string) => <span>{tag}</span>)}
+          </div>
+        </div>
+        <div class="aws-note-hero__date">
+          <span>{t.recentlyOrganized}</span>
+          <time datetime={note.frontmatter.updated || note.frontmatter.date}>
+            {formatAwsDate(note.frontmatter.updated || note.frontmatter.date, lang)}
+          </time>
+        </div>
+      </header>
+
+      <p class="aws-note-lead">{note.frontmatter.description}</p>
+
+      <div class="aws-note-layout">
+        <aside class="aws-note-domains" aria-label="AWS 领域目录">
+          <p>{t.domainDirectory}</p>
+          <nav>
+            {awsDomains.map((item) => {
+              const copy = getAwsDomainCopy(item, lang);
+              return (
+              <a class={item.slug === category ? 'active' : ''} href={`${prefix}/aws/${item.slug}`}>
+                <AwsDomainIcon name={item.icon} size="sm" />
+                <span>{copy.localName}</span>
+              </a>
+            )})}
+          </nav>
+          <div>
+            {awsSpecials.map((item) => {
+              const copy = getAwsSpecialCopy(item, lang);
+              return (
+              <a class={item.slug === category ? 'active' : ''} href={`${prefix}/aws/${item.slug}`}>
+                <AwsDomainIcon name={item.icon} size="sm" />
+                <span>{copy.title}</span>
+              </a>
+            )})}
+          </div>
+        </aside>
+
+        <article class="aws-note-article" data-pagefind-body>
+          <div
+            class="prose prose-lg max-w-none font-serif aws-note-prose"
+            style="--tw-prose-body: var(--text); --tw-prose-headings: var(--text); --tw-prose-links: var(--category-color); --tw-prose-bold: var(--text); --tw-prose-counters: var(--text-muted); --tw-prose-bullets: var(--text-muted);"
+          >
+            <Content />
+          </div>
+
+          {relatedNotes.length > 0 && (
+            <section class="aws-related" aria-labelledby="aws-related-title">
+              <p>{t.keepReading}</p>
+              <h2 id="aws-related-title">{t.relatedNotes}</h2>
+              <div>
+                {relatedNotes.map((item: any) => (
+                  <a href={getAwsNoteHref(item, lang)}>
+                    <small>{item.frontmatter.service}</small>
+                    <strong>{item.frontmatter.title}</strong>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+        </article>
+
+        <TOC headings={headings} lang={lang} />
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>
+
+<style>
+  .aws-note-page {
+    --category-color: #4777a7;
+    --category-soft: rgba(71, 119, 167, 0.11);
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 90% 4%, var(--category-soft), transparent 22rem),
+      linear-gradient(180deg, color-mix(in srgb, var(--bg) 94%, #fff5e7 6%), var(--bg) 34rem);
+  }
+
+  .aws-note-page--green,
+  .aws-note-page--forest { --category-color: #477a5b; --category-soft: rgba(71, 122, 91, 0.1); }
+  .aws-note-page--orange { --category-color: #d77a00; --category-soft: rgba(240, 138, 0, 0.1); }
+  .aws-note-page--violet,
+  .aws-note-page--purple { --category-color: #6653ac; --category-soft: rgba(102, 83, 172, 0.1); }
+  .aws-note-page--cyan,
+  .aws-note-page--teal,
+  .aws-note-page--aqua { --category-color: #347989; --category-soft: rgba(52, 121, 137, 0.1); }
+  .aws-note-page--indigo,
+  .aws-note-page--navy,
+  .aws-note-page--royal { --category-color: #426aa1; --category-soft: rgba(66, 106, 161, 0.1); }
+
+  .aws-note-shell {
+    max-width: 78rem;
+    padding-top: 2.2rem;
+    padding-bottom: 6rem;
+  }
+
+  .aws-note-breadcrumb {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .aws-note-breadcrumb a {
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+
+  .aws-note-breadcrumb span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .aws-note-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 1.4rem;
+    align-items: center;
+    padding: clamp(1.4rem, 4vw, 2.4rem);
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--category-color) 23%, var(--border));
+    border-radius: 1.55rem;
+    color: var(--category-color);
+    background:
+      radial-gradient(circle at 91% 17%, color-mix(in srgb, var(--category-color) 12%, transparent), transparent 18rem),
+      repeating-linear-gradient(0deg, transparent 0 34px, color-mix(in srgb, var(--category-color) 5%, transparent) 35px),
+      linear-gradient(145deg, color-mix(in srgb, var(--surface) 92%, var(--category-color) 8%), var(--surface));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.75),
+      0 8px 0 color-mix(in srgb, var(--category-color) 9%, transparent),
+      0 24px 54px rgba(52, 70, 100, 0.11);
+  }
+
+  .aws-note-hero::after {
+    content: '';
+    position: absolute;
+    right: 2.5rem;
+    bottom: -2.4rem;
+    width: 10rem;
+    height: 7rem;
+    border: 1px dashed var(--category-color);
+    border-radius: 50%;
+    opacity: 0.12;
+    transform: rotate(-15deg);
+  }
+
+  .aws-note-hero__icon {
+    display: grid;
+    place-items: center;
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid color-mix(in srgb, var(--category-color) 25%, var(--border));
+    border-radius: 1.2rem;
+    background: color-mix(in srgb, var(--surface) 91%, var(--category-color) 9%);
+    box-shadow: 0 6px 0 color-mix(in srgb, var(--category-color) 11%, transparent);
+  }
+
+  .aws-note-hero__body {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+  }
+
+  .aws-note-hero__eyebrow,
+  .aws-note-hero__tags {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .aws-note-hero__eyebrow span {
+    color: var(--category-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+
+  .aws-note-hero__eyebrow span + span::before {
+    content: '·';
+    margin-right: 0.4rem;
+    color: var(--text-muted);
+  }
+
+  .aws-note-hero h1 {
+    margin: 0.42rem 0 0;
+    color: var(--text);
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2rem, 5vw, 3.45rem);
+    line-height: 1.13;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  .aws-note-hero__body > p {
+    margin: 0.45rem 0 0;
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+  }
+
+  .aws-note-hero__tags {
+    margin-top: 0.8rem;
+  }
+
+  .aws-note-hero__tags span {
+    padding: 0.25rem 0.48rem;
+    border-radius: 0.38rem;
+    color: var(--text-secondary);
+    background: var(--surface-alt);
+    font-size: 0.58rem;
+  }
+
+  .aws-note-hero__date {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 0.2rem;
+    justify-items: end;
+    color: var(--text-muted);
+  }
+
+  .aws-note-hero__date span {
+    font-size: 0.58rem;
+  }
+
+  .aws-note-hero__date time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+  }
+
+  .aws-note-lead {
+    width: min(100%, 48rem);
+    margin: 2.5rem auto 0;
+    color: var(--text-secondary);
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+    line-height: 1.95;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .aws-note-layout {
+    display: grid;
+    grid-template-columns: 10.5rem minmax(0, 42rem) 11.5rem;
+    gap: 2.3rem;
+    justify-content: center;
+    align-items: start;
+    margin-top: 3.6rem;
+  }
+
+  .aws-note-domains {
+    position: sticky;
+    top: 6.25rem;
+  }
+
+  .aws-note-domains > p {
+    margin: 0 0 0.65rem;
+    color: var(--text-muted);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .aws-note-domains nav,
+  .aws-note-domains > div {
+    display: grid;
+    gap: 0.1rem;
+  }
+
+  .aws-note-domains > div {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--border);
+  }
+
+  .aws-note-domains a {
+    display: flex;
+    gap: 0.55rem;
+    align-items: center;
+    min-height: 2.15rem;
+    padding: 0.35rem 0.45rem;
+    border-radius: 0.6rem;
+    color: var(--text-muted);
+    font-size: 0.68rem;
+    text-decoration: none;
+  }
+
+  .aws-note-domains a:hover {
+    color: var(--text);
+    background: var(--surface-hover);
+  }
+
+  .aws-note-domains a.active {
+    color: var(--category-color);
+    background: var(--category-soft);
+    font-weight: 700;
+  }
+
+  .aws-note-article {
+    min-width: 0;
+  }
+
+  .aws-note-prose {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .aws-note-prose :global(h2) {
+    position: relative;
+    margin-top: 2.8rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Noto Serif', serif;
+    font-size: 1.45rem;
+    letter-spacing: -0.02em;
+  }
+
+  .aws-note-prose :global(h2::before) {
+    content: '';
+    display: inline-block;
+    width: 0.24rem;
+    height: 1.1em;
+    margin-right: 0.58rem;
+    border-radius: 99px;
+    background: var(--category-color);
+    vertical-align: -0.1em;
+  }
+
+  .aws-note-prose :global(h3) {
+    margin-top: 2rem;
+    font-size: 1.12rem;
+  }
+
+  .aws-note-prose :global(p),
+  .aws-note-prose :global(li) {
+    color: var(--text-secondary);
+  }
+
+  .aws-note-prose :global(strong) {
+    color: var(--text);
+  }
+
+  .aws-note-prose :global(blockquote) {
+    margin: 1.7rem 0;
+    padding: 1rem 1.15rem;
+    border: 1px solid color-mix(in srgb, var(--category-color) 23%, var(--border));
+    border-left: 0.3rem solid var(--category-color);
+    border-radius: 0.8rem;
+    color: var(--text);
+    background: var(--category-soft);
+    font-style: normal;
+  }
+
+  .aws-note-prose :global(blockquote p) {
+    margin: 0;
+    color: var(--text);
+  }
+
+  .aws-note-prose :global(table) {
+    width: 100%;
+    margin: 1.6rem 0 2rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 0.85rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  .aws-note-prose :global(th) {
+    color: var(--text);
+    background: var(--category-soft);
+    font-weight: 700;
+  }
+
+  .aws-note-prose :global(th),
+  .aws-note-prose :global(td) {
+    padding: 0.75rem 0.8rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .aws-note-prose :global(tr:last-child td) {
+    border-bottom: 0;
+  }
+
+  .aws-note-prose :global(th:last-child),
+  .aws-note-prose :global(td:last-child) {
+    border-right: 0;
+  }
+
+  .aws-note-prose :global(code) {
+    border-radius: 0.35rem;
+    color: var(--category-color);
+    background: var(--category-soft);
+    font-size: 0.82em;
+  }
+
+  .aws-related {
+    margin-top: 4.5rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--border);
+  }
+
+  .aws-related > p {
+    margin: 0;
+    color: var(--category-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+  }
+
+  .aws-related h2 {
+    margin: 0.2rem 0 1rem;
+    font-family: 'Noto Serif', serif;
+    font-size: 1.35rem;
+  }
+
+  .aws-related > div {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .aws-related a {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr) auto;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.8rem 0.95rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    color: var(--text);
+    background: var(--surface);
+    text-decoration: none;
+  }
+
+  .aws-related small {
+    color: var(--category-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+  }
+
+  .aws-related strong {
+    font-size: 0.74rem;
+  }
+
+  .aws-related a > span {
+    color: #e98300;
+  }
+
+  .aws-note-layout :global(nav.sticky) {
+    top: 6.25rem;
+    width: 11.5rem;
+  }
+
+  .aws-note-layout :global(nav.sticky > div) {
+    padding-left: 0.9rem;
+    border-color: color-mix(in srgb, var(--category-color) 28%, var(--border)) !important;
+  }
+
+  .aws-note-layout :global(nav.sticky a) {
+    font-size: 0.7rem;
+  }
+
+  @media (max-width: 1100px) {
+    .aws-note-layout {
+      grid-template-columns: 9.5rem minmax(0, 42rem);
+    }
+
+    .aws-note-layout :global(nav.sticky) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .aws-note-shell {
+      padding-top: 1.25rem;
+    }
+
+    .aws-note-layout {
+      grid-template-columns: 1fr;
+      margin-top: 2rem;
+    }
+
+    .aws-note-domains {
+      position: static;
+      display: flex;
+      gap: 0.2rem;
+      overflow-x: auto;
+      padding: 0.45rem;
+      border: 1px solid var(--border);
+      border-radius: 0.8rem;
+      background: var(--surface);
+      scrollbar-width: none;
+    }
+
+    .aws-note-domains::-webkit-scrollbar {
+      display: none;
+    }
+
+    .aws-note-domains > p {
+      display: none;
+    }
+
+    .aws-note-domains nav,
+    .aws-note-domains > div {
+      display: flex;
+      gap: 0.15rem;
+    }
+
+    .aws-note-domains > div {
+      margin: 0;
+      padding: 0 0 0 0.25rem;
+      border-top: 0;
+      border-left: 1px dashed var(--border);
+    }
+
+    .aws-note-domains a {
+      min-width: max-content;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .aws-note-shell {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 4rem;
+    }
+
+    .aws-note-hero {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .aws-note-hero__icon {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .aws-note-hero__date {
+      justify-items: start;
+    }
+
+    .aws-note-lead {
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    .aws-note-prose {
+      font-size: 0.94rem;
+    }
+
+    .aws-note-prose :global(table) {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .aws-related a {
+      grid-template-columns: 1fr auto;
+    }
+
+    .aws-related small {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

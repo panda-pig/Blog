@@ -1,0 +1,784 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../Header.astro';
+import Footer from '../Footer.astro';
+import AwsDomainIcon from '../aws/AwsDomainIcon.astro';
+import AwsSearch from '../aws/AwsSearch.astro';
+import { awsDomains, awsSpecials } from '../../data/aws';
+import {
+  normalizeAwsNotes,
+  getLocalizedAwsNotes,
+  getAwsNoteHref,
+  formatAwsDate,
+  getAwsPrefix,
+} from '../../lib/aws';
+import { getAwsUi, getAwsDomainCopy, getAwsSpecialCopy } from '../../i18n/aws';
+
+const { lang = 'zh' } = Astro.props;
+const prefix = getAwsPrefix(lang);
+const t = getAwsUi(lang);
+const allNoteModules = await Astro.glob('../../content/aws/**/*.md');
+const allNotes = normalizeAwsNotes(allNoteModules);
+const notes = getLocalizedAwsNotes(allNotes, lang);
+const recentNotes = notes.slice(0, 4);
+const localizedSpecials = awsSpecials.map((item) => getAwsSpecialCopy(item, lang));
+
+const searchItems = [
+  ...awsDomains.map((domain) => {
+    const copy = getAwsDomainCopy(domain, lang);
+    return {
+    type: t.domainType,
+    title: lang === 'zh' ? `${domain.name} ${copy.localName}` : `${domain.name} · ${copy.localName}`,
+    description: copy.description,
+    href: `${prefix}/aws/${domain.slug}`,
+    searchText: `${domain.name} ${copy.localName} ${copy.description} ${domain.services.join(' ')}`,
+  }}),
+  ...localizedSpecials.map((item) => ({
+    type: t.topicType,
+    title: item.title,
+    description: item.description,
+    href: `${prefix}/aws/${item.slug}`,
+    searchText: `${item.title} ${item.description} ${item.preview}`,
+  })),
+  ...notes.map((note: any) => ({
+    type: note.frontmatter.kind === 'compare' ? t.compareType : t.noteType,
+    title: note.frontmatter.title,
+    description: note.frontmatter.description,
+    href: getAwsNoteHref(note, lang),
+    searchText: [
+      note.frontmatter.title,
+      note.frontmatter.description,
+      note.frontmatter.service,
+      ...(note.frontmatter.tags || []),
+      note.rawContent,
+    ].join(' '),
+  })),
+];
+---
+
+<BaseLayout
+  title={`${t.siteTitle} — Panda Blog`}
+  description={t.siteDescription}
+  slug={`${prefix}/aws`}
+  lang={lang}
+>
+  <Header lang={lang} />
+
+  <main class="aws-notes-page" data-pagefind-body>
+    <section class="aws-hero">
+      <div class="aws-cloud aws-cloud--one" aria-hidden="true"></div>
+      <div class="aws-cloud aws-cloud--two" aria-hidden="true"></div>
+      <svg class="aws-flight-path" viewBox="0 0 240 110" aria-hidden="true">
+        <path d="M10 92c34-25 61-9 51 8-13 22-38-4-13-28 23-22 65 13 95-13 16-14 20-33 44-38" />
+        <path d="m180 12 47-7-30 35-7-18-10-10Z" />
+        <path d="m190 22 37-17" />
+      </svg>
+
+      <div class="section-container aws-hero__inner">
+        <div class="aws-hero__copy">
+          <p class="aws-eyebrow">PANDA'S CLOUD NOTES</p>
+          <h1>AWS <span>{t.heroTitle}</span></h1>
+          <p class="aws-hero__meta">{t.heroMeta}</p>
+          <p class="aws-hero__description">{t.heroDescription}</p>
+        </div>
+        <AwsSearch items={searchItems} placeholder={t.searchPlaceholder} noResults={t.noResults} />
+      </div>
+    </section>
+
+    <div class="section-container aws-content">
+      <section class="aws-section" aria-labelledby="aws-domains-title">
+        <div class="aws-section-heading">
+          <div>
+            <p class="aws-section-kicker">{t.serviceMap}</p>
+            <h2 id="aws-domains-title">{t.coreDomains}</h2>
+          </div>
+          <p>{t.coreDomainsDescription}</p>
+        </div>
+
+        <div class="aws-domain-grid">
+          {awsDomains.map((domain, index) => {
+            const copy = getAwsDomainCopy(domain, lang);
+            return (
+            <a
+              class={`aws-domain-card aws-tone-${domain.tone}`}
+              href={`${prefix}/aws/${domain.slug}`}
+              style={`--card-index: ${index}`}
+            >
+              <AwsDomainIcon name={domain.icon} />
+              <div class="aws-domain-card__body">
+                <h3>
+                  <span>{domain.name}</span>
+                  {copy.localName !== domain.name && <small>{copy.localName}</small>}
+                </h3>
+                <p>{copy.description}</p>
+                <div class="aws-service-chips" aria-label="代表服务">
+                  {domain.services.map((service) => <span>{service}</span>)}
+                </div>
+              </div>
+              <span class="aws-card-arrow" aria-hidden="true">→</span>
+            </a>
+          )})}
+        </div>
+      </section>
+
+      <section class="aws-section aws-section--lower" aria-labelledby="aws-specials-title">
+        <div class="aws-section-heading">
+          <div>
+            <p class="aws-section-kicker">{t.quickReference}</p>
+            <h2 id="aws-specials-title">{t.specialTopics}</h2>
+          </div>
+          <p>{t.specialTopicsDescription}</p>
+        </div>
+
+        <div class="aws-lower-grid">
+          <div class="aws-special-grid">
+            {localizedSpecials.map((item) => (
+              <a class={`aws-special-card aws-special-card--${item.tone}`} href={`${prefix}/aws/${item.slug}`}>
+                <AwsDomainIcon name={item.icon} size="md" />
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                  <span>{item.preview}</span>
+                </div>
+                <span class="aws-card-arrow" aria-hidden="true">→</span>
+              </a>
+            ))}
+          </div>
+
+          <aside class="aws-recent" aria-labelledby="aws-recent-title">
+            <div class="aws-recent__header">
+              <div>
+                <p class="aws-section-kicker">{t.freshNotes}</p>
+                <h2 id="aws-recent-title">{t.recentlyUpdated}</h2>
+              </div>
+              <span class="aws-pencil-mark" aria-hidden="true">✦</span>
+            </div>
+            <div class="aws-recent__list">
+              {recentNotes.map((note: any) => (
+                <a href={getAwsNoteHref(note, lang)}>
+                  <span class="aws-note-file" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M6 3h8l4 4v14H6zM14 3v5h5M9 12h6m-6 4h6" />
+                    </svg>
+                  </span>
+                  <span class="aws-recent__copy">
+                    <strong>{note.frontmatter.title}</strong>
+                    <small>{note.frontmatter.description}</small>
+                  </span>
+                  <time datetime={note.frontmatter.updated || note.frontmatter.date}>
+                    {formatAwsDate(note.frontmatter.updated || note.frontmatter.date, lang)}
+                  </time>
+                  <span class="aws-card-arrow" aria-hidden="true">→</span>
+                </a>
+              ))}
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <p class="aws-handmade-note">
+        <img src="/images/avatar.jpg" alt="" />
+        <span>{t.handmade}</span>
+      </p>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>
+
+<style>
+  .aws-notes-page {
+    --aws-orange: #f08a00;
+    --aws-orange-soft: rgba(240, 138, 0, 0.1);
+    --aws-ink: #233752;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 7% 12%, rgba(188, 215, 237, 0.34), transparent 19rem),
+      radial-gradient(circle at 93% 18%, rgba(198, 220, 239, 0.32), transparent 22rem),
+      linear-gradient(180deg, #f8f6f0 0%, var(--bg) 52%, var(--bg) 100%);
+  }
+
+  [data-theme='dark'] .aws-notes-page {
+    --aws-orange: #ffad33;
+    --aws-orange-soft: rgba(255, 153, 0, 0.11);
+    --aws-ink: var(--text);
+    background:
+      radial-gradient(circle at 7% 12%, rgba(73, 106, 136, 0.2), transparent 19rem),
+      radial-gradient(circle at 93% 18%, rgba(73, 106, 136, 0.18), transparent 22rem),
+      linear-gradient(180deg, #20252b 0%, var(--bg) 52%, var(--bg) 100%);
+  }
+
+  .aws-hero {
+    position: relative;
+    min-height: 24rem;
+    padding: 4.4rem 0 3.25rem;
+    overflow: hidden;
+  }
+
+  .aws-hero::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 7rem;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent, var(--bg));
+  }
+
+  .aws-hero__inner {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    gap: 2.2rem;
+  }
+
+  .aws-hero__copy {
+    width: min(100%, 48rem);
+  }
+
+  .aws-eyebrow,
+  .aws-section-kicker {
+    margin: 0;
+    color: var(--aws-orange);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+  }
+
+  .aws-hero h1 {
+    margin: 0.65rem 0 0;
+    color: var(--aws-ink);
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(3rem, 7vw, 5.15rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.055em;
+  }
+
+  .aws-hero h1 span {
+    font-size: 0.83em;
+    letter-spacing: 0.01em;
+  }
+
+  .aws-hero__meta {
+    margin: 1.05rem 0 0;
+    color: var(--aws-ink);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(0.76rem, 1.3vw, 0.95rem);
+    letter-spacing: 0.025em;
+  }
+
+  .aws-hero__description {
+    margin: 0.68rem 0 0;
+    color: var(--text-secondary);
+    font-family: 'Noto Serif', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+  }
+
+  .aws-flight-path {
+    position: absolute;
+    top: 2.2rem;
+    left: calc(50% + 12rem);
+    z-index: 2;
+    width: 14rem;
+    color: rgba(70, 112, 153, 0.48);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.3;
+    stroke-dasharray: 5 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform: rotate(-4deg);
+  }
+
+  .aws-flight-path path:nth-child(n + 2) {
+    stroke-dasharray: none;
+  }
+
+  .aws-cloud {
+    position: absolute;
+    z-index: 1;
+    width: 23rem;
+    height: 9rem;
+    opacity: 0.4;
+    filter: blur(0.2px);
+    background:
+      radial-gradient(ellipse at 23% 74%, rgba(162, 195, 221, 0.44) 0 15%, transparent 16%),
+      radial-gradient(ellipse at 42% 52%, rgba(176, 205, 228, 0.5) 0 25%, transparent 26%),
+      radial-gradient(ellipse at 66% 64%, rgba(173, 204, 228, 0.46) 0 24%, transparent 25%),
+      radial-gradient(ellipse at 84% 80%, rgba(170, 201, 225, 0.38) 0 18%, transparent 19%);
+  }
+
+  .aws-cloud--one {
+    top: 2rem;
+    right: -5rem;
+  }
+
+  .aws-cloud--two {
+    bottom: 1rem;
+    left: -8rem;
+    transform: scale(0.82);
+  }
+
+  .aws-content {
+    position: relative;
+    z-index: 4;
+    padding-bottom: 5rem;
+  }
+
+  .aws-section + .aws-section {
+    margin-top: 4.7rem;
+  }
+
+  .aws-section-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: end;
+    margin-bottom: 1.35rem;
+  }
+
+  .aws-section-heading h2,
+  .aws-recent__header h2 {
+    margin: 0.2rem 0 0;
+    color: var(--aws-ink);
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(1.45rem, 2.8vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .aws-section-heading > p {
+    margin: 0 0 0.15rem;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+  }
+
+  .aws-domain-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .aws-domain-card {
+    --domain-color: #4777a7;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.9rem;
+    min-height: 9rem;
+    padding: 1.15rem 1.05rem;
+    border: 1px solid rgba(59, 78, 104, 0.14);
+    border-radius: 1rem;
+    color: var(--domain-color);
+    background:
+      linear-gradient(145deg, color-mix(in srgb, var(--surface) 96%, var(--domain-color) 4%), var(--surface));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.75),
+      0 5px 0 rgba(52, 70, 100, 0.05),
+      0 12px 25px rgba(52, 70, 100, 0.07);
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: aws-card-in 0.52s ease forwards;
+    animation-delay: calc(var(--card-index) * 35ms);
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  .aws-domain-card:hover {
+    z-index: 2;
+    border-color: color-mix(in srgb, var(--domain-color) 45%, var(--border));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.75),
+      0 7px 0 color-mix(in srgb, var(--domain-color) 12%, transparent),
+      0 20px 38px rgba(52, 70, 100, 0.13);
+    transform: translateY(-4px) rotate(-0.25deg);
+  }
+
+  .aws-domain-card__body {
+    min-width: 0;
+  }
+
+  .aws-domain-card h3 {
+    display: flex;
+    gap: 0.38rem;
+    align-items: baseline;
+    margin: 0;
+    color: var(--aws-ink);
+    font-size: 0.92rem;
+    line-height: 1.25;
+  }
+
+  .aws-domain-card h3 span {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+  }
+
+  .aws-domain-card h3 small {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .aws-domain-card p {
+    margin: 0.42rem 0 0.65rem;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    line-height: 1.55;
+  }
+
+  .aws-service-chips {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  .aws-service-chips span {
+    padding: 0.2rem 0.38rem;
+    overflow: hidden;
+    border-radius: 0.3rem;
+    color: var(--text-secondary);
+    background: color-mix(in srgb, var(--domain-color) 8%, var(--surface-alt));
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.52rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .aws-card-arrow {
+    color: var(--aws-orange);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.15rem;
+    transition: transform 0.2s ease;
+  }
+
+  .aws-domain-card > .aws-card-arrow {
+    position: absolute;
+    right: 0.85rem;
+    bottom: 0.65rem;
+  }
+
+  .aws-domain-card:hover .aws-card-arrow,
+  .aws-special-card:hover .aws-card-arrow,
+  .aws-recent a:hover .aws-card-arrow {
+    transform: translateX(4px);
+  }
+
+  .aws-tone-green { --domain-color: #477a5b; }
+  .aws-tone-indigo { --domain-color: #426eac; }
+  .aws-tone-cyan { --domain-color: #39779a; }
+  .aws-tone-forest { --domain-color: #3f7657; }
+  .aws-tone-orange { --domain-color: #de7c00; }
+  .aws-tone-navy { --domain-color: #315f92; }
+  .aws-tone-violet { --domain-color: #6551ae; }
+  .aws-tone-teal { --domain-color: #267a82; }
+  .aws-tone-purple { --domain-color: #6950b2; }
+  .aws-tone-aqua { --domain-color: #2e7e8c; }
+  .aws-tone-royal { --domain-color: #3d65aa; }
+
+  .aws-lower-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(19rem, 0.9fr);
+    gap: 1.2rem;
+    align-items: stretch;
+  }
+
+  .aws-special-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .aws-special-card {
+    --special-color: #4777a7;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.8rem;
+    min-height: 10rem;
+    padding: 1.15rem;
+    border: 1px solid color-mix(in srgb, var(--special-color) 23%, var(--border));
+    border-radius: 1rem;
+    color: var(--special-color);
+    background:
+      linear-gradient(145deg, color-mix(in srgb, var(--surface) 90%, var(--special-color) 10%), var(--surface));
+    box-shadow: 0 10px 25px rgba(52, 70, 100, 0.07);
+    text-decoration: none;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  .aws-special-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 35px rgba(52, 70, 100, 0.12);
+  }
+
+  .aws-special-card h3 {
+    margin: 0.12rem 0 0;
+    color: var(--aws-ink);
+    font-size: 0.9rem;
+  }
+
+  .aws-special-card p {
+    margin: 0.42rem 0 0.7rem;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    line-height: 1.55;
+  }
+
+  .aws-special-card div > span {
+    display: inline-flex;
+    padding: 0.28rem 0.52rem;
+    border-radius: 0.4rem;
+    color: var(--special-color);
+    background: color-mix(in srgb, var(--special-color) 9%, var(--surface));
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.56rem;
+  }
+
+  .aws-special-card > .aws-card-arrow {
+    position: absolute;
+    right: 0.9rem;
+    bottom: 0.7rem;
+  }
+
+  .aws-special-card--orange { --special-color: #cd7503; }
+  .aws-special-card--green { --special-color: #397458; }
+  .aws-special-card--violet { --special-color: #6551ae; }
+
+  .aws-recent {
+    padding: 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background:
+      linear-gradient(145deg, color-mix(in srgb, var(--surface) 92%, #dbeaf5 8%), var(--surface));
+    box-shadow: 0 10px 25px rgba(52, 70, 100, 0.07);
+  }
+
+  .aws-recent__header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .aws-recent__header h2 {
+    font-size: 1.35rem;
+  }
+
+  .aws-pencil-mark {
+    color: var(--aws-orange);
+    font-size: 1.25rem;
+  }
+
+  .aws-recent__list {
+    display: grid;
+  }
+
+  .aws-recent__list a {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    gap: 0.65rem;
+    align-items: center;
+    padding: 0.8rem 0.25rem;
+    border-top: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .aws-note-file {
+    display: grid;
+    place-items: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 0.45rem;
+    color: var(--primary);
+    background: var(--primary-light);
+  }
+
+  .aws-note-file svg {
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .aws-recent__copy {
+    min-width: 0;
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .aws-recent__copy strong,
+  .aws-recent__copy small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .aws-recent__copy strong {
+    font-size: 0.78rem;
+  }
+
+  .aws-recent__copy small {
+    color: var(--text-muted);
+    font-size: 0.62rem;
+  }
+
+  .aws-recent time {
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    white-space: nowrap;
+  }
+
+  .aws-handmade-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin: 3.2rem 0 0;
+    color: var(--text-muted);
+    font-family: 'Noto Serif', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  .aws-handmade-note img {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  [data-theme='dark'] .aws-domain-card,
+  [data-theme='dark'] .aws-special-card,
+  [data-theme='dark'] .aws-recent {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 14px 30px rgba(0, 0, 0, 0.18);
+  }
+
+  @keyframes aws-card-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .aws-domain-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .aws-lower-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .aws-flight-path {
+      left: auto;
+      right: 4rem;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .aws-hero {
+      min-height: 21rem;
+      padding: 3.4rem 0 2.5rem;
+    }
+
+    .aws-flight-path {
+      top: 1.5rem;
+      right: -2rem;
+      width: 11rem;
+      opacity: 0.65;
+    }
+
+    .aws-domain-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .aws-domain-card {
+      min-height: 9.5rem;
+    }
+
+    .aws-section-heading {
+      align-items: start;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .aws-section-heading > p {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .aws-notes-page {
+      background:
+        radial-gradient(circle at 96% 7%, rgba(188, 215, 237, 0.3), transparent 15rem),
+        linear-gradient(180deg, #f8f6f0 0%, var(--bg) 32rem);
+    }
+
+    [data-theme='dark'] .aws-notes-page {
+      background:
+        radial-gradient(circle at 96% 7%, rgba(73, 106, 136, 0.2), transparent 15rem),
+        linear-gradient(180deg, #20252b 0%, var(--bg) 32rem);
+    }
+
+    .aws-hero h1 {
+      font-size: clamp(2.7rem, 15vw, 4rem);
+      line-height: 0.98;
+    }
+
+    .aws-hero h1 span {
+      display: block;
+      margin-top: 0.22em;
+      font-size: 0.78em;
+    }
+
+    .aws-hero__meta {
+      max-width: 20rem;
+      line-height: 1.7;
+    }
+
+    .aws-content {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .aws-domain-grid,
+    .aws-special-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .aws-domain-card {
+      min-height: 8.5rem;
+    }
+
+    .aws-recent__list a {
+      grid-template-columns: auto minmax(0, 1fr) auto;
+    }
+
+    .aws-recent time {
+      display: none;
+    }
+
+    .aws-handmade-note {
+      font-size: 0.66rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .aws-domain-card {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  }
+</style>
