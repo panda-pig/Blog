@@ -369,27 +369,6 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
-"welcome.en.md": {
-	id: "welcome.en.md";
-  slug: "welcome";
-  body: string;
-  collection: "blog";
-  data: any
-} & { render(): Render[".md"] };
-"welcome.ja.md": {
-	id: "welcome.ja.md";
-  slug: "welcome";
-  body: string;
-  collection: "blog";
-  data: any
-} & { render(): Render[".md"] };
-"welcome.md": {
-	id: "welcome.md";
-  slug: "welcome";
-  body: string;
-  collection: "blog";
-  data: any
-} & { render(): Render[".md"] };
 };
 
 	};
