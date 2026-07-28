@@ -319,6 +319,8 @@ const frequencies = [5, 4, 3, 2];
     --glossary-blue-deep: #365f88;
     --glossary-blue-soft: #eaf1f7;
     --glossary-paper: rgba(255, 254, 250, 0.92);
+    --glossary-surface: #ffffff;
+    --glossary-table-head: #f5f7f8;
     position: relative;
     min-height: 100vh;
     overflow: hidden;
@@ -339,6 +341,8 @@ const frequencies = [5, 4, 3, 2];
     --glossary-blue-deep: #9bc0e4;
     --glossary-blue-soft: rgba(89, 128, 165, 0.17);
     --glossary-paper: rgba(35, 40, 46, 0.94);
+    --glossary-surface: #24272b;
+    --glossary-table-head: #293039;
     background:
       radial-gradient(circle at 2% 4%, rgba(70, 108, 142, 0.22), transparent 22rem),
       radial-gradient(circle at 98% 20%, rgba(200, 137, 70, 0.1), transparent 20rem),
@@ -538,7 +542,7 @@ const frequencies = [5, 4, 3, 2];
     border: 1px solid var(--border);
     border-radius: 0.78rem;
     outline: none;
-    background: var(--card-bg);
+    background: var(--glossary-surface);
     color: var(--text);
     font: inherit;
     font-size: 0.88rem;
@@ -629,6 +633,7 @@ const frequencies = [5, 4, 3, 2];
   .glossary-table-wrap {
     max-height: min(68rem, 72vh);
     overflow: auto;
+    isolation: isolate;
     scrollbar-color: rgba(80, 121, 165, 0.35) transparent;
   }
 
@@ -652,8 +657,11 @@ const frequencies = [5, 4, 3, 2];
   thead th {
     position: sticky;
     top: 0;
-    z-index: 3;
-    background: color-mix(in srgb, var(--card-bg) 96%, var(--glossary-blue) 4%);
+    z-index: 5;
+    background: var(--glossary-table-head);
+    box-shadow:
+      inset 0 -1px 0 var(--border),
+      0 0.45rem 0.9rem rgba(42, 65, 89, 0.06);
     color: var(--text-muted);
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.67rem;
@@ -887,7 +895,7 @@ const frequencies = [5, 4, 3, 2];
       border: 1px solid var(--border);
       border-radius: 0.8rem;
       overflow: hidden;
-      background: var(--card-bg);
+      background: var(--glossary-surface);
     }
 
     tbody tr:last-child {
