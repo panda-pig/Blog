@@ -181,8 +181,8 @@ const specialCopy: Record<string, any> = {
     ja: ['SAA-C03 試験ポイント', '構成選定、高可用性、セキュリティ、コスト。', 'アーキテクチャ問題'],
   },
   glossary: {
-    en: ['English Glossary', 'AWS abbreviations, full names, and related services.', 'Abbreviation · Full name · Meaning'],
-    ja: ['英語用語集', 'AWS の略語、正式名称、関連サービス。', '略語 · 正式名称 · 意味'],
+    en: ['Trilingual AWS Glossary', 'AWS services, abbreviations, and exam terminology in three languages.', 'English · 中文 · 日本語'],
+    ja: ['3言語 AWS 用語対照表', 'AWS のサービス名、略語、試験用語を3言語で整理。', '日本語 · 中文 · English'],
   },
 };
 

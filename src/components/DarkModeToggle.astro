@@ -40,7 +40,7 @@
     transform: translateY(0) scale(0.96);
   }
 
-  [data-theme="dark"] .theme-toggle {
+  :global([data-theme="dark"]) .theme-toggle {
     color: rgba(255, 253, 245, 0.72);
     border-color: rgba(255, 255, 255, 0.14);
     background: rgba(255, 255, 255, 0.07);
@@ -49,7 +49,7 @@
       0 10px 24px rgba(0, 0, 0, 0.18);
   }
 
-  [data-theme="dark"] .theme-toggle:hover {
+  :global([data-theme="dark"]) .theme-toggle:hover {
     color: #fffdf5;
     background: rgba(255, 255, 255, 0.1);
     box-shadow:

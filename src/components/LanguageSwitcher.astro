@@ -34,7 +34,7 @@ const languages = [
     -webkit-backdrop-filter: blur(18px) saturate(1.26);
   }
 
-  [data-theme="dark"] .lang-switcher {
+  :global([data-theme="dark"]) .lang-switcher {
     background: rgba(255, 255, 255, 0.07);
     border-color: rgba(255, 255, 255, 0.14);
     box-shadow:
@@ -68,11 +68,11 @@ const languages = [
     display: none;
   }
 
-  [data-theme="dark"] .lang-btn {
+  :global([data-theme="dark"]) .lang-btn {
     color: rgba(255, 253, 245, 0.62);
   }
 
-  [data-theme="dark"] .lang-btn:hover {
+  :global([data-theme="dark"]) .lang-btn:hover {
     color: #fffdf5;
     background: rgba(255, 255, 255, 0.08);
   }
@@ -88,7 +88,7 @@ const languages = [
       0 8px 18px rgba(82, 111, 164, 0.12);
   }
 
-  [data-theme="dark"] .lang-btn.active {
+  :global([data-theme="dark"]) .lang-btn.active {
     color: #fffdf5;
     background: linear-gradient(180deg, rgba(129, 174, 217, 0.28), rgba(129, 174, 217, 0.16));
     box-shadow:

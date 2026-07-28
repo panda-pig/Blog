@@ -1,0 +1,975 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../Header.astro';
+import Footer from '../Footer.astro';
+import { awsGlossaryEntries } from '../../data/awsGlossary';
+import { getAwsPrefix } from '../../lib/aws';
+import { getAwsUi } from '../../i18n/aws';
+
+const { lang = 'zh' } = Astro.props;
+const prefix = getAwsPrefix(lang);
+const awsUi = getAwsUi(lang);
+
+const copy = {
+  zh: {
+    title: '三种语言术语对照表',
+    eyebrow: 'AWS GLOSSARY · 中日英',
+    description: '把常见 AWS 服务名、缩写和考试术语放在同一张表里，方便学习时快速核对。',
+    terms: '术语',
+    highFrequency: '高频考点',
+    languages: '中文 · 日本語 · English',
+    search: '搜索术语、全称、中文、日文或备注…',
+    all: '全部',
+    frequencyFilter: '按考试频率筛选',
+    results: '当前显示',
+    term: '术语 / 缩写',
+    english: 'English',
+    chinese: '中文',
+    japanese: '日本語',
+    note: '备注',
+    frequency: '考试频率',
+    empty: '没有找到匹配的术语',
+    emptyHint: '换一个关键词，或清除考试频率筛选。',
+    source: '内容整理自我的 Notion 学习数据库，仅同步已有知识点。',
+    sourceLink: '查看 Notion 原表',
+    stars: '星',
+    breadcrumb: 'AWS 学习手册',
+  },
+  en: {
+    title: 'Trilingual AWS Glossary',
+    eyebrow: 'AWS GLOSSARY · EN / 中文 / 日本語',
+    description: 'AWS service names, abbreviations, and exam terminology in one quick-reference table.',
+    terms: 'terms',
+    highFrequency: 'high-frequency',
+    languages: 'English · 中文 · 日本語',
+    search: 'Search terms, full names, Chinese, Japanese, or notes…',
+    all: 'All',
+    frequencyFilter: 'Filter by exam frequency',
+    results: 'Showing',
+    term: 'Term / Abbreviation',
+    english: 'English',
+    chinese: '中文',
+    japanese: '日本語',
+    note: 'Notes (中文)',
+    frequency: 'Exam frequency',
+    empty: 'No matching terms found',
+    emptyHint: 'Try another keyword or clear the frequency filter.',
+    source: 'Curated from my Notion study database; only completed material is included.',
+    sourceLink: 'View the Notion source',
+    stars: 'stars',
+    breadcrumb: 'AWS Study Handbook',
+  },
+  ja: {
+    title: '3言語 AWS 用語対照表',
+    eyebrow: 'AWS GLOSSARY · 日本語 / 中文 / EN',
+    description: 'AWS のサービス名、略語、試験用語を3言語で確認できる早見表です。',
+    terms: '用語',
+    highFrequency: '頻出項目',
+    languages: '日本語 · 中文 · English',
+    search: '用語・正式名称・中国語・日本語・メモを検索…',
+    all: 'すべて',
+    frequencyFilter: '試験頻度で絞り込む',
+    results: '表示中',
+    term: '用語 / 略語',
+    english: 'English',
+    chinese: '中文',
+    japanese: '日本語',
+    note: 'メモ（中文）',
+    frequency: '試験頻度',
+    empty: '一致する用語がありません',
+    emptyHint: '別のキーワードを試すか、頻度フィルターを解除してください。',
+    source: 'Notion の学習データベースから、学習済みの内容のみを掲載しています。',
+    sourceLink: 'Notion の原表を見る',
+    stars: 'つ星',
+    breadcrumb: 'AWS 学習ハンドブック',
+  },
+}[lang as 'zh' | 'en' | 'ja'] || null;
+
+const c = copy || {
+  title: '三种语言术语对照表',
+  eyebrow: 'AWS GLOSSARY · 中日英',
+  description: '把常见 AWS 服务名、缩写和考试术语放在同一张表里，方便学习时快速核对。',
+  terms: '术语',
+  highFrequency: '高频考点',
+  languages: '中文 · 日本語 · English',
+  search: '搜索术语、全称、中文、日文或备注…',
+  all: '全部',
+  frequencyFilter: '按考试频率筛选',
+  results: '当前显示',
+  term: '术语 / 缩写',
+  english: 'English',
+  chinese: '中文',
+  japanese: '日本語',
+  note: '备注',
+  frequency: '考试频率',
+  empty: '没有找到匹配的术语',
+  emptyHint: '换一个关键词，或清除考试频率筛选。',
+  source: '内容整理自我的 Notion 学习数据库，仅同步已有知识点。',
+  sourceLink: '查看 Notion 原表',
+  stars: '星',
+  breadcrumb: 'AWS 学习手册',
+};
+
+const highFrequencyCount = awsGlossaryEntries.filter((entry) => entry.frequency >= 4).length;
+const frequencies = [5, 4, 3, 2];
+---
+
+<BaseLayout
+  title={`${c.title} — ${awsUi.siteTitle}`}
+  description={c.description}
+  slug={`${prefix}/aws/glossary`}
+  lang={lang}
+>
+  <Header lang={lang} />
+
+  <main class="glossary-page" data-pagefind-body>
+    <div class="glossary-orb glossary-orb--one" aria-hidden="true"></div>
+    <div class="glossary-orb glossary-orb--two" aria-hidden="true"></div>
+
+    <div class="section-container glossary-shell">
+      <nav class="glossary-breadcrumb" aria-label="Breadcrumb">
+        <a href={`${prefix}/aws`}>{c.breadcrumb}</a>
+        <span aria-hidden="true">/</span>
+        <span>{c.title}</span>
+      </nav>
+
+      <header class="glossary-hero">
+        <div class="glossary-hero__copy">
+          <p class="glossary-kicker">{c.eyebrow}</p>
+          <h1>{c.title}</h1>
+          <p>{c.description}</p>
+        </div>
+
+        <div class="glossary-summary" aria-label={c.languages}>
+          <div>
+            <strong>{awsGlossaryEntries.length}</strong>
+            <span>{c.terms}</span>
+          </div>
+          <i aria-hidden="true"></i>
+          <div>
+            <strong>{highFrequencyCount}</strong>
+            <span>{c.highFrequency}</span>
+          </div>
+          <small>{c.languages}</small>
+        </div>
+      </header>
+
+      <section class="glossary-directory" aria-labelledby="glossary-table-title">
+        <div class="glossary-toolbar" data-pagefind-ignore>
+          <label class="glossary-search">
+            <span class="sr-only">{c.search}</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="m16 16 4 4"></path>
+            </svg>
+            <input id="glossary-search" type="search" placeholder={c.search} autocomplete="off" />
+            <kbd>⌘ K</kbd>
+          </label>
+
+          <div class="glossary-filters" role="group" aria-label={c.frequencyFilter}>
+            <button class="is-active" type="button" data-frequency="all">{c.all}</button>
+            {frequencies.map((frequency) => (
+              <button type="button" data-frequency={frequency}>
+                {frequency}<span aria-hidden="true">★</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div class="glossary-table-meta">
+          <p id="glossary-table-title">
+            {c.results}
+            <strong id="glossary-visible-count">{awsGlossaryEntries.length}</strong>
+            <span>/ {awsGlossaryEntries.length}</span>
+          </p>
+          <span class="glossary-swipe-hint" aria-hidden="true">← swipe →</span>
+        </div>
+
+        <div class="glossary-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">{c.term}</th>
+                <th scope="col">{c.english}</th>
+                <th scope="col">{c.chinese}</th>
+                <th scope="col">{c.japanese}</th>
+                <th scope="col">{c.note}</th>
+                <th scope="col">{c.frequency}</th>
+              </tr>
+            </thead>
+            <tbody id="glossary-rows">
+              {awsGlossaryEntries.map((entry) => (
+                <tr
+                  data-frequency={entry.frequency}
+                  data-search={[
+                    entry.term,
+                    entry.english,
+                    entry.chinese,
+                    entry.japanese,
+                    entry.note,
+                  ].join(' ').toLocaleLowerCase()}
+                >
+                  <th scope="row" data-label={c.term}>
+                    <span>{entry.term}</span>
+                  </th>
+                  <td data-label={c.english}>{entry.english || '—'}</td>
+                  <td data-label={c.chinese}>{entry.chinese || '—'}</td>
+                  <td data-label={c.japanese} lang="ja">{entry.japanese || '—'}</td>
+                  <td class="glossary-note" data-label={c.note}>{entry.note || '—'}</td>
+                  <td data-label={c.frequency}>
+                    <span
+                      class={`frequency frequency--${entry.frequency}`}
+                      aria-label={`${entry.frequency} ${c.stars}`}
+                    >
+                      <b>{entry.frequency}</b>
+                      <span aria-hidden="true">{'★'.repeat(entry.frequency)}</span>
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="glossary-empty" id="glossary-empty" hidden>
+          <span aria-hidden="true">⌕</span>
+          <strong>{c.empty}</strong>
+          <p>{c.emptyHint}</p>
+        </div>
+      </section>
+
+      <footer class="glossary-source">
+        <span aria-hidden="true">✦</span>
+        <p>{c.source}</p>
+        <a
+          href="https://app.notion.com/p/5655b7d4b6bf4e70b3d3b7552150e869?v=89153d36761246fa93c0061f00b240d9"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {c.sourceLink}
+          <span aria-hidden="true">↗</span>
+        </a>
+      </footer>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>
+
+<script is:inline>
+  function initGlossary() {
+    var search = document.getElementById('glossary-search');
+    var rows = Array.from(document.querySelectorAll('#glossary-rows tr'));
+    var buttons = Array.from(document.querySelectorAll('.glossary-filters button'));
+    var count = document.getElementById('glossary-visible-count');
+    var empty = document.getElementById('glossary-empty');
+
+    if (!search || !rows.length || !count || !empty) return;
+
+    var activeFrequency = 'all';
+    var normalize = function(value) {
+      return String(value || '').trim().toLocaleLowerCase();
+    };
+
+    var filterRows = function() {
+      var query = normalize(search.value);
+      var visible = 0;
+
+      rows.forEach(function(row) {
+        var matchesQuery = !query || normalize(row.dataset.search).includes(query);
+        var matchesFrequency =
+          activeFrequency === 'all' || row.dataset.frequency === activeFrequency;
+        var show = matchesQuery && matchesFrequency;
+        row.hidden = !show;
+        if (show) visible += 1;
+      });
+
+      count.textContent = String(visible);
+      empty.hidden = visible !== 0;
+    };
+
+    search.addEventListener('input', filterRows);
+
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        activeFrequency = button.dataset.frequency || 'all';
+        buttons.forEach(function(item) {
+          item.classList.toggle('is-active', item === button);
+        });
+        filterRows();
+      });
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        search.focus();
+      }
+    });
+  }
+
+  initGlossary();
+  document.addEventListener('astro:page-load', initGlossary);
+</script>
+
+<style>
+  .glossary-page {
+    --glossary-ink: #24364d;
+    --glossary-blue: #5079a5;
+    --glossary-blue-deep: #365f88;
+    --glossary-blue-soft: #eaf1f7;
+    --glossary-paper: rgba(255, 254, 250, 0.92);
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 2% 4%, rgba(155, 190, 219, 0.28), transparent 22rem),
+      radial-gradient(circle at 98% 20%, rgba(238, 181, 110, 0.15), transparent 20rem),
+      linear-gradient(180deg, #f7f6f1 0%, var(--bg) 38rem);
+  }
+
+  .glossary-page,
+  .glossary-page * {
+    box-sizing: border-box;
+  }
+
+  :global([data-theme='dark']) .glossary-page {
+    --glossary-ink: var(--text);
+    --glossary-blue: #83a9ce;
+    --glossary-blue-deep: #9bc0e4;
+    --glossary-blue-soft: rgba(89, 128, 165, 0.17);
+    --glossary-paper: rgba(35, 40, 46, 0.94);
+    background:
+      radial-gradient(circle at 2% 4%, rgba(70, 108, 142, 0.22), transparent 22rem),
+      radial-gradient(circle at 98% 20%, rgba(200, 137, 70, 0.1), transparent 20rem),
+      linear-gradient(180deg, #20252b 0%, var(--bg) 38rem);
+  }
+
+  .glossary-shell {
+    position: relative;
+    z-index: 2;
+    padding-top: 2.2rem;
+    padding-bottom: 5rem;
+  }
+
+  .glossary-orb {
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    border: 1px solid rgba(80, 121, 165, 0.13);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .glossary-orb::before,
+  .glossary-orb::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px dashed rgba(80, 121, 165, 0.13);
+  }
+
+  .glossary-orb::before {
+    inset: 2.2rem;
+  }
+
+  .glossary-orb::after {
+    inset: 4.7rem;
+  }
+
+  .glossary-orb--one {
+    top: 3.5rem;
+    right: -7rem;
+  }
+
+  .glossary-orb--two {
+    top: 26rem;
+    left: -10rem;
+    transform: scale(0.72);
+  }
+
+  .glossary-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+  }
+
+  .glossary-breadcrumb a {
+    color: var(--glossary-blue-deep);
+    text-decoration: none;
+  }
+
+  .glossary-breadcrumb a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.22rem;
+  }
+
+  .glossary-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 3rem;
+    align-items: end;
+    padding: 4.3rem 0 3rem;
+  }
+
+  .glossary-hero__copy {
+    max-width: 54rem;
+  }
+
+  .glossary-kicker {
+    margin: 0 0 0.75rem;
+    color: var(--glossary-blue-deep);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .glossary-hero h1 {
+    margin: 0;
+    color: var(--glossary-ink);
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(2.4rem, 5.6vw, 4.8rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+
+  .glossary-hero__copy > p:last-child {
+    max-width: 46rem;
+    margin: 1.15rem 0 0;
+    color: var(--text-secondary);
+    font-size: clamp(0.96rem, 1.4vw, 1.08rem);
+    line-height: 1.8;
+  }
+
+  .glossary-summary {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 0.9rem 1.1rem;
+    align-items: center;
+    min-width: 18.5rem;
+    padding: 1.25rem 1.35rem;
+    border: 1px solid rgba(80, 121, 165, 0.24);
+    border-radius: 1.1rem;
+    background: var(--glossary-paper);
+    box-shadow: 0 1.1rem 3rem rgba(42, 65, 89, 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .glossary-summary div {
+    display: grid;
+    gap: 0.1rem;
+  }
+
+  .glossary-summary strong {
+    color: var(--glossary-ink);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.45rem;
+    line-height: 1;
+  }
+
+  .glossary-summary span,
+  .glossary-summary small {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+  }
+
+  .glossary-summary i {
+    width: 1px;
+    height: 2rem;
+    background: var(--border);
+  }
+
+  .glossary-summary small {
+    grid-column: 1 / -1;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.035em;
+  }
+
+  .glossary-directory {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    background: var(--glossary-paper);
+    box-shadow: 0 1.5rem 4rem rgba(42, 65, 89, 0.08);
+    overflow: hidden;
+  }
+
+  .glossary-toolbar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    background: rgba(80, 121, 165, 0.035);
+  }
+
+  .glossary-search {
+    position: relative;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    max-width: 37rem;
+  }
+
+  .glossary-search svg {
+    position: absolute;
+    left: 0.9rem;
+    width: 1.05rem;
+    height: 1.05rem;
+    fill: none;
+    stroke: var(--text-muted);
+    stroke-width: 1.7;
+    pointer-events: none;
+  }
+
+  .glossary-search input {
+    width: 100%;
+    min-height: 2.85rem;
+    padding: 0.68rem 3.6rem 0.68rem 2.65rem;
+    border: 1px solid var(--border);
+    border-radius: 0.78rem;
+    outline: none;
+    background: var(--card-bg);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.88rem;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .glossary-search input:focus {
+    border-color: var(--glossary-blue);
+    box-shadow: 0 0 0 3px rgba(80, 121, 165, 0.13);
+  }
+
+  .glossary-search kbd {
+    position: absolute;
+    right: 0.65rem;
+    padding: 0.18rem 0.38rem;
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+    background: var(--bg);
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+  }
+
+  .glossary-filters {
+    display: flex;
+    gap: 0.35rem;
+    align-items: center;
+  }
+
+  .glossary-filters button {
+    min-height: 2.35rem;
+    padding: 0.48rem 0.75rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    cursor: pointer;
+    transition: color 150ms ease, background 150ms ease, border-color 150ms ease;
+  }
+
+  .glossary-filters button span {
+    margin-left: 0.12rem;
+    color: #d8902d;
+  }
+
+  .glossary-filters button:hover {
+    color: var(--glossary-blue-deep);
+    background: var(--glossary-blue-soft);
+  }
+
+  .glossary-filters button.is-active {
+    border-color: rgba(80, 121, 165, 0.25);
+    background: var(--glossary-blue-soft);
+    color: var(--glossary-blue-deep);
+    font-weight: 700;
+  }
+
+  .glossary-table-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 2.8rem;
+    padding: 0 1.15rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .glossary-table-meta p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.74rem;
+  }
+
+  .glossary-table-meta strong {
+    margin-left: 0.38rem;
+    color: var(--glossary-ink);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .glossary-swipe-hint {
+    display: none;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+  }
+
+  .glossary-table-wrap {
+    max-height: min(68rem, 72vh);
+    overflow: auto;
+    scrollbar-color: rgba(80, 121, 165, 0.35) transparent;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    line-height: 1.58;
+  }
+
+  th,
+  td {
+    padding: 0.9rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: color-mix(in srgb, var(--card-bg) 96%, var(--glossary-blue) 4%);
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 0.055em;
+    white-space: nowrap;
+  }
+
+  thead th:nth-child(1) { width: 12%; }
+  thead th:nth-child(2) { width: 17%; }
+  thead th:nth-child(3) { width: 14%; }
+  thead th:nth-child(4) { width: 16%; }
+  thead th:nth-child(5) { width: 31%; }
+  thead th:nth-child(6) { width: 10%; }
+
+  tbody tr {
+    transition: background 120ms ease;
+  }
+
+  tbody tr:hover {
+    background: rgba(80, 121, 165, 0.05);
+  }
+
+  tbody tr:last-child th,
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  tbody th {
+    color: var(--glossary-ink);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  tbody th span {
+    display: inline-block;
+    padding: 0.16rem 0.42rem;
+    border-radius: 0.34rem;
+    background: var(--glossary-blue-soft);
+  }
+
+  .glossary-note {
+    color: var(--text-muted);
+  }
+
+  .frequency {
+    display: inline-flex;
+    gap: 0.38rem;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .frequency b {
+    min-width: 1.5rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 999px;
+    background: rgba(218, 144, 45, 0.12);
+    color: #a66a19;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    text-align: center;
+  }
+
+  :global([data-theme='dark']) .frequency b {
+    color: #efb665;
+  }
+
+  .frequency > span {
+    color: #d8902d;
+    font-size: 0.58rem;
+    letter-spacing: -0.08em;
+  }
+
+  .glossary-empty {
+    padding: 4rem 1rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .glossary-empty > span {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--glossary-blue);
+    font-size: 2rem;
+  }
+
+  .glossary-empty strong {
+    color: var(--glossary-ink);
+    font-family: 'Noto Serif', serif;
+    font-size: 1.15rem;
+  }
+
+  .glossary-empty p {
+    margin: 0.35rem 0 0;
+    font-size: 0.82rem;
+  }
+
+  .glossary-source {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.85rem 0.25rem;
+    color: var(--text-muted);
+    font-size: 0.76rem;
+  }
+
+  .glossary-source > span {
+    color: #d8902d;
+  }
+
+  .glossary-source p {
+    margin: 0;
+  }
+
+  .glossary-source a {
+    margin-left: auto;
+    color: var(--glossary-blue-deep);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .glossary-source a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 980px) {
+    .glossary-hero {
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+      padding: 3.5rem 0 2.5rem;
+    }
+
+    .glossary-summary {
+      min-width: 0;
+      width: 100%;
+      max-width: 24rem;
+    }
+
+    .glossary-toolbar {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .glossary-search {
+      max-width: none;
+    }
+
+    .glossary-filters {
+      overflow-x: auto;
+      padding-bottom: 0.1rem;
+    }
+
+    .glossary-filters button {
+      flex: 0 0 auto;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .glossary-shell {
+      padding-top: 1.35rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .glossary-hero {
+      padding: 2.8rem 0 2rem;
+    }
+
+    .glossary-hero h1 {
+      font-size: clamp(2.2rem, 11vw, 3.35rem);
+    }
+
+    .glossary-directory {
+      border-radius: 1rem;
+    }
+
+    .glossary-search kbd {
+      display: none;
+    }
+
+    .glossary-search input {
+      padding-right: 0.9rem;
+      font-size: 0.82rem;
+    }
+
+    .glossary-swipe-hint {
+      display: none;
+    }
+
+    .glossary-table-wrap {
+      max-height: none;
+      overflow: visible;
+    }
+
+    table,
+    tbody {
+      display: block;
+    }
+
+    thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    tbody {
+      padding: 0.65rem;
+    }
+
+    tbody tr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 0.65rem;
+      border: 1px solid var(--border);
+      border-radius: 0.8rem;
+      overflow: hidden;
+      background: var(--card-bg);
+    }
+
+    tbody tr:last-child {
+      margin-bottom: 0;
+    }
+
+    tbody th,
+    tbody td {
+      display: grid;
+      gap: 0.3rem;
+      min-width: 0;
+      padding: 0.76rem;
+      border: 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
+    }
+
+    tbody th::before,
+    tbody td::before {
+      content: attr(data-label);
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.59rem;
+      font-weight: 600;
+      letter-spacing: 0.045em;
+    }
+
+    tbody th,
+    tbody td:nth-child(2),
+    tbody td:nth-child(5) {
+      grid-column: 1 / -1;
+    }
+
+    tbody td:nth-child(3),
+    tbody td:nth-child(4) {
+      min-width: 0;
+    }
+
+    tbody td:nth-child(3) {
+      border-right: 1px solid var(--border);
+    }
+
+    tbody td:nth-child(5),
+    tbody td:last-child {
+      border-bottom: 0;
+    }
+
+    tbody td:last-child {
+      grid-column: 1 / -1;
+    }
+
+    tbody th span {
+      width: fit-content;
+    }
+
+    .glossary-source {
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .glossary-source a {
+      width: 100%;
+      margin-left: 1.35rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .glossary-summary {
+      grid-template-columns: 1fr auto 1fr;
+    }
+
+    .glossary-summary strong {
+      font-size: 1.25rem;
+    }
+
+    .glossary-table-meta {
+      padding-inline: 0.85rem;
+    }
+
+    tbody {
+      padding: 0.5rem;
+    }
+  }
+</style>

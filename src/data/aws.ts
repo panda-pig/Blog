@@ -277,10 +277,10 @@ export const awsSpecials = [
   },
   {
     slug: 'glossary',
-    title: '英文术语速查',
-    description: '常见英文术语、缩写与关联服务。',
+    title: '三种语言术语对照表',
+    description: '中日英并排整理常见 AWS 服务名、缩写与考试术语。',
     icon: 'book',
-    preview: '缩写 · 全称 · 中文',
+    preview: '中文 · 日本語 · English',
     tone: 'violet',
   },
 ];

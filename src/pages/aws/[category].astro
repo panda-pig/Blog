@@ -3,9 +3,11 @@ import AwsCategoryPage from '../../components/pages/AwsCategoryPage.astro';
 import { awsDomains, awsSpecials } from '../../data/aws';
 
 export function getStaticPaths() {
-  return [...awsDomains, ...awsSpecials].map((item) => ({
-    params: { category: item.slug },
-  }));
+  return [...awsDomains, ...awsSpecials]
+    .filter((item) => item.slug !== 'glossary')
+    .map((item) => ({
+      params: { category: item.slug },
+    }));
 }
 ---
 
