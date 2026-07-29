@@ -178,6 +178,174 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"database/amazon-aurora.en.md": {
+	id: "database/amazon-aurora.en.md";
+  slug: "database/amazon-auroraen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-aurora.ja.md": {
+	id: "database/amazon-aurora.ja.md";
+  slug: "database/amazon-auroraja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-aurora.md": {
+	id: "database/amazon-aurora.md";
+  slug: "database/amazon-aurora";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-documentdb.en.md": {
+	id: "database/amazon-documentdb.en.md";
+  slug: "database/amazon-documentdben";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-documentdb.ja.md": {
+	id: "database/amazon-documentdb.ja.md";
+  slug: "database/amazon-documentdbja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-documentdb.md": {
+	id: "database/amazon-documentdb.md";
+  slug: "database/amazon-documentdb";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-dynamodb.en.md": {
+	id: "database/amazon-dynamodb.en.md";
+  slug: "database/amazon-dynamodben";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-dynamodb.ja.md": {
+	id: "database/amazon-dynamodb.ja.md";
+  slug: "database/amazon-dynamodbja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-dynamodb.md": {
+	id: "database/amazon-dynamodb.md";
+  slug: "database/amazon-dynamodb";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-elasticache.en.md": {
+	id: "database/amazon-elasticache.en.md";
+  slug: "database/amazon-elasticacheen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-elasticache.ja.md": {
+	id: "database/amazon-elasticache.ja.md";
+  slug: "database/amazon-elasticacheja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-elasticache.md": {
+	id: "database/amazon-elasticache.md";
+  slug: "database/amazon-elasticache";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-managed-blockchain.en.md": {
+	id: "database/amazon-managed-blockchain.en.md";
+  slug: "database/amazon-managed-blockchainen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-managed-blockchain.ja.md": {
+	id: "database/amazon-managed-blockchain.ja.md";
+  slug: "database/amazon-managed-blockchainja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-managed-blockchain.md": {
+	id: "database/amazon-managed-blockchain.md";
+  slug: "database/amazon-managed-blockchain";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-neptune.en.md": {
+	id: "database/amazon-neptune.en.md";
+  slug: "database/amazon-neptuneen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-neptune.ja.md": {
+	id: "database/amazon-neptune.ja.md";
+  slug: "database/amazon-neptuneja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-neptune.md": {
+	id: "database/amazon-neptune.md";
+  slug: "database/amazon-neptune";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-rds.en.md": {
+	id: "database/amazon-rds.en.md";
+  slug: "database/amazon-rdsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-rds.ja.md": {
+	id: "database/amazon-rds.ja.md";
+  slug: "database/amazon-rdsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-rds.md": {
+	id: "database/amazon-rds.md";
+  slug: "database/amazon-rds";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/dynamodb-accelerator-dax.en.md": {
+	id: "database/dynamodb-accelerator-dax.en.md";
+  slug: "database/dynamodb-accelerator-daxen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/dynamodb-accelerator-dax.ja.md": {
+	id: "database/dynamodb-accelerator-dax.ja.md";
+  slug: "database/dynamodb-accelerator-daxja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/dynamodb-accelerator-dax.md": {
+	id: "database/dynamodb-accelerator-dax.md";
+  slug: "database/dynamodb-accelerator-dax";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "networking/amazon-vpc.en.md": {
 	id: "networking/amazon-vpc.en.md";
   slug: "networking/amazon-vpcen";
@@ -300,6 +468,153 @@ declare module 'astro:content' {
 "networking/subnet-route-table.md": {
 	id: "networking/subnet-route-table.md";
   slug: "networking/subnet-route-table";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/amazon-ebs.en.md": {
+	id: "storage/amazon-ebs.en.md";
+  slug: "storage/amazon-ebsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/amazon-ebs.ja.md": {
+	id: "storage/amazon-ebs.ja.md";
+  slug: "storage/amazon-ebsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/amazon-ebs.md": {
+	id: "storage/amazon-ebs.md";
+  slug: "storage/amazon-ebs";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/amazon-efs.en.md": {
+	id: "storage/amazon-efs.en.md";
+  slug: "storage/amazon-efsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/amazon-efs.ja.md": {
+	id: "storage/amazon-efs.ja.md";
+  slug: "storage/amazon-efsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/amazon-efs.md": {
+	id: "storage/amazon-efs.md";
+  slug: "storage/amazon-efs";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/amazon-fsx.en.md": {
+	id: "storage/amazon-fsx.en.md";
+  slug: "storage/amazon-fsxen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/amazon-fsx.ja.md": {
+	id: "storage/amazon-fsx.ja.md";
+  slug: "storage/amazon-fsxja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/amazon-fsx.md": {
+	id: "storage/amazon-fsx.md";
+  slug: "storage/amazon-fsx";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/amazon-s3.en.md": {
+	id: "storage/amazon-s3.en.md";
+  slug: "storage/amazon-s3en";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/amazon-s3.ja.md": {
+	id: "storage/amazon-s3.ja.md";
+  slug: "storage/amazon-s3ja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/amazon-s3.md": {
+	id: "storage/amazon-s3.md";
+  slug: "storage/amazon-s3";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/aws-backup.en.md": {
+	id: "storage/aws-backup.en.md";
+  slug: "storage/aws-backupen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/aws-backup.ja.md": {
+	id: "storage/aws-backup.ja.md";
+  slug: "storage/aws-backupja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/aws-backup.md": {
+	id: "storage/aws-backup.md";
+  slug: "storage/aws-backup";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/aws-elastic-disaster-recovery.en.md": {
+	id: "storage/aws-elastic-disaster-recovery.en.md";
+  slug: "storage/aws-elastic-disaster-recoveryen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/aws-elastic-disaster-recovery.ja.md": {
+	id: "storage/aws-elastic-disaster-recovery.ja.md";
+  slug: "storage/aws-elastic-disaster-recoveryja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/aws-elastic-disaster-recovery.md": {
+	id: "storage/aws-elastic-disaster-recovery.md";
+  slug: "storage/aws-elastic-disaster-recovery";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/aws-storage-gateway.en.md": {
+	id: "storage/aws-storage-gateway.en.md";
+  slug: "storage/aws-storage-gatewayen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/aws-storage-gateway.ja.md": {
+	id: "storage/aws-storage-gateway.ja.md";
+  slug: "storage/aws-storage-gatewayja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/aws-storage-gateway.md": {
+	id: "storage/aws-storage-gateway.md";
+  slug: "storage/aws-storage-gateway";
   body: string;
   collection: "aws";
   data: any

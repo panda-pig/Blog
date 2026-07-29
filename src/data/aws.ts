@@ -143,6 +143,7 @@ export const awsDomainTopics: Record<string, string[]> = {
     'AWS Storage Gateway',
     'AWS Backup',
     'AWS Snow Family',
+    'AWS Elastic Disaster Recovery',
   ],
   database: [
     'Amazon RDS',
@@ -150,7 +151,10 @@ export const awsDomainTopics: Record<string, string[]> = {
     'Amazon DynamoDB',
     'Amazon ElastiCache',
     'Amazon Redshift',
+    'Amazon Neptune',
     'Amazon DocumentDB',
+    'DynamoDB Accelerator (DAX)',
+    'Amazon Managed Blockchain',
   ],
   networking: [
     'Amazon VPC',
