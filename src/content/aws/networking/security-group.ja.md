@@ -1,19 +1,30 @@
 ---
 title: Security Group
-fullName: Security Group
+fullName: "Security Group"
 description: ENI や対応リソースに関連付ける、ステートフルで Allow のみの仮想ファイアウォール。
 service: Security Group
 category: networking
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-27
-updated: 2026-07-27
+updated: 2026-07-30
 tags: [Security Group, ENI, Stateful, SAA-C03]
 notionId: 3a6964dc-ce4a-8158-822a-c4539e3bd96c
 notionUrl: https://app.notion.com/p/3a6964dcce4a8158822ac4539e3bd96c
 notionUpdated: "2026-07-27T05:38:22.272Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Security Group |
+| 正式名称 | Security Group |
+| 中国語名 | 安全组 |
+| 日本語名 | セキュリティグループ |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | Network ACL |
 
 ## 一言で理解
 

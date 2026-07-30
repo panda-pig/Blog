@@ -1,13 +1,13 @@
 ---
 title: "Amazon SQS"
-fullName: "Amazon SQS"
+fullName: "Amazon Simple Queue Service"
 description: "Producer と Consumer を疎結合にし、非同期処理のために作業を安全に蓄えるマネージドメッセージキュー。"
 service: "Amazon SQS"
 category: messaging
 kind: service
 lang: ja
 topicKey: "Amazon SQS"
-frequency: "試験頻度 ⭐⭐⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["messaging","Amazon SQS","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-81ba-bf24-f388c5cddd42
 notionUrl: https://app.notion.com/p/3a6964dcce4a81babf24f388c5cddd42
 notionUpdated: "2026-07-23T07:21:16.024Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon SQS |
+| 正式名称 | Amazon Simple Queue Service |
+| 中国語名 | 消息队列服务 |
+| 日本語名 | Amazon SQS（メッセージキュー） |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | SNS / EventBridge / Kinesis |
 
 ## 一言で理解
 

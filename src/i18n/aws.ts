@@ -197,6 +197,9 @@ const specialCopy: Record<string, any> = {
 
 const topicCopy: Record<string, Record<string, string>> = {
   en: {
+    'S3 存储类别与生命周期': 'S3 Storage Classes & Lifecycle',
+    'S3 安全与管理': 'S3 Security & Management',
+    'EBS 快照与生命周期管理': 'EBS Snapshot & Data Lifecycle Manager',
     'Container 与 Virtual Machine': 'Container vs Virtual Machine',
     'EC2 实例类型与计费模型': 'EC2 Instance Types and Pricing Models',
     'VPN Components：VGW & Customer Gateway': 'VPN Components: VGW & Customer Gateway',
@@ -221,6 +224,9 @@ const topicCopy: Record<string, Record<string, string>> = {
     '成本优化架构设计': 'Design Cost-Optimized Architectures',
   },
   ja: {
+    'S3 存储类别与生命周期': 'S3 ストレージクラスとライフサイクル',
+    'S3 安全与管理': 'S3 セキュリティと管理',
+    'EBS 快照与生命周期管理': 'EBS スナップショットと Data Lifecycle Manager',
     'Container 与 Virtual Machine': 'Container と Virtual Machine',
     'EC2 实例类型与计费模型': 'EC2 インスタンスタイプと料金モデル',
     'VPN Components：VGW & Customer Gateway': 'VPN コンポーネント：VGW と Customer Gateway',

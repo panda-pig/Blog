@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a81f98d71f17f423387eb
 notionUpdated: "2026-07-30T01:52:42.048Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Lambda |
+| Full name | AWS Lambda |
+| Chinese name | 无服务器函数计算 |
+| Japanese name | AWS Lambda（ラムダ） |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | EC2 / Fargate / AWS Batch |
+
 ## In one sentence
 
 > Runs function code in response to events without managing servers, with automatic scaling and usage-based billing.

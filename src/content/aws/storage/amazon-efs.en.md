@@ -1,19 +1,30 @@
 ---
 title: Amazon EFS
-fullName: Amazon Elastic File System
+fullName: "Amazon Elastic File System"
 description: A managed, elastic file system that multiple Linux clients can mount concurrently over NFS.
 service: EFS
 category: storage
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Storage, File Storage, NFS]
 notionId: 3a6964dc-ce4a-81c2-8fc7-def0bc74e454
 notionUrl: https://app.notion.com/p/3a6964dcce4a81c28fc7def0bc74e454
 notionUpdated: "2026-07-29T04:41:30.363Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon EFS |
+| Full name | Amazon Elastic File System |
+| Chinese name | 弹性共享文件系统 |
+| Japanese name | 共有ファイルストレージ |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | EBS / S3 / FSx |
 
 ## In one sentence
 

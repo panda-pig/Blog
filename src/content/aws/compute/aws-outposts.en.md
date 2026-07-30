@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a81a29dc8e2d635fedd31
 notionUpdated: "2026-07-23T07:21:13.694Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Outposts |
+| Full name | AWS Outposts |
+| Chinese name | AWS 本地部署的托管基础设施 |
+| Japanese name | AWS Outposts |
+| Exam frequency | ⭐⭐⭐ |
+| Often confused with | Local Zones / Wavelength / On-premises |
+
 ## In one sentence
 
 > AWS-managed infrastructure installed at a customer site to run selected AWS services with local latency or residency needs.

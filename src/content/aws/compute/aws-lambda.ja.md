@@ -7,7 +7,7 @@ category: compute
 kind: service
 lang: ja
 topicKey: "AWS Lambda"
-frequency: "試験頻度 ⭐⭐⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["compute","AWS Lambda","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-81f9-8d71-f17f423387eb
 notionUrl: https://app.notion.com/p/3a6964dcce4a81f98d71f17f423387eb
 notionUpdated: "2026-07-30T01:52:42.048Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | AWS Lambda |
+| 正式名称 | AWS Lambda |
+| 中国語名 | 无服务器函数计算 |
+| 日本語名 | AWS Lambda（ラムダ） |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | EC2 / Fargate / AWS Batch |
 
 ## 一言で理解
 

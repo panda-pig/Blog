@@ -1,19 +1,30 @@
 ---
 title: Security Group
-fullName: Security Group
+fullName: "Security Group"
 description: A stateful, allow-only virtual firewall attached to an ENI or supported resource, central to resource-level least privilege in AWS.
 service: Security Group
 category: networking
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-27
-updated: 2026-07-27
+updated: 2026-07-30
 tags: [Security Group, ENI, Stateful, SAA-C03]
 notionId: 3a6964dc-ce4a-8158-822a-c4539e3bd96c
 notionUrl: https://app.notion.com/p/3a6964dcce4a8158822ac4539e3bd96c
 notionUpdated: "2026-07-27T05:38:22.272Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Security Group |
+| Full name | Security Group |
+| Chinese name | 安全组 |
+| Japanese name | セキュリティグループ |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | Network ACL |
 
 ## In one sentence
 

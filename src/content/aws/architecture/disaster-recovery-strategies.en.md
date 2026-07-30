@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a81a1a460dec79107380f
 notionUpdated: "2026-07-29T04:44:08.420Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Disaster Recovery Strategies |
+| Full name | Disaster Recovery Strategies |
+| Chinese name | 灾难恢复策略 |
+| Japanese name | 災害復旧戦略 |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | Backup / Multi-AZ / AWS DRS |
+
 ## In one sentence
 
 > Select backup and restore, pilot light, warm standby, or multi-site active/active according to RTO, RPO, cost, and complexity.

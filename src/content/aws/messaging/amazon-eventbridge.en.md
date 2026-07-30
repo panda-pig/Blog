@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a8146be57defb6099f3b1
 notionUpdated: "2026-07-23T07:21:20.695Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon EventBridge |
+| Full name | Amazon EventBridge |
+| Chinese name | 事件总线与事件路由服务 |
+| Japanese name | Amazon EventBridge（イベントバス） |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | SNS / SQS / CloudWatch Events |
+
 ## In one sentence
 
 > A managed event bus that routes events from AWS services, applications, and SaaS sources using rules.

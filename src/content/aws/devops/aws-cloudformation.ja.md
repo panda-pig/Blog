@@ -7,7 +7,7 @@ category: devops
 kind: service
 lang: ja
 topicKey: "AWS CloudFormation"
-frequency: "試験頻度 ⭐⭐⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["devops","AWS CloudFormation","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-81fe-8a73-c98ed403b25b
 notionUrl: https://app.notion.com/p/3a6964dcce4a81fe8a73c98ed403b25b
 notionUpdated: "2026-07-23T08:25:26.418Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | AWS CloudFormation |
+| 正式名称 | AWS CloudFormation |
+| 中国語名 | AWS 基础设施即代码服务 |
+| 日本語名 | AWS CloudFormation |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | AWS CLI / SDK / CDK / Terraform / Elastic Beanstalk |
 
 ## 一言で理解
 

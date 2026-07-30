@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a810bbd1cf6e6f99c0865
 notionUpdated: "2026-07-23T07:19:39.104Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Elastic Beanstalk |
+| Full name | AWS Elastic Beanstalk |
+| Chinese name | 应用部署与托管服务 |
+| Japanese name | AWS Elastic Beanstalk |
+| Exam frequency | ⭐⭐⭐ |
+| Often confused with | CloudFormation / ECS / Lambda |
+
 ## In one sentence
 
 > A managed application deployment service that provisions common AWS infrastructure from uploaded application code.

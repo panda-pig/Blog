@@ -7,7 +7,7 @@ category: architecture
 kind: topic
 lang: ja
 topicKey: "无服务器架构"
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["Architecture","Serverless","Lambda"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-8102-802a-c8a0a767c8f3
 notionUrl: https://app.notion.com/p/3a6964dcce4a8102802ac8a0a767c8f3
 notionUpdated: "2026-07-30T01:08:04.047Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Serverless Architecture |
+| 正式名称 | Serverless Architecture |
+| 中国語名 | 无服务器架构 |
+| 日本語名 | サーバーレスアーキテクチャ |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | 容器 / EC2 |
 
 ## 一言で理解
 

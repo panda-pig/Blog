@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a812e8b52d74e98d40a3d
 notionUpdated: "2026-07-27T05:41:39.696Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon Route 53 |
+| Full name | Amazon Route 53 |
+| Chinese name | DNS、域名注册、健康检查与流量路由 |
+| Japanese name | Amazon Route 53 |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | CloudFront / ELB / Global Accelerator |
+
 ## In one sentence
 
 > AWS DNS service for domain registration, name resolution, health checks, and policy-based traffic routing.

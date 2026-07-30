@@ -1,13 +1,13 @@
 ---
 title: "AWS グローバルインフラストラクチャ"
-fullName: "AWS 全球基础设施"
+fullName: "AWS Global Infrastructure"
 description: "AWS は Infrastructure を Region、隔離された Availability Zone、User に近い Edge Location で構成する。"
 service: "Cloud Foundations"
 category: cloud-practitioner
 kind: topic
 lang: ja
 topicKey: "AWS 全球基础设施"
-frequency: "学習まとめ"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["cloud-practitioner","AWS 全球基础设施","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-8137-955b-d4d5d4decdc2
 notionUrl: https://app.notion.com/p/3a6964dcce4a8137955bd4d5d4decdc2
 notionUpdated: "2026-07-23T08:25:16.386Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | AWS Global Infrastructure |
+| 正式名称 | AWS Global Infrastructure |
+| 中国語名 | AWS 全球基础设施 |
+| 日本語名 | AWS グローバルインフラストラクチャ |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | Region / Availability Zone / Edge Location / Multi-AZ / Multi-Region |
 
 ## 一言で理解
 

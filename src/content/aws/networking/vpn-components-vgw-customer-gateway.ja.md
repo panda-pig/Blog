@@ -1,13 +1,13 @@
 ---
 title: "VPN コンポーネント：VGW と Customer Gateway"
-fullName: "VPN Components：VGW & Customer Gateway"
+fullName: "Virtual Private Gateway & Customer Gateway"
 description: "Site-to-Site VPN は AWS 側 Gateway と顧客側装置の定義を冗長 Tunnel で接続する。"
 service: "VPN Components：VGW & Customer Gateway"
 category: networking
 kind: service
 lang: ja
 topicKey: "VPN Components：VGW & Customer Gateway"
-frequency: "学習まとめ"
+frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["networking","VPN Components：VGW & Customer Gateway","AWS"]
@@ -15,6 +15,17 @@ notionId: 3aa964dc-ce4a-8199-bdd8-df77a47a2a89
 notionUrl: https://app.notion.com/p/3aa964dcce4a8199bdd8df77a47a2a89
 notionUpdated: "2026-07-27T05:39:15.128Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | VPN Components |
+| 正式名称 | Virtual Private Gateway & Customer Gateway |
+| 中国語名 | VPN 组件：虚拟私有网关与客户网关 |
+| 日本語名 | VPN コンポーネント（仮想プライベートゲートウェイ／カスタマーゲートウェイ） |
+| 出題頻度 | ⭐⭐⭐⭐ |
+| 混同しやすいもの | Client VPN / Site-to-Site VPN / Direct Connect |
 
 ## 一言で理解
 

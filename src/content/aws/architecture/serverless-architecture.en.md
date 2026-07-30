@@ -7,7 +7,7 @@ category: architecture
 kind: topic
 lang: en
 topicKey: "无服务器架构"
-frequency: "Exam frequency ★★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["Architecture","Serverless","Lambda"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-8102-802a-c8a0a767c8f3
 notionUrl: https://app.notion.com/p/3a6964dcce4a8102802ac8a0a767c8f3
 notionUpdated: "2026-07-30T01:08:04.047Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Serverless Architecture |
+| Full name | Serverless Architecture |
+| Chinese name | 无服务器架构 |
+| Japanese name | サーバーレスアーキテクチャ |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | 容器 / EC2 |
 
 ## In one sentence
 

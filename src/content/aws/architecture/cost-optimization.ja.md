@@ -7,7 +7,7 @@ category: architecture
 kind: topic
 lang: ja
 topicKey: "成本优化"
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["Architecture","Cost Optimization","FinOps"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-8166-bb96-e568552dd8ce
 notionUrl: https://app.notion.com/p/3a6964dcce4a8166bb96e568552dd8ce
 notionUpdated: "2026-07-30T01:08:06.892Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Cost Optimization |
+| 正式名称 | Cost Optimization |
+| 中国語名 | 成本优化 |
+| 日本語名 | コスト最適化 |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | 性能优化 |
 
 ## 一言で理解
 

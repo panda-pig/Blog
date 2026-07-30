@@ -1,19 +1,30 @@
 ---
 title: Subnet & Route Table
-fullName: Subnet and Route Table
+fullName: "Subnet & Route Table"
 description: Subnet は VPC のアドレス空間を分割して 1 つの AZ に属し、Route Table は宛先に応じて次の転送先を決定します。
 service: VPC Networking
 category: networking
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-27
-updated: 2026-07-27
+updated: 2026-07-30
 tags: [Subnet, Route Table, CIDR, SAA-C03]
 notionId: 3a6964dc-ce4a-818e-972f-f196d09400b4
 notionUrl: https://app.notion.com/p/3a6964dcce4a818e972ff196d09400b4
 notionUpdated: "2026-07-27T05:37:25.834Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Subnet & Route Table |
+| 正式名称 | Subnet & Route Table |
+| 中国語名 | 子网与路由表 |
+| 日本語名 | サブネットとルートテーブル |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | Public / Private Subnet |
 
 ## 一言で理解
 

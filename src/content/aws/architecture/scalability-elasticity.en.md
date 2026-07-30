@@ -7,7 +7,7 @@ category: architecture
 kind: topic
 lang: en
 topicKey: "可扩展性与弹性"
-frequency: "Exam frequency ★★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["Architecture","Scalability","Elasticity"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-818b-a872-e1eb3d60acd5
 notionUrl: https://app.notion.com/p/3a6964dcce4a818ba872e1eb3d60acd5
 notionUpdated: "2026-07-30T01:08:00.877Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Scalability & Elasticity |
+| Full name | Scalability & Elasticity |
+| Chinese name | 可扩展性与弹性 |
+| Japanese name | スケーラビリティと弾力性 |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | High Availability |
 
 ## In one sentence
 

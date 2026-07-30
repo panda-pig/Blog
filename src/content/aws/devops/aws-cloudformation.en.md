@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a81fe8a73c98ed403b25b
 notionUpdated: "2026-07-23T08:25:26.418Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS CloudFormation |
+| Full name | AWS CloudFormation |
+| Chinese name | AWS 基础设施即代码服务 |
+| Japanese name | AWS CloudFormation |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | AWS CLI / SDK / CDK / Terraform / Elastic Beanstalk |
+
 ## In one sentence
 
 > AWS infrastructure as code that creates and manages repeatable resource stacks from declarative templates.

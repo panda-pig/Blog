@@ -17,9 +17,11 @@ notionUpdated: "2026-07-23T07:24:12.397Z"
 ---
 
 ## 一句话结论
+
 - **SQS**：消息要排队等待消费者处理。
 - **SNS**：同一条消息要主动推送给多个订阅者。
 - **EventBridge**：要根据事件来源、类型或内容进行规则路由。
+
 ## 核心差异
 
 | 维度 | SQS | SNS | EventBridge |
@@ -32,14 +34,19 @@ notionUpdated: "2026-07-23T07:24:12.397Z"
 | 典型目标 | Worker、Lambda | SQS、Lambda、HTTP、Email | Lambda、SQS、SNS、Step Functions |
 
 ## 经典组合
+
 SNS → 多个 SQS：广播给多个业务，同时每个业务有自己的缓冲与重试。
 EventBridge → SQS / Lambda / Step Functions：根据事件类型送到不同处理流程。
 SQS → Lambda：队列削峰，Lambda 批量消费。
+
 ## 题目关键词
+
 - Backlog、Buffer、Decouple、Peak Traffic → SQS
 - Fan-out、Broadcast、Notification → SNS
 - Event Pattern、SaaS、Event Bus、Routing → EventBridge
+
 ## 常见陷阱
+
 - SQS Standard 可能重复投递，需要幂等。
 - SNS 不等于持久队列。
 - EventBridge 不主要解决积压缓冲。

@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a81c38250ffcdaf8d86b0
 notionUpdated: "2026-07-27T05:40:28.036Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Site-to-Site VPN |
+| Full name | AWS Site-to-Site VPN |
+| Chinese name | 站点到站点 VPN |
+| Japanese name | サイト間 VPN |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | Client VPN / Direct Connect / PrivateLink |
+
 ## In one sentence
 
 > Encrypted IPsec connectivity between an on-premises network and a VPC or Transit Gateway over the internet.

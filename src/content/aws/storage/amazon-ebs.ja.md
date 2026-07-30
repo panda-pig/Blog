@@ -1,19 +1,30 @@
 ---
 title: Amazon EBS
-fullName: Amazon Elastic Block Store
+fullName: "Amazon Elastic Block Store"
 description: EC2 に提供する、ホストローカルストレージから独立した容量・性能設定可能な永続ブロックボリューム。
 service: EBS
 category: storage
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Storage, Block Storage, EC2]
 notionId: 3a6964dc-ce4a-8126-968f-e04a57570ada
 notionUrl: https://app.notion.com/p/3a6964dcce4a8126968fe04a57570ada
 notionUpdated: "2026-07-29T04:41:27.242Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon EBS |
+| 正式名称 | Amazon Elastic Block Store |
+| 中国語名 | 弹性块存储 |
+| 日本語名 | ブロックストレージ |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | Instance Store / EFS / S3 |
 
 ## 一言で理解
 

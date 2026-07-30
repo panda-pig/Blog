@@ -1,19 +1,30 @@
 ---
 title: AWS Elastic Disaster Recovery
-fullName: AWS Elastic Disaster Recovery
+fullName: "AWS Elastic Disaster Recovery"
 description: Continuous block-level replication of servers to AWS for rapid recovery-instance launch during a disaster.
 service: AWS DRS
 category: storage
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Storage, Disaster Recovery, Architecture]
 notionId: 3ac964dc-ce4a-81f3-bec3-cd5079cbbaa7
 notionUrl: https://app.notion.com/p/3ac964dcce4a81f3bec3cd5079cbbaa7
 notionUpdated: "2026-07-29T04:39:41.992Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Elastic Disaster Recovery (AWS DRS) |
+| Full name | AWS Elastic Disaster Recovery |
+| Chinese name | AWS 弹性灾难恢复 |
+| Japanese name | AWS Elastic Disaster Recovery |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | AWS Backup / EBS Snapshot / Storage Gateway |
 
 ## In one sentence
 

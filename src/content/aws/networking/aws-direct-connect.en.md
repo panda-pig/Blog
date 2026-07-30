@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a812abe47ffe0e7198291
 notionUpdated: "2026-07-27T05:40:26.161Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Direct Connect |
+| Full name | AWS Direct Connect |
+| Chinese name | AWS 专线连接 |
+| Japanese name | 専用線接続 |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | Site-to-Site VPN / Global Accelerator |
+
 ## In one sentence
 
 > A dedicated private network connection between on-premises environments and AWS for consistent bandwidth and latency.

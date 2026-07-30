@@ -1,6 +1,6 @@
 ---
 title: "Amazon EKS"
-fullName: "Amazon EKS"
+fullName: "Amazon Elastic Kubernetes Service"
 description: "AWS-managed Kubernetes for running workloads that need Kubernetes APIs, tooling, and ecosystem compatibility."
 service: "Amazon EKS"
 category: compute
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-8197-9431-e9339a24f693
 notionUrl: https://app.notion.com/p/3a6964dcce4a81979431e9339a24f693
 notionUpdated: "2026-07-23T07:19:34.220Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon EKS |
+| Full name | Amazon Elastic Kubernetes Service |
+| Chinese name | 托管 Kubernetes 服务 |
+| Japanese name | Amazon EKS |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | ECS / Kubernetes / Fargate |
 
 ## In one sentence
 

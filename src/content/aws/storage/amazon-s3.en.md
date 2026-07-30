@@ -1,19 +1,30 @@
 ---
 title: Amazon S3
-fullName: Amazon Simple Storage Service
+fullName: "Amazon Simple Storage Service"
 description: Highly durable, scalable regional object storage accessed through APIs or HTTP.
 service: S3
 category: storage
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Storage, Object Storage, SAA-C03]
 notionId: 3a6964dc-ce4a-8167-bdc7-d3b96eb969dc
 notionUrl: https://app.notion.com/p/3a6964dcce4a8167bdc7d3b96eb969dc
 notionUpdated: "2026-07-29T04:41:23.982Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon S3 |
+| Full name | Amazon Simple Storage Service |
+| Chinese name | 对象存储 |
+| Japanese name | オブジェクトストレージ |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | EBS / EFS / S3 on Outposts |
 
 ## In one sentence
 

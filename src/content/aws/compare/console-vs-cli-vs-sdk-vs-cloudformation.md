@@ -17,10 +17,12 @@ notionUpdated: "2026-07-23T08:23:51.932Z"
 ---
 
 ## 一句话结论
+
 - Console：人工图形操作。
 - CLI：命令和脚本操作。
 - SDK：应用代码调用 AWS。
 - CloudFormation：模板声明整套基础设施。
+
 ## 对比表
 
 | 维度 | Console | CLI | SDK | CloudFormation |
@@ -32,12 +34,17 @@ notionUpdated: "2026-07-23T08:23:51.932Z"
 | 最终是否调用 AWS API | 是 | 是 | 是 | 是 |
 
 ## 高频判断
+
 - “新手图形界面” → Console。
 - “Shell 脚本批量处理” → CLI。
 - “Python / Java 应用调用 S3” → SDK。
 - “跨账户、跨 Region 重复创建相同环境” → CloudFormation。
+
 ## Declarative vs Imperative
+
 - CloudFormation：Declarative，描述“我要什么”。
 - CLI 脚本：通常更偏 Imperative，描述“依次怎么做”。
+
 ## 记忆口诀
+
 Console 靠点，CLI 靠命令，SDK 靠代码，CloudFormation 靠模板。

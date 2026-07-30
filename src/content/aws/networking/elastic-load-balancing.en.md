@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a810c87bfc6a286d89cdf
 notionUpdated: "2026-07-23T07:21:23.243Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Elastic Load Balancing |
+| Full name | Elastic Load Balancing |
+| Chinese name | 弹性负载均衡 |
+| Japanese name | Elastic Load Balancing |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | Auto Scaling / ALB / NLB / GWLB |
+
 ## In one sentence
 
 > Distributes traffic across healthy targets to improve availability and scale application entry points.

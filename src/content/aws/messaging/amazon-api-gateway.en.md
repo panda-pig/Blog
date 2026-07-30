@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3aa964dcce4a816a9659d08ad7142c2d
 notionUpdated: "2026-07-27T05:39:16.622Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon API Gateway |
+| Full name | Amazon API Gateway |
+| Chinese name | API 网关 |
+| Japanese name | Amazon API Gateway |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | ALB / Internet Gateway / NAT Gateway |
+
 ## In one sentence
 
 > A managed front door for creating, publishing, securing, throttling, and monitoring APIs.

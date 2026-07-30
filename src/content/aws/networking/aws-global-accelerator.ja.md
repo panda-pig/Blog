@@ -7,7 +7,7 @@ category: networking
 kind: service
 lang: ja
 topicKey: "AWS Global Accelerator"
-frequency: "試験頻度 ⭐⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["networking","AWS Global Accelerator","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-814f-9602-eca85431f9f2
 notionUrl: https://app.notion.com/p/3a6964dcce4a814f9602eca85431f9f2
 notionUpdated: "2026-07-27T05:41:43.430Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | AWS Global Accelerator |
+| 正式名称 | AWS Global Accelerator |
+| 中国語名 | 全球网络加速 |
+| 日本語名 | グローバルアクセラレーター |
+| 出題頻度 | ⭐⭐⭐⭐ |
+| 混同しやすいもの | CloudFront / Route 53 / Direct Connect |
 
 ## 一言で理解
 

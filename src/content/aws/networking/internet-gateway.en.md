@@ -1,19 +1,30 @@
 ---
 title: Internet Gateway
-fullName: Internet Gateway (IGW)
+fullName: "Internet Gateway"
 description: A highly available internet entry and exit point attached to a VPC; it does not automatically make every resource publicly reachable.
 service: IGW
 category: networking
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-27
-updated: 2026-07-27
+updated: 2026-07-30
 tags: [Internet Gateway, VPC, Public Subnet, SAA-C03]
 notionId: 3a6964dc-ce4a-81ba-86d3-dca3dc2f01fd
 notionUrl: https://app.notion.com/p/3a6964dcce4a81ba86d3dca3dc2f01fd
 notionUpdated: "2026-07-27T05:37:27.928Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Internet Gateway (IGW) |
+| Full name | Internet Gateway |
+| Chinese name | 互联网网关 |
+| Japanese name | インターネットゲートウェイ |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | NAT Gateway / Virtual Private Gateway |
 
 ## In one sentence
 

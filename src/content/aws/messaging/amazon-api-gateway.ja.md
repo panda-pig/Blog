@@ -7,7 +7,7 @@ category: messaging
 kind: service
 lang: ja
 topicKey: "Amazon API Gateway"
-frequency: "試験頻度 ⭐⭐⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["messaging","Amazon API Gateway","AWS"]
@@ -15,6 +15,17 @@ notionId: 3aa964dc-ce4a-816a-9659-d08ad7142c2d
 notionUrl: https://app.notion.com/p/3aa964dcce4a816a9659d08ad7142c2d
 notionUpdated: "2026-07-27T05:39:16.622Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon API Gateway |
+| 正式名称 | Amazon API Gateway |
+| 中国語名 | API 网关 |
+| 日本語名 | Amazon API Gateway |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | ALB / Internet Gateway / NAT Gateway |
 
 ## 一言で理解
 

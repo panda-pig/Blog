@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a811fa33ecb3fff35d10d
 notionUpdated: "2026-07-29T08:11:51.664Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Database Migration Service (AWS DMS) |
+| Full name | AWS Database Migration Service |
+| Chinese name | 数据库迁移服务 |
+| Japanese name | データベース移行サービス |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | AWS SCT / EC2 Lift and Shift |
+
 ## In one sentence
 
 > Migrates or continuously replicates databases with low downtime while source systems remain available.

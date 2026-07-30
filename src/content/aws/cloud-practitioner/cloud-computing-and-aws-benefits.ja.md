@@ -1,13 +1,13 @@
 ---
 title: "クラウドコンピューティングと AWS の利点"
-fullName: "云计算与 AWS 的优势"
+fullName: "Cloud Computing and Benefits of the AWS Cloud"
 description: "固定的な先行投資ではなく、On-Demand の IT Resource と従量課金を利用する。"
 service: "Cloud Foundations"
 category: cloud-practitioner
 kind: topic
 lang: ja
 topicKey: "云计算与 AWS 的优势"
-frequency: "学習まとめ"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["cloud-practitioner","云计算与 AWS 的优势","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-8144-9a6a-f2b1f693a058
 notionUrl: https://app.notion.com/p/3a6964dcce4a81449a6af2b1f693a058
 notionUpdated: "2026-07-23T07:17:25.803Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Cloud Computing & Benefits of AWS Cloud |
+| 正式名称 | Cloud Computing and Benefits of the AWS Cloud |
+| 中国語名 | 云计算与 AWS 云优势 |
+| 日本語名 | クラウドコンピューティングと AWS クラウドの利点 |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | Scalability / Elasticity / High Availability / Agility |
 
 ## 一言で理解
 

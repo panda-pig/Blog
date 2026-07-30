@@ -7,7 +7,7 @@ category: compute
 kind: service
 lang: ja
 topicKey: "Amazon Lightsail"
-frequency: "試験頻度 ⭐⭐"
+frequency: "出題頻度 ⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["compute","Amazon Lightsail","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-81c3-853d-d70f12fcd1ef
 notionUrl: https://app.notion.com/p/3a6964dcce4a81c3853dd70f12fcd1ef
 notionUpdated: "2026-07-23T07:21:11.202Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon Lightsail |
+| 正式名称 | Amazon Lightsail |
+| 中国語名 | 简化型云服务器 / VPS |
+| 日本語名 | Amazon Lightsail |
+| 出題頻度 | ⭐⭐ |
+| 混同しやすいもの | Amazon EC2 |
 
 ## 一言で理解
 

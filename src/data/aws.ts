@@ -137,7 +137,10 @@ export const awsDomainTopics: Record<string, string[]> = {
   ],
   storage: [
     'Amazon S3',
+    'S3 存储类别与生命周期',
+    'S3 安全与管理',
     'Amazon EBS',
+    'EBS 快照与生命周期管理',
     'Amazon EFS',
     'Amazon FSx',
     'AWS Storage Gateway',

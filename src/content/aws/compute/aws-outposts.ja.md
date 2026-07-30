@@ -7,7 +7,7 @@ category: compute
 kind: service
 lang: ja
 topicKey: "AWS Outposts"
-frequency: "試験頻度 ⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["compute","AWS Outposts","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-81a2-9dc8-e2d635fedd31
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a29dc8e2d635fedd31
 notionUpdated: "2026-07-23T07:21:13.694Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | AWS Outposts |
+| 正式名称 | AWS Outposts |
+| 中国語名 | AWS 本地部署的托管基础设施 |
+| 日本語名 | AWS Outposts |
+| 出題頻度 | ⭐⭐⭐ |
+| 混同しやすいもの | Local Zones / Wavelength / On-premises |
 
 ## 一言で理解
 

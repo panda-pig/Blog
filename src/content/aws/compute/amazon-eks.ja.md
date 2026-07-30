@@ -1,13 +1,13 @@
 ---
 title: "Amazon EKS"
-fullName: "Amazon EKS"
+fullName: "Amazon Elastic Kubernetes Service"
 description: "Kubernetes API、ツール、エコシステム互換性が必要なワークロード向けの AWS マネージド Kubernetes。"
 service: "Amazon EKS"
 category: compute
 kind: service
 lang: ja
 topicKey: "Amazon EKS"
-frequency: "試験頻度 ⭐⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["compute","Amazon EKS","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-8197-9431-e9339a24f693
 notionUrl: https://app.notion.com/p/3a6964dcce4a81979431e9339a24f693
 notionUpdated: "2026-07-23T07:19:34.220Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon EKS |
+| 正式名称 | Amazon Elastic Kubernetes Service |
+| 中国語名 | 托管 Kubernetes 服务 |
+| 日本語名 | Amazon EKS |
+| 出題頻度 | ⭐⭐⭐⭐ |
+| 混同しやすいもの | ECS / Kubernetes / Fargate |
 
 ## 一言で理解
 

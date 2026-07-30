@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a8117b59ffb16989375b3
 notionUpdated: "2026-07-23T07:19:36.892Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Fargate |
+| Full name | AWS Fargate |
+| Chinese name | 无服务器容器计算引擎 |
+| Japanese name | AWS Fargate（ファーゲート） |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | ECS / EKS / Lambda / EC2 |
+
 ## In one sentence
 
 > Serverless compute for containers used with ECS or EKS, billed for task or pod resources.

@@ -7,7 +7,7 @@ category: architecture
 kind: topic
 lang: ja
 topicKey: "AWS 责任共担模型"
-frequency: "試験頻度 ⭐⭐⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["architecture","AWS Shared Responsibility Model","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-81b5-b6d2-c6ee58ed36d9
 notionUrl: https://app.notion.com/p/3a6964dcce4a81b5b6d2c6ee58ed36d9
 notionUpdated: "2026-07-29T08:13:08.678Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | AWS Shared Responsibility Model |
+| 正式名称 | AWS Shared Responsibility Model |
+| 中国語名 | AWS 责任共担模型 |
+| 日本語名 | AWS 責任共有モデル |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | AWS 的责任 / 客户的责任 / 托管服务边界 |
 
 ## 一言で理解
 

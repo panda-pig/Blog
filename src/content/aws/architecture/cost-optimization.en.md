@@ -7,7 +7,7 @@ category: architecture
 kind: topic
 lang: en
 topicKey: "成本优化"
-frequency: "Exam frequency ★★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["Architecture","Cost Optimization","FinOps"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-8166-bb96-e568552dd8ce
 notionUrl: https://app.notion.com/p/3a6964dcce4a8166bb96e568552dd8ce
 notionUpdated: "2026-07-30T01:08:06.892Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Cost Optimization |
+| Full name | Cost Optimization |
+| Chinese name | 成本优化 |
+| Japanese name | コスト最適化 |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | 性能优化 |
 
 ## In one sentence
 

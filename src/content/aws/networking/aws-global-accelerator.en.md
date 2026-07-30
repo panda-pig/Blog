@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a814f9602eca85431f9f2
 notionUpdated: "2026-07-27T05:41:43.430Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Global Accelerator |
+| Full name | AWS Global Accelerator |
+| Chinese name | 全球网络加速 |
+| Japanese name | グローバルアクセラレーター |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | CloudFront / Route 53 / Direct Connect |
+
 ## In one sentence
 
 > Provides static anycast IP addresses and routes TCP/UDP traffic over the AWS global network to healthy regional endpoints.

@@ -17,7 +17,9 @@ notionUpdated: "2026-07-27T05:41:45.348Z"
 ---
 
 ## 一句话选型
+
 **Route 53 找地址；CloudFront 缓存和分发 HTTP 内容；Global Accelerator 加速全球 TCP/UDP 动态流量并快速切换健康端点。**
+
 ## 核心差异
 
 | 维度 | Route 53 | CloudFront | Global Accelerator |
@@ -31,22 +33,31 @@ notionUpdated: "2026-07-27T05:41:45.348Z"
 | 典型关键词 | DNS、域名、地理/延迟路由 | 图片、视频、缓存、CDN | TCP/UDP、静态 IP、全球动态流量 |
 
 ## 场景判断
+
 - 根据用户国家返回不同网站 → Route 53 Geolocation。
 - 根据 AWS Region 延迟返回端点 → Route 53 Latency-based Routing。
 - 全球网站图片和视频较慢，希望缓存 → CloudFront。
 - 全球 UDP 游戏延迟抖动大 → Global Accelerator。
 - 多 Region 应用需要固定 IP 和快速端点切换 → Global Accelerator。
 - API/网页既需要 DNS 又需要边缘分发 → Route 53 + CloudFront。
+
 ## 常见组合
+
 - Route 53 → CloudFront → S3 / ALB / API Gateway。
 - Route 53 → Global Accelerator → ALB / NLB / EC2 / EIP。
 - CloudFront 与 Global Accelerator 解决的问题不同，不应因为都使用边缘网络就视为替代品。
+
 ## 高频陷阱
+
 - Route 53 不缓存内容，也不持续代理连接。
 - CloudFront 可以传输动态 HTTP 内容，但核心仍是应用层分发与可配置缓存。
 - Global Accelerator 不缓存，也不替代数据库复制。
 - Edge Location 不是 Region 或 AZ。
+
 ## 面试回答
+
 “先看协议和目标：DNS 决策选 Route 53；HTTP/HTTPS 内容分发选 CloudFront；需要静态 IP、TCP/UDP 全球加速和健康端点快速切换选 Global Accelerator。真实架构中常由 Route 53 把域名指向后两者。”
+
 ## 记忆口诀
+
 **53 找路，CloudFront 发内容，Global Accelerator 送动态连接。**

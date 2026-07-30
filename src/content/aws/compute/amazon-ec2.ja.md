@@ -1,19 +1,30 @@
 ---
 title: Amazon EC2
-fullName: Amazon Elastic Compute Cloud
+fullName: "Amazon Elastic Compute Cloud"
 description: AWS クラウド上の仮想サーバー。高い制御性を持つ一方、OS、パッチ、実行環境、アプリケーションは利用者が管理します。
 service: EC2
 category: compute
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-30
 tags: [Compute, IaaS, SAA-C03, Cloud Practitioner]
 notionId: 3a6964dc-ce4a-8158-b0a8-d1d2f5cf6e05
 notionUrl: https://app.notion.com/p/3a6964dcce4a8158b0a8d1d2f5cf6e05
 notionUpdated: "2026-07-23T07:19:19.291Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon EC2 |
+| 正式名称 | Amazon Elastic Compute Cloud |
+| 中国語名 | 弹性云服务器 / 虚拟机 |
+| 日本語名 | Amazon EC2（仮想サーバー） |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | Lambda / Fargate / Lightsail |
 
 ## 一言で理解
 

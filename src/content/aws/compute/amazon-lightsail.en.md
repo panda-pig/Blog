@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a81c3853dd70f12fcd1ef
 notionUpdated: "2026-07-23T07:21:11.202Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon Lightsail |
+| Full name | Amazon Lightsail |
+| Chinese name | 简化型云服务器 / VPS |
+| Japanese name | Amazon Lightsail |
+| Exam frequency | ⭐⭐ |
+| Often confused with | Amazon EC2 |
+
 ## In one sentence
 
 > A simplified bundle of compute, storage, networking, and fixed-price plans for small and predictable workloads.

@@ -1,19 +1,30 @@
 ---
 title: Amazon EC2
-fullName: Amazon Elastic Compute Cloud
+fullName: "Amazon Elastic Compute Cloud"
 description: Virtual servers in the AWS Cloud, offering extensive system control while leaving the guest OS, patches, runtime, and applications under your responsibility.
 service: EC2
 category: compute
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-30
 tags: [Compute, IaaS, SAA-C03, Cloud Practitioner]
 notionId: 3a6964dc-ce4a-8158-b0a8-d1d2f5cf6e05
 notionUrl: https://app.notion.com/p/3a6964dcce4a8158b0a8d1d2f5cf6e05
 notionUpdated: "2026-07-23T07:19:19.291Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon EC2 |
+| Full name | Amazon Elastic Compute Cloud |
+| Chinese name | 弹性云服务器 / 虚拟机 |
+| Japanese name | Amazon EC2（仮想サーバー） |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | Lambda / Fargate / Lightsail |
 
 ## In one sentence
 

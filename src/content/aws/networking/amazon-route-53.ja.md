@@ -7,7 +7,7 @@ category: networking
 kind: service
 lang: ja
 topicKey: "Amazon Route 53"
-frequency: "試験頻度 ⭐⭐⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["networking","Amazon Route 53","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-812e-8b52-d74e98d40a3d
 notionUrl: https://app.notion.com/p/3a6964dcce4a812e8b52d74e98d40a3d
 notionUpdated: "2026-07-27T05:41:39.696Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon Route 53 |
+| 正式名称 | Amazon Route 53 |
+| 中国語名 | DNS、域名注册、健康检查与流量路由 |
+| 日本語名 | Amazon Route 53 |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | CloudFront / ELB / Global Accelerator |
 
 ## 一言で理解
 

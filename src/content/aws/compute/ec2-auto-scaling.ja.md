@@ -6,7 +6,7 @@ service: "Auto Scaling"
 category: compute
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["Compute","Auto Scaling","SAA-C03"]
@@ -14,6 +14,17 @@ notionId: 3a6964dc-ce4a-811a-bc62-e247c6def362
 notionUrl: https://app.notion.com/p/3a6964dcce4a811abc62e247c6def362
 notionUpdated: "2026-07-30T01:09:11.112Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon EC2 Auto Scaling |
+| 正式名称 | Amazon EC2 Auto Scaling |
+| 中国語名 | EC2 自动扩缩 |
+| 日本語名 | EC2 オートスケーリング |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | Elastic Load Balancing / Vertical Scaling |
 
 ## 一言で理解
 

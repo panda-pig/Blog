@@ -7,7 +7,7 @@ category: migration
 kind: service
 lang: ja
 topicKey: "AWS DataSync"
-frequency: "試験頻度 ⭐⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["migration","AWS DataSync","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-8155-9ae9-f3e18ec458d5
 notionUrl: https://app.notion.com/p/3a6964dcce4a81559ae9f3e18ec458d5
 notionUpdated: "2026-07-30T01:52:42.983Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | AWS DataSync |
+| 正式名称 | AWS DataSync |
+| 中国語名 | 在线数据传输 |
+| 日本語名 | オンラインデータ転送 |
+| 出題頻度 | ⭐⭐⭐⭐ |
+| 混同しやすいもの | Storage Gateway / Snow Family |
 
 ## 一言で理解
 

@@ -1,19 +1,30 @@
 ---
 title: AWS Storage Gateway
-fullName: AWS Storage Gateway
+fullName: "AWS Storage Gateway"
 description: A hybrid cloud service that exposes file, block, or tape interfaces to local applications while connecting data to AWS storage.
 service: Storage Gateway
 category: storage
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Storage, Hybrid Cloud, Migration]
 notionId: 3a6964dc-ce4a-8139-8147-f4863a4da4ca
 notionUrl: https://app.notion.com/p/3a6964dcce4a81398147f4863a4da4ca
 notionUpdated: "2026-07-29T04:42:42.955Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Storage Gateway |
+| Full name | AWS Storage Gateway |
+| Chinese name | 混合云存储网关 |
+| Japanese name | ハイブリッドストレージゲートウェイ |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | DataSync / S3 on Outposts / Direct Connect / AWS DRS |
 
 ## In one sentence
 

@@ -1,19 +1,30 @@
 ---
 title: Amazon Managed Blockchain
-fullName: Amazon Managed Blockchain
+fullName: "Amazon Managed Blockchain (AMB)"
 description: Managed blockchain capabilities for shared, verifiable, tamper-resistant records across organizations.
 service: AMB
 category: database
 kind: service
 lang: en
-frequency: "Exam frequency ★"
+frequency: "Exam frequency ⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Database, Blockchain, Ledger]
 notionId: 3ac964dc-ce4a-81ef-ba29-c54db8aa90b2
 notionUrl: https://app.notion.com/p/3ac964dcce4a81efba29c54db8aa90b2
 notionUpdated: "2026-07-29T08:07:57.567Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon Managed Blockchain (AMB) |
+| Full name | Amazon Managed Blockchain (AMB) |
+| Chinese name | 托管区块链服务 |
+| Japanese name | マネージドブロックチェーンサービス |
+| Exam frequency | ⭐ |
+| Often confused with | 普通数据库 / 审计日志 / QLDB |
 
 ## In one sentence
 

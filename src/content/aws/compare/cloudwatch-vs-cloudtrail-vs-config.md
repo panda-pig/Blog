@@ -17,9 +17,11 @@ notionUpdated: "2026-07-23T07:24:14.608Z"
 ---
 
 ## 一句话结论
+
 - **CloudWatch**：系统现在表现如何？
 - **CloudTrail**：谁在什么时候调用了什么 API？
 - **AWS Config**：资源配置如何变化、是否符合规则？
+
 ## 核心差异
 
 | 维度 | CloudWatch | CloudTrail | AWS Config |
@@ -31,10 +33,13 @@ notionUpdated: "2026-07-23T07:24:14.608Z"
 | 常见集成 | Auto Scaling、SNS | S3、CloudWatch Logs、EventBridge | Security Hub、Automation |
 
 ## 场景判断
+
 - “监控 CPU、延迟、错误、日志并告警” → CloudWatch。
 - “调查谁执行 DeleteBucket、StopInstances 等操作” → CloudTrail。
 - “追踪资源配置变化、检查是否允许 0.0.0.0/0” → AWS Config。
+
 ## 常见陷阱
+
 - CloudWatch Logs 可以保存应用日志，但不因此等于 CloudTrail。
 - CloudTrail 记录 API 操作，不主要负责性能监控。
 - Config 关注资源配置状态，不记录全部应用行为。

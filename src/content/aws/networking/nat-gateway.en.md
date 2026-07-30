@@ -1,19 +1,30 @@
 ---
 title: NAT Gateway
-fullName: Network Address Translation Gateway
+fullName: "Network Address Translation Gateway"
 description: Gives private IPv4 resources outbound access to the internet or public services without accepting internet-initiated connections.
 service: NAT Gateway
 category: networking
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-27
-updated: 2026-07-27
+updated: 2026-07-30
 tags: [NAT Gateway, Private Subnet, VPC Endpoint, SAA-C03]
 notionId: 3a6964dc-ce4a-81f6-b429-f216d258f807
 notionUrl: https://app.notion.com/p/3a6964dcce4a81f6b429f216d258f807
 notionUpdated: "2026-07-27T05:37:29.758Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | NAT Gateway |
+| Full name | Network Address Translation Gateway |
+| Chinese name | 网络地址转换网关 |
+| Japanese name | NAT ゲートウェイ |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | Internet Gateway / NAT Instance / VPC Endpoint |
 
 ## In one sentence
 

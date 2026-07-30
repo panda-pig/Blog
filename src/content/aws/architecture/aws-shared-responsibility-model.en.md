@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a81b5b6d2c6ee58ed36d9
 notionUpdated: "2026-07-29T08:13:08.678Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Shared Responsibility Model |
+| Full name | AWS Shared Responsibility Model |
+| Chinese name | AWS 责任共担模型 |
+| Japanese name | AWS 責任共有モデル |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | AWS 的责任 / 客户的责任 / 托管服务边界 |
+
 ## In one sentence
 
 > AWS secures the cloud infrastructure, while customers secure their configurations, identities, applications, and data in the cloud.

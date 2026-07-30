@@ -1,19 +1,30 @@
 ---
 title: Amazon S3
-fullName: Amazon Simple Storage Service
+fullName: "Amazon Simple Storage Service"
 description: API または HTTP で完全なオブジェクトを保存する、高耐久でスケーラブルなリージョン単位のオブジェクトストレージ。
 service: S3
 category: storage
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Storage, Object Storage, SAA-C03]
 notionId: 3a6964dc-ce4a-8167-bdc7-d3b96eb969dc
 notionUrl: https://app.notion.com/p/3a6964dcce4a8167bdc7d3b96eb969dc
 notionUpdated: "2026-07-29T04:41:23.982Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon S3 |
+| 正式名称 | Amazon Simple Storage Service |
+| 中国語名 | 对象存储 |
+| 日本語名 | オブジェクトストレージ |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | EBS / EFS / S3 on Outposts |
 
 ## 一言で理解
 

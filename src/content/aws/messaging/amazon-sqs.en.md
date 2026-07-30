@@ -1,6 +1,6 @@
 ---
 title: "Amazon SQS"
-fullName: "Amazon SQS"
+fullName: "Amazon Simple Queue Service"
 description: "A managed message queue that decouples producers and consumers and buffers work for reliable asynchronous processing."
 service: "Amazon SQS"
 category: messaging
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-81ba-bf24-f388c5cddd42
 notionUrl: https://app.notion.com/p/3a6964dcce4a81babf24f388c5cddd42
 notionUpdated: "2026-07-23T07:21:16.024Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon SQS |
+| Full name | Amazon Simple Queue Service |
+| Chinese name | 消息队列服务 |
+| Japanese name | Amazon SQS（メッセージキュー） |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | SNS / EventBridge / Kinesis |
 
 ## In one sentence
 

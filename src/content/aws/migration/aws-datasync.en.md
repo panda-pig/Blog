@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a81559ae9f3e18ec458d5
 notionUpdated: "2026-07-30T01:52:42.983Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS DataSync |
+| Full name | AWS DataSync |
+| Chinese name | 在线数据传输 |
+| Japanese name | オンラインデータ転送 |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | Storage Gateway / Snow Family |
+
 ## In one sentence
 
 > Automates high-speed online transfer and synchronization of files or objects between on-premises, AWS, and other clouds.

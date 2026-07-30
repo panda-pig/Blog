@@ -1,13 +1,13 @@
 ---
 title: "Client–Server Model"
-fullName: "客户端—服务器模型"
+fullName: "Client–Server Model"
 description: "Clients send requests over a network, and servers process them and return responses."
 service: "Cloud Foundations"
 category: cloud-practitioner
 kind: topic
 lang: en
 topicKey: "客户端—服务器模型"
-frequency: "Study summary"
+frequency: "Exam frequency ⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["cloud-practitioner","客户端—服务器模型","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-811a-9a71-dfdda6cbfba3
 notionUrl: https://app.notion.com/p/3a6964dcce4a811a9a71dfdda6cbfba3
 notionUpdated: "2026-07-23T07:17:25.788Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Client–Server Model |
+| Full name | Client–Server Model |
+| Chinese name | 客户端—服务器模型 |
+| Japanese name | クライアント・サーバーモデル |
+| Exam frequency | ⭐⭐⭐ |
+| Often confused with | Client / Server / API |
 
 ## In one sentence
 

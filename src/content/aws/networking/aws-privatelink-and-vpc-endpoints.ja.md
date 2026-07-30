@@ -7,7 +7,7 @@ category: networking
 kind: service
 lang: ja
 topicKey: "AWS PrivateLink & VPC Endpoints"
-frequency: "試験頻度 ⭐⭐⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["networking","AWS PrivateLink & VPC Endpoints","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-81f7-8e00-fab34be32604
 notionUrl: https://app.notion.com/p/3a6964dcce4a81f78e00fab34be32604
 notionUpdated: "2026-07-27T05:40:30.847Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | AWS PrivateLink & VPC Endpoints |
+| 正式名称 | AWS PrivateLink & VPC Endpoints |
+| 中国語名 | 私有服务访问 |
+| 日本語名 | プライベートサービス接続 |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | NAT Gateway / VPC Peering / Site-to-Site VPN |
 
 ## 一言で理解
 

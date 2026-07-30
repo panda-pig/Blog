@@ -1,6 +1,6 @@
 ---
 title: "Amazon SNS"
-fullName: "Amazon SNS"
+fullName: "Amazon Simple Notification Service"
 description: "A managed publish/subscribe service that fans one message out to multiple subscribers."
 service: "Amazon SNS"
 category: messaging
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-815d-a70c-efddf8cc7d63
 notionUrl: https://app.notion.com/p/3a6964dcce4a815da70cefddf8cc7d63
 notionUpdated: "2026-07-23T07:21:18.671Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon SNS |
+| Full name | Amazon Simple Notification Service |
+| Chinese name | 通知与发布订阅服务 |
+| Japanese name | Amazon SNS（通知サービス） |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | SQS / EventBridge |
 
 ## In one sentence
 

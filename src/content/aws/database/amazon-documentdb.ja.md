@@ -1,19 +1,30 @@
 ---
 title: Amazon DocumentDB
-fullName: Amazon DocumentDB (with MongoDB compatibility)
+fullName: "Amazon DocumentDB (with MongoDB compatibility)"
 description: JSON に似た半構造化 Document と MongoDB 互換 Workload のためのマネージドデータベース。
 service: DocumentDB
 category: database
 kind: service
 lang: ja
-frequency: "試験頻度 ★★"
+frequency: "出題頻度 ⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Database, Document, MongoDB]
 notionId: 3a6964dc-ce4a-813c-bc72-c55eb53fb37a
 notionUrl: https://app.notion.com/p/3a6964dcce4a813cbc72c55eb53fb37a
 notionUpdated: "2026-07-29T08:10:40.179Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon DocumentDB (with MongoDB compatibility) |
+| 正式名称 | Amazon DocumentDB (with MongoDB compatibility) |
+| 中国語名 | 托管文档数据库 |
+| 日本語名 | マネージドドキュメントデータベース |
+| 出題頻度 | ⭐⭐ |
+| 混同しやすいもの | DynamoDB / MongoDB / Neptune |
 
 ## 一言で理解
 

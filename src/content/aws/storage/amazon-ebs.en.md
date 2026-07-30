@@ -1,19 +1,30 @@
 ---
 title: Amazon EBS
-fullName: Amazon Elastic Block Store
+fullName: "Amazon Elastic Block Store"
 description: Persistent block volumes for EC2 with configurable capacity and performance, independent of host-local storage.
 service: EBS
 category: storage
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Storage, Block Storage, EC2]
 notionId: 3a6964dc-ce4a-8126-968f-e04a57570ada
 notionUrl: https://app.notion.com/p/3a6964dcce4a8126968fe04a57570ada
 notionUpdated: "2026-07-29T04:41:27.242Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon EBS |
+| Full name | Amazon Elastic Block Store |
+| Chinese name | 弹性块存储 |
+| Japanese name | ブロックストレージ |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | Instance Store / EFS / S3 |
 
 ## In one sentence
 

@@ -1,19 +1,30 @@
 ---
 title: Amazon ElastiCache
-fullName: Amazon ElastiCache
+fullName: "Amazon ElastiCache"
 description: Valkey、Redis OSS、Memcached で Hot Data を保持するマネージドインメモリ Cache。
 service: ElastiCache
 category: database
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Database, Cache, Performance]
 notionId: 3a6964dc-ce4a-819f-a367-c7390c1af894
 notionUrl: https://app.notion.com/p/3a6964dcce4a819fa367c7390c1af894
 notionUpdated: "2026-07-29T08:10:32.594Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon ElastiCache |
+| 正式名称 | Amazon ElastiCache |
+| 中国語名 | 托管内存缓存 |
+| 日本語名 | マネージドインメモリキャッシュ |
+| 出題頻度 | ⭐⭐⭐⭐ |
+| 混同しやすいもの | DAX / RDS Read Replica / CloudFront / MemoryDB |
 
 ## 一言で理解
 

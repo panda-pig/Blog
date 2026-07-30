@@ -1,19 +1,30 @@
 ---
 title: DynamoDB Accelerator (DAX)
-fullName: DynamoDB Accelerator
+fullName: "DynamoDB Accelerator (DAX)"
 description: DynamoDB API と高い互換性を持ち、繰り返す結果整合読み取りをマイクロ秒級にするマネージド Cache。
 service: DAX
 category: database
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Database, DynamoDB, Cache]
 notionId: 3ac964dc-ce4a-815c-be49-c16168d8604b
 notionUrl: https://app.notion.com/p/3ac964dcce4a815cbe49c16168d8604b
 notionUpdated: "2026-07-29T08:07:57.540Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | DynamoDB Accelerator (DAX) |
+| 正式名称 | DynamoDB Accelerator (DAX) |
+| 中国語名 | DynamoDB 专用内存缓存 |
+| 日本語名 | DynamoDB 専用インメモリキャッシュ |
+| 出題頻度 | ⭐⭐⭐⭐ |
+| 混同しやすいもの | ElastiCache / RDS Read Replica |
 
 ## 一言で理解
 

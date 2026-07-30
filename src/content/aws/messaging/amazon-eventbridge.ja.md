@@ -7,7 +7,7 @@ category: messaging
 kind: service
 lang: ja
 topicKey: "Amazon EventBridge"
-frequency: "試験頻度 ⭐⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["messaging","Amazon EventBridge","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-8146-be57-defb6099f3b1
 notionUrl: https://app.notion.com/p/3a6964dcce4a8146be57defb6099f3b1
 notionUpdated: "2026-07-23T07:21:20.695Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon EventBridge |
+| 正式名称 | Amazon EventBridge |
+| 中国語名 | 事件总线与事件路由服务 |
+| 日本語名 | Amazon EventBridge（イベントバス） |
+| 出題頻度 | ⭐⭐⭐⭐ |
+| 混同しやすいもの | SNS / SQS / CloudWatch Events |
 
 ## 一言で理解
 

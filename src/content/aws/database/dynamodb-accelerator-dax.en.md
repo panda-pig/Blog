@@ -1,19 +1,30 @@
 ---
 title: DynamoDB Accelerator (DAX)
-fullName: DynamoDB Accelerator
+fullName: "DynamoDB Accelerator (DAX)"
 description: A managed in-memory cache compatible with DynamoDB APIs that reduces repeated eventually consistent reads to microseconds.
 service: DAX
 category: database
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Database, DynamoDB, Cache]
 notionId: 3ac964dc-ce4a-815c-be49-c16168d8604b
 notionUrl: https://app.notion.com/p/3ac964dcce4a815cbe49c16168d8604b
 notionUpdated: "2026-07-29T08:07:57.540Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | DynamoDB Accelerator (DAX) |
+| Full name | DynamoDB Accelerator (DAX) |
+| Chinese name | DynamoDB 专用内存缓存 |
+| Japanese name | DynamoDB 専用インメモリキャッシュ |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | ElastiCache / RDS Read Replica |
 
 ## In one sentence
 

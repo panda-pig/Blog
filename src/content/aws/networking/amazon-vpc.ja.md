@@ -1,19 +1,30 @@
 ---
 title: Amazon VPC
-fullName: Amazon Virtual Private Cloud
+fullName: "Amazon Virtual Private Cloud"
 description: AWS Region 内に、アドレス範囲、サブネット、ルート、セキュリティを自分で定義できる論理的に分離されたネットワーク。
 service: VPC
 category: networking
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-27
-updated: 2026-07-27
+updated: 2026-07-30
 tags: [Networking, VPC, SAA-C03, Cloud Practitioner]
 notionId: 3a6964dc-ce4a-81bd-a288-f2453af8ccda
 notionUrl: https://app.notion.com/p/3a6964dcce4a81bda288f2453af8ccda
 notionUpdated: "2026-07-27T05:37:23.865Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon VPC |
+| 正式名称 | Amazon Virtual Private Cloud |
+| 中国語名 | 虚拟私有云 |
+| 日本語名 | 仮想プライベートクラウド |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | Subnet / Security Group / NACL |
 
 ## 一言で理解
 

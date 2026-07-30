@@ -1,19 +1,30 @@
 ---
 title: Subnet & Route Table
-fullName: Subnet and Route Table
+fullName: "Subnet & Route Table"
 description: A subnet divides the VPC address space and belongs to one Availability Zone; a route table selects the next hop based on the destination.
 service: VPC Networking
 category: networking
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-27
-updated: 2026-07-27
+updated: 2026-07-30
 tags: [Subnet, Route Table, CIDR, SAA-C03]
 notionId: 3a6964dc-ce4a-818e-972f-f196d09400b4
 notionUrl: https://app.notion.com/p/3a6964dcce4a818e972ff196d09400b4
 notionUpdated: "2026-07-27T05:37:25.834Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Subnet & Route Table |
+| Full name | Subnet & Route Table |
+| Chinese name | 子网与路由表 |
+| Japanese name | サブネットとルートテーブル |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | Public / Private Subnet |
 
 ## In one sentence
 

@@ -1,19 +1,30 @@
 ---
 title: Amazon DynamoDB
-fullName: Amazon DynamoDB
+fullName: "Amazon DynamoDB"
 description: Primary Key のアクセスパターンを中心に設計し、自動拡張と低遅延を提供する Serverless Key-Value/Document DB。
 service: DynamoDB
 category: database
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Database, NoSQL, Serverless]
 notionId: 3a6964dc-ce4a-8198-a171-ce08f0f442b0
 notionUrl: https://app.notion.com/p/3a6964dcce4a8198a171ce08f0f442b0
 notionUpdated: "2026-07-29T08:10:28.597Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon DynamoDB |
+| 正式名称 | Amazon DynamoDB |
+| 中国語名 | 无服务器 Key-Value 与文档型 NoSQL 数据库 |
+| 日本語名 | サーバーレス NoSQL データベース |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | RDS / DocumentDB / DAX |
 
 ## 一言で理解
 

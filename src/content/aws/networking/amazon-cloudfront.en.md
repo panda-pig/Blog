@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a8198a643ce1e9079cf9c
 notionUpdated: "2026-07-27T05:41:41.677Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon CloudFront |
+| Full name | Amazon CloudFront |
+| Chinese name | 内容分发网络（CDN） |
+| Japanese name | コンテンツ配信ネットワーク |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | Route 53 / Global Accelerator / S3 Transfer Acceleration |
+
 ## In one sentence
 
 > A content delivery network that caches content at edge locations and protects private origins.

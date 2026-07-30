@@ -1,19 +1,30 @@
 ---
 title: Network ACL
-fullName: Network Access Control List
+fullName: "Network Access Control List"
 description: A stateless subnet-boundary access control list that supports both allow and deny rules.
 service: NACL
 category: networking
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-27
-updated: 2026-07-27
+updated: 2026-07-30
 tags: [Network ACL, Subnet, Stateless, SAA-C03]
 notionId: 3a6964dc-ce4a-8196-a268-c8bdca7d4d53
 notionUrl: https://app.notion.com/p/3a6964dcce4a8196a268c8bdca7d4d53
 notionUpdated: "2026-07-27T05:38:24.209Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Network ACL |
+| Full name | Network Access Control List |
+| Chinese name | 网络访问控制列表 |
+| Japanese name | ネットワーク ACL |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | Security Group |
 
 ## In one sentence
 

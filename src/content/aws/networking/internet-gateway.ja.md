@@ -1,19 +1,30 @@
 ---
 title: Internet Gateway
-fullName: Internet Gateway (IGW)
+fullName: "Internet Gateway"
 description: VPC に接続する高可用なインターネット出入口。ただし、接続するだけですべてのリソースが公開されるわけではありません。
 service: IGW
 category: networking
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-27
-updated: 2026-07-27
+updated: 2026-07-30
 tags: [Internet Gateway, VPC, Public Subnet, SAA-C03]
 notionId: 3a6964dc-ce4a-81ba-86d3-dca3dc2f01fd
 notionUrl: https://app.notion.com/p/3a6964dcce4a81ba86d3dca3dc2f01fd
 notionUpdated: "2026-07-27T05:37:27.928Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Internet Gateway (IGW) |
+| 正式名称 | Internet Gateway |
+| 中国語名 | 互联网网关 |
+| 日本語名 | インターネットゲートウェイ |
+| 出題頻度 | ⭐⭐⭐⭐ |
+| 混同しやすいもの | NAT Gateway / Virtual Private Gateway |
 
 ## 一言で理解
 

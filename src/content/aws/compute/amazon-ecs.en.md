@@ -1,6 +1,6 @@
 ---
 title: "Amazon ECS"
-fullName: "Amazon ECS"
+fullName: "Amazon Elastic Container Service"
 description: "AWS-native container orchestration for deploying, scheduling, scaling, and maintaining container workloads."
 service: "Amazon ECS"
 category: compute
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-8132-9a5c-c4a14b839c97
 notionUrl: https://app.notion.com/p/3a6964dcce4a81329a5cc4a14b839c97
 notionUpdated: "2026-07-23T07:19:31.706Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon ECS |
+| Full name | Amazon Elastic Container Service |
+| Chinese name | AWS 原生容器编排服务 |
+| Japanese name | Amazon ECS |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | EKS / Fargate / ECR |
 
 ## In one sentence
 

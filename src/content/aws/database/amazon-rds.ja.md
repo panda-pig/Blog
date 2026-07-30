@@ -1,19 +1,30 @@
 ---
 title: Amazon RDS
-fullName: Amazon Relational Database Service
+fullName: "Amazon Relational Database Service"
 description: MySQL や PostgreSQL などのリレーショナルエンジンを管理し、基盤、パッチ、バックアップ運用を軽減するサービス。
 service: RDS
 category: database
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Database, Relational, SAA-C03]
 notionId: 3a6964dc-ce4a-81a2-9c3d-ebba79e9df68
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a29c3debba79e9df68
 notionUpdated: "2026-07-29T08:10:20.563Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon RDS |
+| 正式名称 | Amazon Relational Database Service |
+| 中国語名 | 托管关系型数据库服务 |
+| 日本語名 | マネージドリレーショナルデータベース |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | Aurora / DynamoDB / EC2 自建数据库 |
 
 ## 一言で理解
 

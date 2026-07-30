@@ -1,19 +1,30 @@
 ---
 title: Amazon Aurora
-fullName: Amazon Aurora
+fullName: "Amazon Aurora"
 description: MySQL/PostgreSQL 互換で、Compute と分散 Cluster Storage を分離したクラウドネイティブ RDB。
 service: Aurora
 category: database
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Database, Relational, Multi-AZ]
 notionId: 3a6964dc-ce4a-8118-949e-f11c86e47043
 notionUrl: https://app.notion.com/p/3a6964dcce4a8118949ef11c86e47043
 notionUpdated: "2026-07-29T08:10:24.915Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon Aurora |
+| 正式名称 | Amazon Aurora |
+| 中国語名 | AWS 云原生关系型数据库 |
+| 日本語名 | クラウドネイティブリレーショナルデータベース |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | RDS 常规引擎 / DynamoDB |
 
 ## 一言で理解
 

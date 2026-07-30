@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a8124a67fcdc37acbaba8
 notionUpdated: "2026-07-27T05:40:32.699Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Transit Gateway |
+| Full name | AWS Transit Gateway |
+| Chinese name | 中转网关 |
+| Japanese name | トランジットゲートウェイ |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | VPC Peering / Virtual Private Gateway |
+
 ## In one sentence
 
 > A regional hub that connects many VPCs and on-premises networks through centralized routing.

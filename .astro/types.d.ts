@@ -388,27 +388,6 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
-"compare/alb-vs-nlb-vs-gwlb.en.md": {
-	id: "compare/alb-vs-nlb-vs-gwlb.en.md";
-  slug: "compare/alb-vs-nlb-vs-gwlben";
-  body: string;
-  collection: "aws";
-  data: any
-} & { render(): Render[".md"] };
-"compare/alb-vs-nlb-vs-gwlb.ja.md": {
-	id: "compare/alb-vs-nlb-vs-gwlb.ja.md";
-  slug: "compare/alb-vs-nlb-vs-gwlbja";
-  body: string;
-  collection: "aws";
-  data: any
-} & { render(): Render[".md"] };
-"compare/alb-vs-nlb-vs-gwlb.md": {
-	id: "compare/alb-vs-nlb-vs-gwlb.md";
-  slug: "compare/alb-vs-nlb-vs-gwlb";
-  body: string;
-  collection: "aws";
-  data: any
-} & { render(): Render[".md"] };
 "compare/client-vpn-vs-site-to-site-vpn-vs-privatelink-vs-direct-connect.en.md": {
 	id: "compare/client-vpn-vs-site-to-site-vpn-vs-privatelink-vs-direct-connect.en.md";
   slug: "compare/client-vpn-vs-site-to-site-vpn-vs-privatelink-vs-direct-connecten";
@@ -1917,6 +1896,69 @@ declare module 'astro:content' {
 "storage/aws-storage-gateway.md": {
 	id: "storage/aws-storage-gateway.md";
   slug: "storage/aws-storage-gateway";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/ebs-snapshot-data-lifecycle-manager.en.md": {
+	id: "storage/ebs-snapshot-data-lifecycle-manager.en.md";
+  slug: "storage/ebs-snapshot-data-lifecycle-manageren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/ebs-snapshot-data-lifecycle-manager.ja.md": {
+	id: "storage/ebs-snapshot-data-lifecycle-manager.ja.md";
+  slug: "storage/ebs-snapshot-data-lifecycle-managerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/ebs-snapshot-data-lifecycle-manager.md": {
+	id: "storage/ebs-snapshot-data-lifecycle-manager.md";
+  slug: "storage/ebs-snapshot-data-lifecycle-manager";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/s3-security-management.en.md": {
+	id: "storage/s3-security-management.en.md";
+  slug: "storage/s3-security-managementen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/s3-security-management.ja.md": {
+	id: "storage/s3-security-management.ja.md";
+  slug: "storage/s3-security-managementja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/s3-security-management.md": {
+	id: "storage/s3-security-management.md";
+  slug: "storage/s3-security-management";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/s3-storage-classes-lifecycle.en.md": {
+	id: "storage/s3-storage-classes-lifecycle.en.md";
+  slug: "storage/s3-storage-classes-lifecycleen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/s3-storage-classes-lifecycle.ja.md": {
+	id: "storage/s3-storage-classes-lifecycle.ja.md";
+  slug: "storage/s3-storage-classes-lifecycleja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/s3-storage-classes-lifecycle.md": {
+	id: "storage/s3-storage-classes-lifecycle.md";
+  slug: "storage/s3-storage-classes-lifecycle";
   body: string;
   collection: "aws";
   data: any

@@ -1,19 +1,30 @@
 ---
 title: AWS Backup
-fullName: AWS Backup
+fullName: "AWS Backup"
 description: 複数 AWS サービスのバックアップを統一ポリシーでスケジュール、保持、監視、統制するサービス。
 service: AWS Backup
 category: storage
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Storage, Backup, Governance]
 notionId: 3a6964dc-ce4a-8144-a676-dad1d439be1f
 notionUrl: https://app.notion.com/p/3a6964dcce4a8144a676dad1d439be1f
 notionUpdated: "2026-07-29T08:13:14.538Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | AWS Backup |
+| 正式名称 | AWS Backup |
+| 中国語名 | 集中式备份管理 |
+| 日本語名 | 一元バックアップ |
+| 出題頻度 | ⭐⭐⭐⭐ |
+| 混同しやすいもの | EBS Snapshot / DLM / AWS DRS / S3 Lifecycle |
 
 ## 一言で理解
 

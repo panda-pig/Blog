@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a816d833fc03167b88b6c
 notionUpdated: "2026-07-23T08:25:18.648Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | High Availability & Fault Tolerance |
+| Full name | High Availability & Fault Tolerance |
+| Chinese name | 高可用与容错 |
+| Japanese name | 高可用性とフォールトトレランス |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | Redundancy / DR / Elasticity |
+
 ## In one sentence
 
 > High availability reduces downtime through redundancy and recovery, while fault tolerance continues operation with minimal interruption.

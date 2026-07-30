@@ -1,19 +1,30 @@
 ---
 title: Amazon FSx
-fullName: Amazon FSx
+fullName: "Amazon FSx"
 description: A family of managed specialized file systems including Windows, Lustre, NetApp ONTAP, and OpenZFS.
 service: FSx
 category: storage
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Storage, File Storage, Hybrid]
 notionId: 3a6964dc-ce4a-81e5-a908-cd990d3f12be
 notionUrl: https://app.notion.com/p/3a6964dcce4a81e5a908cd990d3f12be
 notionUpdated: "2026-07-29T04:42:39.476Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon FSx |
+| Full name | Amazon FSx |
+| Chinese name | 托管专业文件系统家族 |
+| Japanese name | マネージドファイルシステム |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | Amazon EFS |
 
 ## In one sentence
 

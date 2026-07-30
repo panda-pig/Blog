@@ -16,7 +16,10 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a815e9274d95d1853835b
 notionUpdated: "2026-07-29T08:13:04.387Z"
 ---
 
+> 已加入“06 存储”的 SAA 成本优化考点。
+
 ## 必须掌握
+
 - S3 Storage Class 的访问频率、取回时间与总成本。
 - Lifecycle vs Intelligent-Tiering。
 - Standard-IA vs One Zone-IA。
@@ -25,6 +28,7 @@ notionUpdated: "2026-07-29T08:13:04.387Z"
 - EFS Lifecycle 与 One Zone。
 - FSx 产品与部署模式。
 - Snapshot、旧版本、未完成 Multipart Upload 和孤立资源清理。
+
 ## 题目关键词 → 服务
 
 | 需求 | 首先想到 | 还要检查 |
@@ -41,6 +45,7 @@ notionUpdated: "2026-07-29T08:13:04.387Z"
 | EFS 冷文件 | EFS Lifecycle | IA/Archive 访问费 |
 
 ## 总成本判断
+
 不要只看每 GB 存储价格，还要计算：
 - 请求费。
 - 数据检索费。
@@ -51,7 +56,9 @@ notionUpdated: "2026-07-29T08:13:04.387Z"
 - 旧版本、删除标记和快照。
 - 未完成 Multipart Upload。
 - NAT Gateway 路径；能否改用 VPC Endpoint。
+
 ## 成本优化动作
+
 - 用 Lifecycle 自动转层并清理旧版本。
 - 访问模式未知时使用 Intelligent-Tiering。
 - 定期清理未附加 EBS Volume 与不再需要的 Snapshot。
@@ -60,16 +67,22 @@ notionUpdated: "2026-07-29T08:13:04.387Z"
 - 使用 S3 / Glacier 替代昂贵文件系统保存长期归档。
 - Storage Gateway 将本地冷数据与备份迁入云存储。
 - 用标签、Budget、Cost Explorer 跟踪存储成本。
+
 ## 高频陷阱
+
 - Glacier Instant Retrieval 不是慢恢复。
 - One Zone-IA 便宜，但故障范围更大。
 - Intelligent-Tiering 不是所有小对象都必然划算。
 - Lifecycle 删除规则错误可能造成不可逆数据丢失。
 - 快照是增量的，但所有保留数据块仍会计费。
 - 自动扩容不代表自动成本优化。
+
 ## 考前一分钟复习
+
 **先看访问频率和恢复时间，再算检索、期限、请求、传输与副本成本。**
+
 ## Database 成本补充
+
 - RDS / Aurora 按实际负载选择实例规格、存储和副本数量，清理不再需要的快照。
 - 读流量大时比较 Read Replica、Aurora Reader 与 ElastiCache 的总成本，不要只看单项价格。
 - DynamoDB 访问不可预测时可评估 On-Demand；流量稳定时比较 Provisioned + Auto Scaling。

@@ -1,6 +1,6 @@
 ---
 title: "Amazon ECR"
-fullName: "Amazon ECR"
+fullName: "Amazon Elastic Container Registry"
 description: "A managed container image registry integrated with ECS, EKS, IAM, scanning, and deployment workflows."
 service: "Amazon ECR"
 category: compute
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-81a9-9648-e0852b505c1e
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a99648e0852b505c1e
 notionUpdated: "2026-07-23T07:17:27.703Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon ECR |
+| Full name | Amazon Elastic Container Registry |
+| Chinese name | 容器镜像仓库 |
+| Japanese name | Amazon ECR（コンテナレジストリ） |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | ECS / EKS / Fargate |
 
 ## In one sentence
 

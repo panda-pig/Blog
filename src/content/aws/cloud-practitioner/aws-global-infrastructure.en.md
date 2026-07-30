@@ -1,13 +1,13 @@
 ---
 title: "AWS Global Infrastructure"
-fullName: "AWS 全球基础设施"
+fullName: "AWS Global Infrastructure"
 description: "AWS organizes infrastructure into Regions, isolated Availability Zones, and edge locations close to users."
 service: "Cloud Foundations"
 category: cloud-practitioner
 kind: topic
 lang: en
 topicKey: "AWS 全球基础设施"
-frequency: "Study summary"
+frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["cloud-practitioner","AWS 全球基础设施","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-8137-955b-d4d5d4decdc2
 notionUrl: https://app.notion.com/p/3a6964dcce4a8137955bd4d5d4decdc2
 notionUpdated: "2026-07-23T08:25:16.386Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Global Infrastructure |
+| Full name | AWS Global Infrastructure |
+| Chinese name | AWS 全球基础设施 |
+| Japanese name | AWS グローバルインフラストラクチャ |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | Region / Availability Zone / Edge Location / Multi-AZ / Multi-Region |
 
 ## In one sentence
 

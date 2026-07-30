@@ -1,19 +1,30 @@
 ---
 title: AWS Storage Gateway
-fullName: AWS Storage Gateway
+fullName: "AWS Storage Gateway"
 description: オンプレミスアプリにファイル、ブロック、テープのインターフェイスを提供し、AWS ストレージへ接続するハイブリッドサービス。
 service: Storage Gateway
 category: storage
 kind: service
 lang: ja
-frequency: "試験頻度 ★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Storage, Hybrid Cloud, Migration]
 notionId: 3a6964dc-ce4a-8139-8147-f4863a4da4ca
 notionUrl: https://app.notion.com/p/3a6964dcce4a81398147f4863a4da4ca
 notionUpdated: "2026-07-29T04:42:42.955Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | AWS Storage Gateway |
+| 正式名称 | AWS Storage Gateway |
+| 中国語名 | 混合云存储网关 |
+| 日本語名 | ハイブリッドストレージゲートウェイ |
+| 出題頻度 | ⭐⭐⭐⭐ |
+| 混同しやすいもの | DataSync / S3 on Outposts / Direct Connect / AWS DRS |
 
 ## 一言で理解
 

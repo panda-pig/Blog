@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3a6964dcce4a81f78e00fab34be32604
 notionUpdated: "2026-07-27T05:40:30.847Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS PrivateLink & VPC Endpoints |
+| Full name | AWS PrivateLink & VPC Endpoints |
+| Chinese name | 私有服务访问 |
+| Japanese name | プライベートサービス接続 |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | NAT Gateway / VPC Peering / Site-to-Site VPN |
+
 ## In one sentence
 
 > Private access to AWS or endpoint services from a VPC without traversing the public internet.

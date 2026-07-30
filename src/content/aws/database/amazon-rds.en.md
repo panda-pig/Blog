@@ -1,19 +1,30 @@
 ---
 title: Amazon RDS
-fullName: Amazon Relational Database Service
+fullName: "Amazon Relational Database Service"
 description: Managed relational engines such as MySQL and PostgreSQL with reduced infrastructure, patching, and backup operations.
 service: RDS
 category: database
 kind: service
 lang: en
-frequency: "Exam frequency ★★★★★"
+frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-29
+updated: 2026-07-30
 tags: [Database, Relational, SAA-C03]
 notionId: 3a6964dc-ce4a-81a2-9c3d-ebba79e9df68
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a29c3debba79e9df68
 notionUpdated: "2026-07-29T08:10:20.563Z"
 ---
+
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | Amazon RDS |
+| Full name | Amazon Relational Database Service |
+| Chinese name | 托管关系型数据库服务 |
+| Japanese name | マネージドリレーショナルデータベース |
+| Exam frequency | ⭐⭐⭐⭐⭐ |
+| Often confused with | Aurora / DynamoDB / EC2 自建数据库 |
 
 ## In one sentence
 

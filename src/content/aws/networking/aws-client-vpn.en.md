@@ -16,6 +16,17 @@ notionUrl: https://app.notion.com/p/3aa964dcce4a81118599fcdb921fc955
 notionUpdated: "2026-07-27T05:39:15.106Z"
 ---
 
+## Basic Information
+
+| Field | Details |
+| --- | --- |
+| English name | AWS Client VPN |
+| Full name | AWS Client VPN |
+| Chinese name | 客户端 VPN / 远程访问 VPN |
+| Japanese name | AWS Client VPN |
+| Exam frequency | ⭐⭐⭐⭐ |
+| Often confused with | Site-to-Site VPN / Direct Connect |
+
 ## In one sentence
 
 > A managed remote-access VPN that connects individual users securely to AWS and connected networks.

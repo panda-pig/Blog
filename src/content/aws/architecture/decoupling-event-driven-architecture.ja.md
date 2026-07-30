@@ -7,7 +7,7 @@ category: architecture
 kind: topic
 lang: ja
 topicKey: "解耦与事件驱动"
-frequency: "試験頻度 ★★★★★"
+frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["Architecture","Decoupling","Event-Driven"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-815b-9c05-e0a6657c8bc5
 notionUrl: https://app.notion.com/p/3a6964dcce4a815b9c05e0a6657c8bc5
 notionUpdated: "2026-07-30T01:08:05.518Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Decoupling & Event-Driven Architecture |
+| 正式名称 | Decoupling & Event-Driven Architecture |
+| 中国語名 | 解耦与事件驱动架构 |
+| 日本語名 | 疎結合とイベント駆動 |
+| 出題頻度 | ⭐⭐⭐⭐⭐ |
+| 混同しやすいもの | 同步调用 |
 
 ## 一言で理解
 

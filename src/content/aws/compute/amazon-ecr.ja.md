@@ -1,13 +1,13 @@
 ---
 title: "Amazon ECR"
-fullName: "Amazon ECR"
+fullName: "Amazon Elastic Container Registry"
 description: "ECS、EKS、IAM、スキャン、デプロイ工程と連携するマネージドコンテナイメージレジストリ。"
 service: "Amazon ECR"
 category: compute
 kind: service
 lang: ja
 topicKey: "Amazon ECR"
-frequency: "試験頻度 ⭐⭐⭐⭐"
+frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-30
 updated: 2026-07-30
 tags: ["compute","Amazon ECR","AWS"]
@@ -15,6 +15,17 @@ notionId: 3a6964dc-ce4a-81a9-9648-e0852b505c1e
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a99648e0852b505c1e
 notionUpdated: "2026-07-23T07:17:27.703Z"
 ---
+
+## 基本情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 英語名 | Amazon ECR |
+| 正式名称 | Amazon Elastic Container Registry |
+| 中国語名 | 容器镜像仓库 |
+| 日本語名 | Amazon ECR（コンテナレジストリ） |
+| 出題頻度 | ⭐⭐⭐⭐ |
+| 混同しやすいもの | ECS / EKS / Fargate |
 
 ## 一言で理解
 
