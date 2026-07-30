@@ -136,6 +136,111 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"aws": {
+"architecture/cost-optimization.en.md": {
+	id: "architecture/cost-optimization.en.md";
+  slug: "architecture/cost-optimizationen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/cost-optimization.ja.md": {
+	id: "architecture/cost-optimization.ja.md";
+  slug: "architecture/cost-optimizationja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/cost-optimization.md": {
+	id: "architecture/cost-optimization.md";
+  slug: "architecture/cost-optimization";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/decoupling-event-driven-architecture.en.md": {
+	id: "architecture/decoupling-event-driven-architecture.en.md";
+  slug: "architecture/decoupling-event-driven-architectureen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/decoupling-event-driven-architecture.ja.md": {
+	id: "architecture/decoupling-event-driven-architecture.ja.md";
+  slug: "architecture/decoupling-event-driven-architectureja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/decoupling-event-driven-architecture.md": {
+	id: "architecture/decoupling-event-driven-architecture.md";
+  slug: "architecture/decoupling-event-driven-architecture";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/scalability-elasticity.en.md": {
+	id: "architecture/scalability-elasticity.en.md";
+  slug: "architecture/scalability-elasticityen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/scalability-elasticity.ja.md": {
+	id: "architecture/scalability-elasticity.ja.md";
+  slug: "architecture/scalability-elasticityja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/scalability-elasticity.md": {
+	id: "architecture/scalability-elasticity.md";
+  slug: "architecture/scalability-elasticity";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/serverless-architecture.en.md": {
+	id: "architecture/serverless-architecture.en.md";
+  slug: "architecture/serverless-architectureen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/serverless-architecture.ja.md": {
+	id: "architecture/serverless-architecture.ja.md";
+  slug: "architecture/serverless-architectureja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/serverless-architecture.md": {
+	id: "architecture/serverless-architecture.md";
+  slug: "architecture/serverless-architecture";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/cloud-concepts.en.md": {
+	id: "cloud-practitioner/cloud-concepts.en.md";
+  slug: "cloud-practitioner/cloud-conceptsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/cloud-concepts.ja.md": {
+	id: "cloud-practitioner/cloud-concepts.ja.md";
+  slug: "cloud-practitioner/cloud-conceptsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/cloud-concepts.md": {
+	id: "cloud-practitioner/cloud-concepts.md";
+  slug: "cloud-practitioner/cloud-concepts";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "compare/security-group-vs-nacl.en.md": {
 	id: "compare/security-group-vs-nacl.en.md";
   slug: "compare/security-group-vs-naclen";
@@ -174,6 +279,27 @@ declare module 'astro:content' {
 "compute/amazon-ec2.md": {
 	id: "compute/amazon-ec2.md";
   slug: "compute/amazon-ec2";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/ec2-auto-scaling.en.md": {
+	id: "compute/ec2-auto-scaling.en.md";
+  slug: "compute/ec2-auto-scalingen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/ec2-auto-scaling.ja.md": {
+	id: "compute/ec2-auto-scaling.ja.md";
+  slug: "compute/ec2-auto-scalingja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/ec2-auto-scaling.md": {
+	id: "compute/ec2-auto-scaling.md";
+  slug: "compute/ec2-auto-scaling";
   body: string;
   collection: "aws";
   data: any

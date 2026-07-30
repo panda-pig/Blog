@@ -44,7 +44,12 @@ const description = domainCopy?.description || special!.description;
 const icon = domain?.icon || special!.icon;
 const tone = domain?.tone || special!.tone;
 const topics = awsDomainTopics[category || ''] || [];
-const noteByTitle = new Map(categoryNotes.map((note: any) => [note.frontmatter.title, note]));
+const noteByTitle = new Map(
+  categoryNotes.map((note: any) => [
+    note.frontmatter.topicKey || note.frontmatter.title,
+    note,
+  ]),
+);
 ---
 
 <BaseLayout

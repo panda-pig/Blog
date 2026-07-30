@@ -235,10 +235,15 @@ export const awsDomainTopics: Record<string, string[]> = {
   architecture: [
     'AWS Well-Architected Framework',
     'Multi-AZ 与 Multi-Region',
-    '高可用与弹性',
+    'High Availability & Fault Tolerance',
+    '可扩展性与弹性',
     '灾难恢复策略',
     '解耦与事件驱动',
+    '无服务器架构',
     '成本优化',
+  ],
+  'cloud-practitioner': [
+    '云概念',
   ],
   compare: [
     'EC2 vs Lambda vs Fargate',
