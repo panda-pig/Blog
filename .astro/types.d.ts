@@ -136,6 +136,27 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"aws": {
+"architecture/aws-shared-responsibility-model.en.md": {
+	id: "architecture/aws-shared-responsibility-model.en.md";
+  slug: "architecture/aws-shared-responsibility-modelen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/aws-shared-responsibility-model.ja.md": {
+	id: "architecture/aws-shared-responsibility-model.ja.md";
+  slug: "architecture/aws-shared-responsibility-modelja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/aws-shared-responsibility-model.md": {
+	id: "architecture/aws-shared-responsibility-model.md";
+  slug: "architecture/aws-shared-responsibility-model";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "architecture/cost-optimization.en.md": {
 	id: "architecture/cost-optimization.en.md";
   slug: "architecture/cost-optimizationen";
@@ -174,6 +195,48 @@ declare module 'astro:content' {
 "architecture/decoupling-event-driven-architecture.md": {
 	id: "architecture/decoupling-event-driven-architecture.md";
   slug: "architecture/decoupling-event-driven-architecture";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/disaster-recovery-strategies.en.md": {
+	id: "architecture/disaster-recovery-strategies.en.md";
+  slug: "architecture/disaster-recovery-strategiesen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/disaster-recovery-strategies.ja.md": {
+	id: "architecture/disaster-recovery-strategies.ja.md";
+  slug: "architecture/disaster-recovery-strategiesja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/disaster-recovery-strategies.md": {
+	id: "architecture/disaster-recovery-strategies.md";
+  slug: "architecture/disaster-recovery-strategies";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/high-availability-fault-tolerance.en.md": {
+	id: "architecture/high-availability-fault-tolerance.en.md";
+  slug: "architecture/high-availability-fault-toleranceen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/high-availability-fault-tolerance.ja.md": {
+	id: "architecture/high-availability-fault-tolerance.ja.md";
+  slug: "architecture/high-availability-fault-toleranceja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/high-availability-fault-tolerance.md": {
+	id: "architecture/high-availability-fault-tolerance.md";
+  slug: "architecture/high-availability-fault-tolerance";
   body: string;
   collection: "aws";
   data: any
@@ -220,6 +283,69 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"cloud-practitioner/aws-global-infrastructure.en.md": {
+	id: "cloud-practitioner/aws-global-infrastructure.en.md";
+  slug: "cloud-practitioner/aws-global-infrastructureen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/aws-global-infrastructure.ja.md": {
+	id: "cloud-practitioner/aws-global-infrastructure.ja.md";
+  slug: "cloud-practitioner/aws-global-infrastructureja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/aws-global-infrastructure.md": {
+	id: "cloud-practitioner/aws-global-infrastructure.md";
+  slug: "cloud-practitioner/aws-global-infrastructure";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/client-server-model.en.md": {
+	id: "cloud-practitioner/client-server-model.en.md";
+  slug: "cloud-practitioner/client-server-modelen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/client-server-model.ja.md": {
+	id: "cloud-practitioner/client-server-model.ja.md";
+  slug: "cloud-practitioner/client-server-modelja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/client-server-model.md": {
+	id: "cloud-practitioner/client-server-model.md";
+  slug: "cloud-practitioner/client-server-model";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/cloud-computing-and-aws-benefits.en.md": {
+	id: "cloud-practitioner/cloud-computing-and-aws-benefits.en.md";
+  slug: "cloud-practitioner/cloud-computing-and-aws-benefitsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/cloud-computing-and-aws-benefits.ja.md": {
+	id: "cloud-practitioner/cloud-computing-and-aws-benefits.ja.md";
+  slug: "cloud-practitioner/cloud-computing-and-aws-benefitsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/cloud-computing-and-aws-benefits.md": {
+	id: "cloud-practitioner/cloud-computing-and-aws-benefits.md";
+  slug: "cloud-practitioner/cloud-computing-and-aws-benefits";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "cloud-practitioner/cloud-concepts.en.md": {
 	id: "cloud-practitioner/cloud-concepts.en.md";
   slug: "cloud-practitioner/cloud-conceptsen";
@@ -237,6 +363,321 @@ declare module 'astro:content' {
 "cloud-practitioner/cloud-concepts.md": {
 	id: "cloud-practitioner/cloud-concepts.md";
   slug: "cloud-practitioner/cloud-concepts";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/cloud-service-models-and-management-responsibility.en.md": {
+	id: "cloud-practitioner/cloud-service-models-and-management-responsibility.en.md";
+  slug: "cloud-practitioner/cloud-service-models-and-management-responsibilityen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/cloud-service-models-and-management-responsibility.ja.md": {
+	id: "cloud-practitioner/cloud-service-models-and-management-responsibility.ja.md";
+  slug: "cloud-practitioner/cloud-service-models-and-management-responsibilityja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/cloud-service-models-and-management-responsibility.md": {
+	id: "cloud-practitioner/cloud-service-models-and-management-responsibility.md";
+  slug: "cloud-practitioner/cloud-service-models-and-management-responsibility";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/alb-vs-nlb-vs-gwlb.en.md": {
+	id: "compare/alb-vs-nlb-vs-gwlb.en.md";
+  slug: "compare/alb-vs-nlb-vs-gwlben";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/alb-vs-nlb-vs-gwlb.ja.md": {
+	id: "compare/alb-vs-nlb-vs-gwlb.ja.md";
+  slug: "compare/alb-vs-nlb-vs-gwlbja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/alb-vs-nlb-vs-gwlb.md": {
+	id: "compare/alb-vs-nlb-vs-gwlb.md";
+  slug: "compare/alb-vs-nlb-vs-gwlb";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/client-vpn-vs-site-to-site-vpn-vs-privatelink-vs-direct-connect.en.md": {
+	id: "compare/client-vpn-vs-site-to-site-vpn-vs-privatelink-vs-direct-connect.en.md";
+  slug: "compare/client-vpn-vs-site-to-site-vpn-vs-privatelink-vs-direct-connecten";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/client-vpn-vs-site-to-site-vpn-vs-privatelink-vs-direct-connect.ja.md": {
+	id: "compare/client-vpn-vs-site-to-site-vpn-vs-privatelink-vs-direct-connect.ja.md";
+  slug: "compare/client-vpn-vs-site-to-site-vpn-vs-privatelink-vs-direct-connectja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/client-vpn-vs-site-to-site-vpn-vs-privatelink-vs-direct-connect.md": {
+	id: "compare/client-vpn-vs-site-to-site-vpn-vs-privatelink-vs-direct-connect.md";
+  slug: "compare/client-vpn-vs-site-to-site-vpn-vs-privatelink-vs-direct-connect";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/cloudwatch-vs-cloudtrail-vs-config.en.md": {
+	id: "compare/cloudwatch-vs-cloudtrail-vs-config.en.md";
+  slug: "compare/cloudwatch-vs-cloudtrail-vs-configen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/cloudwatch-vs-cloudtrail-vs-config.ja.md": {
+	id: "compare/cloudwatch-vs-cloudtrail-vs-config.ja.md";
+  slug: "compare/cloudwatch-vs-cloudtrail-vs-configja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/cloudwatch-vs-cloudtrail-vs-config.md": {
+	id: "compare/cloudwatch-vs-cloudtrail-vs-config.md";
+  slug: "compare/cloudwatch-vs-cloudtrail-vs-config";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/console-vs-cli-vs-sdk-vs-cloudformation.en.md": {
+	id: "compare/console-vs-cli-vs-sdk-vs-cloudformation.en.md";
+  slug: "compare/console-vs-cli-vs-sdk-vs-cloudformationen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/console-vs-cli-vs-sdk-vs-cloudformation.ja.md": {
+	id: "compare/console-vs-cli-vs-sdk-vs-cloudformation.ja.md";
+  slug: "compare/console-vs-cli-vs-sdk-vs-cloudformationja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/console-vs-cli-vs-sdk-vs-cloudformation.md": {
+	id: "compare/console-vs-cli-vs-sdk-vs-cloudformation.md";
+  slug: "compare/console-vs-cli-vs-sdk-vs-cloudformation";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/dax-vs-elasticache-vs-read-replica-vs-cloudfront.en.md": {
+	id: "compare/dax-vs-elasticache-vs-read-replica-vs-cloudfront.en.md";
+  slug: "compare/dax-vs-elasticache-vs-read-replica-vs-cloudfronten";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/dax-vs-elasticache-vs-read-replica-vs-cloudfront.ja.md": {
+	id: "compare/dax-vs-elasticache-vs-read-replica-vs-cloudfront.ja.md";
+  slug: "compare/dax-vs-elasticache-vs-read-replica-vs-cloudfrontja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/dax-vs-elasticache-vs-read-replica-vs-cloudfront.md": {
+	id: "compare/dax-vs-elasticache-vs-read-replica-vs-cloudfront.md";
+  slug: "compare/dax-vs-elasticache-vs-read-replica-vs-cloudfront";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/dms-vs-sct.en.md": {
+	id: "compare/dms-vs-sct.en.md";
+  slug: "compare/dms-vs-scten";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/dms-vs-sct.ja.md": {
+	id: "compare/dms-vs-sct.ja.md";
+  slug: "compare/dms-vs-sctja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/dms-vs-sct.md": {
+	id: "compare/dms-vs-sct.md";
+  slug: "compare/dms-vs-sct";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/drs-vs-aws-backup-vs-ebs-snapshot-vs-storage-gateway.en.md": {
+	id: "compare/drs-vs-aws-backup-vs-ebs-snapshot-vs-storage-gateway.en.md";
+  slug: "compare/drs-vs-aws-backup-vs-ebs-snapshot-vs-storage-gatewayen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/drs-vs-aws-backup-vs-ebs-snapshot-vs-storage-gateway.ja.md": {
+	id: "compare/drs-vs-aws-backup-vs-ebs-snapshot-vs-storage-gateway.ja.md";
+  slug: "compare/drs-vs-aws-backup-vs-ebs-snapshot-vs-storage-gatewayja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/drs-vs-aws-backup-vs-ebs-snapshot-vs-storage-gateway.md": {
+	id: "compare/drs-vs-aws-backup-vs-ebs-snapshot-vs-storage-gateway.md";
+  slug: "compare/drs-vs-aws-backup-vs-ebs-snapshot-vs-storage-gateway";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/ec2-vs-lambda-vs-fargate.en.md": {
+	id: "compare/ec2-vs-lambda-vs-fargate.en.md";
+  slug: "compare/ec2-vs-lambda-vs-fargateen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/ec2-vs-lambda-vs-fargate.ja.md": {
+	id: "compare/ec2-vs-lambda-vs-fargate.ja.md";
+  slug: "compare/ec2-vs-lambda-vs-fargateja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/ec2-vs-lambda-vs-fargate.md": {
+	id: "compare/ec2-vs-lambda-vs-fargate.md";
+  slug: "compare/ec2-vs-lambda-vs-fargate";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/ecs-vs-eks.en.md": {
+	id: "compare/ecs-vs-eks.en.md";
+  slug: "compare/ecs-vs-eksen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/ecs-vs-eks.ja.md": {
+	id: "compare/ecs-vs-eks.ja.md";
+  slug: "compare/ecs-vs-eksja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/ecs-vs-eks.md": {
+	id: "compare/ecs-vs-eks.md";
+  slug: "compare/ecs-vs-eks";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/multi-az-vs-multi-region.en.md": {
+	id: "compare/multi-az-vs-multi-region.en.md";
+  slug: "compare/multi-az-vs-multi-regionen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/multi-az-vs-multi-region.ja.md": {
+	id: "compare/multi-az-vs-multi-region.ja.md";
+  slug: "compare/multi-az-vs-multi-regionja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/multi-az-vs-multi-region.md": {
+	id: "compare/multi-az-vs-multi-region.md";
+  slug: "compare/multi-az-vs-multi-region";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/rds-vs-aurora-vs-dynamodb.en.md": {
+	id: "compare/rds-vs-aurora-vs-dynamodb.en.md";
+  slug: "compare/rds-vs-aurora-vs-dynamodben";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/rds-vs-aurora-vs-dynamodb.ja.md": {
+	id: "compare/rds-vs-aurora-vs-dynamodb.ja.md";
+  slug: "compare/rds-vs-aurora-vs-dynamodbja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/rds-vs-aurora-vs-dynamodb.md": {
+	id: "compare/rds-vs-aurora-vs-dynamodb.md";
+  slug: "compare/rds-vs-aurora-vs-dynamodb";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/rds-vs-dynamodb-vs-documentdb-vs-neptune.en.md": {
+	id: "compare/rds-vs-dynamodb-vs-documentdb-vs-neptune.en.md";
+  slug: "compare/rds-vs-dynamodb-vs-documentdb-vs-neptuneen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/rds-vs-dynamodb-vs-documentdb-vs-neptune.ja.md": {
+	id: "compare/rds-vs-dynamodb-vs-documentdb-vs-neptune.ja.md";
+  slug: "compare/rds-vs-dynamodb-vs-documentdb-vs-neptuneja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/rds-vs-dynamodb-vs-documentdb-vs-neptune.md": {
+	id: "compare/rds-vs-dynamodb-vs-documentdb-vs-neptune.md";
+  slug: "compare/rds-vs-dynamodb-vs-documentdb-vs-neptune";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/route-53-vs-cloudfront-vs-global-accelerator.en.md": {
+	id: "compare/route-53-vs-cloudfront-vs-global-accelerator.en.md";
+  slug: "compare/route-53-vs-cloudfront-vs-global-acceleratoren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/route-53-vs-cloudfront-vs-global-accelerator.ja.md": {
+	id: "compare/route-53-vs-cloudfront-vs-global-accelerator.ja.md";
+  slug: "compare/route-53-vs-cloudfront-vs-global-acceleratorja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/route-53-vs-cloudfront-vs-global-accelerator.md": {
+	id: "compare/route-53-vs-cloudfront-vs-global-accelerator.md";
+  slug: "compare/route-53-vs-cloudfront-vs-global-accelerator";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/s3-vs-ebs-vs-efs-vs-fsx.en.md": {
+	id: "compare/s3-vs-ebs-vs-efs-vs-fsx.en.md";
+  slug: "compare/s3-vs-ebs-vs-efs-vs-fsxen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/s3-vs-ebs-vs-efs-vs-fsx.ja.md": {
+	id: "compare/s3-vs-ebs-vs-efs-vs-fsx.ja.md";
+  slug: "compare/s3-vs-ebs-vs-efs-vs-fsxja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/s3-vs-ebs-vs-efs-vs-fsx.md": {
+	id: "compare/s3-vs-ebs-vs-efs-vs-fsx.md";
+  slug: "compare/s3-vs-ebs-vs-efs-vs-fsx";
   body: string;
   collection: "aws";
   data: any
@@ -262,6 +703,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"compare/sqs-vs-sns-vs-eventbridge.en.md": {
+	id: "compare/sqs-vs-sns-vs-eventbridge.en.md";
+  slug: "compare/sqs-vs-sns-vs-eventbridgeen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/sqs-vs-sns-vs-eventbridge.ja.md": {
+	id: "compare/sqs-vs-sns-vs-eventbridge.ja.md";
+  slug: "compare/sqs-vs-sns-vs-eventbridgeja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/sqs-vs-sns-vs-eventbridge.md": {
+	id: "compare/sqs-vs-sns-vs-eventbridge.md";
+  slug: "compare/sqs-vs-sns-vs-eventbridge";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "compute/amazon-ec2.en.md": {
 	id: "compute/amazon-ec2.en.md";
   slug: "compute/amazon-ec2en";
@@ -283,6 +745,216 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"compute/amazon-ecr.en.md": {
+	id: "compute/amazon-ecr.en.md";
+  slug: "compute/amazon-ecren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-ecr.ja.md": {
+	id: "compute/amazon-ecr.ja.md";
+  slug: "compute/amazon-ecrja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-ecr.md": {
+	id: "compute/amazon-ecr.md";
+  slug: "compute/amazon-ecr";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-ecs.en.md": {
+	id: "compute/amazon-ecs.en.md";
+  slug: "compute/amazon-ecsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-ecs.ja.md": {
+	id: "compute/amazon-ecs.ja.md";
+  slug: "compute/amazon-ecsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-ecs.md": {
+	id: "compute/amazon-ecs.md";
+  slug: "compute/amazon-ecs";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-eks.en.md": {
+	id: "compute/amazon-eks.en.md";
+  slug: "compute/amazon-eksen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-eks.ja.md": {
+	id: "compute/amazon-eks.ja.md";
+  slug: "compute/amazon-eksja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-eks.md": {
+	id: "compute/amazon-eks.md";
+  slug: "compute/amazon-eks";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-lightsail.en.md": {
+	id: "compute/amazon-lightsail.en.md";
+  slug: "compute/amazon-lightsailen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-lightsail.ja.md": {
+	id: "compute/amazon-lightsail.ja.md";
+  slug: "compute/amazon-lightsailja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/amazon-lightsail.md": {
+	id: "compute/amazon-lightsail.md";
+  slug: "compute/amazon-lightsail";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-batch.en.md": {
+	id: "compute/aws-batch.en.md";
+  slug: "compute/aws-batchen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-batch.ja.md": {
+	id: "compute/aws-batch.ja.md";
+  slug: "compute/aws-batchja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-batch.md": {
+	id: "compute/aws-batch.md";
+  slug: "compute/aws-batch";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-elastic-beanstalk.en.md": {
+	id: "compute/aws-elastic-beanstalk.en.md";
+  slug: "compute/aws-elastic-beanstalken";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-elastic-beanstalk.ja.md": {
+	id: "compute/aws-elastic-beanstalk.ja.md";
+  slug: "compute/aws-elastic-beanstalkja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-elastic-beanstalk.md": {
+	id: "compute/aws-elastic-beanstalk.md";
+  slug: "compute/aws-elastic-beanstalk";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-fargate.en.md": {
+	id: "compute/aws-fargate.en.md";
+  slug: "compute/aws-fargateen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-fargate.ja.md": {
+	id: "compute/aws-fargate.ja.md";
+  slug: "compute/aws-fargateja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-fargate.md": {
+	id: "compute/aws-fargate.md";
+  slug: "compute/aws-fargate";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-lambda.en.md": {
+	id: "compute/aws-lambda.en.md";
+  slug: "compute/aws-lambdaen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-lambda.ja.md": {
+	id: "compute/aws-lambda.ja.md";
+  slug: "compute/aws-lambdaja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-lambda.md": {
+	id: "compute/aws-lambda.md";
+  slug: "compute/aws-lambda";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-outposts.en.md": {
+	id: "compute/aws-outposts.en.md";
+  slug: "compute/aws-outpostsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-outposts.ja.md": {
+	id: "compute/aws-outposts.ja.md";
+  slug: "compute/aws-outpostsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/aws-outposts.md": {
+	id: "compute/aws-outposts.md";
+  slug: "compute/aws-outposts";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/container-vs-virtual-machine.en.md": {
+	id: "compute/container-vs-virtual-machine.en.md";
+  slug: "compute/container-vs-virtual-machineen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/container-vs-virtual-machine.ja.md": {
+	id: "compute/container-vs-virtual-machine.ja.md";
+  slug: "compute/container-vs-virtual-machineja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/container-vs-virtual-machine.md": {
+	id: "compute/container-vs-virtual-machine.md";
+  slug: "compute/container-vs-virtual-machine";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "compute/ec2-auto-scaling.en.md": {
 	id: "compute/ec2-auto-scaling.en.md";
   slug: "compute/ec2-auto-scalingen";
@@ -300,6 +972,27 @@ declare module 'astro:content' {
 "compute/ec2-auto-scaling.md": {
 	id: "compute/ec2-auto-scaling.md";
   slug: "compute/ec2-auto-scaling";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/ec2-instance-types-and-pricing-models.en.md": {
+	id: "compute/ec2-instance-types-and-pricing-models.en.md";
+  slug: "compute/ec2-instance-types-and-pricing-modelsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/ec2-instance-types-and-pricing-models.ja.md": {
+	id: "compute/ec2-instance-types-and-pricing-models.ja.md";
+  slug: "compute/ec2-instance-types-and-pricing-modelsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compute/ec2-instance-types-and-pricing-models.md": {
+	id: "compute/ec2-instance-types-and-pricing-models.md";
+  slug: "compute/ec2-instance-types-and-pricing-models";
   body: string;
   collection: "aws";
   data: any
@@ -472,6 +1165,237 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"devops/aws-cloudformation.en.md": {
+	id: "devops/aws-cloudformation.en.md";
+  slug: "devops/aws-cloudformationen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-cloudformation.ja.md": {
+	id: "devops/aws-cloudformation.ja.md";
+  slug: "devops/aws-cloudformationja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-cloudformation.md": {
+	id: "devops/aws-cloudformation.md";
+  slug: "devops/aws-cloudformation";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-resource-access-console-cli-sdk-iac.en.md": {
+	id: "devops/aws-resource-access-console-cli-sdk-iac.en.md";
+  slug: "devops/aws-resource-access-console-cli-sdk-iacen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-resource-access-console-cli-sdk-iac.ja.md": {
+	id: "devops/aws-resource-access-console-cli-sdk-iac.ja.md";
+  slug: "devops/aws-resource-access-console-cli-sdk-iacja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-resource-access-console-cli-sdk-iac.md": {
+	id: "devops/aws-resource-access-console-cli-sdk-iac.md";
+  slug: "devops/aws-resource-access-console-cli-sdk-iac";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-api-gateway.en.md": {
+	id: "messaging/amazon-api-gateway.en.md";
+  slug: "messaging/amazon-api-gatewayen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-api-gateway.ja.md": {
+	id: "messaging/amazon-api-gateway.ja.md";
+  slug: "messaging/amazon-api-gatewayja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-api-gateway.md": {
+	id: "messaging/amazon-api-gateway.md";
+  slug: "messaging/amazon-api-gateway";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-eventbridge.en.md": {
+	id: "messaging/amazon-eventbridge.en.md";
+  slug: "messaging/amazon-eventbridgeen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-eventbridge.ja.md": {
+	id: "messaging/amazon-eventbridge.ja.md";
+  slug: "messaging/amazon-eventbridgeja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-eventbridge.md": {
+	id: "messaging/amazon-eventbridge.md";
+  slug: "messaging/amazon-eventbridge";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-sns.en.md": {
+	id: "messaging/amazon-sns.en.md";
+  slug: "messaging/amazon-snsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-sns.ja.md": {
+	id: "messaging/amazon-sns.ja.md";
+  slug: "messaging/amazon-snsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-sns.md": {
+	id: "messaging/amazon-sns.md";
+  slug: "messaging/amazon-sns";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-sqs.en.md": {
+	id: "messaging/amazon-sqs.en.md";
+  slug: "messaging/amazon-sqsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-sqs.ja.md": {
+	id: "messaging/amazon-sqs.ja.md";
+  slug: "messaging/amazon-sqsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-sqs.md": {
+	id: "messaging/amazon-sqs.md";
+  slug: "messaging/amazon-sqs";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-database-migration-service.en.md": {
+	id: "migration/aws-database-migration-service.en.md";
+  slug: "migration/aws-database-migration-serviceen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-database-migration-service.ja.md": {
+	id: "migration/aws-database-migration-service.ja.md";
+  slug: "migration/aws-database-migration-serviceja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-database-migration-service.md": {
+	id: "migration/aws-database-migration-service.md";
+  slug: "migration/aws-database-migration-service";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-datasync.en.md": {
+	id: "migration/aws-datasync.en.md";
+  slug: "migration/aws-datasyncen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-datasync.ja.md": {
+	id: "migration/aws-datasync.ja.md";
+  slug: "migration/aws-datasyncja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-datasync.md": {
+	id: "migration/aws-datasync.md";
+  slug: "migration/aws-datasync";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/amazon-cloudwatch.en.md": {
+	id: "monitoring/amazon-cloudwatch.en.md";
+  slug: "monitoring/amazon-cloudwatchen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/amazon-cloudwatch.ja.md": {
+	id: "monitoring/amazon-cloudwatch.ja.md";
+  slug: "monitoring/amazon-cloudwatchja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/amazon-cloudwatch.md": {
+	id: "monitoring/amazon-cloudwatch.md";
+  slug: "monitoring/amazon-cloudwatch";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/amazon-cloudfront.en.md": {
+	id: "networking/amazon-cloudfront.en.md";
+  slug: "networking/amazon-cloudfronten";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/amazon-cloudfront.ja.md": {
+	id: "networking/amazon-cloudfront.ja.md";
+  slug: "networking/amazon-cloudfrontja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/amazon-cloudfront.md": {
+	id: "networking/amazon-cloudfront.md";
+  slug: "networking/amazon-cloudfront";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/amazon-route-53.en.md": {
+	id: "networking/amazon-route-53.en.md";
+  slug: "networking/amazon-route-53en";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/amazon-route-53.ja.md": {
+	id: "networking/amazon-route-53.ja.md";
+  slug: "networking/amazon-route-53ja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/amazon-route-53.md": {
+	id: "networking/amazon-route-53.md";
+  slug: "networking/amazon-route-53";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "networking/amazon-vpc.en.md": {
 	id: "networking/amazon-vpc.en.md";
   slug: "networking/amazon-vpcen";
@@ -489,6 +1413,153 @@ declare module 'astro:content' {
 "networking/amazon-vpc.md": {
 	id: "networking/amazon-vpc.md";
   slug: "networking/amazon-vpc";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-client-vpn.en.md": {
+	id: "networking/aws-client-vpn.en.md";
+  slug: "networking/aws-client-vpnen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-client-vpn.ja.md": {
+	id: "networking/aws-client-vpn.ja.md";
+  slug: "networking/aws-client-vpnja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-client-vpn.md": {
+	id: "networking/aws-client-vpn.md";
+  slug: "networking/aws-client-vpn";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-direct-connect.en.md": {
+	id: "networking/aws-direct-connect.en.md";
+  slug: "networking/aws-direct-connecten";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-direct-connect.ja.md": {
+	id: "networking/aws-direct-connect.ja.md";
+  slug: "networking/aws-direct-connectja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-direct-connect.md": {
+	id: "networking/aws-direct-connect.md";
+  slug: "networking/aws-direct-connect";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-global-accelerator.en.md": {
+	id: "networking/aws-global-accelerator.en.md";
+  slug: "networking/aws-global-acceleratoren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-global-accelerator.ja.md": {
+	id: "networking/aws-global-accelerator.ja.md";
+  slug: "networking/aws-global-acceleratorja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-global-accelerator.md": {
+	id: "networking/aws-global-accelerator.md";
+  slug: "networking/aws-global-accelerator";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-privatelink-and-vpc-endpoints.en.md": {
+	id: "networking/aws-privatelink-and-vpc-endpoints.en.md";
+  slug: "networking/aws-privatelink-and-vpc-endpointsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-privatelink-and-vpc-endpoints.ja.md": {
+	id: "networking/aws-privatelink-and-vpc-endpoints.ja.md";
+  slug: "networking/aws-privatelink-and-vpc-endpointsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-privatelink-and-vpc-endpoints.md": {
+	id: "networking/aws-privatelink-and-vpc-endpoints.md";
+  slug: "networking/aws-privatelink-and-vpc-endpoints";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-site-to-site-vpn.en.md": {
+	id: "networking/aws-site-to-site-vpn.en.md";
+  slug: "networking/aws-site-to-site-vpnen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-site-to-site-vpn.ja.md": {
+	id: "networking/aws-site-to-site-vpn.ja.md";
+  slug: "networking/aws-site-to-site-vpnja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-site-to-site-vpn.md": {
+	id: "networking/aws-site-to-site-vpn.md";
+  slug: "networking/aws-site-to-site-vpn";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-transit-gateway.en.md": {
+	id: "networking/aws-transit-gateway.en.md";
+  slug: "networking/aws-transit-gatewayen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-transit-gateway.ja.md": {
+	id: "networking/aws-transit-gateway.ja.md";
+  slug: "networking/aws-transit-gatewayja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/aws-transit-gateway.md": {
+	id: "networking/aws-transit-gateway.md";
+  slug: "networking/aws-transit-gateway";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/elastic-load-balancing.en.md": {
+	id: "networking/elastic-load-balancing.en.md";
+  slug: "networking/elastic-load-balancingen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/elastic-load-balancing.ja.md": {
+	id: "networking/elastic-load-balancing.ja.md";
+  slug: "networking/elastic-load-balancingja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/elastic-load-balancing.md": {
+	id: "networking/elastic-load-balancing.md";
+  slug: "networking/elastic-load-balancing";
   body: string;
   collection: "aws";
   data: any
@@ -594,6 +1665,111 @@ declare module 'astro:content' {
 "networking/subnet-route-table.md": {
 	id: "networking/subnet-route-table.md";
   slug: "networking/subnet-route-table";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/vpn-components-vgw-customer-gateway.en.md": {
+	id: "networking/vpn-components-vgw-customer-gateway.en.md";
+  slug: "networking/vpn-components-vgw-customer-gatewayen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/vpn-components-vgw-customer-gateway.ja.md": {
+	id: "networking/vpn-components-vgw-customer-gateway.ja.md";
+  slug: "networking/vpn-components-vgw-customer-gatewayja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"networking/vpn-components-vgw-customer-gateway.md": {
+	id: "networking/vpn-components-vgw-customer-gateway.md";
+  slug: "networking/vpn-components-vgw-customer-gateway";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/design-cost-optimized-architectures.en.md": {
+	id: "saa-c03/design-cost-optimized-architectures.en.md";
+  slug: "saa-c03/design-cost-optimized-architecturesen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/design-cost-optimized-architectures.ja.md": {
+	id: "saa-c03/design-cost-optimized-architectures.ja.md";
+  slug: "saa-c03/design-cost-optimized-architecturesja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/design-cost-optimized-architectures.md": {
+	id: "saa-c03/design-cost-optimized-architectures.md";
+  slug: "saa-c03/design-cost-optimized-architectures";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/design-high-performing-architectures.en.md": {
+	id: "saa-c03/design-high-performing-architectures.en.md";
+  slug: "saa-c03/design-high-performing-architecturesen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/design-high-performing-architectures.ja.md": {
+	id: "saa-c03/design-high-performing-architectures.ja.md";
+  slug: "saa-c03/design-high-performing-architecturesja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/design-high-performing-architectures.md": {
+	id: "saa-c03/design-high-performing-architectures.md";
+  slug: "saa-c03/design-high-performing-architectures";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/design-resilient-architectures.en.md": {
+	id: "saa-c03/design-resilient-architectures.en.md";
+  slug: "saa-c03/design-resilient-architecturesen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/design-resilient-architectures.ja.md": {
+	id: "saa-c03/design-resilient-architectures.ja.md";
+  slug: "saa-c03/design-resilient-architecturesja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/design-resilient-architectures.md": {
+	id: "saa-c03/design-resilient-architectures.md";
+  slug: "saa-c03/design-resilient-architectures";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/design-secure-architectures.en.md": {
+	id: "saa-c03/design-secure-architectures.en.md";
+  slug: "saa-c03/design-secure-architecturesen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/design-secure-architectures.ja.md": {
+	id: "saa-c03/design-secure-architectures.ja.md";
+  slug: "saa-c03/design-secure-architecturesja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/design-secure-architectures.md": {
+	id: "saa-c03/design-secure-architectures.md";
+  slug: "saa-c03/design-secure-architectures";
   body: string;
   collection: "aws";
   data: any

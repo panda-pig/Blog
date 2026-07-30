@@ -1,0 +1,31 @@
+---
+title: "Amazon CloudFront"
+fullName: "Amazon CloudFront"
+description: "Edge Location にコンテンツをキャッシュし、低遅延配信とプライベートオリジン保護を行う CDN。"
+service: "Amazon CloudFront"
+category: networking
+kind: service
+lang: ja
+topicKey: "Amazon CloudFront"
+frequency: "試験頻度 ⭐⭐⭐⭐⭐"
+date: 2026-07-30
+updated: 2026-07-30
+tags: ["networking","Amazon CloudFront","AWS"]
+notionId: 3a6964dc-ce4a-8198-a643-ce1e9079cf9c
+notionUrl: https://app.notion.com/p/3a6964dcce4a8198a643ce1e9079cf9c
+notionUpdated: "2026-07-27T05:41:41.677Z"
+---
+
+## 一言で理解
+
+> Edge Location にコンテンツをキャッシュし、低遅延配信とプライベートオリジン保護を行う CDN。
+
+## 要点
+
+- ユーザーに近い場所からキャッシュ済みコンテンツを配信して遅延を減らす。
+- Origin には S3、ALB、EC2、API Gateway、独自 HTTP サーバーを指定できる。
+- S3 Bucket を公開せず、Origin Access Control でプライベートに保つ。
+
+## 試験での判断
+
+> Cache Policy、TTL、Invalidation、HTTPS、WAF、Signed URL / Cookie が主要設計点。

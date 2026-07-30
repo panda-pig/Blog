@@ -191,6 +191,7 @@ export const awsDomainTopics: Record<string, string[]> = {
     'AWS Step Functions',
     'Amazon MQ',
     'Amazon Kinesis',
+    'Amazon API Gateway',
   ],
   monitoring: [
     'Amazon CloudWatch',
@@ -202,6 +203,7 @@ export const awsDomainTopics: Record<string, string[]> = {
   ],
   devops: [
     'AWS CloudFormation',
+    'AWS 资源交互方式｜Console・CLI・SDK・IaC',
     'AWS CodePipeline',
     'AWS CodeBuild',
     'AWS CodeDeploy',
@@ -234,6 +236,7 @@ export const awsDomainTopics: Record<string, string[]> = {
   ],
   architecture: [
     'AWS Well-Architected Framework',
+    'AWS 责任共担模型',
     'Multi-AZ 与 Multi-Region',
     'High Availability & Fault Tolerance',
     '可扩展性与弹性',
@@ -241,9 +244,6 @@ export const awsDomainTopics: Record<string, string[]> = {
     '解耦与事件驱动',
     '无服务器架构',
     '成本优化',
-  ],
-  'cloud-practitioner': [
-    '云概念',
   ],
   compare: [
     'EC2 vs Lambda vs Fargate',
@@ -255,7 +255,26 @@ export const awsDomainTopics: Record<string, string[]> = {
     'RDS vs Aurora vs DynamoDB',
     'ALB vs NLB vs GWLB',
     'Route 53 vs CloudFront vs Global Accelerator',
+    'DMS vs SCT',
     'Multi-AZ vs Multi-Region',
+    'Console vs CLI vs SDK vs CloudFormation',
+    'Client VPN vs Site-to-Site VPN vs PrivateLink vs Direct Connect',
+    'DRS vs AWS Backup vs EBS Snapshot vs Storage Gateway',
+    'DAX vs ElastiCache vs Read Replica vs CloudFront',
+    'RDS vs DynamoDB vs DocumentDB vs Neptune',
+  ],
+  'saa-c03': [
+    '安全架构设计',
+    '弹性架构设计',
+    '高性能架构设计',
+    '成本优化架构设计',
+  ],
+  'cloud-practitioner': [
+    '客户端—服务器模型',
+    '云计算与 AWS 的优势',
+    'AWS 全球基础设施',
+    '云服务模型与管理责任',
+    '云概念',
   ],
 };
 

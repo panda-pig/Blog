@@ -1,0 +1,31 @@
+---
+title: "AWS Direct Connect"
+fullName: "AWS Direct Connect"
+description: "オンプレミスと AWS を専用線で接続し、帯域と遅延を安定させるプライベート接続サービス。"
+service: "AWS Direct Connect"
+category: networking
+kind: service
+lang: ja
+topicKey: "AWS Direct Connect"
+frequency: "試験頻度 ⭐⭐⭐⭐"
+date: 2026-07-30
+updated: 2026-07-30
+tags: ["networking","AWS Direct Connect","AWS"]
+notionId: 3a6964dc-ce4a-812a-be47-ffe0e7198291
+notionUrl: https://app.notion.com/p/3a6964dcce4a812abe47ffe0e7198291
+notionUpdated: "2026-07-27T05:40:26.161Z"
+---
+
+## 一言で理解
+
+> オンプレミスと AWS を専用線で接続し、帯域と遅延を安定させるプライベート接続サービス。
+
+## 要点
+
+- Public Internet 経路を避けるが、標準では暗号化されない。
+- 設計に応じて Virtual Interface から Public AWS Services、VPC、Transit Gateway へ接続する。
+- 本番では拠点、装置、回線の冗長化を検討する。
+
+## 試験での判断
+
+> 暗号化された Internet 接続は VPN、専用線上の暗号化には Direct Connect と VPN の併用を検討する。
