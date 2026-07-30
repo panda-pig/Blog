@@ -97,7 +97,11 @@ const relatedNotes = notes
             {awsDomains.map((item) => {
               const copy = getAwsDomainCopy(item, lang);
               return (
-              <a class={item.slug === category ? 'active' : ''} href={`${prefix}/aws/${item.slug}`}>
+              <a
+                class={item.slug === category ? 'active' : ''}
+                href={`${prefix}/aws/${item.slug}`}
+                aria-current={item.slug === category ? 'page' : undefined}
+              >
                 <AwsDomainIcon name={item.icon} size="sm" />
                 <span>{copy.localName}</span>
               </a>
@@ -107,7 +111,11 @@ const relatedNotes = notes
             {awsSpecials.map((item) => {
               const copy = getAwsSpecialCopy(item, lang);
               return (
-              <a class={item.slug === category ? 'active' : ''} href={`${prefix}/aws/${item.slug}`}>
+              <a
+                class={item.slug === category ? 'active' : ''}
+                href={`${prefix}/aws/${item.slug}`}
+                aria-current={item.slug === category ? 'page' : undefined}
+              >
                 <AwsDomainIcon name={item.icon} size="sm" />
                 <span>{copy.title}</span>
               </a>
@@ -275,8 +283,10 @@ const relatedNotes = notes
     color: var(--text);
     font-family: 'Noto Serif', serif;
     font-size: clamp(2rem, 5vw, 3.45rem);
+    font-weight: 700;
     line-height: 1.13;
     letter-spacing: -0.035em;
+    overflow-wrap: anywhere;
     text-wrap: balance;
   }
 
@@ -325,6 +335,7 @@ const relatedNotes = notes
     color: var(--text-secondary);
     font-family: 'Noto Serif', serif;
     font-size: clamp(1.05rem, 1.5vw, 1.16rem);
+    font-weight: 500;
     line-height: 1.85;
     text-align: center;
     text-wrap: balance;
@@ -346,10 +357,11 @@ const relatedNotes = notes
 
   .aws-note-domains > p {
     margin: 0 0 0.65rem;
-    color: var(--text-muted);
-    font-size: 0.68rem;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    line-height: 1.4;
+    letter-spacing: 0.045em;
   }
 
   .aws-note-domains nav,
@@ -365,14 +377,17 @@ const relatedNotes = notes
   }
 
   .aws-note-domains a {
+    position: relative;
     display: flex;
     gap: 0.55rem;
     align-items: center;
-    min-height: 2.15rem;
-    padding: 0.35rem 0.45rem;
+    min-height: 2.35rem;
+    padding: 0.42rem 0.5rem;
     border-radius: 0.6rem;
-    color: var(--text-muted);
-    font-size: 0.74rem;
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.35;
     text-decoration: none;
   }
 
@@ -383,8 +398,19 @@ const relatedNotes = notes
 
   .aws-note-domains a.active {
     color: var(--category-color);
-    background: var(--category-soft);
+    background: color-mix(in srgb, var(--category-color) 12%, var(--surface));
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--category-color) 18%, transparent);
     font-weight: 700;
+  }
+
+  .aws-note-domains a.active::after {
+    content: '';
+    width: 0.32rem;
+    height: 0.32rem;
+    margin-left: auto;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: currentColor;
   }
 
   .aws-note-article {
@@ -404,7 +430,10 @@ const relatedNotes = notes
     border-bottom: 1px solid var(--border);
     font-family: 'Noto Serif', serif;
     font-size: 1.45rem;
+    font-weight: 700;
     letter-spacing: -0.02em;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
   }
 
   .aws-note-prose :global(h2::before) {
@@ -421,6 +450,10 @@ const relatedNotes = notes
   .aws-note-prose :global(h3) {
     margin-top: 2rem;
     font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
   }
 
   .aws-note-prose :global(p),
@@ -430,6 +463,13 @@ const relatedNotes = notes
 
   .aws-note-prose :global(strong) {
     color: var(--text);
+    font-weight: 700;
+    box-shadow: inset 0 -0.28em 0 var(--category-soft);
+  }
+
+  .aws-note-prose :global(li::marker) {
+    color: var(--category-color);
+    font-weight: 700;
   }
 
   .aws-note-prose :global(blockquote) {
@@ -482,6 +522,12 @@ const relatedNotes = notes
   .aws-note-prose :global(th:last-child),
   .aws-note-prose :global(td:last-child) {
     border-right: 0;
+  }
+
+  .aws-note-prose :global(tbody td:first-child) {
+    color: var(--text);
+    background: color-mix(in srgb, var(--category-soft) 55%, var(--surface));
+    font-weight: 600;
   }
 
   .aws-note-prose :global(code) {
@@ -538,6 +584,7 @@ const relatedNotes = notes
 
   .aws-related strong {
     font-size: 0.82rem;
+    font-weight: 700;
   }
 
   .aws-related a > span {
@@ -556,6 +603,12 @@ const relatedNotes = notes
 
   .aws-note-layout :global(nav.sticky a) {
     font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .aws-note-layout :global(nav.sticky p) {
+    color: var(--text-secondary) !important;
+    font-weight: 700;
   }
 
   @media (max-width: 1100px) {
