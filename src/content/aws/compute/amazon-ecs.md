@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:19:31.706Z"
 | --- | --- |
 | 英文 | Amazon ECS |
 | 全称 | Amazon Elastic Container Service |
-| 中文 | AWS 原生容器编排服务 |
-| 日文 | Amazon ECS |
+| 中文释义 | AWS 原生容器编排服务 |
+| 日文释义 | AWS ネイティブのコンテナオーケストレーションサービス |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | EKS / Fargate / ECR |
 

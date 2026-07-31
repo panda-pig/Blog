@@ -22,8 +22,8 @@ notionUpdated: "2026-07-30T01:08:05.518Z"
 | --- | --- |
 | English name | Decoupling & Event-Driven Architecture |
 | Full name | Decoupling & Event-Driven Architecture |
-| Chinese name | 解耦与事件驱动架构 |
-| Japanese name | 疎結合とイベント駆動 |
+| Chinese description | 解耦与事件驱动架构 |
+| Japanese description | 疎結合とイベント駆動 |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | 同步调用 |
 

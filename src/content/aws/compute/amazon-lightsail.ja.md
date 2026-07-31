@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:21:11.202Z"
 | --- | --- |
 | 英語名 | Amazon Lightsail |
 | 正式名称 | Amazon Lightsail |
-| 中国語名 | 简化型云服务器 / VPS |
-| 日本語名 | Amazon Lightsail |
+| 中国語の説明 | 简化型云服务器 / VPS |
+| 日本語の説明 | シンプルなクラウドサーバー／VPS |
 | 出題頻度 | ⭐⭐ |
 | 混同しやすいもの | Amazon EC2 |
 

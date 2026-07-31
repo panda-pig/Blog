@@ -25,8 +25,8 @@ notionUpdated: "2026-07-23T07:19:19.291Z"
 | --- | --- |
 | 英文 | Amazon EC2 |
 | 全称 | Amazon Elastic Compute Cloud |
-| 中文 | 弹性云服务器 / 虚拟机 |
-| 日文 | Amazon EC2（仮想サーバー） |
+| 中文释义 | 弹性云服务器 / 虚拟机 |
+| 日文释义 | 仮想サーバーサービス |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | Lambda / Fargate / Lightsail |
 

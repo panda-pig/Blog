@@ -193,7 +193,7 @@ export const awsDomainTopics: Record<string, string[]> = {
     'Amazon EventBridge',
     'AWS Step Functions',
     'Amazon MQ',
-    'Amazon Kinesis',
+    'Amazon Kinesis Data Streams & Data Firehose',
     'Amazon API Gateway',
   ],
   monitoring: [
@@ -228,6 +228,7 @@ export const awsDomainTopics: Record<string, string[]> = {
     'Amazon EMR',
     'Amazon QuickSight',
     'Amazon OpenSearch Service',
+    '数据分析核心概念',
   ],
   'ai-ml': [
     'Amazon Bedrock',
@@ -235,7 +236,16 @@ export const awsDomainTopics: Record<string, string[]> = {
     'Amazon Rekognition',
     'Amazon Comprehend',
     'Amazon Lex',
+    'Amazon Polly',
     'Amazon Transcribe',
+    'Amazon Translate',
+    'Amazon Textract',
+    'Amazon Kendra',
+    'AI / ML 核心概念',
+    'AWS AI/ML 三层技术栈',
+    'Amazon Personalize',
+    'Amazon SageMaker JumpStart',
+    'Amazon Q Business & Developer',
   ],
   architecture: [
     'AWS Well-Architected Framework',
@@ -247,6 +257,7 @@ export const awsDomainTopics: Record<string, string[]> = {
     '解耦与事件驱动',
     '无服务器架构',
     '成本优化',
+    '数据分析与机器学习管道',
   ],
   compare: [
     'EC2 vs Lambda vs Fargate',
@@ -265,12 +276,18 @@ export const awsDomainTopics: Record<string, string[]> = {
     'DRS vs AWS Backup vs EBS Snapshot vs Storage Gateway',
     'DAX vs ElastiCache vs Read Replica vs CloudFront',
     'RDS vs DynamoDB vs DocumentDB vs Neptune',
+    'Kinesis Data Streams vs Amazon Data Firehose',
+    'Amazon Athena vs Amazon Redshift',
+    'AWS AI Services vs SageMaker vs ML Infrastructure',
+    'SageMaker JumpStart vs Bedrock vs Amazon Q',
   ],
   'saa-c03': [
     '安全架构设计',
     '弹性架构设计',
     '高性能架构设计',
     '成本优化架构设计',
+    '场景题关键词索引',
+    'SAA 考前速查',
   ],
   'cloud-practitioner': [
     '客户端—服务器模型',
@@ -278,6 +295,8 @@ export const awsDomainTopics: Record<string, string[]> = {
     'AWS 全球基础设施',
     '云服务模型与管理责任',
     '云概念',
+    'Cloud Technology & Services',
+    'CLF 考前速查',
   ],
 };
 

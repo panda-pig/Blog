@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T08:10:36.664Z"
 | --- | --- |
 | English name | Amazon Neptune |
 | Full name | Amazon Neptune |
-| Chinese name | 托管图数据库 |
-| Japanese name | マネージドグラフデータベース |
+| Chinese description | 托管图数据库 |
+| Japanese description | マネージドグラフデータベース |
 | Exam frequency | ⭐⭐ |
 | Often confused with | RDS / DocumentDB |
 

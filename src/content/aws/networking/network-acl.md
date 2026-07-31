@@ -25,8 +25,8 @@ notionUpdated: "2026-07-27T05:38:24.209Z"
 | --- | --- |
 | 英文 | Network ACL |
 | 全称 | Network Access Control List |
-| 中文 | 网络访问控制列表 |
-| 日文 | ネットワーク ACL |
+| 中文释义 | 网络访问控制列表 |
+| 日文释义 | ネットワーク ACL |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | Security Group |
 

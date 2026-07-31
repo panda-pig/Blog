@@ -9,14 +9,12 @@ lang: zh
 topicKey: "成本优化架构设计"
 frequency: "阶段性总结"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["saa-c03","Design Cost-Optimized Architectures","AWS"]
 notionId: 3a6964dc-ce4a-815e-9274-d95d1853835b
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9274d95d1853835b
 notionUpdated: "2026-07-29T08:13:04.387Z"
 ---
-
-> 已加入“06 存储”的 SAA 成本优化考点。
 
 ## 必须掌握
 

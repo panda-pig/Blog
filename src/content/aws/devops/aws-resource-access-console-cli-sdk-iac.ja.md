@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T08:23:50.016Z"
 | --- | --- |
 | 英語名 | AWS Resource Interaction Methods |
 | 正式名称 | AWS Management Console / AWS CLI / AWS SDK / Infrastructure as Code |
-| 中国語名 | AWS 资源交互方式 |
-| 日本語名 | AWS リソース操作方法 |
+| 中国語の説明 | AWS 资源交互方式 |
+| 日本語の説明 | AWS リソース操作方法 |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | Console / CLI / SDK / CloudFormation |
 

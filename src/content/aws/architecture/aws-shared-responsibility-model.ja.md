@@ -22,8 +22,8 @@ notionUpdated: "2026-07-29T08:13:08.678Z"
 | --- | --- |
 | 英語名 | AWS Shared Responsibility Model |
 | 正式名称 | AWS Shared Responsibility Model |
-| 中国語名 | AWS 责任共担模型 |
-| 日本語名 | AWS 責任共有モデル |
+| 中国語の説明 | AWS 责任共担模型 |
+| 日本語の説明 | AWS 責任共有モデル |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | AWS 的责任 / 客户的责任 / 托管服务边界 |
 

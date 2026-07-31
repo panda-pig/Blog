@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T08:10:24.915Z"
 | --- | --- |
 | English name | Amazon Aurora |
 | Full name | Amazon Aurora |
-| Chinese name | AWS 云原生关系型数据库 |
-| Japanese name | クラウドネイティブリレーショナルデータベース |
+| Chinese description | AWS 云原生关系型数据库 |
+| Japanese description | クラウドネイティブリレーショナルデータベース |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | RDS 常规引擎 / DynamoDB |
 

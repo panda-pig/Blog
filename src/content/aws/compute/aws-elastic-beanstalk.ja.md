@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:19:39.104Z"
 | --- | --- |
 | 英語名 | AWS Elastic Beanstalk |
 | 正式名称 | AWS Elastic Beanstalk |
-| 中国語名 | 应用部署与托管服务 |
-| 日本語名 | AWS Elastic Beanstalk |
+| 中国語の説明 | 应用部署与托管服务 |
+| 日本語の説明 | アプリケーションのデプロイ・管理サービス |
 | 出題頻度 | ⭐⭐⭐ |
 | 混同しやすいもの | CloudFormation / ECS / Lambda |
 

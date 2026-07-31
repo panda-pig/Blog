@@ -22,8 +22,8 @@ notionUpdated: "2026-07-27T05:40:26.161Z"
 | --- | --- |
 | 英文 | AWS Direct Connect |
 | 全称 | AWS Direct Connect |
-| 中文 | AWS 专线连接 |
-| 日文 | 専用線接続 |
+| 中文释义 | AWS 专线连接 |
+| 日文释义 | 専用線接続 |
 | 考试频率 | ⭐⭐⭐⭐ |
 | 易混淆 | Site-to-Site VPN / Global Accelerator |
 

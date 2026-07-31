@@ -21,8 +21,8 @@ notionUpdated: "2026-07-27T05:37:29.758Z"
 | --- | --- |
 | English name | NAT Gateway |
 | Full name | Network Address Translation Gateway |
-| Chinese name | 网络地址转换网关 |
-| Japanese name | NAT ゲートウェイ |
+| Chinese description | 网络地址转换网关 |
+| Japanese description | NAT ゲートウェイ |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | Internet Gateway / NAT Instance / VPC Endpoint |
 

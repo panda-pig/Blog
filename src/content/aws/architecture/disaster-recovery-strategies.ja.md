@@ -22,8 +22,8 @@ notionUpdated: "2026-07-29T04:44:08.420Z"
 | --- | --- |
 | 英語名 | Disaster Recovery Strategies |
 | 正式名称 | Disaster Recovery Strategies |
-| 中国語名 | 灾难恢复策略 |
-| 日本語名 | 災害復旧戦略 |
+| 中国語の説明 | 灾难恢复策略 |
+| 日本語の説明 | 災害復旧戦略 |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | Backup / Multi-AZ / AWS DRS |
 

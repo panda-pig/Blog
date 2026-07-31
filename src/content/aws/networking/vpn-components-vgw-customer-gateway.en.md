@@ -22,8 +22,8 @@ notionUpdated: "2026-07-27T05:39:15.128Z"
 | --- | --- |
 | English name | VPN Components |
 | Full name | Virtual Private Gateway & Customer Gateway |
-| Chinese name | VPN 组件：虚拟私有网关与客户网关 |
-| Japanese name | VPN コンポーネント（仮想プライベートゲートウェイ／カスタマーゲートウェイ） |
+| Chinese description | VPN 组件：虚拟私有网关与客户网关 |
+| Japanese description | VPN コンポーネント（仮想プライベートゲートウェイ／カスタマーゲートウェイ） |
 | Exam frequency | ⭐⭐⭐⭐ |
 | Often confused with | Client VPN / Site-to-Site VPN / Direct Connect |
 

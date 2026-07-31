@@ -22,8 +22,8 @@ notionUpdated: "2026-07-30"
 | --- | --- |
 | English name | S3 Security & Management |
 | Full name | Amazon S3 Security and Management |
-| Chinese name | S3 安全与管理 |
-| Japanese name | S3 セキュリティと管理 |
+| Chinese description | S3 安全与管理 |
+| Japanese description | S3 セキュリティと管理 |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | IAM Policy / Bucket Policy / ACL / Block Public Access |
 

@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T04:42:42.955Z"
 | --- | --- |
 | 英文 | AWS Storage Gateway |
 | 全称 | AWS Storage Gateway |
-| 中文 | 混合云存储网关 |
-| 日文 | ハイブリッドストレージゲートウェイ |
+| 中文释义 | 混合云存储网关 |
+| 日文释义 | ハイブリッドストレージゲートウェイ |
 | 考试频率 | ⭐⭐⭐⭐ |
 | 易混淆 | DataSync / S3 on Outposts / Direct Connect / AWS DRS |
 

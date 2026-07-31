@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:21:13.694Z"
 | --- | --- |
 | 英語名 | AWS Outposts |
 | 正式名称 | AWS Outposts |
-| 中国語名 | AWS 本地部署的托管基础设施 |
-| 日本語名 | AWS Outposts |
+| 中国語の説明 | AWS 本地部署的托管基础设施 |
+| 日本語の説明 | オンプレミス向け AWS マネージドインフラストラクチャ |
 | 出題頻度 | ⭐⭐⭐ |
 | 混同しやすいもの | Local Zones / Wavelength / On-premises |
 

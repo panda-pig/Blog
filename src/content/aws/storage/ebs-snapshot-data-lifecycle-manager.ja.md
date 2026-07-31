@@ -22,8 +22,8 @@ notionUpdated: "2026-07-30"
 | --- | --- |
 | 英語名 | EBS Snapshot & Data Lifecycle Manager |
 | 正式名称 | Amazon EBS Snapshot and Amazon Data Lifecycle Manager |
-| 中国語名 | EBS 快照与生命周期管理 |
-| 日本語名 | EBS スナップショットと Data Lifecycle Manager |
+| 中国語の説明 | EBS 快照与生命周期管理 |
+| 日本語の説明 | EBS スナップショットと Data Lifecycle Manager |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | EBS Snapshot / DLM / AWS Backup / AMI |
 

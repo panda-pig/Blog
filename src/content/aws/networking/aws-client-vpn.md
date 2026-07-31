@@ -22,8 +22,8 @@ notionUpdated: "2026-07-27T05:39:15.106Z"
 | --- | --- |
 | 英文 | AWS Client VPN |
 | 全称 | AWS Client VPN |
-| 中文 | 客户端 VPN / 远程访问 VPN |
-| 日文 | AWS Client VPN |
+| 中文释义 | 客户端 VPN / 远程访问 VPN |
+| 日文释义 | クライアント VPN／リモートアクセス VPN |
 | 考试频率 | ⭐⭐⭐⭐ |
 | 易混淆 | Site-to-Site VPN / Direct Connect |
 

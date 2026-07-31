@@ -21,8 +21,8 @@ notionUpdated: "2026-07-27T05:37:27.928Z"
 | --- | --- |
 | English name | Internet Gateway (IGW) |
 | Full name | Internet Gateway |
-| Chinese name | 互联网网关 |
-| Japanese name | インターネットゲートウェイ |
+| Chinese description | 互联网网关 |
+| Japanese description | インターネットゲートウェイ |
 | Exam frequency | ⭐⭐⭐⭐ |
 | Often confused with | NAT Gateway / Virtual Private Gateway |
 

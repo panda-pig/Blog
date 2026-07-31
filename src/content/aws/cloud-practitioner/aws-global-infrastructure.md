@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T08:25:16.386Z"
 | --- | --- |
 | 英文 | AWS Global Infrastructure |
 | 全称 | AWS Global Infrastructure |
-| 中文 | AWS 全球基础设施 |
-| 日文 | AWS グローバルインフラストラクチャ |
+| 中文释义 | AWS 全球基础设施 |
+| 日文释义 | AWS グローバルインフラストラクチャ |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | Region / Availability Zone / Edge Location / Multi-AZ / Multi-Region |
 

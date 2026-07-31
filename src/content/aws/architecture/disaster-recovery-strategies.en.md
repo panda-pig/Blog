@@ -22,8 +22,8 @@ notionUpdated: "2026-07-29T04:44:08.420Z"
 | --- | --- |
 | English name | Disaster Recovery Strategies |
 | Full name | Disaster Recovery Strategies |
-| Chinese name | 灾难恢复策略 |
-| Japanese name | 災害復旧戦略 |
+| Chinese description | 灾难恢复策略 |
+| Japanese description | 災害復旧戦略 |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | Backup / Multi-AZ / AWS DRS |
 

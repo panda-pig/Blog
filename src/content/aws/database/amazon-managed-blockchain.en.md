@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T08:07:57.567Z"
 | --- | --- |
 | English name | Amazon Managed Blockchain (AMB) |
 | Full name | Amazon Managed Blockchain (AMB) |
-| Chinese name | 托管区块链服务 |
-| Japanese name | マネージドブロックチェーンサービス |
+| Chinese description | 托管区块链服务 |
+| Japanese description | マネージドブロックチェーンサービス |
 | Exam frequency | ⭐ |
 | Often confused with | 普通数据库 / 审计日志 / QLDB |
 

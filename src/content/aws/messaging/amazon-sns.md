@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:21:18.671Z"
 | --- | --- |
 | 英文 | Amazon SNS |
 | 全称 | Amazon Simple Notification Service |
-| 中文 | 通知与发布订阅服务 |
-| 日文 | Amazon SNS（通知サービス） |
+| 中文释义 | 通知与发布订阅服务 |
+| 日文释义 | 通知・パブリッシュ／サブスクライブサービス |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | SQS / EventBridge |
 

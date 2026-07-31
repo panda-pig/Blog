@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:21:20.695Z"
 | --- | --- |
 | English name | Amazon EventBridge |
 | Full name | Amazon EventBridge |
-| Chinese name | 事件总线与事件路由服务 |
-| Japanese name | Amazon EventBridge（イベントバス） |
+| Chinese description | 事件总线与事件路由服务 |
+| Japanese description | イベントバス・イベントルーティングサービス |
 | Exam frequency | ⭐⭐⭐⭐ |
 | Often confused with | SNS / SQS / CloudWatch Events |
 

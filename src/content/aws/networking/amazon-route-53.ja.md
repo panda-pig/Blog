@@ -22,8 +22,8 @@ notionUpdated: "2026-07-27T05:41:39.696Z"
 | --- | --- |
 | 英語名 | Amazon Route 53 |
 | 正式名称 | Amazon Route 53 |
-| 中国語名 | DNS、域名注册、健康检查与流量路由 |
-| 日本語名 | Amazon Route 53 |
+| 中国語の説明 | DNS、域名注册、健康检查与流量路由 |
+| 日本語の説明 | DNS・ドメイン登録・ヘルスチェック・トラフィックルーティングサービス |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | CloudFront / ELB / Global Accelerator |
 

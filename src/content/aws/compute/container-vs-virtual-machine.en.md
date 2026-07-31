@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:17:27.722Z"
 | --- | --- |
 | English name | Container vs Virtual Machine |
 | Full name | Container and Virtual Machine |
-| Chinese name | 容器与虚拟机 |
-| Japanese name | コンテナと仮想マシン |
+| Chinese description | 容器与虚拟机 |
+| Japanese description | コンテナと仮想マシン |
 | Exam frequency | ⭐⭐⭐⭐ |
 | Often confused with | Container Image / ECS / EKS / Fargate |
 

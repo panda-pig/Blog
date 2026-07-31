@@ -22,8 +22,8 @@ notionUpdated: "2026-07-29T08:11:48.200Z"
 | --- | --- |
 | 英語名 | Cloud Service Models & Management Responsibility |
 | 正式名称 | Cloud Service Models and Management Responsibility |
-| 中国語名 | 云服务模型与管理责任 |
-| 日本語名 | クラウドサービスモデルと管理責任 |
+| 中国語の説明 | 云服务模型与管理责任 |
+| 日本語の説明 | クラウドサービスモデルと管理責任 |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | IaaS / PaaS / FaaS / Managed / Serverless |
 

@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:21:25.507Z"
 | --- | --- |
 | 英文 | Amazon CloudWatch |
 | 全称 | Amazon CloudWatch |
-| 中文 | 监控、日志与可观测性服务 |
-| 日文 | Amazon CloudWatch |
+| 中文释义 | 监控、日志与可观测性服务 |
+| 日文释义 | モニタリング・ログ・オブザーバビリティサービス |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | CloudTrail / AWS Config |
 

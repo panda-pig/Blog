@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T08:10:32.594Z"
 | --- | --- |
 | 英文 | Amazon ElastiCache |
 | 全称 | Amazon ElastiCache |
-| 中文 | 托管内存缓存 |
-| 日文 | マネージドインメモリキャッシュ |
+| 中文释义 | 托管内存缓存 |
+| 日文释义 | マネージドインメモリキャッシュ |
 | 考试频率 | ⭐⭐⭐⭐ |
 | 易混淆 | DAX / RDS Read Replica / CloudFront / MemoryDB |
 

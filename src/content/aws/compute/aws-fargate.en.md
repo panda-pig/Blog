@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:19:36.892Z"
 | --- | --- |
 | English name | AWS Fargate |
 | Full name | AWS Fargate |
-| Chinese name | 无服务器容器计算引擎 |
-| Japanese name | AWS Fargate（ファーゲート） |
+| Chinese description | 无服务器容器计算引擎 |
+| Japanese description | サーバーレスコンテナコンピューティングエンジン |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | ECS / EKS / Lambda / EC2 |
 

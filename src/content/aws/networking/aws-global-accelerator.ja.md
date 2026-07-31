@@ -22,8 +22,8 @@ notionUpdated: "2026-07-27T05:41:43.430Z"
 | --- | --- |
 | 英語名 | AWS Global Accelerator |
 | 正式名称 | AWS Global Accelerator |
-| 中国語名 | 全球网络加速 |
-| 日本語名 | グローバルアクセラレーター |
+| 中国語の説明 | 全球网络加速 |
+| 日本語の説明 | グローバルアクセラレーター |
 | 出題頻度 | ⭐⭐⭐⭐ |
 | 混同しやすいもの | CloudFront / Route 53 / Direct Connect |
 

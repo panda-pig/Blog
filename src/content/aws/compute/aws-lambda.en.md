@@ -22,8 +22,8 @@ notionUpdated: "2026-07-30T01:52:42.048Z"
 | --- | --- |
 | English name | AWS Lambda |
 | Full name | AWS Lambda |
-| Chinese name | 无服务器函数计算 |
-| Japanese name | AWS Lambda（ラムダ） |
+| Chinese description | 无服务器函数计算 |
+| Japanese description | サーバーレス関数実行サービス |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | EC2 / Fargate / AWS Batch |
 

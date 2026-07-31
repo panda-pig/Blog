@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:19:41.307Z"
 | --- | --- |
 | English name | AWS Batch |
 | Full name | AWS Batch |
-| Chinese name | 托管批处理计算服务 |
-| Japanese name | AWS Batch（バッチ処理） |
+| Chinese description | 托管批处理计算服务 |
+| Japanese description | マネージドバッチ処理サービス |
 | Exam frequency | ⭐⭐⭐ |
 | Often confused with | Lambda / Step Functions / ECS |
 

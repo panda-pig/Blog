@@ -22,8 +22,8 @@ notionUpdated: "2026-07-30"
 | --- | --- |
 | English name | S3 Storage Classes & Lifecycle |
 | Full name | Amazon S3 Storage Classes and Lifecycle Management |
-| Chinese name | S3 存储类别与生命周期 |
-| Japanese name | S3 ストレージクラスとライフサイクル |
+| Chinese description | S3 存储类别与生命周期 |
+| Japanese description | S3 ストレージクラスとライフサイクル |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | Standard / IA / Glacier / Intelligent-Tiering |
 

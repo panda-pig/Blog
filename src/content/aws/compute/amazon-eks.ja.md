@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:19:34.220Z"
 | --- | --- |
 | 英語名 | Amazon EKS |
 | 正式名称 | Amazon Elastic Kubernetes Service |
-| 中国語名 | 托管 Kubernetes 服务 |
-| 日本語名 | Amazon EKS |
+| 中国語の説明 | 托管 Kubernetes 服务 |
+| 日本語の説明 | マネージド Kubernetes サービス |
 | 出題頻度 | ⭐⭐⭐⭐ |
 | 混同しやすいもの | ECS / Kubernetes / Fargate |
 

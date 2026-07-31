@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T04:41:27.242Z"
 | --- | --- |
 | English name | Amazon EBS |
 | Full name | Amazon Elastic Block Store |
-| Chinese name | 弹性块存储 |
-| Japanese name | ブロックストレージ |
+| Chinese description | 弹性块存储 |
+| Japanese description | ブロックストレージ |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | Instance Store / EFS / S3 |
 

@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T08:25:26.418Z"
 | --- | --- |
 | 英語名 | AWS CloudFormation |
 | 正式名称 | AWS CloudFormation |
-| 中国語名 | AWS 基础设施即代码服务 |
-| 日本語名 | AWS CloudFormation |
+| 中国語の説明 | AWS 基础设施即代码服务 |
+| 日本語の説明 | AWS の Infrastructure as Code（IaC）サービス |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | AWS CLI / SDK / CDK / Terraform / Elastic Beanstalk |
 

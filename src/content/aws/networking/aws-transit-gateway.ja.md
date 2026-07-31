@@ -22,8 +22,8 @@ notionUpdated: "2026-07-27T05:40:32.699Z"
 | --- | --- |
 | 英語名 | AWS Transit Gateway |
 | 正式名称 | AWS Transit Gateway |
-| 中国語名 | 中转网关 |
-| 日本語名 | トランジットゲートウェイ |
+| 中国語の説明 | 中转网关 |
+| 日本語の説明 | トランジットゲートウェイ |
 | 出題頻度 | ⭐⭐⭐⭐ |
 | 混同しやすいもの | VPC Peering / Virtual Private Gateway |
 

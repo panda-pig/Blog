@@ -22,8 +22,8 @@ notionUpdated: "2026-07-27T05:41:41.677Z"
 | --- | --- |
 | English name | Amazon CloudFront |
 | Full name | Amazon CloudFront |
-| Chinese name | 内容分发网络（CDN） |
-| Japanese name | コンテンツ配信ネットワーク |
+| Chinese description | 内容分发网络（CDN） |
+| Japanese description | コンテンツ配信ネットワーク |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | Route 53 / Global Accelerator / S3 Transfer Acceleration |
 

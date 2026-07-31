@@ -22,8 +22,8 @@ notionUpdated: "2026-07-30T01:08:06.892Z"
 | --- | --- |
 | English name | Cost Optimization |
 | Full name | Cost Optimization |
-| Chinese name | 成本优化 |
-| Japanese name | コスト最適化 |
+| Chinese description | 成本优化 |
+| Japanese description | コスト最適化 |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | 性能优化 |
 

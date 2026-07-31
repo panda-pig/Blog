@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T04:41:23.982Z"
 | --- | --- |
 | English name | Amazon S3 |
 | Full name | Amazon Simple Storage Service |
-| Chinese name | 对象存储 |
-| Japanese name | オブジェクトストレージ |
+| Chinese description | 对象存储 |
+| Japanese description | オブジェクトストレージ |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | EBS / EFS / S3 on Outposts |
 

@@ -21,8 +21,8 @@ notionUpdated: "2026-07-27T05:37:23.865Z"
 | --- | --- |
 | English name | Amazon VPC |
 | Full name | Amazon Virtual Private Cloud |
-| Chinese name | 虚拟私有云 |
-| Japanese name | 仮想プライベートクラウド |
+| Chinese description | 虚拟私有云 |
+| Japanese description | 仮想プライベートクラウド |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | Subnet / Security Group / NACL |
 

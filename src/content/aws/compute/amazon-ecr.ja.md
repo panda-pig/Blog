@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:17:27.703Z"
 | --- | --- |
 | 英語名 | Amazon ECR |
 | 正式名称 | Amazon Elastic Container Registry |
-| 中国語名 | 容器镜像仓库 |
-| 日本語名 | Amazon ECR（コンテナレジストリ） |
+| 中国語の説明 | 容器镜像仓库 |
+| 日本語の説明 | マネージドコンテナイメージレジストリ |
 | 出題頻度 | ⭐⭐⭐⭐ |
 | 混同しやすいもの | ECS / EKS / Fargate |
 

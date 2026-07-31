@@ -22,8 +22,8 @@ notionUpdated: "2026-07-30T01:08:00.877Z"
 | --- | --- |
 | 英語名 | Scalability & Elasticity |
 | 正式名称 | Scalability & Elasticity |
-| 中国語名 | 可扩展性与弹性 |
-| 日本語名 | スケーラビリティと弾力性 |
+| 中国語の説明 | 可扩展性与弹性 |
+| 日本語の説明 | スケーラビリティと弾力性 |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | High Availability |
 

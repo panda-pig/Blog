@@ -22,8 +22,8 @@ notionUpdated: "2026-07-30T01:52:42.983Z"
 | --- | --- |
 | 英文 | AWS DataSync |
 | 全称 | AWS DataSync |
-| 中文 | 在线数据传输 |
-| 日文 | オンラインデータ転送 |
+| 中文释义 | 在线数据传输 |
+| 日文释义 | オンラインデータ転送 |
 | 考试频率 | ⭐⭐⭐⭐ |
 | 易混淆 | Storage Gateway / Snow Family |
 

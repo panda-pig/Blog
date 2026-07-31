@@ -22,8 +22,8 @@ notionUpdated: "2026-07-27T05:40:30.847Z"
 | --- | --- |
 | English name | AWS PrivateLink & VPC Endpoints |
 | Full name | AWS PrivateLink & VPC Endpoints |
-| Chinese name | 私有服务访问 |
-| Japanese name | プライベートサービス接続 |
+| Chinese description | 私有服务访问 |
+| Japanese description | プライベートサービス接続 |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | NAT Gateway / VPC Peering / Site-to-Site VPN |
 

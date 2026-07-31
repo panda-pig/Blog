@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T08:10:28.597Z"
 | --- | --- |
 | English name | Amazon DynamoDB |
 | Full name | Amazon DynamoDB |
-| Chinese name | 无服务器 Key-Value 与文档型 NoSQL 数据库 |
-| Japanese name | サーバーレス NoSQL データベース |
+| Chinese description | 无服务器 Key-Value 与文档型 NoSQL 数据库 |
+| Japanese description | サーバーレス NoSQL データベース |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | RDS / DocumentDB / DAX |
 

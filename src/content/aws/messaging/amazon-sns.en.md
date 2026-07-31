@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:21:18.671Z"
 | --- | --- |
 | English name | Amazon SNS |
 | Full name | Amazon Simple Notification Service |
-| Chinese name | 通知与发布订阅服务 |
-| Japanese name | Amazon SNS（通知サービス） |
+| Chinese description | 通知与发布订阅服务 |
+| Japanese description | 通知・パブリッシュ／サブスクライブサービス |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | SQS / EventBridge |
 

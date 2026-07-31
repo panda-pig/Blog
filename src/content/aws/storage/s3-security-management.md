@@ -22,8 +22,8 @@ notionUpdated: "2026-07-30"
 | --- | --- |
 | 英文 | S3 Security & Management |
 | 全称 | Amazon S3 Security and Management |
-| 中文 | S3 安全与管理 |
-| 日文 | S3 セキュリティと管理 |
+| 中文释义 | S3 安全与管理 |
+| 日文释义 | S3 セキュリティと管理 |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | IAM Policy / Bucket Policy / ACL / Block Public Access |
 

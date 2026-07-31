@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:17:27.722Z"
 | --- | --- |
 | 英文 | Container vs Virtual Machine |
 | 全称 | Container and Virtual Machine |
-| 中文 | 容器与虚拟机 |
-| 日文 | コンテナと仮想マシン |
+| 中文释义 | 容器与虚拟机 |
+| 日文释义 | コンテナと仮想マシン |
 | 考试频率 | ⭐⭐⭐⭐ |
 | 易混淆 | Container Image / ECS / EKS / Fargate |
 

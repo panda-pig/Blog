@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T08:10:20.563Z"
 | --- | --- |
 | English name | Amazon RDS |
 | Full name | Amazon Relational Database Service |
-| Chinese name | 托管关系型数据库服务 |
-| Japanese name | マネージドリレーショナルデータベース |
+| Chinese description | 托管关系型数据库服务 |
+| Japanese description | マネージドリレーショナルデータベース |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | Aurora / DynamoDB / EC2 自建数据库 |
 

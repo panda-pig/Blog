@@ -9,14 +9,12 @@ lang: zh
 topicKey: "高性能架构设计"
 frequency: "阶段性总结"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["saa-c03","Design High-Performing Architectures","AWS"]
 notionId: 3a6964dc-ce4a-8177-89e9-de191f6694c9
 notionUrl: https://app.notion.com/p/3a6964dcce4a817789e9de191f6694c9
-notionUpdated: "2026-07-29T08:13:11.121Z"
+notionUpdated: "2026-07-30T08:08:43.972Z"
 ---
-
-> 已加入“04 全球化”与“05 联网”的高性能网络考点。
 
 ## 必须掌握
 
@@ -59,14 +57,13 @@ notionUpdated: "2026-07-29T08:13:11.121Z"
 - 单个 AZ 的 NAT Gateway 或单条 Direct Connect 仍可能成为依赖点。
 - “最近 Region”不一定等于端到端最优，还要考虑服务、网络与架构。
 
-## 复习清单
+## 复习范围
 
-- [x] CloudFront 与 Edge Location
-- [x] Route 53 Routing Policy
-- [x] Global Accelerator 对比
-- [x] Direct Connect / VPN 选型
-- [x] NAT Gateway 与 VPC Endpoint
-- [ ] 继续完成网络类 SAA 场景题
+- CloudFront 与 Edge Location
+- Route 53 Routing Policy
+- Global Accelerator 对比
+- Direct Connect / VPN 选型
+- NAT Gateway 与 VPC Endpoint
 
 ## Storage 性能补充
 
@@ -102,3 +99,24 @@ notionUpdated: "2026-07-29T08:13:11.121Z"
 - 缓存只能加速有命中率的访问模式。
 - Partition Key、索引和 SQL 优化通常比盲目扩容更先考虑。
 - Read Replica 的复制延迟和缓存陈旧度必须符合业务一致性要求。
+
+## Analytics & AI/ML 性能补充
+
+| 性能 / 架构需求 | 首先考虑 |
+| --- | --- |
+| 直接对 S3 做临时 SQL 查询 | Athena + 分区 / 列式格式 / 压缩 |
+| 长期、高频、复杂分析和 BI | Amazon Redshift |
+| 实时流、多消费者、自定义处理 | Kinesis Data Streams |
+| 少运维地近乎实时落入 S3 等目标 | Amazon Data Firehose |
+| Serverless ETL 和数据编目 | AWS Glue |
+| Spark / Hadoop 大规模自定义处理 | Amazon EMR |
+| 使用自有数据训练与部署模型 | Amazon SageMaker AI |
+| 通过托管基础模型 API 构建生成式 AI | Amazon Bedrock |
+
+### 设计提醒
+
+- 生产 DynamoDB 与大规模历史分析、训练负载应隔离。
+- Athena 扫描数据量受分区、压缩和文件格式影响。
+- Firehose 会缓冲，延迟要求严格时需确认是否满足。
+- ML 的 Training 和 Inference 是不同工作负载，应分别规划计算、扩展与监控。
+- 模型质量问题先检查数据质量、Schema 和训练数据新鲜度。

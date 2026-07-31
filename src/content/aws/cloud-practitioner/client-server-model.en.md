@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:17:25.788Z"
 | --- | --- |
 | English name | Client–Server Model |
 | Full name | Client–Server Model |
-| Chinese name | 客户端—服务器模型 |
-| Japanese name | クライアント・サーバーモデル |
+| Chinese description | 客户端—服务器模型 |
+| Japanese description | クライアント・サーバーモデル |
 | Exam frequency | ⭐⭐⭐ |
 | Often confused with | Client / Server / API |
 

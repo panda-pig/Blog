@@ -22,8 +22,8 @@ notionUpdated: "2026-07-30T01:52:42.983Z"
 | --- | --- |
 | English name | AWS DataSync |
 | Full name | AWS DataSync |
-| Chinese name | 在线数据传输 |
-| Japanese name | オンラインデータ転送 |
+| Chinese description | 在线数据传输 |
+| Japanese description | オンラインデータ転送 |
 | Exam frequency | ⭐⭐⭐⭐ |
 | Often confused with | Storage Gateway / Snow Family |
 

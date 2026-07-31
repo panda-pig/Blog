@@ -22,8 +22,8 @@ notionUpdated: "2026-07-30T01:08:04.047Z"
 | --- | --- |
 | English name | Serverless Architecture |
 | Full name | Serverless Architecture |
-| Chinese name | 无服务器架构 |
-| Japanese name | サーバーレスアーキテクチャ |
+| Chinese description | 无服务器架构 |
+| Japanese description | サーバーレスアーキテクチャ |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | 容器 / EC2 |
 

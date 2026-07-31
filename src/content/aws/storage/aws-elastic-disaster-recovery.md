@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T04:39:41.992Z"
 | --- | --- |
 | 英文 | AWS Elastic Disaster Recovery (AWS DRS) |
 | 全称 | AWS Elastic Disaster Recovery |
-| 中文 | AWS 弹性灾难恢复 |
-| 日文 | AWS Elastic Disaster Recovery |
+| 中文释义 | AWS 弹性灾难恢复 |
+| 日文释义 | AWS のマネージド災害復旧サービス |
 | 考试频率 | ⭐⭐⭐⭐ |
 | 易混淆 | AWS Backup / EBS Snapshot / Storage Gateway |
 

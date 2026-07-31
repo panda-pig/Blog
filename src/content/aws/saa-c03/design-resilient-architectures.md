@@ -9,14 +9,12 @@ lang: zh
 topicKey: "弹性架构设计"
 frequency: "阶段性总结"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["saa-c03","Design Resilient Architectures","AWS"]
 notionId: 3a6964dc-ce4a-811a-9170-e1ab378bb690
 notionUrl: https://app.notion.com/p/3a6964dcce4a811a9170e1ab378bb690
 notionUpdated: "2026-07-29T08:13:07.204Z"
 ---
-
-> 已加入“04 全球化”与“05 联网”的 SAA 韧性架构考点。
 
 ## 必须掌握
 

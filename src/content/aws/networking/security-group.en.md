@@ -21,8 +21,8 @@ notionUpdated: "2026-07-27T05:38:22.272Z"
 | --- | --- |
 | English name | Security Group |
 | Full name | Security Group |
-| Chinese name | 安全组 |
-| Japanese name | セキュリティグループ |
+| Chinese description | 安全组 |
+| Japanese description | セキュリティグループ |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | Network ACL |
 

@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T08:13:14.538Z"
 | --- | --- |
 | 英文 | AWS Backup |
 | 全称 | AWS Backup |
-| 中文 | 集中式备份管理 |
-| 日文 | 一元バックアップ |
+| 中文释义 | 集中式备份管理 |
+| 日文释义 | 一元バックアップ |
 | 考试频率 | ⭐⭐⭐⭐ |
 | 易混淆 | EBS Snapshot / DLM / AWS DRS / S3 Lifecycle |
 

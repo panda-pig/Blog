@@ -21,8 +21,8 @@ notionUpdated: "2026-07-30T01:09:11.112Z"
 | --- | --- |
 | 英語名 | Amazon EC2 Auto Scaling |
 | 正式名称 | Amazon EC2 Auto Scaling |
-| 中国語名 | EC2 自动扩缩 |
-| 日本語名 | EC2 オートスケーリング |
+| 中国語の説明 | EC2 自动扩缩 |
+| 日本語の説明 | EC2 オートスケーリング |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | Elastic Load Balancing / Vertical Scaling |
 

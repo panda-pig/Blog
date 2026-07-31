@@ -22,8 +22,8 @@ notionUpdated: "2026-07-27T05:40:28.036Z"
 | --- | --- |
 | 英文 | AWS Site-to-Site VPN |
 | 全称 | AWS Site-to-Site VPN |
-| 中文 | 站点到站点 VPN |
-| 日文 | サイト間 VPN |
+| 中文释义 | 站点到站点 VPN |
+| 日文释义 | サイト間 VPN |
 | 考试频率 | ⭐⭐⭐⭐ |
 | 易混淆 | Client VPN / Direct Connect / PrivateLink |
 

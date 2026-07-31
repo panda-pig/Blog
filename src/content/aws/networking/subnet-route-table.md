@@ -25,8 +25,8 @@ notionUpdated: "2026-07-27T05:37:25.834Z"
 | --- | --- |
 | 英文 | Subnet & Route Table |
 | 全称 | Subnet & Route Table |
-| 中文 | 子网与路由表 |
-| 日文 | サブネットとルートテーブル |
+| 中文释义 | 子网与路由表 |
+| 日文释义 | サブネットとルートテーブル |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | Public / Private Subnet |
 

@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T04:42:39.476Z"
 | --- | --- |
 | English name | Amazon FSx |
 | Full name | Amazon FSx |
-| Chinese name | 托管专业文件系统家族 |
-| Japanese name | マネージドファイルシステム |
+| Chinese description | 托管专业文件系统家族 |
+| Japanese description | マネージドファイルシステム |
 | Exam frequency | ⭐⭐⭐⭐ |
 | Often confused with | Amazon EFS |
 

@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:21:23.243Z"
 | --- | --- |
 | 英文 | Elastic Load Balancing |
 | 全称 | Elastic Load Balancing |
-| 中文 | 弹性负载均衡 |
-| 日文 | Elastic Load Balancing |
+| 中文释义 | 弹性负载均衡 |
+| 日文释义 | マネージドロードバランシングサービス |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | Auto Scaling / ALB / NLB / GWLB |
 

@@ -136,6 +136,447 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"aws": {
+"ai-ml/ai-ml-core-concepts.en.md": {
+	id: "ai-ml/ai-ml-core-concepts.en.md";
+  slug: "ai-ml/ai-ml-core-conceptsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/ai-ml-core-concepts.ja.md": {
+	id: "ai-ml/ai-ml-core-concepts.ja.md";
+  slug: "ai-ml/ai-ml-core-conceptsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/ai-ml-core-concepts.md": {
+	id: "ai-ml/ai-ml-core-concepts.md";
+  slug: "ai-ml/ai-ml-core-concepts";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-bedrock.en.md": {
+	id: "ai-ml/amazon-bedrock.en.md";
+  slug: "ai-ml/amazon-bedrocken";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-bedrock.ja.md": {
+	id: "ai-ml/amazon-bedrock.ja.md";
+  slug: "ai-ml/amazon-bedrockja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-bedrock.md": {
+	id: "ai-ml/amazon-bedrock.md";
+  slug: "ai-ml/amazon-bedrock";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-comprehend.en.md": {
+	id: "ai-ml/amazon-comprehend.en.md";
+  slug: "ai-ml/amazon-comprehenden";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-comprehend.ja.md": {
+	id: "ai-ml/amazon-comprehend.ja.md";
+  slug: "ai-ml/amazon-comprehendja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-comprehend.md": {
+	id: "ai-ml/amazon-comprehend.md";
+  slug: "ai-ml/amazon-comprehend";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-kendra.en.md": {
+	id: "ai-ml/amazon-kendra.en.md";
+  slug: "ai-ml/amazon-kendraen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-kendra.ja.md": {
+	id: "ai-ml/amazon-kendra.ja.md";
+  slug: "ai-ml/amazon-kendraja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-kendra.md": {
+	id: "ai-ml/amazon-kendra.md";
+  slug: "ai-ml/amazon-kendra";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-lex.en.md": {
+	id: "ai-ml/amazon-lex.en.md";
+  slug: "ai-ml/amazon-lexen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-lex.ja.md": {
+	id: "ai-ml/amazon-lex.ja.md";
+  slug: "ai-ml/amazon-lexja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-lex.md": {
+	id: "ai-ml/amazon-lex.md";
+  slug: "ai-ml/amazon-lex";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-personalize.en.md": {
+	id: "ai-ml/amazon-personalize.en.md";
+  slug: "ai-ml/amazon-personalizeen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-personalize.ja.md": {
+	id: "ai-ml/amazon-personalize.ja.md";
+  slug: "ai-ml/amazon-personalizeja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-personalize.md": {
+	id: "ai-ml/amazon-personalize.md";
+  slug: "ai-ml/amazon-personalize";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-polly.en.md": {
+	id: "ai-ml/amazon-polly.en.md";
+  slug: "ai-ml/amazon-pollyen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-polly.ja.md": {
+	id: "ai-ml/amazon-polly.ja.md";
+  slug: "ai-ml/amazon-pollyja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-polly.md": {
+	id: "ai-ml/amazon-polly.md";
+  slug: "ai-ml/amazon-polly";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-q-business-developer.en.md": {
+	id: "ai-ml/amazon-q-business-developer.en.md";
+  slug: "ai-ml/amazon-q-business-developeren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-q-business-developer.ja.md": {
+	id: "ai-ml/amazon-q-business-developer.ja.md";
+  slug: "ai-ml/amazon-q-business-developerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-q-business-developer.md": {
+	id: "ai-ml/amazon-q-business-developer.md";
+  slug: "ai-ml/amazon-q-business-developer";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-rekognition.en.md": {
+	id: "ai-ml/amazon-rekognition.en.md";
+  slug: "ai-ml/amazon-rekognitionen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-rekognition.ja.md": {
+	id: "ai-ml/amazon-rekognition.ja.md";
+  slug: "ai-ml/amazon-rekognitionja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-rekognition.md": {
+	id: "ai-ml/amazon-rekognition.md";
+  slug: "ai-ml/amazon-rekognition";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-sagemaker-jumpstart.en.md": {
+	id: "ai-ml/amazon-sagemaker-jumpstart.en.md";
+  slug: "ai-ml/amazon-sagemaker-jumpstarten";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-sagemaker-jumpstart.ja.md": {
+	id: "ai-ml/amazon-sagemaker-jumpstart.ja.md";
+  slug: "ai-ml/amazon-sagemaker-jumpstartja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-sagemaker-jumpstart.md": {
+	id: "ai-ml/amazon-sagemaker-jumpstart.md";
+  slug: "ai-ml/amazon-sagemaker-jumpstart";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-sagemaker.en.md": {
+	id: "ai-ml/amazon-sagemaker.en.md";
+  slug: "ai-ml/amazon-sagemakeren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-sagemaker.ja.md": {
+	id: "ai-ml/amazon-sagemaker.ja.md";
+  slug: "ai-ml/amazon-sagemakerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-sagemaker.md": {
+	id: "ai-ml/amazon-sagemaker.md";
+  slug: "ai-ml/amazon-sagemaker";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-textract.en.md": {
+	id: "ai-ml/amazon-textract.en.md";
+  slug: "ai-ml/amazon-textracten";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-textract.ja.md": {
+	id: "ai-ml/amazon-textract.ja.md";
+  slug: "ai-ml/amazon-textractja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-textract.md": {
+	id: "ai-ml/amazon-textract.md";
+  slug: "ai-ml/amazon-textract";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-transcribe.en.md": {
+	id: "ai-ml/amazon-transcribe.en.md";
+  slug: "ai-ml/amazon-transcribeen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-transcribe.ja.md": {
+	id: "ai-ml/amazon-transcribe.ja.md";
+  slug: "ai-ml/amazon-transcribeja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-transcribe.md": {
+	id: "ai-ml/amazon-transcribe.md";
+  slug: "ai-ml/amazon-transcribe";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-translate.en.md": {
+	id: "ai-ml/amazon-translate.en.md";
+  slug: "ai-ml/amazon-translateen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-translate.ja.md": {
+	id: "ai-ml/amazon-translate.ja.md";
+  slug: "ai-ml/amazon-translateja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/amazon-translate.md": {
+	id: "ai-ml/amazon-translate.md";
+  slug: "ai-ml/amazon-translate";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/aws-ai-ml-three-layer-stack.en.md": {
+	id: "ai-ml/aws-ai-ml-three-layer-stack.en.md";
+  slug: "ai-ml/aws-ai-ml-three-layer-stacken";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/aws-ai-ml-three-layer-stack.ja.md": {
+	id: "ai-ml/aws-ai-ml-three-layer-stack.ja.md";
+  slug: "ai-ml/aws-ai-ml-three-layer-stackja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"ai-ml/aws-ai-ml-three-layer-stack.md": {
+	id: "ai-ml/aws-ai-ml-three-layer-stack.md";
+  slug: "ai-ml/aws-ai-ml-three-layer-stack";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-athena.en.md": {
+	id: "analytics/amazon-athena.en.md";
+  slug: "analytics/amazon-athenaen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-athena.ja.md": {
+	id: "analytics/amazon-athena.ja.md";
+  slug: "analytics/amazon-athenaja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-athena.md": {
+	id: "analytics/amazon-athena.md";
+  slug: "analytics/amazon-athena";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-emr.en.md": {
+	id: "analytics/amazon-emr.en.md";
+  slug: "analytics/amazon-emren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-emr.ja.md": {
+	id: "analytics/amazon-emr.ja.md";
+  slug: "analytics/amazon-emrja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-emr.md": {
+	id: "analytics/amazon-emr.md";
+  slug: "analytics/amazon-emr";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-opensearch-service.en.md": {
+	id: "analytics/amazon-opensearch-service.en.md";
+  slug: "analytics/amazon-opensearch-serviceen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-opensearch-service.ja.md": {
+	id: "analytics/amazon-opensearch-service.ja.md";
+  slug: "analytics/amazon-opensearch-serviceja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-opensearch-service.md": {
+	id: "analytics/amazon-opensearch-service.md";
+  slug: "analytics/amazon-opensearch-service";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-quicksight.en.md": {
+	id: "analytics/amazon-quicksight.en.md";
+  slug: "analytics/amazon-quicksighten";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-quicksight.ja.md": {
+	id: "analytics/amazon-quicksight.ja.md";
+  slug: "analytics/amazon-quicksightja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-quicksight.md": {
+	id: "analytics/amazon-quicksight.md";
+  slug: "analytics/amazon-quicksight";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/aws-glue.en.md": {
+	id: "analytics/aws-glue.en.md";
+  slug: "analytics/aws-glueen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/aws-glue.ja.md": {
+	id: "analytics/aws-glue.ja.md";
+  slug: "analytics/aws-glueja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/aws-glue.md": {
+	id: "analytics/aws-glue.md";
+  slug: "analytics/aws-glue";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/data-analytics-core-concepts.en.md": {
+	id: "analytics/data-analytics-core-concepts.en.md";
+  slug: "analytics/data-analytics-core-conceptsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/data-analytics-core-concepts.ja.md": {
+	id: "analytics/data-analytics-core-concepts.ja.md";
+  slug: "analytics/data-analytics-core-conceptsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/data-analytics-core-concepts.md": {
+	id: "analytics/data-analytics-core-concepts.md";
+  slug: "analytics/data-analytics-core-concepts";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "architecture/aws-shared-responsibility-model.en.md": {
 	id: "architecture/aws-shared-responsibility-model.en.md";
   slug: "architecture/aws-shared-responsibility-modelen";
@@ -174,6 +615,27 @@ declare module 'astro:content' {
 "architecture/cost-optimization.md": {
 	id: "architecture/cost-optimization.md";
   slug: "architecture/cost-optimization";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/data-analytics-ml-pipeline.en.md": {
+	id: "architecture/data-analytics-ml-pipeline.en.md";
+  slug: "architecture/data-analytics-ml-pipelineen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/data-analytics-ml-pipeline.ja.md": {
+	id: "architecture/data-analytics-ml-pipeline.ja.md";
+  slug: "architecture/data-analytics-ml-pipelineja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/data-analytics-ml-pipeline.md": {
+	id: "architecture/data-analytics-ml-pipeline.md";
+  slug: "architecture/data-analytics-ml-pipeline";
   body: string;
   collection: "aws";
   data: any
@@ -304,6 +766,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"cloud-practitioner/clf-exam-quick-review.en.md": {
+	id: "cloud-practitioner/clf-exam-quick-review.en.md";
+  slug: "cloud-practitioner/clf-exam-quick-reviewen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/clf-exam-quick-review.ja.md": {
+	id: "cloud-practitioner/clf-exam-quick-review.ja.md";
+  slug: "cloud-practitioner/clf-exam-quick-reviewja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/clf-exam-quick-review.md": {
+	id: "cloud-practitioner/clf-exam-quick-review.md";
+  slug: "cloud-practitioner/clf-exam-quick-review";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "cloud-practitioner/client-server-model.en.md": {
 	id: "cloud-practitioner/client-server-model.en.md";
   slug: "cloud-practitioner/client-server-modelen";
@@ -384,6 +867,69 @@ declare module 'astro:content' {
 "cloud-practitioner/cloud-service-models-and-management-responsibility.md": {
 	id: "cloud-practitioner/cloud-service-models-and-management-responsibility.md";
   slug: "cloud-practitioner/cloud-service-models-and-management-responsibility";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/cloud-technology-services.en.md": {
+	id: "cloud-practitioner/cloud-technology-services.en.md";
+  slug: "cloud-practitioner/cloud-technology-servicesen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/cloud-technology-services.ja.md": {
+	id: "cloud-practitioner/cloud-technology-services.ja.md";
+  slug: "cloud-practitioner/cloud-technology-servicesja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/cloud-technology-services.md": {
+	id: "cloud-practitioner/cloud-technology-services.md";
+  slug: "cloud-practitioner/cloud-technology-services";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/amazon-athena-vs-amazon-redshift.en.md": {
+	id: "compare/amazon-athena-vs-amazon-redshift.en.md";
+  slug: "compare/amazon-athena-vs-amazon-redshiften";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/amazon-athena-vs-amazon-redshift.ja.md": {
+	id: "compare/amazon-athena-vs-amazon-redshift.ja.md";
+  slug: "compare/amazon-athena-vs-amazon-redshiftja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/amazon-athena-vs-amazon-redshift.md": {
+	id: "compare/amazon-athena-vs-amazon-redshift.md";
+  slug: "compare/amazon-athena-vs-amazon-redshift";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/aws-ai-services-vs-sagemaker-vs-ml-infrastructure.en.md": {
+	id: "compare/aws-ai-services-vs-sagemaker-vs-ml-infrastructure.en.md";
+  slug: "compare/aws-ai-services-vs-sagemaker-vs-ml-infrastructureen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/aws-ai-services-vs-sagemaker-vs-ml-infrastructure.ja.md": {
+	id: "compare/aws-ai-services-vs-sagemaker-vs-ml-infrastructure.ja.md";
+  slug: "compare/aws-ai-services-vs-sagemaker-vs-ml-infrastructureja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/aws-ai-services-vs-sagemaker-vs-ml-infrastructure.md": {
+	id: "compare/aws-ai-services-vs-sagemaker-vs-ml-infrastructure.md";
+  slug: "compare/aws-ai-services-vs-sagemaker-vs-ml-infrastructure";
   body: string;
   collection: "aws";
   data: any
@@ -556,6 +1102,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"compare/kinesis-data-streams-vs-amazon-data-firehose.en.md": {
+	id: "compare/kinesis-data-streams-vs-amazon-data-firehose.en.md";
+  slug: "compare/kinesis-data-streams-vs-amazon-data-firehoseen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/kinesis-data-streams-vs-amazon-data-firehose.ja.md": {
+	id: "compare/kinesis-data-streams-vs-amazon-data-firehose.ja.md";
+  slug: "compare/kinesis-data-streams-vs-amazon-data-firehoseja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/kinesis-data-streams-vs-amazon-data-firehose.md": {
+	id: "compare/kinesis-data-streams-vs-amazon-data-firehose.md";
+  slug: "compare/kinesis-data-streams-vs-amazon-data-firehose";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "compare/multi-az-vs-multi-region.en.md": {
 	id: "compare/multi-az-vs-multi-region.en.md";
   slug: "compare/multi-az-vs-multi-regionen";
@@ -657,6 +1224,27 @@ declare module 'astro:content' {
 "compare/s3-vs-ebs-vs-efs-vs-fsx.md": {
 	id: "compare/s3-vs-ebs-vs-efs-vs-fsx.md";
   slug: "compare/s3-vs-ebs-vs-efs-vs-fsx";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/sagemaker-jumpstart-vs-bedrock-vs-amazon-q.en.md": {
+	id: "compare/sagemaker-jumpstart-vs-bedrock-vs-amazon-q.en.md";
+  slug: "compare/sagemaker-jumpstart-vs-bedrock-vs-amazon-qen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/sagemaker-jumpstart-vs-bedrock-vs-amazon-q.ja.md": {
+	id: "compare/sagemaker-jumpstart-vs-bedrock-vs-amazon-q.ja.md";
+  slug: "compare/sagemaker-jumpstart-vs-bedrock-vs-amazon-qja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/sagemaker-jumpstart-vs-bedrock-vs-amazon-q.md": {
+	id: "compare/sagemaker-jumpstart-vs-bedrock-vs-amazon-q.md";
+  slug: "compare/sagemaker-jumpstart-vs-bedrock-vs-amazon-q";
   body: string;
   collection: "aws";
   data: any
@@ -1123,6 +1711,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"database/amazon-redshift.en.md": {
+	id: "database/amazon-redshift.en.md";
+  slug: "database/amazon-redshiften";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-redshift.ja.md": {
+	id: "database/amazon-redshift.ja.md";
+  slug: "database/amazon-redshiftja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-redshift.md": {
+	id: "database/amazon-redshift.md";
+  slug: "database/amazon-redshift";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "database/dynamodb-accelerator-dax.en.md": {
 	id: "database/dynamodb-accelerator-dax.en.md";
   slug: "database/dynamodb-accelerator-daxen";
@@ -1224,6 +1833,27 @@ declare module 'astro:content' {
 "messaging/amazon-eventbridge.md": {
 	id: "messaging/amazon-eventbridge.md";
   slug: "messaging/amazon-eventbridge";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-kinesis-data-streams-firehose.en.md": {
+	id: "messaging/amazon-kinesis-data-streams-firehose.en.md";
+  slug: "messaging/amazon-kinesis-data-streams-firehoseen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-kinesis-data-streams-firehose.ja.md": {
+	id: "messaging/amazon-kinesis-data-streams-firehose.ja.md";
+  slug: "messaging/amazon-kinesis-data-streams-firehoseja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-kinesis-data-streams-firehose.md": {
+	id: "messaging/amazon-kinesis-data-streams-firehose.md";
+  slug: "messaging/amazon-kinesis-data-streams-firehose";
   body: string;
   collection: "aws";
   data: any
@@ -1749,6 +2379,48 @@ declare module 'astro:content' {
 "saa-c03/design-secure-architectures.md": {
 	id: "saa-c03/design-secure-architectures.md";
   slug: "saa-c03/design-secure-architectures";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/saa-exam-quick-review.en.md": {
+	id: "saa-c03/saa-exam-quick-review.en.md";
+  slug: "saa-c03/saa-exam-quick-reviewen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/saa-exam-quick-review.ja.md": {
+	id: "saa-c03/saa-exam-quick-review.ja.md";
+  slug: "saa-c03/saa-exam-quick-reviewja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/saa-exam-quick-review.md": {
+	id: "saa-c03/saa-exam-quick-review.md";
+  slug: "saa-c03/saa-exam-quick-review";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/scenario-keyword-index.en.md": {
+	id: "saa-c03/scenario-keyword-index.en.md";
+  slug: "saa-c03/scenario-keyword-indexen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/scenario-keyword-index.ja.md": {
+	id: "saa-c03/scenario-keyword-index.ja.md";
+  slug: "saa-c03/scenario-keyword-indexja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"saa-c03/scenario-keyword-index.md": {
+	id: "saa-c03/scenario-keyword-index.md";
+  slug: "saa-c03/scenario-keyword-index";
   body: string;
   collection: "aws";
   data: any

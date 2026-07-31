@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:21:16.024Z"
 | --- | --- |
 | 英語名 | Amazon SQS |
 | 正式名称 | Amazon Simple Queue Service |
-| 中国語名 | 消息队列服务 |
-| 日本語名 | Amazon SQS（メッセージキュー） |
+| 中国語の説明 | 消息队列服务 |
+| 日本語の説明 | マネージドメッセージキューサービス |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | SNS / EventBridge / Kinesis |
 

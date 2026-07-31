@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T08:07:57.540Z"
 | --- | --- |
 | 英文 | DynamoDB Accelerator (DAX) |
 | 全称 | DynamoDB Accelerator (DAX) |
-| 中文 | DynamoDB 专用内存缓存 |
-| 日文 | DynamoDB 専用インメモリキャッシュ |
+| 中文释义 | DynamoDB 专用内存缓存 |
+| 日文释义 | DynamoDB 専用インメモリキャッシュ |
 | 考试频率 | ⭐⭐⭐⭐ |
 | 易混淆 | ElastiCache / RDS Read Replica |
 

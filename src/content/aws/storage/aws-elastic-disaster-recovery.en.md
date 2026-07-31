@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T04:39:41.992Z"
 | --- | --- |
 | English name | AWS Elastic Disaster Recovery (AWS DRS) |
 | Full name | AWS Elastic Disaster Recovery |
-| Chinese name | AWS 弹性灾难恢复 |
-| Japanese name | AWS Elastic Disaster Recovery |
+| Chinese description | AWS 弹性灾难恢复 |
+| Japanese description | AWS のマネージド災害復旧サービス |
 | Exam frequency | ⭐⭐⭐⭐ |
 | Often confused with | AWS Backup / EBS Snapshot / Storage Gateway |
 

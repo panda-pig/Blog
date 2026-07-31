@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T08:10:40.179Z"
 | --- | --- |
 | 英語名 | Amazon DocumentDB (with MongoDB compatibility) |
 | 正式名称 | Amazon DocumentDB (with MongoDB compatibility) |
-| 中国語名 | 托管文档数据库 |
-| 日本語名 | マネージドドキュメントデータベース |
+| 中国語の説明 | 托管文档数据库 |
+| 日本語の説明 | マネージドドキュメントデータベース |
 | 出題頻度 | ⭐⭐ |
 | 混同しやすいもの | DynamoDB / MongoDB / Neptune |
 

@@ -22,8 +22,8 @@ notionUpdated: "2026-07-29T08:11:51.664Z"
 | --- | --- |
 | English name | AWS Database Migration Service (AWS DMS) |
 | Full name | AWS Database Migration Service |
-| Chinese name | 数据库迁移服务 |
-| Japanese name | データベース移行サービス |
+| Chinese description | 数据库迁移服务 |
+| Japanese description | データベース移行サービス |
 | Exam frequency | ⭐⭐⭐⭐ |
 | Often confused with | AWS SCT / EC2 Lift and Shift |
 

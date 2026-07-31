@@ -21,8 +21,8 @@ notionUpdated: "2026-07-29T04:41:30.363Z"
 | --- | --- |
 | English name | Amazon EFS |
 | Full name | Amazon Elastic File System |
-| Chinese name | 弹性共享文件系统 |
-| Japanese name | 共有ファイルストレージ |
+| Chinese description | 弹性共享文件系统 |
+| Japanese description | 共有ファイルストレージ |
 | Exam frequency | ⭐⭐⭐⭐ |
 | Often confused with | EBS / S3 / FSx |
 

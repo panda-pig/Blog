@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T08:25:18.648Z"
 | --- | --- |
 | 英語名 | High Availability & Fault Tolerance |
 | 正式名称 | High Availability & Fault Tolerance |
-| 中国語名 | 高可用与容错 |
-| 日本語名 | 高可用性とフォールトトレランス |
+| 中国語の説明 | 高可用与容错 |
+| 日本語の説明 | 高可用性とフォールトトレランス |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | Redundancy / DR / Elasticity |
 

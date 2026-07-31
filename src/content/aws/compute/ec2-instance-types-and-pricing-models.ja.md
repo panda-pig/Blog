@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:17:27.739Z"
 | --- | --- |
 | 英語名 | EC2 Instance Types & Pricing Models |
 | 正式名称 | Amazon EC2 Instance Types and Purchasing Options |
-| 中国語名 | EC2 实例类型与计费模型 |
-| 日本語名 | EC2 インスタンスタイプと料金モデル |
+| 中国語の説明 | EC2 实例类型与计费模型 |
+| 日本語の説明 | EC2 インスタンスタイプと料金モデル |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | On-Demand / Savings Plans / Reserved Instances / Spot / Dedicated Host |
 

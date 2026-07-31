@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T08:25:18.648Z"
 | --- | --- |
 | English name | High Availability & Fault Tolerance |
 | Full name | High Availability & Fault Tolerance |
-| Chinese name | 高可用与容错 |
-| Japanese name | 高可用性とフォールトトレランス |
+| Chinese description | 高可用与容错 |
+| Japanese description | 高可用性とフォールトトレランス |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | Redundancy / DR / Elasticity |
 

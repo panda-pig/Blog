@@ -22,8 +22,8 @@ notionUpdated: "2026-07-23T07:17:25.803Z"
 | --- | --- |
 | 英語名 | Cloud Computing & Benefits of AWS Cloud |
 | 正式名称 | Cloud Computing and Benefits of the AWS Cloud |
-| 中国語名 | 云计算与 AWS 云优势 |
-| 日本語名 | クラウドコンピューティングと AWS クラウドの利点 |
+| 中国語の説明 | 云计算与 AWS 云优势 |
+| 日本語の説明 | クラウドコンピューティングと AWS クラウドの利点 |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | Scalability / Elasticity / High Availability / Agility |
 

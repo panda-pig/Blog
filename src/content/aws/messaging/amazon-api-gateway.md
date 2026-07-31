@@ -22,8 +22,8 @@ notionUpdated: "2026-07-27T05:39:16.622Z"
 | --- | --- |
 | 英文 | Amazon API Gateway |
 | 全称 | Amazon API Gateway |
-| 中文 | API 网关 |
-| 日文 | Amazon API Gateway |
+| 中文释义 | API 网关 |
+| 日文释义 | API の作成・公開・管理サービス |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | ALB / Internet Gateway / NAT Gateway |
 
