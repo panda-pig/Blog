@@ -1,7 +1,7 @@
 ---
 title: "EC2 vs Lambda vs Fargate"
 fullName: "EC2 vs Lambda vs Fargate"
-description: "1. 是否必须使用完整 OS、特殊硬件或自定义系统配置？是 → EC2。"
+description: "根据主机控制、运行时长和部署形态，在 EC2、Lambda 与 Fargate 之间选择。"
 service: "AWS Compare"
 category: compare
 kind: compare

@@ -1,7 +1,7 @@
 ---
 title: "高性能架构设计"
 fullName: "Design High-Performing Architectures"
-description: "1. 确认协议：DNS、HTTP/HTTPS 或 TCP/UDP。"
+description: "根据工作负载的访问模式与瓶颈，选择计算、存储、数据库、网络和缓存方案。"
 service: "SAA-C03"
 category: saa-c03
 kind: topic

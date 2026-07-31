@@ -1,7 +1,7 @@
 ---
 title: "安全架构设计"
 fullName: "Design Secure Architectures"
-description: "2. 保持 Block Public Access，除非业务明确需要公开。"
+description: "以最小权限、私有访问、加密、审计和隔离恢复保护 AWS 架构。"
 service: "SAA-C03"
 category: saa-c03
 kind: topic

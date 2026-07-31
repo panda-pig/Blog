@@ -31,7 +31,6 @@ const copy = {
     empty: '没有找到匹配的术语',
     emptyHint: '换一个关键词，或清除考试频率筛选。',
     source: '内容整理自我的 Notion 学习数据库，仅同步已有知识点。',
-    sourceLink: '查看 Notion 原表',
     stars: '星',
     breadcrumb: 'AWS 学习手册',
   },
@@ -55,7 +54,6 @@ const copy = {
     empty: 'No matching terms found',
     emptyHint: 'Try another keyword or clear the frequency filter.',
     source: 'Curated from my Notion study database; only completed material is included.',
-    sourceLink: 'View the Notion source',
     stars: 'stars',
     breadcrumb: 'AWS Study Handbook',
   },
@@ -79,7 +77,6 @@ const copy = {
     empty: '一致する用語がありません',
     emptyHint: '別のキーワードを試すか、頻度フィルターを解除してください。',
     source: 'Notion の学習データベースから、学習済みの内容のみを掲載しています。',
-    sourceLink: 'Notion の原表を見る',
     stars: 'つ星',
     breadcrumb: 'AWS 学習ハンドブック',
   },
@@ -105,7 +102,6 @@ const c = copy || {
   empty: '没有找到匹配的术语',
   emptyHint: '换一个关键词，或清除考试频率筛选。',
   source: '内容整理自我的 Notion 学习数据库，仅同步已有知识点。',
-  sourceLink: '查看 Notion 原表',
   stars: '星',
   breadcrumb: 'AWS 学习手册',
 };
@@ -255,14 +251,6 @@ const frequencies = [5, 4, 3, 2];
       <footer class="glossary-source">
         <span aria-hidden="true">✦</span>
         <p>{c.source}</p>
-        <a
-          href="https://app.notion.com/p/5655b7d4b6bf4e70b3d3b7552150e869?v=89153d36761246fa93c0061f00b240d9"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {c.sourceLink}
-          <span aria-hidden="true">↗</span>
-        </a>
       </footer>
     </div>
   </main>
@@ -807,18 +795,6 @@ const frequencies = [5, 4, 3, 2];
     margin: 0;
   }
 
-  .glossary-source a {
-    margin-left: auto;
-    color: var(--glossary-blue-deep);
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .glossary-source a:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2rem;
-  }
-
   .sr-only {
     position: absolute;
     width: 1px;
@@ -877,8 +853,7 @@ const frequencies = [5, 4, 3, 2];
       font-size: clamp(2.2rem, 11vw, 3.35rem);
     }
 
-    .glossary-breadcrumb a,
-    .glossary-source a {
+    .glossary-breadcrumb a {
       display: inline-flex;
       align-items: center;
       min-width: 2.75rem;
@@ -999,10 +974,6 @@ const frequencies = [5, 4, 3, 2];
       flex-wrap: wrap;
     }
 
-    .glossary-source a {
-      width: 100%;
-      margin-left: 1.35rem;
-    }
   }
 
   @media (max-width: 420px) {

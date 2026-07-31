@@ -1,7 +1,7 @@
 ---
 title: "弹性架构设计"
 fullName: "Design Resilient Architectures"
-description: "6. 验证客户侧和 AWS 侧都真正使用冗余路径。"
+description: "消除单点故障，并按 RTO / RPO 选择冗余层级，构建可恢复的系统。"
 service: "SAA-C03"
 category: saa-c03
 kind: topic
