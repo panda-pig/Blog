@@ -80,6 +80,7 @@ const searchItems = [
           <h1>AWS <span>{t.heroTitle}</span></h1>
           <p class="aws-hero__meta">{t.heroMeta}</p>
           <p class="aws-hero__description">{t.heroDescription}</p>
+          <p class="aws-hero__source">{t.heroSource}</p>
         </div>
         <AwsSearch items={searchItems} placeholder={t.searchPlaceholder} noResults={t.noResults} />
       </div>
@@ -287,6 +288,16 @@ const searchItems = [
     font-weight: 500;
     line-height: 1.75;
     letter-spacing: 0.025em;
+  }
+
+  .aws-hero__source {
+    margin: 0.3rem 0 0;
+    color: color-mix(in srgb, var(--text-secondary) 82%, transparent);
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.65;
+    letter-spacing: 0.018em;
   }
 
   .aws-flight-path {
