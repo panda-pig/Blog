@@ -9,6 +9,7 @@ import { getAwsUi } from '../../i18n/aws';
 const { lang = 'zh' } = Astro.props;
 const prefix = getAwsPrefix(lang);
 const awsUi = getAwsUi(lang);
+const noteLang = (lang === 'en' || lang === 'ja' ? lang : 'zh') as 'zh' | 'en' | 'ja';
 
 const copy = {
   zh: {
@@ -49,7 +50,7 @@ const copy = {
     english: 'English',
     chinese: '中文',
     japanese: '日本語',
-    note: 'Notes (中文)',
+    note: 'Notes',
     frequency: 'Exam frequency',
     empty: 'No matching terms found',
     emptyHint: 'Try another keyword or clear the frequency filter.',
@@ -72,7 +73,7 @@ const copy = {
     english: 'English',
     chinese: '中文',
     japanese: '日本語',
-    note: 'メモ（中文）',
+    note: 'メモ',
     frequency: '試験頻度',
     empty: '一致する用語がありません',
     emptyHint: '別のキーワードを試すか、頻度フィルターを解除してください。',
@@ -108,6 +109,7 @@ const c = copy || {
 
 const highFrequencyCount = awsGlossaryEntries.filter((entry) => entry.frequency >= 4).length;
 const frequencies = [5, 4, 3, 2];
+const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteLang];
 ---
 
 <BaseLayout
@@ -216,7 +218,7 @@ const frequencies = [5, 4, 3, 2];
                     entry.english,
                     entry.chinese,
                     entry.japanese,
-                    entry.note,
+                    getNote(entry),
                   ].join(' ').toLocaleLowerCase()}
                 >
                   <th scope="row" data-label={c.term}>
@@ -225,7 +227,7 @@ const frequencies = [5, 4, 3, 2];
                   <td data-label={c.english}>{entry.english || '—'}</td>
                   <td data-label={c.chinese}>{entry.chinese || '—'}</td>
                   <td data-label={c.japanese} lang="ja">{entry.japanese || '—'}</td>
-                  <td class="glossary-note" data-label={c.note}>{entry.note || '—'}</td>
+                  <td class="glossary-note" data-label={c.note}>{getNote(entry) || '—'}</td>
                   <td data-label={c.frequency}>
                     <span
                       class={`frequency frequency--${entry.frequency}`}

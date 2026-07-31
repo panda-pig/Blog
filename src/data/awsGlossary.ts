@@ -1,9 +1,17 @@
+import { awsGlossaryNoteTranslations } from "./awsGlossaryNotes";
+
+export type AwsGlossaryNote = {
+  zh: string;
+  en: string;
+  ja: string;
+};
+
 export type AwsGlossaryEntry = {
   term: string;
   english: string;
   chinese: string;
   japanese: string;
-  note: string;
+  note: AwsGlossaryNote;
   frequency: number;
 };
 
@@ -69,7 +77,7 @@ const rows = [
     english: "AWS Config",
     chinese: "资源配置与合规",
     japanese: "リソース構成とコンプライアンス",
-    note: "V2 知识库首批核心词条",
+    note: "记录资源配置变化，并持续按规则评估资源是否合规。",
     frequency: 5,
   },
   {
@@ -189,7 +197,7 @@ const rows = [
     english: "Amazon DynamoDB",
     chinese: "无服务器 NoSQL 数据库",
     japanese: "サーバーレス NoSQL",
-    note: "V2 知识库首批核心词条",
+    note: "无服务器键值与文档数据库，可在大规模场景下提供个位数毫秒级性能。",
     frequency: 5,
   },
   {
@@ -805,7 +813,7 @@ const rows = [
     english: "Amazon Athena",
     chinese: "S3 无服务器 SQL 查询",
     japanese: "S3 サーバーレス SQL",
-    note: "V2 知识库首批核心词条",
+    note: "使用 SQL 直接分析 S3 中数据的无服务器查询服务。",
     frequency: 4,
   },
   {
@@ -1021,7 +1029,7 @@ const rows = [
     english: "AWS Database Migration Service",
     chinese: "数据库迁移服务",
     japanese: "データベース移行サービス",
-    note: "V2 知识库首批核心词条",
+    note: "通过全量加载和持续变更复制迁移数据库的托管服务。",
     frequency: 4,
   },
   {
@@ -1573,7 +1581,7 @@ const rows = [
     english: "Amazon FSx",
     chinese: "托管文件系统系列",
     japanese: "マネージドファイルシステム",
-    note: "V2 知识库首批核心词条",
+    note: "面向 Windows、Lustre、NetApp ONTAP 和 OpenZFS 工作负载的托管文件系统家族。",
     frequency: 3,
   },
   {
@@ -1597,7 +1605,7 @@ const rows = [
     english: "Gateway Load Balancer",
     chinese: "网关负载均衡器",
     japanese: "Gateway Load Balancer",
-    note: "V2 知识库首批核心词条",
+    note: "使用 GENEVE 在第 3 层透明部署和扩展第三方虚拟网络设备。",
     frequency: 3,
   },
   {
@@ -1733,7 +1741,7 @@ const rows = [
     english: "Amazon SageMaker",
     chinese: "机器学习平台",
     japanese: "機械学習プラットフォーム",
-    note: "V2 知识库首批核心词条",
+    note: "用于构建、训练、调优和部署机器学习模型的托管服务。",
     frequency: 3,
   },
   {
@@ -1930,4 +1938,11 @@ const rows = [
   },
 ] as const;
 
-export const awsGlossaryEntries: AwsGlossaryEntry[] = rows.map((row) => ({ ...row }));
+export const awsGlossaryEntries: AwsGlossaryEntry[] = rows.map((row) => ({
+  ...row,
+  note: {
+    zh: row.note,
+    en: awsGlossaryNoteTranslations[row.term].en,
+    ja: awsGlossaryNoteTranslations[row.term].ja,
+  },
+}));
