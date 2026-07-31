@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Elastic Load Balancing"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["networking","Elastic Load Balancing","AWS"]
 notionId: 3a6964dc-ce4a-810c-87bf-c6a286d89cdf
 notionUrl: https://app.notion.com/p/3a6964dcce4a810c87bfc6a286d89cdf
-notionUpdated: "2026-07-23T07:21:23.243Z"
+notionUpdated: "2026-07-30T08:30:21.340Z"
 ---
 
 ## 基本信息
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:21:23.243Z"
 | 英文 | Elastic Load Balancing |
 | 全称 | Elastic Load Balancing |
 | 中文释义 | 弹性负载均衡 |
-| 日文释义 | マネージドロードバランシングサービス |
+| 日文释义 | Elastic Load Balancing（マネージド負荷分散サービス） |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | Auto Scaling / ALB / NLB / GWLB |
 

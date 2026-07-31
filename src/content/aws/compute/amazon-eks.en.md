@@ -9,11 +9,11 @@ lang: en
 topicKey: "Amazon EKS"
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","Amazon EKS","AWS"]
 notionId: 3a6964dc-ce4a-8197-9431-e9339a24f693
 notionUrl: https://app.notion.com/p/3a6964dcce4a81979431e9339a24f693
-notionUpdated: "2026-07-23T07:19:34.220Z"
+notionUpdated: "2026-07-30T08:30:03.530Z"
 ---
 
 ## Basic Information
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:19:34.220Z"
 | English name | Amazon EKS |
 | Full name | Amazon Elastic Kubernetes Service |
 | Chinese description | 托管 Kubernetes 服务 |
-| Japanese description | マネージド Kubernetes サービス |
+| Japanese description | Amazon EKS（マネージド Kubernetes サービス） |
 | Exam frequency | ⭐⭐⭐⭐ |
 | Often confused with | ECS / Kubernetes / Fargate |
 

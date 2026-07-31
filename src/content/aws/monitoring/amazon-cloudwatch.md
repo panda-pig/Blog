@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon CloudWatch"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["monitoring","Amazon CloudWatch","AWS"]
 notionId: 3a6964dc-ce4a-8127-ba14-fcf7b8754155
 notionUrl: https://app.notion.com/p/3a6964dcce4a8127ba14fcf7b8754155
-notionUpdated: "2026-07-23T07:21:25.507Z"
+notionUpdated: "2026-07-30T08:30:25.135Z"
 ---
 
 ## 基本信息
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:21:25.507Z"
 | 英文 | Amazon CloudWatch |
 | 全称 | Amazon CloudWatch |
 | 中文释义 | 监控、日志与可观测性服务 |
-| 日文释义 | モニタリング・ログ・オブザーバビリティサービス |
+| 日文释义 | Amazon CloudWatch（モニタリング・ログ・オブザーバビリティサービス） |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | CloudTrail / AWS Config |
 

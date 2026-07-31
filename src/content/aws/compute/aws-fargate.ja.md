@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Fargate"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","AWS Fargate","AWS"]
 notionId: 3a6964dc-ce4a-8117-b59f-fb16989375b3
 notionUrl: https://app.notion.com/p/3a6964dcce4a8117b59ffb16989375b3
-notionUpdated: "2026-07-23T07:19:36.892Z"
+notionUpdated: "2026-07-30T04:28:46.386Z"
 ---
 
 ## 基本情報
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:19:36.892Z"
 | 英語名 | AWS Fargate |
 | 正式名称 | AWS Fargate |
 | 中国語の説明 | 无服务器容器计算引擎 |
-| 日本語の説明 | サーバーレスコンテナコンピューティングエンジン |
+| 日本語の説明 | AWS Fargate（ファーゲート） |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | ECS / EKS / Lambda / EC2 |
 

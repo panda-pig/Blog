@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Container 与 Virtual Machine"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","Container 与 Virtual Machine","AWS"]
 notionId: 3a6964dc-ce4a-81b9-8d77-f7bfa14bca29
 notionUrl: https://app.notion.com/p/3a6964dcce4a81b98d77f7bfa14bca29
-notionUpdated: "2026-07-23T07:17:27.722Z"
+notionUpdated: "2026-07-30T04:27:08.834Z"
 ---
 
 ## 基本信息

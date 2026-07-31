@@ -8,11 +8,11 @@ kind: service
 lang: ja
 frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-30
+updated: 2026-07-31
 tags: [Storage, Disaster Recovery, Architecture]
 notionId: 3ac964dc-ce4a-81f3-bec3-cd5079cbbaa7
 notionUrl: https://app.notion.com/p/3ac964dcce4a81f3bec3cd5079cbbaa7
-notionUpdated: "2026-07-29T04:39:41.992Z"
+notionUpdated: "2026-07-30T08:30:13.728Z"
 ---
 
 ## 基本情報
@@ -22,7 +22,7 @@ notionUpdated: "2026-07-29T04:39:41.992Z"
 | 英語名 | AWS Elastic Disaster Recovery (AWS DRS) |
 | 正式名称 | AWS Elastic Disaster Recovery |
 | 中国語の説明 | AWS 弹性灾难恢复 |
-| 日本語の説明 | AWS のマネージド災害復旧サービス |
+| 日本語の説明 | AWS Elastic Disaster Recovery（災害復旧サービス） |
 | 出題頻度 | ⭐⭐⭐⭐ |
 | 混同しやすいもの | AWS Backup / EBS Snapshot / Storage Gateway |
 

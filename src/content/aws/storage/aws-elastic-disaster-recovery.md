@@ -8,11 +8,11 @@ kind: service
 lang: zh
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-30
+updated: 2026-07-31
 tags: [Storage, Disaster Recovery, Architecture]
 notionId: 3ac964dc-ce4a-81f3-bec3-cd5079cbbaa7
 notionUrl: https://app.notion.com/p/3ac964dcce4a81f3bec3cd5079cbbaa7
-notionUpdated: "2026-07-29T04:39:41.992Z"
+notionUpdated: "2026-07-30T08:30:13.728Z"
 ---
 
 ## 基本信息
@@ -22,7 +22,7 @@ notionUpdated: "2026-07-29T04:39:41.992Z"
 | 英文 | AWS Elastic Disaster Recovery (AWS DRS) |
 | 全称 | AWS Elastic Disaster Recovery |
 | 中文释义 | AWS 弹性灾难恢复 |
-| 日文释义 | AWS のマネージド災害復旧サービス |
+| 日文释义 | AWS Elastic Disaster Recovery（災害復旧サービス） |
 | 考试频率 | ⭐⭐⭐⭐ |
 | 易混淆 | AWS Backup / EBS Snapshot / Storage Gateway |
 

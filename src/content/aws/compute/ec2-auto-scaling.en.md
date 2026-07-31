@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["Compute","Auto Scaling","SAA-C03"]
 notionId: 3a6964dc-ce4a-811a-bc62-e247c6def362
 notionUrl: https://app.notion.com/p/3a6964dcce4a811abc62e247c6def362
-notionUpdated: "2026-07-30T01:09:11.112Z"
+notionUpdated: "2026-07-30T04:28:45.501Z"
 ---
 
 ## Basic Information

@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Outposts"
 frequency: "Exam frequency ⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","AWS Outposts","AWS"]
 notionId: 3a6964dc-ce4a-81a2-9dc8-e2d635fedd31
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a29dc8e2d635fedd31
-notionUpdated: "2026-07-23T07:21:13.694Z"
+notionUpdated: "2026-07-30T08:30:11.875Z"
 ---
 
 ## Basic Information
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:21:13.694Z"
 | English name | AWS Outposts |
 | Full name | AWS Outposts |
 | Chinese description | AWS 本地部署的托管基础设施 |
-| Japanese description | オンプレミス向け AWS マネージドインフラストラクチャ |
+| Japanese description | AWS Outposts（オンプレミス向け AWS マネージドインフラストラクチャ） |
 | Exam frequency | ⭐⭐⭐ |
 | Often confused with | Local Zones / Wavelength / On-premises |
 

@@ -9,11 +9,11 @@ lang: ja
 topicKey: "Amazon CloudWatch"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["monitoring","Amazon CloudWatch","AWS"]
 notionId: 3a6964dc-ce4a-8127-ba14-fcf7b8754155
 notionUrl: https://app.notion.com/p/3a6964dcce4a8127ba14fcf7b8754155
-notionUpdated: "2026-07-23T07:21:25.507Z"
+notionUpdated: "2026-07-30T08:30:25.135Z"
 ---
 
 ## 基本情報
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:21:25.507Z"
 | 英語名 | Amazon CloudWatch |
 | 正式名称 | Amazon CloudWatch |
 | 中国語の説明 | 监控、日志与可观测性服务 |
-| 日本語の説明 | モニタリング・ログ・オブザーバビリティサービス |
+| 日本語の説明 | Amazon CloudWatch（モニタリング・ログ・オブザーバビリティサービス） |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | CloudTrail / AWS Config |
 

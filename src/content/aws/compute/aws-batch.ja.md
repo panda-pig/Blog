@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Batch"
 frequency: "出題頻度 ⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","AWS Batch","AWS"]
 notionId: 3a6964dc-ce4a-8195-b971-f961d52b58f6
 notionUrl: https://app.notion.com/p/3a6964dcce4a8195b971f961d52b58f6
-notionUpdated: "2026-07-23T07:19:41.307Z"
+notionUpdated: "2026-07-30T04:28:48.108Z"
 ---
 
 ## 基本情報
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:19:41.307Z"
 | 英語名 | AWS Batch |
 | 正式名称 | AWS Batch |
 | 中国語の説明 | 托管批处理计算服务 |
-| 日本語の説明 | マネージドバッチ処理サービス |
+| 日本語の説明 | AWS Batch（バッチ処理） |
 | 出題頻度 | ⭐⭐⭐ |
 | 混同しやすいもの | Lambda / Step Functions / ECS |
 

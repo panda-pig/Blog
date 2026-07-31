@@ -8,11 +8,11 @@ kind: service
 lang: ja
 frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-30
+updated: 2026-07-31
 tags: [Storage, Backup, Governance]
 notionId: 3a6964dc-ce4a-8144-a676-dad1d439be1f
 notionUrl: https://app.notion.com/p/3a6964dcce4a8144a676dad1d439be1f
-notionUpdated: "2026-07-29T08:13:14.538Z"
+notionUpdated: "2026-07-30T04:28:49.972Z"
 ---
 
 ## 基本情報

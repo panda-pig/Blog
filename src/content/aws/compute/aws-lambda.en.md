@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Lambda"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","AWS Lambda","AWS"]
 notionId: 3a6964dc-ce4a-81f9-8d71-f17f423387eb
 notionUrl: https://app.notion.com/p/3a6964dcce4a81f98d71f17f423387eb
-notionUpdated: "2026-07-30T01:52:42.048Z"
+notionUpdated: "2026-07-30T04:28:44.585Z"
 ---
 
 ## Basic Information
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-30T01:52:42.048Z"
 | English name | AWS Lambda |
 | Full name | AWS Lambda |
 | Chinese description | 无服务器函数计算 |
-| Japanese description | サーバーレス関数実行サービス |
+| Japanese description | AWS Lambda（ラムダ） |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | EC2 / Fargate / AWS Batch |
 

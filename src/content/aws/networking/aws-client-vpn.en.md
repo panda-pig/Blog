@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Client VPN"
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["networking","AWS Client VPN","AWS"]
 notionId: 3aa964dc-ce4a-8111-8599-fcdb921fc955
 notionUrl: https://app.notion.com/p/3aa964dcce4a81118599fcdb921fc955
-notionUpdated: "2026-07-27T05:39:15.106Z"
+notionUpdated: "2026-07-30T08:30:16.835Z"
 ---
 
 ## Basic Information
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-27T05:39:15.106Z"
 | English name | AWS Client VPN |
 | Full name | AWS Client VPN |
 | Chinese description | 客户端 VPN / 远程访问 VPN |
-| Japanese description | クライアント VPN／リモートアクセス VPN |
+| Japanese description | AWS Client VPN（クライアント向けリモートアクセス VPN） |
 | Exam frequency | ⭐⭐⭐⭐ |
 | Often confused with | Site-to-Site VPN / Direct Connect |
 

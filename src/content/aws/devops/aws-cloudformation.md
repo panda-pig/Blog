@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS CloudFormation"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["devops","AWS CloudFormation","AWS"]
 notionId: 3a6964dc-ce4a-81fe-8a73-c98ed403b25b
 notionUrl: https://app.notion.com/p/3a6964dcce4a81fe8a73c98ed403b25b
-notionUpdated: "2026-07-23T08:25:26.418Z"
+notionUpdated: "2026-07-30T08:30:26.959Z"
 ---
 
 ## 基本信息
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T08:25:26.418Z"
 | 英文 | AWS CloudFormation |
 | 全称 | AWS CloudFormation |
 | 中文释义 | AWS 基础设施即代码服务 |
-| 日文释义 | AWS の Infrastructure as Code（IaC）サービス |
+| 日文释义 | AWS CloudFormation（コードによるインフラストラクチャ管理サービス） |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | AWS CLI / SDK / CDK / Terraform / Elastic Beanstalk |
 

@@ -9,11 +9,11 @@ lang: zh
 topicKey: "灾难恢复策略"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["architecture","Disaster Recovery Strategies","AWS"]
 notionId: 3a6964dc-ce4a-81a1-a460-dec79107380f
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a1a460dec79107380f
-notionUpdated: "2026-07-29T04:44:08.420Z"
+notionUpdated: "2026-07-30T04:29:30.913Z"
 ---
 
 ## 基本信息

@@ -9,11 +9,11 @@ lang: zh
 topicKey: "High Availability & Fault Tolerance"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["architecture","High Availability & Fault Tolerance","AWS"]
 notionId: 3a6964dc-ce4a-816d-833f-c03167b88b6c
 notionUrl: https://app.notion.com/p/3a6964dcce4a816d833fc03167b88b6c
-notionUpdated: "2026-07-23T08:25:18.648Z"
+notionUpdated: "2026-07-30T04:29:30.005Z"
 ---
 
 ## 基本信息

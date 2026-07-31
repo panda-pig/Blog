@@ -9,11 +9,11 @@ lang: en
 topicKey: "Amazon API Gateway"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["messaging","Amazon API Gateway","AWS"]
 notionId: 3aa964dc-ce4a-816a-9659-d08ad7142c2d
 notionUrl: https://app.notion.com/p/3aa964dcce4a816a9659d08ad7142c2d
-notionUpdated: "2026-07-27T05:39:16.622Z"
+notionUpdated: "2026-07-30T08:30:23.174Z"
 ---
 
 ## Basic Information
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-27T05:39:16.622Z"
 | English name | Amazon API Gateway |
 | Full name | Amazon API Gateway |
 | Chinese description | API 网关 |
-| Japanese description | API の作成・公開・管理サービス |
+| Japanese description | Amazon API Gateway（API の作成・公開・管理サービス） |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | ALB / Internet Gateway / NAT Gateway |
 

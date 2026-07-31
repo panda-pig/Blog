@@ -9,11 +9,11 @@ lang: en
 topicKey: "Elastic Load Balancing"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["networking","Elastic Load Balancing","AWS"]
 notionId: 3a6964dc-ce4a-810c-87bf-c6a286d89cdf
 notionUrl: https://app.notion.com/p/3a6964dcce4a810c87bfc6a286d89cdf
-notionUpdated: "2026-07-23T07:21:23.243Z"
+notionUpdated: "2026-07-30T08:30:21.340Z"
 ---
 
 ## Basic Information
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:21:23.243Z"
 | English name | Elastic Load Balancing |
 | Full name | Elastic Load Balancing |
 | Chinese description | 弹性负载均衡 |
-| Japanese description | マネージドロードバランシングサービス |
+| Japanese description | Elastic Load Balancing（マネージド負荷分散サービス） |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | Auto Scaling / ALB / NLB / GWLB |
 

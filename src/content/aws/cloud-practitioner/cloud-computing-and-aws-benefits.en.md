@@ -9,11 +9,11 @@ lang: en
 topicKey: "云计算与 AWS 的优势"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["cloud-practitioner","云计算与 AWS 的优势","AWS"]
 notionId: 3a6964dc-ce4a-8144-9a6a-f2b1f693a058
 notionUrl: https://app.notion.com/p/3a6964dcce4a81449a6af2b1f693a058
-notionUpdated: "2026-07-23T07:17:25.803Z"
+notionUpdated: "2026-07-30T04:27:33.118Z"
 ---
 
 ## Basic Information

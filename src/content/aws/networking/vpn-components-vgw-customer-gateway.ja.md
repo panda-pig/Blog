@@ -9,11 +9,11 @@ lang: ja
 topicKey: "VPN Components：VGW & Customer Gateway"
 frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["networking","VPN Components：VGW & Customer Gateway","AWS"]
 notionId: 3aa964dc-ce4a-8199-bdd8-df77a47a2a89
 notionUrl: https://app.notion.com/p/3aa964dcce4a8199bdd8df77a47a2a89
-notionUpdated: "2026-07-27T05:39:15.128Z"
+notionUpdated: "2026-07-30T04:27:13.346Z"
 ---
 
 ## 基本情報

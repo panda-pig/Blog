@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Global Accelerator"
 frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["networking","AWS Global Accelerator","AWS"]
 notionId: 3a6964dc-ce4a-814f-9602-eca85431f9f2
 notionUrl: https://app.notion.com/p/3a6964dcce4a814f9602eca85431f9f2
-notionUpdated: "2026-07-27T05:41:43.430Z"
+notionUpdated: "2026-07-30T04:29:19.082Z"
 ---
 
 ## 基本情報

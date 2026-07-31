@@ -493,6 +493,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"analytics/amazon-msk.en.md": {
+	id: "analytics/amazon-msk.en.md";
+  slug: "analytics/amazon-msken";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-msk.ja.md": {
+	id: "analytics/amazon-msk.ja.md";
+  slug: "analytics/amazon-mskja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/amazon-msk.md": {
+	id: "analytics/amazon-msk.md";
+  slug: "analytics/amazon-msk";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "analytics/amazon-opensearch-service.en.md": {
 	id: "analytics/amazon-opensearch-service.en.md";
   slug: "analytics/amazon-opensearch-serviceen";
@@ -556,6 +577,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"analytics/aws-lake-formation.en.md": {
+	id: "analytics/aws-lake-formation.en.md";
+  slug: "analytics/aws-lake-formationen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/aws-lake-formation.ja.md": {
+	id: "analytics/aws-lake-formation.ja.md";
+  slug: "analytics/aws-lake-formationja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"analytics/aws-lake-formation.md": {
+	id: "analytics/aws-lake-formation.md";
+  slug: "analytics/aws-lake-formation";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "analytics/data-analytics-core-concepts.en.md": {
 	id: "analytics/data-analytics-core-concepts.en.md";
   slug: "analytics/data-analytics-core-conceptsen";
@@ -577,6 +619,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"architecture/aws-cloud-adoption-framework.en.md": {
+	id: "architecture/aws-cloud-adoption-framework.en.md";
+  slug: "architecture/aws-cloud-adoption-frameworken";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/aws-cloud-adoption-framework.ja.md": {
+	id: "architecture/aws-cloud-adoption-framework.ja.md";
+  slug: "architecture/aws-cloud-adoption-frameworkja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/aws-cloud-adoption-framework.md": {
+	id: "architecture/aws-cloud-adoption-framework.md";
+  slug: "architecture/aws-cloud-adoption-framework";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "architecture/aws-shared-responsibility-model.en.md": {
 	id: "architecture/aws-shared-responsibility-model.en.md";
   slug: "architecture/aws-shared-responsibility-modelen";
@@ -594,6 +657,27 @@ declare module 'astro:content' {
 "architecture/aws-shared-responsibility-model.md": {
 	id: "architecture/aws-shared-responsibility-model.md";
   slug: "architecture/aws-shared-responsibility-model";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/aws-well-architected-framework.en.md": {
+	id: "architecture/aws-well-architected-framework.en.md";
+  slug: "architecture/aws-well-architected-frameworken";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/aws-well-architected-framework.ja.md": {
+	id: "architecture/aws-well-architected-framework.ja.md";
+  slug: "architecture/aws-well-architected-frameworkja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/aws-well-architected-framework.md": {
+	id: "architecture/aws-well-architected-framework.md";
+  slug: "architecture/aws-well-architected-framework";
   body: string;
   collection: "aws";
   data: any
@@ -699,6 +783,27 @@ declare module 'astro:content' {
 "architecture/high-availability-fault-tolerance.md": {
 	id: "architecture/high-availability-fault-tolerance.md";
   slug: "architecture/high-availability-fault-tolerance";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/multi-account-architecture.en.md": {
+	id: "architecture/multi-account-architecture.en.md";
+  slug: "architecture/multi-account-architectureen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/multi-account-architecture.ja.md": {
+	id: "architecture/multi-account-architecture.ja.md";
+  slug: "architecture/multi-account-architectureja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"architecture/multi-account-architecture.md": {
+	id: "architecture/multi-account-architecture.md";
+  slug: "architecture/multi-account-architecture";
   body: string;
   collection: "aws";
   data: any
@@ -1102,6 +1207,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"compare/inspector-vs-guardduty-vs-macie-vs-detective-vs-security-hub.en.md": {
+	id: "compare/inspector-vs-guardduty-vs-macie-vs-detective-vs-security-hub.en.md";
+  slug: "compare/inspector-vs-guardduty-vs-macie-vs-detective-vs-security-huben";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/inspector-vs-guardduty-vs-macie-vs-detective-vs-security-hub.ja.md": {
+	id: "compare/inspector-vs-guardduty-vs-macie-vs-detective-vs-security-hub.ja.md";
+  slug: "compare/inspector-vs-guardduty-vs-macie-vs-detective-vs-security-hubja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/inspector-vs-guardduty-vs-macie-vs-detective-vs-security-hub.md": {
+	id: "compare/inspector-vs-guardduty-vs-macie-vs-detective-vs-security-hub.md";
+  slug: "compare/inspector-vs-guardduty-vs-macie-vs-detective-vs-security-hub";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "compare/kinesis-data-streams-vs-amazon-data-firehose.en.md": {
 	id: "compare/kinesis-data-streams-vs-amazon-data-firehose.en.md";
   slug: "compare/kinesis-data-streams-vs-amazon-data-firehoseen";
@@ -1119,6 +1245,27 @@ declare module 'astro:content' {
 "compare/kinesis-data-streams-vs-amazon-data-firehose.md": {
 	id: "compare/kinesis-data-streams-vs-amazon-data-firehose.md";
   slug: "compare/kinesis-data-streams-vs-amazon-data-firehose";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/kms-vs-secrets-manager-vs-acm.en.md": {
+	id: "compare/kms-vs-secrets-manager-vs-acm.en.md";
+  slug: "compare/kms-vs-secrets-manager-vs-acmen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/kms-vs-secrets-manager-vs-acm.ja.md": {
+	id: "compare/kms-vs-secrets-manager-vs-acm.ja.md";
+  slug: "compare/kms-vs-secrets-manager-vs-acmja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/kms-vs-secrets-manager-vs-acm.md": {
+	id: "compare/kms-vs-secrets-manager-vs-acm.md";
+  slug: "compare/kms-vs-secrets-manager-vs-acm";
   body: string;
   collection: "aws";
   data: any
@@ -1287,6 +1434,27 @@ declare module 'astro:content' {
 "compare/sqs-vs-sns-vs-eventbridge.md": {
 	id: "compare/sqs-vs-sns-vs-eventbridge.md";
   slug: "compare/sqs-vs-sns-vs-eventbridge";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/waf-vs-shield-vs-security-group.en.md": {
+	id: "compare/waf-vs-shield-vs-security-group.en.md";
+  slug: "compare/waf-vs-shield-vs-security-groupen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/waf-vs-shield-vs-security-group.ja.md": {
+	id: "compare/waf-vs-shield-vs-security-group.ja.md";
+  slug: "compare/waf-vs-shield-vs-security-groupja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/waf-vs-shield-vs-security-group.md": {
+	id: "compare/waf-vs-shield-vs-security-group.md";
+  slug: "compare/waf-vs-shield-vs-security-group";
   body: string;
   collection: "aws";
   data: any
@@ -1732,6 +1900,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"database/amazon-timestream.en.md": {
+	id: "database/amazon-timestream.en.md";
+  slug: "database/amazon-timestreamen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-timestream.ja.md": {
+	id: "database/amazon-timestream.ja.md";
+  slug: "database/amazon-timestreamja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"database/amazon-timestream.md": {
+	id: "database/amazon-timestream.md";
+  slug: "database/amazon-timestream";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "database/dynamodb-accelerator-dax.en.md": {
 	id: "database/dynamodb-accelerator-dax.en.md";
   slug: "database/dynamodb-accelerator-daxen";
@@ -1749,6 +1938,27 @@ declare module 'astro:content' {
 "database/dynamodb-accelerator-dax.md": {
 	id: "database/dynamodb-accelerator-dax.md";
   slug: "database/dynamodb-accelerator-dax";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-cdk.en.md": {
+	id: "devops/aws-cdk.en.md";
+  slug: "devops/aws-cdken";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-cdk.ja.md": {
+	id: "devops/aws-cdk.ja.md";
+  slug: "devops/aws-cdkja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-cdk.md": {
+	id: "devops/aws-cdk.md";
+  slug: "devops/aws-cdk";
   body: string;
   collection: "aws";
   data: any
@@ -1774,6 +1984,90 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"devops/aws-codeartifact.en.md": {
+	id: "devops/aws-codeartifact.en.md";
+  slug: "devops/aws-codeartifacten";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-codeartifact.ja.md": {
+	id: "devops/aws-codeartifact.ja.md";
+  slug: "devops/aws-codeartifactja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-codeartifact.md": {
+	id: "devops/aws-codeartifact.md";
+  slug: "devops/aws-codeartifact";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-codebuild.en.md": {
+	id: "devops/aws-codebuild.en.md";
+  slug: "devops/aws-codebuilden";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-codebuild.ja.md": {
+	id: "devops/aws-codebuild.ja.md";
+  slug: "devops/aws-codebuildja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-codebuild.md": {
+	id: "devops/aws-codebuild.md";
+  slug: "devops/aws-codebuild";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-codedeploy.en.md": {
+	id: "devops/aws-codedeploy.en.md";
+  slug: "devops/aws-codedeployen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-codedeploy.ja.md": {
+	id: "devops/aws-codedeploy.ja.md";
+  slug: "devops/aws-codedeployja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-codedeploy.md": {
+	id: "devops/aws-codedeploy.md";
+  slug: "devops/aws-codedeploy";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-codepipeline.en.md": {
+	id: "devops/aws-codepipeline.en.md";
+  slug: "devops/aws-codepipelineen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-codepipeline.ja.md": {
+	id: "devops/aws-codepipeline.ja.md";
+  slug: "devops/aws-codepipelineja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-codepipeline.md": {
+	id: "devops/aws-codepipeline.md";
+  slug: "devops/aws-codepipeline";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "devops/aws-resource-access-console-cli-sdk-iac.en.md": {
 	id: "devops/aws-resource-access-console-cli-sdk-iac.en.md";
   slug: "devops/aws-resource-access-console-cli-sdk-iacen";
@@ -1791,6 +2085,27 @@ declare module 'astro:content' {
 "devops/aws-resource-access-console-cli-sdk-iac.md": {
 	id: "devops/aws-resource-access-console-cli-sdk-iac.md";
   slug: "devops/aws-resource-access-console-cli-sdk-iac";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-sam.en.md": {
+	id: "devops/aws-sam.en.md";
+  slug: "devops/aws-samen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-sam.ja.md": {
+	id: "devops/aws-sam.ja.md";
+  slug: "devops/aws-samja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"devops/aws-sam.md": {
+	id: "devops/aws-sam.md";
+  slug: "devops/aws-sam";
   body: string;
   collection: "aws";
   data: any
@@ -1858,6 +2173,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"messaging/amazon-mq.en.md": {
+	id: "messaging/amazon-mq.en.md";
+  slug: "messaging/amazon-mqen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-mq.ja.md": {
+	id: "messaging/amazon-mq.ja.md";
+  slug: "messaging/amazon-mqja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/amazon-mq.md": {
+	id: "messaging/amazon-mq.md";
+  slug: "messaging/amazon-mq";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "messaging/amazon-sns.en.md": {
 	id: "messaging/amazon-sns.en.md";
   slug: "messaging/amazon-snsen";
@@ -1896,6 +2232,90 @@ declare module 'astro:content' {
 "messaging/amazon-sqs.md": {
 	id: "messaging/amazon-sqs.md";
   slug: "messaging/amazon-sqs";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/aws-appflow.en.md": {
+	id: "messaging/aws-appflow.en.md";
+  slug: "messaging/aws-appflowen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/aws-appflow.ja.md": {
+	id: "messaging/aws-appflow.ja.md";
+  slug: "messaging/aws-appflowja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/aws-appflow.md": {
+	id: "messaging/aws-appflow.md";
+  slug: "messaging/aws-appflow";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/aws-step-functions.en.md": {
+	id: "messaging/aws-step-functions.en.md";
+  slug: "messaging/aws-step-functionsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/aws-step-functions.ja.md": {
+	id: "messaging/aws-step-functions.ja.md";
+  slug: "messaging/aws-step-functionsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"messaging/aws-step-functions.md": {
+	id: "messaging/aws-step-functions.md";
+  slug: "messaging/aws-step-functions";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-application-discovery-service.en.md": {
+	id: "migration/aws-application-discovery-service.en.md";
+  slug: "migration/aws-application-discovery-serviceen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-application-discovery-service.ja.md": {
+	id: "migration/aws-application-discovery-service.ja.md";
+  slug: "migration/aws-application-discovery-serviceja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-application-discovery-service.md": {
+	id: "migration/aws-application-discovery-service.md";
+  slug: "migration/aws-application-discovery-service";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-application-migration-service.en.md": {
+	id: "migration/aws-application-migration-service.en.md";
+  slug: "migration/aws-application-migration-serviceen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-application-migration-service.ja.md": {
+	id: "migration/aws-application-migration-service.ja.md";
+  slug: "migration/aws-application-migration-serviceja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-application-migration-service.md": {
+	id: "migration/aws-application-migration-service.md";
+  slug: "migration/aws-application-migration-service";
   body: string;
   collection: "aws";
   data: any
@@ -1942,6 +2362,69 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"migration/aws-migration-hub.en.md": {
+	id: "migration/aws-migration-hub.en.md";
+  slug: "migration/aws-migration-huben";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-migration-hub.ja.md": {
+	id: "migration/aws-migration-hub.ja.md";
+  slug: "migration/aws-migration-hubja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-migration-hub.md": {
+	id: "migration/aws-migration-hub.md";
+  slug: "migration/aws-migration-hub";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-schema-conversion-tool.en.md": {
+	id: "migration/aws-schema-conversion-tool.en.md";
+  slug: "migration/aws-schema-conversion-toolen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-schema-conversion-tool.ja.md": {
+	id: "migration/aws-schema-conversion-tool.ja.md";
+  slug: "migration/aws-schema-conversion-toolja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-schema-conversion-tool.md": {
+	id: "migration/aws-schema-conversion-tool.md";
+  slug: "migration/aws-schema-conversion-tool";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-transfer-family.en.md": {
+	id: "migration/aws-transfer-family.en.md";
+  slug: "migration/aws-transfer-familyen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-transfer-family.ja.md": {
+	id: "migration/aws-transfer-family.ja.md";
+  slug: "migration/aws-transfer-familyja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"migration/aws-transfer-family.md": {
+	id: "migration/aws-transfer-family.md";
+  slug: "migration/aws-transfer-family";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "monitoring/amazon-cloudwatch.en.md": {
 	id: "monitoring/amazon-cloudwatch.en.md";
   slug: "monitoring/amazon-cloudwatchen";
@@ -1959,6 +2442,153 @@ declare module 'astro:content' {
 "monitoring/amazon-cloudwatch.md": {
 	id: "monitoring/amazon-cloudwatch.md";
   slug: "monitoring/amazon-cloudwatch";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-cloudtrail.en.md": {
+	id: "monitoring/aws-cloudtrail.en.md";
+  slug: "monitoring/aws-cloudtrailen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-cloudtrail.ja.md": {
+	id: "monitoring/aws-cloudtrail.ja.md";
+  slug: "monitoring/aws-cloudtrailja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-cloudtrail.md": {
+	id: "monitoring/aws-cloudtrail.md";
+  slug: "monitoring/aws-cloudtrail";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-config.en.md": {
+	id: "monitoring/aws-config.en.md";
+  slug: "monitoring/aws-configen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-config.ja.md": {
+	id: "monitoring/aws-config.ja.md";
+  slug: "monitoring/aws-configja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-config.md": {
+	id: "monitoring/aws-config.md";
+  slug: "monitoring/aws-config";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-health-dashboard.en.md": {
+	id: "monitoring/aws-health-dashboard.en.md";
+  slug: "monitoring/aws-health-dashboarden";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-health-dashboard.ja.md": {
+	id: "monitoring/aws-health-dashboard.ja.md";
+  slug: "monitoring/aws-health-dashboardja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-health-dashboard.md": {
+	id: "monitoring/aws-health-dashboard.md";
+  slug: "monitoring/aws-health-dashboard";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-systems-manager.en.md": {
+	id: "monitoring/aws-systems-manager.en.md";
+  slug: "monitoring/aws-systems-manageren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-systems-manager.ja.md": {
+	id: "monitoring/aws-systems-manager.ja.md";
+  slug: "monitoring/aws-systems-managerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-systems-manager.md": {
+	id: "monitoring/aws-systems-manager.md";
+  slug: "monitoring/aws-systems-manager";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-trusted-advisor.en.md": {
+	id: "monitoring/aws-trusted-advisor.en.md";
+  slug: "monitoring/aws-trusted-advisoren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-trusted-advisor.ja.md": {
+	id: "monitoring/aws-trusted-advisor.ja.md";
+  slug: "monitoring/aws-trusted-advisorja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-trusted-advisor.md": {
+	id: "monitoring/aws-trusted-advisor.md";
+  slug: "monitoring/aws-trusted-advisor";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-well-architected-tool.en.md": {
+	id: "monitoring/aws-well-architected-tool.en.md";
+  slug: "monitoring/aws-well-architected-toolen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-well-architected-tool.ja.md": {
+	id: "monitoring/aws-well-architected-tool.ja.md";
+  slug: "monitoring/aws-well-architected-toolja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-well-architected-tool.md": {
+	id: "monitoring/aws-well-architected-tool.md";
+  slug: "monitoring/aws-well-architected-tool";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-x-ray.en.md": {
+	id: "monitoring/aws-x-ray.en.md";
+  slug: "monitoring/aws-x-rayen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-x-ray.ja.md": {
+	id: "monitoring/aws-x-ray.ja.md";
+  slug: "monitoring/aws-x-rayja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-x-ray.md": {
+	id: "monitoring/aws-x-ray.md";
+  slug: "monitoring/aws-x-ray";
   body: string;
   collection: "aws";
   data: any
@@ -2425,6 +3055,321 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"security/amazon-cognito.en.md": {
+	id: "security/amazon-cognito.en.md";
+  slug: "security/amazon-cognitoen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-cognito.ja.md": {
+	id: "security/amazon-cognito.ja.md";
+  slug: "security/amazon-cognitoja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-cognito.md": {
+	id: "security/amazon-cognito.md";
+  slug: "security/amazon-cognito";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-detective.en.md": {
+	id: "security/amazon-detective.en.md";
+  slug: "security/amazon-detectiveen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-detective.ja.md": {
+	id: "security/amazon-detective.ja.md";
+  slug: "security/amazon-detectiveja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-detective.md": {
+	id: "security/amazon-detective.md";
+  slug: "security/amazon-detective";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-guardduty.en.md": {
+	id: "security/amazon-guardduty.en.md";
+  slug: "security/amazon-guarddutyen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-guardduty.ja.md": {
+	id: "security/amazon-guardduty.ja.md";
+  slug: "security/amazon-guarddutyja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-guardduty.md": {
+	id: "security/amazon-guardduty.md";
+  slug: "security/amazon-guardduty";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-inspector.en.md": {
+	id: "security/amazon-inspector.en.md";
+  slug: "security/amazon-inspectoren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-inspector.ja.md": {
+	id: "security/amazon-inspector.ja.md";
+  slug: "security/amazon-inspectorja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-inspector.md": {
+	id: "security/amazon-inspector.md";
+  slug: "security/amazon-inspector";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-macie.en.md": {
+	id: "security/amazon-macie.en.md";
+  slug: "security/amazon-macieen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-macie.ja.md": {
+	id: "security/amazon-macie.ja.md";
+  slug: "security/amazon-macieja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/amazon-macie.md": {
+	id: "security/amazon-macie.md";
+  slug: "security/amazon-macie";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-certificate-manager.en.md": {
+	id: "security/aws-certificate-manager.en.md";
+  slug: "security/aws-certificate-manageren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-certificate-manager.ja.md": {
+	id: "security/aws-certificate-manager.ja.md";
+  slug: "security/aws-certificate-managerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-certificate-manager.md": {
+	id: "security/aws-certificate-manager.md";
+  slug: "security/aws-certificate-manager";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-control-tower.en.md": {
+	id: "security/aws-control-tower.en.md";
+  slug: "security/aws-control-toweren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-control-tower.ja.md": {
+	id: "security/aws-control-tower.ja.md";
+  slug: "security/aws-control-towerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-control-tower.md": {
+	id: "security/aws-control-tower.md";
+  slug: "security/aws-control-tower";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-iam-identity-center.en.md": {
+	id: "security/aws-iam-identity-center.en.md";
+  slug: "security/aws-iam-identity-centeren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-iam-identity-center.ja.md": {
+	id: "security/aws-iam-identity-center.ja.md";
+  slug: "security/aws-iam-identity-centerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-iam-identity-center.md": {
+	id: "security/aws-iam-identity-center.md";
+  slug: "security/aws-iam-identity-center";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-iam.en.md": {
+	id: "security/aws-iam.en.md";
+  slug: "security/aws-iamen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-iam.ja.md": {
+	id: "security/aws-iam.ja.md";
+  slug: "security/aws-iamja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-iam.md": {
+	id: "security/aws-iam.md";
+  slug: "security/aws-iam";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-kms.en.md": {
+	id: "security/aws-kms.en.md";
+  slug: "security/aws-kmsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-kms.ja.md": {
+	id: "security/aws-kms.ja.md";
+  slug: "security/aws-kmsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-kms.md": {
+	id: "security/aws-kms.md";
+  slug: "security/aws-kms";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-organizations.en.md": {
+	id: "security/aws-organizations.en.md";
+  slug: "security/aws-organizationsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-organizations.ja.md": {
+	id: "security/aws-organizations.ja.md";
+  slug: "security/aws-organizationsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-organizations.md": {
+	id: "security/aws-organizations.md";
+  slug: "security/aws-organizations";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-secrets-manager.en.md": {
+	id: "security/aws-secrets-manager.en.md";
+  slug: "security/aws-secrets-manageren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-secrets-manager.ja.md": {
+	id: "security/aws-secrets-manager.ja.md";
+  slug: "security/aws-secrets-managerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-secrets-manager.md": {
+	id: "security/aws-secrets-manager.md";
+  slug: "security/aws-secrets-manager";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-security-hub.en.md": {
+	id: "security/aws-security-hub.en.md";
+  slug: "security/aws-security-huben";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-security-hub.ja.md": {
+	id: "security/aws-security-hub.ja.md";
+  slug: "security/aws-security-hubja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-security-hub.md": {
+	id: "security/aws-security-hub.md";
+  slug: "security/aws-security-hub";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-shield.en.md": {
+	id: "security/aws-shield.en.md";
+  slug: "security/aws-shielden";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-shield.ja.md": {
+	id: "security/aws-shield.ja.md";
+  slug: "security/aws-shieldja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-shield.md": {
+	id: "security/aws-shield.md";
+  slug: "security/aws-shield";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-waf.en.md": {
+	id: "security/aws-waf.en.md";
+  slug: "security/aws-wafen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-waf.ja.md": {
+	id: "security/aws-waf.ja.md";
+  slug: "security/aws-wafja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/aws-waf.md": {
+	id: "security/aws-waf.md";
+  slug: "security/aws-waf";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "storage/amazon-ebs.en.md": {
 	id: "storage/amazon-ebs.en.md";
   slug: "storage/amazon-ebsen";
@@ -2547,6 +3492,27 @@ declare module 'astro:content' {
 "storage/aws-elastic-disaster-recovery.md": {
 	id: "storage/aws-elastic-disaster-recovery.md";
   slug: "storage/aws-elastic-disaster-recovery";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/aws-snow-family.en.md": {
+	id: "storage/aws-snow-family.en.md";
+  slug: "storage/aws-snow-familyen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/aws-snow-family.ja.md": {
+	id: "storage/aws-snow-family.ja.md";
+  slug: "storage/aws-snow-familyja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"storage/aws-snow-family.md": {
+	id: "storage/aws-snow-family.md";
+  slug: "storage/aws-snow-family";
   body: string;
   collection: "aws";
   data: any

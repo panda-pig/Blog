@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon CloudFront"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["networking","Amazon CloudFront","AWS"]
 notionId: 3a6964dc-ce4a-8198-a643-ce1e9079cf9c
 notionUrl: https://app.notion.com/p/3a6964dcce4a8198a643ce1e9079cf9c
-notionUpdated: "2026-07-27T05:41:41.677Z"
+notionUpdated: "2026-07-30T04:29:21.974Z"
 ---
 
 ## 基本信息

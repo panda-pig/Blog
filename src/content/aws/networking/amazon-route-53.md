@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon Route 53"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["networking","Amazon Route 53","AWS"]
 notionId: 3a6964dc-ce4a-812e-8b52-d74e98d40a3d
 notionUrl: https://app.notion.com/p/3a6964dcce4a812e8b52d74e98d40a3d
-notionUpdated: "2026-07-27T05:41:39.696Z"
+notionUpdated: "2026-07-30T08:30:19.458Z"
 ---
 
 ## 基本信息
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-27T05:41:39.696Z"
 | 英文 | Amazon Route 53 |
 | 全称 | Amazon Route 53 |
 | 中文释义 | DNS、域名注册、健康检查与流量路由 |
-| 日文释义 | DNS・ドメイン登録・ヘルスチェック・トラフィックルーティングサービス |
+| 日文释义 | Amazon Route 53（DNS・ドメイン登録・ヘルスチェック・トラフィックルーティング） |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | CloudFront / ELB / Global Accelerator |
 

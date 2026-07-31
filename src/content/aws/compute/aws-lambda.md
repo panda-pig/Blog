@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Lambda"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","AWS Lambda","AWS"]
 notionId: 3a6964dc-ce4a-81f9-8d71-f17f423387eb
 notionUrl: https://app.notion.com/p/3a6964dcce4a81f98d71f17f423387eb
-notionUpdated: "2026-07-30T01:52:42.048Z"
+notionUpdated: "2026-07-30T04:28:44.585Z"
 ---
 
 ## 基本信息
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-30T01:52:42.048Z"
 | 英文 | AWS Lambda |
 | 全称 | AWS Lambda |
 | 中文释义 | 无服务器函数计算 |
-| 日文释义 | サーバーレス関数実行サービス |
+| 日文释义 | AWS Lambda（ラムダ） |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | EC2 / Fargate / AWS Batch |
 

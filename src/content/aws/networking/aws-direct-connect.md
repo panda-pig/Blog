@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Direct Connect"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["networking","AWS Direct Connect","AWS"]
 notionId: 3a6964dc-ce4a-812a-be47-ffe0e7198291
 notionUrl: https://app.notion.com/p/3a6964dcce4a812abe47ffe0e7198291
-notionUpdated: "2026-07-27T05:40:26.161Z"
+notionUpdated: "2026-07-30T04:29:20.004Z"
 ---
 
 ## 基本信息

@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-27
-updated: 2026-07-30
+updated: 2026-07-31
 tags: [Internet Gateway, VPC, Public Subnet, SAA-C03]
 notionId: 3a6964dc-ce4a-81ba-86d3-dca3dc2f01fd
 notionUrl: https://app.notion.com/p/3a6964dcce4a81ba86d3dca3dc2f01fd
-notionUpdated: "2026-07-27T05:37:27.928Z"
+notionUpdated: "2026-07-30T04:31:57.202Z"
 ---
 
 ## Basic Information

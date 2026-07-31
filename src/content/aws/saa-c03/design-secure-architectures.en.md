@@ -9,11 +9,11 @@ lang: en
 topicKey: "安全架构设计"
 frequency: "Study summary"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["saa-c03","Design Secure Architectures","AWS"]
 notionId: 3a6964dc-ce4a-815e-9db0-d8343bfa6db7
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9db0d8343bfa6db7
-notionUpdated: "2026-07-29T08:13:15.938Z"
+notionUpdated: "2026-07-31T04:06:43.645Z"
 ---
 
 ## In one sentence

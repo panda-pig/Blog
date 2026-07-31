@@ -9,11 +9,11 @@ lang: en
 topicKey: "Amazon CloudWatch"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["monitoring","Amazon CloudWatch","AWS"]
 notionId: 3a6964dc-ce4a-8127-ba14-fcf7b8754155
 notionUrl: https://app.notion.com/p/3a6964dcce4a8127ba14fcf7b8754155
-notionUpdated: "2026-07-23T07:21:25.507Z"
+notionUpdated: "2026-07-30T08:30:25.135Z"
 ---
 
 ## Basic Information
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:21:25.507Z"
 | English name | Amazon CloudWatch |
 | Full name | Amazon CloudWatch |
 | Chinese description | 监控、日志与可观测性服务 |
-| Japanese description | モニタリング・ログ・オブザーバビリティサービス |
+| Japanese description | Amazon CloudWatch（モニタリング・ログ・オブザーバビリティサービス） |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | CloudTrail / AWS Config |
 

@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-30
+updated: 2026-07-31
 tags: [Storage, File Storage, Hybrid]
 notionId: 3a6964dc-ce4a-81e5-a908-cd990d3f12be
 notionUrl: https://app.notion.com/p/3a6964dcce4a81e5a908cd990d3f12be
-notionUpdated: "2026-07-29T04:42:39.476Z"
+notionUpdated: "2026-07-30T04:28:57.890Z"
 ---
 
 ## Basic Information

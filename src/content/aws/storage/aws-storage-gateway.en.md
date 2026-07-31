@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-30
+updated: 2026-07-31
 tags: [Storage, Hybrid Cloud, Migration]
 notionId: 3a6964dc-ce4a-8139-8147-f4863a4da4ca
 notionUrl: https://app.notion.com/p/3a6964dcce4a81398147f4863a4da4ca
-notionUpdated: "2026-07-29T04:42:42.955Z"
+notionUpdated: "2026-07-30T04:28:58.736Z"
 ---
 
 ## Basic Information

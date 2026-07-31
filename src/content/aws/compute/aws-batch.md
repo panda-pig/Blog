@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Batch"
 frequency: "考试频率 ⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","AWS Batch","AWS"]
 notionId: 3a6964dc-ce4a-8195-b971-f961d52b58f6
 notionUrl: https://app.notion.com/p/3a6964dcce4a8195b971f961d52b58f6
-notionUpdated: "2026-07-23T07:19:41.307Z"
+notionUpdated: "2026-07-30T04:28:48.108Z"
 ---
 
 ## 基本信息
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:19:41.307Z"
 | 英文 | AWS Batch |
 | 全称 | AWS Batch |
 | 中文释义 | 托管批处理计算服务 |
-| 日文释义 | マネージドバッチ処理サービス |
+| 日文释义 | AWS Batch（バッチ処理） |
 | 考试频率 | ⭐⭐⭐ |
 | 易混淆 | Lambda / Step Functions / ECS |
 

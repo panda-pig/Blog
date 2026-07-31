@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Elastic Beanstalk"
 frequency: "Exam frequency ⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","AWS Elastic Beanstalk","AWS"]
 notionId: 3a6964dc-ce4a-810b-bd1c-f6e6f99c0865
 notionUrl: https://app.notion.com/p/3a6964dcce4a810bbd1cf6e6f99c0865
-notionUpdated: "2026-07-23T07:19:39.104Z"
+notionUpdated: "2026-07-30T08:30:10.060Z"
 ---
 
 ## Basic Information
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:19:39.104Z"
 | English name | AWS Elastic Beanstalk |
 | Full name | AWS Elastic Beanstalk |
 | Chinese description | 应用部署与托管服务 |
-| Japanese description | アプリケーションのデプロイ・管理サービス |
+| Japanese description | AWS Elastic Beanstalk（アプリケーションのデプロイ・管理サービス） |
 | Exam frequency | ⭐⭐⭐ |
 | Often confused with | CloudFormation / ECS / Lambda |
 

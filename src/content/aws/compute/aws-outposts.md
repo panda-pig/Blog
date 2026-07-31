@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Outposts"
 frequency: "考试频率 ⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","AWS Outposts","AWS"]
 notionId: 3a6964dc-ce4a-81a2-9dc8-e2d635fedd31
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a29dc8e2d635fedd31
-notionUpdated: "2026-07-23T07:21:13.694Z"
+notionUpdated: "2026-07-30T08:30:11.875Z"
 ---
 
 ## 基本信息
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:21:13.694Z"
 | 英文 | AWS Outposts |
 | 全称 | AWS Outposts |
 | 中文释义 | AWS 本地部署的托管基础设施 |
-| 日文释义 | オンプレミス向け AWS マネージドインフラストラクチャ |
+| 日文释义 | AWS Outposts（オンプレミス向け AWS マネージドインフラストラクチャ） |
 | 考试频率 | ⭐⭐⭐ |
 | 易混淆 | Local Zones / Wavelength / On-premises |
 

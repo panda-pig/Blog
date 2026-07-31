@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS 责任共担模型"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["architecture","AWS Shared Responsibility Model","AWS"]
 notionId: 3a6964dc-ce4a-81b5-b6d2-c6ee58ed36d9
 notionUrl: https://app.notion.com/p/3a6964dcce4a81b5b6d2c6ee58ed36d9
-notionUpdated: "2026-07-29T08:13:08.678Z"
+notionUpdated: "2026-07-31T04:06:42.102Z"
 ---
 
 ## Basic Information

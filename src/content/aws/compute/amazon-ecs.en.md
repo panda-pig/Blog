@@ -9,11 +9,11 @@ lang: en
 topicKey: "Amazon ECS"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","Amazon ECS","AWS"]
 notionId: 3a6964dc-ce4a-8132-9a5c-c4a14b839c97
 notionUrl: https://app.notion.com/p/3a6964dcce4a81329a5cc4a14b839c97
-notionUpdated: "2026-07-23T07:19:31.706Z"
+notionUpdated: "2026-07-30T08:30:05.385Z"
 ---
 
 ## Basic Information
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:19:31.706Z"
 | English name | Amazon ECS |
 | Full name | Amazon Elastic Container Service |
 | Chinese description | AWS 原生容器编排服务 |
-| Japanese description | AWS ネイティブのコンテナオーケストレーションサービス |
+| Japanese description | Amazon ECS（コンテナオーケストレーションサービス） |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | EKS / Fargate / ECR |
 

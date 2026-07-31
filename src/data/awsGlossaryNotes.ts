@@ -964,4 +964,148 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "A managed service for verifiable, tamper-resistant ledgers shared across multiple organizations.",
     ja: "複数組織で共有する、検証可能で改ざん耐性の高い Ledger 向けマネージドサービス。",
   },
+  "Amazon GuardDuty": {
+    en: "Continuously analyzes activity and threat intelligence to identify suspicious behavior.",
+    ja: "アクティビティと脅威インテリジェンスを継続的に分析し、不審な動作を検出する。",
+  },
+  "AWS Secrets Manager": {
+    en: "Securely stores passwords, tokens, and API keys and can rotate them automatically.",
+    ja: "パスワード、トークン、API キーを安全に保存し、自動ローテーションにも対応する。",
+  },
+  "AWS Security Hub": {
+    en: "Aggregates and standardizes findings from multiple security services.",
+    ja: "複数のセキュリティサービスからの検出結果を集約し、標準化する。",
+  },
+  "Session Manager": {
+    en: "Creates controlled sessions without opening inbound SSH or RDP ports.",
+    ja: "SSH や RDP の受信ポートを開かずに、管理されたセッションを確立する。",
+  },
+  "Amazon Inspector": {
+    en: "Continuously scans workloads for software vulnerabilities and CVEs.",
+    ja: "ワークロードを継続的にスキャンし、ソフトウェアの脆弱性や CVE を検出する。",
+  },
+  "IAM Identity Center": {
+    en: "Centrally manages workforce access to multiple AWS accounts and applications.",
+    ja: "従業員による複数の AWS アカウントとアプリケーションへのアクセスを一元管理する。",
+  },
+  "ACM": {
+    en: "Centrally provisions, deploys, and renews SSL/TLS certificates.",
+    ja: "SSL/TLS 証明書の発行、デプロイ、更新を一元管理する。",
+  },
+  "Amazon Detective": {
+    en: "Investigates security incidents through visual relationships and timelines.",
+    ja: "関係性の可視化とタイムラインを使って、セキュリティインシデントを調査する。",
+  },
+  "AWS KMS": {
+    en: "Creates, controls, and audits keys used to encrypt data.",
+    ja: "データ暗号化に使用するキーを作成、制御、監査する。",
+  },
+  "Amazon Macie": {
+    en: "Uses machine learning to discover sensitive data such as PII in S3.",
+    ja: "機械学習を使って、S3 内の PII などの機密データを検出する。",
+  },
+  "Security Finding": {
+    en: "A risk record produced by a security service, usually with severity and remediation guidance.",
+    ja: "セキュリティサービスが生成するリスク記録で、通常は重要度と推奨対応を含む。",
+  },
+  "AWS WAF": {
+    en: "Filters HTTP(S) requests with rules to defend against attacks such as SQL injection and XSS.",
+    ja: "ルールで HTTP(S) リクエストを検査し、SQL インジェクションや XSS などを防御する。",
+  },
+  "AWS Shield": {
+    en: "Protects AWS applications against DoS and DDoS attacks.",
+    ja: "AWS 上のアプリケーションを DoS および DDoS 攻撃から保護する。",
+  },
+  "AWS Systems Manager": {
+    en: "Centrally manages nodes, patches, commands, and operations automation.",
+    ja: "ノード、パッチ、コマンド、運用自動化を一元管理する。",
+  },
+  "PII": {
+    en: "Data that can directly or indirectly identify an individual.",
+    ja: "個人を直接または間接的に特定できるデータ。",
+  },
+  "MFA": {
+    en: "Strengthens sign-in security by requiring two or more verification factors.",
+    ja: "2 つ以上の認証要素を要求して、サインインの安全性を高める。",
+  },
+  "DDoS": {
+    en: "A denial-of-service attack launched simultaneously from many distributed sources.",
+    ja: "多数の分散した送信元から同時に仕掛けられるサービス拒否攻撃。",
+  },
+  "Authentication": {
+    en: "Verifies who a user or entity is.",
+    ja: "ユーザーやエンティティが誰であるかを確認する。",
+  },
+  "IAM Group": {
+    en: "Assigns policies to multiple IAM users as a group.",
+    ja: "複数の IAM ユーザーへポリシーをまとめて割り当てる。",
+  },
+  "Encryption in Transit": {
+    en: "Protects data while it travels across a network.",
+    ja: "ネットワークを転送中のデータを保護する。",
+  },
+  "TLS": {
+    en: "The modern protocol used to establish encrypted network connections.",
+    ja: "暗号化されたネットワーク接続を確立するための現行プロトコル。",
+  },
+  "Explicit Deny": {
+    en: "An explicit Deny takes precedence over every Allow during policy evaluation.",
+    ja: "ポリシー評価では、明示的な Deny がすべての Allow より優先される。",
+  },
+  "Trust Policy": {
+    en: "Determines who is allowed to assume an IAM role.",
+    ja: "誰が IAM ロールを引き受けられるかを決定する。",
+  },
+  "Permissions Policy": {
+    en: "Determines which AWS actions a principal is allowed to perform.",
+    ja: "プリンシパルが実行できる AWS アクションを決定する。",
+  },
+  "SSL/TLS Certificate": {
+    en: "Proves a service's identity and enables TLS-encrypted connections.",
+    ja: "サービスの身元を証明し、TLS で暗号化された接続を可能にする。",
+  },
+  "Temporary Credentials": {
+    en: "Time-limited credentials consisting of an access key, secret key, and session token.",
+    ja: "有効期限付きのアクセスキー、シークレットキー、セッショントークンで構成される認証情報。",
+  },
+  "Access Key": {
+    en: "Used for programmatic access; it should not be hard-coded or shared long term.",
+    ja: "プログラムによるアクセスに使用する。ハードコードや長期共有は避ける。",
+  },
+  "Federation": {
+    en: "Uses an external identity to sign in to AWS without creating another long-lived account.",
+    ja: "外部 ID を使って AWS にサインインし、長期アカウントの重複作成を避ける。",
+  },
+  "Least Privilege": {
+    en: "Grants only the permissions required to perform the task.",
+    ja: "作業の実行に必要な権限だけを付与する。",
+  },
+  "Root User": {
+    en: "Reserved for the small number of account tasks that only the root user can perform.",
+    ja: "ルートユーザーでしか実行できない、少数のアカウント作業にのみ使用する。",
+  },
+  "Authorization": {
+    en: "Determines which actions a principal is allowed to perform.",
+    ja: "プリンシパルが実行できる操作を決定する。",
+  },
+  "DoS": {
+    en: "Usually exhausts a target service's resources from a single source.",
+    ja: "通常は単一の送信元から対象サービスのリソースを枯渇させる。",
+  },
+  "Encryption at Rest": {
+    en: "Protects data that has already been stored on media.",
+    ja: "ストレージ媒体に保存されているデータを保護する。",
+  },
+  "Route 53::2": {
+    en: "Provides DNS, domain registration, and health checks; routing policies are a frequent SAA topic.",
+    ja: "DNS、ドメイン登録、ヘルスチェックを提供する。Routing Policy は SAA の頻出項目。",
+  },
+  "Block Storage::2": {
+    en: "Presents data blocks to an operating system for system disks and databases; EBS is the representative service.",
+    ja: "データブロックを OS に提供し、システムディスクやデータベースに適する。代表例は EBS。",
+  },
+  "Object Storage::2": {
+    en: "Accessed by object key rather than traditional disk blocks; S3 is the representative service.",
+    ja: "従来のディスクブロックではなくオブジェクトキーでアクセスする。代表例は S3。",
+  },
 };

@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon ECS"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","Amazon ECS","AWS"]
 notionId: 3a6964dc-ce4a-8132-9a5c-c4a14b839c97
 notionUrl: https://app.notion.com/p/3a6964dcce4a81329a5cc4a14b839c97
-notionUpdated: "2026-07-23T07:19:31.706Z"
+notionUpdated: "2026-07-30T08:30:05.385Z"
 ---
 
 ## 基本信息
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:19:31.706Z"
 | 英文 | Amazon ECS |
 | 全称 | Amazon Elastic Container Service |
 | 中文释义 | AWS 原生容器编排服务 |
-| 日文释义 | AWS ネイティブのコンテナオーケストレーションサービス |
+| 日文释义 | Amazon ECS（コンテナオーケストレーションサービス） |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | EKS / Fargate / ECR |
 

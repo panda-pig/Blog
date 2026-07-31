@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Elastic Beanstalk"
 frequency: "考试频率 ⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","AWS Elastic Beanstalk","AWS"]
 notionId: 3a6964dc-ce4a-810b-bd1c-f6e6f99c0865
 notionUrl: https://app.notion.com/p/3a6964dcce4a810bbd1cf6e6f99c0865
-notionUpdated: "2026-07-23T07:19:39.104Z"
+notionUpdated: "2026-07-30T08:30:10.060Z"
 ---
 
 ## 基本信息
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:19:39.104Z"
 | 英文 | AWS Elastic Beanstalk |
 | 全称 | AWS Elastic Beanstalk |
 | 中文释义 | 应用部署与托管服务 |
-| 日文释义 | アプリケーションのデプロイ・管理サービス |
+| 日文释义 | AWS Elastic Beanstalk（アプリケーションのデプロイ・管理サービス） |
 | 考试频率 | ⭐⭐⭐ |
 | 易混淆 | CloudFormation / ECS / Lambda |
 

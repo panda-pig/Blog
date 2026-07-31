@@ -9,11 +9,11 @@ lang: en
 topicKey: "Amazon EventBridge"
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["messaging","Amazon EventBridge","AWS"]
 notionId: 3a6964dc-ce4a-8146-be57-defb6099f3b1
 notionUrl: https://app.notion.com/p/3a6964dcce4a8146be57defb6099f3b1
-notionUpdated: "2026-07-23T07:21:20.695Z"
+notionUpdated: "2026-07-30T04:29:24.633Z"
 ---
 
 ## Basic Information
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:21:20.695Z"
 | English name | Amazon EventBridge |
 | Full name | Amazon EventBridge |
 | Chinese description | 事件总线与事件路由服务 |
-| Japanese description | イベントバス・イベントルーティングサービス |
+| Japanese description | Amazon EventBridge（イベントバス） |
 | Exam frequency | ⭐⭐⭐⭐ |
 | Often confused with | SNS / SQS / CloudWatch Events |
 

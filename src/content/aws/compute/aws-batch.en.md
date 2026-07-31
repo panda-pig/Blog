@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Batch"
 frequency: "Exam frequency ⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","AWS Batch","AWS"]
 notionId: 3a6964dc-ce4a-8195-b971-f961d52b58f6
 notionUrl: https://app.notion.com/p/3a6964dcce4a8195b971f961d52b58f6
-notionUpdated: "2026-07-23T07:19:41.307Z"
+notionUpdated: "2026-07-30T04:28:48.108Z"
 ---
 
 ## Basic Information
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:19:41.307Z"
 | English name | AWS Batch |
 | Full name | AWS Batch |
 | Chinese description | 托管批处理计算服务 |
-| Japanese description | マネージドバッチ処理サービス |
+| Japanese description | AWS Batch（バッチ処理） |
 | Exam frequency | ⭐⭐⭐ |
 | Often confused with | Lambda / Step Functions / ECS |
 

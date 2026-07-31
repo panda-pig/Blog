@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS 全球基础设施"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["cloud-practitioner","AWS 全球基础设施","AWS"]
 notionId: 3a6964dc-ce4a-8137-955b-d4d5d4decdc2
 notionUrl: https://app.notion.com/p/3a6964dcce4a8137955bd4d5d4decdc2
-notionUpdated: "2026-07-23T08:25:16.386Z"
+notionUpdated: "2026-07-30T04:27:35.438Z"
 ---
 
 ## 基本情報

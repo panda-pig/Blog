@@ -8,11 +8,11 @@ kind: service
 lang: ja
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-27
-updated: 2026-07-30
+updated: 2026-07-31
 tags: [Security Group, ENI, Stateful, SAA-C03]
 notionId: 3a6964dc-ce4a-8158-822a-c4539e3bd96c
 notionUrl: https://app.notion.com/p/3a6964dcce4a8158822ac4539e3bd96c
-notionUpdated: "2026-07-27T05:38:22.272Z"
+notionUpdated: "2026-07-30T04:29:15.483Z"
 ---
 
 ## 基本情報

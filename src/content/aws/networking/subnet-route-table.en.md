@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-27
-updated: 2026-07-30
+updated: 2026-07-31
 tags: [Subnet, Route Table, CIDR, SAA-C03]
 notionId: 3a6964dc-ce4a-818e-972f-f196d09400b4
 notionUrl: https://app.notion.com/p/3a6964dcce4a818e972ff196d09400b4
-notionUpdated: "2026-07-27T05:37:25.834Z"
+notionUpdated: "2026-07-30T04:29:02.006Z"
 ---
 
 ## Basic Information

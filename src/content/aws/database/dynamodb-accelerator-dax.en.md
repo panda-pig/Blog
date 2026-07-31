@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-30
+updated: 2026-07-31
 tags: [Database, DynamoDB, Cache]
 notionId: 3ac964dc-ce4a-815c-be49-c16168d8604b
 notionUrl: https://app.notion.com/p/3ac964dcce4a815cbe49c16168d8604b
-notionUpdated: "2026-07-29T08:07:57.540Z"
+notionUpdated: "2026-07-30T04:29:06.012Z"
 ---
 
 ## Basic Information

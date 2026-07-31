@@ -9,11 +9,11 @@ lang: zh
 topicKey: "客户端—服务器模型"
 frequency: "考试频率 ⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["cloud-practitioner","客户端—服务器模型","AWS"]
 notionId: 3a6964dc-ce4a-811a-9a71-dfdda6cbfba3
 notionUrl: https://app.notion.com/p/3a6964dcce4a811a9a71dfdda6cbfba3
-notionUpdated: "2026-07-23T07:17:25.788Z"
+notionUpdated: "2026-07-30T04:27:14.381Z"
 ---
 
 ## 基本信息

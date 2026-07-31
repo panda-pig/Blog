@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon EKS"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","Amazon EKS","AWS"]
 notionId: 3a6964dc-ce4a-8197-9431-e9339a24f693
 notionUrl: https://app.notion.com/p/3a6964dcce4a81979431e9339a24f693
-notionUpdated: "2026-07-23T07:19:34.220Z"
+notionUpdated: "2026-07-30T08:30:03.530Z"
 ---
 
 ## 基本信息
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:19:34.220Z"
 | 英文 | Amazon EKS |
 | 全称 | Amazon Elastic Kubernetes Service |
 | 中文释义 | 托管 Kubernetes 服务 |
-| 日文释义 | マネージド Kubernetes サービス |
+| 日文释义 | Amazon EKS（マネージド Kubernetes サービス） |
 | 考试频率 | ⭐⭐⭐⭐ |
 | 易混淆 | ECS / Kubernetes / Fargate |
 

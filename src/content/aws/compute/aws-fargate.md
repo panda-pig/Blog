@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Fargate"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-07-31
 tags: ["compute","AWS Fargate","AWS"]
 notionId: 3a6964dc-ce4a-8117-b59f-fb16989375b3
 notionUrl: https://app.notion.com/p/3a6964dcce4a8117b59ffb16989375b3
-notionUpdated: "2026-07-23T07:19:36.892Z"
+notionUpdated: "2026-07-30T04:28:46.386Z"
 ---
 
 ## 基本信息
@@ -23,7 +23,7 @@ notionUpdated: "2026-07-23T07:19:36.892Z"
 | 英文 | AWS Fargate |
 | 全称 | AWS Fargate |
 | 中文释义 | 无服务器容器计算引擎 |
-| 日文释义 | サーバーレスコンテナコンピューティングエンジン |
+| 日文释义 | AWS Fargate（ファーゲート） |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | ECS / EKS / Lambda / EC2 |
 
