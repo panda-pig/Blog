@@ -1,42 +1,50 @@
 ---
 title: "Amazon CloudWatch"
 fullName: "Amazon CloudWatch"
-description: "AWS monitoring and observability service for metrics, logs, alarms, dashboards, and automated actions."
+description: "Collect metrics and logs, visualize dashboards, and trigger alarms to observe current system health."
 service: "Amazon CloudWatch"
 category: monitoring
 kind: service
 lang: en
 topicKey: "Amazon CloudWatch"
-frequency: "Exam frequency ⭐⭐⭐⭐⭐"
-date: 2026-07-30
-updated: 2026-07-31
-tags: ["monitoring","Amazon CloudWatch","AWS"]
+frequency: "考试频率 ⭐⭐⭐⭐⭐"
+date: 2026-08-01
+updated: 2026-08-01
+tags: ["monitoring", "Amazon CloudWatch", "AWS"]
 notionId: 3a6964dc-ce4a-8127-ba14-fcf7b8754155
 notionUrl: https://app.notion.com/p/3a6964dcce4a8127ba14fcf7b8754155
-notionUpdated: "2026-07-30T08:30:25.135Z"
+notionUpdated: "2026-07-31T08:22:47.242Z"
 ---
 
 ## Basic Information
 
-| Field | Details |
+| Field | Value |
 | --- | --- |
-| English name | Amazon CloudWatch |
+| English | Amazon CloudWatch |
 | Full name | Amazon CloudWatch |
-| Chinese description | 监控、日志与可观测性服务 |
-| Japanese description | Amazon CloudWatch（モニタリング・ログ・オブザーバビリティサービス） |
+| Chinese | 监控、日志与可观测性服务 |
+| Japanese | Amazon CloudWatch（モニタリング・ログ・可観測性サービス） |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
-| Often confused with | CloudTrail / AWS Config |
+| Often confused with | AWS CloudTrail / AWS Config / AWS Health |
 
-## In one sentence
+## One-line summary
 
-> AWS monitoring and observability service for metrics, logs, alarms, dashboards, and automated actions.
+Collect metrics and logs, visualize dashboards, and trigger alarms to observe current system health.
 
-## Key points
+## Core capabilities and use cases
 
-- Metrics track numeric time-series data, while CloudWatch Logs stores and queries log events.
-- Alarms evaluate metrics and can notify SNS or trigger automated actions.
-- Dashboards combine operational views across resources and applications.
+- Metrics quantify CPU, request count, latency, error rate, and custom measurements.
+- Logs centralizes application, operating-system, Lambda, and service logs; Logs Insights queries them.
+- Alarms evaluate metric conditions and can notify SNS, trigger Auto Scaling, or start automation.
+- Dashboards visualize key information but do not create alerts by themselves.
+- EC2 memory and other guest OS metrics commonly require the CloudWatch Agent.
 
-## Exam takeaway
+## Exam focus and common pitfalls
 
-> CloudWatch observes performance and operations; CloudTrail audits API activity, and Config tracks resource configuration.
+- CloudWatch answers how the system is performing now; CloudTrail answers who called an API; Config answers how configuration changed.
+- Alarm states are OK, ALARM, and INSUFFICIENT_DATA.
+- Metrics measure, alarms decide, SNS notifies, dashboards display, and logs support troubleshooting.
+
+## Key takeaway
+
+**Metrics measure, alarms decide, SNS notifies, dashboards display, and logs troubleshoot.**

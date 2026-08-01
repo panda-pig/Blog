@@ -1,39 +1,38 @@
 ---
 title: "SAA Final Review"
 fullName: "SAA Final Review"
-description: "Review high-frequency architecture domains in a fixed order and practice eliminating options that violate the question's priorities."
+description: "Review high-frequency architecture domains in order and eliminate options that violate scenario priorities."
 service: "SAA-C03"
 category: saa-c03
 kind: topic
 lang: en
 topicKey: "SAA 考前速查"
-frequency: "Stage summary"
-date: 2026-07-31
-updated: 2026-07-31
-tags: ["saa-c03","SAA 考前速查","AWS"]
+frequency: "阶段性总结"
+date: 2026-08-01
+updated: 2026-08-01
+tags: ["saa-c03", "SAA 考前速查", "AWS"]
 notionId: 3a6964dc-ce4a-817c-860b-f61fe547c268
 notionUrl: https://app.notion.com/p/3a6964dcce4a817c860bf61fe547c268
-notionUpdated: "2026-07-23T07:04:41.111Z"
+notionUpdated: "2026-07-31T08:20:22.295Z"
 ---
 
-## In one sentence
+## Review order
 
-Review high-frequency architecture domains in a fixed order and practice eliminating options that violate the question's priorities.
+1. High-frequency comparisons
+2. VPC and networking
+3. S3 / EBS / EFS
+4. RDS / Aurora / DynamoDB
+5. EC2 / Auto Scaling / ELB / Lambda
+6. SQS / SNS / EventBridge
+7. IAM / KMS / Organizations
+8. CloudWatch / CloudTrail / Config / AWS Health
+9. Artifact / Audit Manager / Control Tower
+10. High availability, disaster recovery, RTO / RPO
+11. Cost and performance trade-offs
 
-## Key points
+## Final self-check
 
-- Order: comparisons → VPC/networking → storage → databases → compute → messaging → IAM/KMS → HA/DR → cost and performance.
-- Find explicit priorities such as least operations, highest availability, lowest cost, or lowest latency.
-- Be able not only to choose the answer but also to explain why alternatives violate the constraints.
-
-## Exam focus
-
-- Practice scenarios with three-tier, event-driven, and cross-AZ or cross-Region architectures.
-
-## Common pitfalls
-
-- Do not choose by product name alone; confirm data type, latency, control, operations, and cost constraints.
-
-## Remember
-
-**Find constraints and priorities first, then choose the service.**
+- Narrow a scenario to two choices using keywords.
+- Explain why the remaining options violate a requirement.
+- Identify priorities such as least operations, highest availability, or lowest cost.
+- Draw common three-tier, event-driven, and multi-account governance architectures.

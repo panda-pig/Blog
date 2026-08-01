@@ -20,6 +20,14 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "MySQL- and PostgreSQL-compatible, with storage replicated across multiple AZs; part of the RDS family.",
     ja: "MySQL/PostgreSQL 互換で、ストレージを複数 AZ に複製する RDS ファミリーのサービス。",
   },
+  "Authentication": {
+    en: "Verifies who a user or entity is.",
+    ja: "ユーザーやエンティティが誰であるかを確認する。",
+  },
+  "Authorization": {
+    en: "Determines which actions a principal is allowed to perform.",
+    ja: "プリンシパルが実行できる操作を決定する。",
+  },
   "Auto Scaling": {
     en: "Adds or removes instances based on metrics; Auto Scaling manages capacity while ELB distributes traffic.",
     ja: "メトリクスに基づいてインスタンスを増減する。容量は Auto Scaling、トラフィック分散は ELB が担当。",
@@ -33,8 +41,16 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     ja: "グローバルなクラウドプラットフォーム。試験ではセキュリティ、信頼性、弾力性、従量課金、責任共有モデルが中心。",
   },
   "AWS Config": {
-    en: "Records resource configuration changes and evaluates compliance against rules over time.",
-    ja: "リソース構成の変更を記録し、ルールに基づくコンプライアンスを継続的に評価する。",
+    en: "",
+    ja: "",
+  },
+  "AWS KMS": {
+    en: "Creates, controls, and audits keys used to encrypt data.",
+    ja: "データ暗号化に使用するキーを作成、制御、監査する。",
+  },
+  "AWS Organizations": {
+    en: "Manages accounts, OUs, SCPs, and consolidated billing; SCPs restrict permissions but do not grant them.",
+    ja: "アカウント、OU、SCP、一括請求を管理する。SCP は権限を制限するだけで、付与はしない。",
   },
   "AZ": {
     en: "An isolated group of data centers within a Region; highly available architectures usually span at least two AZs.",
@@ -93,8 +109,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     ja: "データが長期間保持され、永続的に失われない度合い。",
   },
   "DynamoDB": {
-    en: "A serverless key-value and document database with single-digit millisecond performance at scale.",
-    ja: "大規模環境でも一桁ミリ秒の性能を提供する、サーバーレスの Key-Value・ドキュメントデータベース。",
+    en: "",
+    ja: "",
   },
   "EBS": {
     en: "Typically attached to EC2 like a virtual disk; a volume belongs to one AZ and snapshots are stored in S3.",
@@ -115,6 +131,18 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "ELB": {
     en: "Distributes traffic across targets and performs health checks; ALB and NLB are members of the ELB product family.",
     ja: "複数のターゲットへトラフィックを分散し、ヘルスチェックを行う。ALB と NLB は ELB 製品群に含まれる。",
+  },
+  "Encryption at Rest": {
+    en: "Protects data that has already been stored on media.",
+    ja: "ストレージ媒体に保存されているデータを保護する。",
+  },
+  "Encryption in Transit": {
+    en: "Protects data while it travels across a network.",
+    ja: "ネットワークを転送中のデータを保護する。",
+  },
+  "Explicit Deny": {
+    en: "An explicit Deny takes precedence over every Allow during policy evaluation.",
+    ja: "ポリシー評価では、明示的な Deny がすべての Allow より優先される。",
   },
   "Failover": {
     en: "Switches traffic or workloads to a standby resource when the primary resource fails.",
@@ -188,6 +216,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Event-driven, automatically scales, and charges by invocation and duration; each run is limited to 15 minutes and is not suited to long-running processes.",
     ja: "イベント駆動で自動スケールし、呼び出し回数と実行時間で課金される。1 回の実行は最大 15 分で、長時間プロセスには不向き。",
   },
+  "Least Privilege": {
+    en: "Grants only the permissions required to perform the task.",
+    ja: "作業の実行に必要な権限だけを付与する。",
+  },
   "Lifecycle Policy": {
     en: "Moves data between storage classes, expires objects, and cleans up old versions according to rules.",
     ja: "ルールに従ってストレージクラスの移行、オブジェクトの期限切れ、旧バージョンの削除を行う。",
@@ -199,6 +231,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Loose Coupling": {
     en: "Lets components scale and recover independently; SQS is the most common exam example of decoupling.",
     ja: "コンポーネントを独立してスケール・復旧できる。試験では SQS が代表的な疎結合サービス。",
+  },
+  "MFA": {
+    en: "Strengthens sign-in security by requiring two or more verification factors.",
+    ja: "2 つ以上の認証要素を要求して、サインインの安全性を高める。",
   },
   "Mount Target": {
     en: "The network entry point for EFS in a subnet within an AZ.",
@@ -248,6 +284,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Determines the distribution of DynamoDB items and is the key element required by Query.",
     ja: "DynamoDB Item の分散を決め、Query で必ず指定するキー要素。",
   },
+  "Permissions Policy": {
+    en: "Determines which AWS actions a principal is allowed to perform.",
+    ja: "プリンシパルが実行できる AWS アクションを決定する。",
+  },
   "Point-in-Time Recovery (PITR)": {
     en: "Restores a database to a specific point within the retention window.",
     ja: "保持期間内の特定時点へデータベースを復元する。",
@@ -296,9 +336,17 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Organizes data with tables, keys, and relationships, supporting SQL, joins, and transactions.",
     ja: "テーブル、キー、関係でデータを整理し、SQL、JOIN、トランザクションをサポートする。",
   },
+  "Root User": {
+    en: "Reserved for the small number of account tasks that only the root user can perform.",
+    ja: "ルートユーザーでしか実行できない、少数のアカウント作業にのみ使用する。",
+  },
   "Route 53": {
     en: "Provides DNS resolution, domain registration, health checks, and traffic routing.",
     ja: "DNS 解決、ドメイン登録、ヘルスチェック、トラフィックルーティングを提供する。",
+  },
+  "Route 53::2": {
+    en: "Provides DNS, domain registration, and health checks; routing policies are a frequent SAA topic.",
+    ja: "DNS、ドメイン登録、ヘルスチェックを提供する。Routing Policy は SAA の頻出項目。",
   },
   "Route Table": {
     en: "Determines the next hop for network traffic; it does not allow or deny individual connections.",
@@ -372,9 +420,21 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Made of rows and columns in a relational database, and of items in DynamoDB.",
     ja: "リレーショナルデータベースでは行と列、DynamoDB では Item で構成される。",
   },
+  "Temporary Credentials": {
+    en: "Time-limited credentials consisting of an access key, secret key, and session token.",
+    ja: "有効期限付きのアクセスキー、シークレットキー、セッショントークンで構成される認証情報。",
+  },
   "Throughput": {
     en: "Measures data transferred per second; important for large sequential I/O.",
     ja: "1 秒あたりのデータ転送量。大きなファイルのシーケンシャル I/O で重視される。",
+  },
+  "TLS": {
+    en: "The modern protocol used to establish encrypted network connections.",
+    ja: "暗号化されたネットワーク接続を確立するための現行プロトコル。",
+  },
+  "Trust Policy": {
+    en: "Determines who is allowed to assume an IAM role.",
+    ja: "誰が IAM ロールを引き受けられるかを決定する。",
   },
   "Versioning": {
     en: "Keeps historical object versions to protect against accidental overwrites and deletions.",
@@ -392,6 +452,14 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Provides private access to supported AWS services or endpoint services.",
     ja: "対応する AWS Service または Endpoint Service へプライベートアクセスを提供する。",
   },
+  "Access Key": {
+    en: "Used for programmatic access; it should not be hard-coded or shared long term.",
+    ja: "プログラムによるアクセスに使用する。ハードコードや長期共有は避ける。",
+  },
+  "Amazon GuardDuty": {
+    en: "Continuously analyzes activity and threat intelligence to identify suspicious behavior.",
+    ja: "アクティビティと脅威インテリジェンスを継続的に分析し、不審な動作を検出する。",
+  },
   "AMI": {
     en: "A template for launching EC2 that contains an OS, software, and configuration; it can include one or more EBS snapshots.",
     ja: "OS、Software、設定を含む EC2 起動用テンプレート。1 つ以上の EBS Snapshot を含められる。",
@@ -401,8 +469,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     ja: "Message が重複配信される可能性があるため、Consumer は Idempotent に設計する必要がある。",
   },
   "Athena": {
-    en: "A serverless query service that uses SQL to analyze data directly in S3.",
-    ja: "S3 上のデータを SQL で直接分析する Serverless クエリサービス。",
+    en: "",
+    ja: "",
   },
   "Attribute": {
     en: "A field and its value within a DynamoDB item.",
@@ -412,6 +480,14 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "RDS automated backups combine snapshots and logs to support point-in-time recovery within the retention period.",
     ja: "RDS の自動バックアップは Snapshot と Log を組み合わせ、保持期間内の Point-in-Time Recovery を可能にする。",
   },
+  "AWS Artifact": {
+    en: "Provides AWS compliance reports and manages applicable agreements; it does not scan customer resources.",
+    ja: "AWS のコンプライアンスレポートを取得し、対象の契約を管理する。顧客リソースのスキャンは行わない。",
+  },
+  "AWS Audit Manager": {
+    en: "Organizes controls by audit framework and continuously collects evidence from the customer environment.",
+    ja: "監査フレームワークに沿ってコントロールを整理し、顧客環境から証拠を継続的に収集する。",
+  },
   "AWS Backup": {
     en: "Centrally manages backup and retention policies across multiple AWS services.",
     ja: "複数の AWS Service のバックアップと保持ポリシーを一元管理する。",
@@ -419,6 +495,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "AWS CLI": {
     en: "Calls AWS APIs from commands and scripts, making it suitable for routine operations and automation.",
     ja: "Command や Script から AWS API を呼び出し、定型運用や自動化に適する。",
+  },
+  "AWS Control Tower": {
+    en: "Provides a landing zone, Account Factory, controls, and a governance dashboard.",
+    ja: "Landing Zone、Account Factory、Controls、ガバナンス Dashboard を提供する。",
   },
   "AWS DMS": {
     en: "Migrates databases with minimal downtime through full load and ongoing replication.",
@@ -428,6 +508,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Continuously replicates servers at the block level and quickly launches recovery instances during a disaster.",
     ja: "Server を Block Level で継続複製し、災害時に復旧 Instance を迅速に起動する。",
   },
+  "AWS Health Dashboard": {
+    en: "Shows whether AWS service events, planned changes, and account notifications affect your resources.",
+    ja: "AWS サービスイベント、計画変更、アカウント通知が自分のリソースへ影響するかを確認できる。",
+  },
   "AWS SCT": {
     en: "Assesses and converts schemas and code objects for heterogeneous database migrations.",
     ja: "異種データベース移行のために Schema と Code Object を評価・変換する。",
@@ -436,9 +520,37 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Calls AWS service APIs from application code.",
     ja: "アプリケーションコードから AWS Service API を呼び出す。",
   },
+  "AWS Secrets Manager": {
+    en: "Securely stores passwords, tokens, and API keys and can rotate them automatically.",
+    ja: "パスワード、トークン、API キーを安全に保存し、自動ローテーションにも対応する。",
+  },
+  "AWS Service Catalog": {
+    en: "Lets users deploy approved products through controlled self-service.",
+    ja: "企業が承認した製品カタログから、ユーザーが統制されたセルフサービスでデプロイできる。",
+  },
+  "AWS Shield": {
+    en: "Protects AWS applications against DoS and DDoS attacks.",
+    ja: "AWS 上のアプリケーションを DoS および DDoS 攻撃から保護する。",
+  },
+  "AWS Systems Manager": {
+    en: "Centrally manages nodes, patches, commands, and operations automation.",
+    ja: "ノード、パッチ、コマンド、運用自動化を一元管理する。",
+  },
+  "AWS Trusted Advisor": {
+    en: "Provides best-practice recommendations for cost, performance, security, fault tolerance, and service quotas.",
+    ja: "コスト、パフォーマンス、セキュリティ、耐障害性、サービスクォータについてベストプラクティスの推奨を提示する。",
+  },
+  "AWS WAF": {
+    en: "Filters HTTP(S) requests with rules to defend against attacks such as SQL injection and XSS.",
+    ja: "ルールで HTTP(S) リクエストを検査し、SQL インジェクションや XSS などを防御する。",
+  },
   "BGP": {
     en: "A protocol for dynamically exchanging routes between networks.",
     ja: "ネットワーク間で Route を動的に交換するためのプロトコル。",
+  },
+  "Block Storage::2": {
+    en: "Presents data blocks to an operating system for system disks and databases; EBS is the representative service.",
+    ja: "データブロックを OS に提供し、システムディスクやデータベースに適する。代表例は EBS。",
   },
   "Block-level Replication": {
     en: "Continuously copies changed data blocks to reduce RPO.",
@@ -492,6 +604,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "A browser cross-origin rule, not an identity authorization mechanism.",
     ja: "Browser の Cross-Origin ルールであり、Identity の認可メカニズムではない。",
   },
+  "DDoS": {
+    en: "A denial-of-service attack launched simultaneously from many distributed sources.",
+    ja: "多数の分散した送信元から同時に仕掛けられるサービス拒否攻撃。",
+  },
   "Declarative": {
     en: "Describes the desired final resources while the tool determines the creation steps.",
     ja: "最終的に必要な Resource を記述し、具体的な作成手順は Tool に任せる。",
@@ -509,8 +625,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     ja: "EBS Snapshot と EBS-backed AMI の作成、保持、削除を自動化する。",
   },
   "DMS": {
-    en: "A managed migration service for moving databases with full load and ongoing change replication.",
-    ja: "Full Load と継続的な変更レプリケーションでデータベースを移行するマネージドサービス。",
+    en: "",
+    ja: "",
   },
   "DNS": {
     en: "Resolves domain names to reachable network addresses or service endpoints.",
@@ -556,6 +672,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Controls which AWS resources Lambda can access at runtime; it does not control who can invoke the function.",
     ja: "Lambda 実行時にアクセスできる AWS Resource を決める。誰が Lambda を Invoke できるかは決めない。",
   },
+  "Federation": {
+    en: "Uses an external identity to sign in to AWS without creating another long-lived account.",
+    ja: "外部 ID を使って AWS にサインインし、長期アカウントの重複作成を避ける。",
+  },
   "Foreign Key": {
     en: "References the primary key of another table to establish a relationship.",
     ja: "別 Table の Primary Key を参照して関係を作る。",
@@ -567,6 +687,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Hybrid Cloud": {
     en: "Combines on-premises data centers with public cloud; Outposts and Direct Connect commonly appear in these scenarios.",
     ja: "On-Premises Data Center と Public Cloud を連携する。関連シナリオでは Outposts、Direct Connect が頻出。",
+  },
+  "IAM Access Analyzer": {
+    en: "Analyzes external access, policies, and unused permissions to help enforce least privilege.",
+    ja: "外部アクセス、ポリシー、未使用アクセスを分析し、最小権限の実現を支援する。",
   },
   "IAM User": {
     en: "A long-term identity that can have a password and access keys; applications and AWS services should usually avoid long-term user keys.",
@@ -595,6 +719,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "NLB": {
     en: "Layer 4 TCP/UDP/TLS; suited to extremely high performance, ultra-low latency, and static IP requirements.",
     ja: "レイヤー 4 の TCP/UDP/TLS。非常に高い性能、超低レイテンシ、固定 IP の要件に適する。",
+  },
+  "Object Storage::2": {
+    en: "Accessed by object key rather than traditional disk blocks; S3 is the representative service.",
+    ja: "従来のディスクブロックではなくオブジェクトキーでアクセスする。代表例は S3。",
   },
   "Object Tags": {
     en: "Managed separately from object metadata and used for classification, lifecycle rules, and permission conditions.",
@@ -656,6 +784,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Continuously maintains a desired number of tasks and can integrate with load balancing and auto scaling.",
     ja: "指定数の Task を継続維持し、Load Balancing や Auto Scaling と組み合わせられる。",
   },
+  "Session Manager": {
+    en: "Creates controlled sessions without opening inbound SSH or RDP ports.",
+    ja: "SSH や RDP の受信ポートを開かずに、管理されたセッションを確立する。",
+  },
   "Site-to-Site VPN": {
     en: "Connects complete networks through encrypted IPsec tunnels.",
     ja: "暗号化された IPsec Tunnel でネットワーク全体を接続する。",
@@ -667,6 +799,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Sort Key": {
     en: "Forms a composite primary key with the partition key and enables range queries within the same partition.",
     ja: "Partition Key と複合 Primary Key を構成し、同じ Partition 内で Range Query を可能にする。",
+  },
+  "SSL/TLS Certificate": {
+    en: "Proves a service's identity and enables TLS-encrypted connections.",
+    ja: "サービスの身元を証明し、TLS で暗号化された接続を可能にする。",
   },
   "Storage Gateway": {
     en: "Lets on-premises applications access AWS storage through file, volume, or tape interfaces.",
@@ -704,9 +840,25 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Protects network communication through an encrypted tunnel.",
     ja: "暗号化 Tunnel を通じて Network Communication を保護する。",
   },
+  "ACM": {
+    en: "Centrally provisions, deploys, and renews SSL/TLS certificates.",
+    ja: "SSL/TLS 証明書の発行、デプロイ、更新を一元管理する。",
+  },
   "Agility": {
     en: "The ability to quickly create, modify, and deploy resources as business needs change.",
     ja: "Business の変化に合わせて Resource を迅速に作成、変更、Deployment できる能力。",
+  },
+  "Amazon Detective": {
+    en: "Investigates security incidents through visual relationships and timelines.",
+    ja: "関係性の可視化とタイムラインを使って、セキュリティインシデントを調査する。",
+  },
+  "Amazon Inspector": {
+    en: "Continuously scans workloads for software vulnerabilities and CVEs.",
+    ja: "ワークロードを継続的にスキャンし、ソフトウェアの脆弱性や CVE を検出する。",
+  },
+  "Amazon Macie": {
+    en: "Uses machine learning to discover sensitive data such as PII in S3.",
+    ja: "機械学習を使って、S3 内の PII などの機密データを検出する。",
   },
   "Anycast IP": {
     en: "The same IP is advertised from multiple network locations so users enter through a nearby point.",
@@ -728,9 +880,21 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Runs large numbers of queued, non-real-time compute jobs and automatically schedules and scales compute resources.",
     ja: "大量の非リアルタイム Compute Job を Queue 実行し、Compute Resource の Scheduling と Scaling を自動化する。",
   },
+  "AWS License Manager": {
+    en: "Tracks BYOL and hybrid-environment license usage and helps prevent overuse.",
+    ja: "BYOL とハイブリッド環境のライセンス使用状況を追跡し、超過利用を防ぐ。",
+  },
   "AWS Management Console": {
     en: "A web-based graphical interface for managing AWS services.",
     ja: "Web の Graphical Interface から AWS Service を管理する。",
+  },
+  "AWS Security Hub": {
+    en: "Aggregates and standardizes findings from multiple security services.",
+    ja: "複数のセキュリティサービスからの検出結果を集約し、標準化する。",
+  },
+  "AWS Well-Architected Tool": {
+    en: "Reviews workloads against the six pillars and records risks and milestones.",
+    ja: "6 本の柱に基づいてワークロードをレビューし、リスクと Milestone を記録する。",
   },
   "Batch Processing": {
     en: "Processes groups of jobs without requiring immediate responses; common for reporting, simulations, and ETL.",
@@ -772,6 +936,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Stores semi-structured and nested data as JSON-like documents.",
     ja: "半構造化データや Nested Data を JSON に似た Document として保存する。",
   },
+  "DoS": {
+    en: "Usually exhausts a target service's resources from a single source.",
+    ja: "通常は単一の送信元から対象サービスのリソースを枯渇させる。",
+  },
   "Elastic Beanstalk": {
     en: "A PaaS-style service that configures EC2, ALB, Auto Scaling, and more after code upload; the underlying resources remain visible and manageable.",
     ja: "Code を Upload すると EC2、ALB、Auto Scaling などを自動構成する PaaS 型 Service。基盤 Resource は引き続き確認・管理できる。",
@@ -785,8 +953,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     ja: "Function を Deployment と実行の単位にする。Lambda は AWS の代表的な FaaS。",
   },
   "FSx": {
-    en: "A family of managed file systems for Windows, Lustre, NetApp ONTAP, and OpenZFS workloads.",
-    ja: "Windows、Lustre、NetApp ONTAP、OpenZFS の各 Workload 向けマネージドファイルシステム群。",
+    en: "",
+    ja: "",
   },
   "Fully Managed Service": {
     en: "AWS takes on more operational work; this describes a degree of management, not one strict product category.",
@@ -797,8 +965,16 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     ja: "Vertex、Edge、Property を使って複雑な関係を表現・検索する。",
   },
   "GWLB": {
-    en: "Deploys and scales third-party virtual network appliances transparently using GENEVE at Layer 3.",
-    ja: "GENEVE を使い、レイヤー 3 で Third-Party Virtual Network Appliance を透過的に展開・Scale する。",
+    en: "",
+    ja: "",
+  },
+  "IAM Group": {
+    en: "Assigns policies to multiple IAM users as a group.",
+    ja: "複数の IAM ユーザーへポリシーをまとめて割り当てる。",
+  },
+  "IAM Identity Center": {
+    en: "Centrally manages workforce access to multiple AWS accounts and applications.",
+    ja: "従業員による複数の AWS アカウントとアプリケーションへのアクセスを一元管理する。",
   },
   "Imperative": {
     en: "Explicitly describes each step of how an operation should be performed.",
@@ -844,6 +1020,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "Deploys AWS infrastructure and services in a customer's data center for low latency, data residency, and hybrid cloud.",
     ja: "低レイテンシ、Data Residency、Hybrid Cloud のために、顧客 Data Center へ AWS Infrastructure と Service を配置する。",
   },
+  "PII": {
+    en: "Data that can directly or indirectly identify an individual.",
+    ja: "個人を直接または間接的に特定できるデータ。",
+  },
   "Producer": {
     en: "The party that creates and sends messages or events.",
     ja: "Message または Event を作成して送信する側。",
@@ -865,12 +1045,16 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     ja: "単一 AZ で非常に高い性能を提供する Object Storage Class。",
   },
   "SageMaker": {
-    en: "A managed service for building, training, tuning, and deploying machine-learning models.",
-    ja: "Machine Learning Model の構築、Training、Tuning、Deployment を行うマネージドサービス。",
+    en: "",
+    ja: "",
   },
   "Scale Up / Down": {
     en: "Scales by increasing or decreasing one machine's capacity; it can require downtime and has a single-machine limit.",
     ja: "1 台の Machine の性能を上げ下げして Scale する。停止が必要な場合があり、単体性能に上限がある。",
+  },
+  "Security Finding": {
+    en: "A risk record produced by a security service, usually with severity and remediation guidance.",
+    ja: "セキュリティサービスが生成するリスク記録で、通常は重要度と推奨対応を含む。",
   },
   "Self-Managed": {
     en: "The user handles installation, patching, backups, scaling, and high availability, as with a database operated on EC2.",
@@ -963,149 +1147,5 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Managed Blockchain": {
     en: "A managed service for verifiable, tamper-resistant ledgers shared across multiple organizations.",
     ja: "複数組織で共有する、検証可能で改ざん耐性の高い Ledger 向けマネージドサービス。",
-  },
-  "Amazon GuardDuty": {
-    en: "Continuously analyzes activity and threat intelligence to identify suspicious behavior.",
-    ja: "アクティビティと脅威インテリジェンスを継続的に分析し、不審な動作を検出する。",
-  },
-  "AWS Secrets Manager": {
-    en: "Securely stores passwords, tokens, and API keys and can rotate them automatically.",
-    ja: "パスワード、トークン、API キーを安全に保存し、自動ローテーションにも対応する。",
-  },
-  "AWS Security Hub": {
-    en: "Aggregates and standardizes findings from multiple security services.",
-    ja: "複数のセキュリティサービスからの検出結果を集約し、標準化する。",
-  },
-  "Session Manager": {
-    en: "Creates controlled sessions without opening inbound SSH or RDP ports.",
-    ja: "SSH や RDP の受信ポートを開かずに、管理されたセッションを確立する。",
-  },
-  "Amazon Inspector": {
-    en: "Continuously scans workloads for software vulnerabilities and CVEs.",
-    ja: "ワークロードを継続的にスキャンし、ソフトウェアの脆弱性や CVE を検出する。",
-  },
-  "IAM Identity Center": {
-    en: "Centrally manages workforce access to multiple AWS accounts and applications.",
-    ja: "従業員による複数の AWS アカウントとアプリケーションへのアクセスを一元管理する。",
-  },
-  "ACM": {
-    en: "Centrally provisions, deploys, and renews SSL/TLS certificates.",
-    ja: "SSL/TLS 証明書の発行、デプロイ、更新を一元管理する。",
-  },
-  "Amazon Detective": {
-    en: "Investigates security incidents through visual relationships and timelines.",
-    ja: "関係性の可視化とタイムラインを使って、セキュリティインシデントを調査する。",
-  },
-  "AWS KMS": {
-    en: "Creates, controls, and audits keys used to encrypt data.",
-    ja: "データ暗号化に使用するキーを作成、制御、監査する。",
-  },
-  "Amazon Macie": {
-    en: "Uses machine learning to discover sensitive data such as PII in S3.",
-    ja: "機械学習を使って、S3 内の PII などの機密データを検出する。",
-  },
-  "Security Finding": {
-    en: "A risk record produced by a security service, usually with severity and remediation guidance.",
-    ja: "セキュリティサービスが生成するリスク記録で、通常は重要度と推奨対応を含む。",
-  },
-  "AWS WAF": {
-    en: "Filters HTTP(S) requests with rules to defend against attacks such as SQL injection and XSS.",
-    ja: "ルールで HTTP(S) リクエストを検査し、SQL インジェクションや XSS などを防御する。",
-  },
-  "AWS Shield": {
-    en: "Protects AWS applications against DoS and DDoS attacks.",
-    ja: "AWS 上のアプリケーションを DoS および DDoS 攻撃から保護する。",
-  },
-  "AWS Systems Manager": {
-    en: "Centrally manages nodes, patches, commands, and operations automation.",
-    ja: "ノード、パッチ、コマンド、運用自動化を一元管理する。",
-  },
-  "PII": {
-    en: "Data that can directly or indirectly identify an individual.",
-    ja: "個人を直接または間接的に特定できるデータ。",
-  },
-  "MFA": {
-    en: "Strengthens sign-in security by requiring two or more verification factors.",
-    ja: "2 つ以上の認証要素を要求して、サインインの安全性を高める。",
-  },
-  "DDoS": {
-    en: "A denial-of-service attack launched simultaneously from many distributed sources.",
-    ja: "多数の分散した送信元から同時に仕掛けられるサービス拒否攻撃。",
-  },
-  "Authentication": {
-    en: "Verifies who a user or entity is.",
-    ja: "ユーザーやエンティティが誰であるかを確認する。",
-  },
-  "IAM Group": {
-    en: "Assigns policies to multiple IAM users as a group.",
-    ja: "複数の IAM ユーザーへポリシーをまとめて割り当てる。",
-  },
-  "Encryption in Transit": {
-    en: "Protects data while it travels across a network.",
-    ja: "ネットワークを転送中のデータを保護する。",
-  },
-  "TLS": {
-    en: "The modern protocol used to establish encrypted network connections.",
-    ja: "暗号化されたネットワーク接続を確立するための現行プロトコル。",
-  },
-  "Explicit Deny": {
-    en: "An explicit Deny takes precedence over every Allow during policy evaluation.",
-    ja: "ポリシー評価では、明示的な Deny がすべての Allow より優先される。",
-  },
-  "Trust Policy": {
-    en: "Determines who is allowed to assume an IAM role.",
-    ja: "誰が IAM ロールを引き受けられるかを決定する。",
-  },
-  "Permissions Policy": {
-    en: "Determines which AWS actions a principal is allowed to perform.",
-    ja: "プリンシパルが実行できる AWS アクションを決定する。",
-  },
-  "SSL/TLS Certificate": {
-    en: "Proves a service's identity and enables TLS-encrypted connections.",
-    ja: "サービスの身元を証明し、TLS で暗号化された接続を可能にする。",
-  },
-  "Temporary Credentials": {
-    en: "Time-limited credentials consisting of an access key, secret key, and session token.",
-    ja: "有効期限付きのアクセスキー、シークレットキー、セッショントークンで構成される認証情報。",
-  },
-  "Access Key": {
-    en: "Used for programmatic access; it should not be hard-coded or shared long term.",
-    ja: "プログラムによるアクセスに使用する。ハードコードや長期共有は避ける。",
-  },
-  "Federation": {
-    en: "Uses an external identity to sign in to AWS without creating another long-lived account.",
-    ja: "外部 ID を使って AWS にサインインし、長期アカウントの重複作成を避ける。",
-  },
-  "Least Privilege": {
-    en: "Grants only the permissions required to perform the task.",
-    ja: "作業の実行に必要な権限だけを付与する。",
-  },
-  "Root User": {
-    en: "Reserved for the small number of account tasks that only the root user can perform.",
-    ja: "ルートユーザーでしか実行できない、少数のアカウント作業にのみ使用する。",
-  },
-  "Authorization": {
-    en: "Determines which actions a principal is allowed to perform.",
-    ja: "プリンシパルが実行できる操作を決定する。",
-  },
-  "DoS": {
-    en: "Usually exhausts a target service's resources from a single source.",
-    ja: "通常は単一の送信元から対象サービスのリソースを枯渇させる。",
-  },
-  "Encryption at Rest": {
-    en: "Protects data that has already been stored on media.",
-    ja: "ストレージ媒体に保存されているデータを保護する。",
-  },
-  "Route 53::2": {
-    en: "Provides DNS, domain registration, and health checks; routing policies are a frequent SAA topic.",
-    ja: "DNS、ドメイン登録、ヘルスチェックを提供する。Routing Policy は SAA の頻出項目。",
-  },
-  "Block Storage::2": {
-    en: "Presents data blocks to an operating system for system disks and databases; EBS is the representative service.",
-    ja: "データブロックを OS に提供し、システムディスクやデータベースに適する。代表例は EBS。",
-  },
-  "Object Storage::2": {
-    en: "Accessed by object key rather than traditional disk blocks; S3 is the representative service.",
-    ja: "従来のディスクブロックではなくオブジェクトキーでアクセスする。代表例は S3。",
   },
 };

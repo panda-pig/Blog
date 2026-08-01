@@ -1270,6 +1270,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"compare/monitoring-audit-compliance-governance.en.md": {
+	id: "compare/monitoring-audit-compliance-governance.en.md";
+  slug: "compare/monitoring-audit-compliance-governanceen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/monitoring-audit-compliance-governance.ja.md": {
+	id: "compare/monitoring-audit-compliance-governance.ja.md";
+  slug: "compare/monitoring-audit-compliance-governanceja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/monitoring-audit-compliance-governance.md": {
+	id: "compare/monitoring-audit-compliance-governance.md";
+  slug: "compare/monitoring-audit-compliance-governance";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "compare/multi-az-vs-multi-region.en.md": {
 	id: "compare/multi-az-vs-multi-region.en.md";
   slug: "compare/multi-az-vs-multi-regionen";
@@ -2446,6 +2467,48 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"monitoring/aws-artifact.en.md": {
+	id: "monitoring/aws-artifact.en.md";
+  slug: "monitoring/aws-artifacten";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-artifact.ja.md": {
+	id: "monitoring/aws-artifact.ja.md";
+  slug: "monitoring/aws-artifactja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-artifact.md": {
+	id: "monitoring/aws-artifact.md";
+  slug: "monitoring/aws-artifact";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-audit-manager.en.md": {
+	id: "monitoring/aws-audit-manager.en.md";
+  slug: "monitoring/aws-audit-manageren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-audit-manager.ja.md": {
+	id: "monitoring/aws-audit-manager.ja.md";
+  slug: "monitoring/aws-audit-managerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-audit-manager.md": {
+	id: "monitoring/aws-audit-manager.md";
+  slug: "monitoring/aws-audit-manager";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "monitoring/aws-cloudtrail.en.md": {
 	id: "monitoring/aws-cloudtrail.en.md";
   slug: "monitoring/aws-cloudtrailen";
@@ -2505,6 +2568,48 @@ declare module 'astro:content' {
 "monitoring/aws-health-dashboard.md": {
 	id: "monitoring/aws-health-dashboard.md";
   slug: "monitoring/aws-health-dashboard";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-license-manager.en.md": {
+	id: "monitoring/aws-license-manager.en.md";
+  slug: "monitoring/aws-license-manageren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-license-manager.ja.md": {
+	id: "monitoring/aws-license-manager.ja.md";
+  slug: "monitoring/aws-license-managerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-license-manager.md": {
+	id: "monitoring/aws-license-manager.md";
+  slug: "monitoring/aws-license-manager";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-service-catalog.en.md": {
+	id: "monitoring/aws-service-catalog.en.md";
+  slug: "monitoring/aws-service-catalogen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-service-catalog.ja.md": {
+	id: "monitoring/aws-service-catalog.ja.md";
+  slug: "monitoring/aws-service-catalogja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"monitoring/aws-service-catalog.md": {
+	id: "monitoring/aws-service-catalog.md";
+  slug: "monitoring/aws-service-catalog";
   body: string;
   collection: "aws";
   data: any
@@ -3366,6 +3471,27 @@ declare module 'astro:content' {
 "security/aws-waf.md": {
 	id: "security/aws-waf.md";
   slug: "security/aws-waf";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/iam-access-analyzer.en.md": {
+	id: "security/iam-access-analyzer.en.md";
+  slug: "security/iam-access-analyzeren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/iam-access-analyzer.ja.md": {
+	id: "security/iam-access-analyzer.ja.md";
+  slug: "security/iam-access-analyzerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"security/iam-access-analyzer.md": {
+	id: "security/iam-access-analyzer.md";
+  slug: "security/iam-access-analyzer";
   body: string;
   collection: "aws";
   data: any

@@ -1,39 +1,38 @@
 ---
 title: "SAA 試験直前チェック"
 fullName: "SAA Final Review"
-description: "頻出分野を固定順で復習し、問題の優先順位に合わない選択肢を素早く除外します。"
+description: "頻出 Architecture 分野を順に復習し、設問の優先順位に反する選択肢を除外します。"
 service: "SAA-C03"
 category: saa-c03
 kind: topic
 lang: ja
 topicKey: "SAA 考前速查"
-frequency: "段階サマリー"
-date: 2026-07-31
-updated: 2026-07-31
-tags: ["saa-c03","SAA 考前速查","AWS"]
+frequency: "阶段性总结"
+date: 2026-08-01
+updated: 2026-08-01
+tags: ["saa-c03", "SAA 考前速查", "AWS"]
 notionId: 3a6964dc-ce4a-817c-860b-f61fe547c268
 notionUrl: https://app.notion.com/p/3a6964dcce4a817c860bf61fe547c268
-notionUpdated: "2026-07-23T07:04:41.111Z"
+notionUpdated: "2026-07-31T08:20:22.295Z"
 ---
 
-## 一言で理解
+## 復習順序
 
-頻出分野を固定順で復習し、問題の優先順位に合わない選択肢を素早く除外します。
+1. 頻出比較
+2. VPC と Networking
+3. S3 / EBS / EFS
+4. RDS / Aurora / DynamoDB
+5. EC2 / Auto Scaling / ELB / Lambda
+6. SQS / SNS / EventBridge
+7. IAM / KMS / Organizations
+8. CloudWatch / CloudTrail / Config / AWS Health
+9. Artifact / Audit Manager / Control Tower
+10. High Availability、Disaster Recovery、RTO / RPO
+11. Cost と Performance の Trade-off
 
-## 要点
+## 試験直前セルフチェック
 
-- 順序：比較 → VPC/ネットワーク → ストレージ → DB → Compute → Messaging → IAM/KMS → HA/DR → コストと性能。
-- 「最小運用・最高可用性・最低コスト・最低遅延」などの優先順位を先に探します。
-- 正解だけでなく、他の選択肢が制約に合わない理由も説明できるようにします。
-
-## 試験ポイント
-
-- 3層、イベント駆動、クロス AZ/Region 構成でシナリオ判断を練習します。
-
-## よくある誤解
-
-- 製品名だけで選ばず、データ型、遅延、制御性、運用、コスト制約を確認します。
-
-## 重要ポイント
-
-**制約と優先順位を先に確認し、その後サービスを選びます。**
+- Keyword から候補を 2 つまで絞れます。
+- 他の選択肢が要件に合わない理由を説明できます。
+- 最小運用、最高可用性、最低 Cost などの優先順位を識別できます。
+- 3 層、Event-Driven、Multi-Account Governance の代表 Architecture を描けます。

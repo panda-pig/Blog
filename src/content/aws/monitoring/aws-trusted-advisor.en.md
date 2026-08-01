@@ -1,42 +1,50 @@
 ---
 title: "AWS Trusted Advisor"
 fullName: "AWS Trusted Advisor"
-description: "Checks cost, performance, security, fault tolerance, and service quotas and provides recommendations."
+description: "Provide AWS best-practice recommendations for cost, performance, security, fault tolerance, and quotas."
 service: "AWS Trusted Advisor"
 category: monitoring
 kind: service
 lang: en
 topicKey: "AWS Trusted Advisor"
-frequency: "Exam frequency ⭐⭐⭐⭐"
-date: 2026-07-31
-updated: 2026-07-31
+frequency: "考试频率 ⭐⭐⭐⭐"
+date: 2026-08-01
+updated: 2026-08-01
 tags: ["monitoring", "AWS Trusted Advisor", "AWS"]
 notionId: 3a6964dc-ce4a-8137-9131-d20e8b6589b3
 notionUrl: https://app.notion.com/p/3a6964dcce4a81379131d20e8b6589b3
-notionUpdated: "2026-07-23T07:01:40.085Z"
+notionUpdated: "2026-07-31T08:18:16.390Z"
 ---
 
-## Basic information
+## Basic Information
 
-| Field | Content |
+| Field | Value |
 | --- | --- |
 | English | AWS Trusted Advisor |
 | Full name | AWS Trusted Advisor |
-| Chinese | 最佳实践建议 |
-| Japanese | ベストプラクティス推奨 |
+| Chinese | AWS 最佳实践检查与优化建议 |
+| Japanese | AWS Trusted Advisor（ベストプラクティスに基づく最適化推奨） |
 | Exam frequency | ⭐⭐⭐⭐ |
-| Often confused with | Well-Architected Tool / Compute Optimizer |
+| Often confused with | AWS Well-Architected Tool / AWS Config / Compute Optimizer |
 
-## In one sentence
+## One-line summary
 
-Checks cost, performance, security, fault tolerance, and service quotas and provides recommendations.
+Provide AWS best-practice recommendations for cost, performance, security, fault tolerance, and quotas.
 
-## Stage summary
+## Core capabilities and use cases
 
-- **Core role**：Checks cost, performance, security, fault tolerance, and service quotas and provides recommendations.
-- **Exam frequency**：4 / 5
-- **Compare with**：Well-Architected Tool / Compute Optimizer
+- Runs predefined checks and highlights results by severity.
+- Common areas are cost optimization, performance, security, fault tolerance, and service limits.
+- Findings can include idle resources, exposed ports, missing root MFA, insufficient backups, or quota pressure.
+- Recommendations require business review and are not normally automatic remediation.
+- Available checks and automation depth can vary by support plan and feature.
 
-## Memory hook
+## Exam focus and common pitfalls
 
-AWS Trusted Advisor = Checks cost, performance, security, fault tolerance, and service quotas and provides recommendations.
+- Choose Trusted Advisor when a question spans several best-practice categories.
+- Config evaluates custom or managed compliance rules; Inspector scans software vulnerabilities; Compute Optimizer recommends sizing.
+- Service Quotas manages quota values and increase requests, while Trusted Advisor can warn about pressure.
+
+## Key takeaway
+
+**Think of Trusted Advisor as an AWS best-practice health check that recommends, rather than automatically fixes.**

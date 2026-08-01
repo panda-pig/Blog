@@ -93,7 +93,7 @@ const rows = [
     "english": "AWS Config",
     "chinese": "资源配置与合规",
     "japanese": "リソース構成とコンプライアンス",
-    "note": "记录资源配置变化，并持续按规则评估资源是否合规。",
+    "note": "",
     "frequency": 5
   },
   {
@@ -102,6 +102,14 @@ const rows = [
     "chinese": "密钥管理服务",
     "japanese": "AWS KMS（暗号鍵管理サービス）",
     "note": "创建、控制和审计用于数据加密的密钥。",
+    "frequency": 5
+  },
+  {
+    "term": "AWS Organizations",
+    "english": "AWS Organizations",
+    "chinese": "多账户集中管理",
+    "japanese": "AWS Organizations（複数アカウントの一元管理）",
+    "note": "管理账户、OU、SCP 和合并计费；SCP 只限制、不授予。",
     "frequency": 5
   },
   {
@@ -221,7 +229,7 @@ const rows = [
     "english": "Amazon DynamoDB",
     "chinese": "无服务器 NoSQL 数据库",
     "japanese": "サーバーレス NoSQL",
-    "note": "无服务器键值与文档数据库，可在大规模场景下提供个位数毫秒级性能。",
+    "note": "",
     "frequency": 5
   },
   {
@@ -693,9 +701,9 @@ const rows = [
     "english": "Amazon Route 53",
     "chinese": "DNS 与域名服务",
     "japanese": "Amazon Route 53（DNS・ドメイン登録・トラフィックルーティングサービス）",
-    "noteKey": "Route 53::2",
     "note": "提供 DNS、域名注册和健康检查；Routing Policy 是 SAA 高频。",
-    "frequency": 5
+    "frequency": 5,
+    "noteKey": "Route 53::2"
   },
   {
     "term": "Route Table",
@@ -942,7 +950,7 @@ const rows = [
     "english": "Amazon Athena",
     "chinese": "S3 无服务器 SQL 查询",
     "japanese": "S3 サーバーレス SQL",
-    "note": "使用 SQL 直接分析 S3 中数据的无服务器查询服务。",
+    "note": "",
     "frequency": 4
   },
   {
@@ -962,6 +970,22 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "AWS Artifact",
+    "english": "AWS Artifact",
+    "chinese": "合规文档与协议自助服务",
+    "japanese": "AWS Artifact（コンプライアンス文書・契約のセルフサービス）",
+    "note": "获取 AWS 合规报告并管理适用协议；不扫描客户资源。",
+    "frequency": 4
+  },
+  {
+    "term": "AWS Audit Manager",
+    "english": "AWS Audit Manager",
+    "chinese": "审计证据自动收集与评估管理",
+    "japanese": "AWS Audit Manager（監査証拠の自動収集・評価支援）",
+    "note": "按审计框架组织控制并持续收集客户环境证据。",
+    "frequency": 4
+  },
+  {
     "term": "AWS Backup",
     "english": "AWS Backup",
     "chinese": "集中式备份服务",
@@ -978,6 +1002,14 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "AWS Control Tower",
+    "english": "AWS Control Tower",
+    "chinese": "多账户 Landing Zone 与治理",
+    "japanese": "AWS Control Tower（マルチアカウント環境の構築・統制）",
+    "note": "Landing Zone、Account Factory、Controls 和治理 Dashboard。",
+    "frequency": 4
+  },
+  {
     "term": "AWS DMS",
     "english": "AWS Database Migration Service",
     "chinese": "数据库迁移服务",
@@ -991,6 +1023,14 @@ const rows = [
     "chinese": "AWS 弹性灾难恢复",
     "japanese": "AWS Elastic Disaster Recovery（災害復旧サービス）",
     "note": "持续块级复制服务器并在灾难时快速启动恢复实例。",
+    "frequency": 4
+  },
+  {
+    "term": "AWS Health Dashboard",
+    "english": "AWS Health Dashboard",
+    "chinese": "账户相关的 AWS 服务健康与事件通知",
+    "japanese": "AWS Health Dashboard（アカウント別のサービス稼働状況）",
+    "note": "查看 AWS 服务事件、计划变更和账户通知是否影响自己的资源。",
     "frequency": 4
   },
   {
@@ -1018,6 +1058,14 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "AWS Service Catalog",
+    "english": "AWS Service Catalog",
+    "chinese": "已批准 IT 服务目录",
+    "japanese": "AWS Service Catalog（承認済み IT サービスのカタログ管理）",
+    "note": "让用户从企业批准的产品目录中受控自助部署。",
+    "frequency": 4
+  },
+  {
     "term": "AWS Shield",
     "english": "AWS Shield",
     "chinese": "DDoS 防护",
@@ -1031,6 +1079,14 @@ const rows = [
     "chinese": "集中式运维管理",
     "japanese": "AWS Systems Manager（統合運用管理サービス）",
     "note": "集中管理节点、补丁、命令和运维自动化。",
+    "frequency": 4
+  },
+  {
+    "term": "AWS Trusted Advisor",
+    "english": "AWS Trusted Advisor",
+    "chinese": "AWS 最佳实践检查与优化建议",
+    "japanese": "AWS Trusted Advisor（ベストプラクティスに基づく最適化推奨）",
+    "note": "针对成本、性能、安全、容错和配额给出最佳实践建议。",
     "frequency": 4
   },
   {
@@ -1054,9 +1110,9 @@ const rows = [
     "english": "Block Storage",
     "chinese": "块存储",
     "japanese": "ブロックストレージ",
-    "noteKey": "Block Storage::2",
     "note": "以数据块形式提供给操作系统，适合系统盘和数据库；EBS 是代表。",
-    "frequency": 4
+    "frequency": 4,
+    "noteKey": "Block Storage::2"
   },
   {
     "term": "Block-level Replication",
@@ -1207,7 +1263,7 @@ const rows = [
     "english": "AWS Database Migration Service",
     "chinese": "数据库迁移服务",
     "japanese": "データベース移行サービス",
-    "note": "通过全量加载和持续变更复制迁移数据库的托管服务。",
+    "note": "",
     "frequency": 4
   },
   {
@@ -1331,6 +1387,14 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "IAM Access Analyzer",
+    "english": "AWS Identity and Access Management Access Analyzer",
+    "chinese": "访问权限分析器",
+    "japanese": "IAM Access Analyzer（外部アクセス・未使用アクセスの分析）",
+    "note": "分析外部访问、策略和未使用访问，帮助实现最小权限。",
+    "frequency": 4
+  },
+  {
     "term": "IAM User",
     "english": "IAM User",
     "chinese": "IAM 用户",
@@ -1391,9 +1455,9 @@ const rows = [
     "english": "Object Storage",
     "chinese": "对象存储",
     "japanese": "オブジェクトストレージ",
-    "noteKey": "Object Storage::2",
     "note": "通过对象键访问，不提供传统磁盘块；S3 是代表。",
-    "frequency": 4
+    "frequency": 4,
+    "noteKey": "Object Storage::2"
   },
   {
     "term": "Object Tags",
@@ -1708,6 +1772,14 @@ const rows = [
     "frequency": 3
   },
   {
+    "term": "AWS License Manager",
+    "english": "AWS License Manager",
+    "chinese": "软件许可证集中管理",
+    "japanese": "AWS License Manager（ソフトウェアライセンスの一元管理）",
+    "note": "跟踪 BYOL 和混合环境许可证使用并防止超用。",
+    "frequency": 3
+  },
+  {
     "term": "AWS Management Console",
     "english": "AWS Management Console",
     "chinese": "AWS 管理控制台",
@@ -1721,6 +1793,14 @@ const rows = [
     "chinese": "安全态势集中管理",
     "japanese": "AWS Security Hub（セキュリティ態勢の一元管理）",
     "note": "聚合并标准化多个安全服务的 Findings。",
+    "frequency": 3
+  },
+  {
+    "term": "AWS Well-Architected Tool",
+    "english": "AWS Well-Architected Tool",
+    "chinese": "架构评审与风险改进工具",
+    "japanese": "AWS Well-Architected Tool（Well-Architected レビュー支援）",
+    "note": "依据六大支柱评审工作负载并记录风险和 Milestone。",
     "frequency": 3
   },
   {
@@ -1840,7 +1920,7 @@ const rows = [
     "english": "Amazon FSx",
     "chinese": "托管文件系统系列",
     "japanese": "マネージドファイルシステム",
-    "note": "面向 Windows、Lustre、NetApp ONTAP 和 OpenZFS 工作负载的托管文件系统家族。",
+    "note": "",
     "frequency": 3
   },
   {
@@ -1864,7 +1944,7 @@ const rows = [
     "english": "Gateway Load Balancer",
     "chinese": "网关负载均衡器",
     "japanese": "Gateway Load Balancer（ゲートウェイロードバランサー）",
-    "note": "使用 GENEVE 在第 3 层透明部署和扩展第三方虚拟网络设备。",
+    "note": "",
     "frequency": 3
   },
   {
@@ -2024,7 +2104,7 @@ const rows = [
     "english": "Amazon SageMaker",
     "chinese": "机器学习平台",
     "japanese": "機械学習プラットフォーム",
-    "note": "用于构建、训练、调优和部署机器学习模型的托管服务。",
+    "note": "",
     "frequency": 3
   },
   {
@@ -2226,7 +2306,7 @@ const rows = [
     "japanese": "マネージドブロックチェーン",
     "note": "面向多组织共享、可验证且难以篡改账本的托管服务。",
     "frequency": 1
-  },
+  }
 ] as const;
 
 export const awsGlossaryEntries: AwsGlossaryEntry[] = rows.map((row) => {
