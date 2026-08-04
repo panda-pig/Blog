@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Organizations"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-04
 tags: ["security", "AWS Organizations", "AWS"]
 notionId: 3a6964dc-ce4a-811f-8285-dd7360095a9f
 notionUrl: https://app.notion.com/p/3a6964dcce4a811f8285dd7360095a9f
-notionUpdated: "2026-07-31T08:22:49.155Z"
+notionUpdated: "2026-08-04T02:14:25.203Z"
 ---
 
 ## 基本信息
@@ -32,7 +32,9 @@ notionUpdated: "2026-07-31T08:22:49.155Z"
 - 通过一个 Organization 管理多个成员账户。
 - 使用 Organizational Unit（OU）按业务、环境或安全边界分组。
 - 使用 Service Control Policy（SCP）设置账户可用权限的最高边界。
-- 使用 Consolidated Billing 汇总账单并共享部分规模优惠。
+- 使用 Consolidated Billing 由管理账户统一付款；成员账户仍保持资源与身份隔离。
+- 聚合符合条件的账户用量，以共享部分阶梯价、Reserved Instances 或 Savings Plans 折扣收益。
+- 配合账户、OU 与 Cost Allocation Tags 按团队、环境或项目分析成本。
 ## 工作中的应用场景
 - 将生产、开发、安全与日志账户隔离。
 - 对某个 OU 禁止离开组织或关闭安全服务。

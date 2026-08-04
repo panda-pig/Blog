@@ -117,6 +117,15 @@ export const awsDomains: AwsDomain[] = [
     tone: 'royal',
     services: ['Well-Architected', 'Multi-AZ', 'SAA'],
   },
+  {
+    slug: 'pricing',
+    name: 'Pricing & Support',
+    nameZh: '定价与支持',
+    description: '账单、预算、成本分析、采购生态与技术支持。',
+    icon: 'pricing',
+    tone: 'amber',
+    services: ['Budgets', 'Cost Explorer', 'Support'],
+  },
 ];
 
 export const awsDomainTopics: Record<string, string[]> = {
@@ -278,6 +287,17 @@ export const awsDomainTopics: Record<string, string[]> = {
     'Multi-Account Architecture',
     '数据分析与机器学习管道',
   ],
+  pricing: [
+    '定价、账单与支持概览',
+    'AWS Billing and Cost Management',
+    'AWS Budgets',
+    'AWS Cost Explorer',
+    'AWS Pricing Calculator',
+    'AWS Support Plans',
+    'AWS Marketplace',
+    'AWS Partner Network (APN)',
+    'AWS Compute Optimizer',
+  ],
   compare: [
     'EC2 vs Lambda vs Fargate',
     'ECS vs EKS',
@@ -302,6 +322,7 @@ export const awsDomainTopics: Record<string, string[]> = {
     'Inspector vs GuardDuty vs Macie vs Detective vs Security Hub',
     'KMS vs Secrets Manager vs ACM',
     'WAF vs Shield vs Security Group',
+    'Billing・Budgets・Cost Explorer・Pricing Calculator・Support 总对比',
   ],
   'saa-c03': [
     '安全架构设计',
@@ -318,6 +339,7 @@ export const awsDomainTopics: Record<string, string[]> = {
     '云服务模型与管理责任',
     '云概念',
     'Cloud Technology & Services',
+    'Billing, Pricing & Support',
     'CLF 考前速查',
   ],
 };

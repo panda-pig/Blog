@@ -9,11 +9,11 @@ lang: en
 topicKey: "成本优化"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-04
 tags: ["Architecture","Cost Optimization","FinOps"]
 notionId: 3a6964dc-ce4a-8166-bb96-e568552dd8ce
 notionUrl: https://app.notion.com/p/3a6964dcce4a8166bb96e568552dd8ce
-notionUpdated: "2026-07-30T01:08:06.892Z"
+notionUpdated: "2026-08-04T02:14:21.174Z"
 ---
 
 ## Basic Information
@@ -65,3 +65,11 @@ notionUpdated: "2026-07-30T01:08:06.892Z"
 ## Related services
 
 Cost Explorer, AWS Budgets, Compute Optimizer, Trusted Advisor, Auto Scaling, Savings Plans, S3 Lifecycle.
+
+## Pricing principles, tools, and service-level optimization
+
+- Pay as you go, save when you commit, and pay less by using more describe the three pricing principles.
+- Track compute, storage, data transfer out, requests, logs, NAT Gateway, cross-AZ or cross-Region traffic, and snapshots.
+- Billing shows charges, Budgets sets thresholds, Cost Explorer analyzes history and forecasts, Pricing Calculator estimates planned changes, and Compute Optimizer recommends sizes.
+- Right-size EC2; evaluate RDS size, storage, replicas, backups, and cache together; use appropriate S3 storage classes and lifecycle controls.
+- Compare the original network path with endpoint pricing: S3 and DynamoDB gateway endpoints have no hourly or data-processing charge, while interface endpoints do.

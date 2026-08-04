@@ -9,11 +9,11 @@ lang: ja
 topicKey: "成本优化"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-04
 tags: ["Architecture","Cost Optimization","FinOps"]
 notionId: 3a6964dc-ce4a-8166-bb96-e568552dd8ce
 notionUrl: https://app.notion.com/p/3a6964dcce4a8166bb96e568552dd8ce
-notionUpdated: "2026-07-30T01:08:06.892Z"
+notionUpdated: "2026-08-04T02:14:21.174Z"
 ---
 
 ## 基本情報
@@ -65,3 +65,11 @@ notionUpdated: "2026-07-30T01:08:06.892Z"
 ## 関連サービス
 
 Cost Explorer、AWS Budgets、Compute Optimizer、Trusted Advisor、Auto Scaling、Savings Plans、S3 Lifecycle。
+
+## 料金原則・Tool・Service 別最適化
+
+- Pay as you go、Save when you commit、Pay less by using more が3つの料金原則です。
+- Compute、Storage、Data Transfer Out、Request、Log、NAT Gateway、Cross-AZ / Region、Snapshot を確認します。
+- Billing は請求、Budgets はしきい値、Cost Explorer は履歴と予測、Pricing Calculator は導入前見積もり、Compute Optimizer は Spec 推奨です。
+- EC2 の Right Sizing、RDS の Spec・Storage・Replica・Backup・Cache、S3 の Storage Class と Lifecycle を総合評価します。
+- S3 / DynamoDB Gateway Endpoint に時間・Data Processing 料金はなく、Interface Endpoint は課金されるため、元の Network Path と比較します。

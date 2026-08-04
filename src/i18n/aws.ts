@@ -173,6 +173,10 @@ const domainCopy: Record<string, any> = {
     en: ['Architecture', 'Architecture patterns, best practices, and design decisions.'],
     ja: ['アーキテクチャ', '設計パターン、ベストプラクティス、設計判断。'],
   },
+  pricing: {
+    en: ['Pricing & Support', 'Billing, budgets, cost analysis, procurement, and technical support.'],
+    ja: ['料金とサポート', '請求、予算、コスト分析、調達、テクニカルサポート。'],
+  },
   compare: {
     en: ['Common Comparisons', 'Compare services with similar names, purposes, or exam scenarios.'],
     ja: ['混同しやすい比較', '名称、用途、試験シナリオが似たサービスを比較。'],
@@ -238,6 +242,10 @@ const topicCopy: Record<string, Record<string, string>> = {
     '场景题关键词索引': 'Scenario Keyword Index',
     'SAA 考前速查': 'SAA Final Review',
     'CLF 考前速查': 'CLF Final Review',
+    '定价、账单与支持概览': 'Pricing, Billing & Support Overview',
+    'AWS Partner Network (APN)': 'AWS Partner Network (APN)',
+    'Billing・Budgets・Cost Explorer・Pricing Calculator・Support 总对比': 'Billing, Budgets, Cost Explorer, Pricing Calculator & Support',
+    'Billing, Pricing & Support': 'Billing, Pricing & Support',
   },
   ja: {
     'S3 存储类别与生命周期': 'S3 ストレージクラスとライフサイクル',
@@ -278,6 +286,10 @@ const topicCopy: Record<string, Record<string, string>> = {
     '场景题关键词索引': 'シナリオ問題キーワード索引',
     'SAA 考前速查': 'SAA 試験直前チェック',
     'CLF 考前速查': 'CLF 試験直前チェック',
+    '定价、账单与支持概览': '料金・請求・サポートの概要',
+    'AWS Partner Network (APN)': 'AWS Partner Network（APN）',
+    'Billing・Budgets・Cost Explorer・Pricing Calculator・Support 总对比': 'Billing・Budgets・Cost Explorer・Pricing Calculator・Support 比較',
+    'Billing, Pricing & Support': '請求・料金・サポート',
   },
 };
 

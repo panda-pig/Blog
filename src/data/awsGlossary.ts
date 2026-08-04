@@ -914,6 +914,54 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "AWS Billing and Cost Management",
+    "english": "AWS Billing and Cost Management",
+    "chinese": "AWS 账单与成本管理",
+    "japanese": "AWS 請求とコスト管理",
+    "note": "账单、付款、成本分析与治理的统一入口。",
+    "frequency": 5
+  },
+  {
+    "term": "AWS Budgets",
+    "english": "AWS Budgets",
+    "chinese": "AWS 预算与阈值告警",
+    "japanese": "AWS Budgets（予算の設定・アラート）",
+    "note": "按实际或预测成本、用量等阈值发出告警。",
+    "frequency": 5
+  },
+  {
+    "term": "AWS Cost Explorer",
+    "english": "AWS Cost Explorer",
+    "chinese": "AWS 成本与用量分析",
+    "japanese": "AWS Cost Explorer（コストと使用量の可視化・分析）",
+    "note": "分析历史成本、趋势、分组与预测。",
+    "frequency": 5
+  },
+  {
+    "term": "AWS Pricing Calculator",
+    "english": "AWS Pricing Calculator",
+    "chinese": "AWS 定价计算器",
+    "japanese": "AWS Pricing Calculator（AWS 利用料金の見積もり）",
+    "note": "部署前根据架构假设估算 AWS 费用。",
+    "frequency": 5
+  },
+  {
+    "term": "AWS Support Plans",
+    "english": "AWS Support Plans",
+    "chinese": "AWS 支持计划",
+    "japanese": "AWS サポートプラン",
+    "note": "根据业务关键程度提供不同技术支持、响应目标与主动指导。",
+    "frequency": 5
+  },
+  {
+    "term": "Cost Allocation Tag",
+    "english": "Cost Allocation Tag",
+    "chinese": "成本分配标签",
+    "japanese": "コスト配分タグ",
+    "note": "按项目、部门、环境等维度归属和分析成本。",
+    "frequency": 5
+  },
+  {
     "term": "Access Key",
     "english": "AWS Access Key",
     "chinese": "AWS 访问密钥",
@@ -1690,6 +1738,30 @@ const rows = [
     "japanese": "仮想プライベートネットワーク",
     "note": "通过加密隧道保护网络通信。",
     "frequency": 4
+  },
+  {
+    "term": "AWS Compute Optimizer",
+    "english": "AWS Compute Optimizer",
+    "chinese": "AWS 计算资源优化建议",
+    "japanese": "AWS Compute Optimizer（コンピューティングリソースの適正化推奨）",
+    "note": "根据利用率数据提供资源规格与配置建议。",
+    "frequency": 4
+  },
+  {
+    "term": "AWS Marketplace",
+    "english": "AWS Marketplace",
+    "chinese": "AWS 第三方产品数字市场",
+    "japanese": "AWS Marketplace（サードパーティ製品・サービスのデジタルカタログ）",
+    "note": "发现、购买和部署第三方软件、数据与专业服务。",
+    "frequency": 4
+  },
+  {
+    "term": "AWS Partner Network",
+    "english": "AWS Partner Network",
+    "chinese": "AWS 合作伙伴网络",
+    "japanese": "AWS パートナーネットワーク",
+    "note": "寻找咨询、实施、迁移、托管与技术合作伙伴的生态网络。",
+    "frequency": 3
   },
   {
     "term": "ACM",

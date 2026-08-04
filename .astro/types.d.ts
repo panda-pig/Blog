@@ -871,6 +871,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"cloud-practitioner/billing-pricing-support.en.md": {
+	id: "cloud-practitioner/billing-pricing-support.en.md";
+  slug: "cloud-practitioner/billing-pricing-supporten";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/billing-pricing-support.ja.md": {
+	id: "cloud-practitioner/billing-pricing-support.ja.md";
+  slug: "cloud-practitioner/billing-pricing-supportja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/billing-pricing-support.md": {
+	id: "cloud-practitioner/billing-pricing-support.md";
+  slug: "cloud-practitioner/billing-pricing-support";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "cloud-practitioner/clf-exam-quick-review.en.md": {
 	id: "cloud-practitioner/clf-exam-quick-review.en.md";
   slug: "cloud-practitioner/clf-exam-quick-reviewen";
@@ -1035,6 +1056,27 @@ declare module 'astro:content' {
 "compare/aws-ai-services-vs-sagemaker-vs-ml-infrastructure.md": {
 	id: "compare/aws-ai-services-vs-sagemaker-vs-ml-infrastructure.md";
   slug: "compare/aws-ai-services-vs-sagemaker-vs-ml-infrastructure";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/billing-budgets-cost-explorer-pricing-calculator-support.en.md": {
+	id: "compare/billing-budgets-cost-explorer-pricing-calculator-support.en.md";
+  slug: "compare/billing-budgets-cost-explorer-pricing-calculator-supporten";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/billing-budgets-cost-explorer-pricing-calculator-support.ja.md": {
+	id: "compare/billing-budgets-cost-explorer-pricing-calculator-support.ja.md";
+  slug: "compare/billing-budgets-cost-explorer-pricing-calculator-supportja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/billing-budgets-cost-explorer-pricing-calculator-support.md": {
+	id: "compare/billing-budgets-cost-explorer-pricing-calculator-support.md";
+  slug: "compare/billing-budgets-cost-explorer-pricing-calculator-support";
   body: string;
   collection: "aws";
   data: any
@@ -3030,6 +3072,195 @@ declare module 'astro:content' {
 "networking/vpn-components-vgw-customer-gateway.md": {
 	id: "networking/vpn-components-vgw-customer-gateway.md";
   slug: "networking/vpn-components-vgw-customer-gateway";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-billing-and-cost-management.en.md": {
+	id: "pricing/aws-billing-and-cost-management.en.md";
+  slug: "pricing/aws-billing-and-cost-managementen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-billing-and-cost-management.ja.md": {
+	id: "pricing/aws-billing-and-cost-management.ja.md";
+  slug: "pricing/aws-billing-and-cost-managementja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-billing-and-cost-management.md": {
+	id: "pricing/aws-billing-and-cost-management.md";
+  slug: "pricing/aws-billing-and-cost-management";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-budgets.en.md": {
+	id: "pricing/aws-budgets.en.md";
+  slug: "pricing/aws-budgetsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-budgets.ja.md": {
+	id: "pricing/aws-budgets.ja.md";
+  slug: "pricing/aws-budgetsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-budgets.md": {
+	id: "pricing/aws-budgets.md";
+  slug: "pricing/aws-budgets";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-compute-optimizer.en.md": {
+	id: "pricing/aws-compute-optimizer.en.md";
+  slug: "pricing/aws-compute-optimizeren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-compute-optimizer.ja.md": {
+	id: "pricing/aws-compute-optimizer.ja.md";
+  slug: "pricing/aws-compute-optimizerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-compute-optimizer.md": {
+	id: "pricing/aws-compute-optimizer.md";
+  slug: "pricing/aws-compute-optimizer";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-cost-explorer.en.md": {
+	id: "pricing/aws-cost-explorer.en.md";
+  slug: "pricing/aws-cost-exploreren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-cost-explorer.ja.md": {
+	id: "pricing/aws-cost-explorer.ja.md";
+  slug: "pricing/aws-cost-explorerja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-cost-explorer.md": {
+	id: "pricing/aws-cost-explorer.md";
+  slug: "pricing/aws-cost-explorer";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-marketplace.en.md": {
+	id: "pricing/aws-marketplace.en.md";
+  slug: "pricing/aws-marketplaceen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-marketplace.ja.md": {
+	id: "pricing/aws-marketplace.ja.md";
+  slug: "pricing/aws-marketplaceja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-marketplace.md": {
+	id: "pricing/aws-marketplace.md";
+  slug: "pricing/aws-marketplace";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-partner-network.en.md": {
+	id: "pricing/aws-partner-network.en.md";
+  slug: "pricing/aws-partner-networken";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-partner-network.ja.md": {
+	id: "pricing/aws-partner-network.ja.md";
+  slug: "pricing/aws-partner-networkja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-partner-network.md": {
+	id: "pricing/aws-partner-network.md";
+  slug: "pricing/aws-partner-network";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-pricing-calculator.en.md": {
+	id: "pricing/aws-pricing-calculator.en.md";
+  slug: "pricing/aws-pricing-calculatoren";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-pricing-calculator.ja.md": {
+	id: "pricing/aws-pricing-calculator.ja.md";
+  slug: "pricing/aws-pricing-calculatorja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-pricing-calculator.md": {
+	id: "pricing/aws-pricing-calculator.md";
+  slug: "pricing/aws-pricing-calculator";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-support-plans.en.md": {
+	id: "pricing/aws-support-plans.en.md";
+  slug: "pricing/aws-support-plansen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-support-plans.ja.md": {
+	id: "pricing/aws-support-plans.ja.md";
+  slug: "pricing/aws-support-plansja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/aws-support-plans.md": {
+	id: "pricing/aws-support-plans.md";
+  slug: "pricing/aws-support-plans";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/pricing-billing-support-overview.en.md": {
+	id: "pricing/pricing-billing-support-overview.en.md";
+  slug: "pricing/pricing-billing-support-overviewen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/pricing-billing-support-overview.ja.md": {
+	id: "pricing/pricing-billing-support-overview.ja.md";
+  slug: "pricing/pricing-billing-support-overviewja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"pricing/pricing-billing-support-overview.md": {
+	id: "pricing/pricing-billing-support-overview.md";
+  slug: "pricing/pricing-billing-support-overview";
   body: string;
   collection: "aws";
   data: any

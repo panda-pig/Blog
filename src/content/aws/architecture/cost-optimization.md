@@ -9,11 +9,11 @@ lang: zh
 topicKey: "成本优化"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-04
 tags: ["Architecture","Cost Optimization","FinOps"]
 notionId: 3a6964dc-ce4a-8166-bb96-e568552dd8ce
 notionUrl: https://app.notion.com/p/3a6964dcce4a8166bb96e568552dd8ce
-notionUpdated: "2026-07-30T01:08:06.892Z"
+notionUpdated: "2026-08-04T02:14:21.174Z"
 ---
 
 ## 基本信息
@@ -108,6 +108,17 @@ Savings Plans vs Reserved Instances；Spot vs On-Demand；成本优化 vs 单纯
 ## 关联服务
 
 AWS Cost Explorer、AWS Budgets、AWS Compute Optimizer、Trusted Advisor、EC2 Auto Scaling、Savings Plans、Spot Instances、S3 Lifecycle。
+
+## 定价原则与主要成本驱动
+
+- **Pay as you go**：按实际使用量付费；**Save when you commit**：对稳定用量作 1 年或 3 年承诺；**Pay less by using more**：部分服务采用阶梯价或规模优惠。
+- 除计算与存储外，还要检查 Data Transfer Out、请求、日志、NAT Gateway、跨 AZ/Region 流量和快照。
+
+## 工具与服务层优化
+
+- Billing 看账单，Budgets 设阈值，Cost Explorer 分析历史与预测，Pricing Calculator 做部署前估算，Compute Optimizer 给出规格建议。
+- EC2 做 Right Sizing 和计费选型；RDS 同时评估规格、存储、副本、备份与缓存；S3 使用合适 Storage Class、Intelligent-Tiering 或 Lifecycle。
+- 网络优化要比较原路径与端点费用：S3/DynamoDB Gateway Endpoint 无小时费和数据处理费，Interface Endpoint 会收费。
 
 ## 官方参考
 

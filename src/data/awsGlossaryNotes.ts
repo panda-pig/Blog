@@ -1148,4 +1148,40 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "A managed service for verifiable, tamper-resistant ledgers shared across multiple organizations.",
     ja: "複数組織で共有する、検証可能で改ざん耐性の高い Ledger 向けマネージドサービス。",
   },
+  "AWS Billing and Cost Management": {
+    en: "The central entry point for bills, payments, cost analysis, and financial governance.",
+    ja: "請求、支払い、コスト分析、財務ガバナンスの一元的な入口。",
+  },
+  "AWS Budgets": {
+    en: "Alerts when actual or forecast cost, usage, or commitment metrics cross configured thresholds.",
+    ja: "実績または予測のコスト、使用量、割引契約指標が設定しきい値を超えると通知する。",
+  },
+  "AWS Cost Explorer": {
+    en: "Analyzes historical cost and usage with filters, grouping, trends, and forecasts.",
+    ja: "過去のコストと使用量を Filter、Group、傾向、Forecast で分析する。",
+  },
+  "AWS Pricing Calculator": {
+    en: "Estimates AWS costs from architecture and usage assumptions before deployment.",
+    ja: "導入前に Architecture と使用量の想定から AWS 料金を見積もる。",
+  },
+  "AWS Support Plans": {
+    en: "Provides different technical-support response targets and proactive guidance based on workload criticality.",
+    ja: "Workload の重要度に応じて異なる技術支援の応答目標と Proactive Guidance を提供する。",
+  },
+  "Cost Allocation Tag": {
+    en: "Attributes and analyzes cost by project, department, environment, or another business dimension.",
+    ja: "Project、部門、Environment などの Business 軸で Cost を帰属・分析する。",
+  },
+  "AWS Compute Optimizer": {
+    en: "Uses utilization data to recommend right-sized resource configurations.",
+    ja: "利用率 Data に基づいて Resource の適正な Spec と構成を推奨する。",
+  },
+  "AWS Marketplace": {
+    en: "A digital catalog for discovering, purchasing, and deploying third-party software, data, and professional services.",
+    ja: "第三者の Software、Data、Professional Service を検索、購入、導入する Digital Catalog。",
+  },
+  "AWS Partner Network": {
+    en: "An ecosystem for finding consulting, implementation, migration, managed-service, and technology partners.",
+    ja: "Consulting、導入、Migration、Managed Service、Technology Partner を探すための Ecosystem。",
+  },
 };

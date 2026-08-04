@@ -9,11 +9,11 @@ lang: zh
 topicKey: "CLF 考前速查"
 frequency: "阶段性总结"
 date: 2026-07-31
-updated: 2026-07-31
+updated: 2026-08-04
 tags: ["cloud-practitioner","CLF 考前速查","AWS"]
 notionId: 3a6964dc-ce4a-81fb-8f92-e11a796893f4
 notionUrl: https://app.notion.com/p/3a6964dcce4a81fb8f92e11a796893f4
-notionUpdated: "2026-07-29T08:13:05.710Z"
+notionUpdated: "2026-08-04T02:14:24.320Z"
 ---
 
 ## 一句话理解
@@ -26,6 +26,16 @@ notionUpdated: "2026-07-29T08:13:05.710Z"
 - SQL/JOIN/事务 → RDS/Aurora；Key-Value/Serverless/低延迟 → DynamoDB。
 - Multi-Region Multi-Active → DynamoDB Global Tables；微秒级 DynamoDB 缓存 → DAX。
 - 复杂 JSON/MongoDB 兼容 → DocumentDB；复杂关系网络 → Neptune；迁移 → DMS，异构转换 → SCT。
+
+## 计费与支持一分钟速查
+
+- 当前账单与付款 → Billing Dashboard；预算阈值与预测超支 → AWS Budgets。
+- 历史成本、趋势和预测 → Cost Explorer；部署前估算 → Pricing Calculator。
+- 多账户统一付款与聚合符合条件的优惠 → Organizations Consolidated Billing。
+- 项目、部门和环境成本归属 → Cost Allocation Tags。
+- Right Sizing 建议 → Compute Optimizer；综合最佳实践检查 → Trusted Advisor。
+- 购买第三方软件、AMI、SaaS → Marketplace；寻找 AWS 合作伙伴 → APN。
+- Basic 无技术案例 SLA；Enterprise 强调 TAM；响应时间是首次响应目标，不是解决保证。
 
 ## 考试重点
 

@@ -9,11 +9,11 @@ lang: zh
 topicKey: "成本优化架构设计"
 frequency: "阶段性总结"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-08-04
 tags: ["saa-c03","Design Cost-Optimized Architectures","AWS"]
 notionId: 3a6964dc-ce4a-815e-9274-d95d1853835b
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9274d95d1853835b
-notionUpdated: "2026-07-29T08:13:04.387Z"
+notionUpdated: "2026-08-04T02:14:26.020Z"
 ---
 
 ## 必须掌握
@@ -87,3 +87,16 @@ notionUpdated: "2026-07-29T08:13:04.387Z"
 - 避免不必要的 Scan、低效 Partition Key 和过度索引，减少读取/写入消耗。
 - DAX 可能减少重复读取所需容量，但只有高命中、读多工作负载才值得。
 - 自动扩展和 Serverless 不等于自动成本最优；仍需监控容量、存储、副本、备份和跨 Region 流量。
+
+## 计算、数据库与网络成本补充
+
+- EC2 先做 Right Sizing；稳定基础负载评估 Savings Plans / Reserved Instances，可中断任务评估 Spot，波动负载结合 Auto Scaling。
+- RDS 同时比较实例规格、存储、副本、备份和缓存成本；Read Replica、Multi-AZ 与 ElastiCache 解决的问题不同。
+- 账单异常时用 Cost Explorer 按服务、账户、Region、标签和时间定位；Budgets 负责阈值告警，Pricing Calculator 负责变更前估算。
+- Compute Optimizer 给出规格建议，Trusted Advisor 做更广的最佳实践检查，所有建议仍需根据峰值和可靠性验证。
+- 数据传输成本取决于流向、Region、AZ 和路径。S3/DynamoDB Gateway Endpoint 无小时费和数据处理费，Interface Endpoint 会收费。
+
+## 定价原则
+
+- Pay as you go；Save when you commit；Pay less by using more。
+- 最低单价不等于最低总拥有成本，还要计算请求、检索、传输、运维、可用性和恢复目标。

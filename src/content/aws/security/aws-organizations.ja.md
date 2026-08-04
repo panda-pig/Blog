@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Organizations"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-04
 tags: ["security", "AWS Organizations", "AWS"]
 notionId: 3a6964dc-ce4a-811f-8285-dd7360095a9f
 notionUrl: https://app.notion.com/p/3a6964dcce4a811f8285dd7360095a9f
-notionUpdated: "2026-07-31T08:22:49.155Z"
+notionUpdated: "2026-08-04T02:14:25.203Z"
 ---
 
 ## 基本情報
@@ -36,7 +36,9 @@ AWS アカウント、OU、SCP の権限境界、一括請求を一元管理し�
 - メンバーアカウントを、業務・環境・セキュリティ境界ごとに OU へ整理します。
 - SCP は Root、OU、Account から継承され、利用可能な権限の上限を定義します。
 - SCP は制限するだけで権限を付与しません。実行には IAM Policy などの Allow が必要です。
-- 一括請求で料金を集約し、対象となるボリュームディスカウントを共有できます。
+- 一括請求で管理 Account がまとめて支払い、Member Account の Resource と Identity は分離したまま維持します。
+- 対象利用量を集約し、一部の段階料金、Reserved Instance、Savings Plans の割引効果を共有できます。
+- Account、OU、Cost Allocation Tags を使って Team、Environment、Project 別に Cost を分析します。
 - 本番、開発、セキュリティ、ログ保管用アカウントを分離して境界を強化します。
 
 ## 試験ポイントと注意点

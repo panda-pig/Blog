@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Organizations"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-04
 tags: ["security", "AWS Organizations", "AWS"]
 notionId: 3a6964dc-ce4a-811f-8285-dd7360095a9f
 notionUrl: https://app.notion.com/p/3a6964dcce4a811f8285dd7360095a9f
-notionUpdated: "2026-07-31T08:22:49.155Z"
+notionUpdated: "2026-08-04T02:14:25.203Z"
 ---
 
 ## Basic Information
@@ -36,7 +36,9 @@ Centrally manage AWS accounts, OUs, SCP permission boundaries, and consolidated 
 - Groups member accounts into organizational units (OUs) by business, environment, or security boundary.
 - Service control policies (SCPs) define the maximum available permissions and inherit from the root, OU, or account.
 - SCPs restrict permissions but never grant them; an IAM or resource policy must still allow the action.
-- Consolidated billing aggregates charges and can share eligible volume discounts.
+- Consolidated billing lets the management account pay centrally while member accounts keep separate resources and identities.
+- Eligible usage can aggregate for selected tiered pricing, Reserved Instance, or Savings Plans benefits.
+- Accounts, OUs, and activated cost-allocation tags help attribute spend to teams, environments, and projects.
 - Separate production, development, security, and log-archive accounts to create stronger boundaries.
 
 ## Exam focus and common pitfalls

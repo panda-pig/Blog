@@ -79,6 +79,12 @@ const { name, size = 'md' } = Astro.props;
       <path d="M14 16h10v8H14zM28 28h7v6h-7zM24 20h8v8m-13-4v7h9M14 34h8" />
     </svg>
   )}
+  {name === 'pricing' && (
+    <svg viewBox="0 0 48 48">
+      <path d="M24 7v34M32 14c-2-2-5-3-8-3-5 0-9 2.5-9 6s3 5.5 9 7 9 3.5 9 7-4 6-9 6c-4 0-7-1.2-10-3.5" />
+      <path d="M9 8h30v32H9z" />
+    </svg>
+  )}
   {name === 'compare' && (
     <svg viewBox="0 0 48 48">
       <path d="M24 9v30M11 14h26M15 14 8 28h14l-7-14Zm18 0-7 14h14l-7-14Z" />
