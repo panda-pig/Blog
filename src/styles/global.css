@@ -90,6 +90,30 @@
     -webkit-overflow-scrolling: touch;
   }
 
+  .aws-notes-page,
+  .aws-category,
+  .aws-note-page,
+  .glossary-page {
+    --aws-font-sans: 'Noto Sans', 'Hiragino Sans', 'Yu Gothic UI', 'Yu Gothic', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+    --aws-font-serif: 'Noto Serif', 'Noto Serif SC', 'Yu Mincho', 'Hiragino Mincho ProN', 'Songti SC', Georgia, serif;
+    --aws-font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+    font-family: var(--aws-font-sans);
+    font-kerning: normal;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  :is(.aws-notes-page, .aws-category, .aws-note-page, .glossary-page)
+    :is(a, button, input, [tabindex]):focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--primary) 42%, transparent);
+    outline-offset: 3px;
+  }
+
+  :is(.aws-notes-page, .aws-category, .aws-note-page, .glossary-page)
+    :is(time, kbd, code, .frequency) {
+    font-variant-numeric: tabular-nums;
+  }
+
   ::selection {
     background-color: var(--primary-light);
     color: var(--primary);

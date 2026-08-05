@@ -242,7 +242,7 @@ const searchItems = [
   .aws-eyebrow {
     margin: 0;
     color: var(--aws-orange);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.14em;
@@ -251,7 +251,7 @@ const searchItems = [
   .aws-section-kicker {
     margin: 0;
     color: var(--text-secondary);
-    font-family: 'Noto Sans', sans-serif;
+    font-family: var(--aws-font-sans);
     font-size: 0.76rem;
     font-weight: 700;
     letter-spacing: 0.035em;
@@ -260,7 +260,7 @@ const searchItems = [
   .aws-hero h1 {
     margin: 0.65rem 0 0;
     color: var(--aws-ink);
-    font-family: 'Noto Serif', serif;
+    font-family: var(--aws-font-serif);
     font-size: clamp(3rem, 7vw, 5.15rem);
     font-weight: 700;
     line-height: 1.02;
@@ -275,7 +275,7 @@ const searchItems = [
   .aws-hero__meta {
     margin: 1.05rem 0 0;
     color: var(--aws-ink);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
     font-size: clamp(0.76rem, 1.3vw, 0.95rem);
     letter-spacing: 0.025em;
   }
@@ -283,7 +283,7 @@ const searchItems = [
   .aws-hero__description {
     margin: 0.68rem 0 0;
     color: var(--text-secondary);
-    font-family: 'Noto Serif', serif;
+    font-family: var(--aws-font-serif);
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.75;
@@ -291,13 +291,17 @@ const searchItems = [
   }
 
   .aws-hero__source {
-    margin: 0.3rem 0 0;
+    max-width: 43rem;
+    margin: 0.42rem 0 0;
+    padding-left: 0.78rem;
+    border-left: 2px solid color-mix(in srgb, var(--aws-orange) 52%, transparent);
     color: color-mix(in srgb, var(--text-secondary) 82%, transparent);
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 0.78rem;
+    font-family: var(--aws-font-serif);
+    font-size: 0.86rem;
     font-weight: 500;
-    line-height: 1.65;
-    letter-spacing: 0.018em;
+    line-height: 1.72;
+    letter-spacing: 0.02em;
+    text-wrap: pretty;
   }
 
   .aws-flight-path {
@@ -367,8 +371,8 @@ const searchItems = [
   .aws-recent__header h2 {
     margin: 0.2rem 0 0;
     color: var(--aws-ink);
-    font-family: 'Noto Serif', serif;
-    font-size: clamp(1.45rem, 2.8vw, 2rem);
+    font-family: var(--aws-font-serif);
+    font-size: clamp(1.55rem, 2.8vw, 2.1rem);
     font-weight: 700;
     letter-spacing: -0.02em;
   }
@@ -376,15 +380,16 @@ const searchItems = [
   .aws-section-heading > p {
     margin: 0 0 0.15rem;
     color: var(--text-secondary);
-    font-size: 0.84rem;
+    max-width: 35rem;
+    font-size: 0.9rem;
     font-weight: 500;
     line-height: 1.6;
   }
 
   .aws-domain-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.1rem;
   }
 
   .aws-domain-card {
@@ -393,8 +398,8 @@ const searchItems = [
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
     gap: 0.9rem;
-    min-height: 9.5rem;
-    padding: 1.2rem 1.1rem;
+    min-height: 10.25rem;
+    padding: 1.35rem 1.25rem;
     border: 1px solid rgba(59, 78, 104, 0.14);
     border-radius: 1rem;
     color: var(--domain-color);
@@ -432,26 +437,26 @@ const searchItems = [
     align-items: baseline;
     margin: 0;
     color: var(--aws-ink);
-    font-size: 1rem;
+    font-size: 1.08rem;
     line-height: 1.3;
     overflow-wrap: anywhere;
   }
 
   .aws-domain-card h3 span {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
     font-weight: 700;
   }
 
   .aws-domain-card h3 small {
     color: var(--text-secondary);
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     font-weight: 600;
   }
 
   .aws-domain-card p {
     margin: 0.42rem 0 0.65rem;
     color: var(--text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.86rem;
     font-weight: 500;
     line-height: 1.6;
     overflow-wrap: anywhere;
@@ -470,8 +475,8 @@ const searchItems = [
     border-radius: 0.3rem;
     color: var(--text-secondary);
     background: color-mix(in srgb, var(--domain-color) 8%, var(--surface-alt));
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
+    font-family: var(--aws-font-mono);
+    font-size: 0.64rem;
     font-weight: 600;
     line-height: 1.35;
     text-overflow: ellipsis;
@@ -480,7 +485,7 @@ const searchItems = [
 
   .aws-card-arrow {
     color: var(--aws-orange);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
     font-size: 1.15rem;
     transition: transform 0.2s ease;
   }
@@ -549,7 +554,7 @@ const searchItems = [
   .aws-special-card h3 {
     margin: 0.12rem 0 0;
     color: var(--aws-ink);
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     line-height: 1.35;
   }
@@ -557,7 +562,7 @@ const searchItems = [
   .aws-special-card p {
     margin: 0.42rem 0 0.7rem;
     color: var(--text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 500;
     line-height: 1.6;
     text-wrap: pretty;
@@ -569,8 +574,8 @@ const searchItems = [
     border-radius: 0.4rem;
     color: var(--special-color);
     background: color-mix(in srgb, var(--special-color) 9%, var(--surface));
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.62rem;
+    font-family: var(--aws-font-mono);
+    font-size: 0.66rem;
     font-weight: 600;
     line-height: 1.4;
   }
@@ -659,20 +664,20 @@ const searchItems = [
   }
 
   .aws-recent__copy strong {
-    font-size: 0.86rem;
+    font-size: 0.9rem;
     font-weight: 700;
     line-height: 1.45;
   }
 
   .aws-recent__copy small {
     color: var(--text-muted);
-    font-size: 0.72rem;
+    font-size: 0.76rem;
     line-height: 1.5;
   }
 
   .aws-recent time {
     color: var(--text-muted);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
     font-size: 0.64rem;
     white-space: nowrap;
   }
@@ -684,7 +689,7 @@ const searchItems = [
     gap: 0.6rem;
     margin: 3.2rem 0 0;
     color: var(--text-muted);
-    font-family: 'Noto Serif', serif;
+    font-family: var(--aws-font-serif);
     font-size: 0.78rem;
     line-height: 1.6;
     letter-spacing: 0.08em;
@@ -714,7 +719,7 @@ const searchItems = [
 
   @media (max-width: 1024px) {
     .aws-domain-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .aws-lower-grid {
@@ -772,8 +777,17 @@ const searchItems = [
         linear-gradient(180deg, #20252b 0%, var(--bg) 32rem);
     }
 
+    .aws-hero {
+      min-height: auto;
+      padding: 2.8rem 0 2.25rem;
+    }
+
+    .aws-hero__inner {
+      gap: 1.7rem;
+    }
+
     .aws-hero h1 {
-      font-size: clamp(2.7rem, 14vw, 3.65rem);
+      font-size: clamp(2.55rem, 13vw, 3.45rem);
       line-height: 1;
     }
 
@@ -790,7 +804,21 @@ const searchItems = [
 
     .aws-hero__meta {
       max-width: 20rem;
+      margin-top: 0.9rem;
       line-height: 1.7;
+    }
+
+    .aws-hero__description {
+      margin-top: 0.62rem;
+      font-size: 0.96rem;
+      line-height: 1.72;
+    }
+
+    .aws-hero__source {
+      margin-top: 0.5rem;
+      padding-left: 0.68rem;
+      font-size: 0.82rem;
+      line-height: 1.68;
     }
 
     .aws-content {
@@ -804,8 +832,17 @@ const searchItems = [
     }
 
     .aws-domain-card {
-      min-height: 9.25rem;
+      min-height: 0;
       padding: 1.25rem 1.15rem;
+    }
+
+    .aws-section + .aws-section {
+      margin-top: 3.8rem;
+    }
+
+    .aws-section-heading h2,
+    .aws-recent__header h2 {
+      font-size: 1.55rem;
     }
 
     .aws-recent__list a {

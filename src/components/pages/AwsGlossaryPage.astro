@@ -357,6 +357,7 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
   .glossary-shell {
     position: relative;
     z-index: 2;
+    max-width: 88rem;
     padding-top: 2.2rem;
     padding-bottom: 5rem;
   }
@@ -431,7 +432,7 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
   .glossary-kicker {
     margin: 0 0 0.75rem;
     color: var(--glossary-blue-deep);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -440,7 +441,7 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
   .glossary-hero h1 {
     margin: 0;
     color: var(--glossary-ink);
-    font-family: 'Noto Serif', serif;
+    font-family: var(--aws-font-serif);
     font-size: clamp(2.4rem, 5.6vw, 4.8rem);
     font-weight: 700;
     line-height: 1.08;
@@ -477,7 +478,7 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
 
   .glossary-summary strong {
     color: var(--glossary-ink);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
     font-size: 1.45rem;
     line-height: 1;
   }
@@ -498,7 +499,7 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
     grid-column: 1 / -1;
     padding-top: 0.75rem;
     border-top: 1px solid var(--border);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
     letter-spacing: 0.035em;
   }
 
@@ -550,7 +551,7 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
     background: var(--glossary-surface);
     color: var(--text);
     font: inherit;
-    font-size: 0.88rem;
+    font-size: 0.94rem;
     transition: border-color 160ms ease, box-shadow 160ms ease;
   }
 
@@ -572,7 +573,7 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
     border-radius: 0.35rem;
     background: var(--bg);
     color: var(--text-muted);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
     font-size: 0.65rem;
   }
 
@@ -590,7 +591,7 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
     border-radius: 999px;
     background: transparent;
     color: var(--text-muted);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
     font-size: 0.72rem;
     cursor: pointer;
     transition: color 150ms ease, background 150ms ease, border-color 150ms ease;
@@ -631,13 +632,13 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
   .glossary-table-meta strong {
     margin-left: 0.38rem;
     color: var(--glossary-ink);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
   }
 
   .glossary-swipe-hint {
     display: none;
     color: var(--text-muted);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
     font-size: 0.65rem;
   }
 
@@ -653,13 +654,13 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
     border-collapse: separate;
     border-spacing: 0;
     color: var(--text-secondary);
-    font-size: 0.82rem;
-    line-height: 1.58;
+    font-size: 0.88rem;
+    line-height: 1.62;
   }
 
   th,
   td {
-    padding: 0.9rem 0.8rem;
+    padding: 1rem 0.9rem;
     border-bottom: 1px solid var(--border);
     text-align: left;
     vertical-align: top;
@@ -674,8 +675,8 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
       inset 0 -1px 0 var(--border),
       0 0.45rem 0.9rem rgba(42, 65, 89, 0.06);
     color: var(--text-secondary);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.67rem;
+    font-family: var(--aws-font-mono);
+    font-size: 0.71rem;
     font-weight: 700;
     letter-spacing: 0.055em;
     white-space: nowrap;
@@ -692,6 +693,10 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
     transition: background 120ms ease;
   }
 
+  tbody tr:nth-child(even) {
+    background: color-mix(in srgb, var(--glossary-blue-soft) 28%, transparent);
+  }
+
   tbody tr:hover {
     background: rgba(80, 121, 165, 0.05);
   }
@@ -703,8 +708,8 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
 
   tbody th {
     color: var(--glossary-ink);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
+    font-family: var(--aws-font-mono);
+    font-size: 0.82rem;
     font-weight: 700;
   }
 
@@ -724,6 +729,7 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
 
   .glossary-note {
     color: var(--text-muted);
+    font-size: 0.84rem;
     font-weight: 500;
   }
 
@@ -740,7 +746,7 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
     border-radius: 999px;
     background: rgba(218, 144, 45, 0.12);
     color: #a66a19;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--aws-font-mono);
     font-size: 0.68rem;
     text-align: center;
   }
@@ -770,7 +776,7 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
 
   .glossary-empty strong {
     color: var(--glossary-ink);
-    font-family: 'Noto Serif', serif;
+    font-family: var(--aws-font-serif);
     font-size: 1.15rem;
   }
 
@@ -873,7 +879,7 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
 
     .glossary-search input {
       padding-right: 0.9rem;
-      font-size: 0.82rem;
+      font-size: 0.9rem;
     }
 
     .glossary-swipe-hint {
@@ -926,10 +932,10 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
       display: grid;
       gap: 0.3rem;
       min-width: 0;
-      padding: 0.76rem;
+      padding: 0.82rem;
       border: 0;
       border-bottom: 1px solid var(--border);
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       overflow-wrap: anywhere;
     }
 
@@ -937,8 +943,8 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
     tbody td::before {
       content: attr(data-label);
       color: var(--text-muted);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.59rem;
+      font-family: var(--aws-font-mono);
+      font-size: 0.62rem;
       font-weight: 600;
       letter-spacing: 0.045em;
     }
@@ -993,6 +999,23 @@ const getNote = (entry: (typeof awsGlossaryEntries)[number]) => entry.note[noteL
 
     tbody {
       padding: 0.5rem;
+    }
+
+    tbody tr {
+      grid-template-columns: 1fr;
+    }
+
+    tbody th,
+    tbody td,
+    tbody td:nth-child(3),
+    tbody td:nth-child(4),
+    tbody td:last-child {
+      grid-column: 1;
+      border-right: 0;
+    }
+
+    tbody td:nth-child(5) {
+      border-bottom: 1px solid var(--border);
     }
   }
 </style>
