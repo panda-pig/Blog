@@ -1184,4 +1184,116 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     en: "An ecosystem for finding consulting, implementation, migration, managed-service, and technology partners.",
     ja: "Consulting、導入、Migration、Managed Service、Technology Partner を探すための Ecosystem。",
   },
+  "AWS Application Discovery Service": {
+    en: "Collects server configuration, performance, process, connection, and application-dependency data.",
+    ja: "Server の構成、Performance、Process、Connection、Application の依存関係を収集する。",
+  },
+  "AWS Cloud Adoption Framework": {
+    en: "Improves cloud readiness through six perspectives: Business, People, Governance, Platform, Security, and Operations.",
+    ja: "Business、People、Governance、Platform、Security、Operations の 6 つの Perspective で Cloud Readiness を高める。",
+  },
+  "AWS Migration Hub": {
+    en: "Provides a unified view of migration projects and progress; related migration experiences are increasingly integrated into AWS Transform.",
+    ja: "Migration Project と進捗を一元表示する。関連する移行体験は AWS Transform へ段階的に統合されている。",
+  },
+  "AWS Snowball Edge": {
+    en: "A classic offline migration appliance; it is no longer available to new customers, so alternatives such as DataSync should also be understood.",
+    ja: "代表的な Offline Migration Appliance。現在は新規 Customer 向けに提供されていないため、DataSync などの代替手段も押さえる。",
+  },
+  "AWS Three-Phase Migration Process": {
+    en: "Describes the migration sequence: Assess, Mobilize, then Migrate and Modernize.",
+    ja: "Migration Project の順序を Assess、Mobilize、Migrate and Modernize の 3 段階で表す。",
+  },
+  "AWS Transfer Family": {
+    en: "Provides managed endpoints for business file exchange over SFTP, FTPS, FTP, and AS2.",
+    ja: "SFTP、FTPS、FTP、AS2 による Business File Exchange の Managed Endpoint を提供する。",
+  },
+  "AWS Transform MGN": {
+    en: "AWS Application Migration Service was renamed in June 2026; it migrates servers through continuous block-level replication.",
+    ja: "2026 年 6 月に AWS Application Migration Service から改称。継続的な Block-level Replication で Server を移行する。",
+  },
+  "Migration Evaluator": {
+    en: "Builds a data-driven migration business case from the current environment, licensing, and target options.",
+    ja: "現行 Environment、License、移行先 Option の Data から Migration の Business Case を作成する。",
+  },
+  "Refactor / Re-architect": {
+    en: "Changes or rewrites code to redesign the architecture around cloud-native capabilities.",
+    ja: "Code を変更または書き直し、Cloud Native 機能を活用する Architecture へ再設計する。",
+  },
+  "Rehost": {
+    en: "Moves an individual server or application to AWS with little or no application change.",
+    ja: "Application をほぼ変更せず、個別の Server または Application を AWS へ移行する。",
+  },
+  "Relocate": {
+    en: "Moves an entire virtualization or container platform to a similar environment on AWS.",
+    ja: "Virtualization または Container Platform 全体を、AWS 上の同種 Environment へ移行する。",
+  },
+  "Replatform": {
+    en: "Migrates after limited cloud optimization without changing the core architecture.",
+    ja: "Core Architecture は変えず、限定的な Cloud Optimization を行ってから移行する。",
+  },
+  "Repurchase": {
+    en: "Replaces legacy software with a new product or SaaS offering.",
+    ja: "Legacy Software を廃止し、新しい Product または SaaS に置き換える。",
+  },
+  "Retain": {
+    en: "Keeps a valuable application in place for now because of compliance, dependencies, or insufficient migration benefit.",
+    ja: "Compliance、Dependency、移行効果などの理由により、価値のある Application を当面現環境に残す。",
+  },
+  "Retire": {
+    en: "Decommissions and stops maintaining a system that is no longer needed.",
+    ja: "不要と判断した System を停止し、Maintenance を終了する。",
+  },
+  "Amazon Connect": {
+    en: "Provides IVR, queues, agents, chat, and callback capabilities for a cloud contact center.",
+    ja: "Cloud Contact Center 向けに IVR、Queue、Agent、Chat、Callback を提供する。",
+  },
+  "Amazon SES": {
+    en: "Sends transactional, notification, and marketing email through an API or SMTP.",
+    ja: "API または SMTP で Transactional、Notification、Marketing Email を送信する。",
+  },
+  "Amazon WorkSpaces": {
+    en: "Provides users with complete managed Windows or Linux cloud desktops.",
+    ja: "User に完全な Managed Windows または Linux Cloud Desktop を提供する。",
+  },
+  "Amazon WorkSpaces Applications": {
+    en: "Streams managed desktop applications; older exam questions and courses use the name Amazon AppStream 2.0.",
+    ja: "Managed Desktop Application を Streaming 配信する。旧問題や Course では Amazon AppStream 2.0 の名称が使われる。",
+  },
+  "Amazon WorkSpaces Secure Browser": {
+    en: "Opens an isolated cloud browser session from the user's existing browser.",
+    ja: "User の既存 Browser から Cloud 上の分離された Browser Session を開始する。",
+  },
+  "AWS Amplify": {
+    en: "A platform for frontend teams to build, host, and connect web and mobile applications to cloud backends.",
+    ja: "Frontend Team が Web・Mobile Application を構築、Hosting し、Cloud Backend へ接続する Platform。",
+  },
+  "AWS AppSync": {
+    en: "Its core components include GraphQL schemas, resolvers, data sources, and subscriptions.",
+    ja: "主要 Component は GraphQL Schema、Resolver、Data Source、Subscription。",
+  },
+  "AWS CodeBuild": {
+    en: "Reads a buildspec to compile, test, package, and output build artifacts.",
+    ja: "buildspec を読み込み、Compile、Test、Package を実行して Build Artifact を出力する。",
+  },
+  "AWS CodePipeline": {
+    en: "Orchestrates stages such as Source, Build, Test, Approval, and Deploy.",
+    ja: "Source、Build、Test、Approval、Deploy などの Stage を Orchestration する。",
+  },
+  "AWS IoT Core": {
+    en: "Core capabilities include device certificates, MQTT topics, the Rules Engine, and Device Shadow.",
+    ja: "主要機能は Device Certificate、MQTT Topic、Rules Engine、Device Shadow。",
+  },
+  "AWS Well-Architected Framework": {
+    en: "Continuously reviews and improves workloads through six architectural pillars.",
+    ja: "6 本の Architecture Pillar に基づいて Workload を継続的に Review・改善する。",
+  },
+  "AWS Well-Architected Six Pillars": {
+    en: "The six pillars are Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, and Sustainability.",
+    ja: "6 本の柱は Operational Excellence、Security、Reliability、Performance Efficiency、Cost Optimization、Sustainability。",
+  },
+  "AWS X-Ray": {
+    en: "Uses traces and a service map to locate latency and errors across a distributed call path.",
+    ja: "Trace と Service Map を使い、分散 Call Path の Latency と Error を特定する。",
+  },
 };

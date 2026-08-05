@@ -2378,10 +2378,236 @@ const rows = [
     "japanese": "マネージドブロックチェーン",
     "note": "面向多组织共享、可验证且难以篡改账本的托管服务。",
     "frequency": 1
+  },
+  {
+    "term": "AWS Application Discovery Service",
+    "english": "AWS Application Discovery Service",
+    "chinese": "AWS 本地环境发现与应用依赖分析",
+    "japanese": "AWS Application Discovery Service（アプリケーション検出・依存関係分析サービス）",
+    "note": "收集服务器配置、性能、进程、连接和应用依赖。",
+    "frequency": 3
+  },
+  {
+    "term": "AWS Cloud Adoption Framework",
+    "english": "AWS Cloud Adoption Framework (AWS CAF)",
+    "chinese": "AWS 云采用框架",
+    "japanese": "AWS クラウド導入フレームワーク",
+    "note": "通过业务、人员、治理、平台、安全和运营六个视角提升云就绪能力。",
+    "frequency": 4
+  },
+  {
+    "term": "AWS Migration Hub",
+    "english": "AWS Migration Hub",
+    "chinese": "AWS 迁移项目统一管理与跟踪中心",
+    "japanese": "AWS Migration Hub（移行プロジェクトの一元管理・進捗追跡）",
+    "note": "统一查看迁移项目与进度；相关迁移体验正逐步整合进 AWS Transform。",
+    "frequency": 3
+  },
+  {
+    "term": "AWS Snowball Edge",
+    "english": "AWS Snowball Edge Storage Optimized",
+    "chinese": "AWS 离线数据迁移与边缘计算设备",
+    "japanese": "AWS Snowball Edge（オフラインデータ移行・エッジコンピューティングデバイス）",
+    "note": "经典离线迁移设备；当前不再向新客户开放，应同时了解 DataSync 等替代方案。",
+    "frequency": 3
+  },
+  {
+    "term": "AWS Three-Phase Migration Process",
+    "english": "Assess → Mobilize → Migrate & Modernize",
+    "chinese": "AWS 三阶段迁移流程",
+    "japanese": "AWS 3段階移行プロセス",
+    "note": "描述迁移项目的推进顺序：评估、准备、迁移与现代化。",
+    "frequency": 5
+  },
+  {
+    "term": "AWS Transfer Family",
+    "english": "AWS Transfer Family",
+    "chinese": "AWS 托管文件传输服务",
+    "japanese": "AWS Transfer Family（マネージドファイル転送サービス）",
+    "note": "为 SFTP、FTPS、FTP、AS2 等业务文件交换提供托管入口。",
+    "frequency": 3
+  },
+  {
+    "term": "AWS Transform MGN",
+    "english": "AWS Transform MGN (formerly AWS Application Migration Service)",
+    "chinese": "AWS 服务器与应用迁移服务",
+    "japanese": "AWS Transform MGN（サーバー・アプリケーション移行サービス）",
+    "note": "2026 年 6 月由 AWS Application Migration Service 更名；通过持续块级复制迁移服务器。",
+    "frequency": 4
+  },
+  {
+    "term": "Migration Evaluator",
+    "english": "AWS Migration Evaluator",
+    "chinese": "AWS 迁移评估与商业案例服务",
+    "japanese": "Migration Evaluator（移行評価・ビジネスケース作成サービス）",
+    "note": "根据现有环境、许可和目标方案建立数据驱动的迁移商业案例。",
+    "frequency": 3
+  },
+  {
+    "term": "Refactor / Re-architect",
+    "english": "Refactor / Re-architect",
+    "chinese": "重构、重新架构",
+    "japanese": "リファクタリング／再設計",
+    "note": "修改或重写代码，利用云原生能力重新设计架构。",
+    "frequency": 5
+  },
+  {
+    "term": "Rehost",
+    "english": "Rehost (Lift and Shift)",
+    "chinese": "重新托管、原样迁移",
+    "japanese": "再ホスト（リフト・アンド・シフト）",
+    "note": "基本不改应用，把单个服务器或应用迁往 AWS。",
+    "frequency": 5
+  },
+  {
+    "term": "Relocate",
+    "english": "Relocate",
+    "chinese": "重新放置、整个平台迁移",
+    "japanese": "再配置（プラットフォーム全体の移行）",
+    "note": "将整个虚拟化或容器平台整体迁往 AWS 上的同类环境。",
+    "frequency": 4
+  },
+  {
+    "term": "Replatform",
+    "english": "Replatform (Lift, Tinker and Shift)",
+    "chinese": "更换平台、小幅优化后迁移",
+    "japanese": "再プラットフォーム化",
+    "note": "不改变核心架构，进行有限云优化后迁移。",
+    "frequency": 5
+  },
+  {
+    "term": "Repurchase",
+    "english": "Repurchase (Drop and Shop)",
+    "chinese": "重新购买、更换产品",
+    "japanese": "再購入（SaaS への置き換え）",
+    "note": "放弃旧软件，改用新的产品或 SaaS。",
+    "frequency": 4
+  },
+  {
+    "term": "Retain",
+    "english": "Retain",
+    "chinese": "保留、暂不迁移",
+    "japanese": "保持（現環境に残す）",
+    "note": "应用仍有价值，但由于合规、依赖或收益等原因当前暂不迁移。",
+    "frequency": 4
+  },
+  {
+    "term": "Retire",
+    "english": "Retire",
+    "chinese": "停用、下线",
+    "japanese": "廃止（システムを停止する）",
+    "note": "确认系统不再需要，直接关闭并停止维护。",
+    "frequency": 4
+  },
+  {
+    "term": "Amazon Connect",
+    "english": "Amazon Connect",
+    "chinese": "云联络中心服务",
+    "japanese": "Amazon Connect（クラウドコンタクトセンターサービス）",
+    "note": "提供 IVR、队列、坐席、聊天和回拨能力。",
+    "frequency": 3
+  },
+  {
+    "term": "Amazon SES",
+    "english": "Amazon Simple Email Service",
+    "chinese": "应用程序邮件发送服务",
+    "japanese": "Amazon Simple Email Service（アプリケーション向けメール送信サービス）",
+    "note": "通过 API 或 SMTP 发送事务性、通知性和营销邮件。",
+    "frequency": 3
+  },
+  {
+    "term": "Amazon WorkSpaces",
+    "english": "Amazon WorkSpaces",
+    "chinese": "托管式云桌面服务",
+    "japanese": "Amazon WorkSpaces（フルマネージド型クラウドデスクトップサービス）",
+    "note": "为用户提供完整的 Windows 或 Linux 云桌面。",
+    "frequency": 3
+  },
+  {
+    "term": "Amazon WorkSpaces Applications",
+    "english": "Amazon WorkSpaces Applications (formerly Amazon AppStream 2.0)",
+    "chinese": "托管式桌面应用流式交付服务",
+    "japanese": "Amazon WorkSpaces Applications（旧 Amazon AppStream 2.0、デスクトップアプリケーション配信サービス）",
+    "note": "旧题和课程中常见名称为 Amazon AppStream 2.0。",
+    "frequency": 3
+  },
+  {
+    "term": "Amazon WorkSpaces Secure Browser",
+    "english": "Amazon WorkSpaces Secure Browser (formerly Amazon WorkSpaces Web)",
+    "chinese": "托管式隔离浏览器服务",
+    "japanese": "Amazon WorkSpaces Secure Browser（旧 Amazon WorkSpaces Web、分離ブラウザーサービス）",
+    "note": "从现有浏览器进入云端隔离浏览会话。",
+    "frequency": 3
+  },
+  {
+    "term": "AWS Amplify",
+    "english": "AWS Amplify",
+    "chinese": "Web 与移动应用全栈开发及托管平台",
+    "japanese": "AWS Amplify（Web・モバイル向けフルスタック開発・ホスティングプラットフォーム）",
+    "note": "面向前端团队的构建、托管和云后端连接平台。",
+    "frequency": 3
+  },
+  {
+    "term": "AWS AppSync",
+    "english": "AWS AppSync",
+    "chinese": "托管 GraphQL API 与实时数据服务",
+    "japanese": "AWS AppSync（フルマネージド型 GraphQL API・リアルタイムデータサービス）",
+    "note": "核心组件包括 GraphQL Schema、Resolver、Data Source 和 Subscription。",
+    "frequency": 3
+  },
+  {
+    "term": "AWS CodeBuild",
+    "english": "AWS CodeBuild",
+    "chinese": "托管构建与测试服务",
+    "japanese": "AWS CodeBuild（フルマネージド型ビルド・テストサービス）",
+    "note": "读取 buildspec，编译、测试、打包并输出构建产物。",
+    "frequency": 3
+  },
+  {
+    "term": "AWS CodePipeline",
+    "english": "AWS CodePipeline",
+    "chinese": "持续交付流水线编排服务",
+    "japanese": "AWS CodePipeline（継続的デリバリーパイプライン管理サービス）",
+    "note": "编排 Source、Build、Test、Approval、Deploy 等阶段。",
+    "frequency": 3
+  },
+  {
+    "term": "AWS IoT Core",
+    "english": "AWS IoT Core",
+    "chinese": "物联网设备安全连接与消息服务",
+    "japanese": "AWS IoT Core（IoT デバイス接続・メッセージングサービス）",
+    "note": "核心能力包括设备证书、MQTT Topic、Rules Engine 和 Device Shadow。",
+    "frequency": 3
+  },
+  {
+    "term": "AWS Well-Architected Framework",
+    "english": "AWS Well-Architected Framework",
+    "chinese": "AWS 架构最佳实践框架",
+    "japanese": "AWS Well-Architected Framework（優れた設計のためのベストプラクティス体系）",
+    "note": "用六大支柱持续评审和改进工作负载。",
+    "frequency": 5
+  },
+  {
+    "term": "AWS Well-Architected Six Pillars",
+    "english": "AWS Well-Architected Framework Six Pillars",
+    "chinese": "Well-Architected 六大支柱",
+    "japanese": "AWS Well-Architected の 6 本の柱（運用上の優秀性・セキュリティ・信頼性・パフォーマンス効率・コスト最適化・持続可能性）",
+    "note": "六大支柱可记为：运、安、稳、快、省、绿。",
+    "frequency": 5
+  },
+  {
+    "term": "AWS X-Ray",
+    "english": "AWS X-Ray",
+    "chinese": "分布式请求追踪服务",
+    "japanese": "AWS X-Ray（分散トレーシング・性能分析サービス）",
+    "note": "通过 Trace 和 Service Map 定位调用链延迟与错误。",
+    "frequency": 4
   }
 ] as const;
 
-export const awsGlossaryEntries: AwsGlossaryEntry[] = rows.map((row) => {
+export const awsGlossaryEntries: AwsGlossaryEntry[] = [...rows]
+  .sort((a, b) => b.frequency - a.frequency || a.term.localeCompare(b.term, "en"))
+  .map((row) => {
   const translationKey = "noteKey" in row ? row.noteKey : row.term;
   const translation = awsGlossaryNoteTranslations[translationKey];
 
@@ -2397,4 +2623,4 @@ export const awsGlossaryEntries: AwsGlossaryEntry[] = rows.map((row) => {
     },
     frequency: row.frequency,
   };
-});
+  });

@@ -9,11 +9,11 @@ lang: ja
 topicKey: "Cloud Technology & Services"
 frequency: "段階サマリー"
 date: 2026-07-31
-updated: 2026-07-31
+updated: 2026-08-05
 tags: ["cloud-practitioner","Cloud Technology & Services","AWS"]
 notionId: 3a6964dc-ce4a-817f-8834-c24908271ac1
 notionUrl: https://app.notion.com/p/3a6964dcce4a817f8834c24908271ac1
-notionUpdated: "2026-07-30T08:08:13.496Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## 一言で理解
@@ -39,3 +39,20 @@ notionUpdated: "2026-07-30T08:08:13.496Z"
 ## 重要ポイント
 
 **用途からサービスを選び、役割を分けて似た選択肢を除外します。**
+
+## 新しい Service と Migration 速查
+
+| 要件 | Concept / Service |
+| --- | --- |
+| Migration Business Case | Migration Evaluator |
+| Server と Dependency の Discovery | Application Discovery Service |
+| Server の Block-level Replication | AWS Transform MGN |
+| Database の Full Load / CDC | AWS DMS。異種 Schema 変換は SCT |
+| 高速 File Migration | AWS DataSync |
+| SFTP / FTPS / FTP / AS2 | AWS Transfer Family |
+| GraphQL と Real-time Data | AWS AppSync |
+| Web / Mobile の Build と Hosting | AWS Amplify |
+| Full Desktop / App Streaming / 分離 Browser | WorkSpaces / WorkSpaces Applications / Secure Browser |
+| IoT Certificate、MQTT、Rule Routing | AWS IoT Core |
+
+順序は **Assess → Mobilize → Migrate & Modernize**、Application Strategy は 7R から選ぶ。

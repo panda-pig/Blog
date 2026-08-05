@@ -9,11 +9,11 @@ lang: ja
 topicKey: "安全架构设计"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-05
 tags: ["saa-c03", "安全架构设计", "AWS"]
 notionId: 3a6964dc-ce4a-815e-9db0-d8343bfa6db7
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9db0d8343bfa6db7
-notionUpdated: "2026-07-31T08:20:20.447Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## 必須ポイント

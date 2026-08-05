@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Cloud Adoption Framework"
 frequency: "Exam frequency ⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-07-31
+updated: 2026-08-05
 tags: ["architecture", "AWS Cloud Adoption Framework", "AWS"]
 notionId: 3a6964dc-ce4a-8176-b75f-f9ebf0d70a6f
 notionUrl: https://app.notion.com/p/3a6964dcce4a8176b75ff9ebf0d70a6f
-notionUpdated: "2026-07-23T07:03:09.522Z"
+notionUpdated: "2026-08-05T01:39:41.105Z"
 ---
 
 ## Basic information
@@ -40,3 +40,16 @@ Guides cloud adoption from business, people, governance, platform, security, and
 ## Memory hook
 
 AWS Cloud Adoption Framework = Guides cloud adoption from business, people, governance, platform, security, and operations perspectives.
+
+## Six perspectives
+
+| Perspective | Focus |
+| --- | --- |
+| Business | Value, outcomes, and strategic alignment |
+| People | Organization, skills, culture, and change |
+| Governance | Risk, compliance, investment, and governance |
+| Platform | Cloud platform, architecture, data, and engineering |
+| Security | Identity, detection, infrastructure, and data protection |
+| Operations | Operations, observability, incidents, and improvement |
+
+CAF guides organizational transformation. The three-phase process describes Assess → Mobilize → Migrate & Modernize, while the Well-Architected Framework reviews individual workloads through six pillars. CAF does not move servers or data.

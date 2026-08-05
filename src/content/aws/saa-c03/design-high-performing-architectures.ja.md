@@ -9,11 +9,11 @@ lang: ja
 topicKey: "高性能架构设计"
 frequency: "学習まとめ"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-08-05
 tags: ["saa-c03","Design High-Performing Architectures","AWS"]
 notionId: 3a6964dc-ce4a-8177-89e9-de191f6694c9
 notionUrl: https://app.notion.com/p/3a6964dcce4a817789e9de191f6694c9
-notionUpdated: "2026-07-30T08:08:43.972Z"
+notionUpdated: "2026-08-05T02:04:00.000Z"
 ---
 
 ## 一言で理解

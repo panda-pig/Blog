@@ -9,11 +9,11 @@ lang: en
 topicKey: "弹性架构设计"
 frequency: "Study summary"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-05
 tags: ["saa-c03","Design Resilient Architectures","AWS"]
 notionId: 3a6964dc-ce4a-811a-9170-e1ab378bb690
 notionUrl: https://app.notion.com/p/3a6964dcce4a811a9170e1ab378bb690
-notionUpdated: "2026-07-29T08:13:07.204Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## In one sentence

@@ -9,11 +9,11 @@ lang: en
 topicKey: "CLF 考前速查"
 frequency: "Stage summary"
 date: 2026-07-31
-updated: 2026-08-04
+updated: 2026-08-05
 tags: ["cloud-practitioner","CLF 考前速查","AWS"]
 notionId: 3a6964dc-ce4a-81fb-8f92-e11a796893f4
 notionUrl: https://app.notion.com/p/3a6964dcce4a81fb8f92e11a796893f4
-notionUpdated: "2026-08-04T02:14:24.320Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## In one sentence
@@ -48,3 +48,10 @@ Use global infrastructure, shared responsibility, security, core services, billi
 ## Remember
 
 **Finish with infrastructure, responsibility, security, core services, cost, and support.**
+
+## One-minute migration and specialist-service addendum
+
+- Three phases: Assess → Mobilize → Migrate & Modernize; the 7Rs decide each application's treatment.
+- Evaluator builds the business case, Discovery finds dependencies, Transform MGN moves servers, DMS moves databases, and DataSync moves files.
+- AppSync means GraphQL, Amplify is the frontend full-stack platform, Connect is the contact center, and SES sends application email.
+- WorkSpaces provides a full desktop, WorkSpaces Applications streams apps, and Secure Browser provides only an isolated browser session.

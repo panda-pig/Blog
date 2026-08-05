@@ -9,11 +9,11 @@ lang: zh
 topicKey: "场景题关键词索引"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-05
 tags: ["saa-c03", "场景题关键词索引", "AWS"]
 notionId: 3a6964dc-ce4a-81d7-bfeb-ed10071385bc
 notionUrl: https://app.notion.com/p/3a6964dcce4a81d7bfebed10071385bc
-notionUpdated: "2026-07-31T08:22:59.117Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## 场景题判断维度
@@ -46,3 +46,16 @@ notionUpdated: "2026-07-31T08:22:59.117Z"
 | OU、SCP、合并计费 | AWS Organizations | 认为 SCP 会授予权限 |
 | Landing Zone、Account Factory、Controls | AWS Control Tower | 认为它替代 Organizations |
 | AWS 故障、计划维护、实例退役 | AWS Health Dashboard | 用 CloudWatch 判断 AWS 官方公告 |
+
+## 迁移与专业解决方案关键词
+
+| 关键词 | 首选 | 不要误选 |
+| --- | --- | --- |
+| 商业案例、许可成本、现状评估 | Migration Evaluator | Application Discovery Service |
+| 进程、连接、应用依赖 | Application Discovery Service | Migration Hub |
+| 低停机服务器复制、Cutover | AWS Transform MGN | DMS |
+| 异构数据库、Schema 转换 | SCT + DMS | 只用 DMS 忽略结构转换 |
+| SFTP 伙伴入口、S3/EFS 后端 | Transfer Family | DataSync |
+| GraphQL、Subscription、Resolver | AppSync | API Gateway REST API |
+| 完整桌面 / 单个应用 / 隔离网站 | WorkSpaces / Applications / Secure Browser | 三者混用 |
+| MQTT、Device Shadow、Rules Engine | IoT Core | SQS |

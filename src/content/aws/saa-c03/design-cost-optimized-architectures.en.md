@@ -9,11 +9,11 @@ lang: en
 topicKey: "成本优化架构设计"
 frequency: "Study summary"
 date: 2026-07-30
-updated: 2026-08-04
+updated: 2026-08-05
 tags: ["saa-c03","Design Cost-Optimized Architectures","AWS"]
 notionId: 3a6964dc-ce4a-815e-9274-d95d1853835b
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9274d95d1853835b
-notionUpdated: "2026-08-04T02:14:26.020Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## In one sentence

@@ -9,11 +9,11 @@ lang: ja
 topicKey: "SAA 考前速查"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-05
 tags: ["saa-c03", "SAA 考前速查", "AWS"]
 notionId: 3a6964dc-ce4a-817c-860b-f61fe547c268
 notionUrl: https://app.notion.com/p/3a6964dcce4a817c860bf61fe547c268
-notionUpdated: "2026-07-31T08:20:22.295Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## 復習順序
@@ -36,3 +36,9 @@ notionUpdated: "2026-07-31T08:20:22.295Z"
 - 他の選択肢が要件に合わない理由を説明できます。
 - 最小運用、最高可用性、最低 Cost などの優先順位を識別できます。
 - 3 層、Event-Driven、Multi-Account Governance の代表 Architecture を描けます。
+
+## 新規 Topic の自己確認
+
+- 3 段階と 7R で Migration を説明し、Evaluator、Discovery、Migration Hub、Transform MGN、DMS、DataSync、Transfer Family を区別できる。
+- AppSync、Amplify、Connect、SES、3 種類の WorkSpaces Delivery、IoT Core の Keyword を区別できる。
+- 旧名称 Application Migration Service、AppStream 2.0、WorkSpaces Web を現在の Service 名へ対応付けられる。

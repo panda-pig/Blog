@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS X-Ray"
 frequency: "試験頻度 ⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-07-31
+updated: 2026-08-05
 tags: ["monitoring", "AWS X-Ray", "AWS"]
 notionId: 3a6964dc-ce4a-814a-a684-f401dfdce7d9
 notionUrl: https://app.notion.com/p/3a6964dcce4a814aa684f401dfdce7d9
-notionUpdated: "2026-07-23T07:01:40.031Z"
+notionUpdated: "2026-08-05T01:57:35.867Z"
 ---
 
 ## 基本情報
@@ -40,3 +40,11 @@ notionUpdated: "2026-07-23T07:01:40.031Z"
 ## 覚え方
 
 AWS X-Ray = 分散トレーシング
+
+## 基本概念
+
+- **Trace**：一つの Request が Distributed System を通る全経路。
+- **Segment / Subsegment**：Service と Downstream Call の Latency、Error、Metadata。
+- **Service Map**：Dependency、Latency、Error Rate を可視化し、Sampling で量を制御する。
+
+X-Ray SDK または OpenTelemetry が Trace Context を伝播し、Lambda、API Gateway、ECS、EC2 などが End-to-end Trace を作る。CloudWatch は System 状態、X-Ray は Request の遅延・失敗箇所、CloudTrail は API Audit を示す。

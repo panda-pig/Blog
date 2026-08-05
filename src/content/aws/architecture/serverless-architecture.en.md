@@ -9,11 +9,11 @@ lang: en
 topicKey: "无服务器架构"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-05
 tags: ["Architecture","Serverless","Lambda"]
 notionId: 3a6964dc-ce4a-8102-802a-c8a0a767c8f3
 notionUrl: https://app.notion.com/p/3a6964dcce4a8102802ac8a0a767c8f3
-notionUpdated: "2026-07-30T01:08:04.047Z"
+notionUpdated: "2026-08-05T01:57:00.000Z"
 ---
 
 ## Basic Information

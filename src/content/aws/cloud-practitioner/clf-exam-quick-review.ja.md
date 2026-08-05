@@ -9,11 +9,11 @@ lang: ja
 topicKey: "CLF 考前速查"
 frequency: "段階サマリー"
 date: 2026-07-31
-updated: 2026-08-04
+updated: 2026-08-05
 tags: ["cloud-practitioner","CLF 考前速查","AWS"]
 notionId: 3a6964dc-ce4a-81fb-8f92-e11a796893f4
 notionUrl: https://app.notion.com/p/3a6964dcce4a81fb8f92e11a796893f4
-notionUpdated: "2026-08-04T02:14:24.320Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## 一言で理解
@@ -48,3 +48,10 @@ notionUpdated: "2026-08-04T02:14:24.320Z"
 ## 重要ポイント
 
 **インフラ、責任、セキュリティ、主要サービス、料金とサポートで仕上げます。**
+
+## Migration と専門 Service の 1 分補足
+
+- 3 段階は Assess → Mobilize → Migrate & Modernize、各 Application の扱いは 7R で決める。
+- Evaluator は Business Case、Discovery は Dependency、Transform MGN は Server、DMS は Database、DataSync は File を扱う。
+- AppSync = GraphQL、Amplify = Frontend Full-stack Platform、Connect = Contact Center、SES = Application Email。
+- WorkSpaces は Full Desktop、WorkSpaces Applications は App Streaming、Secure Browser は分離 Browser Session。

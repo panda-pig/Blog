@@ -9,11 +9,11 @@ lang: ja
 topicKey: "云概念"
 frequency: "試験頻度 ★★★★★"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-05
 tags: ["Cloud Concepts","CLF-C02","Foundations"]
 notionId: 3a6964dc-ce4a-8161-8312-db30847cd94e
 notionUrl: https://app.notion.com/p/3a6964dcce4a81618312db30847cd94e
-notionUpdated: "2026-07-30T01:09:09.956Z"
+notionUpdated: "2026-08-05T02:08:00.000Z"
 ---
 
 ## 一言で理解

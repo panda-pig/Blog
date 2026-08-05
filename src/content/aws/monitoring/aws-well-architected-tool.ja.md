@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Well-Architected Tool"
 frequency: "考试频率 ⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-05
 tags: ["monitoring", "AWS Well-Architected Tool", "AWS"]
 notionId: 3a6964dc-ce4a-8113-88e9-d60dde380c0b
 notionUrl: https://app.notion.com/p/3a6964dcce4a811388e9d60dde380c0b
-notionUpdated: "2026-07-31T08:22:48.251Z"
+notionUpdated: "2026-08-05T01:57:00.000Z"
 ---
 
 ## 基本情報

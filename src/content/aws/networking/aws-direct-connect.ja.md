@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Direct Connect"
 frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-08-05
 tags: ["networking","AWS Direct Connect","AWS"]
 notionId: 3a6964dc-ce4a-812a-be47-ffe0e7198291
 notionUrl: https://app.notion.com/p/3a6964dcce4a812abe47ffe0e7198291
-notionUpdated: "2026-07-30T04:29:20.004Z"
+notionUpdated: "2026-08-05T01:42:00.000Z"
 ---
 
 ## 基本情報

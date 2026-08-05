@@ -9,11 +9,11 @@ lang: zh
 topicKey: "SAA 考前速查"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-05
 tags: ["saa-c03", "SAA 考前速查", "AWS"]
 notionId: 3a6964dc-ce4a-817c-860b-f61fe547c268
 notionUrl: https://app.notion.com/p/3a6964dcce4a817c860bf61fe547c268
-notionUpdated: "2026-07-31T08:20:22.295Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## 复习顺序
@@ -33,3 +33,9 @@ notionUpdated: "2026-07-31T08:20:22.295Z"
 - 能说明为什么其他选项不合适。
 - 能识别“最少运维”“最高可用”“最低成本”等优先级。
 - 能画出常见三层架构、事件驱动架构和多账户治理结构。
+
+## 新增知识点自检
+
+- 能用三阶段和 7R 解释迁移项目，并区分 Evaluator、Discovery、Migration Hub、Transform MGN、DMS、DataSync 与 Transfer Family。
+- 能区分 AppSync、Amplify、Connect、SES、WorkSpaces 三种交付方式和 IoT Core 的典型关键词。
+- 看到旧名称 Application Migration Service、AppStream 2.0、WorkSpaces Web 时，能映射到当前服务名。

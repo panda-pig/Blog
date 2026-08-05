@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS CodePipeline"
 frequency: "Exam frequency ⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-07-31
+updated: 2026-08-05
 tags: ["devops", "AWS CodePipeline", "AWS"]
 notionId: 3a6964dc-ce4a-81a8-9761-d977429ec679
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a89761d977429ec679
-notionUpdated: "2026-07-23T07:01:45.082Z"
+notionUpdated: "2026-08-05T01:57:00.000Z"
 ---
 
 ## Basic information
@@ -40,3 +40,11 @@ Orchestrates the delivery flow from source through build, test, and deployment.
 ## Memory hook
 
 AWS CodePipeline = Orchestrates the delivery flow from source through build, test, and deployment.
+
+## How it works
+
+- Connects Source, Build, Test, Manual Approval, and Deploy stages into a repeatable release process.
+- Actions run inside each stage, while artifacts carry versions and output between stages.
+- Source changes or events can trigger execution; a failure stops later stages and remains in execution history.
+
+CodePipeline **orchestrates** and does not compile code itself. CodeBuild builds, CodeDeploy deploys, and CloudFormation can release infrastructure.

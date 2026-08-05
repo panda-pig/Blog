@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Cloud Technology & Services"
 frequency: "阶段性总结"
 date: 2026-07-31
-updated: 2026-07-31
+updated: 2026-08-05
 tags: ["cloud-practitioner","Cloud Technology & Services","AWS"]
 notionId: 3a6964dc-ce4a-817f-8834-c24908271ac1
 notionUrl: https://app.notion.com/p/3a6964dcce4a817f8834c24908271ac1
-notionUpdated: "2026-07-30T08:08:13.496Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## 一句话理解
@@ -39,3 +39,20 @@ notionUpdated: "2026-07-30T08:08:13.496Z"
 ## 重点记忆
 
 **先看用途，再看服务；先区分职责，再排除相似选项。**
+
+## 新增服务与迁移速查
+
+| 需求 | 首选概念或服务 |
+| --- | --- |
+| 评估迁移商业案例 | Migration Evaluator |
+| 发现服务器与依赖 | Application Discovery Service |
+| 服务器块级复制 | AWS Transform MGN |
+| 数据库全量与 CDC | AWS DMS；异构结构转换配合 SCT |
+| 高速文件迁移 | AWS DataSync |
+| SFTP / FTPS / FTP / AS2 | AWS Transfer Family |
+| GraphQL 与实时数据 | AWS AppSync |
+| Web / 移动应用构建托管 | AWS Amplify |
+| 完整云桌面 / 应用串流 / 隔离浏览 | WorkSpaces / WorkSpaces Applications / Secure Browser |
+| IoT 设备证书、MQTT 与规则路由 | AWS IoT Core |
+
+迁移项目顺序记为 **Assess → Mobilize → Migrate & Modernize**，应用策略再从 7R 中选择。

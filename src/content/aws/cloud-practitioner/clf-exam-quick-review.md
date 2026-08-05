@@ -9,11 +9,11 @@ lang: zh
 topicKey: "CLF 考前速查"
 frequency: "阶段性总结"
 date: 2026-07-31
-updated: 2026-08-04
+updated: 2026-08-05
 tags: ["cloud-practitioner","CLF 考前速查","AWS"]
 notionId: 3a6964dc-ce4a-81fb-8f92-e11a796893f4
 notionUrl: https://app.notion.com/p/3a6964dcce4a81fb8f92e11a796893f4
-notionUpdated: "2026-08-04T02:14:24.320Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## 一句话理解
@@ -48,3 +48,10 @@ notionUpdated: "2026-08-04T02:14:24.320Z"
 ## 重点记忆
 
 **基础设施、责任、安全、核心服务、费用与支持，按这五块收尾。**
+
+## 迁移与专业服务一分钟补充
+
+- 三阶段：Assess → Mobilize → Migrate & Modernize；7R 决定每个应用怎么处理。
+- Evaluator 做商业案例，Discovery 找依赖，Transform MGN 搬服务器，DMS 搬数据库，DataSync 搬文件。
+- AppSync = GraphQL，Amplify = 前端全栈平台，Connect = 联络中心，SES = 应用邮件。
+- WorkSpaces 是完整桌面，WorkSpaces Applications 只串流应用，Secure Browser 只提供隔离浏览会话。

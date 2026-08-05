@@ -9,11 +9,11 @@ lang: en
 topicKey: "场景题关键词索引"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-05
 tags: ["saa-c03", "场景题关键词索引", "AWS"]
 notionId: 3a6964dc-ce4a-81d7-bfeb-ed10071385bc
 notionUrl: https://app.notion.com/p/3a6964dcce4a81d7bfebed10071385bc
-notionUpdated: "2026-07-31T08:22:59.117Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## Decision dimensions
@@ -50,3 +50,16 @@ notionUpdated: "2026-07-31T08:22:59.117Z"
 ## Remember
 
 **Keywords narrow the choices; the business constraint and priority still decide the answer.**
+
+## Migration and specialist-solution keywords
+
+| Keywords | Prefer | Avoid confusing with |
+| --- | --- | --- |
+| Business case, licensing cost, current-state estimate | Migration Evaluator | Application Discovery Service |
+| Processes, connections, application dependencies | Application Discovery Service | Migration Hub |
+| Low-downtime server replication and cutover | AWS Transform MGN | DMS |
+| Heterogeneous database and schema conversion | SCT + DMS | DMS alone when schema conversion is required |
+| Partner SFTP endpoint backed by S3/EFS | Transfer Family | DataSync |
+| GraphQL, subscriptions, resolvers | AppSync | API Gateway REST APIs |
+| Full desktop / single app / isolated website | WorkSpaces / Applications / Secure Browser | Treating all three as the same |
+| MQTT, Device Shadow, Rules Engine | IoT Core | SQS |

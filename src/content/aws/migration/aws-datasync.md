@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS DataSync"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-05
 tags: ["migration","AWS DataSync","AWS"]
 notionId: 3a6964dc-ce4a-8155-9ae9-f3e18ec458d5
 notionUrl: https://app.notion.com/p/3a6964dcce4a81559ae9f3e18ec458d5
-notionUpdated: "2026-07-30T01:52:42.983Z"
+notionUpdated: "2026-08-05T01:42:00.000Z"
 ---
 
 ## 基本信息

@@ -9,11 +9,11 @@ lang: ja
 topicKey: "场景题关键词索引"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-05
 tags: ["saa-c03", "场景题关键词索引", "AWS"]
 notionId: 3a6964dc-ce4a-81d7-bfeb-ed10071385bc
 notionUrl: https://app.notion.com/p/3a6964dcce4a81d7bfebed10071385bc
-notionUpdated: "2026-07-31T08:22:59.117Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## シナリオ判断の軸
@@ -50,3 +50,16 @@ notionUpdated: "2026-07-31T08:22:59.117Z"
 ## 重要ポイント
 
 **Keyword で候補を絞り、最終的には Business Constraint と優先順位で決定します。**
+
+## Migration と専門 Solution の Keyword
+
+| Keyword | 選ぶもの | 混同しないもの |
+| --- | --- | --- |
+| Business Case、License Cost、現状評価 | Migration Evaluator | Application Discovery Service |
+| Process、Connection、Application Dependency | Application Discovery Service | Migration Hub |
+| 低 Downtime Server Replication、Cutover | AWS Transform MGN | DMS |
+| 異種 Database、Schema Conversion | SCT + DMS | Schema 変換が必要なのに DMS のみ |
+| S3/EFS Backend の Partner SFTP | Transfer Family | DataSync |
+| GraphQL、Subscription、Resolver | AppSync | API Gateway REST API |
+| Full Desktop / Single App / 分離 Website | WorkSpaces / Applications / Secure Browser | 3 Service の混同 |
+| MQTT、Device Shadow、Rules Engine | IoT Core | SQS |

@@ -9,11 +9,11 @@ lang: en
 topicKey: "Cloud Technology & Services"
 frequency: "Stage summary"
 date: 2026-07-31
-updated: 2026-07-31
+updated: 2026-08-05
 tags: ["cloud-practitioner","Cloud Technology & Services","AWS"]
 notionId: 3a6964dc-ce4a-817f-8834-c24908271ac1
 notionUrl: https://app.notion.com/p/3a6964dcce4a817f8834c24908271ac1
-notionUpdated: "2026-07-30T08:08:13.496Z"
+notionUpdated: "2026-08-05T02:02:00.000Z"
 ---
 
 ## In one sentence
@@ -39,3 +39,20 @@ Recognize compute, storage, database, networking, analytics, and AI services by 
 ## Remember
 
 **Start with the use case, then the service; separate responsibilities before eliminating similar options.**
+
+## New services and migration map
+
+| Need | Concept or service |
+| --- | --- |
+| Migration business case | Migration Evaluator |
+| Server and dependency discovery | Application Discovery Service |
+| Block-level server replication | AWS Transform MGN |
+| Database full load and CDC | AWS DMS; add SCT for heterogeneous schema conversion |
+| High-speed file migration | AWS DataSync |
+| SFTP / FTPS / FTP / AS2 | AWS Transfer Family |
+| GraphQL and real-time data | AWS AppSync |
+| Web and mobile build and hosting | AWS Amplify |
+| Full desktop / app streaming / isolated browsing | WorkSpaces / WorkSpaces Applications / Secure Browser |
+| IoT certificates, MQTT, and rule routing | AWS IoT Core |
+
+Remember **Assess → Mobilize → Migrate & Modernize**, then select the application strategy from the 7Rs.
