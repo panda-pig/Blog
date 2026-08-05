@@ -94,13 +94,21 @@
   .aws-category,
   .aws-note-page,
   .glossary-page {
-    --aws-font-sans: 'Noto Sans', 'Hiragino Sans', 'Yu Gothic UI', 'Yu Gothic', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
-    --aws-font-serif: 'Noto Serif', 'Noto Serif SC', 'Yu Mincho', 'Hiragino Mincho ProN', 'Songti SC', Georgia, serif;
+    --aws-font-sans: 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --aws-font-serif: 'Noto Serif', Georgia, serif;
     --aws-font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
     font-family: var(--aws-font-sans);
     font-kerning: normal;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
+  }
+
+  html[lang^='zh'] :is(.aws-notes-page, .aws-category, .aws-note-page, .glossary-page) {
+    --aws-font-sans: 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', system-ui, sans-serif;
+    --aws-font-serif: 'Songti SC', 'STSong', 'Noto Serif CJK SC', serif;
+  }
+
+  html[lang='ja'] :is(.aws-notes-page, .aws-category, .aws-note-page, .glossary-page) {
+    --aws-font-sans: 'Hiragino Sans', 'Yu Gothic UI', 'Yu Gothic', 'Noto Sans JP', system-ui, sans-serif;
+    --aws-font-serif: 'Yu Mincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
   }
 
   :is(.aws-notes-page, .aws-category, .aws-note-page, .glossary-page)

@@ -291,17 +291,13 @@ const searchItems = [
   }
 
   .aws-hero__source {
-    max-width: 43rem;
-    margin: 0.42rem 0 0;
-    padding-left: 0.78rem;
-    border-left: 2px solid color-mix(in srgb, var(--aws-orange) 52%, transparent);
+    margin: 0.3rem 0 0;
     color: color-mix(in srgb, var(--text-secondary) 82%, transparent);
     font-family: var(--aws-font-serif);
-    font-size: 0.86rem;
+    font-size: 0.78rem;
     font-weight: 500;
-    line-height: 1.72;
-    letter-spacing: 0.02em;
-    text-wrap: pretty;
+    line-height: 1.65;
+    letter-spacing: 0.018em;
   }
 
   .aws-flight-path {
@@ -372,7 +368,7 @@ const searchItems = [
     margin: 0.2rem 0 0;
     color: var(--aws-ink);
     font-family: var(--aws-font-serif);
-    font-size: clamp(1.55rem, 2.8vw, 2.1rem);
+    font-size: clamp(1.45rem, 2.8vw, 2rem);
     font-weight: 700;
     letter-spacing: -0.02em;
   }
@@ -380,16 +376,15 @@ const searchItems = [
   .aws-section-heading > p {
     margin: 0 0 0.15rem;
     color: var(--text-secondary);
-    max-width: 35rem;
-    font-size: 0.9rem;
+    font-size: 0.84rem;
     font-weight: 500;
     line-height: 1.6;
   }
 
   .aws-domain-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.1rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
   }
 
   .aws-domain-card {
@@ -398,8 +393,8 @@ const searchItems = [
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
     gap: 0.9rem;
-    min-height: 10.25rem;
-    padding: 1.35rem 1.25rem;
+    min-height: 9.5rem;
+    padding: 1.2rem 1.1rem;
     border: 1px solid rgba(59, 78, 104, 0.14);
     border-radius: 1rem;
     color: var(--domain-color);
@@ -437,26 +432,29 @@ const searchItems = [
     align-items: baseline;
     margin: 0;
     color: var(--aws-ink);
-    font-size: 1.08rem;
+    font-size: 1rem;
     line-height: 1.3;
     overflow-wrap: anywhere;
   }
 
   .aws-domain-card h3 span {
+    min-width: 0;
     font-family: var(--aws-font-mono);
     font-weight: 700;
   }
 
   .aws-domain-card h3 small {
     color: var(--text-secondary);
-    font-size: 0.82rem;
+    flex: 0 0 auto;
+    font-size: 0.78rem;
     font-weight: 600;
+    white-space: nowrap;
   }
 
   .aws-domain-card p {
     margin: 0.42rem 0 0.65rem;
     color: var(--text-secondary);
-    font-size: 0.86rem;
+    font-size: 0.8rem;
     font-weight: 500;
     line-height: 1.6;
     overflow-wrap: anywhere;
@@ -476,7 +474,7 @@ const searchItems = [
     color: var(--text-secondary);
     background: color-mix(in srgb, var(--domain-color) 8%, var(--surface-alt));
     font-family: var(--aws-font-mono);
-    font-size: 0.64rem;
+    font-size: 0.6rem;
     font-weight: 600;
     line-height: 1.35;
     text-overflow: ellipsis;
@@ -554,7 +552,7 @@ const searchItems = [
   .aws-special-card h3 {
     margin: 0.12rem 0 0;
     color: var(--aws-ink);
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 1.35;
   }
@@ -562,7 +560,7 @@ const searchItems = [
   .aws-special-card p {
     margin: 0.42rem 0 0.7rem;
     color: var(--text-secondary);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 500;
     line-height: 1.6;
     text-wrap: pretty;
@@ -575,7 +573,7 @@ const searchItems = [
     color: var(--special-color);
     background: color-mix(in srgb, var(--special-color) 9%, var(--surface));
     font-family: var(--aws-font-mono);
-    font-size: 0.66rem;
+    font-size: 0.62rem;
     font-weight: 600;
     line-height: 1.4;
   }
@@ -664,14 +662,14 @@ const searchItems = [
   }
 
   .aws-recent__copy strong {
-    font-size: 0.9rem;
+    font-size: 0.86rem;
     font-weight: 700;
     line-height: 1.45;
   }
 
   .aws-recent__copy small {
     color: var(--text-muted);
-    font-size: 0.76rem;
+    font-size: 0.72rem;
     line-height: 1.5;
   }
 
@@ -719,7 +717,7 @@ const searchItems = [
 
   @media (max-width: 1024px) {
     .aws-domain-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .aws-lower-grid {
@@ -777,17 +775,8 @@ const searchItems = [
         linear-gradient(180deg, #20252b 0%, var(--bg) 32rem);
     }
 
-    .aws-hero {
-      min-height: auto;
-      padding: 2.8rem 0 2.25rem;
-    }
-
-    .aws-hero__inner {
-      gap: 1.7rem;
-    }
-
     .aws-hero h1 {
-      font-size: clamp(2.55rem, 13vw, 3.45rem);
+      font-size: clamp(2.7rem, 14vw, 3.65rem);
       line-height: 1;
     }
 
@@ -804,21 +793,7 @@ const searchItems = [
 
     .aws-hero__meta {
       max-width: 20rem;
-      margin-top: 0.9rem;
       line-height: 1.7;
-    }
-
-    .aws-hero__description {
-      margin-top: 0.62rem;
-      font-size: 0.96rem;
-      line-height: 1.72;
-    }
-
-    .aws-hero__source {
-      margin-top: 0.5rem;
-      padding-left: 0.68rem;
-      font-size: 0.82rem;
-      line-height: 1.68;
     }
 
     .aws-content {
@@ -832,17 +807,8 @@ const searchItems = [
     }
 
     .aws-domain-card {
-      min-height: 0;
+      min-height: 9.25rem;
       padding: 1.25rem 1.15rem;
-    }
-
-    .aws-section + .aws-section {
-      margin-top: 3.8rem;
-    }
-
-    .aws-section-heading h2,
-    .aws-recent__header h2 {
-      font-size: 1.55rem;
     }
 
     .aws-recent__list a {
