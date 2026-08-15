@@ -9,11 +9,11 @@ lang: zh
 topicKey: "弹性架构设计"
 frequency: "阶段性总结"
 date: 2026-07-30
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03","Design Resilient Architectures","AWS"]
 notionId: 3a6964dc-ce4a-811a-9170-e1ab378bb690
 notionUrl: https://app.notion.com/p/3a6964dcce4a811a9170e1ab378bb690
-notionUpdated: "2026-08-05T02:02:00.000Z"
+notionUpdated: "2026-08-13T00:40:44.044Z"
 ---
 
 ## 必须掌握
@@ -103,3 +103,11 @@ notionUpdated: "2026-08-05T02:02:00.000Z"
 - Multi-AZ 不等于 Multi-Region。
 - 副本与备份解决不同风险；错误可能被复制到副本。
 - 自动故障转移仍需应用重连、DNS/Endpoint 和演练设计。
+
+## Region 与 AZ 的故障边界
+
+- Region 是独立地理故障边界，每个 Region 包含多个 AZ。
+- AZ 由一个或多个离散 Data Centers 构成；EC2、EBS 与 Subnet 是 Zonal Resource。
+- Multi-AZ 抵御 AZ 故障，还要设计负载均衡、数据层切换、容量与健康检查。
+- Multi-Region 抵御 Region 故障，还要设计复制、路由、RTO / RPO、Failover 与演练。
+- Regional Service 可利用同一区域多 AZ 基础设施，但具体韧性仍按服务文档判断。

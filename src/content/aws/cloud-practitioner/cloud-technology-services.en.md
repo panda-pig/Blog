@@ -9,11 +9,11 @@ lang: en
 topicKey: "Cloud Technology & Services"
 frequency: "Stage summary"
 date: 2026-07-31
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["cloud-practitioner","Cloud Technology & Services","AWS"]
 notionId: 3a6964dc-ce4a-817f-8834-c24908271ac1
 notionUrl: https://app.notion.com/p/3a6964dcce4a817f8834c24908271ac1
-notionUpdated: "2026-08-05T02:02:00.000Z"
+notionUpdated: "2026-08-05T02:02:43.505Z"
 ---
 
 ## In one sentence

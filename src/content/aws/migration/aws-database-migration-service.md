@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Database Migration Service"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["migration","AWS Database Migration Service","AWS"]
 notionId: 3a6964dc-ce4a-811f-a33e-cb3fff35d10d
 notionUrl: https://app.notion.com/p/3a6964dcce4a811fa33ecb3fff35d10d
-notionUpdated: "2026-08-05T01:42:00.000Z"
+notionUpdated: "2026-08-05T01:42:25.059Z"
 ---
 
 ## 基本信息

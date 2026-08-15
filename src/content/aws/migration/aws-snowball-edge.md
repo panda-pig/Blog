@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Snowball Edge"
 frequency: "考试频率 ⭐⭐⭐"
 date: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["migration", "Snowball Edge", "AWS"]
 notionId: 3b3964dc-ce4a-8154-bbfc-f52294dcff18
 notionUrl: https://app.notion.com/p/3b3964dcce4a8154bbfcf52294dcff18
-notionUpdated: "2026-08-05T01:41:00.000Z"
+notionUpdated: "2026-08-05T01:41:27.434Z"
 ---
 
 ## 一句话理解

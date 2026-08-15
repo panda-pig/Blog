@@ -1,42 +1,34 @@
 ---
-title: "Ways to Interact with AWS: Console, CLI, SDK, and IaC"
+title: "AWS Resource Interaction: Console, CLI, SDK, and IaC"
 fullName: "AWS Management Console / AWS CLI / AWS SDK / Infrastructure as Code"
-description: "Choose graphical, command, application, or declarative interfaces according to the automation and repeatability required."
-service: "AWS 资源交互方式｜Console・CLI・SDK・IaC"
+description: "All four call AWS APIs, but differ in interface, credential source, and automation level."
+service: "AWS Resource Interaction Methods"
 category: devops
 kind: service
 lang: en
 topicKey: "AWS 资源交互方式｜Console・CLI・SDK・IaC"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
-tags: ["devops","AWS 资源交互方式｜Console・CLI・SDK・IaC","AWS"]
+updated: 2026-08-15
+tags: ["devops", "AWS CLI", "AWS SDK", "IaC"]
 notionId: 3a6964dc-ce4a-818b-a203-e86b13e2eada
 notionUrl: https://app.notion.com/p/3a6964dcce4a818ba203e86b13e2eada
-notionUpdated: "2026-07-30T04:27:15.323Z"
+notionUpdated: "2026-08-13T08:35:23.512Z"
 ---
-
-## Basic Information
-
-| Field | Details |
-| --- | --- |
-| English name | AWS Resource Interaction Methods |
-| Full name | AWS Management Console / AWS CLI / AWS SDK / Infrastructure as Code |
-| Chinese description | AWS 资源交互方式 |
-| Japanese description | AWS リソース操作方法 |
-| Exam frequency | ⭐⭐⭐⭐⭐ |
-| Often confused with | Console / CLI / SDK / CloudFormation |
 
 ## In one sentence
 
-> Choose graphical, command, application, or declarative interfaces according to the automation and repeatability required.
+**Console, CLI, SDK, and IaC all call AWS APIs; the difference is whether the action comes from clicks, commands, application code, or a declarative template.**
 
-## Key points
+| Method | Best for | Typical credentials |
+| --- | --- | --- |
+| Console | Exploration and manual operations | Password + MFA or SSO session |
+| CLI | Batch and routine automation | Identity Center, roles, profiles |
+| SDK | Application integration | Credential provider chain |
+| CloudFormation / IaC | Repeatable infrastructure | Caller permissions or service role |
 
-- Management Console is visual and useful for learning, inspection, and occasional operations.
-- AWS CLI is suited to commands, scripts, and repeatable operational automation.
-- SDKs let application code call AWS APIs directly.
+The Region Selector changes the regional resource view. For a missing resource, check account, identity, Region, List / Describe permission, then filters and state. Multi-session keeps login contexts in parallel but creates no account and merges no permissions.
 
-## Exam takeaway
+Local CLI uses locally discovered credentials. CloudShell receives temporary rotating credentials for the current console identity. aws configure only stores profile credentials, default Region, and output format; it grants no IAM permissions.
 
-> IaC tools such as CloudFormation manage desired infrastructure state, review changes, and reproduce environments.
+Access key ID identifies a credential, secret access key signs requests, and temporary credentials also require a session token. CLI and SDK do not require long-term keys: people should prefer Identity Center and workloads should use roles.

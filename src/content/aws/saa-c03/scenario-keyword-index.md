@@ -9,11 +9,11 @@ lang: zh
 topicKey: "场景题关键词索引"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03", "场景题关键词索引", "AWS"]
 notionId: 3a6964dc-ce4a-81d7-bfeb-ed10071385bc
 notionUrl: https://app.notion.com/p/3a6964dcce4a81d7bfebed10071385bc
-notionUpdated: "2026-08-05T02:02:00.000Z"
+notionUpdated: "2026-08-13T00:40:48.369Z"
 ---
 
 ## 场景题判断维度
@@ -59,3 +59,15 @@ notionUpdated: "2026-08-05T02:02:00.000Z"
 | GraphQL、Subscription、Resolver | AppSync | API Gateway REST API |
 | 完整桌面 / 单个应用 / 隔离网站 | WorkSpaces / Applications / Secure Browser | 三者混用 |
 | MQTT、Device Shadow、Rules Engine | IoT Core | SQS |
+
+## 身份、区域与凭证关键词
+
+| 关键词 | 首选 | 不要误选 |
+| --- | --- | --- |
+| 多个 User 共享职责权限 | IAM Group + Managed Policy | Nested Group |
+| EC2 / Lambda 调用 AWS | IAM Role + Temporary Credentials | 长期 IAM User Key |
+| 员工多账户登录 | IAM Identity Center | Cognito |
+| 应用顾客注册登录 | Cognito | IAM User |
+| Policy 看似允许但被拒绝 | Explicit Deny / Boundary / SCP | 继续增加 Allow |
+| 切换 Region 后资源不见 | 核对 Account、Region、Describe 权限 | 资源被自动删除 |
+| API 临时凭证 | Access Key ID + Secret + Session Token | Console Password |

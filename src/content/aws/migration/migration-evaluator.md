@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Migration Evaluator"
 frequency: "考试频率 ⭐⭐⭐"
 date: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["migration", "Migration Evaluator", "AWS"]
 notionId: 3b3964dc-ce4a-8143-a9fb-e026d36a49d0
 notionUrl: https://app.notion.com/p/3b3964dcce4a8143a9fbe026d36a49d0
-notionUpdated: "2026-08-05T01:41:00.000Z"
+notionUpdated: "2026-08-05T01:41:27.268Z"
 ---
 
 ## 基本信息

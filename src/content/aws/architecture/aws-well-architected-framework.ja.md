@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Well-Architected Framework"
 frequency: "試験頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["architecture", "AWS Well-Architected Framework", "AWS"]
 notionId: 3a6964dc-ce4a-8114-b991-e333cddb8c9b
 notionUrl: https://app.notion.com/p/3a6964dcce4a8114b991e333cddb8c9b
-notionUpdated: "2026-08-05T01:57:00.000Z"
+notionUpdated: "2026-08-05T01:57:33.564Z"
 ---
 
 ## 基本情報

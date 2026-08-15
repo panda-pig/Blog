@@ -9,11 +9,11 @@ lang: zh
 topicKey: "DMS vs SCT"
 frequency: "高频对比"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-08-15
 tags: ["compare","DMS vs SCT","AWS"]
 notionId: 3a6964dc-ce4a-81fa-9b04-f271ad097934
 notionUrl: https://app.notion.com/p/3a6964dcce4a81fa9b04f271ad097934
-notionUpdated: "2026-07-29T08:11:58.808Z"
+notionUpdated: "2026-08-05T01:42:29.235Z"
 ---
 
 > 比较数据库数据迁移与数据库 Schema / 代码转换。
@@ -36,6 +36,13 @@ notionUpdated: "2026-07-29T08:11:58.808Z"
 
 - 相同/兼容引擎，只需要迁移数据 → 主要使用 DMS。
 - 不同数据库引擎 → SCT 转换 Schema + DMS 迁移数据。
+
+| 示例 | 类型 | 组合 |
+| --- | --- | --- |
+| MySQL → RDS for MySQL | 同构 | DMS |
+| Oracle → RDS for Oracle | 同构 | DMS |
+| Oracle → Aurora PostgreSQL | 异构 | SCT + DMS |
+| SQL Server → Aurora MySQL | 异构 | SCT + DMS |
 
 ## 常见陷阱
 

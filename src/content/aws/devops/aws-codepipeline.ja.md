@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS CodePipeline"
 frequency: "試験頻度 ⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["devops", "AWS CodePipeline", "AWS"]
 notionId: 3a6964dc-ce4a-81a8-9761-d977429ec679
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a89761d977429ec679
-notionUpdated: "2026-08-05T01:57:00.000Z"
+notionUpdated: "2026-08-05T01:57:32.443Z"
 ---
 
 ## 基本情報

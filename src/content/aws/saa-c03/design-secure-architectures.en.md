@@ -9,11 +9,11 @@ lang: en
 topicKey: "安全架构设计"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03", "安全架构设计", "AWS"]
 notionId: 3a6964dc-ce4a-815e-9db0-d8343bfa6db7
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9db0d8343bfa6db7
-notionUpdated: "2026-08-05T02:02:00.000Z"
+notionUpdated: "2026-08-13T08:35:25.158Z"
 ---
 
 ## Must know
@@ -39,6 +39,13 @@ notionUpdated: "2026-08-05T02:02:00.000Z"
 ## Identity and application protection
 
 - Use roles and temporary credentials for EC2, Lambda, and cross-account access.
+- IAM password policy applies to IAM user console passwords, not root passwords, access keys, or Identity Center passwords.
+- Groups contain users only and cannot be nested; a user may join multiple job-role groups.
+- Managed policies attach to users, groups, or roles; inline policies embed in one user, group, or role.
+- Identity-based policies omit Principal; resource-based and trust policies normally name it.
+- Removing a user from a group removes only that inherited permission source; direct and other group permissions may remain.
+- For Access Denied, inspect the failed Action, current principal, direct and inherited policies, explicit denies, boundaries, SCPs, resources, and conditions.
+- Temporary credentials include a session token and expire; CLI and SDK do not require long-term IAM user keys.
 - Employee multi-account SSO → IAM Identity Center; customer registration and sign-in → Cognito.
 - SQL injection, XSS, header, IP, and rate rules → AWS WAF; DDoS protection → AWS Shield.
 - Security groups are stateful at the resource/ENI level; NACLs are stateless at the subnet level.

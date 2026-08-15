@@ -9,11 +9,11 @@ lang: ja
 topicKey: "场景题关键词索引"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03", "场景题关键词索引", "AWS"]
 notionId: 3a6964dc-ce4a-81d7-bfeb-ed10071385bc
 notionUrl: https://app.notion.com/p/3a6964dcce4a81d7bfebed10071385bc
-notionUpdated: "2026-08-05T02:02:00.000Z"
+notionUpdated: "2026-08-13T00:40:48.369Z"
 ---
 
 ## シナリオ判断の軸
@@ -63,3 +63,15 @@ notionUpdated: "2026-08-05T02:02:00.000Z"
 | GraphQL、Subscription、Resolver | AppSync | API Gateway REST API |
 | Full Desktop / Single App / 分離 Website | WorkSpaces / Applications / Secure Browser | 3 Service の混同 |
 | MQTT、Device Shadow、Rules Engine | IoT Core | SQS |
+
+## Identity、Region、Credential の Keyword
+
+| Keyword | 選ぶもの | 混同しないもの |
+| --- | --- | --- |
+| 複数 User の共通職務権限 | IAM Group + Managed Policy | Nested Group |
+| EC2 / Lambda から AWS | IAM Role + Temporary Credentials | 長期 IAM User Key |
+| 従業員の Multi-account Access | IAM Identity Center | Cognito |
+| Application Customer Login | Cognito | IAM User |
+| Allow があるのに Deny | Explicit Deny / Boundary / SCP | Allow の無条件追加 |
+| Region 切替後に Resource が見えない | Account、Region、Describe Permission | 自動削除と判断 |
+| Temporary API Credentials | Access Key ID + Secret + Session Token | Console Password |

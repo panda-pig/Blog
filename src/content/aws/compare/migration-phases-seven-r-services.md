@@ -9,11 +9,11 @@ lang: zh
 topicKey: "迁移阶段・7R・迁移服务总对比"
 frequency: "高频对比"
 date: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["compare", "migration", "7R", "AWS"]
 notionId: 3b3964dc-ce4a-817f-a6d4-dfb52a50e40e
 notionUrl: https://app.notion.com/p/3b3964dcce4a817fa6d4dfb52a50e40e
-notionUpdated: "2026-08-05T01:44:00.000Z"
+notionUpdated: "2026-08-05T01:44:39.478Z"
 ---
 
 ## 三类知识先分清

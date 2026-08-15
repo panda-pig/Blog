@@ -9,11 +9,11 @@ lang: ja
 topicKey: "专业解决方案概览"
 frequency: "段階まとめ"
 date: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["architecture", "specialized-solutions", "AWS"]
 notionId: 3b3964dc-ce4a-8107-9461-e75f6bf2999e
 notionUrl: https://app.notion.com/p/3b3964dcce4a81079461e75f6bf2999e
-notionUpdated: "2026-08-05T01:57:00.000Z"
+notionUpdated: "2026-08-05T01:59:49.822Z"
 ---
 
 ## 一言で理解

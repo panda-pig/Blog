@@ -9,11 +9,11 @@ lang: zh
 topicKey: "架构完善・开发工具・终端计算・业务服务总对比"
 frequency: "高频对比"
 date: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["compare", "architecture", "devops", "AWS"]
 notionId: 3b3964dc-ce4a-81a0-baff-c8326235aa7f
 notionUrl: https://app.notion.com/p/3b3964dcce4a81a0baffc8326235aa7f
-notionUpdated: "2026-08-05T02:01:00.000Z"
+notionUpdated: "2026-08-05T02:01:09.495Z"
 ---
 
 ## 一张表先判断

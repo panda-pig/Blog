@@ -9,11 +9,11 @@ lang: ja
 topicKey: "云概念"
 frequency: "試験頻度 ★★★★★"
 date: 2026-07-30
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["Cloud Concepts","CLF-C02","Foundations"]
 notionId: 3a6964dc-ce4a-8161-8312-db30847cd94e
 notionUrl: https://app.notion.com/p/3a6964dcce4a81618312db30847cd94e
-notionUpdated: "2026-08-05T02:08:00.000Z"
+notionUpdated: "2026-08-13T00:40:37.629Z"
 ---
 
 ## 一言で理解
@@ -43,6 +43,14 @@ notionUpdated: "2026-08-05T02:08:00.000Z"
 - Security Group は Stateful・Allow only、NACL は Stateless・Allow/Deny。
 - Multi-AZ は Multi-Region ではなく、Managed / Serverless でも Customer 責任は残る。
 - S3 は Object、EBS は Block、EFS / FSx は File Storage。
+
+## SAA の出発点：Account と Infrastructure
+
+- Root は Account 固有 Identity で IAM User ではなく、Recovery と Root-only Task に限定する。
+- Region は複数 AZ の障害領域を含み、Edge Location / PoP は User に近い。
+- Global、Regional、Zonal は Scope を表すため、Service Management Scope と Resource 配置を分けて判断する。
+- Region 切替後に EC2 / EBS が見えない場合、Resource Region、Account、Permission を確認する。
+- Multi-AZ は AZ 障害、Multi-Region は Region Recovery に使うが、Replication / Failover は自動ではない。
 
 ## 重点記憶
 

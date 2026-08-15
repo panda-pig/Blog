@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS 三阶段迁移流程"
 frequency: "試験頻度 ⭐⭐⭐⭐⭐"
 date: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["migration", "Assess", "Mobilize", "AWS"]
 notionId: 3b3964dc-ce4a-8180-8360-ed74ad79a762
 notionUrl: https://app.notion.com/p/3b3964dcce4a81808360ed74ad79a762
-notionUpdated: "2026-08-05T01:41:00.000Z"
+notionUpdated: "2026-08-05T01:41:27.311Z"
 ---
 
 ## 一言で理解

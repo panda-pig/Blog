@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Transfer Family"
 frequency: "試験頻度 ⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["migration", "AWS Transfer Family", "AWS"]
 notionId: 3a6964dc-ce4a-81a3-ad26-c77b03ce8fa3
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a3ad26c77b03ce8fa3
-notionUpdated: "2026-08-05T01:39:41.105Z"
+notionUpdated: "2026-08-05T01:39:42.504Z"
 ---
 
 ## 基本情報

@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS 全球基础设施"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-08-15
 tags: ["cloud-practitioner","AWS 全球基础设施","AWS"]
 notionId: 3a6964dc-ce4a-8137-955b-d4d5d4decdc2
 notionUrl: https://app.notion.com/p/3a6964dcce4a8137955bd4d5d4decdc2
-notionUpdated: "2026-07-30T04:27:35.438Z"
+notionUpdated: "2026-08-13T00:39:04.753Z"
 ---
 
 ## 基本信息
@@ -67,6 +67,15 @@ Multi-Region 并不会天然自动切换，仍要设计数据复制、健康检�
 
 边缘站点常用于 CloudFront 等服务，把内容放到更靠近用户的位置。它不是 Region，也不是用来部署普通 EC2 的 AZ。
 
+## 服务作用域与资源位置
+
+- Global Service 的管理入口不围绕一个 Region 展示，但不代表所有数据自动全球复制。
+- Regional Service 的资源与操作属于指定 Region；切换 Region Selector 会看到不同资源集合。
+- Zonal Resource 位于具体 AZ，例如 EC2 Instance、EBS Volume 与 Subnet。
+- VPC 是 Regional Resource，Subnet 是 Zonal Resource。
+- S3 Bucket Name 全局唯一，不代表 Bucket 是 Global Resource。
+- AWS WAF 的 Scope 取决于保护对象：CloudFront 使用 CloudFront Scope，ALB / API Gateway 等使用 Regional Scope。
+
 ## 高频易混淆
 
 | 概念 | 主要作用 |
@@ -82,3 +91,4 @@ Multi-Region 并不会天然自动切换，仍要设计数据复制、健康检�
 - Multi-AZ 主要解决高可用，不是主要用来降低成本。
 - Multi-Region 成本与复杂度更高。
 - Region、AZ、Edge Location 不可混为一谈。
+- 切换 Region 后看不到区域资源，通常是区域上下文变化，不是资源自动删除。

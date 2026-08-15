@@ -1,19 +1,19 @@
 ---
 title: "AWS 资源交互方式｜Console・CLI・SDK・IaC"
 fullName: "AWS Management Console / AWS CLI / AWS SDK / Infrastructure as Code"
-description: "从 Console、CLI、SDK 到 IaC，按使用场景理解 AWS 的四种主要交互方式。"
-service: "AWS 资源交互方式｜Console・CLI・SDK・IaC"
+description: "Console、CLI、SDK 和 IaC 都调用 AWS API，区别在操作入口、凭证来源和自动化层级。"
+service: "AWS Resource Interaction Methods"
 category: devops
 kind: service
 lang: zh
 topicKey: "AWS 资源交互方式｜Console・CLI・SDK・IaC"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
-tags: ["devops","AWS 资源交互方式｜Console・CLI・SDK・IaC","AWS"]
+updated: 2026-08-15
+tags: ["devops", "AWS CLI", "AWS SDK", "IaC"]
 notionId: 3a6964dc-ce4a-818b-a203-e86b13e2eada
 notionUrl: https://app.notion.com/p/3a6964dcce4a818ba203e86b13e2eada
-notionUpdated: "2026-07-30T04:27:15.323Z"
+notionUpdated: "2026-08-13T08:35:23.512Z"
 ---
 
 ## 基本信息
@@ -23,58 +23,51 @@ notionUpdated: "2026-07-30T04:27:15.323Z"
 | 英文 | AWS Resource Interaction Methods |
 | 全称 | AWS Management Console / AWS CLI / AWS SDK / Infrastructure as Code |
 | 中文释义 | AWS 资源交互方式 |
-| 日文释义 | AWS リソース操作方法 |
+| 日文释义 | AWS リソースの操作方法 |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
-| 易混淆 | Console / CLI / SDK / CloudFormation |
+| 易混淆 | Console / CLI / SDK / IaC / Region Selector |
 
-## 核心前提
+## 一句话理解
 
-管理 AWS 资源，本质上都需要与 AWS API 交互。Console、CLI、SDK 和 CloudFormation 只是不同的操作入口与抽象层级。
+**Console、CLI、SDK 与 IaC 最终都调用 AWS API；区别在于由人点击、命令脚本、应用代码还是声明式模板发起。**
 
 ## 四种方式
 
-| 方式 | 主要使用者 | 工作方式 | 典型场景 |
+| 方式 | 工作方式 | 典型场景 | 常见凭证 |
 | --- | --- | --- | --- |
-| AWS Management Console | 初学者、管理员 | Web 图形界面 | 探索服务、一次性配置、账单与可视化 |
-| AWS CLI | 运维、开发人员 | 命令和 Shell 脚本 | 例行任务、批量操作、简单自动化 |
-| AWS SDK | 应用开发人员 | 在程序代码中调用 API | 应用内上传 S3、调用服务、自动业务流程 |
-| CloudFormation / IaC | DevOps、平台团队 | 声明整个基础设施 | 一致、可重复、可版本控制的环境部署 |
+| Console | Web 图形界面 | 探索、可视化、一次性操作 | Password + MFA 或 SSO Session |
+| CLI | 命令与 Shell Script | 批量和例行自动化 | Identity Center、Role、Profile |
+| SDK | Application Code | 业务流程内调用 AWS | Credential Provider Chain |
+| CloudFormation / IaC | 声明期望状态 | 一致、可重复、多环境部署 | 调用者权限或 Service Role |
 
-## 一句话区分
+## Region Selector 与资源可见性
 
-Console 靠点，CLI 靠命令，SDK 靠代码，CloudFormation 靠模板。
+Region Selector 决定当前 Console 的区域上下文。Route 53 是 Global 视图，EC2 按 Region 显示，WAF Scope 取决于保护对象。区域级资源“消失”时，按 **Account → Identity → Region → Permission → Filter / State** 排查。
 
-## CLI
+Multi-session 只并行保存登录上下文，不创建新 Account、不复制资源、不合并权限。每个窗口都要确认 Account ID / Alias、Identity 与 Region。
 
-- 从命令行管理多种 AWS 服务。
-- 可写入脚本，适合批量和例行操作。
-- 示例：定期创建 EBS Snapshot、批量列出资源。
+## Local CLI、CloudShell 与 aws configure
 
-## SDK
+| 对象 | 本质 | 权限来源 |
+| --- | --- | --- |
+| Local CLI | 本地安装的命令工具 | Identity Center、AssumeRole、Profile、环境或 Workload Role |
+| CloudShell | Console 内预配置 Shell | 当前 Console 身份的临时轮换凭证 |
+| `aws configure` | 保存 CLI Profile 配置 | 不授予权限，只保存凭证、Region、输出格式 |
 
-- 为 Python、Java、JavaScript 等语言提供 AWS API 封装。
-- 适合把 AWS 服务调用嵌入应用流程。
-- 示例：应用收到文件后调用 SDK 上传 S3。
+`aws iam list-users` 需要 `iam:ListUsers`。能成功配置 CLI 不代表 API 调用有权限。CLI 与 CloudShell 的入口不同，但都经过相同的 IAM 评估。
 
-## IaC
+## Access Key 边界
 
-- 把基础设施定义为模板或代码。
-- 可存入 Git，进行评审、版本控制和重复部署。
-- 适合多账户、多 Region、多环境的一致化建设。
+Access Key ID 标识凭证，Secret Access Key 用于签名，临时凭证还包含 Session Token 并会到期。CLI / SDK 不等于长期 Key；人员优先 Identity Center，Workload 优先 Role，Secret 不进代码。
 
-## Cloud Practitioner 考点
+## SAA-C03 速判
 
-识别四种工具的用途，并知道它们最终都与 AWS API 交互。
+- 多账户、多 Region、多环境重复建设 → IaC。
+- EC2 应用访问 S3 → SDK + Instance Role。
+- 开发者本地批量管理 → CLI + Identity Center。
+- 找不到区域资源 → 先核对 Account、Region 与 Describe 权限。
+- CloudFormation Template 不保存长期 Secret，部署权限遵循最小权限。
 
-## SAA-C03 考点
+## 重点记忆
 
-- 手动操作不利于一致性与重现。
-- 多环境和多 Region 复制优先考虑 IaC。
-- CLI 脚本适合命令级自动化；CloudFormation 适合架构级资源声明。
-- 应用程序内部调用服务通常使用 SDK。
-
-## 常见误区
-
-- Console 并非“不调用 API”，只是把 API 操作包装成图形界面。
-- CLI 不等于 IaC；命令脚本通常描述操作步骤，CloudFormation 描述期望状态。
-- SDK 主要面向程序集成，不是整套基础设施声明工具。
+**Session 不是 Account；Console 靠点、CLI 靠命令、SDK 靠代码、IaC 靠模板；人员用 SSO，工作负载用 Role。**

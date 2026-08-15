@@ -9,11 +9,11 @@ lang: ja
 topicKey: "高性能架构设计"
 frequency: "学習まとめ"
 date: 2026-07-30
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03","Design High-Performing Architectures","AWS"]
 notionId: 3a6964dc-ce4a-8177-89e9-de191f6694c9
 notionUrl: https://app.notion.com/p/3a6964dcce4a817789e9de191f6694c9
-notionUpdated: "2026-08-05T02:04:00.000Z"
+notionUpdated: "2026-08-13T00:40:45.598Z"
 ---
 
 ## 一言で理解
@@ -50,3 +50,11 @@ notionUpdated: "2026-08-05T02:04:00.000Z"
 - Firehose はバッファリングするため、必要な配信遅延を満たすか確認する。
 - Training と Inference は異なるワークロードとして、計算、スケーリング、監視を個別に設計する。
 - モデル品質が低下したら、まずデータ品質、Schema、学習データの鮮度を確認する。
+
+## Region、Edge、Scope
+
+- Region は Compliance、Latency、Service Availability、Pricing で選ぶ。
+- Edge Location / PoP は CloudFront、Route 53、Global Accelerator を User に近づけるが、通常の EC2 配置先ではない。
+- CloudFront は HTTP/HTTPS Content を Cache、Route 53 は DNS Answer、Global Accelerator は TCP/UDP Network Path を最適化する。
+- Regional Service と Zonal Resource は配置 Scope が異なる。
+- Region の Service Availability は High Availability と同じ意味ではない。

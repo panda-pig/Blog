@@ -9,11 +9,11 @@ lang: en
 topicKey: "弹性架构设计"
 frequency: "Study summary"
 date: 2026-07-30
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03","Design Resilient Architectures","AWS"]
 notionId: 3a6964dc-ce4a-811a-9170-e1ab378bb690
 notionUrl: https://app.notion.com/p/3a6964dcce4a811a9170e1ab378bb690
-notionUpdated: "2026-08-05T02:02:00.000Z"
+notionUpdated: "2026-08-13T00:40:44.044Z"
 ---
 
 ## In one sentence
@@ -29,3 +29,11 @@ notionUpdated: "2026-08-05T02:02:00.000Z"
 ## Exam takeaway
 
 > Test restore, failover, dependency recovery, and operational runbooks regularly.
+
+## Failure boundaries
+
+- A Region is a geographic failure boundary containing multiple isolated AZs.
+- EC2 instances, EBS volumes, and subnets are zonal resources and need cross-AZ redundancy to survive an AZ failure.
+- Multi-AZ also requires load balancing, data-tier failover, capacity, and health checks.
+- Multi-Region additionally requires replication, routing, RTO / RPO, failover, and exercises.
+- Regional managed services may use multiple AZs internally, but resilience must still be verified per service.

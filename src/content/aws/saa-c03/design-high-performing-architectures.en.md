@@ -9,11 +9,11 @@ lang: en
 topicKey: "高性能架构设计"
 frequency: "Study summary"
 date: 2026-07-30
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03","Design High-Performing Architectures","AWS"]
 notionId: 3a6964dc-ce4a-8177-89e9-de191f6694c9
 notionUrl: https://app.notion.com/p/3a6964dcce4a817789e9de191f6694c9
-notionUpdated: "2026-08-05T02:04:00.000Z"
+notionUpdated: "2026-08-13T00:40:45.598Z"
 ---
 
 ## In one sentence
@@ -50,3 +50,11 @@ notionUpdated: "2026-08-05T02:04:00.000Z"
 - Firehose buffers records, so verify whether its delivery latency meets the requirement.
 - Training and inference are different workloads; plan compute, scaling, and monitoring separately.
 - When model quality drops, check data quality, schema, and training-data freshness first.
+
+## Region, edge, and scope
+
+- Choose a Region by compliance, latency, service availability, and price.
+- Edge Locations / PoPs bring CloudFront, Route 53, and Global Accelerator closer to users but are not ordinary EC2 deployment locations.
+- CloudFront caches HTTP/HTTPS content, Route 53 returns DNS answers, and Global Accelerator optimizes TCP/UDP network paths.
+- Regional services and zonal resources have different placement scopes.
+- Service availability in a Region is not the same as high availability.

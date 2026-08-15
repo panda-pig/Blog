@@ -9,11 +9,11 @@ lang: en
 topicKey: "CLF 考前速查"
 frequency: "Stage summary"
 date: 2026-07-31
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["cloud-practitioner","CLF 考前速查","AWS"]
 notionId: 3a6964dc-ce4a-81fb-8f92-e11a796893f4
 notionUrl: https://app.notion.com/p/3a6964dcce4a81fb8f92e11a796893f4
-notionUpdated: "2026-08-05T02:02:00.000Z"
+notionUpdated: "2026-08-05T02:02:38.341Z"
 ---
 
 ## In one sentence

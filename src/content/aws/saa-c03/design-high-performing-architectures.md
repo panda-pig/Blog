@@ -9,11 +9,11 @@ lang: zh
 topicKey: "高性能架构设计"
 frequency: "阶段性总结"
 date: 2026-07-30
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03","Design High-Performing Architectures","AWS"]
 notionId: 3a6964dc-ce4a-8177-89e9-de191f6694c9
 notionUrl: https://app.notion.com/p/3a6964dcce4a817789e9de191f6694c9
-notionUpdated: "2026-08-05T02:04:00.000Z"
+notionUpdated: "2026-08-13T00:40:45.598Z"
 ---
 
 ## 必须掌握
@@ -120,3 +120,11 @@ notionUpdated: "2026-08-05T02:04:00.000Z"
 - Firehose 会缓冲，延迟要求严格时需确认是否满足。
 - ML 的 Training 和 Inference 是不同工作负载，应分别规划计算、扩展与监控。
 - 模型质量问题先检查数据质量、Schema 和训练数据新鲜度。
+
+## Region、Edge 与作用域
+
+- Region 选择同时检查 Compliance、Latency、Service Availability 与 Pricing。
+- Edge Location / PoP 让 CloudFront、Route 53、Global Accelerator 更靠近用户，但不是普通 EC2 部署位置。
+- CloudFront 缓存 HTTP/HTTPS 内容；Route 53 返回 DNS 答案；Global Accelerator 优化 TCP/UDP 网络路径。
+- Regional Service 以一个 Region 为作用域；Zonal Resource 位于具体 AZ。
+- Service Availability 表示该 Region 是否提供功能，不等于 High Availability。

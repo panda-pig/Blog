@@ -9,11 +9,11 @@ lang: en
 topicKey: "云概念"
 frequency: "Exam frequency ★★★★★"
 date: 2026-07-30
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["Cloud Concepts","CLF-C02","Foundations"]
 notionId: 3a6964dc-ce4a-8161-8312-db30847cd94e
 notionUrl: https://app.notion.com/p/3a6964dcce4a81618312db30847cd94e
-notionUpdated: "2026-08-05T02:08:00.000Z"
+notionUpdated: "2026-08-13T00:40:37.629Z"
 ---
 
 ## In one sentence
@@ -43,6 +43,14 @@ notionUpdated: "2026-08-05T02:08:00.000Z"
 - Security Groups are stateful allow-only controls; NACLs are stateless and allow or deny.
 - Multi-AZ is not Multi-Region, and managed or serverless does not remove customer responsibility.
 - S3 is object, EBS is block, and EFS / FSx are file storage.
+
+## SAA starting point: account and infrastructure
+
+- Root is the account's inherent identity, not an IAM user, and is reserved for recovery and root-only tasks.
+- A Region contains multiple AZ failure domains; Edge Locations / PoPs sit near users.
+- Global, regional, and zonal describe scope, so service management scope and resource placement must be evaluated separately.
+- If EC2 or EBS disappears after a Region switch, check the resource Region, account, and permissions.
+- Multi-AZ addresses AZ failure; Multi-Region addresses regional recovery but does not automate replication or failover.
 
 ## Key takeaway
 

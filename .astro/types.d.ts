@@ -1039,6 +1039,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"cloud-practitioner/aws-account-root-user-security.en.md": {
+	id: "cloud-practitioner/aws-account-root-user-security.en.md";
+  slug: "cloud-practitioner/aws-account-root-user-securityen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/aws-account-root-user-security.ja.md": {
+	id: "cloud-practitioner/aws-account-root-user-security.ja.md";
+  slug: "cloud-practitioner/aws-account-root-user-securityja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/aws-account-root-user-security.md": {
+	id: "cloud-practitioner/aws-account-root-user-security.md";
+  slug: "cloud-practitioner/aws-account-root-user-security";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "cloud-practitioner/aws-global-infrastructure.en.md": {
 	id: "cloud-practitioner/aws-global-infrastructure.en.md";
   slug: "cloud-practitioner/aws-global-infrastructureen";
@@ -1207,6 +1228,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"cloud-practitioner/security-compliance.en.md": {
+	id: "cloud-practitioner/security-compliance.en.md";
+  slug: "cloud-practitioner/security-complianceen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/security-compliance.ja.md": {
+	id: "cloud-practitioner/security-compliance.ja.md";
+  slug: "cloud-practitioner/security-complianceja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"cloud-practitioner/security-compliance.md": {
+	id: "cloud-practitioner/security-compliance.md";
+  slug: "cloud-practitioner/security-compliance";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "compare/amazon-athena-vs-amazon-redshift.en.md": {
 	id: "compare/amazon-athena-vs-amazon-redshift.en.md";
   slug: "compare/amazon-athena-vs-amazon-redshiften";
@@ -1245,6 +1287,27 @@ declare module 'astro:content' {
 "compare/architecture-devtools-end-user-business-services.md": {
 	id: "compare/architecture-devtools-end-user-business-services.md";
   slug: "compare/architecture-devtools-end-user-business-services";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/aws-account-identity-session-region-visibility.en.md": {
+	id: "compare/aws-account-identity-session-region-visibility.en.md";
+  slug: "compare/aws-account-identity-session-region-visibilityen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/aws-account-identity-session-region-visibility.ja.md": {
+	id: "compare/aws-account-identity-session-region-visibility.ja.md";
+  slug: "compare/aws-account-identity-session-region-visibilityja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/aws-account-identity-session-region-visibility.md": {
+	id: "compare/aws-account-identity-session-region-visibility.md";
+  slug: "compare/aws-account-identity-session-region-visibility";
   body: string;
   collection: "aws";
   data: any
@@ -1459,6 +1522,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"compare/iam-policy-types-json-permission-evaluation.en.md": {
+	id: "compare/iam-policy-types-json-permission-evaluation.en.md";
+  slug: "compare/iam-policy-types-json-permission-evaluationen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/iam-policy-types-json-permission-evaluation.ja.md": {
+	id: "compare/iam-policy-types-json-permission-evaluation.ja.md";
+  slug: "compare/iam-policy-types-json-permission-evaluationja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/iam-policy-types-json-permission-evaluation.md": {
+	id: "compare/iam-policy-types-json-permission-evaluation.md";
+  slug: "compare/iam-policy-types-json-permission-evaluation";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "compare/inspector-vs-guardduty-vs-macie-vs-detective-vs-security-hub.en.md": {
 	id: "compare/inspector-vs-guardduty-vs-macie-vs-detective-vs-security-hub.en.md";
   slug: "compare/inspector-vs-guardduty-vs-macie-vs-detective-vs-security-huben";
@@ -1585,6 +1669,27 @@ declare module 'astro:content' {
   collection: "aws";
   data: any
 } & { render(): Render[".md"] };
+"compare/password-policy-mfa-access-key-temporary-credentials.en.md": {
+	id: "compare/password-policy-mfa-access-key-temporary-credentials.en.md";
+  slug: "compare/password-policy-mfa-access-key-temporary-credentialsen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/password-policy-mfa-access-key-temporary-credentials.ja.md": {
+	id: "compare/password-policy-mfa-access-key-temporary-credentials.ja.md";
+  slug: "compare/password-policy-mfa-access-key-temporary-credentialsja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/password-policy-mfa-access-key-temporary-credentials.md": {
+	id: "compare/password-policy-mfa-access-key-temporary-credentials.md";
+  slug: "compare/password-policy-mfa-access-key-temporary-credentials";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
 "compare/rds-vs-aurora-vs-dynamodb.en.md": {
 	id: "compare/rds-vs-aurora-vs-dynamodb.en.md";
   slug: "compare/rds-vs-aurora-vs-dynamodben";
@@ -1623,6 +1728,48 @@ declare module 'astro:content' {
 "compare/rds-vs-dynamodb-vs-documentdb-vs-neptune.md": {
 	id: "compare/rds-vs-dynamodb-vs-documentdb-vs-neptune.md";
   slug: "compare/rds-vs-dynamodb-vs-documentdb-vs-neptune";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/region-az-edge-global-regional.en.md": {
+	id: "compare/region-az-edge-global-regional.en.md";
+  slug: "compare/region-az-edge-global-regionalen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/region-az-edge-global-regional.ja.md": {
+	id: "compare/region-az-edge-global-regional.ja.md";
+  slug: "compare/region-az-edge-global-regionalja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/region-az-edge-global-regional.md": {
+	id: "compare/region-az-edge-global-regional.md";
+  slug: "compare/region-az-edge-global-regional";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/root-user-iam-user-group-policy-role.en.md": {
+	id: "compare/root-user-iam-user-group-policy-role.en.md";
+  slug: "compare/root-user-iam-user-group-policy-roleen";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/root-user-iam-user-group-policy-role.ja.md": {
+	id: "compare/root-user-iam-user-group-policy-role.ja.md";
+  slug: "compare/root-user-iam-user-group-policy-roleja";
+  body: string;
+  collection: "aws";
+  data: any
+} & { render(): Render[".md"] };
+"compare/root-user-iam-user-group-policy-role.md": {
+	id: "compare/root-user-iam-user-group-policy-role.md";
+  slug: "compare/root-user-iam-user-group-policy-role";
   body: string;
   collection: "aws";
   data: any

@@ -9,11 +9,11 @@ lang: zh
 topicKey: "云概念"
 frequency: "考试频率 ★★★★★"
 date: 2026-07-30
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["Cloud Concepts","CLF-C02","Foundations"]
 notionId: 3a6964dc-ce4a-8161-8312-db30847cd94e
 notionUrl: https://app.notion.com/p/3a6964dcce4a81618312db30847cd94e
-notionUpdated: "2026-08-05T02:08:00.000Z"
+notionUpdated: "2026-08-13T00:40:37.629Z"
 ---
 
 ## 01 云简介补充
@@ -116,3 +116,12 @@ notionUpdated: "2026-08-05T02:08:00.000Z"
 - Glacier Instant Retrieval 是毫秒级取回。
 - EFS 是 Region 级，不是天然全球文件系统。
 - Backup 保存数据，DRS 面向服务器级快速恢复。
+
+## SAA 起步：账户与全球基础设施
+
+- Root User 是账户固有的最高权限身份，不是 IAM User；只用于恢复和少数 Root-only Tasks。
+- Region 包含多个 AZ；AZ 是故障隔离边界；Edge Location / PoP 靠近终端用户。
+- Global、Regional 与 Zonal 描述作用域；服务管理范围与具体资源位置要分开判断。
+- 选择 Region：Compliance、Latency、Service Availability、Pricing。
+- 切换 Region 后看不到 EC2 / EBS，先切回资源所在 Region，再核对 Account 与权限。
+- Multi-AZ 抵御 AZ 故障；Multi-Region 才用于 Region 级灾备，但不会自动复制或 Failover。

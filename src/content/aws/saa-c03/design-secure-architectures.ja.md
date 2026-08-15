@@ -9,11 +9,11 @@ lang: ja
 topicKey: "安全架构设计"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03", "安全架构设计", "AWS"]
 notionId: 3a6964dc-ce4a-815e-9db0-d8343bfa6db7
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9db0d8343bfa6db7
-notionUpdated: "2026-08-05T02:02:00.000Z"
+notionUpdated: "2026-08-13T08:35:25.158Z"
 ---
 
 ## 必須ポイント
@@ -39,6 +39,13 @@ notionUpdated: "2026-08-05T02:02:00.000Z"
 ## Identity と Application 保護
 
 - EC2、Lambda、Cross-Account Access には Role と Temporary Credentials を優先します。
+- IAM Password Policy は IAM User Console Password だけを対象とし、Root、Access Key、Identity Center Password は制御しません。
+- Group は User のみを含み入れ子不可。1 User は複数の職務 Group に所属できます。
+- Managed Policy は User / Group / Role に Attach、Inline Policy は 1 つの User / Group / Role に Embed します。
+- Identity-based Policy は Principal を書かず、Resource-based / Trust Policy は通常 Principal を指定します。
+- User を Group から外すとその Group の継承権限だけが失われ、Direct または他 Group の権限は残り得ます。
+- Access Denied は失敗 Action、Principal、Direct / Inherited Policy、Explicit Deny、Boundary、SCP、Resource、Condition を確認します。
+- Temporary Credentials は Session Token を含み期限切れになります。CLI / SDK に長期 IAM User Key は必須ではありません。
 - 従業員の Multi-Account SSO → IAM Identity Center、顧客 Sign-up / Sign-in → Cognito。
 - SQL Injection、XSS、Header、IP、Rate Rule → AWS WAF、DDoS → AWS Shield。
 - Security Group は Resource / ENI 単位の Stateful、NACL は Subnet 単位の Stateless 制御です。

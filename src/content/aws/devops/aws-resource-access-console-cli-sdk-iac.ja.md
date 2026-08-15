@@ -1,42 +1,34 @@
 ---
-title: "AWS の操作方法：Console・CLI・SDK・IaC"
+title: "AWS Resource 操作｜Console・CLI・SDK・IaC"
 fullName: "AWS Management Console / AWS CLI / AWS SDK / Infrastructure as Code"
-description: "必要な自動化と再現性に応じて、GUI、Command、Application Code、宣言的 Infrastructure を使い分ける。"
-service: "AWS 资源交互方式｜Console・CLI・SDK・IaC"
+description: "4 方式はすべて AWS API を呼びますが、Interface、Credential、Automation Level が異なります。"
+service: "AWS Resource Interaction Methods"
 category: devops
 kind: service
 lang: ja
 topicKey: "AWS 资源交互方式｜Console・CLI・SDK・IaC"
-frequency: "出題頻度 ⭐⭐⭐⭐⭐"
+frequency: "試験頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
-tags: ["devops","AWS 资源交互方式｜Console・CLI・SDK・IaC","AWS"]
+updated: 2026-08-15
+tags: ["devops", "AWS CLI", "AWS SDK", "IaC"]
 notionId: 3a6964dc-ce4a-818b-a203-e86b13e2eada
 notionUrl: https://app.notion.com/p/3a6964dcce4a818ba203e86b13e2eada
-notionUpdated: "2026-07-30T04:27:15.323Z"
+notionUpdated: "2026-08-13T08:35:23.512Z"
 ---
-
-## 基本情報
-
-| 項目 | 内容 |
-| --- | --- |
-| 英語名 | AWS Resource Interaction Methods |
-| 正式名称 | AWS Management Console / AWS CLI / AWS SDK / Infrastructure as Code |
-| 中国語の説明 | AWS 资源交互方式 |
-| 日本語の説明 | AWS リソース操作方法 |
-| 出題頻度 | ⭐⭐⭐⭐⭐ |
-| 混同しやすいもの | Console / CLI / SDK / CloudFormation |
 
 ## 一言で理解
 
-> 必要な自動化と再現性に応じて、GUI、Command、Application Code、宣言的 Infrastructure を使い分ける。
+**Console、CLI、SDK、IaC はすべて AWS API を呼びます。違いは Click、Command、Application Code、Declarative Template のどれから操作するかです。**
 
-## 要点
+| 方式 | 適した用途 | 主な Credential |
+| --- | --- | --- |
+| Console | 探索、手動操作 | Password + MFA、SSO Session |
+| CLI | Batch、定型 Automation | Identity Center、Role、Profile |
+| SDK | Application Integration | Credential Provider Chain |
+| CloudFormation / IaC | 再現可能な Infrastructure | Caller Permission、Service Role |
 
-- Management Console は視覚的で、学習、確認、単発操作に向く。
-- AWS CLI は Command、Script、反復可能な運用自動化に向く。
-- SDK は Application Code から AWS API を直接呼び出す。
+Region Selector は Regional Resource の表示を変えます。Resource が見つからない場合は Account、Identity、Region、List / Describe Permission、Filter / State の順で確認します。Multi-session は Login Context を並行保持するだけです。
 
-## 試験での判断
+Local CLI は Local Credential を使用し、CloudShell は現在の Console Identity の Temporary Credentials を取得します。aws configure は Profile の Credential、Default Region、Output Format を保存するだけで IAM 権限を付与しません。
 
-> CloudFormation などの IaC は望ましい Infrastructure State を管理し、変更レビューと環境再現を可能にする。
+Access Key ID は識別子、Secret Access Key は署名用秘密、Temporary Credentials は Session Token も必要です。People は Identity Center、Workload は Role を優先します。

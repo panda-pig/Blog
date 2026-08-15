@@ -9,11 +9,11 @@ lang: en
 topicKey: "场景题关键词索引"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03", "场景题关键词索引", "AWS"]
 notionId: 3a6964dc-ce4a-81d7-bfeb-ed10071385bc
 notionUrl: https://app.notion.com/p/3a6964dcce4a81d7bfebed10071385bc
-notionUpdated: "2026-08-05T02:02:00.000Z"
+notionUpdated: "2026-08-13T00:40:48.369Z"
 ---
 
 ## Decision dimensions
@@ -63,3 +63,15 @@ notionUpdated: "2026-08-05T02:02:00.000Z"
 | GraphQL, subscriptions, resolvers | AppSync | API Gateway REST APIs |
 | Full desktop / single app / isolated website | WorkSpaces / Applications / Secure Browser | Treating all three as the same |
 | MQTT, Device Shadow, Rules Engine | IoT Core | SQS |
+
+## Identity, Region, and credential keywords
+
+| Keywords | Prefer | Avoid |
+| --- | --- | --- |
+| Shared job permissions for users | IAM group + managed policy | Nested groups |
+| EC2 / Lambda calls AWS | IAM role + temporary credentials | Long-term IAM user key |
+| Workforce access across accounts | IAM Identity Center | Cognito |
+| Application customer sign-in | Cognito | IAM user |
+| Allow exists but request is denied | Explicit Deny / boundary / SCP | Adding more Allow blindly |
+| Resource disappears after Region switch | Check account, Region, Describe permission | Assuming automatic deletion |
+| Temporary API credentials | Access key ID + secret + session token | Console password |

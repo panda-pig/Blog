@@ -9,11 +9,11 @@ lang: ja
 topicKey: "弹性架构设计"
 frequency: "学習まとめ"
 date: 2026-07-30
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03","Design Resilient Architectures","AWS"]
 notionId: 3a6964dc-ce4a-811a-9170-e1ab378bb690
 notionUrl: https://app.notion.com/p/3a6964dcce4a811a9170e1ab378bb690
-notionUpdated: "2026-08-05T02:02:00.000Z"
+notionUpdated: "2026-08-13T00:40:44.044Z"
 ---
 
 ## 一言で理解
@@ -29,3 +29,11 @@ notionUpdated: "2026-08-05T02:02:00.000Z"
 ## 試験での判断
 
 > Restore、Failover、Dependency Recovery、Runbook を定期的にテストする。
+
+## 障害境界
+
+- Region は複数の分離 AZ を含む地理的な障害境界。
+- EC2、EBS、Subnet は Zonal Resource で、AZ 障害対策には Cross-AZ 冗長化が必要。
+- Multi-AZ でも Load Balancing、Data Tier Failover、Capacity、Health Check を設計する。
+- Multi-Region ではさらに Replication、Routing、RTO / RPO、Failover、演習が必要。
+- Regional Managed Service が内部で Multi-AZ を使う場合も、具体的な Resilience は Service ごとに確認する。

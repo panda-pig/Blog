@@ -9,11 +9,11 @@ lang: zh
 topicKey: "安全架构设计"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03", "安全架构设计", "AWS"]
 notionId: 3a6964dc-ce4a-815e-9db0-d8343bfa6db7
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9db0d8343bfa6db7
-notionUpdated: "2026-08-05T02:02:00.000Z"
+notionUpdated: "2026-08-13T08:35:25.158Z"
 ---
 
 ## 必须掌握
@@ -72,8 +72,15 @@ notionUpdated: "2026-08-05T02:02:00.000Z"
 ## 身份与权限高频考点
 - Authentication 是确认身份；Authorization 是决定权限。
 - IAM 默认拒绝，策略评估中显式 Deny 优先。
-- 根用户启用 MFA，只用于必须由根用户完成的账户任务。
+- 根用户启用 MFA，只用于必须由根用户完成的账户任务；不创建 Root Access Key。
+- IAM Password Policy 只控制 IAM User Console Password，不控制 Root Password、Access Key 或 Identity Center Password。
+- Group 只能包含 User、不能嵌套；一个 User 可以加入多个职责 Group。
+- Managed Policy 可附加给 User、Group、Role；Inline Policy 可嵌入单个 User、Group、Role。
+- Identity-based Policy 不写 Principal；Resource-based Policy 与 Trust Policy 才常见 Principal。
+- User 权限可能来自 Group 继承、直接附加或 Inline Policy；移出 Group 只撤销该 Group 的权限来源。
+- Access Denied 从错误中的 Action 开始，继续检查 Principal、直接与继承 Policy、Explicit Deny、Boundary、SCP、Resource 与 Condition。
 - EC2、Lambda 等工作负载访问 AWS 服务时优先使用 IAM Role 和临时凭证。
+- 临时凭证包含 Access Key ID、Secret Access Key 与 Session Token；CLI / SDK 不要求长期 IAM User Key。
 - 跨账户访问重点检查 Trust Policy 与 Permissions Policy。
 - 员工多账户 SSO → IAM Identity Center；应用顾客注册登录 → Cognito。
 ## 网络与应用保护

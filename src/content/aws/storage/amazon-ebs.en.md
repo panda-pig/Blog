@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-08-15
 tags: [Storage, Block Storage, EC2]
 notionId: 3a6964dc-ce4a-8126-968f-e04a57570ada
 notionUrl: https://app.notion.com/p/3a6964dcce4a8126968fe04a57570ada
-notionUpdated: "2026-07-30T04:27:29.886Z"
+notionUpdated: "2026-08-13T04:38:31.288Z"
 ---
 
 ## Basic Information
@@ -22,7 +22,7 @@ notionUpdated: "2026-07-30T04:27:29.886Z"
 | English name | Amazon EBS |
 | Full name | Amazon Elastic Block Store |
 | Chinese description | 弹性块存储 |
-| Japanese description | ブロックストレージ |
+| Japanese description | Amazon EBS（EC2 向けの永続ブロックストレージ） |
 | Exam frequency | ⭐⭐⭐⭐⭐ |
 | Often confused with | Instance Store / EFS / S3 |
 
@@ -35,6 +35,9 @@ notionUpdated: "2026-07-30T04:27:29.886Z"
 - An EBS volume is an AZ-scoped resource; moving across AZs normally uses a snapshot and a new target volume.
 - Stopping EC2 preserves the volume; termination behavior depends on Delete on Termination.
 - IOPS measures operations per second, while throughput measures data transferred per second.
+- A volume belongs to its AWS account, Region, and AZ, not privately to the IAM user who created it.
+- Visibility depends on the current account, Region, `ec2:DescribeVolumes` permission, console filters, and resource state.
+- Creating a volume successfully does not guarantee permission for later Describe, Modify, or Delete actions.
 
 ## Exam focus
 
@@ -46,10 +49,11 @@ notionUpdated: "2026-07-30T04:27:29.886Z"
 
 - Persistent does not guarantee that a volume survives instance termination.
 - EBS is not a naturally multi-AZ shared file system.
+- Console multi-session does not change resource ownership or merge permissions.
 
 ## Key takeaway
 
-> **Instance Store for temporary local data; EBS for persistent disks; snapshots rebuild volumes across AZs.**
+> **Instance Store for temporary local data; EBS for persistent disks; snapshots rebuild across AZs; the account owns the volume and policy controls access.**
 
 ## Related services
 

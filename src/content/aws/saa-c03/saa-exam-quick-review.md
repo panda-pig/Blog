@@ -9,11 +9,11 @@ lang: zh
 topicKey: "SAA 考前速查"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["saa-c03", "SAA 考前速查", "AWS"]
 notionId: 3a6964dc-ce4a-817c-860b-f61fe547c268
 notionUrl: https://app.notion.com/p/3a6964dcce4a817c860bf61fe547c268
-notionUpdated: "2026-08-05T02:02:00.000Z"
+notionUpdated: "2026-08-13T00:40:49.812Z"
 ---
 
 ## 复习顺序
@@ -39,3 +39,7 @@ notionUpdated: "2026-08-05T02:02:00.000Z"
 - 能用三阶段和 7R 解释迁移项目，并区分 Evaluator、Discovery、Migration Hub、Transform MGN、DMS、DataSync 与 Transfer Family。
 - 能区分 AppSync、Amplify、Connect、SES、WorkSpaces 三种交付方式和 IoT Core 的典型关键词。
 - 看到旧名称 Application Migration Service、AppStream 2.0、WorkSpaces Web 时，能映射到当前服务名。
+- 能区分 Root、IAM User、Group、Policy、Role 与 Identity Center；知道 Group 不嵌套、User 可进多个 Group。
+- 能解释 Implicit Deny、Explicit Deny、Managed / Inline / Resource-based Policy 与 Principal。
+- 能区分 Password Policy、MFA、长期 Access Key 与包含 Session Token 的临时凭证。
+- 看不到资源时能按 Account → Identity → Region → Permission → Filter / State 排查。

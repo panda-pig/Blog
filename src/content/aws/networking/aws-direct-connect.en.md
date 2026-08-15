@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Direct Connect"
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-08-05
+updated: 2026-08-15
 tags: ["networking","AWS Direct Connect","AWS"]
 notionId: 3a6964dc-ce4a-812a-be47-ffe0e7198291
 notionUrl: https://app.notion.com/p/3a6964dcce4a812abe47ffe0e7198291
-notionUpdated: "2026-08-05T01:42:00.000Z"
+notionUpdated: "2026-08-05T01:42:28.433Z"
 ---
 
 ## Basic Information

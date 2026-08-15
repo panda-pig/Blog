@@ -8,11 +8,11 @@ kind: service
 lang: ja
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-08-15
 tags: [Storage, Block Storage, EC2]
 notionId: 3a6964dc-ce4a-8126-968f-e04a57570ada
 notionUrl: https://app.notion.com/p/3a6964dcce4a8126968fe04a57570ada
-notionUpdated: "2026-07-30T04:27:29.886Z"
+notionUpdated: "2026-08-13T04:38:31.288Z"
 ---
 
 ## 基本情報
@@ -22,7 +22,7 @@ notionUpdated: "2026-07-30T04:27:29.886Z"
 | 英語名 | Amazon EBS |
 | 正式名称 | Amazon Elastic Block Store |
 | 中国語の説明 | 弹性块存储 |
-| 日本語の説明 | ブロックストレージ |
+| 日本語の説明 | Amazon EBS（EC2 向けの永続ブロックストレージ） |
 | 出題頻度 | ⭐⭐⭐⭐⭐ |
 | 混同しやすいもの | Instance Store / EFS / S3 |
 
@@ -35,6 +35,9 @@ notionUpdated: "2026-07-30T04:27:29.886Z"
 - EBS は AZ 単位。別 AZ への移行は通常 Snapshot から新しい Volume を作成する。
 - EC2 の Stop では保持され、Terminate 時の削除は Delete on Termination に依存する。
 - IOPS は秒間操作数、Throughput は秒間データ量を表す。
+- Volume は作成した IAM User 個人ではなく、AWS Account、Region、AZ に属する。
+- 表示可否は Account、Region、`ec2:DescribeVolumes`、Console Filter、Resource State に依存する。
+- Create に成功しても、後の Describe、Modify、Delete が許可されるとは限らない。
 
 ## 試験ポイント
 
@@ -46,10 +49,11 @@ notionUpdated: "2026-07-30T04:27:29.886Z"
 
 - 永続であっても Instance 終了時に必ず残るとは限らない。
 - EBS は標準で Multi-AZ 共有ファイルシステムではない。
+- Console Multi-session は Ownership や Permission を変更しない。
 
 ## 重要ポイント
 
-> **一時ローカルは Instance Store、永続ディスクは EBS、AZ 間は Snapshot から再作成。**
+> **一時ローカルは Instance Store、永続ディスクは EBS、Cross-AZ は Snapshot、Ownership は Account、Access は Policy。**
 
 ## 関連サービス
 

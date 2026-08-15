@@ -8,11 +8,11 @@ kind: service
 lang: zh
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-08-15
 tags: [Storage, Block Storage, EC2]
 notionId: 3a6964dc-ce4a-8126-968f-e04a57570ada
 notionUrl: https://app.notion.com/p/3a6964dcce4a8126968fe04a57570ada
-notionUpdated: "2026-07-30T04:27:29.886Z"
+notionUpdated: "2026-08-13T04:38:31.288Z"
 ---
 
 ## 基本信息
@@ -22,7 +22,7 @@ notionUpdated: "2026-07-30T04:27:29.886Z"
 | 英文 | Amazon EBS |
 | 全称 | Amazon Elastic Block Store |
 | 中文释义 | 弹性块存储 |
-| 日文释义 | ブロックストレージ |
+| 日文释义 | Amazon EBS（EC2 向けの永続ブロックストレージ） |
 | 考试频率 | ⭐⭐⭐⭐⭐ |
 | 易混淆 | Instance Store / EFS / S3 |
 
@@ -51,6 +51,15 @@ Instance Store 适合可重新生成的数据；重要数据必须复制到持�
 5. 可在线调整部分容量和性能配置。
 6. 通过 Snapshot 备份或迁移。
 EBS 会在同一 AZ 内复制数据以降低组件故障风险，但它仍是单 AZ 资源。
+
+## 资源归属与可见性
+
+- EBS Volume 属于指定 AWS Account、Region 与 AZ，不属于创建它的 IAM User 私人所有。
+- 同一 Account、同一 Region 中，Root 或拥有 `ec2:DescribeVolumes` 的 Principal 可以查看卷。
+- 成功创建卷不代表之后一定能查看、修改或删除；每个 API Action 都会重新进行权限评估。
+- 不同 Account 的资源默认隔离，另一个 Account 的 Root 也不会自动看到该卷。
+- Console 中看不到卷时依次检查 Account、Region、Describe 权限、筛选条件与资源状态。
+- 卷按 Region 查看，但附加到 EC2 时必须处于同一 AZ。
 
 ## 生命周期
 
@@ -106,6 +115,8 @@ st1 和 sc1 不能作为启动卷。卷类型选择必须同时看 IOPS、吞吐
 - EBS Snapshot 不是用户 Bucket 中的普通 S3 对象。
 - IOPS 高不等于顺序吞吐一定最佳。
 - EBS 不是 EFS 那样天然供多台服务器共享文件目录。
+- 谁创建 EBS 不等于谁私人拥有 EBS；资源归属 Account / Region / AZ，访问由 Policy 决定。
+- Multi-session 中看不到卷也可能是 Region、权限或 Console Filter 不同。
 
 ## 面试高频问题
 
@@ -116,4 +127,4 @@ st1 和 sc1 不能作为启动卷。卷类型选择必须同时看 IOPS、吞吐
 
 ## 重点记忆
 
-**临时本地盘用 Instance Store；持久云硬盘用 EBS；跨 AZ 通过 Snapshot 重建。**
+**临时本地盘用 Instance Store；持久云硬盘用 EBS；跨 AZ 通过 Snapshot 重建；资源属于 Account，访问由 Policy 决定。**
