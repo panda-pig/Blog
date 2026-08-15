@@ -86,8 +86,16 @@ const year = new Date().getFullYear();
     var ns = 'panda-blog';
     var key = 'visits';
     fetch('https://api.counterapi.dev/v1/' + ns + '/' + key + '/up')
-      .then(function(r) { return r.json(); })
-      .then(function(d) { el.textContent = fmt((d.count || 0).toLocaleString()); })
+      .then(function(r) {
+        if (!r.ok) throw new Error('View counter request failed');
+        return r.json();
+      })
+      .then(function(d) {
+        if (typeof d.count !== 'number' || !Number.isFinite(d.count)) {
+          throw new Error('View counter response is invalid');
+        }
+        el.textContent = fmt(d.count.toLocaleString());
+      })
       .catch(function() { el.textContent = ''; });
   }
 
