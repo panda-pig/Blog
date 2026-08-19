@@ -1,9 +1,9 @@
 ---
 slug: jlpt-sprint-desk-study-loop
 lang: en
-title: "No More Hard-Coded Countdown: The Latest JLPT Sprint Desk"
+title: "From Countdown to Review: Designing the JLPT Sprint Desk Study Loop"
 description: "The latest JLPT Sprint Desk adds dynamic exam dates, bilingual UI, reminders and exam-day states, a rolling 14-day plan, ICS calendar export, full backup restore, and a new Animal Island workspace design."
-date: 2026-08-19
+date: 2026-05-05
 tags: ["Project Notes", "Study Tools", "JLPT", "React"]
 ---
 

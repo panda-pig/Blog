@@ -1,9 +1,9 @@
 ---
 slug: jlpt-grammar-deck-study-cards
 lang: zh
-title: "从 955 条语法到复习曲线：JLPT Grammar Deck 的最新进化"
+title: "把日语语法变成每天能复习的词卡：JLPT Grammar Deck 界面设计小记"
 description: "JLPT Grammar Deck 已从语法卡片原型成长为可长期使用的学习产品：955 条 N1–N5 语法、Guest 模式、账号同步、SM-2 复习、自动挖空练习与高级复习分析。"
-date: 2026-08-19
+date: 2026-05-01
 tags: ["项目复盘", "学习工具", "JLPT", "Next.js"]
 ---
 

@@ -1,9 +1,9 @@
 ---
 slug: jlpt-sprint-desk-study-loop
 lang: ja
-title: "固定されたカウントダウンをやめる：最新版 JLPT Sprint Desk"
+title: "カウントダウンから振り返りへ：JLPT Sprint Desk の学習ループ設計"
 description: "最新版 JLPT Sprint Desk は、動的な試験日、中国語・英語 UI、リマインダーと試験当日の状態、14 日ローリング計画、ICS 出力、完全バックアップ復元、Animal Island デザインを追加しました。"
-date: 2026-08-19
+date: 2026-05-05
 tags: ["プロジェクト記録", "学習ツール", "JLPT", "React"]
 ---
 

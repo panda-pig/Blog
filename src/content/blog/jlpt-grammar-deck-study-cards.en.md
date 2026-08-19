@@ -1,9 +1,9 @@
 ---
 slug: jlpt-grammar-deck-study-cards
 lang: en
-title: "From 955 Grammar Points to a Retention Curve: The Latest JLPT Grammar Deck"
+title: "Turning Japanese Grammar Into Daily Review Cards: A JLPT Grammar Deck UI Note"
 description: "JLPT Grammar Deck has grown from a flashcard prototype into a lasting study product with 955 N1–N5 grammar points, Guest mode, account sync, SM-2 review, generated cloze practice, and advanced review analytics."
-date: 2026-08-19
+date: 2026-05-01
 tags: ["Project Notes", "Study Tools", "JLPT", "Next.js"]
 ---
 

@@ -1,6 +1,13 @@
 export const projectsData = {
   zh: [
     {
+      title: 'Japan Rental Analyzer',
+      description: '日本租房决策辅助工具。粘贴 SUUMO、LIFULL HOME\'S、athome 或 Yahoo!不动产链接，即可生成个性化八维评分、区域相场、初期费用、公共数据和多房源比较报告。',
+      tags: ['Python', 'Flask', 'SQLite', 'ECharts'],
+      link: 'https://github.com/panda-pig/Japan-Rental-Analyzer',
+      status: '进行中',
+    },
+    {
       title: 'JLPT 语法词卡',
       description: '基于 React + TypeScript 的 JLPT 语法学习工具，将复杂语法知识点拆解为易于记忆的卡片。支持 N1-N5 等级筛选、搜索和收藏，采用间隔重复算法优化学习效率。',
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
@@ -24,6 +31,13 @@ export const projectsData = {
   ],
   en: [
     {
+      title: 'Japan Rental Analyzer',
+      description: 'A decision-support tool for renting in Japan. Paste a SUUMO, LIFULL HOME\'S, athome, or Yahoo! Real Estate URL to get personalized eight-dimension scoring, market context, move-in costs, public data, and multi-property comparisons.',
+      tags: ['Python', 'Flask', 'SQLite', 'ECharts'],
+      link: 'https://github.com/panda-pig/Japan-Rental-Analyzer',
+      status: 'In Progress',
+    },
+    {
       title: 'JLPT Grammar Cards',
       description: 'A React + TypeScript JLPT grammar learning tool that breaks down complex grammar points into bite-sized memory cards. Supports N1-N5 filtering, search, and bookmarking with spaced repetition.',
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
@@ -46,6 +60,13 @@ export const projectsData = {
     },
   ],
   ja: [
+    {
+      title: 'Japan Rental Analyzer',
+      description: '日本の賃貸選びを支援する分析ツール。SUUMO、LIFULL HOME\'S、athome、Yahoo!不動産のURLから、8次元スコア、エリア相場、初期費用、公的データ、複数物件比較をまとめます。',
+      tags: ['Python', 'Flask', 'SQLite', 'ECharts'],
+      link: 'https://github.com/panda-pig/Japan-Rental-Analyzer',
+      status: '進行中',
+    },
     {
       title: 'JLPT 文法カード',
       description: 'React + TypeScript で構築された JLPT 文法学習ツール。複雑な文法知識を覚えやすいメモリーカードに分解。N1～N5 フィルタリング、検索、お気に入り機能と間隔反復アルゴリズムに対応。',

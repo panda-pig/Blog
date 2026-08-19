@@ -1,9 +1,9 @@
 ---
 slug: jlpt-sprint-desk-study-loop
 lang: zh
-title: "倒计时不再写死：JLPT Sprint Desk 最新版如何把备考变成可调整的系统"
+title: "从倒计时到复盘：JLPT Sprint Desk 的学习闭环设计"
 description: "JLPT Sprint Desk 最新版加入动态 JLPT 考期、双语界面、提醒与考试日状态、14 天滚动计划、ICS 日历导出和完整备份恢复，并升级为 Animal Island 风格的学习工作台。"
-date: 2026-08-19
+date: 2026-05-05
 tags: ["项目复盘", "学习工具", "JLPT", "React"]
 ---
 

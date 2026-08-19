@@ -1,9 +1,9 @@
 ---
 slug: jlpt-grammar-deck-study-cards
 lang: ja
-title: "955 項目の文法から定着率カーブへ：最新版 JLPT Grammar Deck"
+title: "日本語文法を毎日復習できるカードへ：JLPT Grammar Deck の UI 記録"
 description: "JLPT Grammar Deck は、955 項目の N1–N5 文法、Guest モード、アカウント同期、SM-2 復習、自動穴埋め練習、高度な復習分析を備えた継続利用できる学習プロダクトへ成長しました。"
-date: 2026-08-19
+date: 2026-05-01
 tags: ["プロジェクト記録", "学習ツール", "JLPT", "Next.js"]
 ---
 
