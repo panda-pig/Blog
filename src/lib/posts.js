@@ -2,9 +2,13 @@ export function getSlugFromFile(filePath) {
   return filePath.split('/').pop().replace('.md', '').replace(/\.(en|ja)$/, '');
 }
 
+export function isPublishedPost(post) {
+  return post?.frontmatter?.draft !== true;
+}
+
 export function groupPostsBySlug(allPosts) {
   const postsBySlug = {};
-  allPosts.forEach((post) => {
+  allPosts.filter(isPublishedPost).forEach((post) => {
     const slug = post.frontmatter.slug || getSlugFromFile(post.file);
     const postLang = post.frontmatter.lang || 'zh';
     if (!postsBySlug[slug]) postsBySlug[slug] = {};

@@ -1,94 +1,134 @@
 ---
 slug: jlpt-sprint-desk-study-loop
 lang: en
-title: "From Countdown to Review: Designing the JLPT Sprint Desk Study Loop"
-description: "A project note on turning JLPT exam prep into a lightweight study cockpit, where plans, logs, and reviews create a feedback loop that can actually be adjusted day by day."
-date: 2026-06-10
-tags: ["Project Notes", "Study Tools", "JLPT"]
+title: "No More Hard-Coded Countdown: The Latest JLPT Sprint Desk"
+description: "The latest JLPT Sprint Desk adds dynamic exam dates, bilingual UI, reminders and exam-day states, a rolling 14-day plan, ICS calendar export, full backup restore, and a new Animal Island workspace design."
+date: 2026-08-19
+tags: ["Project Notes", "Study Tools", "JLPT", "React"]
 ---
 
-The hardest part of preparing for the JLPT is not simply asking whether I studied today. The harder question comes afterward: where did the time go, did the weak areas actually receive attention, and as the exam gets closer, is today's plan still worth following?
+`JLPT Sprint Desk` began with a simple observation: an exam plan can look complete on day one and still drift away from reality after only a few days of use.
 
-`JLPT Sprint Desk` was built around that question. It is not just a todo list. It connects goal setting, generated plans, daily logs, review analytics, and backup export into one loop, so exam prep can move from "trying hard by instinct" to a rhythm that is visible and adjustable.
+The latest version still follows the same loop—plan, record, analyze, adjust—but it has grown beyond a data dashboard. Dynamic exam dates, reminders, exam-day handling, bilingual UI, calendar export, and complete restore now make it a workspace that can stay useful through an entire JLPT cycle.
 
-![JLPT Sprint Desk dashboard with exam countdown, daily target, study loop, and seven-day trend.](/images/blog/jlpt-sprint-desk/dashboard-overview.png)
+Live app: [jlpt-sprint-desk.vercel.app](https://jlpt-sprint-desk.vercel.app)
 
-## Seeing Today's Next Step
+![The latest JLPT Sprint Desk dashboard with a live date and clock, exam countdown, reminder, next action, and study loop.](/images/blog/jlpt-sprint-desk/dashboard-overview.png)
 
-The dashboard does not try to show every feature at once. It starts by answering three practical questions:
+## The New Dashboard Starts With the Next Action
 
-- How many days are left before the exam?
-- How much time should I study today?
-- Which page should I open next?
+The first priority is still not showing every metric. It is helping the learner decide what to do now.
 
-In the sample profile, the N1 exam is 25 days away, today's target is 120 minutes, and recent accumulated study time is 12.5 hours. The right sidebar shows a seven-day trend: 6 study days, 750 minutes logged, and 87% average completion. These numbers do not replace learning, but they make the rhythm visible.
+The dashboard changes its advice based on whether today has been logged, the current plan phase, recent completion, and plan health. Before a log exists, it asks for a quick honest record. Afterward, it can direct the learner toward review or plan adjustment.
 
-The "today's study loop" section turns the plan into practical tasks: review yesterday, kanji and vocabulary, grammar, reading, listening, and error-cause notes. Each task has a time budget, so the day does not collapse into the vague instruction to "study more."
+The fixed top area now keeps the current profile, target level, live days remaining, log status, plan health, date, and time visible. Opening the app no longer requires reconstructing where the previous session ended.
 
-## A Plan Is a Budget, Not Just a Calendar
+## Exam Dates Are Dynamic Instead of Hard-Coded
 
-The plan page turns level, exam date, daily availability, weak modules, and material preferences into a visible 14-day plan that still belongs to the full sprint cycle.
+Earlier versions used a fixed default JLPT date. Once that date passed, countdowns and new profiles could enter awkward states. The app now calculates the next JLPT sitting from the current date and shows that default in setup.
 
-![Generated JLPT N1 study plan with feasibility checks, adjustment advice, and study budget.](/images/blog/jlpt-sprint-desk/plan-generated.png)
+The surrounding edge cases are handled as well:
 
-The most useful part of this page is the feasibility check. In the sample profile, the system looks at 25 days remaining, 120 weekday minutes, 210 weekend minutes, and weak reading, listening, and grammar areas. From there, it evaluates:
+- The header and dashboard share one live countdown calculation
+- Exam day displays a clear “Exam today” state
+- A passed exam can be switched to the next sitting in one action
+- Exports recalculate remaining days instead of preserving a stale snapshot
+- Countdown progress uses the real plan span rather than a fixed denominator
 
-- whether the daily average target is sufficient
-- how many days vocabulary and grammar still need
-- whether the review window is being squeezed
-- whether module-level time allocation is skewed
+Small boundary states like these determine whether a planner remains usable after the date it was originally created for.
 
-The budget chart on the right makes the allocation easy to scan: listening, reading, and grammar take larger shares, matching the weak areas in this profile. The page also includes a minimum executable version for busy or low-energy days, so one bad day does not break the whole plan.
+## The Plan Page Is Now a Rolling Decision Surface
 
-## Daily Logs Should Be Fast and Useful Later
+![The latest plan view with feasibility checks, adaptive advice, a 14-day calendar, today's tasks, and expandable details.](/images/blog/jlpt-sprint-desk/plan-generated.png)
 
-The daily log page is designed to take about two minutes. It tracks only the fields that matter: time per module, completion, accuracy, error causes, overtime reasons, and tomorrow's first step.
+Plan generation combines target level, exam date, weekday and weekend budgets, weak modules, preferred materials, and recurring obstacles, then divides the result into phases.
 
-Those logs are not there to make check-ins look nice. They leave enough texture for the analysis page to make a real judgment. Two sessions can both take 120 minutes, but if 80 of those minutes were lost to slow reading-location work, the useful suggestion is not "try harder." It is "reduce the reading task size and add timed location drills."
+Before presenting a long task list, the page answers practical questions:
 
-## Review Turns Effort Into Judgment
+- Is the average daily budget sufficient?
+- Can new vocabulary and grammar finish before the exam?
+- Is there enough time left for review?
+- Is actual time reaching the weak modules?
+- Do recent records support keeping the current plan?
 
-The review analysis page is the part that feels most like a cockpit. It starts with a judgment, then backs it with charts.
+The 14-day calendar shows the near-term rhythm, today's list drives execution, and weekly sections hold the detailed plan. Each day can be adjusted without overwriting the original generated plan.
 
-![Review analytics showing plan health, missing log days, study rhythm, and completion trend.](/images/blog/jlpt-sprint-desk/analysis-kpi-trend.png)
+## Daily Logging Still Takes About Two Minutes
 
-The sample data shows:
+The log keeps only fields that later analysis can use: time and quantity by module, completion, accuracy, error causes, overtime reasons, the hardest point, and tomorrow's first step.
 
-- 6 logged study days in the last 7 days, with 1 missing day
-- 750 minutes logged against an 840-minute target
-- 87% average completion and a plan health score of 86
-- 134 minutes on average during weekdays, above the 120-minute target
-- 80 minutes on average during the weekend, far below the 210-minute target
+The new reminder state makes the loop clearer. An unlogged day produces a dismissible dashboard reminder; once a record exists, review guidance takes its place.
 
-The conclusion is clear: weekdays are healthy, but weekends are not carrying the expected extra load. For real exam prep, that is far more useful than the vague feeling that things are "going okay."
+The goal is not a prettier streak. It is enough honest data to identify overload, missing days, and modules that need a smaller task slice.
 
-## Finding the Modules That Actually Consume Time
+## Review Has Become an Action Report
 
-The module-depth analysis regroups recent logs across kanji, vocabulary, grammar, reading, and listening.
+![The latest review overview with key metrics, conclusions, plan health, and missing-record days.](/images/blog/jlpt-sprint-desk/analysis-kpi-trend.png)
 
-![Module depth and error-cause distribution, with reading, grammar, and listening taking the largest shares.](/images/blog/jlpt-sprint-desk/analysis-module-causes.png)
+The review page now leads with conclusions. Its top metrics summarize study days, time, average completion, streak, plan health, and time efficiency over the last seven days.
 
-In the screenshot, reading accounts for 220 of the 750 minutes, the largest share. Grammar follows with 175 minutes, and listening with 160 minutes. That confirms time is going toward the weak areas, but it also reveals a potential future gap: kanji received only 50 minutes.
+The conclusion section then answers four questions directly:
 
-The error-cause heatmap pulls out why mistakes happened. In the sample, "slow location" appears 4 times, "missed listening keywords" appears 3 times, and "connection forms" appears 2 times. The next plan adjustment can focus on the most frequent causes instead of relying on a hazy memory of the week.
+- Is the plan healthy overall?
+- Is the current pace too low or too high?
+- Which module receives the most time?
+- Which error cause should be addressed first tomorrow?
 
-## Keeping the Technology Light
+This is more useful than making the learner reverse-engineer meaning from charts alone.
 
-Technically, I wanted to keep the stack restrained:
+## Time Allocation and Error Causes Are Diagnosed Separately
 
-- React 19 + TypeScript + Vite
-- React Router Hash Router for static deployment
-- CSS variables instead of a UI framework
-- custom SVG charts instead of a heavy charting library
-- React Context + localStorage for default local persistence
-- optional Supabase sync for cloud backup and cross-device use
+![Module-depth analysis comparing actual time across grammar, reading, vocabulary, kanji, and listening.](/images/blog/jlpt-sprint-desk/analysis-module-causes.png)
 
-I like this tradeoff. By default, data lives in the browser's localStorage, so the user can start without creating an account. If cross-device sync becomes necessary, they can connect their own Supabase project. For a study tool, this local-first and cloud-optional model feels light enough to trust.
+Module analysis checks whether actual time is reaching the intended weak areas. Writing “focus on listening” in a plan is not evidence that listening received enough time.
 
-## The Real Problem Is Feedback Delay
+![The error-cause heatmap ranks recurring issues and attaches a concrete next action to each one.](/images/blog/jlpt-sprint-desk/analysis-causes.png)
 
-During a JLPT sprint, late feedback is dangerous. It is easy to finish several practice sets before realizing listening was never repaired, or to notice one week before the exam that new content has already pushed review out of the plan.
+Error analysis separately explains why work was incomplete or incorrect. It ranks recurring causes and suggests specific responses, such as keeping a construction, example, and original sentence together, or reducing new material and timing the next question set.
 
-`JLPT Sprint Desk` tries to move feedback earlier: log today, adjust tomorrow; notice bias this week, correct it next week. It does not promise to pass the exam for you, but it can illuminate the blind spots in the process, making each study session easier to see, explain, and revise.
+Separating time from cause makes the next adjustment clearer: is the problem insufficient effort, or an ineffective method?
 
-That is the part I value most: it does not make studying more complicated. It compresses a messy preparation state into a few judgments that can actually be acted on.
+## Export Is Now a Recovery System
+
+The latest version supports multiple output purposes:
+
+- Markdown study plans
+- CSV structured data
+- HTML study reports
+- Complete JSON backups
+- Print-friendly pages
+- ICS calendar files
+
+ICS places upcoming tasks into a system calendar. JSON can restore settings, generated plans, manual edits, and daily records. The importer understands multiple backup shapes so that data created by an older version is less likely to become stranded.
+
+For a local-first tool, export is only half the promise. Reliable restore is what creates confidence.
+
+## Multiple Profiles, Local First, Optional Cloud Sync
+
+Separate profiles can represent different levels, material strategies, or study experiments. Settings, plans, edits, and records remain isolated per profile.
+
+By default, data stays in browser `localStorage` and no account is required. Cross-device users can connect a personal Supabase project and sign in with Magic Link. Synchronization uses `updated_at` to choose the newer state, while local mode continues to work independently.
+
+## A New Visual and Technical Foundation
+
+The interface now uses the Animal Island visual language: paper-like surfaces, colored functional modules, label-style headings, clear borders, a desktop sidebar, and mobile bottom navigation. Chinese and English can be switched immediately, and the same localization system covers plan and export text.
+
+The current stack includes:
+
+- React 19 + TypeScript + Vite 8
+- React Router 7 Hash Router
+- Animal Island UI + Lucide React
+- Responsive CSS variables and custom SVG charts
+- React Context + localStorage persistence
+- Optional Supabase Magic Link sync
+- Vitest unit tests
+
+## It Manages Change, Not Just a Plan
+
+The hard part of exam planning is not writing the first version. Available time changes, weak modules change, exam dates pass, and task volume needs to respond to actual completion.
+
+The latest `JLPT Sprint Desk` takes those changes seriously. Dynamic dates, live countdowns, reminders, health diagnostics, per-day edits, calendar output, and complete restore turn a static plan into a system that can keep correcting itself.
+
+It cannot study for the learner, but it can make each day leave enough feedback for tomorrow's plan to become more realistic.
+
+> This article reflects the project as of August 2026. Profiles and study records shown in screenshots are demonstration data.

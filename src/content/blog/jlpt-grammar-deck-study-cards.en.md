@@ -1,98 +1,139 @@
 ---
 slug: jlpt-grammar-deck-study-cards
 lang: en
-title: "Turning Japanese Grammar Into Daily Review Cards: A JLPT Grammar Deck UI Note"
-description: "How JLPT Grammar Deck turns N1-N5 grammar material into a study desk for browsing, saving, practicing, and reviewing grammar every day."
-date: 2026-06-17
-tags: ["Project Notes", "Study Tools", "JLPT"]
+title: "From 955 Grammar Points to a Retention Curve: The Latest JLPT Grammar Deck"
+description: "JLPT Grammar Deck has grown from a flashcard prototype into a lasting study product with 955 N1–N5 grammar points, Guest mode, account sync, SM-2 review, generated cloze practice, and advanced review analytics."
+date: 2026-08-19
+tags: ["Project Notes", "Study Tools", "JLPT", "Next.js"]
 ---
 
-The hard part of learning Japanese grammar is often not a lack of material. It is that the material is scattered: one pattern in a textbook, another in notes, another in bookmarks. When it is finally time to review, the next question becomes surprisingly hard: what should I study today?
+When I first built `JLPT Grammar Deck`, I wanted to solve one specific problem: Japanese grammar resources are everywhere, but when it is time to study each day, it is still difficult to decide what to review, what is already stable, and what is about to be forgotten.
 
-`JLPT Grammar Deck` is built around that problem. It turns N1 to N5 grammar into a study desk where patterns can be browsed, saved, practiced, reviewed, and tracked. The interface does not feel like a traditional question bank. It feels more like a stack of grammar cards, already grouped by level and ready to be flipped open.
+The project is no longer just a set of polished flashcards. The latest version is a complete study system containing **955 grammar points across N1–N5**, with search, learning, spaced review, cloze practice, progress analysis, and account sync connected in one flow.
 
-![JLPT Grammar Deck home page with a grammar card as the visual anchor and clear entry points for study and the grammar library.](/images/blog/jlpt-grammar-deck/jlpt-home.png)
+Live app: [jlpt-grammar-cards.com](https://jlpt-grammar-cards.com)
 
-## Home: Make the Next Step Obvious
+![The latest JLPT Grammar Deck home page with Guest mode, N1–N5 entry points, and a reversible grammar card.](/images/blog/jlpt-grammar-deck/jlpt-home.png)
 
-The home page does not expose every feature at once. It starts with two clear choices: begin studying, or open the grammar library.
+## A Complete Learning Loop
 
-The central grammar card is the visual anchor of the product. The front shows the grammar pattern and connection hint; the back holds the meaning, examples, common mistakes, and feedback actions. At a glance, the user can tell that this is not only a reference tool. It turns grammar into units that can be recalled, rated, and scheduled.
+The current product follows a clear path:
 
-Below that, the page introduces the larger system: grammar library, spaced review, similar-pattern comparison, study progress, and a personal grammar library. The rhythm feels calm: first make it easy to start, then explain why the system is worth returning to.
+1. Find a target item through search and filters
+2. Read its meaning, construction, examples, and common mistakes
+3. Recall the answer before flipping the card
+4. Rate memory as Again, Hard, Good, or Easy
+5. Let SM-2 schedule the next review
+6. Confirm recognition through generated cloze questions
+7. Use the dashboard to identify progress and weak grammar
 
-## Grammar Library: From Reference List to Grammar Map
+Every action creates a meaningful next step. Reading can lead into study, a rating enters the review queue, and review history returns to the analytics page.
 
-![Grammar library page showing search results for わけ, with cards grouped by JLPT level, meaning, and learning status.](/images/blog/jlpt-grammar-deck/jlpt-grammar-library.png)
+## A Searchable Library of 955 Grammar Points
 
-The grammar library is the part that most resembles a reference center, but it avoids becoming a dense list.
+![The grammar library supports keyword search and filters for JLPT level, grammar context, learning status, and favorites.](/images/blog/jlpt-grammar-deck/jlpt-grammar-library.png)
 
-Each grammar item is presented as a card. JLPT level, grammar category, title, meaning, connection form, tags, learning status, and favorite action all stay in the same visual unit. Searching for `わけ` makes it easy to see how the same surface form shifts across levels and meanings: `わけ`, `わけがない`, `わけではない`, and related forms.
+The library now contains 955 items across N1–N5. Each entry can include:
 
-The filter sidebar is practical too. The user can narrow results by JLPT level, grammar scene, learning state, and favorites. For exam prep, that is closer to the real workflow than keyword search alone. Review often starts not with "find this exact item," but with "show me the N2 negative expressions I have not mastered yet."
+- JLPT level and grammar context
+- Meaning, construction, and detailed explanation
+- Japanese examples with translations
+- Common mistakes, memory hints, and related grammar
+- Learning, mastery, and favorite status
 
-## Detail Pages: Explain One Pattern Completely
+A search for 「わけ」 brings related forms such as 「わけがない」, 「わけではない」, and 「というわけではない」 into one view. Level, context, and personal progress can then narrow the result.
 
-On a grammar detail page, information is split into clear sections: meaning, connection, detailed explanation, usage scenes, example sentences, common mistakes, memory hints, and similar patterns.
+As the dataset grew, I also added content audits, deduplication, and redirects for old grammar IDs. A learning product needs reliable content identity as much as it needs a good interface.
 
-The right side holds the learning-state card: whether the item has been studied, mastery level, review count, last review, and next review. This matters because it puts "understanding a grammar point" and "remembering it over time" on the same page. After reading the explanation, the user can add it to the learning queue instead of letting it drift away.
+## Start as a Guest, Sync When It Matters
 
-## Study: Anki-Inspired, But Closer to Grammar Learning
+The app can now be used without creating an account.
 
-![Study card page with a flippable grammar card that asks the user to recall first, then review explanation, examples, and common mistakes.](/images/blog/jlpt-grammar-deck/jlpt-study-card.png)
+Guest mode stores progress, favorites, SM-2 state, and review history in the current browser. After deciding that the app is useful, a learner can sign in and merge local progress into the cloud.
 
-The study page is centered on one flippable grammar card.
+Signed-in data is stored in Supabase and isolated through Auth and RLS. This creates two useful layers:
 
-The front asks the user to recall first: what does this pattern mean, how does it connect, and can I make a sentence with it? Only after flipping the card does the full explanation appear, including connection form, Japanese example, Chinese translation, and common mistake notes. That creates more useful memory pressure than showing the answer immediately.
+- **Local first:** open the app and start immediately
+- **Account sync:** sign in when cross-device access and durable storage matter
 
-The four feedback buttons map to a simple memory scale: forgot, blurry, remembered, and easy. The user does not need to schedule the next review manually. They rate their memory state, and the system moves the card into the right future review queue.
+Importing local progress merges review history rather than blindly replacing it. That was an important step from demo behavior toward a dependable product.
 
-## Today's Review: Bring Old Cards Back
+## Faster Cards With Safer Review Actions
 
-Learning new cards is only the first step. Review is what decides whether they stay.
+![The study view asks for recall first, then reveals the explanation, examples, mistakes, and four memory ratings.](/images/blog/jlpt-grammar-deck/jlpt-study-card.png)
 
-The today's review page shows grammar that has already been studied and is now due. Once the session starts, it uses the same flip-card and rating interaction, so the user does not have to learn a new mode. At the end, the page reports completion count and study streak, creating a small but useful feedback loop.
+The study experience still follows the Anki pattern: the front shows the grammar and construction prompt; the back reveals the explanation.
 
-The benefit is that the user does not need to plan again every time they open the app. "What should I review today?" is already waiting in the queue.
+The latest version improves the small interactions that matter during a long session:
 
-## Practice: From Recognition to Use
+- Move to the next card immediately after a rating
+- Allow a read-only look at the previous card without double-counting it
+- Lock rapid double submissions
+- Keep cards and rating controls reachable on mobile
+- Show the active study scope clearly
 
-![Grammar practice page placing patterns back into sentences through cloze-style multiple-choice questions.](/images/blog/jlpt-grammar-deck/jlpt-practice.png)
+These details determine whether reviewing dozens of cards feels calm or frustrating.
 
-The practice page handles a different step: putting grammar back into sentences.
+## Generated Cloze Practice Instead of a Fixed Quiz Bank
 
-It generates cloze-style multiple-choice questions from example sentences, asking the user to choose which grammar option best fits the sentence. Questions can come from today's practiced items, learned items, or the full grammar set, and can also be narrowed by JLPT level.
+![The practice view turns example sentences into cloze questions with progress, scoring, and immediate feedback.](/images/blog/jlpt-grammar-deck/jlpt-practice.png)
 
-This makes the learning path more complete. The library is for looking things up, study cards are for memorizing, today's review is for retention, and practice checks whether the pattern still makes sense inside a sentence.
+Practice questions are now generated from existing example sentences. Learners can choose among three scopes:
 
-## Study Data: Progress Is More Than a Percentage
+- **Reviewed today** for an immediate check
+- **Studied grammar** from the personal learning set
+- **All grammar**, optionally narrowed by JLPT level
 
-![Study data page with daily new cards, daily review, completion rate, streak, JLPT level progress, and mastery rate.](/images/blog/jlpt-grammar-deck/jlpt-dashboard.png)
+Distractors come from the full grammar pool, and the page shows the correct answer, score, and progress after each response. Practice can therefore expand together with the content library instead of depending on a separately maintained fixed quiz set.
 
-The study data page is restrained, but it carries a lot of useful information.
+## Analytics Now Diagnose Review Quality
 
-The top section shows daily metrics: new items, reviews, completion rate, and streak. Below that are learned grammar count, mastered grammar count, favorites, JLPT-level progress, mastery rate, rating distribution, and recent review history.
+![The dashboard shows level progress, mastery, rating distribution, recent reviews, and trends.](/images/blog/jlpt-grammar-deck/jlpt-dashboard.png)
 
-These numbers are not there to create pressure. They help the user decide the next move: add new cards, clear due reviews first, check whether one JLPT level is weak overall, or notice that certain patterns keep failing.
+The standard dashboard covers new items, reviews, streaks, level progress, mastery, rating distribution, and recent activity.
 
-## Favorites and Personal Grammar Library
+Pro analytics go further by using a longer review history to calculate:
 
-Favorites are useful for exam-critical patterns, common mistakes, honorific expressions, or anything that deserves repeated attention. Saving a pattern does not interrupt the study flow, because it can be done directly from cards and detail pages.
+- Retention across different review intervals
+- Grammar that repeatedly receives Again or Hard
+- A priority list of weak items
+- Long-term review behavior instead of one-day activity
 
-The personal grammar library goes further. Users can add private grammar entries and hide default library items they do not want to see for now. For long-term learners, this matters because the grammar points that deserve repeated attention are not the same for everyone.
+This is the feedback I actually want from a learning tool: not proof that I worked hard, but guidance on where the next study session should go.
 
-## A Grammar Tool That Feels Like a Study Desk
+## Personal Grammar, Entitlements, and Payments
 
-The interface of `JLPT Grammar Deck` is not trying to impress through visual tricks. Its strength is that it breaks grammar learning into natural actions:
+Learners can favorite default items, hide irrelevant content, and create private grammar entries. Personal entries join the same study and review system instead of becoming disconnected notes.
 
-- search and filter in the grammar library when looking something up
-- enter study cards by level when pushing forward systematically
-- open today's review when reinforcing old material
-- use grammar practice when checking sentence-level recognition
-- return to study data when deciding what to do next
+The product now also has Free and lifetime Pro entitlements. Its payment layer is configuration-driven, currently able to redirect through Stripe Checkout while keeping the order model ready for other providers. Orders, payment results, and entitlements are confirmed server-side.
 
-The best part is that reference and review are no longer separated. Each grammar point is both a readable knowledge item and a card that can enter the study queue. Each rating is both immediate feedback and the basis for the next review time.
+The important part was not adding a purchase button. It was connecting identity, orders, payment callbacks, and durable access rules correctly.
 
-If you are preparing for the JLPT, or if scattered grammar notes have ever made review feel noisy, this kind of interface can make the rhythm much quieter. What to study today, what has not been mastered, and when to return to it all have a place to live.
+## The Current Product Architecture
 
-> Note: Screenshots in this post use local demo study data to show interface states and feature entry points.
+The stack now includes:
+
+- Next.js 16 + React 19 + TypeScript
+- Tailwind CSS 4 and a custom component system
+- Supabase PostgreSQL + Auth + RLS
+- localStorage Guest progress with cloud merging
+- SM-2 scheduling and review-history analysis
+- Configuration-driven orders and Stripe Checkout
+- Vitest coverage for data, algorithms, and services
+- Vercel deployment
+
+The biggest improvement is not simply a framework change. Public grammar, user overrides, private entries, progress, review history, orders, and entitlements now have distinct responsibilities.
+
+## What the Project Has Become
+
+A useful learning tool needs to connect content, behavior, and feedback over time.
+
+The current `JLPT Grammar Deck` can answer three consecutive questions:
+
+- **What should I study now?** — the library, level, and study queue
+- **When should I study it again?** — the SM-2 due queue
+- **Why am I still forgetting it?** — ratings, retention, and weak-grammar analysis
+
+From 955 grammar points to a complete retention curve, the project finally feels like something worth opening every day rather than a one-time interface experiment.
+
+> This article reflects the project as of August 2026. Progress screenshots use demonstration data.

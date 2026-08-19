@@ -1,5 +1,7 @@
+import { isPublishedPost } from '../lib/posts.js';
+
 export async function GET() {
-  const allPosts = Object.values(await import.meta.glob('../content/blog/*.md', { eager: true }));
+  const allPosts = Object.values(await import.meta.glob('../content/blog/*.md', { eager: true })).filter(isPublishedPost);
 
   const baseUrl = 'https://panda-blog.com';
 

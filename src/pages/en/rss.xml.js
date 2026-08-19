@@ -1,9 +1,11 @@
 import rss from '@astrojs/rss';
+import { isPublishedPost } from '../../lib/posts.js';
 
 export async function GET(context) {
   const allPosts = await import.meta.glob('../../content/blog/*.md', { eager: true });
   const posts = Object.values(allPosts)
     .filter((post) => {
+      if (!isPublishedPost(post)) return false;
       const filename = post.file.split('/').pop().replace('.md', '');
       const langMatch = filename.match(/\.(en|ja)$/);
       const lang = langMatch ? langMatch[1] : 'zh';

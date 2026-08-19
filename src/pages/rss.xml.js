@@ -1,8 +1,10 @@
 import rss from '@astrojs/rss';
+import { isPublishedPost } from '../lib/posts.js';
 
 function getPostsByLang(allPosts, targetLang) {
   const posts = Object.values(allPosts);
   const filtered = posts.filter((post) => {
+    if (!isPublishedPost(post)) return false;
     const filename = post.file.split('/').pop().replace('.md', '');
     const langMatch = filename.match(/\.(en|ja)$/);
     const lang = langMatch ? langMatch[1] : 'zh';

@@ -5,6 +5,7 @@ title: "macOS 上 ChatGPT Codex 页面持续闪烁、无法点击：我的排查
 description: "ChatGPT 桌面端的 Codex 页面持续闪烁、无法操作，重装和重启都无效。记录我如何在保留本地项目与任务数据的前提下，通过备份 ~/.codex 并重新登录 Codex 恢复正常。"
 date: 2026-07-28
 tags: ["ChatGPT", "Codex", "macOS", "故障排查"]
+draft: true
 ---
 
 最近在 Mac 上使用新版 ChatGPT 桌面应用时，我遇到了一个非常影响使用的问题：点击左侧的 Codex 标签后，整个页面开始持续闪烁，界面像在不断刷新，所有按钮都无法点击。
