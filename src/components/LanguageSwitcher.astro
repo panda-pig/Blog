@@ -140,7 +140,7 @@ const languages = [
 
     function updateActive() {
       const lang = getCurrentLang();
-      localStorage.setItem('lang', lang); // 保持 localStorage 与 URL 同步
+      localStorage.setItem('lang', lang);
       buttons.forEach((btn) => {
         const isActive = btn.getAttribute('data-lang') === lang;
         btn.classList.toggle('active', isActive);

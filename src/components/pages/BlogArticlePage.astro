@@ -36,15 +36,12 @@ const headings = post.getHeadings ? post.getHeadings() : [];
   <Header lang={lang} />
 
   <main class="min-h-screen">
-    <!-- Outer wrapper: wide container for desktop TOC sidebar -->
     <article class="article-page pt-8 md:pt-20 pb-16 md:pb-28 mx-auto">
       
-      <!-- Back link -->
       <div class="mb-6 md:mb-12">
         <a href={`${prefix}/blog`} class="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider transition-colors hover:opacity-70 py-1" style="color: var(--text-muted);" >{t['article.back']}</a>
       </div>
 
-      <!-- Language switcher -->
       {availableLangs.length > 1 && (
         <div class="flex items-center gap-2 mb-6 md:mb-10">
           {availableLangs.map((l) => {
@@ -108,26 +105,21 @@ const headings = post.getHeadings ? post.getHeadings() : [];
 
       <div class="animal-divider animal-divider--triangles article-measure" aria-hidden="true"></div>
 
-      <!-- Content area: text column + TOC sidebar -->
       <div class="article-layout flex flex-col lg:flex-row lg:gap-16 xl:gap-20">
-        <!-- Main content -->
         <div class="article-content flex-1 min-w-0">
           <div class="prose prose-lg max-w-none font-serif article-prose" data-pagefind-body style="--tw-prose-body: var(--text); --tw-prose-headings: var(--text); --tw-prose-links: var(--primary); --tw-prose-bold: var(--text); --tw-prose-counters: var(--text-muted); --tw-prose-bullets: var(--text-muted);">
             <Content />
           </div>
 
-          <!-- Divider -->
           <div class="animal-divider animal-divider--wave my-14 md:my-20" aria-hidden="true"></div>
 
           <Donate lang={lang} />
 
-          <!-- Divider -->
           <div class="animal-divider animal-divider--dashed my-16 md:my-24" aria-hidden="true"></div>
 
           <Giscus slug={post.url} lang={lang} />
         </div>
         
-        <!-- TOC Sidebar -->
         <TOC headings={headings} lang={lang} />
       </div>
     </article>

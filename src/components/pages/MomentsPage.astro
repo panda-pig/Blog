@@ -34,7 +34,6 @@ let lastYear = '';
 
   <main class="moments-page">
     <div class="moments-container">
-      <!-- Page header -->
       <div class="moments-header">
         <h1 class="moments-title">
           <span class="moments-title-ribbon">
@@ -50,7 +49,6 @@ let lastYear = '';
         <div class="moments-divider" aria-hidden="true"></div>
       </div>
 
-      <!-- Timeline + Feed -->
       <div class="timeline">
         {moments.map((moment, index) => {
           const td = formatTimelineDate(moment.date, localeStr);
@@ -61,7 +59,6 @@ let lastYear = '';
 
           return (
             <div class="tl-row">
-              {/* Left: timeline axis */}
               <div class="tl-axis">
                 {showYear && (
                   <div class="tl-year">{year}</div>
@@ -74,10 +71,8 @@ let lastYear = '';
                 {!isLast && <div class="tl-line"></div>}
               </div>
 
-              {/* Right: feed card */}
               <div class="tl-content">
                 <article class="feed-card">
-                  <!-- Header: avatar + identity -->
                   <div class="feed-card-header">
                     <div class="feed-avatar">
                     <img src="/images/avatar.jpg" alt="Panda" class="w-full h-full object-cover" />
@@ -92,13 +87,11 @@ let lastYear = '';
                     </div>
                   </div>
 
-                  <!-- Body -->
                   <div class="feed-body">
                     <h3 class="feed-title">{moment.title}</h3>
                     <p class="feed-text">{moment.content}</p>
                   </div>
 
-                  <!-- Images -->
                   {moment.images && moment.images.length > 0 && (
                     <div class="feed-images">
                       {moment.images.map((img: string) => (
@@ -114,7 +107,6 @@ let lastYear = '';
                     </div>
                   )}
 
-                  <!-- Tags -->
                   <div class="feed-tags">
                     {moment.tags.map((tag: string) => (
                       <span class="feed-tag">#{tag}</span>
@@ -157,7 +149,6 @@ let lastYear = '';
     padding: 0 24px;
   }
 
-  /* Page header */
   .moments-header {
     text-align: center;
     padding: 64px 0 42px;
@@ -280,7 +271,6 @@ let lastYear = '';
     opacity: 0.85;
   }
 
-  /* Timeline */
   .timeline {
     position: relative;
   }
@@ -294,7 +284,6 @@ let lastYear = '';
     padding-bottom: 0;
   }
 
-  /* Timeline axis (left) */
   .tl-axis {
     width: 100px;
     flex-shrink: 0;
@@ -392,14 +381,12 @@ let lastYear = '';
     background: linear-gradient(to bottom, rgba(129, 174, 217, 0.28) 0 45%, transparent 45% 100%) 0 0 / 100% 12px repeat-y;
   }
 
-  /* Timeline content (right) */
   .tl-content {
     flex: 1;
     min-width: 0;
     padding-bottom: 40px;
   }
 
-  /* Feed card */
   .feed-card {
     position: relative;
     overflow: hidden;
@@ -445,7 +432,6 @@ let lastYear = '';
     box-shadow: 0 18px 36px rgba(0, 0, 0, 0.34), 0 5px 0 rgba(0, 0, 0, 0.2);
   }
 
-  /* Card header */
   .feed-card-header {
     display: flex;
     align-items: center;
@@ -501,7 +487,6 @@ let lastYear = '';
     opacity: 0.35;
   }
 
-  /* Card body */
   .feed-body {
     margin-bottom: 16px;
   }
@@ -530,7 +515,6 @@ let lastYear = '';
     color: rgba(255, 253, 245, 0.6);
   }
 
-  /* Images - 3-column square grid */
   .feed-images {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -569,7 +553,6 @@ let lastYear = '';
     object-fit: cover;
   }
 
-  /* Tags */
   .feed-tags {
     display: flex;
     flex-wrap: wrap;
@@ -597,7 +580,6 @@ let lastYear = '';
     background: rgba(126, 200, 184, 0.1);
   }
 
-  /* Mobile */
   @media (max-width: 640px) {
     .moments-container {
       padding: 0 14px 0 8px;

@@ -46,7 +46,6 @@ const mobileMenuLabel = {
 
     </a>
 
-    <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-1">
       {navItems.map((item) => {
         const isActive = item.href === '/' ? currentPath === '/' : currentPath.startsWith(item.href);
@@ -74,7 +73,6 @@ const mobileMenuLabel = {
         </svg>
       </a>
 
-      <!-- Mobile hamburger -->
       <button
         id="mobile-menu-btn"
         class="rounded-lg header-icon-btn"
@@ -92,7 +90,6 @@ const mobileMenuLabel = {
     </div>
   </div>
 
-  <!-- Mobile nav panel -->
   <div id="mobile-nav" class="md:hidden hidden mobile-nav-panel">
     <nav class="section-container py-4 flex flex-col gap-1">
       {navItems.map((item) => {

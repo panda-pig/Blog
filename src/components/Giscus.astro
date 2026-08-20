@@ -37,7 +37,6 @@ const giscusLang = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja' : 'en';
     const container = document.querySelector('.giscus-container') as HTMLElement | null;
     if (!container) return;
 
-    // 避免重复注入（ViewTransitions 每次导航会重建 DOM，所以这里不会误判）
     if (container.querySelector('script')) return;
 
     const theme = getSiteGiscusTheme();
@@ -60,14 +59,12 @@ const giscusLang = lang === 'zh' ? 'zh-CN' : lang === 'ja' ? 'ja' : 'en';
     s.crossOrigin = 'anonymous';
     s.async = true;
 
-    // iframe 加载完成后再同步一次主题，确保一致
     s.addEventListener('load', () => {
       window.setTimeout(updateGiscusTheme, 300);
     });
 
     container.appendChild(s);
 
-    // 监听站点主题切换，同步到 Giscus iframe
     if (giscusObserver) giscusObserver.disconnect();
     giscusObserver = new MutationObserver((mutations) => {
       mutations.forEach((m) => { if (m.attributeName === 'data-theme') updateGiscusTheme(); });

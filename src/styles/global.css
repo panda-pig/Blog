@@ -30,7 +30,6 @@
     --radius-md: 16px;
     --radius-lg: 25px;
 
-    /* Hero-specific */
     --hero-bg: #1e2328;
     --hero-bg-deep: #0f1113;
     --hero-card: rgba(245, 245, 243, 0.1);
@@ -39,7 +38,6 @@
     --hero-text-soft: rgba(255, 253, 245, 0.5);
     --hero-border: rgba(245, 245, 243, 0.22);
 
-    /* Footer */
     --footer-bg: #eae7e0;
   }
 
@@ -63,7 +61,6 @@
     --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
     --card-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.3);
 
-    /* Hero-specific dark */
     --hero-bg: #101316;
     --hero-bg-deep: #0a0c0e;
     --hero-card: rgba(255, 255, 255, 0.04);
@@ -72,7 +69,6 @@
     --hero-text-soft: rgba(244, 255, 252, 0.4);
     --hero-border: rgba(255, 255, 255, 0.10);
 
-    /* Footer */
     --footer-bg: #1a1f24;
   }
 
@@ -224,7 +220,6 @@
     color: var(--accent);
   }
 
-  /* Hero-specific buttons */
   .btn-hero-primary {
     display: inline-flex;
     align-items: center;
@@ -280,7 +275,6 @@
     transform: translateY(0) scale(0.98);
   }
 
-  /* Secondary button — light-background contexts (e.g. 404 page) */
   .btn-secondary {
     display: inline-flex;
     align-items: center;
@@ -322,7 +316,6 @@
     border-color: var(--border-hover);
   }
 
-  /* Lightweight info card — no shadow, just border */
   .info-card {
     background-color: var(--surface);
     border-radius: 0.875rem;

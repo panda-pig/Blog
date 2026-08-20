@@ -23,7 +23,6 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
 
   <main class="min-h-screen">
     <div class="section-container archive-page pt-10 md:pt-20 pb-16 md:pb-28">
-      <!-- Header -->
       <div class="archive-title-wrap text-center mb-12 md:mb-16">
         <h1 class="archive-animal-title">
           <span class="archive-ribbon">
@@ -40,7 +39,6 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
         </p>
       </div>
 
-      <!-- Search + Tags -->
       <div class="mx-auto mb-12 md:mb-16" style="max-width: 40rem;">
         <div class="mb-6">
           <Search lang={lang} />
@@ -62,7 +60,6 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
         )}
       </div>
 
-      <!-- Article list -->
       <div class="mx-auto" style="max-width: 44rem;" data-pagefind-body>
         {displayPosts.map((post: any, index: number) => {
           const slug = post.resolvedSlug;

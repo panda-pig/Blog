@@ -1,20 +1,16 @@
-// i18n dictionary for Panda Blog
 const dict = {
   zh: {
-    // Nav
     'nav.lab': '首页',
     'nav.archive': '文章',
     'nav.moments': '随手记',
     'nav.experiments': '项目',
     'nav.aws': 'AWS 笔记',
     'nav.communique': '关于',
-    // Hero
     'hero.title': "Hello, I'm Panda.",
     'hero.typed': '我在这里记录技术学习、项目实验与生活观察。',
     'hero.desc': '关于 Web 开发、数据分析、AI 探索，以及一些做着玩的小东西。',
     'hero.cta1': '浏览文章',
     'hero.cta2': '打个招呼',
-    // Info cards
     'info.origin': '📍 来源',
     'info.originVal': '地球🌍',
     'info.stack': '🎯 兴趣',
@@ -23,35 +19,28 @@ const dict = {
     'info.focusVal': 'Web / Data / AI / 语言学习',
     'info.status': '状态',
     'info.statusVal': '持续构建中',
-    // Recent Musings
     'musing.title': '近期思考',
     'musing.subtitle': '实验室笔记与理论探索。',
     'musing.viewAll': '查看全部',
     'musing.category': '随笔',
     'musing.minRead': '分钟阅读',
     'musing.empty': '还没有文章，稍后再来看看。',
-    // Archive page
     'archive.title': '归档',
     'archive.desc': '共',
     'archive.desc2': '篇文章，持续更新中',
     'archive.all': '全部',
     'archive.minRead': '分钟阅读',
-    // Moments
     'moments.title': '瞬间',
     'moments.desc': '记录生活中的美好瞬间、旅行见闻与文字碎片。',
-    // Article page
     'article.back': '返回归档',
     'article.minRead': '分钟阅读',
     'article.toc': '目录',
     'article.comments': '评论',
-    // Projects
     'proj.title': '实验',
     'proj.desc': '功能原型与开源实验。',
     'proj.view': '查看项目',
-    // About (merged into contact)
     'about.intro': '你好，我是 panda，一个热爱技术与创造的开发者。我相信好的产品是技术与设计的完美结合，而持续学习是成长的唯一路径。',
     'about.contact': '联系我',
-    // Contact
     'contact.title': '关于',
     'contact.desc': '有任何问题或合作意向？欢迎随时联系我。',
     'contact.name': '姓名',
@@ -64,7 +53,6 @@ const dict = {
     'contact.placeholderName': '你的名字',
     'contact.placeholderEmail': 'your@email.com',
     'contact.placeholderMsg': '你想说什么...',
-    // Newsletter
     'newsletter.title': '订阅我的实践笔记',
     'newsletter.desc': '每周分享技术见解、项目心得和学习资源。无垃圾邮件，随时取消订阅。',
     'newsletter.placeholder': '输入你的邮箱地址',
@@ -72,12 +60,10 @@ const dict = {
     'newsletter.comingSoon': '订阅功能即将上线',
     'newsletter.success': '订阅成功！请检查邮箱确认。',
     'newsletter.error': '订阅失败，请稍后重试。',
-    // Footer
     'footer.tagline': '一个思想与代码的数字花园。',
     'footer.nav': '导航',
     'footer.connect': '联系',
     'footer.dev': '由 panda 开发',
-    // Donate
     'donate.title': '喜欢这篇文章？',
     'donate.desc': '如果对你有所帮助，欢迎支持我继续创作',
     'donate.btn': '赞赏支持',
@@ -86,28 +72,22 @@ const dict = {
     'donate.wechat': '微信支付',
     'donate.alipay': '支付宝',
     'donate.qrPlaceholder': '收款码',
-    // Archive page SEO
     'archive.pageDesc': '所有文章笔记与理论探索。',
-    // Article lang switcher
     'article.langSwitch': '多语言',
-    // Search
     'search.placeholder': '搜索文章...',
   },
   en: {
-    // Nav
     'nav.lab': 'Home',
     'nav.archive': 'Articles',
     'nav.moments': 'Notes',
     'nav.experiments': 'Projects',
     'nav.aws': 'AWS Notes',
     'nav.communique': 'About',
-    // Hero
     'hero.title': "Hello, I'm Panda.",
     'hero.typed': 'I document my tech learning, project experiments, and life observations here.',
     'hero.desc': 'Web development, data analysis, AI exploration, and some fun little things.',
     'hero.cta1': 'Browse Articles',
     'hero.cta2': 'Say Hello',
-    // Info cards
     'info.origin': '📍 Origin',
     'info.originVal': 'Earth 🌍',
     'info.stack': '🎯 Interests',
@@ -116,35 +96,28 @@ const dict = {
     'info.focusVal': 'Web / Data / AI / Language Learning',
     'info.status': '🟢 Status',
     'info.statusVal': 'Under Construction',
-    // Recent Musings
     'musing.title': 'Recent Musings',
     'musing.subtitle': 'Lab notes and theoretical expeditions.',
     'musing.viewAll': 'View all notes',
     'musing.category': 'Essay',
     'musing.minRead': 'min read',
     'musing.empty': 'No articles yet. Check back soon.',
-    // Archive page
     'archive.title': 'Archive',
     'archive.desc': '',
     'archive.desc2': 'articles and counting',
     'archive.all': 'All',
     'archive.minRead': 'min read',
-    // Moments
     'moments.title': 'Moments',
     'moments.desc': 'Recording beautiful moments, travel stories, and fragments of text from life.',
-    // Article page
     'article.back': 'Back to Archive',
     'article.minRead': 'min read',
     'article.toc': 'Contents',
     'article.comments': 'Comments',
-    // Projects
     'proj.title': 'Experiments',
     'proj.desc': 'Functional prototypes and open-source experiments.',
     'proj.view': 'View Project',
-    // About (merged into contact)
     'about.intro': "Hello, I'm panda, a developer passionate about technology and creation. I believe great products are the perfect blend of technology and design, and continuous learning is the only path to growth.",
     'about.contact': 'Contact',
-    // Contact
     'contact.title': 'About',
     'contact.desc': 'Have a question or collaboration idea? Get in touch.',
     'contact.name': 'Name',
@@ -157,7 +130,6 @@ const dict = {
     'contact.placeholderName': 'Your name',
     'contact.placeholderEmail': 'your@email.com',
     'contact.placeholderMsg': 'What do you want to say...',
-    // Newsletter
     'newsletter.title': 'Subscribe to My Notes',
     'newsletter.desc': 'Weekly insights on tech, projects, and learning resources. No spam, unsubscribe anytime.',
     'newsletter.placeholder': 'Enter your email',
@@ -165,12 +137,10 @@ const dict = {
     'newsletter.comingSoon': 'Newsletter coming soon',
     'newsletter.success': 'Subscribed! Please check your email to confirm.',
     'newsletter.error': 'Subscription failed. Please try again later.',
-    // Footer
     'footer.tagline': 'A digital garden for thoughts and code.',
     'footer.nav': 'Navigation',
     'footer.connect': 'Connect',
     'footer.dev': 'Developed by panda',
-    // Donate
     'donate.title': 'Enjoy this article?',
     'donate.desc': 'If you found it helpful, consider supporting my work.',
     'donate.btn': 'Appreciate',
@@ -179,28 +149,22 @@ const dict = {
     'donate.wechat': 'WeChat Pay',
     'donate.alipay': 'Alipay',
     'donate.qrPlaceholder': 'QR Code',
-    // Archive page SEO
     'archive.pageDesc': 'All articles, notes, and explorations.',
-    // Article lang switcher
     'article.langSwitch': 'Multilingual',
-    // Search
     'search.placeholder': 'Search articles...',
   },
   ja: {
-    // Nav
     'nav.lab': 'ホーム',
     'nav.archive': '記事',
     'nav.moments': 'ノート',
     'nav.experiments': 'プロジェクト',
     'nav.aws': 'AWSノート',
     'nav.communique': 'について',
-    // Hero
     'hero.title': "Hello, I'm Panda.",
     'hero.typed': '技術の学び、プロジェクト実験、日常の観察をここに記録しています。',
     'hero.desc': 'Web 開発、データ分析、AI 探索、そして遊び心のある小さなプロジェクト。',
     'hero.cta1': '記事を見る',
     'hero.cta2': '挨拶する',
-    // Info cards
     'info.origin': '📍 出身',
     'info.originVal': '地球🌍',
     'info.stack': '🎯 趣味',
@@ -209,35 +173,28 @@ const dict = {
     'info.focusVal': 'Web / Data / AI / 言語学習',
     'info.status': '🟢 状態',
     'info.statusVal': '構築中',
-    // Recent Musings
     'musing.title': '最近の思考',
     'musing.subtitle': 'ラボノートと理論的探求。',
     'musing.viewAll': 'すべて表示',
     'musing.category': '随筆',
     'musing.minRead': '分で読める',
     'musing.empty': 'まだ記事がありません。また後で見に来てください。',
-    // Archive page
     'archive.title': 'アーカイブ',
     'archive.desc': '計',
     'archive.desc2': '記事、継続更新中',
     'archive.all': 'すべて',
     'archive.minRead': '分で読める',
-    // Moments
     'moments.title': '瞬間',
     'moments.desc': '生活中の美しい瞬間、旅行の思い出、文字の断片を記録します。',
-    // Article page
     'article.back': 'アーカイブに戻る',
     'article.minRead': '分で読める',
     'article.toc': '目次',
     'article.comments': 'コメント',
-    // Projects
     'proj.title': '実験',
     'proj.desc': '機能プロトタイプとオープンソース実験。',
     'proj.view': 'プロジェクトを見る',
-    // About (merged into contact)
     'about.intro': 'こんにちは、panda です。技術と創造を愛する開発者です。良いプロダクトは技術とデザインの完璧な融合であり、継続的な学習が成長への唯一の道だと信じています。',
     'about.contact': '連絡先',
-    // Contact
     'contact.title': 'について',
     'contact.desc': '質問や協力のご提案がありますか？お気軽にご連絡ください。',
     'contact.name': '名前',
@@ -250,7 +207,6 @@ const dict = {
     'contact.placeholderName': 'あなたの名前',
     'contact.placeholderEmail': 'your@email.com',
     'contact.placeholderMsg': '何か言いたいこと...',
-    // Newsletter
     'newsletter.title': '実践ノートを購読',
     'newsletter.desc': '技術的な洞察、プロジェクトの心得、学習リソースを毎週共有。迷惑メールなし、いつでも購読解除できます。',
     'newsletter.placeholder': 'メールアドレスを入力',
@@ -258,12 +214,10 @@ const dict = {
     'newsletter.comingSoon': '購読機能はまもなく開始',
     'newsletter.success': '購読完了！確認メールをご確認ください。',
     'newsletter.error': '購読に失敗しました。後でもう一度お試しください。',
-    // Footer
     'footer.tagline': '思考とコードのためのデジタルガーデン。',
     'footer.nav': 'ナビゲーション',
     'footer.connect': '連絡',
     'footer.dev': 'panda によって開発されました',
-    // Donate
     'donate.title': 'この記事を楽しんでいただけましたか？',
     'donate.desc': '役に立った場合は、私の活動を支援することをご検討ください。',
     'donate.btn': '感謝する',
@@ -272,11 +226,8 @@ const dict = {
     'donate.wechat': 'WeChat Pay',
     'donate.alipay': 'Alipay',
     'donate.qrPlaceholder': 'QRコード',
-    // Archive page SEO
     'archive.pageDesc': 'すべての記事とノート、理論的探求。',
-    // Article lang switcher
     'article.langSwitch': '多言語',
-    // Search
     'search.placeholder': '記事を検索...',
   },
 };
