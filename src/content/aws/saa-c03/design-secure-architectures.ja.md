@@ -9,11 +9,11 @@ lang: ja
 topicKey: "安全架构设计"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["saa-c03", "安全架构设计", "AWS"]
 notionId: 3a6964dc-ce4a-815e-9db0-d8343bfa6db7
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9db0d8343bfa6db7
-notionUpdated: "2026-08-13T08:35:25.158Z"
+notionUpdated: "2026-08-25T06:02:24.327Z"
 ---
 
 ## 必須ポイント
@@ -67,3 +67,19 @@ notionUpdated: "2026-08-13T08:35:25.158Z"
 ## 最終確認
 
 **Default Private、最小権限、暗号化、監査、Versioning / 不変性、分離 Backup、確認済みの自動 Response。**
+
+## Workload Identity と Role 設計
+
+- EC2 は Instance Profile 経由で IAM Role を関連付け、Instance 内の SDK / CLI は IMDS から Temporary Credentials を取得・更新します。
+- Trust Policy は誰が Role を Assume できるかを、Permissions Policy は Role Session が何へアクセスできるかを定義します。
+- Role の作成だけでは Service は利用しません。Service との関連付けを行い、Deploy 担当者には範囲を限定した iam:PassRole を付与します。
+- 長期 Access Key を Code、AMI、User Data、Container Image、aws configure に保存しません。
+- Cross-account Access では Trust Policy、Caller Permission、Resource Policy、Organizations の制限を合わせて確認します。
+
+## Least Privilege の検証ループ
+
+1. Credentials Report で IAM User の Password、Access Key、MFA を棚卸しします。
+2. Access Advisor / Last Accessed で低頻度・未使用権限を特定します。
+3. Access Analyzer で External、Internal、Unused Access と Policy を分析します。
+4. Policy Simulator で重要な Principal / Action / Resource Request を検証します。
+5. CloudTrail で実際の API Call を確認し、継続的に権限を縮小・再評価します。

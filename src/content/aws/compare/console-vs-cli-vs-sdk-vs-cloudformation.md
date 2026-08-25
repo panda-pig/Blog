@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Console vs CLI vs SDK vs CloudFormation"
 frequency: "高频对比"
 date: 2026-07-30
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["compare", "Console", "CLI", "SDK", "CloudFormation"]
 notionId: 3a6964dc-ce4a-8171-a18c-ca9aeea29add
 notionUrl: https://app.notion.com/p/3a6964dcce4a8171a18cca9aeea29add
-notionUpdated: "2026-08-13T08:38:08.489Z"
+notionUpdated: "2026-08-25T06:04:30.975Z"
 ---
 
 ## 一句话结论
@@ -61,3 +61,11 @@ CloudFormation 是 Declarative，描述“我要什么”；CLI Script 通常是
 ## 记忆口诀
 
 **Console 靠点，CLI 靠命令，SDK 靠代码，CloudFormation 靠模板；人员用 SSO，工作负载用 Role，Secret 不进代码。**
+
+## 凭证取得与 Role 交付
+
+- Local CLI / SDK 通过 Credential Provider Chain 查找 Identity Center、AssumeRole、环境变量、容器或实例 Role 等凭证来源。
+- EC2 通过 Instance Profile 获得一个 IAM Role；实例内程序从 IMDS 自动取得并轮换临时凭证。
+- iam:PassRole 是把 Role 交给 AWS Service 的权限，不是调用者代入该 Role。
+- CloudShell 使用当前 Console Session 的临时凭证；它不会绕过 IAM，也不会自动拥有管理员权限。
+- CloudShell 的 HOME 按 Region 持久化；--region 只改变请求的区域上下文，不改变 Authorization。

@@ -9,11 +9,11 @@ lang: ja
 topicKey: "Console vs CLI vs SDK vs CloudFormation"
 frequency: "頻出比較"
 date: 2026-07-30
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["compare", "Console", "CLI", "SDK", "CloudFormation"]
 notionId: 3a6964dc-ce4a-8171-a18c-ca9aeea29add
 notionUrl: https://app.notion.com/p/3a6964dcce4a8171a18cca9aeea29add
-notionUpdated: "2026-08-13T08:38:08.489Z"
+notionUpdated: "2026-08-25T06:04:30.975Z"
 ---
 
 ## 一言で理解
@@ -32,3 +32,11 @@ Local CLI は Install と Local Credential が必要です。CloudShell は Prec
 Temporary Credentials は Access Key ID、Secret Access Key、Session Token で構成されます。CLI / SDK は操作方式であり Credential Type ではありません。People は Identity Center、Workload は Role、Secret は Code に入れません。
 
 CloudFormation は Declarative（何を作るか）、CLI Script は通常 Imperative（どの順に行うか）です。
+
+## Credential の解決と Role の受け渡し
+
+- Local CLI / SDK は Credential Provider Chain から Identity Center、AssumeRole、Environment、Container、Instance Role などの認証情報を探索します。
+- EC2 は Instance Profile 経由で 1 つの IAM Role を受け取り、Instance 内の Program は IMDS から Temporary Credentials を取得・更新します。
+- iam:PassRole は Role を AWS Service へ渡す権限であり、呼び出し元がその Role を Assume することではありません。
+- CloudShell は現在の Console Session の Temporary Credentials を使い、IAM を回避したり自動的に Administrator 権限を得たりしません。
+- CloudShell の HOME は Region ごとに永続化され、--region は Request の Region Context だけを変え、Authorization は変えません。

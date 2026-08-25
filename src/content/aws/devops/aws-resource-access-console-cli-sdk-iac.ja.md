@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS 资源交互方式｜Console・CLI・SDK・IaC"
 frequency: "試験頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["devops", "AWS CLI", "AWS SDK", "IaC"]
 notionId: 3a6964dc-ce4a-818b-a203-e86b13e2eada
 notionUrl: https://app.notion.com/p/3a6964dcce4a818ba203e86b13e2eada
-notionUpdated: "2026-08-13T08:35:23.512Z"
+notionUpdated: "2026-08-25T06:01:23.511Z"
 ---
 
 ## 一言で理解
@@ -32,3 +32,11 @@ Region Selector は Regional Resource の表示を変えます。Resource が見
 Local CLI は Local Credential を使用し、CloudShell は現在の Console Identity の Temporary Credentials を取得します。aws configure は Profile の Credential、Default Region、Output Format を保存するだけで IAM 権限を付与しません。
 
 Access Key ID は識別子、Secret Access Key は署名用秘密、Temporary Credentials は Session Token も必要です。People は Identity Center、Workload は Role を優先します。
+
+## Role と Credential Provider Chain
+
+EC2 上で動く CLI / SDK は Instance Profile 経由で IAM Role を利用し、IMDS からローテーションされる Temporary Credentials を取得します。Instance 内で aws configure を実行して長期 Secret を保存しません。Role を Service に渡す操作には通常、範囲を限定した iam:PassRole が必要で、現在の User 自身が Role を Assume する操作とは異なります。
+
+## CloudShell の境界
+
+CloudShell は現在の Console Identity に基づく Temporary Credentials を取得し、AWS CLI と Region ごとに分離された永続 HOME Storage を提供します。各 Command は --region で Default Region を上書きできますが、Region の選択で IAM Policy を回避することはできません。一時的な管理・トラブルシューティング向けであり、独立した Identity や高権限入口ではありません。

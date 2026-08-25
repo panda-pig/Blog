@@ -9,11 +9,11 @@ lang: zh
 topicKey: "IAM Access Analyzer"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-25
 tags: ["security", "IAM Access Analyzer", "AWS"]
 notionId: 3ae964dc-ce4a-8137-ab78-e4c595870913
 notionUrl: https://app.notion.com/p/3ae964dcce4a8137ab78e4c595870913
-notionUpdated: "2026-07-31T08:17:19.589Z"
+notionUpdated: "2026-08-25T06:01:20.017Z"
 ---
 
 ## 基本信息
@@ -58,3 +58,17 @@ notionUpdated: "2026-07-31T08:17:19.589Z"
 **谁能从外部访问？策略是否过宽？→ IAM Access Analyzer。**
 ## 关联服务
 AWS IAM / Amazon S3 / AWS KMS / AWS Organizations / AWS CloudTrail
+
+## 当前能力范围
+
+- **External access findings**：识别公开访问或 Organization / Account 之外的访问路径。
+- **Internal access findings**：在组织内部分析指定关键资源的访问关系。
+- **Unused access findings**：发现长期未使用的 Role、Access Key、Password、Service 或 Action 权限。
+- **Policy validation**：检查语法错误、安全警告与最佳实践建议。
+- **Policy generation**：根据 CloudTrail 中的实际活动生成更精细的 Identity-based Policy 草案。
+
+Finding 不一定表示攻击，也可能是业务预期的公开或跨账户共享。应先确认业务意图，再归档 Finding 或收紧 Policy。
+
+## 与相邻工具的边界
+
+Credentials Report 盘点 IAM User 凭证；Access Advisor / Last Accessed 查看身份或 Policy 的使用时间；Access Analyzer 分析访问路径、未使用权限与 Policy；Policy Simulator 模拟具体请求；CloudTrail 记录实际 API 活动。

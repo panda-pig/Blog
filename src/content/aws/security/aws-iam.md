@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS IAM"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["security", "AWS IAM", "AWS"]
 notionId: 3a6964dc-ce4a-814c-981d-d23eb8d66e71
 notionUrl: https://app.notion.com/p/3a6964dcce4a814c981dd23eb8d66e71
-notionUpdated: "2026-08-13T08:35:21.640Z"
+notionUpdated: "2026-08-25T06:02:22.052Z"
 ---
 
 ## 基本信息
@@ -100,3 +100,26 @@ Managed Policy 可复用并附加给 User、Group、Role；Inline Policy 可嵌�
 ## 重点记忆
 
 **Group 不能嵌套；User 可加入多个 Group；Policy 表达权限；人优先 SSO，服务用 Role；默认拒绝、显式拒绝优先。**
+
+## IAM Role、Instance Profile 与 PassRole
+
+| 组成 | 回答的问题 | 关键点 |
+| --- | --- | --- |
+| Trust Policy | 谁可以 AssumeRole？ | 可信任 AWS Service、Account、User、Role 或 Federated Principal |
+| Permissions Policy | 代入 Role 后能做什么？ | 只授予必要的 Action 与 Resource |
+| STS Temporary Credentials | 怎样签名 API 请求？ | 包含 Access Key ID、Secret Access Key、Session Token 与到期时间 |
+
+EC2 通过 **Instance Profile** 使用 Role。Instance Profile 是把一个 IAM Role 交给 EC2 的容器；一个 Instance Profile 同时只能包含一个 Role，实例内的 CLI / SDK 会通过 IMDS 自动取得并轮换临时凭证。创建 Role 不等于实例已经使用它，还必须把相应 Instance Profile 关联到 EC2。
+
+iam:PassRole 允许调用者把指定 Role 交给 AWS Service；它不等于调用者自己执行 AssumeRole。生产环境应同时限制可传递的 Role 与目标服务。
+
+## IAM 安全审查工具
+
+| 工具 | 主要回答 |
+| --- | --- |
+| Credentials Report | IAM User 的 Password、Access Key、MFA 状态如何？ |
+| Access Advisor / Last Accessed | 身份或 Policy 允许访问什么，最后何时访问？ |
+| Access Analyzer | 是否存在外部、内部、未使用访问或 Policy 风险？ |
+| Policy Simulator | 某 Principal 对某 Resource 的 Action 会 Allow 还是 Deny？ |
+
+Last Accessed 不是完整实时审计日志；收紧权限前要结合业务周期与 CloudTrail。凭证盘点、使用时间、访问路径、请求模拟和真实 API 记录各自解决不同问题。

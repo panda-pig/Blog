@@ -9,11 +9,11 @@ lang: en
 topicKey: "IAM Access Analyzer"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-25
 tags: ["security", "IAM Access Analyzer", "AWS"]
 notionId: 3ae964dc-ce4a-8137-ab78-e4c595870913
 notionUrl: https://app.notion.com/p/3ae964dcce4a8137ab78e4c595870913
-notionUpdated: "2026-07-31T08:17:19.589Z"
+notionUpdated: "2026-08-25T06:01:20.017Z"
 ---
 
 ## Basic Information
@@ -48,3 +48,17 @@ Analyze external access, policies, and unused permissions to enforce least privi
 ## Key takeaway
 
 **Who can access from outside, and is the policy too broad? Think IAM Access Analyzer.**
+
+## Current capability scope
+
+- **External-access findings** identify public access or paths from outside an organization or account.
+- **Internal-access findings** analyze access relationships to selected critical resources inside an organization.
+- **Unused-access findings** identify roles, access keys, passwords, services, or action permissions that have not been used for an extended period.
+- **Policy validation** reports syntax errors, security warnings, and best-practice suggestions.
+- **Policy generation** uses observed CloudTrail activity to draft a more precise identity-based policy.
+
+A finding does not automatically mean an attack; it can describe intended public or cross-account sharing. Confirm the business intent before archiving the finding or tightening the policy.
+
+## Boundary with adjacent tools
+
+Credentials Report inventories IAM user credentials; Access Advisor / last-accessed information shows usage timing for identities or policies; Access Analyzer evaluates access paths, unused permissions, and policies; Policy Simulator models a specific request; CloudTrail records actual API activity.

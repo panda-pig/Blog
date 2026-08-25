@@ -9,11 +9,11 @@ lang: zh
 topicKey: "IAM Policy 类型・JSON 元素・权限评估总对比"
 frequency: "高频对比"
 date: 2026-08-13
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["compare", "IAM Policy", "Security", "AWS"]
 notionId: 3bb964dc-ce4a-81f6-9c5e-cfb3f87cedb2
 notionUrl: https://app.notion.com/p/3bb964dcce4a81f69c5ecfb3f87cedb2
-notionUpdated: "2026-08-13T06:04:05.071Z"
+notionUpdated: "2026-08-25T06:01:17.651Z"
 ---
 
 ## 一句话结论
@@ -60,3 +60,14 @@ Managed Policy 可复用、集中维护；Customer Managed Policy 支持版本�
 ## Access Denied 速查
 
 从错误中的 Action 开始，核对当前 Principal、直接附加与 Group 继承的 Policy、显式 Deny、Resource ARN、Condition、Boundary、SCP 和 Session Policy。能执行 Get / List 不代表能执行 Create / Update / Delete。
+
+## Role 相关策略与操作
+
+| 对象 | 决定什么 | 常见混淆 |
+| --- | --- | --- |
+| Trust Policy | 谁能 AssumeRole | 不决定 Role Session 能访问哪些业务资源 |
+| Permissions Policy | Role Session 能做什么 | 不决定谁能代入 Role |
+| iam:PassRole | 调用者能否把指定 Role 交给 AWS Service | 不是 AssumeRole |
+| sts:AssumeRole | 受信任主体能否取得 Role 临时凭证 | 还需满足 Trust Policy 与相关权限条件 |
+
+排查 Role 权限时应拆成两段：先验证主体是否能 Assume / Pass 该 Role，再验证 Role Session 的 Permissions Policy、Boundary、Session Policy、SCP、Resource Policy 与 Explicit Deny。

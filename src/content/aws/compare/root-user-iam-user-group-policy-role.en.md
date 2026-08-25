@@ -9,11 +9,11 @@ lang: en
 topicKey: "Root User・IAM User・Group・Policy・Role 总对比"
 frequency: "High-frequency comparison"
 date: 2026-08-13
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["compare", "IAM", "Security", "AWS"]
 notionId: 3bb964dc-ce4a-81be-9246-cfcc1cefab44
 notionUrl: https://app.notion.com/p/3bb964dcce4a81be9246cfcc1cefab44
-notionUpdated: "2026-08-13T05:01:05.684Z"
+notionUpdated: "2026-08-25T06:01:18.994Z"
 ---
 
 ## In one sentence
@@ -40,3 +40,13 @@ Managed policies can attach to users, groups, or roles. Inline policies can be e
 ## Scenario choices
 
 Use a group for shared user permissions, a role for EC2-to-S3 access, IAM Identity Center for workforce multi-account access, Cognito for application customers, and root only for required root tasks.
+
+## The three essential parts of a role
+
+| Part | Purpose |
+| --- | --- |
+| Trusted entity / trust policy | Defines who can assume the role |
+| Permissions policy | Defines which actions and resources the role session may use |
+| STS temporary credentials | Supplies an expiring access key ID, secret access key, and session token |
+
+EC2 uses a role through an instance profile, so creating the role alone is not enough—it must be associated with the instance. An operator passing a role to EC2, Lambda, or another service normally needs iam:PassRole. **PassRole means “give the role to a service”; AssumeRole means “the principal uses the role.”**

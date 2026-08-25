@@ -209,6 +209,14 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "AssumeRole",
+    "english": "AWS STS AssumeRole",
+    "chinese": "代入 IAM 角色",
+    "japanese": "AssumeRole（信頼されたプリンシパルが AWS STS を通じて IAM ロールの一時認証情報を取得する操作）",
+    "note": "代入成功后获得有到期时间的 Access Key ID、Secret Access Key 和 Session Token。",
+    "frequency": 5
+  },
+  {
     "term": "At-Least-Once Delivery",
     "english": "At-Least-Once Delivery",
     "chinese": "至少一次投递",
@@ -421,7 +429,7 @@ const rows = [
     "english": "AWS CloudShell",
     "chinese": "浏览器云命令行环境",
     "japanese": "AWS CloudShell（ブラウザ上で事前設定済みの AWS CLI を使用し、コンソールの IAM 権限に基づく一時認証情報を自動取得するシェル環境）",
-    "note": "无需本地安装 CLI；自动使用当前 Console 身份的临时、轮换凭证，权限不会超过当前身份。",
+    "note": "无需本地安装 CLI；使用当前 Console 身份的临时轮换凭证。HOME 提供按 Region 分离的持久存储，单次命令可用 --region 覆盖默认 Region。",
     "frequency": 3
   },
   {
@@ -1257,6 +1265,14 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "EC2 Instance Profile",
+    "english": "Amazon EC2 Instance Profile",
+    "chinese": "EC2 实例配置文件",
+    "japanese": "EC2 インスタンスプロファイル（1 つの IAM ロールを Amazon EC2 インスタンスへ渡すためのコンテナ）",
+    "note": "一个 Instance Profile 同时只能包含一个 Role；EC2 内的 SDK/CLI 从 IMDS 获取该 Role 的临时凭证。",
+    "frequency": 5
+  },
+  {
     "term": "ECR",
     "english": "Amazon Elastic Container Registry",
     "chinese": "容器镜像仓库",
@@ -1601,11 +1617,27 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "IAM Access Advisor",
+    "english": "IAM Access Advisor / Service Last Accessed Information",
+    "chinese": "IAM 访问顾问／最后访问时间信息",
+    "japanese": "IAM Access Advisor（IAM エンティティに許可された AWS サービスやアクションと、その最終アクセス情報を確認する機能）",
+    "note": "用于 User、Group、Role、Policy 等 IAM 实体的 Last Accessed 审查；不是完整实时审计日志。",
+    "frequency": 4
+  },
+  {
     "term": "IAM Access Analyzer",
     "english": "AWS Identity and Access Management Access Analyzer",
     "chinese": "访问权限分析器",
     "japanese": "IAM Access Analyzer（外部アクセス・未使用アクセスの分析）",
     "note": "分析外部访问、策略和未使用访问，帮助实现最小权限。",
+    "frequency": 4
+  },
+  {
+    "term": "IAM Credentials Report",
+    "english": "IAM Credential Report",
+    "chinese": "IAM 凭证报告",
+    "japanese": "IAM 認証情報レポート（AWS アカウント内の IAM ユーザーについて、パスワード、アクセスキー、MFA などの状態を一覧化するレポート）",
+    "note": "账户级盘点 IAM User 的 Password、Access Key、MFA 等凭证状态；不分析资源共享关系。",
     "frequency": 4
   },
   {
@@ -1644,8 +1676,8 @@ const rows = [
     "term": "IAM Role",
     "english": "IAM Role",
     "chinese": "IAM 角色",
-    "japanese": "IAM ロール",
-    "note": "提供临时凭证；EC2、Lambda 和跨账户访问应优先使用 Role。",
+    "japanese": "IAM ロール（信頼された主体が一時的に引き受け、許可された AWS 操作を実行するための IAM アイデンティティ）",
+    "note": "Trust Policy 决定谁能代入，Permissions Policy 决定代入后能做什么；通过 STS 提供临时凭证，适用于工作负载、联合身份和跨账户访问。",
     "frequency": 5
   },
   {
@@ -1655,6 +1687,14 @@ const rows = [
     "japanese": "IAM ユーザー（AWS アカウント内で個人やアプリケーションを表す長期アイデンティティ）",
     "note": "可以拥有控制台密码或 Access Key，也可属于多个 Group；工作负载和多账户员工访问通常优先使用临时凭证。",
     "frequency": 4
+  },
+  {
+    "term": "iam:PassRole",
+    "english": "IAM PassRole permission",
+    "chinese": "将 IAM 角色传递给 AWS 服务的权限",
+    "japanese": "iam:PassRole（指定した IAM ロールを AWS サービスへ渡すことをユーザーに許可する IAM 権限）",
+    "note": "PassRole 不是 AssumeRole；它允许调用者把指定 Role 交给 AWS Service，应限制可传递的 Role 与目标服务。",
+    "frequency": 5
   },
   {
     "term": "IAMFullAccess",
@@ -2108,8 +2148,8 @@ const rows = [
     "term": "Permissions Policy",
     "english": "IAM Permissions Policy",
     "chinese": "IAM 权限策略",
-    "japanese": "アクセス許可ポリシー",
-    "note": "决定主体获得哪些 AWS 操作权限。",
+    "japanese": "アクセス許可ポリシー（IAM ユーザーやロールなどが実行できる AWS のアクションと対象リソースを定義するポリシー）",
+    "note": "Role 上的 Permissions Policy 决定 Role Session 能做什么；它不负责决定谁能 AssumeRole。",
     "frequency": 5
   },
   {
@@ -2657,6 +2697,14 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "Service Role",
+    "english": "IAM Role for an AWS Service",
+    "chinese": "AWS 服务角色",
+    "japanese": "サービスロール（AWS サービスが利用者に代わって処理を実行するために引き受ける IAM ロール）",
+    "note": "Trust Policy 信任相应 AWS Service；Permissions Policy 只授予完成任务所需权限。",
+    "frequency": 5
+  },
+  {
     "term": "Session Manager",
     "english": "AWS Systems Manager Session Manager",
     "chinese": "安全会话管理",
@@ -2900,9 +2948,17 @@ const rows = [
     "term": "Trust Policy",
     "english": "IAM Role Trust Policy",
     "chinese": "IAM 角色信任策略",
-    "japanese": "信頼ポリシー",
-    "note": "决定谁可以代入 IAM Role。",
+    "japanese": "信頼ポリシー（どのプリンシパルが IAM ロールを引き受けられるかを定義する、ロール必須のリソースベースポリシー）",
+    "note": "决定谁可以 AssumeRole；不能替代决定 Role Session 能做什么的 Permissions Policy。",
     "frequency": 5
+  },
+  {
+    "term": "Trusted Entity",
+    "english": "IAM Role Trusted Entity",
+    "chinese": "IAM 角色受信任实体",
+    "japanese": "信頼されたエンティティ（IAM ロールの信頼ポリシーで、そのロールを引き受けることを許可された主体）",
+    "note": "说明谁能 AssumeRole；可以是 AWS Service、Account、User、Role 或 Federated Principal。",
+    "frequency": 4
   },
   {
     "term": "Valkey",

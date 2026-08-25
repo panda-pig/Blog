@@ -9,11 +9,11 @@ lang: ja
 topicKey: "IAM Access Analyzer"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-25
 tags: ["security", "IAM Access Analyzer", "AWS"]
 notionId: 3ae964dc-ce4a-8137-ab78-e4c595870913
 notionUrl: https://app.notion.com/p/3ae964dcce4a8137ab78e4c595870913
-notionUpdated: "2026-07-31T08:17:19.589Z"
+notionUpdated: "2026-08-25T06:01:20.017Z"
 ---
 
 ## 基本情報
@@ -48,3 +48,17 @@ notionUpdated: "2026-07-31T08:17:19.589Z"
 ## 重要ポイント
 
 **外部から誰がアクセスでき、Policy が広すぎないかを調べるのが IAM Access Analyzer です。**
+
+## 現在の機能範囲
+
+- **External Access Finding**：Public Access、または Organization / Account 外部からのアクセス経路を検出します。
+- **Internal Access Finding**：Organization 内で指定した重要 Resource へのアクセス関係を分析します。
+- **Unused Access Finding**：長期間利用されていない Role、Access Key、Password、Service、Action 権限を検出します。
+- **Policy Validation**：構文エラー、Security Warning、Best Practice の提案を確認します。
+- **Policy Generation**：CloudTrail の実際の Activity に基づき、より精密な Identity-based Policy の草案を生成します。
+
+Finding は必ずしも攻撃を意味せず、意図した Public / Cross-account Sharing の場合もあります。業務目的を確認してから Finding の Archive または Policy の修正を行います。
+
+## 周辺ツールとの境界
+
+Credentials Report は IAM User の認証情報を棚卸しし、Access Advisor / Last Accessed は Identity / Policy の利用時期を確認します。Access Analyzer はアクセス経路・未使用権限・Policy を分析し、Policy Simulator は個別 Request を模擬し、CloudTrail は実際の API Activity を記録します。

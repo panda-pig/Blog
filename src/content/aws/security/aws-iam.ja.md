@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS IAM"
 frequency: "試験頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["security", "AWS IAM", "AWS"]
 notionId: 3a6964dc-ce4a-814c-981d-d23eb8d66e71
 notionUrl: https://app.notion.com/p/3a6964dcce4a814c981dd23eb8d66e71
-notionUpdated: "2026-08-13T08:35:21.640Z"
+notionUpdated: "2026-08-25T06:02:22.052Z"
 ---
 
 ## 一言で理解
@@ -47,3 +47,26 @@ Managed Policy は再利用でき、Inline Policy は User、Group、Role のい
 ## 重点記憶
 
 **Group は入れ子不可、User は複数 Group 可、Policy は権限、People は SSO、Workload は Role、Explicit Deny 優先です。**
+
+## IAM Role、Instance Profile、PassRole
+
+| 構成要素 | 答える質問 | 要点 |
+| --- | --- | --- |
+| Trust Policy | 誰が Role を Assume できるか | AWS Service、Account、User、Role、Federated Principal を信頼できる |
+| Permissions Policy | Role Session は何を実行できるか | 必要な Action と Resource のみに限定する |
+| STS Temporary Credentials | API Request をどう署名するか | Access Key ID、Secret Access Key、Session Token、有効期限を含む |
+
+EC2 は **Instance Profile** を通じて Role を利用します。Instance Profile は 1 つの IAM Role を EC2 Instance に渡すコンテナで、Instance 内の CLI / SDK は IMDS から Temporary Credentials を自動取得・更新します。Role を作成しただけでは EC2 は利用せず、対応する Instance Profile の関連付けが必要です。
+
+iam:PassRole は指定した Role を AWS Service へ渡す権限であり、呼び出し元自身が AssumeRole する操作とは異なります。本番環境では渡せる Role と対象 Service の両方を制限します。
+
+## IAM セキュリティレビュー用ツール
+
+| ツール | 主に答える質問 |
+| --- | --- |
+| Credentials Report | IAM User の Password、Access Key、MFA の状態はどうか |
+| Access Advisor / Last Accessed | Identity / Policy が何にアクセスでき、最後にいつ利用したか |
+| Access Analyzer | External、Internal、Unused Access や Policy Risk があるか |
+| Policy Simulator | Principal の Action が Resource に対して Allow / Deny されるか |
+
+Last Accessed は完全なリアルタイム監査ログではありません。権限を削減する前に業務周期を考慮し、CloudTrail で実際の API Call を確認します。

@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Root User・IAM User・Group・Policy・Role 总对比"
 frequency: "高频对比"
 date: 2026-08-13
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["compare", "IAM", "Security", "AWS"]
 notionId: 3bb964dc-ce4a-81be-9246-cfcc1cefab44
 notionUrl: https://app.notion.com/p/3bb964dcce4a81be9246cfcc1cefab44
-notionUpdated: "2026-08-13T05:01:05.684Z"
+notionUpdated: "2026-08-25T06:01:18.994Z"
 ---
 
 ## 一句话结论
@@ -57,3 +57,13 @@ notionUpdated: "2026-08-13T05:01:05.684Z"
 ## 重点记忆
 
 **User 可以进多个 Group；Group 不能再套 Group；Policy 只描述权限；Role 提供临时权限身份。**
+
+## Role 的三个关键部分
+
+| 部分 | 作用 |
+| --- | --- |
+| Trusted Entity / Trust Policy | 规定谁能 AssumeRole |
+| Permissions Policy | 规定 Role Session 能执行哪些 Action、访问哪些 Resource |
+| STS Temporary Credentials | 提供会到期的 Access Key ID、Secret Access Key 与 Session Token |
+
+EC2 通过 Instance Profile 使用 Role；创建 Role 后还必须关联到实例。操作人员把 Role 交给 EC2、Lambda 等服务时通常需要 iam:PassRole。**PassRole 是“把 Role 给服务”，AssumeRole 是“主体自己代入 Role”。**

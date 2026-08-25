@@ -9,11 +9,11 @@ lang: zh
 topicKey: "安全与合规"
 frequency: "考试频率 ★★★★★"
 date: 2026-08-13
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["Security", "Compliance", "CLF-C02", "AWS"]
 notionId: 3a6964dc-ce4a-8119-86e2-cb66c29308cd
 notionUrl: https://app.notion.com/p/3a6964dcce4a811986e2cb66c29308cd
-notionUpdated: "2026-08-13T08:35:26.054Z"
+notionUpdated: "2026-08-25T06:02:23.344Z"
 ---
 
 ## 必须掌握
@@ -67,3 +67,15 @@ Organizations 管理 Account、OU、SCP 与合并计费；SCP 是权限护栏，
 ## 考前速记
 
 **身份看 IAM / Identity Center / Cognito；密钥看 KMS / Secrets / ACM；防护看 WAF / Shield；检测调查看 GuardDuty / Inspector / Macie / Detective / Security Hub；监控审计合规看 CloudWatch / CloudTrail / Config / Artifact / Audit Manager。**
+
+## IAM 凭证与权限审查
+
+| 题目关键词 | 首先想到 |
+| --- | --- |
+| 所有 IAM User 的密码、Access Key、MFA 状态 | IAM Credentials Report |
+| 身份或 Policy 允许的服务 / Action 及最后访问时间 | IAM Access Advisor / Last Accessed |
+| 外部、内部、未使用访问；Policy 验证与生成 | IAM Access Analyzer |
+| 模拟 Principal 对 Resource 的 Action 是否允许 | IAM Policy Simulator |
+| 实际发生过的 API 调用 | AWS CloudTrail |
+
+Access Advisor 不只适用于 User，也可用于 Role、Group、Policy 等实体。Last Accessed 不是完整实时审计证据，删除权限前要结合业务周期与 CloudTrail。

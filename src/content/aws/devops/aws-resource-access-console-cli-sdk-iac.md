@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS 资源交互方式｜Console・CLI・SDK・IaC"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["devops", "AWS CLI", "AWS SDK", "IaC"]
 notionId: 3a6964dc-ce4a-818b-a203-e86b13e2eada
 notionUrl: https://app.notion.com/p/3a6964dcce4a818ba203e86b13e2eada
-notionUpdated: "2026-08-13T08:35:23.512Z"
+notionUpdated: "2026-08-25T06:01:23.511Z"
 ---
 
 ## 基本信息
@@ -71,3 +71,11 @@ Access Key ID 标识凭证，Secret Access Key 用于签名，临时凭证还包
 ## 重点记忆
 
 **Session 不是 Account；Console 靠点、CLI 靠命令、SDK 靠代码、IaC 靠模板；人员用 SSO，工作负载用 Role。**
+
+## Role 与 Credential Provider Chain
+
+在 EC2 上运行的 CLI / SDK 应通过 Instance Profile 使用 IAM Role，并从 IMDS 自动获取和轮换临时凭证。不要在实例中执行 aws configure 写入长期 Secret。把 Role 关联给服务的操作通常需要受限的 iam:PassRole；它与当前用户自己 AssumeRole 不同。
+
+## CloudShell 的边界
+
+CloudShell 基于当前 Console 身份获取临时凭证，预装 AWS CLI，并提供按 Region 分离的持久 HOME 存储。单条命令可用 --region 覆盖默认 Region，但任何 Region 选择都不会绕过 IAM Policy。适合临时管理和排障，不应被当作独立身份或更高权限入口。

@@ -9,11 +9,11 @@ lang: zh
 topicKey: "安全架构设计"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["saa-c03", "安全架构设计", "AWS"]
 notionId: 3a6964dc-ce4a-815e-9db0-d8343bfa6db7
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9db0d8343bfa6db7
-notionUpdated: "2026-08-13T08:35:25.158Z"
+notionUpdated: "2026-08-25T06:02:24.327Z"
 ---
 
 ## 必须掌握
@@ -120,3 +120,19 @@ GuardDuty / Inspector / Macie 产生 Finding → Security Hub 汇总 → Detecti
 | 标准化多账户环境 | AWS Control Tower | Landing Zone、Account Factory、Controls |
 - 合规是共同责任：AWS 提供基础设施证明与服务能力，客户仍负责配置、身份、数据、应用和证据审阅。
 - 检测或建议不等于自动修复；自动响应还要设计权限、回滚、告警和失败处理。
+
+## 工作负载身份与 Role 设计
+
+- EC2 使用 Instance Profile 关联 IAM Role；实例内 SDK / CLI 从 IMDS 自动取得并轮换临时凭证。
+- Trust Policy 决定谁能 AssumeRole，Permissions Policy 决定 Role Session 能访问什么。
+- 创建 Role 不等于服务已经使用它；还要完成服务关联，并为部署者授予受限的 iam:PassRole。
+- 不把长期 Access Key 写入代码、AMI、User Data、Container Image 或 aws configure。
+- 跨账户访问同时检查 Trust Policy、调用方权限、Resource Policy 与 Organizations 限制。
+
+## 最小权限验证闭环
+
+1. Credentials Report 盘点 IAM User 的 Password、Access Key 与 MFA。
+2. Access Advisor / Last Accessed 找出低频或未使用权限。
+3. Access Analyzer 分析外部、内部、未使用访问并验证 Policy。
+4. Policy Simulator 验证关键 Principal / Action / Resource 请求。
+5. CloudTrail 观察真实 API 调用，再持续收紧和复核权限。

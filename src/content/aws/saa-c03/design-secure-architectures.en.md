@@ -9,11 +9,11 @@ lang: en
 topicKey: "安全架构设计"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["saa-c03", "安全架构设计", "AWS"]
 notionId: 3a6964dc-ce4a-815e-9db0-d8343bfa6db7
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9db0d8343bfa6db7
-notionUpdated: "2026-08-13T08:35:25.158Z"
+notionUpdated: "2026-08-25T06:02:24.327Z"
 ---
 
 ## Must know
@@ -67,3 +67,19 @@ notionUpdated: "2026-08-13T08:35:25.158Z"
 ## Final review
 
 **Private by default, least privilege, encryption, audit, versioning/immutability, isolated backups, and reviewed automated response.**
+
+## Workload identity and role design
+
+- EC2 associates an IAM role through an instance profile; SDK and CLI processes on the instance obtain and rotate temporary credentials through IMDS.
+- A trust policy defines who may assume the role, while a permissions policy defines what the role session may access.
+- Creating a role does not mean a service uses it. Complete the service association and give deployers a narrowly scoped iam:PassRole permission.
+- Never place long-term access keys in code, AMIs, user data, container images, or aws configure.
+- For cross-account access, evaluate the trust policy, caller permissions, resource policy, and Organizations guardrails together.
+
+## Least-privilege validation loop
+
+1. Use Credentials Report to inventory IAM user passwords, access keys, and MFA.
+2. Use Access Advisor / last-accessed information to find rarely or never used permissions.
+3. Use Access Analyzer to evaluate external, internal, and unused access and validate policies.
+4. Use Policy Simulator to verify critical principal/action/resource requests.
+5. Observe actual API calls in CloudTrail, then continue tightening and reviewing permissions.

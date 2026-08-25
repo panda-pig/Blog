@@ -9,11 +9,11 @@ lang: ja
 topicKey: "IAM Policy 类型・JSON 元素・权限评估总对比"
 frequency: "頻出比較"
 date: 2026-08-13
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["compare", "IAM Policy", "Security", "AWS"]
 notionId: 3bb964dc-ce4a-81f6-9c5e-cfb3f87cedb2
 notionUrl: https://app.notion.com/p/3bb964dcce4a81f69c5ecfb3f87cedb2
-notionUpdated: "2026-08-13T06:04:05.071Z"
+notionUpdated: "2026-08-25T06:01:17.651Z"
 ---
 
 ## 一言で理解
@@ -35,3 +35,14 @@ Version は Policy Language Version、Statement は権限規則、Sid は識別�
 初期状態は Implicit Deny。適用される Allow があり、Explicit Deny がない場合だけ許可されます。Explicit Deny は Allow より優先し、Boundary、Session Policy、SCP は権限を縮小するだけです。
 
 Access Denied では失敗した Action から始め、Principal、Direct / Inherited Policy、Explicit Deny、Resource ARN、Condition、Boundary、SCP、Session Policy を確認します。
+
+## Role 関連の Policy と Operation
+
+| 対象 | 決定すること | よくある混同 |
+| --- | --- | --- |
+| Trust Policy | 誰が Role を Assume できるか | Role Session がアクセスできる業務 Resource は決めない |
+| Permissions Policy | Role Session が何を実行できるか | 誰が Role を Assume できるかは決めない |
+| iam:PassRole | Caller が指定 Role を AWS Service へ渡せるか | AssumeRole ではない |
+| sts:AssumeRole | Trusted Principal が Role の Temporary Credentials を取得できるか | Trust Policy と権限条件も満たす必要がある |
+
+Role の権限問題は 2 段階で切り分けます。まず Principal が Role を Assume / Pass できるか確認し、次に Role Session の Permissions Policy、Boundary、Session Policy、SCP、Resource Policy、Explicit Deny を評価します。

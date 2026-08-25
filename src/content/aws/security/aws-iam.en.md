@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS IAM"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["security", "AWS IAM", "AWS"]
 notionId: 3a6964dc-ce4a-814c-981d-d23eb8d66e71
 notionUrl: https://app.notion.com/p/3a6964dcce4a814c981dd23eb8d66e71
-notionUpdated: "2026-08-13T08:35:21.640Z"
+notionUpdated: "2026-08-25T06:02:22.052Z"
 ---
 
 ## In one sentence
@@ -47,3 +47,26 @@ IAM begins with implicit Deny. A request needs an applicable Allow and no applic
 ## Key takeaway
 
 **Groups do not nest, users may join multiple groups, policies describe permissions, people should prefer SSO, workloads should use roles, and explicit Deny wins.**
+
+## IAM roles, instance profiles, and PassRole
+
+| Component | Question answered | Key point |
+| --- | --- | --- |
+| Trust policy | Who can assume the role? | Can trust an AWS service, account, user, role, or federated principal |
+| Permissions policy | What can the role session do? | Grant only the required actions and resources |
+| STS temporary credentials | How are API requests signed? | Include an access key ID, secret access key, session token, and expiration |
+
+EC2 uses a role through an **instance profile**. The profile is a container that passes one IAM role to an EC2 instance; CLI and SDK credential providers on the instance obtain and rotate temporary credentials through IMDS. Creating a role alone does not attach it to an instance—the corresponding instance profile must be associated with EC2.
+
+iam:PassRole lets a caller pass a specific role to an AWS service. It is not the same as the caller performing AssumeRole. Production policies should restrict both the roles that may be passed and the destination service.
+
+## IAM security review tools
+
+| Tool | Primary question |
+| --- | --- |
+| Credentials report | What is the password, access key, and MFA state of each IAM user? |
+| Access Advisor / last accessed | What may an identity or policy access, and when was it last accessed? |
+| Access Analyzer | Is there external, internal, unused access, or a policy risk? |
+| Policy Simulator | Would a principal's action on a resource be allowed or denied? |
+
+Last-accessed data is not a complete real-time audit log. Before removing permissions, consider business cycles and verify actual calls with CloudTrail. Credential inventory, usage history, access-path analysis, request simulation, and API evidence solve different problems.

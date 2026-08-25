@@ -100,13 +100,17 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Maintains desired, minimum, and maximum instance counts; commonly paired with an ALB across multiple AZs.",
     "ja": "希望・最小・最大のインスタンス数を維持し、通常は ALB と複数 AZ を組み合わせる。"
   },
+  "AssumeRole": {
+    "en": "A successful call returns expiring access key ID, secret access key, and session token credentials.",
+    "ja": "成功すると、有効期限付き Access Key ID、Secret Access Key、Session Token を取得する。"
+  },
   "At-Least-Once Delivery": {
     "en": "Messages can be delivered more than once, so consumers must be designed to be idempotent.",
     "ja": "Message が重複配信される可能性があるため、Consumer は Idempotent に設計する必要がある。"
   },
   "Athena": {
-    "en": "",
-    "ja": ""
+    "en": "Runs serverless SQL queries directly against data stored in S3.",
+    "ja": "S3 に保存された Data を Serverless SQL で直接 Query する。"
   },
   "Attribute": {
     "en": "A field and its value within a DynamoDB item.",
@@ -205,8 +209,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "Business、People、Governance、Platform、Security、Operations の 6 つの Perspective で Cloud Readiness を高める。"
   },
   "AWS CloudShell": {
-    "en": "Provides a browser-based AWS CLI with temporary credentials for the current console identity; it cannot exceed that identity's permissions.",
-    "ja": "AWS CloudShell（ブラウザ上で事前設定済みの AWS CLI を使用し、コンソールの IAM 権限に基づく一時認証情報を自動取得するシェル環境）"
+    "en": "Requires no local CLI installation and uses rotating temporary credentials for the current console identity. Persistent HOME storage is separated by Region, and --region can override the default Region for one command.",
+    "ja": "Local CLI の Install は不要で、現在の Console Identity のローテーションされる Temporary Credentials を使用する。永続 HOME Storage は Region ごとに分かれ、各 Command は --region で Default Region を上書きできる。"
   },
   "AWS CodeBuild": {
     "en": "Reads a buildspec to compile, test, package, and output build artifacts.",
@@ -221,8 +225,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "利用率 Data に基づいて Resource の適正な Spec と構成を推奨する。"
   },
   "AWS Config": {
-    "en": "",
-    "ja": ""
+    "en": "Records resource configuration history and evaluates resources against compliance rules.",
+    "ja": "Resource の構成履歴を記録し、Config Rule に基づいて Compliance を評価する。"
   },
   "aws configure": {
     "en": "Stores client configuration; it does not create an IAM user, attach a policy, or guarantee permission for later API calls.",
@@ -585,8 +589,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "処理に繰り返し失敗したメッセージを保存し、隔離、調査、再処理を可能にする。"
   },
   "DMS": {
-    "en": "",
-    "ja": ""
+    "en": "Migrates database data with full load and ongoing change data capture for low-downtime moves.",
+    "ja": "Full Load と継続的な Change Data Capture により、低停止で Database Data を移行する。"
   },
   "DNS": {
     "en": "Resolves domain names to reachable network addresses or service endpoints.",
@@ -609,8 +613,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "データが長期間保持され、永続的に失われない度合い。"
   },
   "DynamoDB": {
-    "en": "",
-    "ja": ""
+    "en": "A serverless key-value and document database built for single-digit-millisecond performance at scale.",
+    "ja": "大規模環境で一桁ミリ秒性能を提供する Serverless Key-Value / Document Database。"
   },
   "DynamoDB Accelerator (DAX)": {
     "en": "A managed in-memory cache built for DynamoDB that can reduce suitable reads to microsecond latency.",
@@ -623,6 +627,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "EC2": {
     "en": "You manage the operating system, patches, and runtime; suited to long-running workloads that need system-level control.",
     "ja": "OS、パッチ、実行環境は利用者が管理する。長時間稼働し、システム制御が必要なワークロードに適する。"
+  },
+  "EC2 Instance Profile": {
+    "en": "An instance profile can contain one role at a time; SDK and CLI processes on EC2 obtain that role's temporary credentials through IMDS.",
+    "ja": "1 つの Instance Profile に同時に含められる Role は 1 つ。EC2 内の SDK / CLI は IMDS からその Role の Temporary Credentials を取得する。"
   },
   "ECR": {
     "en": "ECR stores container images; ECS and EKS run and orchestrate them.",
@@ -737,8 +745,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "AWS 無料アカウントプラン（期間とクレジット上限のある学習・検証向けプラン）"
   },
   "FSx": {
-    "en": "",
-    "ja": ""
+    "en": "A family of fully managed file systems for Windows, Lustre, NetApp ONTAP, and OpenZFS workloads.",
+    "ja": "Windows、Lustre、NetApp ONTAP、OpenZFS Workload 向けの Fully Managed File System 群。"
   },
   "Fully Managed Service": {
     "en": "AWS takes on more operational work; this describes a degree of management, not one strict product category.",
@@ -777,8 +785,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "Vertex、Edge、Property を使って複雑な関係を表現・検索する。"
   },
   "GWLB": {
-    "en": "",
-    "ja": ""
+    "en": "Distributes traffic through scalable virtual network appliances such as firewalls and inspection systems.",
+    "ja": "Firewall や Inspection System などの Virtual Network Appliance へ Traffic を分散する。"
   },
   "HA": {
     "en": "Reduces downtime through multiple AZs, redundancy, and automatic failover; it does not mean zero interruption.",
@@ -796,9 +804,17 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "An account-level/global-view identity and permissions service. Access is denied by default, explicit denies win, and least privilege applies.",
     "ja": "Account-level / Global View の Identity・Permission Service。Default Deny、Explicit Deny 優先、Least Privilege が基本。"
   },
+  "IAM Access Advisor": {
+    "en": "Reviews last-accessed information for IAM users, groups, roles, policies, and other supported entities; it is not a complete real-time audit log.",
+    "ja": "User、Group、Role、Policy などの IAM Entity の Last Accessed を確認する。完全なリアルタイム監査ログではない。"
+  },
   "IAM Access Analyzer": {
     "en": "Analyzes external access, policies, and unused permissions to help enforce least privilege.",
     "ja": "外部アクセス、ポリシー、未使用アクセスを分析し、最小権限の実現を支援する。"
+  },
+  "IAM Credentials Report": {
+    "en": "Provides an account-level inventory of IAM user password, access-key, and MFA state; it does not analyze resource-sharing relationships.",
+    "ja": "Account 内の IAM User について Password、Access Key、MFA の状態を一覧化する。Resource Sharing の関係は分析しない。"
   },
   "IAM Group": {
     "en": "Contains IAM users only, not other groups. A user may join multiple groups, while a group cannot sign in or be assumed.",
@@ -817,12 +833,16 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "通常 Version と Statement を持つ JSON 権限文書。Identity-based Policy は Principal を書かず、Explicit Deny が Allow より優先する。"
   },
   "IAM Role": {
-    "en": "Provides temporary credentials; prefer roles for EC2, Lambda, and cross-account access.",
-    "ja": "一時的な認証情報を提供する。EC2、Lambda、クロスアカウントアクセスでは Role を優先する。"
+    "en": "The trust policy defines who may assume it; permissions policies define what the resulting role session may do. STS temporary credentials support workloads, federation, and cross-account access.",
+    "ja": "Trust Policy は誰が Assume できるか、Permissions Policy は Role Session が何を実行できるかを定義する。STS Temporary Credentials により Workload、Federation、Cross-account Access に利用できる。"
   },
   "IAM User": {
     "en": "May have a console password or access key and may join multiple groups; workloads and multi-account workforce access should normally use temporary credentials.",
     "ja": "Console Password や Access Key を持ち、複数 Group に所属できる。Workload と Multi-account の従業員アクセスは通常 Temporary Credentials を優先する。"
+  },
+  "iam:PassRole": {
+    "en": "PassRole is not AssumeRole. It lets a caller pass a specified role to an AWS service and should restrict both the role and destination service.",
+    "ja": "PassRole は AssumeRole ではない。Caller が指定 Role を AWS Service へ渡す権限で、渡せる Role と対象 Service を制限する。"
   },
   "IAMFullAccess": {
     "en": "Provides full management of IAM, not administrator access to every AWS service and resource.",
@@ -1049,8 +1069,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "パスキー（FIDO 規格と公開鍵暗号を利用し、パスワードより強い耐フィッシング性を持つ認証方式）"
   },
   "Permissions Policy": {
-    "en": "Determines which AWS actions a principal is allowed to perform.",
-    "ja": "プリンシパルが実行できる AWS アクションを決定する。"
+    "en": "A role's permissions policy defines what the role session may do; it does not define who may assume the role.",
+    "ja": "Role の Permissions Policy は Role Session が実行できる操作を定義し、誰が Role を Assume できるかは定義しない。"
   },
   "PII": {
     "en": "Data that can directly or indirectly identify an individual.",
@@ -1269,8 +1289,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "アクセス頻度は低いがミリ秒単位の取り出しが必要なデータ向け。取り出し料金が発生する。"
   },
   "SageMaker": {
-    "en": "",
-    "ja": ""
+    "en": "A managed platform for building, training, tuning, and deploying machine-learning models.",
+    "ja": "Machine Learning Model の Build、Training、Tuning、Deployment を行う Managed Platform。"
   },
   "Scalability": {
     "en": "A system can scale vertically or horizontally to handle more load, but it does not necessarily scale down automatically.",
@@ -1323,6 +1343,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Service Availability in a Region": {
     "en": "Shows whether a service or feature is offered in a target Region, not uptime or high availability.",
     "ja": "リージョン別サービス提供状況（各リージョンで利用できる AWS サービスの範囲）"
+  },
+  "Service Role": {
+    "en": "Its trust policy trusts the relevant AWS service, while its permissions policy grants only what that service needs to perform the task.",
+    "ja": "Trust Policy は対象 AWS Service を信頼し、Permissions Policy は処理に必要な最小権限だけを付与する。"
   },
   "Session Manager": {
     "en": "Creates controlled sessions without opening inbound SSH or RDP ports.",
@@ -1445,8 +1469,12 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "Lambda または自動化 Workflow の実行を開始させる Event Source。"
   },
   "Trust Policy": {
-    "en": "Determines who is allowed to assume an IAM role.",
-    "ja": "誰が IAM ロールを引き受けられるかを決定する。"
+    "en": "Defines who may assume a role; it does not replace the permissions policy that defines what the role session may do.",
+    "ja": "誰が Role を Assume できるかを定義する。Role Session が実行できる操作を定める Permissions Policy の代わりにはならない。"
+  },
+  "Trusted Entity": {
+    "en": "Identifies who may assume a role, such as an AWS service, account, user, role, or federated principal.",
+    "ja": "Role を Assume できる主体を示す。AWS Service、Account、User、Role、Federated Principal などを指定できる。"
   },
   "Valkey": {
     "en": "One of the in-memory data-store engines supported by ElastiCache.",

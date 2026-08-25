@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS 资源交互方式｜Console・CLI・SDK・IaC"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["devops", "AWS CLI", "AWS SDK", "IaC"]
 notionId: 3a6964dc-ce4a-818b-a203-e86b13e2eada
 notionUrl: https://app.notion.com/p/3a6964dcce4a818ba203e86b13e2eada
-notionUpdated: "2026-08-13T08:35:23.512Z"
+notionUpdated: "2026-08-25T06:01:23.511Z"
 ---
 
 ## In one sentence
@@ -32,3 +32,11 @@ The Region Selector changes the regional resource view. For a missing resource, 
 Local CLI uses locally discovered credentials. CloudShell receives temporary rotating credentials for the current console identity. aws configure only stores profile credentials, default Region, and output format; it grants no IAM permissions.
 
 Access key ID identifies a credential, secret access key signs requests, and temporary credentials also require a session token. CLI and SDK do not require long-term keys: people should prefer Identity Center and workloads should use roles.
+
+## Roles and the credential provider chain
+
+CLI and SDK processes running on EC2 should use an IAM role through an instance profile and obtain rotating temporary credentials from IMDS. Do not run aws configure on an instance to store a long-term secret. Passing a role to a service normally requires a narrowly scoped iam:PassRole permission; this differs from the current user assuming the role.
+
+## CloudShell boundaries
+
+CloudShell obtains temporary credentials for the current console identity, includes the AWS CLI, and provides persistent HOME storage separated by Region. A command can override the default Region with --region, but no Region selection bypasses IAM policy. It is useful for temporary administration and troubleshooting, not as a separate identity or a higher-privilege entry point.
