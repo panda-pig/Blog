@@ -13,7 +13,7 @@ updated: 2026-08-25
 tags: ["compare", "IAM", "Security", "AWS"]
 notionId: 3c7964dc-ce4a-81ef-83a8-e4f919ae927a
 notionUrl: https://app.notion.com/p/3c7964dcce4a81ef83a8e4f919ae927a
-notionUpdated: "2026-08-25T06:00:03.628Z"
+notionUpdated: "2026-08-25T07:25:30.677Z"
 ---
 
 ## 一句话结论
@@ -55,3 +55,14 @@ notionUpdated: "2026-08-25T06:00:03.628Z"
 ## 重点记忆
 
 **凭证盘点看 Report；使用时间看 Advisor；访问路径和策略风险看 Analyzer；请求结果看 Simulator；真实调用看 CloudTrail。**
+
+## Credentials Report 字段与边界
+
+| 字段组 | 常见字段 | 审查目的 |
+| --- | --- | --- |
+| Password | Enabled、Last Used、Last Changed、Next Rotation | 找出未使用或长期未改密的 User |
+| MFA | MFA Active | 找出未配置额外因素的身份 |
+| Access Key 1 / 2 | Active、Last Rotated、Last Used Date、Region、Service | 找出闲置、未轮换或异常来源的 Key |
+| Signing Certificate | Active、Last Rotated | 审查 IAM 管理的 X.509 证书 |
+
+这是包含 Root Account 行与 IAM Users 的账户级 CSV，不包含 Role Temporary Credentials 或 CodeCommit 等服务专用凭证。Access Advisor 还能从 Service / Action Last Accessed 继续追踪权限来源。

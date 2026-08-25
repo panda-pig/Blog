@@ -13,7 +13,7 @@ updated: 2026-08-25
 tags: ["security", "AWS IAM", "AWS"]
 notionId: 3a6964dc-ce4a-814c-981d-d23eb8d66e71
 notionUrl: https://app.notion.com/p/3a6964dcce4a814c981dd23eb8d66e71
-notionUpdated: "2026-08-25T06:02:22.052Z"
+notionUpdated: "2026-08-25T07:25:28.538Z"
 ---
 
 ## 一言で理解
@@ -70,3 +70,9 @@ iam:PassRole は指定した Role を AWS Service へ渡す権限であり、呼
 | Policy Simulator | Principal の Action が Resource に対して Allow / Deny されるか |
 
 Last Accessed は完全なリアルタイム監査ログではありません。権限を削減する前に業務周期を考慮し、CloudTrail で実際の API Call を確認します。
+
+## 認証情報ライフサイクルと現代的なID
+
+人には IAM Identity Center / Federation、AWS Workload には Role を使います。長期 Key は互換用途に限定し、新規作成、利用先更新・検証、旧 Key 無効化、削除の順でローテーションします。
+
+Credentials Report は Root Account 行と IAM User の Password、MFA、2本の Access Key、Signing Certificate、最終利用・更新情報を含む Account レベル CSV です。Role の一時認証情報や Service 固有認証情報は含みません。Access Advisor は User、Group、Role、Policy の Service / Action 最終利用時刻と権限元を確認できます。

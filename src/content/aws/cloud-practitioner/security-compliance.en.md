@@ -13,7 +13,7 @@ updated: 2026-08-25
 tags: ["Security", "Compliance", "CLF-C02", "AWS"]
 notionId: 3a6964dc-ce4a-8119-86e2-cb66c29308cd
 notionUrl: https://app.notion.com/p/3a6964dcce4a811986e2cb66c29308cd
-notionUpdated: "2026-08-25T06:02:23.344Z"
+notionUpdated: "2026-08-25T07:25:33.650Z"
 ---
 
 ## Essential boundaries
@@ -51,3 +51,7 @@ Organizations manages accounts, OUs, SCPs, and consolidated billing. SCPs restri
 | API calls that actually occurred | AWS CloudTrail |
 
 Access Advisor is not limited to users; it also applies to roles, groups, policies, and other supported entities. Last-accessed data is not complete real-time audit evidence, so consider business cycles and validate with CloudTrail before removing permissions.
+
+## Modern identity and credential review
+
+Prefer IAM Identity Center / federation and temporary credentials for people, and roles for workloads. Credentials Report inventories the root-account row and IAM-user passwords, MFA, access keys, and signing certificates. Access Advisor shows service/action last-accessed data and grant sources. Keep and rotate long-term keys only for compatibility.

@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Password Policy・MFA・Access Key・Temporary Credentials 总对比"
 frequency: "高频对比"
 date: 2026-08-13
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["compare", "MFA", "Access Key", "IAM"]
 notionId: 3bb964dc-ce4a-816d-962e-c17440cc39cc
 notionUrl: https://app.notion.com/p/3bb964dcce4a816d962ec17440cc39cc
-notionUpdated: "2026-08-13T08:35:29.475Z"
+notionUpdated: "2026-08-25T07:27:36.055Z"
 ---
 
 ## 一句话结论
@@ -48,3 +48,14 @@ Console 通常使用 Password + MFA 或 SSO Session。CLI 与 SDK 可以使用 I
 ## 高频陷阱
 
 配置 Console MFA 不会让已有长期 Access Key 自动要求 MFA；Virtual MFA 的 QR Code / Secret Key 是敏感绑定信息；CLI / SDK 并不等于必须使用长期 IAM User Key。
+
+## 安全轮换与现代身份选择
+
+长期 Key 的轮换顺序：**创建新 Key → 更新并验证所有使用方 → 停用旧 Key → 确认无异常后删除旧 Key**。Secret 泄露后应立即撤销或轮换，并检查 CloudTrail 与暴露范围；只删除 Git Commit 不够。
+
+| 主体 | 首选方式 |
+| --- | --- |
+| 企业员工与管理员 | IAM Identity Center / Federation + MFA + 临时凭证 |
+| AWS 上的工作负载 | Instance Profile、Task Role、Execution Role |
+| AWS 外部工作负载 | Roles Anywhere、OIDC / SAML Federation |
+| 不支持临时凭证的旧系统 | 专用 IAM User + 最小权限 Key + 轮换与监控 |

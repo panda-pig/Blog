@@ -13,7 +13,7 @@ updated: 2026-08-25
 tags: ["saa-c03", "安全架构设计", "AWS"]
 notionId: 3a6964dc-ce4a-815e-9db0-d8343bfa6db7
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9db0d8343bfa6db7
-notionUpdated: "2026-08-25T06:02:24.327Z"
+notionUpdated: "2026-08-25T07:25:29.784Z"
 ---
 
 ## 必须掌握
@@ -136,3 +136,7 @@ GuardDuty / Inspector / Macie 产生 Finding → Security Hub 汇总 → Detecti
 3. Access Analyzer 分析外部、内部、未使用访问并验证 Policy。
 4. Policy Simulator 验证关键 Principal / Action / Resource 请求。
 5. CloudTrail 观察真实 API 调用，再持续收紧和复核权限。
+
+## 身份审查与凭证生命周期
+
+人员用 IAM Identity Center / Federation，工作负载用 Role。Credentials Report 盘点凭证；Access Advisor 查使用与来源；Access Analyzer 查路径与 Policy；Policy Simulator 验证请求；CloudTrail 提供真实调用证据。长期 Key 必须先创建并验证新 Key，再停用、删除旧 Key。

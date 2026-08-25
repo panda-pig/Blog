@@ -9,7 +9,7 @@ lang: zh
 topicKey: "AWS 账户与 Root User 安全"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-08-13
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["AWS Account", "Root User", "Security", "AWS"]
 notionId: 3bb964dc-ce4a-81c3-9d23-dd3deb0dda3e
 notionUrl: https://app.notion.com/p/3bb964dcce4a81c39d23dd3deb0dda3e
@@ -79,3 +79,7 @@ notionUpdated: "2026-08-13T08:20:08.794Z"
 ## 重点记忆
 
 **Account 是资源与账单边界；Root、User、Role 是身份；Session 是登录上下文；Root 只做特殊任务，日常访问遵循最小权限。**
+
+## 成本可见性与告警
+
+Root User 启用 **IAM user and role access to billing information** 后，具备相应权限的 IAM User / Role 才能查看 Billing Data。用 Billing / Bills 定位费用，用 Free Tier 观察当前与预测用量，用 Zero spend 与 Monthly cost budget 尽早发现异常支出。

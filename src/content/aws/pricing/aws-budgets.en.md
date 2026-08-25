@@ -9,7 +9,7 @@ lang: en
 topicKey: "AWS Budgets"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-08-04
-updated: 2026-08-04
+updated: 2026-08-25
 tags: ["pricing", "AWS Budgets", "AWS"]
 notionId: 3b2964dc-ce4a-816c-9d49-ed1dd09b3c99
 notionUrl: https://app.notion.com/p/3b2964dcce4a816c9d49ed1dd09b3c99
@@ -39,3 +39,10 @@ Set cost, usage, Savings Plans, or RI targets and notify stakeholders when actua
 ## Key takeaway
 
 **A defined target plus actual or forecast threshold alerts means AWS Budgets.**
+
+## Actual and forecast alerts
+
+- A **zero spend budget** detects unexpected charges as soon as spending begins.
+- A **monthly cost budget** can alert on both actual and forecast spending.
+- One budget may use several thresholds, such as actual 85%, actual 100%, and forecast 100%.
+- A budget alert does not stop resources by default; production Budgets Actions need least privilege, approval, and rollback.

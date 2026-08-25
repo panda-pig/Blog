@@ -13,7 +13,7 @@ updated: 2026-08-25
 tags: ["compare", "IAM", "Security", "AWS"]
 notionId: 3c7964dc-ce4a-81ef-83a8-e4f919ae927a
 notionUrl: https://app.notion.com/p/3c7964dcce4a81ef83a8e4f919ae927a
-notionUpdated: "2026-08-25T06:00:03.628Z"
+notionUpdated: "2026-08-25T07:25:30.677Z"
 ---
 
 ## 一言でいうと
@@ -55,3 +55,14 @@ notionUpdated: "2026-08-25T06:00:03.628Z"
 ## 重点記憶
 
 **認証情報は Report、利用時刻は Advisor、アクセス経路と Policy Risk は Analyzer、Request 結果は Simulator、実際の Call は CloudTrail。**
+
+## Credentials Report の項目と境界
+
+| 項目 | 代表フィールド | 監査目的 |
+| --- | --- | --- |
+| Password | Enabled、Last Used、Last Changed、Next Rotation | 未使用・長期未変更の User を特定 |
+| MFA | MFA Active | 追加要素未設定の Identity を特定 |
+| Access Key 1 / 2 | Active、Last Rotated、Last Used Date、Region、Service | 未使用・未更新・異常な Key を特定 |
+| Signing Certificate | Active、Last Rotated | IAM 管理 X.509 Certificate を確認 |
+
+Root Account 行と IAM Users を含む Account レベル CSV です。Role の一時認証情報や CodeCommit などの Service 固有認証情報は含みません。Access Advisor では Service / Action Last Accessed から権限元の Policy も追跡できます。

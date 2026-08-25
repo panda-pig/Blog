@@ -13,7 +13,7 @@ updated: 2026-08-25
 tags: ["Security", "Compliance", "CLF-C02", "AWS"]
 notionId: 3a6964dc-ce4a-8119-86e2-cb66c29308cd
 notionUrl: https://app.notion.com/p/3a6964dcce4a811986e2cb66c29308cd
-notionUpdated: "2026-08-25T06:02:23.344Z"
+notionUpdated: "2026-08-25T07:25:33.650Z"
 ---
 
 ## 必须掌握
@@ -79,3 +79,7 @@ Organizations 管理 Account、OU、SCP 与合并计费；SCP 是权限护栏，
 | 实际发生过的 API 调用 | AWS CloudTrail |
 
 Access Advisor 不只适用于 User，也可用于 Role、Group、Policy 等实体。Last Accessed 不是完整实时审计证据，删除权限前要结合业务周期与 CloudTrail。
+
+## 现代身份与凭证审查补充
+
+人员优先 IAM Identity Center / Federation 与临时凭证；Workload 优先 Role。Credentials Report 盘点 Root Account 行与 IAM User 的 Password、MFA、Access Key 和签名证书；Access Advisor 查看 Service / Action Last Accessed 与权限来源。长期 Key 只用于兼容场景并安全轮换。

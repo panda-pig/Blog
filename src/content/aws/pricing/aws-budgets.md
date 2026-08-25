@@ -9,7 +9,7 @@ lang: zh
 topicKey: "AWS Budgets"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-08-04
-updated: 2026-08-04
+updated: 2026-08-25
 tags: ["pricing", "AWS Budgets", "AWS"]
 notionId: 3b2964dc-ce4a-816c-9d49-ed1dd09b3c99
 notionUrl: https://app.notion.com/p/3b2964dcce4a816c9d49ed1dd09b3c99
@@ -46,3 +46,10 @@ notionUpdated: "2026-08-04T02:10:34.308Z"
 ## 重点记忆
 
 **先设目标，再对实际或预测值设阈值 → AWS Budgets。**
+
+## 实际与预测费用告警
+
+- **Zero spend budget**：首次出现支出时尽早告警。
+- **Monthly cost budget**：按月设置金额，可同时配置 actual spend 与 forecasted spend 阈值。
+- 可设置多个阈值，例如 actual 85%、actual 100%、forecast 100%。
+- Budget Alert 不会默认停止资源；生产 Budgets Actions 需要最小权限、审批与回滚设计。

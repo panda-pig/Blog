@@ -9,7 +9,7 @@ lang: ja
 topicKey: "AWS 账户与 Root User 安全"
 frequency: "試験頻度 ⭐⭐⭐⭐⭐"
 date: 2026-08-13
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["AWS Account", "Root User", "Security", "AWS"]
 notionId: 3bb964dc-ce4a-81c3-9d23-dd3deb0dda3e
 notionUrl: https://app.notion.com/p/3bb964dcce4a81c39d23dd3deb0dda3e
@@ -42,3 +42,7 @@ Passkey / Security Key は FIDO による耐 Phishing 認証です。Authenticat
 ## 重点記憶
 
 **Account は Resource と Billing の境界、Root・User・Role は Identity、Session は Login Context、Root は特殊 Task に限定します。**
+
+## コスト可視性とアラート
+
+Root User が **IAM user and role access to billing information** を有効化すると、適切な権限を持つ IAM User / Role が Billing Data を確認できます。Billing / Bills で費用元、Free Tier で現在・予測使用量、Zero spend / Monthly cost budget で予期しない支出を早期検知します。

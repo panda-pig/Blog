@@ -13,7 +13,7 @@ updated: 2026-08-25
 tags: ["compare", "IAM", "Security", "AWS"]
 notionId: 3c7964dc-ce4a-81ef-83a8-e4f919ae927a
 notionUrl: https://app.notion.com/p/3c7964dcce4a81ef83a8e4f919ae927a
-notionUpdated: "2026-08-25T06:00:03.628Z"
+notionUpdated: "2026-08-25T07:25:30.677Z"
 ---
 
 ## One-sentence conclusion
@@ -55,3 +55,14 @@ notionUpdated: "2026-08-25T06:00:03.628Z"
 ## Key memory
 
 **Inventory: Report. Usage time: Advisor. Access paths and policy risk: Analyzer. Request outcome: Simulator. Actual calls: CloudTrail.**
+
+## Credentials Report fields and boundaries
+
+| Group | Common fields | Review goal |
+| --- | --- | --- |
+| Password | Enabled, last used, last changed, next rotation | Find unused or stale user passwords |
+| MFA | MFA active | Find identities without another factor |
+| Access key 1 / 2 | Active, last rotated, last used date, region, service | Find idle, unrotated, or suspicious keys |
+| Signing certificate | Active, last rotated | Review IAM-managed X.509 certificates |
+
+This account-level CSV includes a root-account row and IAM users. It excludes role temporary credentials and service-specific credentials such as CodeCommit credentials. Access Advisor can also trace the policy source behind service/action last-accessed data.

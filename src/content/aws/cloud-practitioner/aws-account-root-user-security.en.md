@@ -9,7 +9,7 @@ lang: en
 topicKey: "AWS 账户与 Root User 安全"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-08-13
-updated: 2026-08-15
+updated: 2026-08-25
 tags: ["AWS Account", "Root User", "Security", "AWS"]
 notionId: 3bb964dc-ce4a-81c3-9d23-dd3deb0dda3e
 notionUrl: https://app.notion.com/p/3bb964dcce4a81c39d23dd3deb0dda3e
@@ -42,3 +42,7 @@ Passkeys and security keys provide phishing-resistant FIDO authentication. Authe
 ## Key takeaway
 
 **The account is the resource and billing boundary; root, users, and roles are identities; sessions are login contexts; root is reserved for special tasks.**
+
+## Cost visibility and alerts
+
+After the root user enables **IAM user and role access to billing information**, IAM users and roles with appropriate permissions can view billing data. Use Billing/Bills to locate charges, Free Tier for current and forecast usage, and zero-spend or monthly budgets to detect unexpected cost early.

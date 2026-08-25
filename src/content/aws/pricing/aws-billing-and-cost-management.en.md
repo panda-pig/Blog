@@ -9,7 +9,7 @@ lang: en
 topicKey: "AWS Billing and Cost Management"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-08-04
-updated: 2026-08-04
+updated: 2026-08-25
 tags: ["pricing", "AWS Billing and Cost Management", "AWS"]
 notionId: 3b2964dc-ce4a-8130-af30-fa60658ff24d
 notionUrl: https://app.notion.com/p/3b2964dcce4a8130af30fa60658ff24d
@@ -39,3 +39,11 @@ Review current charges, invoices, payment information, and cost-management entry
 ## Key takeaway
 
 **Current bills, invoices, and payments point to AWS Billing and Cost Management.**
+
+## Billing, Bills, and Free Tier
+
+An IAM user with AdministratorAccess may still lack billing-data access. The root user must enable **IAM user and role access to billing information** in account settings; the IAM user or role still needs appropriate billing permissions afterward.
+
+- Billing Dashboard: month-to-date cost, current-month forecast, last month's total, and monthly breakdown.
+- Bills: choose a month and use **charges by service** to locate service-level usage and charges.
+- Free Tier: compare current and forecast usage; investigate and stop unneeded billable resources when forecast use exceeds an allowance.

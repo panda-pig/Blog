@@ -13,7 +13,7 @@ updated: 2026-08-25
 tags: ["Security", "Compliance", "CLF-C02", "AWS"]
 notionId: 3a6964dc-ce4a-8119-86e2-cb66c29308cd
 notionUrl: https://app.notion.com/p/3a6964dcce4a811986e2cb66c29308cd
-notionUpdated: "2026-08-25T06:02:23.344Z"
+notionUpdated: "2026-08-25T07:25:33.650Z"
 ---
 
 ## 必須境界
@@ -51,3 +51,7 @@ Organizations は Account、OU、SCP、一括請求を管理し、SCP は制限�
 | 実際に発生した API Call | AWS CloudTrail |
 
 Access Advisor は User だけでなく Role、Group、Policy などにも利用できます。Last Accessed は完全なリアルタイム監査証拠ではないため、権限削除前に業務周期を考慮し、CloudTrail で確認します。
+
+## 現代的なIDと認証情報監査
+
+人には IAM Identity Center / Federation と一時認証情報、Workload には Role を優先します。Credentials Report で Root Account 行と IAM User の Password、MFA、Access Key、Signing Certificate を棚卸しし、Access Advisor で Service / Action Last Accessed と権限元を確認します。長期 Key は互換用途に限定して安全に更新します。

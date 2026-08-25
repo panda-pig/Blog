@@ -13,7 +13,7 @@ updated: 2026-08-25
 tags: ["saa-c03", "安全架构设计", "AWS"]
 notionId: 3a6964dc-ce4a-815e-9db0-d8343bfa6db7
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9db0d8343bfa6db7
-notionUpdated: "2026-08-25T06:02:24.327Z"
+notionUpdated: "2026-08-25T07:25:29.784Z"
 ---
 
 ## Must know
@@ -83,3 +83,7 @@ notionUpdated: "2026-08-25T06:02:24.327Z"
 3. Use Access Analyzer to evaluate external, internal, and unused access and validate policies.
 4. Use Policy Simulator to verify critical principal/action/resource requests.
 5. Observe actual API calls in CloudTrail, then continue tightening and reviewing permissions.
+
+## Identity review and credential lifecycle
+
+Use IAM Identity Center / federation for people and roles for workloads. Credentials Report inventories credentials; Access Advisor shows use and sources; Access Analyzer checks paths and policies; Policy Simulator validates requests; CloudTrail records real activity. Replace and verify a new long-term key before deactivating and deleting the old one.

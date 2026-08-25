@@ -13,7 +13,7 @@ updated: 2026-08-25
 tags: ["saa-c03", "安全架构设计", "AWS"]
 notionId: 3a6964dc-ce4a-815e-9db0-d8343bfa6db7
 notionUrl: https://app.notion.com/p/3a6964dcce4a815e9db0d8343bfa6db7
-notionUpdated: "2026-08-25T06:02:24.327Z"
+notionUpdated: "2026-08-25T07:25:29.784Z"
 ---
 
 ## 必須ポイント
@@ -83,3 +83,7 @@ notionUpdated: "2026-08-25T06:02:24.327Z"
 3. Access Analyzer で External、Internal、Unused Access と Policy を分析します。
 4. Policy Simulator で重要な Principal / Action / Resource Request を検証します。
 5. CloudTrail で実際の API Call を確認し、継続的に権限を縮小・再評価します。
+
+## ID監査と認証情報ライフサイクル
+
+人には IAM Identity Center / Federation、Workload には Role を使います。Credentials Report で棚卸し、Access Advisor で利用と権限元、Access Analyzer で経路と Policy、Policy Simulator で Request、CloudTrail で実活動を確認します。新しい長期 Key を作成・検証してから旧 Key を無効化・削除します。

@@ -13,7 +13,7 @@ updated: 2026-08-25
 tags: ["security", "AWS IAM", "AWS"]
 notionId: 3a6964dc-ce4a-814c-981d-d23eb8d66e71
 notionUrl: https://app.notion.com/p/3a6964dcce4a814c981dd23eb8d66e71
-notionUpdated: "2026-08-25T06:02:22.052Z"
+notionUpdated: "2026-08-25T07:25:28.538Z"
 ---
 
 ## 基本信息
@@ -123,3 +123,9 @@ iam:PassRole 允许调用者把指定 Role 交给 AWS Service；它不等于调�
 | Policy Simulator | 某 Principal 对某 Resource 的 Action 会 Allow 还是 Deny？ |
 
 Last Accessed 不是完整实时审计日志；收紧权限前要结合业务周期与 CloudTrail。凭证盘点、使用时间、访问路径、请求模拟和真实 API 记录各自解决不同问题。
+
+## 凭证生命周期与现代身份
+
+人员默认使用 IAM Identity Center / Federation，AWS Workload 默认使用 Role。长期 Key 只用于无法采用临时凭证的兼容场景，并按“新建、更新验证、停用、删除”的顺序轮换。
+
+Credentials Report 是包含 Root Account 行与 IAM Users 的账户级 CSV，可审查 Password、MFA、两把 Access Key、签名证书及最后使用 / 轮换信息；不包含 Role 临时凭证或服务专用凭证。Access Advisor 可查看 User、Group、Role、Policy 的 Service / Action 最后访问时间并追踪权限来源。

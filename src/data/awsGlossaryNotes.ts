@@ -9,8 +9,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "アクセス拒否（必要な Allow がない、または明示的な Deny や権限境界などによって AWS API リクエストが拒否された状態）"
   },
   "Access Key": {
-    "en": "API signing credentials. Long-term keys usually belong to IAM users; temporary keys also include a session token. Prefer temporary credentials and never share or hard-code the secret.",
-    "ja": "API リクエスト署名用の認証情報。長期キーは通常 IAM User、Temporary Key には Session Token も含まれる。Temporary Credentials を優先し、Secret を共有・ハードコードしない。"
+    "en": "API signing credentials. Long-term keys usually belong to IAM users; temporary keys also include a session token. When long-term keys are unavoidable, create a new key, update and verify consumers, then deactivate and delete the old key.",
+    "ja": "AWS API リクエスト署名用の認証情報。長期キーは通常 IAM User に属し、一時認証情報には Session Token も含まれる。長期キーが必要な場合は、新規作成、利用先の更新・検証、旧キーの無効化、削除の順でローテーションする。"
   },
   "Access Key ID": {
     "en": "Identifies a set of API credentials; it is like a username, not a password. A secret is still required, plus a session token for temporary credentials.",
@@ -512,6 +512,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Lets SDKs and tools discover and refresh suitable credentials without hard-coding secrets in application code.",
     "ja": "認証情報プロバイダーチェーン（AWS SDK やツールがロール、IAM Identity Center、環境変数、設定ファイル、メタデータなどから認証情報を順番に探索する仕組み）"
   },
+  "Credential Rotation": {
+    "en": "Safely replace an old credential: create a new key, update every consumer, verify it, deactivate the old key, and delete it after confirming no failures.",
+    "ja": "古い認証情報を安全に置き換える運用。新しい Key を作成し、全利用先を更新・検証してから旧 Key を無効化し、異常がないことを確認して削除する。"
+  },
   "CRR": {
     "en": "Replicates objects to another Region according to configured rules.",
     "ja": "設定したルールに従ってオブジェクトを別の Region へ複製する。"
@@ -729,8 +733,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "オーケストレーターではなく、EC2 管理を不要にする ECS/EKS 向けの Serverless コンピューティングオプション。"
   },
   "Federation": {
-    "en": "Uses an external identity to sign in to AWS without creating another long-lived account.",
-    "ja": "外部 ID を使って AWS にサインインし、長期アカウントの重複作成を避ける。"
+    "en": "Sign in through an external identity provider and receive temporary AWS credentials instead of creating long-term IAM users in every account; this is a preferred approach for workforce access.",
+    "ja": "外部 IdP でログインして AWS の一時認証情報を取得し、各 Account に長期 IAM User を重複作成しない。従業員 Access の推奨方式の一つ。"
   },
   "File Storage": {
     "en": "Provides directories, paths, and shared file-system semantics.",
@@ -805,16 +809,16 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "Account-level / Global View の Identity・Permission Service。Default Deny、Explicit Deny 優先、Least Privilege が基本。"
   },
   "IAM Access Advisor": {
-    "en": "Reviews last-accessed information for IAM users, groups, roles, policies, and other supported entities; it is not a complete real-time audit log.",
-    "ja": "User、Group、Role、Policy などの IAM Entity の Last Accessed を確認する。完全なリアルタイム監査ログではない。"
+    "en": "Reviews service/action last-accessed data and permission sources for users, groups, roles, and policies. It is not a complete real-time audit log.",
+    "ja": "User、Group、Role、Policy の Service / Action 最終利用時刻と権限元を確認する。完全なリアルタイム監査ログではない。"
   },
   "IAM Access Analyzer": {
     "en": "Analyzes external access, policies, and unused permissions to help enforce least privilege.",
     "ja": "外部アクセス、ポリシー、未使用アクセスを分析し、最小権限の実現を支援する。"
   },
   "IAM Credentials Report": {
-    "en": "Provides an account-level inventory of IAM user password, access-key, and MFA state; it does not analyze resource-sharing relationships.",
-    "ja": "Account 内の IAM User について Password、Access Key、MFA の状態を一覧化する。Resource Sharing の関係は分析しない。"
+    "en": "An account-level CSV covering the root-account row and IAM-user passwords, MFA, access keys, signing certificates, and last-use/rotation data. It excludes role temporary credentials and service-specific credentials.",
+    "ja": "Root Account 行と IAM User の Password、MFA、Access Key、Signing Certificate、最終利用・ローテーション情報をまとめた Account レベル CSV。Role の一時認証情報や Service 固有認証情報は含まない。"
   },
   "IAM Group": {
     "en": "Contains IAM users only, not other groups. A user may join multiple groups, while a group cannot sign in or be assumed.",
@@ -837,8 +841,8 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "ja": "Trust Policy は誰が Assume できるか、Permissions Policy は Role Session が何を実行できるかを定義する。STS Temporary Credentials により Workload、Federation、Cross-account Access に利用できる。"
   },
   "IAM User": {
-    "en": "May have a console password or access key and may join multiple groups; workloads and multi-account workforce access should normally use temporary credentials.",
-    "ja": "Console Password や Access Key を持ち、複数 Group に所属できる。Workload と Multi-account の従業員アクセスは通常 Temporary Credentials を優先する。"
+    "en": "A long-term identity in an AWS account that can have a console password or access key and join multiple groups. Prefer Identity Center or federation with temporary credentials for routine workforce access.",
+    "ja": "AWS Account 内の長期 Identity で、Console Password / Access Key を持ち複数 Group に所属できる。通常の従業員 Access では Identity Center / Federation と一時認証情報を優先する。"
   },
   "iam:PassRole": {
     "en": "PassRole is not AssumeRole. It lets a caller pass a specified role to an AWS service and should restrict both the role and destination service.",

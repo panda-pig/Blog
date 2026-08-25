@@ -13,7 +13,7 @@ updated: 2026-08-25
 tags: ["security", "AWS IAM", "AWS"]
 notionId: 3a6964dc-ce4a-814c-981d-d23eb8d66e71
 notionUrl: https://app.notion.com/p/3a6964dcce4a814c981dd23eb8d66e71
-notionUpdated: "2026-08-25T06:02:22.052Z"
+notionUpdated: "2026-08-25T07:25:28.538Z"
 ---
 
 ## In one sentence
@@ -70,3 +70,9 @@ iam:PassRole lets a caller pass a specific role to an AWS service. It is not the
 | Policy Simulator | Would a principal's action on a resource be allowed or denied? |
 
 Last-accessed data is not a complete real-time audit log. Before removing permissions, consider business cycles and verify actual calls with CloudTrail. Credential inventory, usage history, access-path analysis, request simulation, and API evidence solve different problems.
+
+## Credential lifecycle and modern identity
+
+Use IAM Identity Center / federation for people and roles for workloads on AWS. Keep long-term keys only for compatibility, rotating in the order create, update and verify, deactivate, then delete.
+
+Credentials Report is an account-level CSV with a root-account row and IAM-user password, MFA, two access keys, signing-certificate, and last-use/rotation data. It excludes role temporary credentials and service-specific credentials. Access Advisor shows service/action last-accessed data and permission sources for users, groups, roles, and policies.

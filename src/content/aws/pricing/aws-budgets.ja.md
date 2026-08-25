@@ -9,7 +9,7 @@ lang: ja
 topicKey: "AWS Budgets"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-08-04
-updated: 2026-08-04
+updated: 2026-08-25
 tags: ["pricing", "AWS Budgets", "AWS"]
 notionId: 3b2964dc-ce4a-816c-9d49-ed1dd09b3c99
 notionUrl: https://app.notion.com/p/3b2964dcce4a816c9d49ed1dd09b3c99
@@ -39,3 +39,10 @@ notionUpdated: "2026-08-04T02:10:34.308Z"
 ## 重要ポイント
 
 **目標と実績・予測のしきい値通知なら AWS Budgets です。**
+
+## 実績・予測費用のアラート
+
+- **Zero spend budget**：支出が初めて発生した段階で通知。
+- **Monthly cost budget**：月額に対して Actual Spend と Forecasted Spend の双方を設定。
+- Actual 85%、Actual 100%、Forecast 100% など複数しきい値を設定可能。
+- Budget Alert は Resource をデフォルト停止しません。Production の Budgets Actions には最小権限、承認、Rollback が必要です。

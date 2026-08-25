@@ -9,7 +9,7 @@ lang: zh
 topicKey: "AWS Billing and Cost Management"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-08-04
-updated: 2026-08-04
+updated: 2026-08-25
 tags: ["pricing", "AWS Billing and Cost Management", "AWS"]
 notionId: 3b2964dc-ce4a-8130-af30-fa60658ff24d
 notionUrl: https://app.notion.com/p/3b2964dcce4a8130af30fa60658ff24d
@@ -46,3 +46,11 @@ notionUpdated: "2026-08-04T02:10:34.280Z"
 ## 重点记忆
 
 **当前实际账单、发票和付款 → AWS Billing and Cost Management。**
+
+## Billing、Bills 与 Free Tier
+
+具备 AdministratorAccess 的 IAM User 也可能默认无法查看 Billing Data。Root User 需在账户设置中启用 **IAM user and role access to billing information**，之后 IAM User / Role 仍需相应 Billing 权限。
+
+- Billing Dashboard：month-to-date cost、当月 forecast、上月总费用与月度 breakdown。
+- Bills：选择月份后，用 **charges by service** 定位服务级费用与用量。
+- Free Tier：对比 current usage 与 forecasted usage；预测超额时检查并关闭不需要的收费资源。

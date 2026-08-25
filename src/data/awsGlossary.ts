@@ -28,8 +28,8 @@ const rows = [
     "term": "Access Key",
     "english": "AWS Access Key",
     "chinese": "AWS 访问密钥",
-    "japanese": "AWS アクセスキー（AWS API リクエストに署名するための Access Key ID と Secret Access Key から成る認証情報）",
-    "note": "API 请求签名凭证；长期 Key 通常属于 IAM User，临时 Key 还包含 Session Token。优先临时凭证，不共享或硬编码 Secret。",
+    "japanese": "AWS アクセスキー（AWS API リクエストへの署名に使用する認証情報。長期キーは必要な場合だけ使用し、安全な手順で更新する）",
+    "note": "API 请求签名凭证。长期 Key 通常属于 IAM User；临时 Key 还包含 Session Token。必须使用长期 Key 时，以“创建新 Key→更新并验证→停用旧 Key→删除旧 Key”的顺序轮换。",
     "frequency": 4
   },
   {
@@ -1033,6 +1033,14 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "Credential Rotation",
+    "english": "Credential Rotation",
+    "chinese": "凭证轮换",
+    "japanese": "認証情報のローテーション（古い認証情報を安全に新しいものへ切り替え、漏えいや長期利用のリスクを減らす運用）",
+    "note": "长期 Access Key 的安全轮换顺序：创建新 Key、更新所有使用方、验证新 Key、停用旧 Key、确认无异常后删除旧 Key。",
+    "frequency": 4
+  },
+  {
     "term": "CRR",
     "english": "Cross-Region Replication",
     "chinese": "跨区域复制",
@@ -1468,8 +1476,8 @@ const rows = [
     "term": "Federation",
     "english": "Identity Federation",
     "chinese": "身份联合",
-    "japanese": "フェデレーション（ID 連携）",
-    "note": "使用外部身份登录 AWS，而不重复创建长期账号。",
+    "japanese": "フェデレーション（外部の ID プロバイダーと連携し、AWS アカウントごとに長期利用者を作成せず、一時認証情報でアクセスする仕組み）",
+    "note": "通过外部 IdP 登录并取得 AWS 临时凭证，不必在每个账户重复创建长期 IAM User；当前人类员工访问 AWS 的首选方式之一。",
     "frequency": 4
   },
   {
@@ -1620,8 +1628,8 @@ const rows = [
     "term": "IAM Access Advisor",
     "english": "IAM Access Advisor / Service Last Accessed Information",
     "chinese": "IAM 访问顾问／最后访问时间信息",
-    "japanese": "IAM Access Advisor（IAM エンティティに許可された AWS サービスやアクションと、その最終アクセス情報を確認する機能）",
-    "note": "用于 User、Group、Role、Policy 等 IAM 实体的 Last Accessed 审查；不是完整实时审计日志。",
+    "japanese": "IAM アクセスアドバイザー（利用者、グループ、ロール、ポリシーに許可されたサービスや操作の最終アクセス情報と権限元を確認する機能）",
+    "note": "User、Group、Role、Policy 等的 Last Accessed 审查；可查看 Service／Action 的最后访问时间并追踪权限来源，不是完整实时审计日志。",
     "frequency": 4
   },
   {
@@ -1636,8 +1644,8 @@ const rows = [
     "term": "IAM Credentials Report",
     "english": "IAM Credential Report",
     "chinese": "IAM 凭证报告",
-    "japanese": "IAM 認証情報レポート（AWS アカウント内の IAM ユーザーについて、パスワード、アクセスキー、MFA などの状態を一覧化するレポート）",
-    "note": "账户级盘点 IAM User 的 Password、Access Key、MFA 等凭证状态；不分析资源共享关系。",
+    "japanese": "IAM 認証情報レポート（ルートアカウント行と IAM ユーザーのパスワード、MFA、アクセスキー、署名証明書の状態や最終利用・更新情報を一覧化する CSV レポート）",
+    "note": "账户级 CSV，汇总 Root Account 行与 IAM User 的 Password、MFA、Access Key、签名证书及最后使用／轮换信息；不包含 Role 临时凭证或服务专用凭证。",
     "frequency": 4
   },
   {
@@ -1684,8 +1692,8 @@ const rows = [
     "term": "IAM User",
     "english": "IAM User",
     "chinese": "IAM 用户",
-    "japanese": "IAM ユーザー（AWS アカウント内で個人やアプリケーションを表す長期アイデンティティ）",
-    "note": "可以拥有控制台密码或 Access Key，也可属于多个 Group；工作负载和多账户员工访问通常优先使用临时凭证。",
+    "japanese": "IAM ユーザー（AWS アカウント内で長期的な認証情報を持つ利用者。現在は従業員の通常利用には IAM Identity Center や認証連携による一時認証情報が推奨される）",
+    "note": "AWS 账户内的长期身份，可拥有 Console Password 或 Access Key，也可属于多个 Group；当前人类员工默认优先 IAM Identity Center／身份联合与临时凭证，只有特定兼容场景才创建 IAM User。",
     "frequency": 4
   },
   {
