@@ -8,11 +8,11 @@ kind: service
 lang: zh
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-09-29
 tags: [Storage, Object Storage, SAA-C03]
 notionId: 3a6964dc-ce4a-8167-bdc7-d3b96eb969dc
 notionUrl: https://app.notion.com/p/3a6964dcce4a8167bdc7d3b96eb969dc
-notionUpdated: "2026-07-30T04:27:36.877Z"
+notionUpdated: "2026-09-28T04:42:18.716Z"
 ---
 
 ## 基本信息
@@ -121,3 +121,11 @@ S3 保存对象；CloudFront 在边缘分发与缓存。S3 静态网站端点与
 ## 重点记忆
 
 **Bucket 装 Object，Key 定位对象；Policy 管权限，Versioning 防误删，Lifecycle 管成本。**
+
++## 本轮补充：保护、交付与批量操作
+
+- Versioning、Replication、Object Lock、Legal Hold 与 MFA Delete 保护的失败路径不同；Replication 不是 Backup。
+- 私有 S3 Origin 经 CloudFront 分发时使用 OAC + Bucket Policy；S3 Website Endpoint 不支持 OAC 且原生仅 HTTP。
+- S3 Event Notifications 可直达 SNS、SQS Standard、Lambda；需要复杂过滤、Replay 或 FIFO 时使用 EventBridge。
+- Batch Operations 处理大量 Existing Objects；Batch Replication 用于补复制旧对象或失败对象。
+- SSE-KMS 需要同时满足 S3 与 KMS 权限；S3 Bucket Key 可减少 KMS 请求与成本。

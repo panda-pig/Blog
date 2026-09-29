@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon ECS"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["compute","Amazon ECS","AWS"]
 notionId: 3a6964dc-ce4a-8132-9a5c-c4a14b839c97
 notionUrl: https://app.notion.com/p/3a6964dcce4a81329a5cc4a14b839c97
-notionUpdated: "2026-07-30T08:30:05.385Z"
+notionUpdated: "2026-09-28T07:43:11.818Z"
 ---
 
 ## 基本信息
@@ -79,3 +79,9 @@ ECS 负责在 AWS 上部署、调度、扩缩和维护容器，是 AWS 原生的
 ## 重点记忆
 
 ECS = AWS 原生编排；ECR = 镜像仓库；EC2 / Fargate = 运行位置。
+
++## 本轮补充：Role 与 Capacity Provider
+
+- **Task Role** 授权容器内应用调用 AWS API；**Task Execution Role** 供 ECS Agent 拉取 ECR Image、写日志和读取启动 Secret。
+- Capacity Provider 决定 Task 从 FARGATE、FARGATE_SPOT 或 ASG 获得计算容量。
+- Strategy 中的 Base 是最低基础量，Weight 是剩余 Task 的相对分配；它们不是固定百分比。

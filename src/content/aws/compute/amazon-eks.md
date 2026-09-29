@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon EKS"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["compute","Amazon EKS","AWS"]
 notionId: 3a6964dc-ce4a-8197-9431-e9339a24f693
 notionUrl: https://app.notion.com/p/3a6964dcce4a81979431e9339a24f693
-notionUpdated: "2026-07-30T08:30:03.530Z"
+notionUpdated: "2026-09-28T07:43:10.648Z"
 ---
 
 ## 基本信息
@@ -68,3 +68,9 @@ AWS 管理 Kubernetes 控制平面，用户仍要设计工作负载、网络、�
 ## 重点记忆
 
 题目出现 Kubernetes、既有 K8s 工作负载或生态兼容时优先想到 EKS；只需要 AWS 原生简化编排时通常先考虑 ECS。
+
++## 本轮补充：节点与存储
+
+- Managed Node Group 自动化 EC2 Worker Node 的 Provisioning 和生命周期，但底层仍是 EC2 + ASG，并非 Serverless。
+- EKS Auto Mode 根据 Pod 请求管理更多 EC2 基础设施容量，与 Fargate 的无 Node Group 模型不同。
+- CSI Driver 把 StorageClass / PVC 的需求连接到 EBS 或 EFS；Driver 本身不是存储服务。

@@ -8,11 +8,11 @@ kind: service
 lang: ja
 frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-09-29
 tags: [Database, Cache, Performance]
 notionId: 3a6964dc-ce4a-819f-a367-c7390c1af894
 notionUrl: https://app.notion.com/p/3a6964dcce4a819fa367c7390c1af894
-notionUpdated: "2026-07-30T04:28:56.104Z"
+notionUpdated: "2026-09-28T08:57:41.942Z"
 ---
 
 ## 基本情報
@@ -54,3 +54,10 @@ notionUpdated: "2026-07-30T04:28:56.104Z"
 ## 関連サービス
 
 RDS、Aurora、DAX、CloudFront、EC2、Lambda。
+
++## 追加：Cache Pattern と Security
+
+- Cache-aside は Miss 時に Application が DB を読み Cache へ格納し、Write-through は Main Data 更新時に Cache も更新します。
+- TTL、Invalidation、Jitter、Request Coalescing で Stale Data と Cache Stampede を抑えます。
+- Redis OSS / Valkey は Replica、Failover、Sorted Set などを持ち、Memcached は単純な水平分割 Cache に向きます。
+- RBAC は単一 AUTH Token より細粒度で、Encryption、Subnet、SG の分離も必要です。

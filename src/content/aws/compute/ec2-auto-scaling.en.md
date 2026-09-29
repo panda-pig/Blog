@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["Compute","Auto Scaling","SAA-C03"]
 notionId: 3a6964dc-ce4a-811a-bc62-e247c6def362
 notionUrl: https://app.notion.com/p/3a6964dcce4a811abc62e247c6def362
-notionUpdated: "2026-07-30T04:28:45.501Z"
+notionUpdated: "2026-09-27T06:02:13.109Z"
 ---
 
 ## Basic Information
@@ -56,3 +56,10 @@ notionUpdated: "2026-07-30T04:28:45.501Z"
 ## Related services
 
 Elastic Load Balancing, CloudWatch, Launch Template, EC2, SQS.
+
++## Update: health, warmup, and scale-in
+
+- A launch template defines an instance; the ASG defines subnets/AZs, Min/Desired/Max, health, and scaling.
+- Registered does not mean Healthy, and ASG InService does not mean target-group Healthy. Enable ELB health integration when application health should trigger replacement.
+- Grace period prevents premature failure decisions, warmup keeps incomplete capacity from distorting metrics, and deregistration delay protects in-flight work.
+- Target tracking maintains a metric target, step scaling reacts by breach size, scheduled scaling uses known times, and predictive scaling forecasts recurring demand.

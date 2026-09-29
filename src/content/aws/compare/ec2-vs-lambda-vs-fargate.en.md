@@ -9,11 +9,11 @@ lang: en
 topicKey: "EC2 vs Lambda vs Fargate"
 frequency: "Study summary"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-09-29
 tags: ["compare","EC2 vs Lambda vs Fargate","AWS"]
 notionId: 3a6964dc-ce4a-8171-99fc-f885174daf42
 notionUrl: https://app.notion.com/p/3a6964dcce4a817199fcf885174daf42
-notionUpdated: "2026-07-23T07:24:07.209Z"
+notionUpdated: "2026-09-28T07:43:18.851Z"
 ---
 
 ## In one sentence
@@ -29,3 +29,10 @@ notionUpdated: "2026-07-23T07:24:07.209Z"
 ## Exam takeaway
 
 > Decide by deployment unit, runtime duration, host control, scaling pattern, and operational responsibility.
+
++## Additional decision dimensions
+
+- Need a full OS, specialized hardware, daemons, or workloads beyond platform limits → EC2.
+- Event-driven work of at most 15 minutes with concurrency-based scaling → Lambda; still design for cold starts and downstream capacity.
+- Existing container images and long-running tasks without node operations → Fargate, orchestrated by ECS or EKS.
+- Stable scale, specialized nodes, GPUs, or stronger cost control may favor ECS/EKS on EC2.

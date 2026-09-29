@@ -9,11 +9,11 @@ lang: en
 topicKey: "Amazon Kinesis Data Streams & Data Firehose"
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["messaging","Amazon Kinesis Data Streams & Data Firehose","AWS"]
 notionId: 3a6964dc-ce4a-8106-bfc9-db1375ab325d
 notionUrl: https://app.notion.com/p/3a6964dcce4a8106bfc9db1375ab325d
-notionUpdated: "2026-07-30T08:01:42.663Z"
+notionUpdated: "2026-09-28T06:40:09.985Z"
 ---
 
 ## Basic Information
@@ -49,3 +49,10 @@ Data Streams ingests, retains, and replays real-time streams; Data Firehose buff
 ## Remember
 
 **Streams is for streaming and replay; Firehose is for buffering and delivery.**
+
++## Update: Streams and Firehose
+
+- Kinesis Data Streams is a replayable real-time stream. The partition key selects a shard and records are ordered within that shard; retention can be extended.
+- Shared throughput and enhanced fan-out provide different consumer throughput models.
+- Amazon Data Firehose is destination-oriented, near-real-time managed delivery with size/time buffering, transformation, compression, and format conversion.
+- Redshift delivery stages data in S3 before COPY. Firehose is not a general replay stream for independent consumers.

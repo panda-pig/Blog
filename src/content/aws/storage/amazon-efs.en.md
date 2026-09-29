@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-30
+updated: 2026-09-29
 tags: [Storage, File Storage, NFS]
 notionId: 3a6964dc-ce4a-81c2-8fc7-def0bc74e454
 notionUrl: https://app.notion.com/p/3a6964dcce4a81c28fc7def0bc74e454
-notionUpdated: "2026-07-29T04:41:30.363Z"
+notionUpdated: "2026-09-27T05:20:10.229Z"
 ---
 
 ## Basic Information
@@ -54,3 +54,9 @@ notionUpdated: "2026-07-29T04:41:30.363Z"
 ## Related services
 
 EC2, ECS, EKS, NFS, FSx, AWS Backup.
+
++## Update: network entry and throughput
+
+- An EFS mount target is the network entry in a VPC/AZ. Workload AZs normally have one, with security groups allowing client NFS TCP 2049.
+- Regional EFS provides cross-AZ redundancy; EFS One Zone costs less but does not replicate data across AZs.
+- Elastic throughput suits unpredictable demand, provisioned throughput suits known sustained load, and bursting relates throughput to filesystem size.

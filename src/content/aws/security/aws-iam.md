@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS IAM"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-08-25
+updated: 2026-09-29
 tags: ["security", "AWS IAM", "AWS"]
 notionId: 3a6964dc-ce4a-814c-981d-d23eb8d66e71
 notionUrl: https://app.notion.com/p/3a6964dcce4a814c981dd23eb8d66e71
-notionUpdated: "2026-08-25T07:25:28.538Z"
+notionUpdated: "2026-09-27T02:41:03.551Z"
 ---
 
 ## 基本信息
@@ -129,3 +129,10 @@ Last Accessed 不是完整实时审计日志；收紧权限前要结合业务周
 人员默认使用 IAM Identity Center / Federation，AWS Workload 默认使用 Role。长期 Key 只用于无法采用临时凭证的兼容场景，并按“新建、更新验证、停用、删除”的顺序轮换。
 
 Credentials Report 是包含 Root Account 行与 IAM Users 的账户级 CSV，可审查 Password、MFA、两把 Access Key、签名证书及最后使用 / 轮换信息；不包含 Role 临时凭证或服务专用凭证。Access Advisor 可查看 User、Group、Role、Policy 的 Service / Action 最后访问时间并追踪权限来源。
+
++## 本轮补充：身份、角色与拒绝路径
+
+- 人员优先使用 Federation / IAM Identity Center，工作负载使用 Role；长期 Access Key 只留给无法使用临时凭证的兼容场景。
+- Trust Policy 决定谁能 AssumeRole，Permissions Policy 决定代入后能做什么；EC2 通过 Instance Profile 使用 Role。
+- AccessDenied 排查从当前 Principal 与 Action 入手，再看 Allow、Explicit Deny、Resource、Condition、Permission Boundary 与 SCP。
+- Policy Wildcard 会扩大授权面；最小权限应结合 CloudTrail、Access Analyzer 与实际使用持续收紧。

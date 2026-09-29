@@ -8,11 +8,11 @@ kind: service
 lang: ja
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["Compute","Auto Scaling","SAA-C03"]
 notionId: 3a6964dc-ce4a-811a-bc62-e247c6def362
 notionUrl: https://app.notion.com/p/3a6964dcce4a811abc62e247c6def362
-notionUpdated: "2026-07-30T04:28:45.501Z"
+notionUpdated: "2026-09-27T06:02:13.109Z"
 ---
 
 ## 基本情報
@@ -56,3 +56,10 @@ notionUpdated: "2026-07-30T04:28:45.501Z"
 ## 関連サービス
 
 Elastic Load Balancing、CloudWatch、Launch Template、EC2、SQS。
+
++## 追加：Health、Warmup、Scale-in
+
+- Launch Template は Instance 構成、ASG は Subnet / AZ、Min / Desired / Max、Health、Scaling を定義します。
+- Registered と Healthy、ASG InService と Target Group Healthy は同義ではありません。Application Health で置換するには ELB Health Integration が必要です。
+- Grace Period は早すぎる障害判定、Warmup は未準備 Capacity による Metric 歪み、Deregistration Delay は In-flight Work を保護します。
+- Target Tracking、Step、Scheduled、Predictive はそれぞれ目的が異なります。

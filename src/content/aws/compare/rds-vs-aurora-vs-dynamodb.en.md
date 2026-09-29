@@ -9,11 +9,11 @@ lang: en
 topicKey: "RDS vs Aurora vs DynamoDB"
 frequency: "Study summary"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-09-29
 tags: ["compare","RDS vs Aurora vs DynamoDB","AWS"]
 notionId: 3a6964dc-ce4a-81bc-8e9a-ce92a59d7ce7
 notionUrl: https://app.notion.com/p/3a6964dcce4a81bc8e9ace92a59d7ce7
-notionUpdated: "2026-07-29T08:11:55.994Z"
+notionUpdated: "2026-09-27T06:24:29.575Z"
 ---
 
 ## In one sentence
@@ -29,3 +29,10 @@ notionUpdated: "2026-07-29T08:11:55.994Z"
 ## Exam takeaway
 
 > Multi-AZ is high availability, read replicas scale reads, and DynamoDB design starts from keys and queries rather than joins.
+
++## Additional decision dimensions
+
+- RDS keeps familiar relational engines and operations. Aurora adds distributed storage, specialized endpoints, replica auto scaling, and Global Database.
+- DynamoDB centers design on access patterns and partition keys, offering serverless horizontal scale without arbitrary relational joins.
+- Multi-AZ addresses availability, read replicas address read scale, DAX/ElastiCache address caching, and backup/PITR address recovery.
+- Choose from transaction and query requirements before latency, throughput, operations, and cost.

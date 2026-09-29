@@ -9,11 +9,11 @@ lang: zh
 topicKey: "ECS vs EKS"
 frequency: "高频对比"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-09-29
 tags: ["compare","ECS vs EKS","AWS"]
 notionId: 3a6964dc-ce4a-81c4-b765-d0f7ad35f8f0
 notionUrl: https://app.notion.com/p/3a6964dcce4a81c4b765d0f7ad35f8f0
-notionUpdated: "2026-07-23T07:24:10.111Z"
+notionUpdated: "2026-09-28T07:43:17.837Z"
 ---
 
 ## 一句话结论
@@ -54,3 +54,10 @@ notionUpdated: "2026-07-23T07:24:10.111Z"
 - ECS / EKS 都是编排服务。
 - Fargate 是计算引擎。
 - ECR 是镜像仓库，不能运行容器。
+
++## 新增判断维度
+
+- ECS 提供 AWS 原生的 Task / Service 模型，学习与运维面通常更小。
+- EKS 提供 Kubernetes API、生态与可移植性，但控制面与 Add-on 复杂度更高。
+- 两者都能使用 EC2 或 Fargate；选择编排器与选择计算容量是两条轴。
+- ECS Task Role 与 Execution Role、EKS Pod 权限与 Node Role 都要分离应用权限和平台权限。

@@ -8,11 +8,11 @@ kind: service
 lang: zh
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-30
+updated: 2026-09-29
 tags: [Storage, File Storage, NFS]
 notionId: 3a6964dc-ce4a-81c2-8fc7-def0bc74e454
 notionUrl: https://app.notion.com/p/3a6964dcce4a81c28fc7def0bc74e454
-notionUpdated: "2026-07-29T04:41:30.363Z"
+notionUpdated: "2026-09-27T05:20:10.229Z"
 ---
 
 ## 基本信息
@@ -110,3 +110,9 @@ Linux、NFS、多台 EC2、共享目录、自动扩缩 → EFS。
 ## 重点记忆
 
 **要挂载共享 Linux 目录 → EFS；要通过 API 存对象 → S3。**
+
++## 本轮补充：网络入口与吞吐
+
+- EFS Mount Target 是 VPC / AZ 内的网络入口，通常每个业务 AZ 一个；Security Group 允许客户端来源的 NFS TCP 2049。
+- Regional EFS 跨 AZ 冗余；EFS One Zone 成本较低，但没有跨 AZ 数据冗余。
+- Elastic Throughput 适合不可预测负载，Provisioned 适合已知持续吞吐，Bursting 与文件系统存储量相关。

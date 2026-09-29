@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS IAM"
 frequency: "試験頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-08-25
+updated: 2026-09-29
 tags: ["security", "AWS IAM", "AWS"]
 notionId: 3a6964dc-ce4a-814c-981d-d23eb8d66e71
 notionUrl: https://app.notion.com/p/3a6964dcce4a814c981dd23eb8d66e71
-notionUpdated: "2026-08-25T07:25:28.538Z"
+notionUpdated: "2026-09-27T02:41:03.551Z"
 ---
 
 ## 一言で理解
@@ -76,3 +76,10 @@ Last Accessed は完全なリアルタイム監査ログではありません。
 人には IAM Identity Center / Federation、AWS Workload には Role を使います。長期 Key は互換用途に限定し、新規作成、利用先更新・検証、旧 Key 無効化、削除の順でローテーションします。
 
 Credentials Report は Root Account 行と IAM User の Password、MFA、2本の Access Key、Signing Certificate、最終利用・更新情報を含む Account レベル CSV です。Role の一時認証情報や Service 固有認証情報は含みません。Access Advisor は User、Group、Role、Policy の Service / Action 最終利用時刻と権限元を確認できます。
+
++## 追加：Identity、Role、Deny Path
+
+- 人は Federation / IAM Identity Center、Workload は Role を優先し、長期 Access Key は一時 Credential を使えない互換用途に限定します。
+- Trust Policy は誰が AssumeRole できるか、Permissions Policy は Session が何をできるかを決め、EC2 は Instance Profile 経由で Role を利用します。
+- AccessDenied は Principal と Action から始め、Allow、Explicit Deny、Resource、Condition、Boundary、SCP を確認します。
+- Policy Wildcard は権限面を広げるため、CloudTrail、Access Analyzer、実利用で最小権限を継続調整します。

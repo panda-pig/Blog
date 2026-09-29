@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-08-15
+updated: 2026-09-29
 tags: [Storage, Block Storage, EC2]
 notionId: 3a6964dc-ce4a-8126-968f-e04a57570ada
 notionUrl: https://app.notion.com/p/3a6964dcce4a8126968fe04a57570ada
-notionUpdated: "2026-08-13T04:38:31.288Z"
+notionUpdated: "2026-09-27T05:20:09.103Z"
 ---
 
 ## Basic Information
@@ -58,3 +58,10 @@ notionUpdated: "2026-08-13T04:38:31.288Z"
 ## Related services
 
 EC2, EBS Snapshot, DLM, AWS Backup, KMS.
+
++## Update: volume types, encryption, and recovery
+
+- gp3 separates capacity, IOPS, and throughput more independently, while gp2 baseline IOPS is tied to size.
+- io2 targets sustained high IOPS and low latency but remains limited by EC2 EBS bandwidth; st1 and sc1 cannot be boot volumes.
+- EBS Multi-Attach requires supported io1/io2 volumes, compatible Nitro instances in one AZ, and cluster-aware software.
+- An unencrypted volume cannot be encrypted in place; use snapshot/copy to create an encrypted replacement. Fast Snapshot Restore removes first-read latency.

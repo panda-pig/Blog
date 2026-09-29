@@ -61,15 +61,23 @@ const rows = [
     "english": "Action",
     "chinese": "操作",
     "japanese": "アクション（ポリシーで許可または拒否する AWS API 操作を指定する要素）",
-    "note": "指定 AWS API 操作，例如 s3:GetObject；最小权限应避免不必要的 service:*。",
+    "note": "指定 AWS API 操作，例如 s3:GetObject；最小权限应避免不必要的 service:\\*。",
     "frequency": 5
+  },
+  {
+    "term": "ACU",
+    "english": "Aurora Capacity Unit",
+    "chinese": "Aurora 容量单位",
+    "japanese": "Aurora Capacity Unit（Aurora 容量単位）",
+    "note": "Aurora Serverless 的计算容量单位，包含相应 Memory、CPU 与 Network 能力。",
+    "frequency": 3
   },
   {
     "term": "AdministratorAccess",
     "english": "AWS Managed Policy AdministratorAccess",
     "chinese": "管理员访问策略",
     "japanese": "AdministratorAccess（すべての AWS アクションをすべてのリソースに対して許可する、非常に広範な管理権限の AWS 管理ポリシー）",
-    "note": "AWS Managed Policy；核心为 Effect Allow、Action \"*\"、Resource \"*\"，可附加给 User、Group 或 Role。权限极广，不应作为普通用户默认策略。",
+    "note": "AWS Managed Policy；核心为 Effect Allow、Action *、Resource *，可附加给 User、Group 或 Role。权限极广，不应作为普通用户默认策略。",
     "frequency": 5
   },
   {
@@ -85,7 +93,31 @@ const rows = [
     "english": "Application Load Balancer",
     "chinese": "应用负载均衡器",
     "japanese": "Application Load Balancer（アプリケーションロードバランサー）",
-    "note": "第 7 层 HTTP/HTTPS；支持路径、主机名路由和 WebSocket。",
+    "note": "第 7 层 HTTP/HTTPS；按 Host、Path、Header、Method、Query、Source IP 路由。目标类型：Instance、IP、Lambda。",
+    "frequency": 5
+  },
+  {
+    "term": "Alias Record",
+    "english": "Alias Record",
+    "chinese": "别名记录",
+    "japanese": "エイリアスレコード",
+    "note": "Route 53 扩展；可用于 Zone Apex，指向受支持 AWS Target，并继承目标 TTL。",
+    "frequency": 5
+  },
+  {
+    "term": "ALPN",
+    "english": "Application-Layer Protocol Negotiation",
+    "chinese": "应用层协议协商",
+    "japanese": "Application-Layer Protocol Negotiation（アプリケーション層プロトコルネゴシエーション）",
+    "note": "TLS 扩展，用于在握手时协商 HTTP/1.1、HTTP/2 等上层协议。",
+    "frequency": 3
+  },
+  {
+    "term": "Amazon Cognito",
+    "english": "Amazon Cognito",
+    "chinese": "应用客户身份服务",
+    "japanese": "Amazon Cognito（顧客 ID・アクセス管理）",
+    "note": "面向 Web/Mobile App 用户。User Pool 负责 Sign-up/Sign-in 与 Token；Identity Pool 把身份换成受 IAM Role 限制的 Temporary AWS Credentials。",
     "frequency": 5
   },
   {
@@ -97,12 +129,28 @@ const rows = [
     "frequency": 3
   },
   {
+    "term": "Amazon Data Firehose",
+    "english": "Amazon Data Firehose",
+    "chinese": "托管数据投递服务",
+    "japanese": "Amazon Data Firehose（配信ストリーム）",
+    "note": "面向目标的近实时托管投递，按大小或时间缓冲；可转换、压缩、格式转换。投递到 Redshift 时实际先写 S3，再由 COPY 加载。不是供多个消费者自行重放的流。",
+    "frequency": 5
+  },
+  {
     "term": "Amazon Detective",
     "english": "Amazon Detective",
     "chinese": "安全事件调查与根因分析",
     "japanese": "Amazon Detective（セキュリティ調査・根本原因分析サービス）",
     "note": "通过可视化关系和时间线调查安全事件。",
     "frequency": 3
+  },
+  {
+    "term": "Amazon EC2",
+    "english": "Amazon Elastic Compute Cloud",
+    "chinese": "弹性计算云",
+    "japanese": "Amazon EC2（仮想サーバーを必要に応じて起動・停止・拡張できるコンピューティングサービス）",
+    "note": "IaaS 计算服务，通过组合 AMI、实例类型、网络、存储以及身份与权限进行配置。",
+    "frequency": 5
   },
   {
     "term": "Amazon GuardDuty",
@@ -127,6 +175,14 @@ const rows = [
     "japanese": "Amazon Macie（S3 機密データ検出サービス）",
     "note": "使用机器学习发现 S3 中的 PII 等敏感数据。",
     "frequency": 3
+  },
+  {
+    "term": "Amazon MQ",
+    "english": "Amazon MQ",
+    "chinese": "托管消息代理服务",
+    "japanese": "Amazon MQ（マネージドメッセージブローカー）",
+    "note": "为需要 JMS、AMQP、MQTT、OpenWire、STOMP 等既有协议或最小改造迁移的系统提供托管 broker。新建云原生应用通常优先 SQS/SNS。ActiveMQ active/standby 可用 EFS；RabbitMQ 多 AZ 集群使用独立 EBS 与复制，不能套用同一架构图。",
+    "frequency": 4
   },
   {
     "term": "Amazon SES",
@@ -163,18 +219,18 @@ const rows = [
   {
     "term": "AMI",
     "english": "Amazon Machine Image",
-    "chinese": "机器镜像",
+    "chinese": "Amazon 机器映像",
     "japanese": "Amazon マシンイメージ",
-    "note": "用于启动 EC2 的模板，包含 OS、软件和配置；AMI 可包含一个或多个 EBS 快照。",
-    "frequency": 4
+    "note": "可启动 EC2 模板；EBS-backed AMI 依赖 Snapshot。Region 级，跨 Region 需 Copy AMI；Deregister 不等于自动删除 Backing Snapshot。",
+    "frequency": 5
   },
   {
     "term": "Anycast IP",
     "english": "Anycast Internet Protocol Address",
     "chinese": "任播 IP 地址",
     "japanese": "エニーキャスト IP",
-    "note": "同一 IP 从多个网络位置发布，用户进入较近入口。",
-    "frequency": 3
+    "note": "同一地址从多个 Edge 位置发布，网络把客户端导向合适入口；Global Accelerator 用它提供稳定全球入口。",
+    "frequency": 4
   },
   {
     "term": "API",
@@ -197,15 +253,23 @@ const rows = [
     "english": "Amazon API Gateway",
     "chinese": "API 网关",
     "japanese": "Amazon API Gateway（API の作成・公開・管理サービス）",
-    "note": "托管 API 前门，不是 VPC 路由网关。",
+    "note": "Serverless API Front Door。Backend 可为 Lambda、HTTP 或 AWS Service。IAM 适合 AWS Identity，Cognito 适合 App User，Lambda Authorizer 适合 Custom Auth；API Key 主要用于识别、限额和计量。",
     "frequency": 5
+  },
+  {
+    "term": "Application Version",
+    "english": "Elastic Beanstalk Application Version",
+    "chinese": "应用版本",
+    "japanese": "アプリケーションバージョン",
+    "note": "Elastic Beanstalk 中一次可部署的应用代码包；Environment 同一时间运行一个 Version。",
+    "frequency": 3
   },
   {
     "term": "ASG",
     "english": "Auto Scaling Group",
     "chinese": "自动伸缩组",
     "japanese": "Auto Scaling グループ（自動スケーリンググループ）",
-    "note": "维护期望、最小和最大实例数；常与 ALB 和多 AZ 组合。",
+    "note": "维护 Min ≤ Desired ≤ Max；可跨 AZ 启动实例，并按 Target Tracking、Step、Scheduled、Predictive 等策略扩缩。",
     "frequency": 5
   },
   {
@@ -229,7 +293,7 @@ const rows = [
     "english": "Amazon Athena",
     "chinese": "S3 无服务器 SQL 查询",
     "japanese": "S3 サーバーレス SQL",
-    "note": "",
+    "note": "V2 知识库首批核心词条",
     "frequency": 4
   },
   {
@@ -244,9 +308,49 @@ const rows = [
     "term": "Aurora",
     "english": "Amazon Aurora",
     "chinese": "AWS 云原生关系型数据库",
-    "japanese": "Amazon Aurora（クラウドネイティブなリレーショナルデータベース）",
-    "note": "兼容 MySQL/PostgreSQL，存储层跨多个 AZ 复制；属于 RDS 家族。",
+    "japanese": "Amazon Aurora（クラウドネイティブリレーショナルデータベース）",
+    "note": "MySQL/PostgreSQL-compatible；6 Copies / 3 AZ，共享 Cluster Storage，1 Writer + 最多 15 Readers。",
     "frequency": 5
+  },
+  {
+    "term": "Aurora Backtrack",
+    "english": "Aurora Backtrack",
+    "chinese": "Aurora 快速回退",
+    "japanese": "Aurora バックトラック",
+    "note": "Aurora MySQL 功能，创建 Cluster 时启用，可在 Backtrack Window 内快速倒回，最长 72 小时。",
+    "frequency": 4
+  },
+  {
+    "term": "Aurora Database Clone",
+    "english": "Aurora Database Cloning",
+    "chinese": "Aurora 数据库克隆",
+    "japanese": "Aurora データベースクローン",
+    "note": "利用 Copy-on-Write 快速创建独立可读写 Cluster，适合 Dev/Test/Staging。",
+    "frequency": 4
+  },
+  {
+    "term": "Aurora Global Database",
+    "english": "Amazon Aurora Global Database",
+    "chinese": "Aurora 全球数据库",
+    "japanese": "Amazon Aurora Global Database（グローバルデータベース）",
+    "note": "Primary Region 写入，Secondary Regions 提供全球读取与 Region-level DR。",
+    "frequency": 5
+  },
+  {
+    "term": "Aurora Replica Auto Scaling",
+    "english": "Aurora Replica Auto Scaling",
+    "chinese": "Aurora 副本自动扩缩",
+    "japanese": "Aurora レプリカオートスケーリング",
+    "note": "根据 Reader CPU / Connection 等指标自动增加或减少 Aurora Replicas。",
+    "frequency": 4
+  },
+  {
+    "term": "Aurora Serverless",
+    "english": "Amazon Aurora Serverless",
+    "chinese": "Aurora 无服务器计算",
+    "japanese": "Amazon Aurora Serverless（サーバーレス）",
+    "note": "根据负载自动调整 Aurora Writer / Reader 的计算容量。",
+    "frequency": 4
   },
   {
     "term": "Authentication",
@@ -262,6 +366,14 @@ const rows = [
     "chinese": "身份验证器应用",
     "japanese": "認証アプリ（仮想 MFA デバイスとして TOTP コードを生成し、ログイン時の追加認証に使用するアプリケーション）",
     "note": "首次通过 QR Code 或 Secret Key 绑定，后续登录输入当前 TOTP Code。",
+    "frequency": 4
+  },
+  {
+    "term": "Authoritative DNS",
+    "english": "Authoritative Domain Name System",
+    "chinese": "权威 DNS",
+    "japanese": "権威DNS",
+    "note": "保存并返回某 Zone 的最终 DNS Records；与替 Client 递归查询的 Resolver 不同。",
     "frequency": 4
   },
   {
@@ -396,8 +508,8 @@ const rows = [
     "term": "AWS Budgets",
     "english": "AWS Budgets",
     "chinese": "AWS 预算与阈值告警",
-    "japanese": "AWS Budgets（予算の設定・アラート）",
-    "note": "按实际或预测成本、用量等阈值发出告警。",
+    "japanese": "AWS Budgets（コストや使用量の実績値・予測値にしきい値を設定して通知するサービス）",
+    "note": "Zero Spend Budget 适合尽早发现 Free Tier 超额使用；可同时针对实际值和预测值设置通知。",
     "frequency": 5
   },
   {
@@ -429,7 +541,7 @@ const rows = [
     "english": "AWS CloudShell",
     "chinese": "浏览器云命令行环境",
     "japanese": "AWS CloudShell（ブラウザ上で事前設定済みの AWS CLI を使用し、コンソールの IAM 権限に基づく一時認証情報を自動取得するシェル環境）",
-    "note": "无需本地安装 CLI；使用当前 Console 身份的临时轮换凭证。HOME 提供按 Region 分离的持久存储，单次命令可用 --region 覆盖默认 Region。",
+    "note": "无需本地安装 CLI；使用当前 Console 身份的临时轮换凭证。\\$HOME 提供按 Region 分离的持久存储，单次命令可用 --region 覆盖默认 Region。",
     "frequency": 3
   },
   {
@@ -461,7 +573,7 @@ const rows = [
     "english": "AWS Config",
     "chinese": "资源配置与合规",
     "japanese": "リソース構成とコンプライアンス",
-    "note": "",
+    "note": "V2 知识库首批核心词条",
     "frequency": 5
   },
   {
@@ -657,6 +769,14 @@ const rows = [
     "frequency": 3
   },
   {
+    "term": "AWS Step Functions",
+    "english": "AWS Step Functions",
+    "chinese": "无服务器工作流编排",
+    "japanese": "AWS Step Functions（ワークフローオーケストレーション）",
+    "note": "State Machine 编排多步骤流程，支持 Sequence、Choice、Parallel、Wait、Retry/Catch 与 Callback/Human Approval。它负责编排，不执行应用代码。",
+    "frequency": 5
+  },
+  {
     "term": "AWS Support Plans",
     "english": "AWS Support Plans",
     "chinese": "AWS 支持计划",
@@ -769,6 +889,14 @@ const rows = [
     "frequency": 3
   },
   {
+    "term": "Beanstalk Environment",
+    "english": "Elastic Beanstalk Environment",
+    "chinese": "Beanstalk 环境",
+    "japanese": "Elastic Beanstalk 環境",
+    "note": "运行特定 Application Version 的 AWS Resource Collection，可分为 Dev、Test、Prod。",
+    "frequency": 4
+  },
+  {
     "term": "BGP",
     "english": "Border Gateway Protocol",
     "chinese": "边界网关协议",
@@ -793,6 +921,14 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "Bootstrapping",
+    "english": "Bootstrapping",
+    "chinese": "引导初始化",
+    "japanese": "ブートストラップ（起動時にソフトウェアの導入や設定を自動化して利用可能な状態にする処理）",
+    "note": "将启动脚本设计为可重复执行且幂等，可提高 Auto Scaling 重建实例时的可靠性。",
+    "frequency": 3
+  },
+  {
     "term": "Boto3",
     "english": "AWS SDK for Python (Boto3)",
     "chinese": "Python 版 AWS SDK",
@@ -805,7 +941,7 @@ const rows = [
     "english": "Amazon S3 Bucket",
     "chinese": "S3 存储桶",
     "japanese": "S3 バケット",
-    "note": "对象容器及权限、Region、Versioning、Lifecycle 管理边界。",
+    "note": "对象容器以及 Region、权限、Versioning、Lifecycle 的管理边界；General Purpose Bucket 可选择 Shared Global 或 Account Regional Namespace。",
     "frequency": 5
   },
   {
@@ -821,24 +957,32 @@ const rows = [
     "english": "Cache Hit",
     "chinese": "缓存命中",
     "japanese": "キャッシュヒット",
-    "note": "请求的数据已在缓存中，可直接返回。",
-    "frequency": 4
+    "note": "请求数据已在 Cache 中，直接返回而不访问 Source Database。",
+    "frequency": 3
   },
   {
     "term": "Cache Miss",
     "english": "Cache Miss",
     "chinese": "缓存未命中",
     "japanese": "キャッシュミス",
-    "note": "缓存没有目标数据，需要回源数据库或服务。",
-    "frequency": 4
+    "note": "Cache 不含目标数据，Application 查询 Source 后通常把结果写回 Cache。",
+    "frequency": 3
   },
   {
     "term": "Cache-Aside",
-    "english": "Cache-Aside Pattern",
-    "chinese": "旁路缓存模式",
-    "japanese": "キャッシュアサイド",
-    "note": "应用先查缓存，未命中时查数据库并回填。",
+    "english": "Cache-Aside / Lazy Loading",
+    "chinese": "旁路缓存模式 / 延迟加载",
+    "japanese": "キャッシュアサイド（遅延読み込み）",
+    "note": "灵活且只缓存实际读取的数据，但首个 Miss 较慢，并需处理 Stale Data、TTL 与 Invalidation。",
     "frequency": 4
+  },
+  {
+    "term": "Capacity Reservation",
+    "english": "On-Demand Capacity Reservation",
+    "chinese": "按需容量预留",
+    "japanese": "オンデマンドキャパシティ予約（特定のアベイラビリティーゾーンで EC2 コンピューティング容量を確保する仕組み）",
+    "note": "用于保证容量而非提供折扣；未使用的容量仍会计费，并有 Open 与 Targeted 两种应用方式。",
+    "frequency": 5
   },
   {
     "term": "Cascade Failure",
@@ -917,8 +1061,32 @@ const rows = [
     "english": "Amazon CloudFront",
     "chinese": "内容分发网络",
     "japanese": "コンテンツ配信ネットワーク",
-    "note": "通过全球边缘站点缓存和分发内容，降低用户访问延迟。",
+    "note": "HTTP/HTTPS CDN；Cache Hit 在 Edge 返回。私有 S3 用 OAC，私有 ALB/NLB/EC2 用 VPC Origin；支持 Geo Restriction 与 Invalidation。",
     "frequency": 5
+  },
+  {
+    "term": "CloudFront Cache Invalidation",
+    "english": "Amazon CloudFront Cache Invalidation",
+    "chinese": "CloudFront 缓存失效",
+    "japanese": "CloudFront キャッシュ無効化",
+    "note": "在 TTL 到期前主动使指定 Path 的 Edge Cache 失效；下一次请求再从 Origin 获取新内容。",
+    "frequency": 5
+  },
+  {
+    "term": "CloudFront Geo Restriction",
+    "english": "Amazon CloudFront Geographic Restriction",
+    "chinese": "CloudFront 地理限制",
+    "japanese": "CloudFront 地理的制限",
+    "note": "在 Distribution 层按国家使用 Allow List 或 Block List 控制内容访问；被阻止通常返回 403。",
+    "frequency": 4
+  },
+  {
+    "term": "CloudFront VPC Origin",
+    "english": "Amazon CloudFront VPC Origin",
+    "chinese": "CloudFront VPC 源站",
+    "japanese": "CloudFront VPC オリジン",
+    "note": "让 CloudFront 私有连接 VPC 内的 ALB、NLB 或 EC2，后端无需直接暴露到 Internet。",
+    "frequency": 4
   },
   {
     "term": "CloudTrail",
@@ -953,11 +1121,51 @@ const rows = [
     "frequency": 3
   },
   {
+    "term": "Cluster Placement Group",
+    "english": "Cluster Placement Group",
+    "chinese": "集群放置组",
+    "japanese": "クラスタープレイスメントグループ（単一 AZ 内で EC2 を近接配置して低遅延と高スループットを重視する配置戦略）",
+    "note": "适合紧密耦合和 HPC 工作负载。资源集中在单个 AZ，因此不提供 Multi-AZ 高可用性。",
+    "frequency": 5
+  },
+  {
+    "term": "CNAME",
+    "english": "Canonical Name Record",
+    "chinese": "规范名称记录",
+    "japanese": "CNAMEレコード",
+    "note": "标准 Name-to-Name Record；不能用于 Zone Apex。",
+    "frequency": 4
+  },
+  {
+    "term": "Cognito Identity Pool",
+    "english": "Amazon Cognito Identity Pool",
+    "chinese": "Cognito 身份池",
+    "japanese": "Cognito ID プール",
+    "note": "把 User Pool 或外部 IdP 身份换成 Temporary AWS Credentials，让 App User 按 IAM Role/Policy 直接访问 AWS Resource；可配置认证或访客身份。",
+    "frequency": 5
+  },
+  {
+    "term": "Cognito User Pool",
+    "english": "Amazon Cognito User Pool",
+    "chinese": "Cognito 用户池",
+    "japanese": "Cognito ユーザープール",
+    "note": "应用用户目录与 Authentication，完成注册/登录并返回 ID、Access、Refresh Token；Token 可由 API Gateway/ALB 验证，但不是 AWS Access Key。",
+    "frequency": 5
+  },
+  {
     "term": "Compliance",
     "english": "Compliance",
     "chinese": "合规性",
     "japanese": "コンプライアンス（法令・規制・業界基準への適合）",
     "note": "选择 Region 时先检查数据驻留、监管、数据保护和行业合规要求。",
+    "frequency": 4
+  },
+  {
+    "term": "Compute Optimized Instance",
+    "english": "Compute Optimized Instance",
+    "chinese": "计算优化型实例",
+    "japanese": "コンピューティング最適化インスタンス（高い CPU 性能を重視した EC2 インスタンス）",
+    "note": "适合高性能 Web 服务器、批处理、游戏服务器和科学计算等 CPU 密集型工作负载。",
     "frequency": 4
   },
   {
@@ -975,6 +1183,22 @@ const rows = [
     "japanese": "条件（MFA、送信元 IP、タグ、組織などのリクエストコンテキストに基づいて規則の適用条件を指定する任意要素）",
     "note": "可选元素，用于依据请求上下文限制策略何时生效。",
     "frequency": 5
+  },
+  {
+    "term": "Connection Refused",
+    "english": "Connection Refused",
+    "chinese": "连接被拒绝",
+    "japanese": "接続拒否（宛先へ到達したが対象ポートでサービスが待ち受けていない、または明示的に拒否された状態）",
+    "note": "通常应优先检查操作系统服务、监听端口和主机防火墙；网络路径被阻断更常表现为连接超时。",
+    "frequency": 4
+  },
+  {
+    "term": "Connection Timeout",
+    "english": "Connection Timeout",
+    "chinese": "连接超时",
+    "japanese": "接続タイムアウト（応答が返らず、接続試行が制限時間を超えた状態）",
+    "note": "除 Security Group 外，还应检查 NACL、路由、Internet Gateway、公有 IP 和防火墙等完整通信路径。",
+    "frequency": 4
   },
   {
     "term": "Console Multi-session Support",
@@ -1013,7 +1237,7 @@ const rows = [
     "english": "Cross-Origin Resource Sharing",
     "chinese": "跨源资源共享",
     "japanese": "オリジン間リソース共有",
-    "note": "浏览器跨源规则，不是身份授权机制。",
+    "note": "Origin = Scheme + Host + Port；CORS 配在被请求目标端，只约束浏览器跨源响应，不授予 S3 权限。",
     "frequency": 4
   },
   {
@@ -1041,12 +1265,28 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "Cross-Zone Load Balancing",
+    "english": "Cross-Zone Load Balancing",
+    "chinese": "跨可用区负载均衡",
+    "japanese": "クロスゾーン負荷分散",
+    "note": "ALB 在负载均衡器级别默认开启；NLB/GWLB 默认关闭。启用后需留意跨 AZ 数据传输与成本。",
+    "frequency": 4
+  },
+  {
     "term": "CRR",
     "english": "Cross-Region Replication",
     "chinese": "跨区域复制",
     "japanese": "クロスリージョンレプリケーション",
-    "note": "按规则把对象复制到另一个 Region。",
+    "note": "不同 Region 的异步对象复制；两端需 Versioning。是否跨账户是独立维度。",
     "frequency": 5
+  },
+  {
+    "term": "CSI Driver",
+    "english": "Container Storage Interface Driver",
+    "chinese": "容器存储接口驱动",
+    "japanese": "CSI ドライバー",
+    "note": "连接 Kubernetes 存储请求与实际存储系统的 Driver。StorageClass/PVC 描述需求，EBS/EFS CSI Driver 负责与 AWS Storage 集成；Driver 本身不是存储服务。",
+    "frequency": 4
   },
   {
     "term": "Customer Managed Policy",
@@ -1100,16 +1340,16 @@ const rows = [
     "term": "Dedicated Host",
     "english": "Dedicated Host",
     "chinese": "专用主机",
-    "japanese": "専有ホスト",
-    "note": "用户获得整台物理服务器的可见性与控制，常用于许可证合规。",
+    "japanese": "専有ホスト（単一顧客専用の物理 EC2 サーバーを割り当てる購入オプション）",
+    "note": "提供物理服务器级可见性与放置控制，更适合按插槽或核心计费的自带许可证需求。",
     "frequency": 3
   },
   {
     "term": "Dedicated Instance",
     "english": "Dedicated Instance",
     "chinese": "专用实例",
-    "japanese": "専有インスタンス",
-    "note": "实例运行在单租户硬件上，但用户不控制具体物理主机。",
+    "japanese": "専有インスタンス（単一顧客専用のハードウェア上で実行される EC2 インスタンス）",
+    "note": "与按物理主机分配并管理的 Dedicated Host 不同，它不提供主机级可见性，也不支持按插槽或核心管理许可证。",
     "frequency": 3
   },
   {
@@ -1141,8 +1381,16 @@ const rows = [
     "english": "Amazon S3 Delete Marker",
     "chinese": "删除标记",
     "japanese": "削除マーカー",
-    "note": "Versioning 下普通删除产生的当前删除标记。",
+    "note": "Versioning 下不指定 Version ID 的普通 Delete 所创建；删除 Marker 可让旧版本重新可见。",
     "frequency": 4
+  },
+  {
+    "term": "Delete on Termination",
+    "english": "Delete on Termination",
+    "chinese": "终止时删除",
+    "japanese": "終了時に削除",
+    "note": "决定 EC2 Terminate 时是否删除对应 EBS。Root 常见默认 Yes、额外 Data Volume 常见 No，但必须检查实际 Block Device Mapping。",
+    "frequency": 5
   },
   {
     "term": "Dependency",
@@ -1161,6 +1409,14 @@ const rows = [
     "frequency": 3
   },
   {
+    "term": "Deregistration Delay",
+    "english": "Deregistration Delay",
+    "chinese": "注销延迟 / 连接排空",
+    "japanese": "登録解除の遅延（コネクションドレイニング）",
+    "note": "Target Group 从目标移除或 ASG 缩容时保护进行中的连接；Classic Load Balancer 的旧称是 Connection Draining。",
+    "frequency": 5
+  },
+  {
     "term": "Direct Connect",
     "english": "AWS Direct Connect",
     "chinese": "AWS 专线连接",
@@ -1175,6 +1431,14 @@ const rows = [
     "japanese": "直接アタッチされたポリシー（グループを経由せず、IAM ユーザーやロールなどのアイデンティティに直接付与されたポリシー）",
     "note": "权限直接来自该身份上的策略；把 User 移出 Group 不会自动撤销这部分权限。",
     "frequency": 4
+  },
+  {
+    "term": "Directory Bucket",
+    "english": "Amazon S3 Directory Bucket",
+    "chinese": "目录存储桶",
+    "japanese": "ディレクトリバケット",
+    "note": "用于 S3 Express One Zone 的特殊 Bucket Type，位于指定 AZ；不是控制台中的 Folder。",
+    "frequency": 3
   },
   {
     "term": "DLM",
@@ -1197,7 +1461,7 @@ const rows = [
     "english": "AWS Database Migration Service",
     "chinese": "数据库迁移服务",
     "japanese": "データベース移行サービス",
-    "note": "",
+    "note": "V2 知识库首批核心词条",
     "frequency": 4
   },
   {
@@ -1205,8 +1469,8 @@ const rows = [
     "english": "Domain Name System",
     "chinese": "域名系统",
     "japanese": "ドメインネームシステム",
-    "note": "把域名解析为可访问的网络地址或服务入口。",
-    "frequency": 4
+    "note": "分层、分布式名称系统；Recursive Resolver 查找并缓存，Authoritative DNS 返回最终 Record。",
+    "frequency": 5
   },
   {
     "term": "Document Database",
@@ -1225,11 +1489,27 @@ const rows = [
     "frequency": 2
   },
   {
+    "term": "Domain Registrar",
+    "english": "Domain Registrar",
+    "chinese": "域名注册商",
+    "japanese": "ドメインレジストラ",
+    "note": "管理域名注册续费与 Parent Delegation；不等于 DNS Provider。",
+    "frequency": 4
+  },
+  {
     "term": "DoS",
     "english": "Denial of Service",
     "chinese": "拒绝服务攻击",
     "japanese": "サービス拒否攻撃",
     "note": "通常由单一来源耗尽目标服务资源。",
+    "frequency": 3
+  },
+  {
+    "term": "DSSE-KMS",
+    "english": "Dual-layer Server-Side Encryption with AWS KMS keys",
+    "chinese": "KMS 双层服务端加密",
+    "japanese": "AWS KMS キーによる二層サーバー側暗号化",
+    "note": "两层独立静态加密，面向高合规需求；不是 TLS + SSE-KMS。",
     "frequency": 3
   },
   {
@@ -1245,7 +1525,7 @@ const rows = [
     "english": "Amazon DynamoDB",
     "chinese": "无服务器 NoSQL 数据库",
     "japanese": "サーバーレス NoSQL",
-    "note": "",
+    "note": "Serverless Key-Value/Document NoSQL；Item 最大 400 KB。Provisioned 使用 RCU/WCU，On-Demand 适合未知突发。Streams 保留 24h；Global Tables 为 Multi-Region Multi-Active；PITR 最长 35 天并恢复到新表。",
     "frequency": 5
   },
   {
@@ -1257,12 +1537,36 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "DynamoDB Streams",
+    "english": "Amazon DynamoDB Streams",
+    "chinese": "DynamoDB 变更流",
+    "japanese": "DynamoDB Streams",
+    "note": "按时间顺序捕获 Item Create/Update/Delete；记录保留 24 小时。需要更长保留或更多流式消费者时评估 Kinesis Data Streams for DynamoDB。",
+    "frequency": 5
+  },
+  {
     "term": "EBS",
     "english": "Amazon Elastic Block Store",
-    "chinese": "块存储",
-    "japanese": "Amazon EBS（EC2 向けの永続ブロックストレージサービス）",
-    "note": "EBS Volume 属于指定 Account、Region 和 AZ，不属于创建它的 IAM User 私人所有；可见性取决于 Account、Region 和 Policy。",
+    "chinese": "弹性块存储",
+    "japanese": "Amazon EBS（永続ブロックストレージ）",
+    "note": "EC2 的持久网络块存储；Volume 属于单一 AZ，普通卷通常单实例。Attach 后新卷仍需 Format/Mount，Terminate 是否删除看 Delete on Termination。",
     "frequency": 5
+  },
+  {
+    "term": "EBS Encryption",
+    "english": "Amazon EBS Encryption",
+    "chinese": "EBS 加密",
+    "japanese": "EBS 暗号化",
+    "note": "KMS 透明加密 Volume、Snapshot 与 EC2-EBS 传输。未加密卷不能原地转换；常用 Snapshot/Copy 创建新加密卷。",
+    "frequency": 4
+  },
+  {
+    "term": "EBS Multi-Attach",
+    "english": "Amazon EBS Multi-Attach",
+    "chinese": "EBS 多重挂载",
+    "japanese": "EBS マルチアタッチ",
+    "note": "同一 io1/io2 卷供同一 AZ 内多台兼容 Nitro EC2 访问的 Shared Block；需 Cluster-aware Application/File System，性能由所有实例共享。",
+    "frequency": 4
   },
   {
     "term": "EC2",
@@ -1273,19 +1577,51 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "EC2 Hibernate",
+    "english": "EC2 Instance Hibernation",
+    "chinese": "EC2 休眠",
+    "japanese": "EC2 休止（RAM の内容を暗号化されたルート EBS に保存し、次回起動時にプロセス状態を復元する機能）",
+    "note": "必须在启动时预先启用，并使用受支持的 AMI、实例类型，以及已加密且容量充足的 EBS 根卷。它不能替代备份、灾难恢复或 Multi-AZ 高可用性。",
+    "frequency": 5
+  },
+  {
+    "term": "EC2 Instance Connect",
+    "english": "EC2 Instance Connect",
+    "chinese": "EC2 实例连接",
+    "japanese": "EC2 Instance Connect（一時的な SSH 公開鍵をインスタンスへ送信して接続する仕組み）",
+    "note": "仍然使用 SSH；需要检查 IAM 权限、操作系统用户名、EIC 软件、网络路径和 22 端口。",
+    "frequency": 4
+  },
+  {
     "term": "EC2 Instance Profile",
     "english": "Amazon EC2 Instance Profile",
     "chinese": "EC2 实例配置文件",
-    "japanese": "EC2 インスタンスプロファイル（1 つの IAM ロールを Amazon EC2 インスタンスへ渡すためのコンテナ）",
-    "note": "一个 Instance Profile 同时只能包含一个 Role；EC2 内的 SDK/CLI 从 IMDS 获取该 Role 的临时凭证。",
+    "japanese": "EC2 インスタンスプロファイル（IAM ロールを EC2 インスタンスへ渡すためのコンテナ）",
+    "note": "EC2 通过 IMDS 获取角色的临时凭证；不要在实例内用 aws configure 保存人员长期访问密钥。",
     "frequency": 5
+  },
+  {
+    "term": "EC2 Instance Type",
+    "english": "EC2 Instance Type",
+    "chinese": "EC2 实例类型",
+    "japanese": "EC2 インスタンスタイプ（CPU、メモリ、ネットワーク、ストレージ性能の組み合わせを定義するインスタンス構成）",
+    "note": "名称通常按实例家族、代际、附加能力和规格大小解读，应分别评估性能需求与成本需求。",
+    "frequency": 5
+  },
+  {
+    "term": "EC2 User Data",
+    "english": "Amazon EC2 User Data",
+    "chinese": "EC2 用户数据",
+    "japanese": "EC2 ユーザーデータ",
+    "note": "默认在首次 Launch 执行启动初始化；Running 不等于脚本或应用已 Ready。稳定重组件放 AMI，轻量动态配置放 User Data。",
+    "frequency": 4
   },
   {
     "term": "ECR",
     "english": "Amazon Elastic Container Registry",
     "chinese": "容器镜像仓库",
     "japanese": "Amazon ECR",
-    "note": "ECR 只负责存镜像；ECS/EKS 负责运行和编排镜像。",
+    "note": "Private/Public Container Registry，只存储和分发 Image。Private Pull 需 IAM/Repository Policy；ECS 启动时由 Task Execution Role 拉 Image。Lifecycle Policy 清理旧 Image，Tag Immutability 防覆盖，二者目标不同。",
     "frequency": 4
   },
   {
@@ -1293,7 +1629,31 @@ const rows = [
     "english": "Amazon Elastic Container Service",
     "chinese": "AWS 容器编排服务",
     "japanese": "Amazon ECS",
-    "note": "AWS 原生容器编排，学习和运维成本通常低于 EKS。",
+    "note": "AWS 原生容器编排。Task Definition 是模板，Task 是运行实例，Service 维持 Desired Count。Task Role 给应用；Execution Role 给 Agent。EC2 模式要分别扩 Task 与底层 Cluster Capacity。",
+    "frequency": 5
+  },
+  {
+    "term": "ECS Capacity Provider",
+    "english": "Amazon ECS Capacity Provider",
+    "chinese": "ECS 容量提供程序",
+    "japanese": "ECS キャパシティプロバイダー",
+    "note": "定义 Task 从哪里获得计算容量。可使用 FARGATE、FARGATE_SPOT 或 ASG Capacity Provider；Strategy 的 Base / Weight 控制最低量与相对分配。",
+    "frequency": 5
+  },
+  {
+    "term": "ECS Task Execution Role",
+    "english": "Amazon ECS Task Execution IAM Role",
+    "chinese": "ECS 任务执行角色",
+    "japanese": "ECS タスク実行 IAM ロール",
+    "note": "供 ECS/Fargate Agent 在 Task 启动与运行管理阶段使用，例如拉取 Private ECR Image、发送 Logs、读取启动所需 Secret；不是应用业务代码的权限。",
+    "frequency": 5
+  },
+  {
+    "term": "ECS Task Role",
+    "english": "Amazon ECS Task IAM Role",
+    "chinese": "ECS 任务角色",
+    "japanese": "ECS タスク IAM ロール",
+    "note": "授予 Container 内 Application 调用 AWS API 的权限；权限随 Task 提供，与底层 EC2/Fargate 计算方式解耦。",
     "frequency": 5
   },
   {
@@ -1321,6 +1681,14 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "EDNS Client Subnet",
+    "english": "Extension Mechanisms for DNS Client Subnet",
+    "chinese": "EDNS 客户端子网",
+    "japanese": "EDNSクライアントサブネット",
+    "note": "Resolver 可携带截断的 Client Subnet，帮助地理/延迟/IP 路由判断；并非总是可用。",
+    "frequency": 3
+  },
+  {
     "term": "Effect",
     "english": "Effect",
     "chinese": "效果",
@@ -1331,9 +1699,33 @@ const rows = [
   {
     "term": "EFS",
     "english": "Amazon Elastic File System",
-    "chinese": "共享文件存储",
-    "japanese": "Amazon EFS（ファイルストレージ）",
-    "note": "Linux NFS 文件系统，可跨 AZ 被多个 EC2 同时挂载。",
+    "chinese": "弹性文件系统",
+    "japanese": "Amazon EFS（共有ファイルシステム）",
+    "note": "托管 NFS 共享文件系统；Regional 可跨 AZ，多客户端通过各 AZ Mount Target 访问，容量自动 Grow/Shrink。",
+    "frequency": 4
+  },
+  {
+    "term": "EFS Mount Target",
+    "english": "Amazon EFS Mount Target",
+    "chinese": "EFS 挂载目标",
+    "japanese": "EFS マウントターゲット",
+    "note": "EFS 在 VPC/AZ 中的网络入口；通常每个业务 AZ 一个。SG 允许来自客户端 SG 的 NFS TCP 2049。",
+    "frequency": 4
+  },
+  {
+    "term": "EFS One Zone",
+    "english": "Amazon EFS One Zone",
+    "chinese": "EFS 单可用区",
+    "japanese": "EFS One Zone",
+    "note": "数据存放在单 AZ，成本较低但不具备跨 AZ 数据冗余；其他 AZ 客户端访问可能产生额外延迟与传输费。",
+    "frequency": 3
+  },
+  {
+    "term": "EFS Throughput Mode",
+    "english": "Amazon EFS Throughput Mode",
+    "chinese": "EFS 吞吐模式",
+    "japanese": "EFS スループットモード",
+    "note": "Elastic 适合不可预测或突发；Provisioned 适合已知持续吞吐；Bursting 与文件系统存储量相关。",
     "frequency": 4
   },
   {
@@ -1341,39 +1733,55 @@ const rows = [
     "english": "Amazon Elastic Kubernetes Service",
     "chinese": "托管 Kubernetes 服务",
     "japanese": "Amazon EKS",
-    "note": "考试出现 Kubernetes、跨云兼容或现有 K8s 工作负载时优先考虑 EKS。",
+    "note": "托管 Kubernetes。Pod 跑在 Node；Managed Node Group 背后是 EC2 + ASG；Fargate Profile 让指定 Pod 不自管 Node；Auto Mode 按 Pod 需求自动提供受管 EC2，二者不是同义词。Storage 通过 CSI Driver 接 EBS/EFS。",
+    "frequency": 4
+  },
+  {
+    "term": "EKS Auto Mode",
+    "english": "Amazon EKS Auto Mode",
+    "chinese": "EKS 自动模式",
+    "japanese": "Amazon EKS Auto Mode",
+    "note": "根据 Pod 请求自动 Provision 与管理更多 EC2 基础设施容量。它仍使用受管 EC2 Instances，不等于 Fargate 的无 Node Group 计算模型。",
     "frequency": 4
   },
   {
     "term": "Elastic Beanstalk",
     "english": "AWS Elastic Beanstalk",
-    "chinese": "应用部署与托管服务",
-    "japanese": "AWS Elastic Beanstalk（ウェブアプリケーションのデプロイ・管理サービス）",
-    "note": "PaaS 风格；上传代码后自动配置 EC2、ALB、Auto Scaling 等，底层资源仍可见和管理。",
+    "chinese": "面向开发者的托管应用部署服务",
+    "japanese": "AWS Elastic Beanstalk（アプリケーションのデプロイ・管理サービス）",
+    "note": "以 Application / Version / Environment 管理 Web 或 Worker App；底层真实资源仍可见、可配置并计费。",
     "frequency": 3
   },
   {
     "term": "Elastic IP",
     "english": "Elastic IP Address",
     "chinese": "弹性 IP 地址",
-    "japanese": "Elastic IP アドレス",
-    "note": "可由客户分配和重新关联的静态公有 IPv4。",
-    "frequency": 4
+    "japanese": "Elastic IP アドレス（AWS アカウントに割り当てて別の EC2 または ENI へ再関連付けできる固定パブリック IPv4）",
+    "note": "Allocate 是向账户分配地址，Associate 是关联到 EC2/ENI，Disassociate 是解除关联，Release 是归还 AWS。Stop/Start 后仍保留，但应确认当前计费规则。",
+    "frequency": 5
+  },
+  {
+    "term": "Elastic Network Interface (ENI)",
+    "english": "Elastic Network Interface",
+    "chinese": "弹性网络接口",
+    "japanese": "Elastic Network Interface（EC2 に IP、Security Group、MAC アドレスなどのネットワーク識別情報を与える仮想ネットワークカード）",
+    "note": "ENI 属于特定 Subnet，因此其 AZ 固定。辅助 ENI 可迁移到同一 AZ 的其他 EC2，但不能跨 AZ 移动。",
+    "frequency": 5
   },
   {
     "term": "ElastiCache",
     "english": "Amazon ElastiCache",
-    "chinese": "托管内存缓存",
-    "japanese": "マネージドインメモリキャッシュ",
-    "note": "通用后端缓存，减少重复数据库读取。",
-    "frequency": 4
+    "chinese": "托管内存数据存储与缓存",
+    "japanese": "Amazon ElastiCache（マネージドインメモリデータストア）",
+    "note": "缓存热点数据、Session 和排行榜；Application 负责 Cache Key、TTL、Invalidation 与一致性。",
+    "frequency": 5
   },
   {
     "term": "Elasticity",
     "english": "Elasticity",
     "chinese": "弹性",
     "japanese": "エラスティシティ（需要変動に応じてリソースを動的に増減する性質）",
-    "note": "容量随实际需求快速增加或减少，核心是供给与负载动态匹配。",
+    "note": "系统不只能够扩容，还会随着负载变化自动缩容，使供给贴近需求。",
     "frequency": 5
   },
   {
@@ -1381,7 +1789,7 @@ const rows = [
     "english": "Elastic Load Balancing",
     "chinese": "弹性负载均衡",
     "japanese": "Elastic Load Balancing（マネージド負荷分散サービス）",
-    "note": "将流量分配到多个目标并执行健康检查；ALB、NLB 都属于 ELB 产品族。",
+    "note": "统一入口，把流量分配给健康目标；结合多 AZ 和 ASG 提升可用性与弹性。",
     "frequency": 5
   },
   {
@@ -1449,6 +1857,14 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "External Session Store",
+    "english": "External Session Store",
+    "chinese": "外部会话存储",
+    "japanese": "外部セッションストア",
+    "note": "Cookie 常只保存 Session ID，真正 Session State 放在所有 Web 节点可访问的共享存储中。",
+    "frequency": 5
+  },
+  {
     "term": "FaaS",
     "english": "Function as a Service",
     "chinese": "函数即服务",
@@ -1465,12 +1881,28 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "Failover Routing",
+    "english": "Failover Routing Policy",
+    "chinese": "故障转移路由",
+    "japanese": "フェイルオーバールーティング",
+    "note": "Primary/Secondary Active-Passive；全部不健康时可能 Fail-open。",
+    "frequency": 5
+  },
+  {
     "term": "Fargate",
     "english": "AWS Fargate",
     "chinese": "无服务器容器计算引擎",
     "japanese": "AWS Fargate（ファーゲート）",
-    "note": "不是容器编排平台，而是 ECS/EKS 的 Serverless 计算选项；无需管理 EC2。",
+    "note": "Serverless Container Compute，不是编排器。ECS 以 Task、EKS 以 Pod 使用 Fargate；无需管理 EC2 Node。EKS Auto Mode 自动管理 EC2 Capacity，并不等于 Fargate。",
     "frequency": 5
+  },
+  {
+    "term": "Fast Snapshot Restore",
+    "english": "Amazon EBS Fast Snapshot Restore",
+    "chinese": "快速快照恢复",
+    "japanese": "高速スナップショット復元",
+    "note": "按 Snapshot + AZ 启用，以额外成本消除从 Snapshot 新建卷的首次访问 Lazy-loading 延迟。",
+    "frequency": 3
   },
   {
     "term": "Federation",
@@ -1509,7 +1941,7 @@ const rows = [
     "english": "Amazon FSx",
     "chinese": "托管文件系统系列",
     "japanese": "マネージドファイルシステム",
-    "note": "",
+    "note": "V2 知识库首批核心词条",
     "frequency": 3
   },
   {
@@ -1527,6 +1959,38 @@ const rows = [
     "japanese": "EU 一般データ保護規則",
     "note": "保护欧盟个人数据和隐私；实际要求需按业务和法律确认。",
     "frequency": 2
+  },
+  {
+    "term": "General Purpose Bucket",
+    "english": "Amazon S3 General Purpose Bucket",
+    "chinese": "通用存储桶",
+    "japanese": "汎用バケット",
+    "note": "常规 S3 Bucket 类型，支持广泛 S3 功能；不同于 Express One Zone 的 Directory Bucket。",
+    "frequency": 4
+  },
+  {
+    "term": "General Purpose Instance",
+    "english": "General Purpose Instance",
+    "chinese": "通用型实例",
+    "japanese": "汎用インスタンス（コンピューティング、メモリ、ネットワーク資源のバランスを重視した EC2 インスタンス）",
+    "note": "适合 Web 服务器、中小型数据库和开发环境等广泛用途。",
+    "frequency": 4
+  },
+  {
+    "term": "Geolocation Routing",
+    "english": "Geolocation Routing Policy",
+    "chinese": "地理位置路由",
+    "japanese": "位置情報ルーティング",
+    "note": "按用户 Country / Continent / US State 规则返回；建议配置 Default。",
+    "frequency": 4
+  },
+  {
+    "term": "Geoproximity Routing",
+    "english": "Geoproximity Routing Policy",
+    "chinese": "地理邻近路由",
+    "japanese": "地理的近接性ルーティング",
+    "note": "按 User + Resource 地理距离选择，并用 Bias 调整边界；Bias 不是百分比。",
+    "frequency": 4
   },
   {
     "term": "Glacier Deep Archive",
@@ -1553,11 +2017,19 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "Glacier Vault Lock",
+    "english": "Amazon S3 Glacier Vault Lock",
+    "chinese": "Glacier 保险库锁",
+    "japanese": "Glacier ボールトロック",
+    "note": "锁定 Vault Lock Policy 后不可再更改或删除，用于 WORM 合规。",
+    "frequency": 3
+  },
+  {
     "term": "Global Accelerator",
     "english": "AWS Global Accelerator",
     "chinese": "全球网络加速",
     "japanese": "AWS Global Accelerator（グローバルネットワーク高速化サービス）",
-    "note": "加速全球 TCP/UDP 并按健康状态切换端点。",
+    "note": "无缓存的全球 TCP/UDP 加速；IPv4 默认两个静态 Anycast IP，按位置与健康状态路由到 Regional Endpoint Group。",
     "frequency": 4
   },
   {
@@ -1577,6 +2049,30 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "Golden AMI",
+    "english": "Golden Amazon Machine Image",
+    "chinese": "黄金镜像",
+    "japanese": "ゴールデンAMI",
+    "note": "预烘焙稳定、重复、耗时的 OS 依赖与应用组件，以加快启动并减少配置漂移。",
+    "frequency": 5
+  },
+  {
+    "term": "gp2",
+    "english": "General Purpose SSD (gp2)",
+    "chinese": "通用型 SSD gp2",
+    "japanese": "汎用 SSD（gp2）",
+    "note": "旧一代通用 EBS SSD；基线 IOPS 与容量耦合并使用 Burst 模型。",
+    "frequency": 4
+  },
+  {
+    "term": "gp3",
+    "english": "General Purpose SSD (gp3)",
+    "chinese": "通用型 SSD gp3",
+    "japanese": "汎用 SSD（gp3）",
+    "note": "通用 EBS SSD；容量、IOPS、Throughput 可较独立配置，通常是新建通用卷的首选。",
+    "frequency": 5
+  },
+  {
     "term": "Graph Database",
     "english": "Graph Database",
     "chinese": "图数据库",
@@ -1589,7 +2085,15 @@ const rows = [
     "english": "Gateway Load Balancer",
     "chinese": "网关负载均衡器",
     "japanese": "Gateway Load Balancer（ゲートウェイロードバランサー）",
-    "note": "",
+    "note": "第 3 层安全设备服务链；通过 GWLBe 和路由表导流，使用 GENEVE（UDP 6081）封装。",
+    "frequency": 3
+  },
+  {
+    "term": "GWLBe",
+    "english": "Gateway Load Balancer Endpoint",
+    "chinese": "网关负载均衡器端点",
+    "japanese": "Gateway Load Balancer エンドポイント",
+    "note": "通过路由表将流量透明地送往 GWLB 服务链，常用于集中式防火墙、IDS/IPS、DPI。",
     "frequency": 3
   },
   {
@@ -1597,7 +2101,23 @@ const rows = [
     "english": "High Availability",
     "chinese": "高可用性",
     "japanese": "高可用性（こうかようせい）",
-    "note": "通过多 AZ、冗余和自动故障转移减少停机；不等于完全不中断。",
+    "note": "通过多 AZ、冗余、健康检查与自动替换减少停机；不等于完全零中断。",
+    "frequency": 5
+  },
+  {
+    "term": "Health Check Grace Period",
+    "english": "Health Check Grace Period",
+    "chinese": "健康检查宽限期",
+    "japanese": "ヘルスチェック猶予期間",
+    "note": "实例进入 InService 后的一段保护时间，ASG 暂不因 EC2/ELB 健康检查失败立即替换它。",
+    "frequency": 5
+  },
+  {
+    "term": "Hosted Zone",
+    "english": "Hosted Zone",
+    "chinese": "托管区域",
+    "japanese": "ホストゾーン",
+    "note": "包含 DNS Records 的权威命名空间；Private Zone 命中但缺 Record 时不回退 Public。",
     "frequency": 5
   },
   {
@@ -1646,6 +2166,14 @@ const rows = [
     "chinese": "IAM 凭证报告",
     "japanese": "IAM 認証情報レポート（ルートアカウント行と IAM ユーザーのパスワード、MFA、アクセスキー、署名証明書の状態や最終利用・更新情報を一覧化する CSV レポート）",
     "note": "账户级 CSV，汇总 Root Account 行与 IAM User 的 Password、MFA、Access Key、签名证书及最后使用／轮换信息；不包含 Role 临时凭证或服务专用凭证。",
+    "frequency": 4
+  },
+  {
+    "term": "IAM DB Authentication",
+    "english": "IAM Database Authentication",
+    "chinese": "IAM 数据库认证",
+    "japanese": "IAM データベース認証",
+    "note": "使用 SigV4 短期 Token 替代长期数据库密码，支持特定 RDS/Aurora Engine。",
     "frequency": 4
   },
   {
@@ -1761,6 +2289,22 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "Inbound Resolver Endpoint",
+    "english": "Route 53 Resolver Inbound Endpoint",
+    "chinese": "入站解析器端点",
+    "japanese": "インバウンドリゾルバーエンドポイント",
+    "note": "On-prem → AWS Private DNS；需 Conditional Forwarding、网络可达和 TCP/UDP 53。",
+    "frequency": 5
+  },
+  {
+    "term": "Inbound Rule",
+    "english": "Inbound Rule",
+    "chinese": "入站规则",
+    "japanese": "インバウンドルール（リソースへ入ってくる通信を許可する Security Group の規則）",
+    "note": "按来源、协议和端口范围定义；Security Group 不支持显式拒绝规则。",
+    "frequency": 4
+  },
+  {
     "term": "Infrastructure",
     "english": "Infrastructure",
     "chinese": "基础设施",
@@ -1785,11 +2329,35 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "Instance Profile",
+    "english": "IAM Instance Profile",
+    "chinese": "实例配置文件",
+    "japanese": "インスタンスプロファイル",
+    "note": "把 IAM Role 传递给 EC2 的容器；Beanstalk 中与服务自身使用的 Service Role 不同。",
+    "frequency": 5
+  },
+  {
     "term": "Instance Store",
     "english": "Amazon EC2 Instance Store",
     "chinese": "EC2 实例存储",
-    "japanese": "インスタンスストア",
-    "note": "宿主机本地临时块存储；Stop/Terminate 会丢失。",
+    "japanese": "EC2 インスタンスストア",
+    "note": "宿主机本地临时块存储；Reboot 通常保留，Stop/Hibernate/Terminate 或宿主机故障会丢失。仅用于 Cache、Buffer、Scratch、可重建数据。",
+    "frequency": 4
+  },
+  {
+    "term": "Instance Warmup",
+    "english": "Instance Warmup",
+    "chinese": "实例预热期",
+    "japanese": "インスタンスのウォームアップ",
+    "note": "让新实例在充分初始化前不被当作已贡献完整容量，避免指标失真和重复扩容。",
+    "frequency": 5
+  },
+  {
+    "term": "io2",
+    "english": "Provisioned IOPS SSD (io2)",
+    "chinese": "预置 IOPS SSD io2",
+    "japanese": "プロビジョンド IOPS SSD（io2）",
+    "note": "面向关键数据库和持续高 IOPS、低延迟工作负载；实际性能仍受 EC2 EBS Bandwidth 限制。",
     "frequency": 5
   },
   {
@@ -1799,6 +2367,14 @@ const rows = [
     "japanese": "IOPS（1 秒あたりの入出力操作数）",
     "note": "衡量每秒读写操作次数，随机小块 I/O 常关注。",
     "frequency": 5
+  },
+  {
+    "term": "IP-based Routing",
+    "english": "IP-based Routing Policy",
+    "chinese": "基于 IP 的路由",
+    "japanese": "IPベースルーティング",
+    "note": "按已知 ISP / Customer CIDR 定向；建议 Default \\*；不支持 Private Hosted Zone。",
+    "frequency": 3
   },
   {
     "term": "Isolation",
@@ -1833,11 +2409,35 @@ const rows = [
     "frequency": 3
   },
   {
+    "term": "Kinesis Data Streams",
+    "english": "Amazon Kinesis Data Streams",
+    "chinese": "实时数据流服务",
+    "japanese": "Amazon Kinesis Data Streams（リアルタイムストリーム）",
+    "note": "可重放的实时流。Partition Key 决定分片；同一分片内按序。支持 Provisioned 与 On-demand；保留期可扩展至 365 天。Shared throughput 与 Enhanced Fan-Out 要区分。",
+    "frequency": 5
+  },
+  {
     "term": "Lambda",
     "english": "AWS Lambda",
     "chinese": "无服务器函数计算",
     "japanese": "AWS Lambda（ラムダ）",
-    "note": "事件触发、自动扩缩容、按调用和执行时长计费；单次执行最长 15 分钟，不适合长期进程。",
+    "note": "Serverless Function Compute，最长 900 秒。Reserved Concurrency 保留并限流；Provisioned Concurrency 预热；SnapStart 从预初始化快照恢复。访问 Private VPC Resource 要配置 VPC/Subnet/SG；高并发连接 RDS 优先 RDS Proxy。",
+    "frequency": 5
+  },
+  {
+    "term": "Lambda SnapStart",
+    "english": "AWS Lambda SnapStart",
+    "chinese": "Lambda 快照启动",
+    "japanese": "Lambda SnapStart",
+    "note": "发布 Version 时先初始化函数并创建加密的内存/磁盘状态快照，调用时从快照恢复以减少初始化延迟；它不是并发配额。",
+    "frequency": 4
+  },
+  {
+    "term": "Latency Routing",
+    "english": "Latency-based Routing Policy",
+    "chinese": "延迟路由",
+    "japanese": "レイテンシールーティング",
+    "note": "返回 AWS 预计网络延迟最低的 Region；不是地理最近，也不是实时 Ping。",
     "frequency": 5
   },
   {
@@ -1849,11 +2449,19 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "Legal Hold",
+    "english": "S3 Object Lock Legal Hold",
+    "chinese": "法律保留",
+    "japanese": "リーガルホールド",
+    "note": "独立于保留期且无自动到期日；由有权限者显式移除。",
+    "frequency": 4
+  },
+  {
     "term": "Lifecycle Policy",
     "english": "Amazon S3 Lifecycle Policy",
     "chinese": "S3 生命周期策略",
     "japanese": "S3 ライフサイクルポリシー",
-    "note": "按规则转存储类别、过期对象和清理旧版本。",
+    "note": "按 Prefix / Tag / Age 等规则自动 Transition 或 Expiration；Current 与 Noncurrent Version 可分别治理，并可清理 Delete Marker 与未完成 Multipart。",
     "frequency": 5
   },
   {
@@ -1873,6 +2481,14 @@ const rows = [
     "frequency": 3
   },
   {
+    "term": "Listener Rule",
+    "english": "Listener Rule",
+    "chinese": "监听器规则",
+    "japanese": "リスナールール",
+    "note": "由 Priority、Condition、Action 组成；数值较小的优先级先匹配，Default Rule 最后执行。",
+    "frequency": 5
+  },
+  {
     "term": "Log Group",
     "english": "Log Group",
     "chinese": "日志组",
@@ -1887,6 +2503,14 @@ const rows = [
     "japanese": "ログストリーム",
     "note": "来自同一具体来源的一系列日志事件，例如某个 Lambda 实例。",
     "frequency": 3
+  },
+  {
+    "term": "Long Polling",
+    "english": "SQS Long Polling",
+    "chinese": "长轮询",
+    "japanese": "ロングポーリング",
+    "note": "ReceiveMessageWaitTimeSeconds 大于 0 即长轮询，最长 20 秒。等待消息到达后再返回，减少空响应、假空响应和 API 成本；它不延长消息的 Visibility Timeout。",
+    "frequency": 5
   },
   {
     "term": "Longest Prefix Match",
@@ -1921,6 +2545,14 @@ const rows = [
     "frequency": 1
   },
   {
+    "term": "Managed Node Group",
+    "english": "Amazon EKS Managed Node Group",
+    "chinese": "托管节点组",
+    "japanese": "EKS マネージドノードグループ",
+    "note": "由 EKS 自动化 Provisioning 与 Lifecycle 的 EC2 Worker Nodes，底层仍是 EC2 + ASG；不是 Serverless。",
+    "frequency": 4
+  },
+  {
     "term": "Managed Service",
     "english": "Managed Service",
     "chinese": "托管服务",
@@ -1930,19 +2562,35 @@ const rows = [
   },
   {
     "term": "Manual Snapshot",
-    "english": "Manual DB Snapshot",
+    "english": "Manual Snapshot",
     "chinese": "手动数据库快照",
-    "japanese": "手動 DB スナップショット",
-    "note": "用户手动创建的指定时刻数据库状态备份，保留至显式删除。",
+    "japanese": "手動スナップショット",
+    "note": "保存明确时间点；Restore 会创建新 DB / Cluster，不会原地覆盖 Source。",
     "frequency": 4
   },
   {
     "term": "Memcached",
     "english": "Memcached",
     "chinese": "分布式内存缓存引擎",
-    "japanese": "Memcached（分散型インメモリキャッシュエンジン）",
-    "note": "功能较轻的分布式内存缓存。",
-    "frequency": 3
+    "japanese": "Memcached（分散型インメモリキャッシュ）",
+    "note": "简单 Key-Value、多线程；Node-based 主要通过 Sharding 扩展。",
+    "frequency": 4
+  },
+  {
+    "term": "Memory Optimized Instance",
+    "english": "Memory Optimized Instance",
+    "chinese": "内存优化型实例",
+    "japanese": "メモリ最適化インスタンス（大容量メモリと高速なメモリアクセスを重視した EC2 インスタンス）",
+    "note": "适合内存缓存、实时分析和大型数据库等内存密集型工作负载。",
+    "frequency": 4
+  },
+  {
+    "term": "Message Group ID",
+    "english": "Message Group ID",
+    "chinese": "消息组 ID",
+    "japanese": "メッセージグループ ID",
+    "note": "FIFO 中用于定义顺序边界：同一组严格有序并串行推进，不同组可并行处理。Deduplication ID 解决生产端重复，Group ID 解决顺序与并发，两者职责不同。",
+    "frequency": 5
   },
   {
     "term": "Metadata",
@@ -1958,6 +2606,14 @@ const rows = [
     "chinese": "多因素认证",
     "japanese": "多要素認証（パスワードなどの第一要素に加えて、パスキーや認証アプリなど別の要素を要求する本人確認方式）",
     "note": "在第一因素之外增加额外认证因素；本身不授予权限。Root 与高权限身份优先启用，当前 Root / IAM User 最多可注册 8 个设备。",
+    "frequency": 5
+  },
+  {
+    "term": "MFA Delete",
+    "english": "Amazon S3 MFA Delete",
+    "chinese": "MFA 删除保护",
+    "japanese": "MFA 削除",
+    "note": "永久删除 Specific Version 或改变 Versioning 状态时要求 MFA；只有 Root 能启停。",
     "frequency": 5
   },
   {
@@ -1978,10 +2634,18 @@ const rows = [
   },
   {
     "term": "Multi-AZ",
-    "english": "Multi-AZ Deployment",
+    "english": "Multi-Availability Zone Deployment",
     "chinese": "多可用区部署",
     "japanese": "マルチ AZ 配置",
-    "note": "主要目标是高可用和自动故障转移，不用于提升读取性能。",
+    "note": "跨 AZ 降低单 AZ 故障影响；具体是否可读取决于产品和部署类型。",
+    "frequency": 5
+  },
+  {
+    "term": "Multi-AZ DB Cluster",
+    "english": "Multi-AZ DB Cluster",
+    "chinese": "多可用区数据库集群",
+    "japanese": "マルチ AZ DB クラスター",
+    "note": "跨 3 AZ 同时提供高可用与可读副本。",
     "frequency": 5
   },
   {
@@ -2001,11 +2665,19 @@ const rows = [
     "frequency": 3
   },
   {
+    "term": "Multi-Value Answer Routing",
+    "english": "Multi-Value Answer Routing Policy",
+    "chinese": "多值应答路由",
+    "japanese": "複数値回答ルーティング",
+    "note": "每条 Record 可独立健康检查，一次最多返回 8 个健康答案；不是 ELB 且不支持 Alias。",
+    "frequency": 4
+  },
+  {
     "term": "Multipart Upload",
     "english": "Multipart Upload",
     "chinese": "分段上传",
     "japanese": "マルチパートアップロード",
-    "note": "把大对象分段并行上传；超过 5 GB 必须使用。",
+    "note": "把大对象分 Part 并行上传；失败只重传 Part。超过 5 GB 必须使用，约 100 MB 以上可考虑。",
     "frequency": 4
   },
   {
@@ -2045,7 +2717,15 @@ const rows = [
     "english": "Network Load Balancer",
     "chinese": "网络负载均衡器",
     "japanese": "Network Load Balancer（ネットワークロードバランサー）",
-    "note": "第 4 层 TCP/UDP/TLS；适合极高性能、超低延迟和固定 IP。",
+    "note": "每个启用 AZ 提供静态 IP，可关联 EIP；目标类型支持 Instance、IP、ALB。",
+    "frequency": 4
+  },
+  {
+    "term": "Noncurrent Version",
+    "english": "Amazon S3 Noncurrent Object Version",
+    "chinese": "非当前对象版本",
+    "japanese": "非現行バージョン",
+    "note": "同 Key 被新版本覆盖后形成的历史版本，可独立 Transition 或 Permanent Delete。",
     "frequency": 4
   },
   {
@@ -2069,7 +2749,7 @@ const rows = [
     "english": "Amazon S3 Object Key",
     "chinese": "S3 对象键",
     "japanese": "S3 オブジェクトキー",
-    "note": "对象在 Bucket 中的唯一名称；斜线只是 Prefix 表现。",
+    "note": "对象在 Bucket 中的唯一完整名称；斜线只是 Key 的一部分，控制台据此显示 Folder。",
     "frequency": 5
   },
   {
@@ -2077,7 +2757,7 @@ const rows = [
     "english": "Amazon S3 Object Lock",
     "chinese": "S3 对象锁",
     "japanese": "S3 オブジェクトロック",
-    "note": "在保留期内防止对象被修改或删除。",
+    "note": "基于 Versioning 的 WORM；Compliance 不可绕过，Governance 可授权绕过，Legal Hold 无固定到期日。",
     "frequency": 5
   },
   {
@@ -2113,6 +2793,30 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "Origin Access Control (OAC)",
+    "english": "CloudFront Origin Access Control",
+    "chinese": "源站访问控制",
+    "japanese": "オリジンアクセスコントロール",
+    "note": "CloudFront 对私有 S3 Origin 发起经签名的授权请求；需配合 Bucket Policy。S3 Website Endpoint 不能使用 OAC。",
+    "frequency": 5
+  },
+  {
+    "term": "Outbound Resolver Endpoint",
+    "english": "Route 53 Resolver Outbound Endpoint",
+    "chinese": "出站解析器端点",
+    "japanese": "アウトバウンドリゾルバーエンドポイント",
+    "note": "AWS → On-prem DNS 的转发出口；必须结合 Resolver Rule。",
+    "frequency": 5
+  },
+  {
+    "term": "Outbound Rule",
+    "english": "Outbound Rule",
+    "chinese": "出站规则",
+    "japanese": "アウトバウンドルール（リソースから外へ出ていく通信を許可する Security Group の規則）",
+    "note": "Security Group 是有状态的，已允许通信的返回流量不依赖反方向规则。",
+    "frequency": 4
+  },
+  {
     "term": "Outposts",
     "english": "AWS Outposts",
     "chinese": "AWS 本地部署服务",
@@ -2142,6 +2846,14 @@ const rows = [
     "chinese": "分区键",
     "japanese": "パーティションキー",
     "note": "决定 DynamoDB Item 的分布，也是 Query 必须指定的键部分。",
+    "frequency": 5
+  },
+  {
+    "term": "Partition Placement Group",
+    "english": "Partition Placement Group",
+    "chinese": "分区放置组",
+    "japanese": "パーティションプレイスメントグループ（多数の EC2 を独立したラック集合ごとの障害分離グループへ分ける配置戦略）",
+    "note": "每个 AZ 最多 7 个 Partition。一个 Partition 不是单个机架，而是一组相互独立的机架，每个 Partition 可放置多个实例。",
     "frequency": 5
   },
   {
@@ -2181,7 +2893,7 @@ const rows = [
     "english": "Point-in-Time Recovery",
     "chinese": "时间点恢复",
     "japanese": "ポイントインタイムリカバリ",
-    "note": "把数据库恢复到保留窗口内的特定时间点。",
+    "note": "通常创建新的 DB Instance / Cluster，不会覆盖 Source；Transaction Log 上传周期不等于恢复只能按该周期选择。",
     "frequency": 5
   },
   {
@@ -2204,7 +2916,7 @@ const rows = [
     "term": "Policy Wildcard",
     "english": "Policy Wildcard",
     "chinese": "策略通配符",
-    "japanese": "ポリシーのワイルドカード（アクション名やリソース範囲の複数の値を * または ? でまとめて一致させる記号）",
+    "japanese": "ポリシーのワイルドカード（アクション名やリソース範囲の複数の値を \\* または ? でまとめて一致させる記号）",
     "note": "Action 中匹配 API 操作名称，Resource 中匹配资源范围；所在字段不同，含义不同。",
     "frequency": 5
   },
@@ -2217,12 +2929,36 @@ const rows = [
     "frequency": 2
   },
   {
+    "term": "Predictive Scaling",
+    "english": "Predictive Scaling",
+    "chinese": "预测伸缩",
+    "japanese": "予測スケーリング",
+    "note": "根据历史负载生成预测并提前扩容，适合稳定重复的周期模式。",
+    "frequency": 4
+  },
+  {
     "term": "Presigned URL",
     "english": "Amazon S3 Presigned URL",
     "chinese": "预签名 URL",
     "japanese": "署名付き URL",
-    "note": "在签名者权限范围内提供有过期时间的临时访问。",
+    "note": "限时 Bearer URL；Console 常见 1 分钟–12 小时，CLI/SDK 最长 7 天；继承签名者权限，不会把对象设为 Public。",
     "frequency": 5
+  },
+  {
+    "term": "Price-Capacity-Optimized",
+    "english": "Price-Capacity-Optimized Allocation Strategy",
+    "chinese": "价格容量优化分配策略",
+    "japanese": "価格・キャパシティ最適化（中断リスクが低い容量プールの中から価格も考慮して Spot を割り当てる戦略）",
+    "note": "同时考虑价格与可用容量，是一般 Spot 工作负载优先考虑的分配策略。",
+    "frequency": 4
+  },
+  {
+    "term": "Primary ENI",
+    "english": "Primary Elastic Network Interface",
+    "chinese": "主网络接口",
+    "japanese": "プライマリ ENI（EC2 起動時に Device Index 0 として使用される主要ネットワークインターフェイス）",
+    "note": "不能从实例分离，为实例提供主私有 IPv4 地址和基本网络位置。",
+    "frequency": 3
   },
   {
     "term": "Primary Key",
@@ -2238,6 +2974,14 @@ const rows = [
     "chinese": "主体",
     "japanese": "プリンシパル（リソースベースまたは信頼ポリシーで、規則の対象となるアカウント、ユーザー、ロール、サービスなどの主体）",
     "note": "常见于 Resource-based Policy 与 Trust Policy；Identity-based Policy 不能使用 Principal。IAM Group 不能作为 Principal。",
+    "frequency": 5
+  },
+  {
+    "term": "Private IP",
+    "english": "Private IP Address",
+    "chinese": "私有 IP 地址",
+    "japanese": "プライベート IP アドレス（VPC など到達可能なプライベートネットワーク内で通信するための IP アドレス）",
+    "note": "主私有 IPv4 地址在 Stop/Hibernate 后再 Start 时通常保持不变。它不能从互联网直接访问，但可通过 VPN、堡垒机、Direct Connect 或 EC2 Instance Connect Endpoint 等私有路径使用。",
     "frequency": 5
   },
   {
@@ -2265,6 +3009,14 @@ const rows = [
     "frequency": 3
   },
   {
+    "term": "Provisioned Concurrency",
+    "english": "AWS Lambda Provisioned Concurrency",
+    "chinese": "预置并发",
+    "japanese": "プロビジョニング済み同時実行数",
+    "note": "提前初始化并保持指定数量的 Lambda Execution Environments，降低 Cold Start；需要 Version/Alias 并额外计费，不是最大并发上限。",
+    "frequency": 5
+  },
+  {
     "term": "Provisioning",
     "english": "Resource Provisioning",
     "chinese": "资源预置 / 配置",
@@ -2279,6 +3031,14 @@ const rows = [
     "japanese": "パブリッシュ／サブスクライブ",
     "note": "发布者不需要知道订阅者；适合一对多广播。",
     "frequency": 4
+  },
+  {
+    "term": "Public IP",
+    "english": "Public IP Address",
+    "chinese": "公有 IP 地址",
+    "japanese": "パブリック IP アドレス（インターネット上でルーティング可能な IP アドレス）",
+    "note": "自动分配的公有 IPv4 在 Stop/Hibernate 后会被释放，再次 Start 时通常会变化。即使拥有公有 IP，缺少 IGW、路由、SG/NACL 或监听服务时仍无法访问。",
+    "frequency": 5
   },
   {
     "term": "Public Subnet",
@@ -2329,28 +3089,76 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "RBAC",
+    "english": "Role-Based Access Control",
+    "chinese": "基于角色的访问控制",
+    "japanese": "ロールベースアクセス制御",
+    "note": "为 ElastiCache Valkey / Redis OSS 提供比单一 AUTH Token 更细粒度的授权。",
+    "frequency": 3
+  },
+  {
     "term": "RDS",
     "english": "Amazon Relational Database Service",
-    "chinese": "托管关系型数据库",
-    "japanese": "Amazon RDS",
-    "note": "AWS 管理备份、补丁和基础设施；Multi-AZ 提高可用性，Read Replica 提高读取能力。",
+    "chinese": "托管关系型数据库服务",
+    "japanese": "Amazon RDS（マネージドリレーショナルデータベース）",
+    "note": "应用通过 Endpoint + Port 访问；AWS 管底层 Host 与大量运维，客户仍管 Data、Schema、Query、Security 与 Recovery。",
     "frequency": 5
+  },
+  {
+    "term": "RDS Custom",
+    "english": "Amazon RDS Custom",
+    "chinese": "可定制托管关系数据库",
+    "japanese": "Amazon RDS Custom（カスタムマネージド DB）",
+    "note": "为需要 OS / DB 深度定制的 Oracle、SQL Server 工作负载提供更高管理权限。",
+    "frequency": 3
+  },
+  {
+    "term": "RDS Proxy",
+    "english": "Amazon RDS Proxy",
+    "chinese": "RDS 数据库代理",
+    "japanese": "Amazon RDS Proxy（データベースプロキシ）",
+    "note": "通过 Connection Pooling / Multiplexing 复用 Backend DB Connection，适合 Lambda Connection Storm。",
+    "frequency": 5
+  },
+  {
+    "term": "RDS Storage Auto Scaling",
+    "english": "RDS Storage Auto Scaling",
+    "chinese": "RDS 存储自动扩展",
+    "japanese": "RDS ストレージオートスケーリング",
+    "note": "在存储空间不足并满足持续时间与修改约束时自动提高 Allocated Storage。",
+    "frequency": 4
   },
   {
     "term": "Read Replica",
     "english": "Read Replica",
     "chinese": "只读副本",
     "japanese": "リードレプリカ",
-    "note": "主要用于扩展读取和报表查询；通常为异步复制，可跨 Region。",
+    "note": "Application 必须连接 Replica Endpoint 才能分担读；可能有 Replica Lag，可 Promote 为独立 DB。",
     "frequency": 5
+  },
+  {
+    "term": "Reader Endpoint",
+    "english": "Reader Endpoint",
+    "chinese": "读取端点",
+    "japanese": "リーダーエンドポイント",
+    "note": "为通用读取连接提供统一入口；新 Reader 可被 Endpoint 使用。",
+    "frequency": 5
+  },
+  {
+    "term": "Recycle Bin",
+    "english": "Recycle Bin for AWS Resources",
+    "chinese": "AWS 回收站",
+    "japanese": "AWS Recycle Bin",
+    "note": "用 Retention Rule 防止误删；已进入 Recycle Bin 的资源在保留期内仍计费，删除 Rule 不会立刻清除它们。",
+    "frequency": 3
   },
   {
     "term": "Redis OSS",
     "english": "Redis Open Source Software",
     "chinese": "Redis 开源引擎",
-    "japanese": "Redis OSS（オープンソースのインメモリデータストア）",
-    "note": "支持丰富数据结构、复制、排行榜和会话等场景。",
-    "frequency": 3
+    "japanese": "Redis OSS（オープンソースエンジン）",
+    "note": "支持丰富数据结构、Replication、Session 与 Leaderboard；新 Workload 也应评估 Valkey。",
+    "frequency": 4
   },
   {
     "term": "Redundancy",
@@ -2433,6 +3241,14 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "Replica",
+    "english": "Replica",
+    "chinese": "副本",
+    "japanese": "レプリカ（複製）",
+    "note": "可用于 Read Scaling、Failover 或 Durability，具体能力取决于服务与复制方式。",
+    "frequency": 4
+  },
+  {
     "term": "Repurchase",
     "english": "Repurchase (Drop and Shop)",
     "chinese": "重新购买、更换产品",
@@ -2441,11 +3257,35 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "Reserved Concurrency",
+    "english": "AWS Lambda Reserved Concurrency",
+    "chinese": "预留并发",
+    "japanese": "予約済み同時実行数",
+    "note": "为 Function 保留并同时限制最大并发，隔离账户 Regional Concurrency Pool；设为 0 可让函数持续被 Throttle。它不会预热执行环境。",
+    "frequency": 5
+  },
+  {
+    "term": "Reserved Instance",
+    "english": "Reserved Instance",
+    "chinese": "预留实例",
+    "japanese": "リザーブドインスタンス（一定期間の利用コミットメントにより EC2 料金の割引を受ける課金上の仕組み）",
+    "note": "折扣与容量预留是两个概念。Regional RI 提供更灵活的折扣，Zonal RI 还包含指定 AZ 的容量预留。",
+    "frequency": 5
+  },
+  {
+    "term": "Resolver Rule",
+    "english": "Route 53 Resolver Rule",
+    "chinese": "解析器规则",
+    "japanese": "リゾルバールール",
+    "note": "指定转发 Domain 与目标 DNS IP，并关联 VPC；冲突时最具体 Domain 匹配。",
+    "frequency": 4
+  },
+  {
     "term": "Resource",
     "english": "Resource",
     "chinese": "资源",
     "japanese": "リソース（ポリシーステートメントの適用対象となる AWS リソースを ARN などで指定する要素）",
-    "note": "指定规则作用的 AWS 资源；可以精确限定时避免使用 *。",
+    "note": "指定规则作用的 AWS 资源；可以精确限定时避免使用 \\*。",
     "frequency": 5
   },
   {
@@ -2483,9 +3323,33 @@ const rows = [
   {
     "term": "Route 53",
     "english": "Amazon Route 53",
-    "chinese": "DNS 与域名服务",
-    "japanese": "Amazon Route 53（DNS・ドメイン登録・トラフィックルーティングサービス）",
-    "note": "负责 DNS 解析、域名注册、健康检查和流量路由。",
+    "chinese": "权威 DNS、域名与流量路由服务",
+    "japanese": "Amazon Route 53（DNS・ドメイン登録・ヘルスチェック・ルーティング）",
+    "note": "提供权威 DNS、Domain Registration、Health-aware Routing 与 Route 53 Resolver；不承载后续应用流量。",
+    "frequency": 5
+  },
+  {
+    "term": "Route 53 Health Check",
+    "english": "Amazon Route 53 Health Check",
+    "chinese": "Route 53 健康检查",
+    "japanese": "Route 53 ヘルスチェック",
+    "note": "产生健康信号；必须关联 Record / Policy 才影响 DNS。Private Resource 常用 CloudWatch Alarm。",
+    "frequency": 5
+  },
+  {
+    "term": "Route 53 Resolver",
+    "english": "Amazon Route 53 Resolver",
+    "chinese": "Route 53 解析器",
+    "japanese": "Route 53 Resolver",
+    "note": "VPC 默认递归解析器；解析 VPC Local、Private Hosted Zone 与 Public DNS。",
+    "frequency": 5
+  },
+  {
+    "term": "Route 53 Routing Policy",
+    "english": "Amazon Route 53 Routing Policy",
+    "chinese": "Route 53 路由策略",
+    "japanese": "Route 53 ルーティングポリシー",
+    "note": "决定权威 DNS 返回哪个 Record；不是应用流量代理。包括 Simple、Weighted、Latency、Failover、Geolocation、Geoproximity、IP-based 与 Multi-Value。",
     "frequency": 5
   },
   {
@@ -2525,7 +3389,7 @@ const rows = [
     "english": "Amazon Simple Storage Service",
     "chinese": "对象存储",
     "japanese": "Amazon S3（オブジェクトストレージ）",
-    "note": "按对象和 Bucket 存储，极高耐久性；不作为传统块设备挂载给 EC2。",
+    "note": "Region 级对象存储；单 Object 当前常用上限 50 TB，Single PUT 最大 5 GB；Key 是完整名称，Folder 只是 Prefix。",
     "frequency": 5
   },
   {
@@ -2533,15 +3397,79 @@ const rows = [
     "english": "Amazon S3 Access Point",
     "chinese": "S3 访问点",
     "japanese": "S3 アクセスポイント",
-    "note": "为不同应用或团队提供独立入口和策略。",
+    "note": "同一 Bucket 的命名访问入口，拥有独立 DNS 与 Policy；可按 Prefix/团队隔离，并可设 VPC-only，不复制对象。",
     "frequency": 4
+  },
+  {
+    "term": "S3 Account Regional Namespace",
+    "english": "Amazon S3 Account Regional Namespace",
+    "chinese": "S3 账户区域命名空间",
+    "japanese": "S3 アカウントリージョナル名前空間",
+    "note": "账户专属的区域 Bucket 命名空间；完整名称含 Account ID、Region 与 -an 后缀。",
+    "frequency": 3
+  },
+  {
+    "term": "S3 Batch Operations",
+    "english": "Amazon S3 Batch Operations",
+    "chinese": "S3 批量操作",
+    "japanese": "S3 バッチオペレーション",
+    "note": "对大量 Existing Objects 执行 Copy、Tag、Restore、Lambda 等 Managed Job，并提供进度、重试与报告。",
+    "frequency": 4
+  },
+  {
+    "term": "S3 Batch Replication",
+    "english": "Amazon S3 Batch Replication",
+    "chinese": "S3 批量复制",
+    "japanese": "S3 バッチレプリケーション",
+    "note": "补复制 Replication Rule 生效前的 Existing Objects、失败对象等；不同于持续复制新版本。",
+    "frequency": 4
+  },
+  {
+    "term": "S3 Block Public Access",
+    "english": "Amazon S3 Block Public Access",
+    "chinese": "S3 阻止公共访问",
+    "japanese": "S3 ブロックパブリックアクセス",
+    "note": "防止公共 Policy 或 ACL 造成误公开的 Guardrail；它不是授予权限的 Policy。",
+    "frequency": 5
+  },
+  {
+    "term": "S3 Bucket Key",
+    "english": "Amazon S3 Bucket Key",
+    "chinese": "S3 存储桶密钥",
+    "japanese": "S3 バケットキー",
+    "note": "降低 SSE-KMS 对 KMS 的请求次数与成本；仍属于 SSE-KMS。",
+    "frequency": 4
+  },
+  {
+    "term": "S3 Bucket Policy",
+    "english": "Amazon S3 Bucket Policy",
+    "chinese": "S3 存储桶策略",
+    "japanese": "S3 バケットポリシー",
+    "note": "附加到 Bucket 的 Resource-based Policy；GetObject 必须匹配 Object ARN（bucket/\\*）。",
+    "frequency": 5
+  },
+  {
+    "term": "S3 Byte-Range Fetch",
+    "english": "Amazon S3 Byte-Range Fetch",
+    "chinese": "S3 字节范围读取",
+    "japanese": "S3 バイト範囲取得",
+    "note": "并行读取对象不同 Byte Range，或只取得 Header / 局部内容。",
+    "frequency": 3
+  },
+  {
+    "term": "S3 Event Notifications",
+    "english": "Amazon S3 Event Notifications",
+    "chinese": "S3 事件通知",
+    "japanese": "S3 イベント通知",
+    "note": "Object 事件可直达 SNS、SQS Standard、Lambda；复杂过滤、Replay 或 FIFO 使用 EventBridge。",
+    "frequency": 5
   },
   {
     "term": "S3 Express One Zone",
     "english": "Amazon S3 Express One Zone",
     "chinese": "S3 Express 单可用区",
     "japanese": "S3 Express One Zone（1 ゾーンの高性能ストレージクラス）",
-    "note": "单 AZ 极高性能对象存储。",
+    "note": "使用 Directory Bucket 的单 AZ 高性能存储；适合与 Compute 同 AZ 的 AI/ML、HPC、Media 等高频低延迟 Workload。",
     "frequency": 3
   },
   {
@@ -2557,15 +3485,31 @@ const rows = [
     "english": "Amazon S3 Intelligent-Tiering",
     "chinese": "S3 智能分层",
     "japanese": "S3 Intelligent-Tiering（自動階層化ストレージクラス）",
-    "note": "适合访问模式未知或变化的数据，自动调整访问层。",
+    "note": "适合访问模式未知或变化的数据，自动在访问层间移动；仍需核算监控/自动化费用与对象特征。",
     "frequency": 5
+  },
+  {
+    "term": "S3 Inventory",
+    "english": "Amazon S3 Inventory",
+    "chinese": "S3 清单",
+    "japanese": "S3 インベントリ",
+    "note": "周期生成对象级属性清单，可作为 Athena 查询和 Batch Operations Manifest 来源。",
+    "frequency": 4
+  },
+  {
+    "term": "S3 Object Lambda",
+    "english": "Amazon S3 Object Lambda",
+    "chinese": "S3 对象 Lambda",
+    "japanese": "S3 Object Lambda",
+    "note": "读取时动态脱敏、富化或转换且不改原对象；自 2025-11-07 起新客户不可默认使用，需核对资格。",
+    "frequency": 4
   },
   {
     "term": "S3 One Zone-IA",
     "english": "Amazon S3 One Zone-Infrequent Access",
     "chinese": "S3 单可用区-低频访问",
     "japanese": "S3 1 ゾーン-IA（1 ゾーン低頻度アクセス）",
-    "note": "单 AZ、成本较低，适合可重建数据。",
+    "note": "单 AZ、低频访问、毫秒取回，适合可重建或已有其他副本的数据。",
     "frequency": 4
   },
   {
@@ -2574,6 +3518,30 @@ const rows = [
     "chinese": "Outposts 本地对象存储",
     "japanese": "Amazon S3 on Outposts（Outposts 向けオブジェクトストレージ）",
     "note": "在客户地点的 Outposts 上提供 S3 对象存储。",
+    "frequency": 4
+  },
+  {
+    "term": "S3 Prefix",
+    "english": "Amazon S3 Object Key Prefix",
+    "chinese": "S3 键前缀",
+    "japanese": "S3 プレフィックス",
+    "note": "Object Key 开头字符串；用于组织对象、Lifecycle/Event Filter，也构成 S3 per-prefix 请求性能扩展维度。",
+    "frequency": 4
+  },
+  {
+    "term": "S3 Requester Pays",
+    "english": "Amazon S3 Requester Pays",
+    "chinese": "S3 请求者付费",
+    "japanese": "S3 リクエスタ支払い",
+    "note": "Requester 承担 Request 与 Download Cost，Owner 仍承担 Storage；Requester 必须认证且仍需授权。",
+    "frequency": 3
+  },
+  {
+    "term": "S3 Server Access Logging",
+    "english": "Amazon S3 Server Access Logging",
+    "chinese": "S3 服务器访问日志",
+    "japanese": "S3 サーバーアクセスログ",
+    "note": "将请求日志延迟投递到同 Region、同 Account 的专用 Bucket；避免 Logging Loop。",
     "frequency": 4
   },
   {
@@ -2593,11 +3561,59 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "S3 Static Website Hosting",
+    "english": "Amazon S3 Static Website Hosting",
+    "chinese": "S3 静态网站托管",
+    "japanese": "S3 静的ウェブサイトホスティング",
+    "note": "Website Endpoint 提供 Index/Error 语义但原生仅 HTTP；直接公开需 Public GetObject。",
+    "frequency": 4
+  },
+  {
+    "term": "S3 Storage Class Analysis",
+    "english": "Amazon S3 Storage Class Analysis",
+    "chinese": "S3 存储类别分析",
+    "japanese": "S3 ストレージクラス分析",
+    "note": "分析访问模式，为 Standard 到 Standard-IA 的 Lifecycle Transition 时机提供建议。",
+    "frequency": 3
+  },
+  {
+    "term": "S3 Storage Lens",
+    "english": "Amazon S3 Storage Lens",
+    "chinese": "S3 存储透镜",
+    "japanese": "S3 Storage Lens（ストレージ分析）",
+    "note": "跨 Organization、Account、Region、Bucket 聚合 S3 使用、成本、保护、活动和性能指标。",
+    "frequency": 4
+  },
+  {
+    "term": "S3 Transfer Acceleration",
+    "english": "Amazon S3 Transfer Acceleration",
+    "chinese": "S3 传输加速",
+    "japanese": "S3 Transfer Acceleration（転送高速化）",
+    "note": "Client 经就近 Edge 进入 AWS Global Network，加速远距离到单一 S3 Bucket 的对象传输。",
+    "frequency": 4
+  },
+  {
     "term": "SageMaker",
     "english": "Amazon SageMaker",
     "chinese": "机器学习平台",
     "japanese": "機械学習プラットフォーム",
-    "note": "",
+    "note": "V2 知识库首批核心词条",
+    "frequency": 3
+  },
+  {
+    "term": "Savings Plans",
+    "english": "Savings Plans",
+    "chinese": "节省计划",
+    "japanese": "Savings Plans（1 年または 3 年の時間当たり利用額をコミットしてコンピューティング料金の割引を受ける仕組み）",
+    "note": "包括 Compute Savings Plans 和 EC2 Instance Savings Plans；没有两年期选项，也不保证容量。",
+    "frequency": 5
+  },
+  {
+    "term": "sc1",
+    "english": "Cold HDD (sc1)",
+    "chinese": "冷数据 HDD",
+    "japanese": "Cold HDD（sc1）",
+    "note": "低成本、低频大容量顺序访问 EBS HDD；不能作为 Boot Volume，不适合随机 I/O。",
     "frequency": 3
   },
   {
@@ -2605,7 +3621,7 @@ const rows = [
     "english": "Scalability",
     "chinese": "可扩展性",
     "japanese": "スケーラビリティ（需要増加に合わせて処理能力を拡張できる性質）",
-    "note": "系统能够通过纵向或横向扩展承载更大负载；不必然意味着会自动缩容。",
+    "note": "纵向扩展改变单机规格（Scale Up/Down）；横向扩展改变节点数量（Scale Out/In）。",
     "frequency": 5
   },
   {
@@ -2633,12 +3649,36 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "Scheduled Scaling",
+    "english": "Scheduled Scaling",
+    "chinese": "计划伸缩",
+    "japanese": "スケジュールされたスケーリング",
+    "note": "在明确时间点预先修改 Min、Desired、Max，适合每日开盘、定时活动等可预测时段。",
+    "frequency": 4
+  },
+  {
     "term": "Schema",
     "english": "Schema",
     "chinese": "数据结构定义",
     "japanese": "スキーマ",
     "note": "定义表、列、类型和约束；DynamoDB 仍有主键 Schema。",
     "frequency": 5
+  },
+  {
+    "term": "Secondary ENI",
+    "english": "Secondary Elastic Network Interface",
+    "chinese": "辅助网络接口",
+    "japanese": "セカンダリ ENI（既存の EC2 に追加でアタッチする独立した仮想ネットワークインターフェイス）",
+    "note": "可在同一 AZ 内分离并附加，从而迁移私有 IP、MAC 地址和 Security Group 等网络身份信息；增加 ENI 不代表带宽自动翻倍。",
+    "frequency": 4
+  },
+  {
+    "term": "Secondary Private IP",
+    "english": "Secondary Private IP Address",
+    "chinese": "辅助私有 IP 地址",
+    "japanese": "セカンダリプライベート IP アドレス（同じ ENI に追加で割り当てるプライベート IP アドレス）",
+    "note": "它不是第二张虚拟网卡，而是同一张 ENI 在主私有 IP 之外持有的附加地址。",
+    "frequency": 3
   },
   {
     "term": "Secret Access Key",
@@ -2660,8 +3700,8 @@ const rows = [
     "term": "Security Group",
     "english": "Security Group",
     "chinese": "安全组",
-    "japanese": "セキュリティグループ",
-    "note": "实例级、有状态、只写允许规则；返回流量自动放行。",
+    "japanese": "セキュリティグループ（EC2 などのリソースに適用するステートフルな仮想ファイアウォール）",
+    "note": "只支持 Allow 规则。关联多个 Security Group 时，允许规则取并集，返回流量会自动允许。",
     "frequency": 5
   },
   {
@@ -2709,7 +3749,7 @@ const rows = [
     "english": "IAM Role for an AWS Service",
     "chinese": "AWS 服务角色",
     "japanese": "サービスロール（AWS サービスが利用者に代わって処理を実行するために引き受ける IAM ロール）",
-    "note": "Trust Policy 信任相应 AWS Service；Permissions Policy 只授予完成任务所需权限。",
+    "note": "由 AWS Service Assume，代表用户执行服务管理操作；Beanstalk Service Role 与 EC2 Instance Profile 是不同身份。",
     "frequency": 5
   },
   {
@@ -2729,11 +3769,27 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "Shard",
+    "english": "Shard",
+    "chinese": "分片",
+    "japanese": "シャード（データ分片）",
+    "note": "通过把不同 Key 分布到多个 Partition 实现水平容量扩展。",
+    "frequency": 4
+  },
+  {
     "term": "Sid",
     "english": "Statement ID",
     "chinese": "语句标识符",
     "japanese": "ステートメント ID（ポリシー内の各 Statement を識別しやすくする任意の識別子）",
     "note": "可选元素，用于标识 Statement，便于阅读和定位；本身不授予权限。",
+    "frequency": 3
+  },
+  {
+    "term": "Simple Routing",
+    "english": "Simple Routing Policy",
+    "chinese": "简单路由",
+    "japanese": "シンプルルーティング",
+    "note": "无特殊决策逻辑；一个 Record 可含多个 Values，但不能逐 Value 绑定 Health Check。",
     "frequency": 3
   },
   {
@@ -2754,10 +3810,26 @@ const rows = [
   },
   {
     "term": "Snapshot",
-    "english": "EBS Snapshot",
+    "english": "Amazon EBS Snapshot",
     "chinese": "EBS 快照",
     "japanese": "EBS スナップショット",
-    "note": "增量备份，可跨 AZ 恢复卷，也可复制到其他 Region。",
+    "note": "Region 级块级时间点备份；底层增量但可完整恢复。跨 AZ Create Volume，跨 Region Copy Snapshot；不能直接 Attach。",
+    "frequency": 5
+  },
+  {
+    "term": "Snapshot Archive",
+    "english": "Amazon EBS Snapshots Archive",
+    "chinese": "快照归档层",
+    "japanese": "EBS スナップショットアーカイブ",
+    "note": "长期低频保留 EBS Snapshot 的低成本层；恢复慢并存在最短计费期，具体时长和价格需查当前文档。",
+    "frequency": 3
+  },
+  {
+    "term": "SNI",
+    "english": "Server Name Indication",
+    "chinese": "服务器名称指示",
+    "japanese": "Server Name Indication（サーバー名表示）",
+    "note": "让同一 TLS Listener/端点根据客户端提供的主机名选择匹配证书，实现多域名托管。",
     "frequency": 4
   },
   {
@@ -2765,7 +3837,7 @@ const rows = [
     "english": "Amazon Simple Notification Service",
     "chinese": "通知与发布订阅服务",
     "japanese": "Amazon SNS（通知サービス）",
-    "note": "Push、Pub/Sub、广播；Fan-out 常见架构是 SNS 同时推送到多个 SQS。",
+    "note": "Push 型 Pub/Sub。可靠 fan-out 常用 SNS→多个 SQS，为每个订阅者提供独立缓冲与重试隔离；Subscription Filter Policy 可按消息属性或消息体筛选。SNS FIFO 支持归档与回放，不能再绝对记成“完全不持久化”。",
     "frequency": 5
   },
   {
@@ -2777,11 +3849,59 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "Sorted Set",
+    "english": "Sorted Set",
+    "chinese": "有序集合",
+    "japanese": "ソート済みセット",
+    "note": "实时游戏排行榜的经典数据结构。",
+    "frequency": 3
+  },
+  {
+    "term": "Source/Destination Check",
+    "english": "Source/Destination Check",
+    "chinese": "源/目标检查",
+    "japanese": "送信元／送信先チェック（EC2 を通過するトラフィックの送信元または送信先がそのインスタンス自身であることを確認する機能）",
+    "note": "当 EC2 作为 NAT Instance、路由器或防火墙设备转发其他主机的流量时，需要关闭此检查。",
+    "frequency": 4
+  },
+  {
     "term": "SPOF",
     "english": "Single Point of Failure",
     "chinese": "单点故障",
     "japanese": "単一障害点",
     "note": "一个组件故障会导致整个系统不可用。",
+    "frequency": 5
+  },
+  {
+    "term": "Spot Capacity Pool",
+    "english": "Spot Capacity Pool",
+    "chinese": "Spot 容量池",
+    "japanese": "Spot キャパシティプール（インスタンスタイプ、アベイラビリティーゾーン、プラットフォームなどで区別される未使用容量の集合）",
+    "note": "分散到多个容量池有助于降低中断风险，应避免固定在单一实例类型和单一 AZ。",
+    "frequency": 3
+  },
+  {
+    "term": "Spot Fleet",
+    "english": "EC2 Spot Fleet",
+    "chinese": "竞价型实例队列",
+    "japanese": "スポットフリート（複数の Spot キャパシティプールから目標容量を満たすようインスタンス群を起動する仕組み）",
+    "note": "考试常考分配策略。新设计还应比较 EC2 Fleet 与 Auto Scaling 的 Spot 能力。",
+    "frequency": 4
+  },
+  {
+    "term": "Spot Instance",
+    "english": "EC2 Spot Instance",
+    "chinese": "竞价型实例",
+    "japanese": "スポットインスタンス（AWS の未使用 EC2 キャパシティを割引価格で利用する中断可能なインスタンス）",
+    "note": "工作负载必须能容忍中断。中断通知通常仅在约两分钟前以尽力而为方式提供，应结合检查点和重试设计。",
+    "frequency": 5
+  },
+  {
+    "term": "Spread Placement Group",
+    "english": "Spread Placement Group",
+    "chinese": "分散放置组",
+    "japanese": "スプレッドプレイスメントグループ（少数の重要な EC2 を異なる基盤ハードウェアへ分散して障害分離を高める配置戦略）",
+    "note": "机架级模式下，每个组在每个 AZ 最多放置 7 个运行中实例；主机级模式仅适用于 Outposts。",
     "frequency": 5
   },
   {
@@ -2797,7 +3917,7 @@ const rows = [
     "english": "Amazon Simple Queue Service",
     "chinese": "消息队列服务",
     "japanese": "Amazon SQS（メッセージキュー）",
-    "note": "Pull 模式、缓冲和解耦；Standard 至少一次投递，FIFO 保证顺序和去重。",
+    "note": "Pull 型工作队列。Standard 为至少一次投递与尽力排序，消费者必须幂等；FIFO 依靠 Message Group ID 保证组内顺序。当前单条消息最大 1 MiB；用 ApproximateNumberOfMessagesVisible 或 backlog per instance 驱动扩缩容。",
     "frequency": 5
   },
   {
@@ -2805,8 +3925,32 @@ const rows = [
     "english": "Same-Region Replication",
     "chinese": "同区域复制",
     "japanese": "同一リージョンレプリケーション",
-    "note": "按规则在同一 Region 内复制 S3 对象。",
+    "note": "同一 Region 的异步对象复制；两端需 Versioning，可跨账户。",
     "frequency": 3
+  },
+  {
+    "term": "SSE-C",
+    "english": "Server-Side Encryption with Customer-Provided Keys",
+    "chinese": "客户提供密钥的服务端加密",
+    "japanese": "顧客提供キーによるサーバー側暗号化",
+    "note": "客户保管密钥，S3 执行加解密且不保存密钥；每次请求带 Key，必须 HTTPS。",
+    "frequency": 4
+  },
+  {
+    "term": "SSE-KMS",
+    "english": "Server-Side Encryption with AWS KMS keys",
+    "chinese": "KMS 密钥的服务端加密",
+    "japanese": "AWS KMS キーによるサーバー側暗号化",
+    "note": "需要同时满足 S3 与 KMS 权限；关注 KMS 调用审计、费用与配额。",
+    "frequency": 5
+  },
+  {
+    "term": "SSE-S3",
+    "english": "Server-Side Encryption with Amazon S3 managed keys",
+    "chinese": "S3 托管密钥的服务端加密",
+    "japanese": "S3 管理キーによるサーバー側暗号化",
+    "note": "当前 S3 默认静态加密；AES-256，运维最少。",
+    "frequency": 5
   },
   {
     "term": "SSL/TLS Certificate",
@@ -2814,6 +3958,14 @@ const rows = [
     "chinese": "SSL/TLS 证书",
     "japanese": "SSL/TLS 証明書",
     "note": "证明服务身份并支持 TLS 加密连接。",
+    "frequency": 4
+  },
+  {
+    "term": "st1",
+    "english": "Throughput Optimized HDD (st1)",
+    "chinese": "吞吐优化型 HDD",
+    "japanese": "スループット最適化 HDD（st1）",
+    "note": "面向日志、大数据和大块顺序 I/O；关注 Throughput，不能作为 Boot Volume。",
     "frequency": 4
   },
   {
@@ -2833,11 +3985,43 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "Stateless Architecture",
+    "english": "Stateless Architecture",
+    "chinese": "无状态架构",
+    "japanese": "ステートレスアーキテクチャ",
+    "note": "Web 节点不保存必须依赖本机的会话或业务状态；State 外置后更易横向扩展和替换。",
+    "frequency": 5
+  },
+  {
+    "term": "Step Scaling",
+    "english": "Step Scaling",
+    "chinese": "步进伸缩",
+    "japanese": "ステップスケーリング",
+    "note": "适合负载越严重就需要越大扩缩幅度的场景。",
+    "frequency": 4
+  },
+  {
+    "term": "Sticky Sessions",
+    "english": "Sticky Sessions",
+    "chinese": "会话粘滞",
+    "japanese": "スティッキーセッション",
+    "note": "用负载均衡器或应用 Cookie 将同一客户端在一段时间内路由到同一目标；无状态或外置 Session 通常更易扩展。",
+    "frequency": 4
+  },
+  {
     "term": "Storage Gateway",
     "english": "AWS Storage Gateway",
     "chinese": "混合云存储网关",
     "japanese": "AWS Storage Gateway（ハイブリッドクラウドストレージゲートウェイ）",
     "note": "本地应用以文件、卷或磁带接口接入 AWS 存储。",
+    "frequency": 4
+  },
+  {
+    "term": "Storage Optimized Instance",
+    "english": "Storage Optimized Instance",
+    "chinese": "存储优化型实例",
+    "japanese": "ストレージ最適化インスタンス（ローカルストレージへの高い連続読み書き性能を重視した EC2 インスタンス）",
+    "note": "这是实例家族分类，与 EBS 的 gp3、io2 等卷类型属于不同选择维度。",
     "frequency": 4
   },
   {
@@ -2863,6 +4047,22 @@ const rows = [
     "japanese": "テープゲートウェイ",
     "note": "用虚拟磁带替代物理磁带备份基础设施。",
     "frequency": 4
+  },
+  {
+    "term": "Target Group",
+    "english": "Target Group",
+    "chinese": "目标组",
+    "japanese": "ターゲットグループ",
+    "note": "定义后端目标、端口、协议与健康检查；目标可处于 initial、healthy、unhealthy、draining、unused 等状态。",
+    "frequency": 5
+  },
+  {
+    "term": "Target Tracking Scaling",
+    "english": "Target Tracking Scaling",
+    "chinese": "目标跟踪伸缩",
+    "japanese": "ターゲット追跡スケーリング",
+    "note": "适合 CPU、ALBRequestCountPerTarget 等可按容量变化的指标；RequestCountPerTarget 不是未完成请求数。",
+    "frequency": 5
   },
   {
     "term": "Task",
@@ -2897,6 +4097,14 @@ const rows = [
     "frequency": 5
   },
   {
+    "term": "Three-Tier Architecture",
+    "english": "Three-Tier Architecture",
+    "chinese": "三层架构",
+    "japanese": "3層アーキテクチャ",
+    "note": "将入口/表现、应用逻辑和数据层分离；各层独立设计扩展、安全与高可用。",
+    "frequency": 5
+  },
+  {
     "term": "Throughput",
     "english": "Storage Throughput",
     "chinese": "存储吞吐量",
@@ -2919,6 +4127,14 @@ const rows = [
     "japanese": "トランスポート層セキュリティ",
     "note": "用于建立加密网络连接的现代协议。",
     "frequency": 5
+  },
+  {
+    "term": "TLS Termination",
+    "english": "Transport Layer Security Termination",
+    "chinese": "TLS 终止",
+    "japanese": "TLS 終端",
+    "note": "负载均衡器负责证书与握手、解密客户端流量；Certificate 决定身份，Security Policy 决定协议与密码套件。",
+    "frequency": 4
   },
   {
     "term": "Topic",
@@ -2969,19 +4185,27 @@ const rows = [
     "frequency": 4
   },
   {
+    "term": "TTL",
+    "english": "Time to Live",
+    "chinese": "生存时间",
+    "japanese": "TTL（生存時間）",
+    "note": "控制 Recursive Resolver 缓存时长；降低 TTL 不会清除已有旧缓存。",
+    "frequency": 5
+  },
+  {
     "term": "Valkey",
     "english": "Valkey",
     "chinese": "开源键值数据存储引擎",
-    "japanese": "Valkey（オープンソースのキー・バリューデータストア）",
-    "note": "ElastiCache 支持的内存数据存储引擎之一。",
-    "frequency": 3
+    "japanese": "Valkey（オープンソース・キー値データストア）",
+    "note": "ElastiCache 支持的现代内存数据存储引擎，适合 Cache、Session、Sorted Set 与 HA。",
+    "frequency": 4
   },
   {
     "term": "Versioning",
     "english": "Amazon S3 Versioning",
     "chinese": "S3 版本控制",
     "japanese": "S3 バージョニング",
-    "note": "保留对象历史版本，防误覆盖与误删。",
+    "note": "Bucket 级版本控制；同 Key 覆盖生成新 Version，普通 Delete 添加 Delete Marker；Suspend 不删除历史版本。",
     "frequency": 5
   },
   {
@@ -3021,7 +4245,7 @@ const rows = [
     "english": "Visibility Timeout",
     "chinese": "可见性超时",
     "japanese": "可視性タイムアウト",
-    "note": "SQS 消息被读取后暂时对其他消费者不可见；应大于实际处理时间。",
+    "note": "消息被接收后在一段时间内对其他消费者不可见；处理成功必须 DeleteMessage。超时前未删除会重新可见，造成重复处理，因此消费者要幂等。默认 30 秒、最大 12 小时，可用 ChangeMessageVisibility 动态延长；它不等于消息保留期。",
     "frequency": 5
   },
   {
@@ -3073,11 +4297,51 @@ const rows = [
     "frequency": 2
   },
   {
+    "term": "Web Server Environment",
+    "english": "Elastic Beanstalk Web Server Environment",
+    "chinese": "Web 服务器环境",
+    "japanese": "Webサーバー環境",
+    "note": "处理 Client HTTP/HTTPS 请求的 Beanstalk 环境，常包含 ELB、ASG 与 EC2。",
+    "frequency": 3
+  },
+  {
+    "term": "Weighted Routing",
+    "english": "Weighted Routing Policy",
+    "chinese": "加权路由",
+    "japanese": "加重ルーティング",
+    "note": "按相对权重选择 DNS Answer；适合 Canary / Blue-Green，但不保证精确请求比例。",
+    "frequency": 5
+  },
+  {
+    "term": "Worker Environment",
+    "english": "Elastic Beanstalk Worker Environment",
+    "chinese": "工作环境",
+    "japanese": "ワーカー環境",
+    "note": "从 SQS 拉取消息并执行异步后台任务，可按 Queue Backlog 扩缩。",
+    "frequency": 4
+  },
+  {
     "term": "Write-Through",
-    "english": "Write-Through Cache",
+    "english": "Write-Through",
     "chinese": "写穿缓存模式",
     "japanese": "ライトスルー",
-    "note": "写数据库时同步更新缓存，提高缓存新鲜度。",
+    "note": "降低 Stale Risk，可与 Lazy Loading 和 TTL 组合，但会增加 Write Path 工作。",
+    "frequency": 4
+  },
+  {
+    "term": "Writer Endpoint",
+    "english": "Writer Endpoint / Cluster Endpoint",
+    "chinese": "写入端点",
+    "japanese": "ライターエンドポイント",
+    "note": "用于 Read/Write、DDL 与 Transaction，Failover 后指向新的 Writer。",
+    "frequency": 5
+  },
+  {
+    "term": "Zero Spend Budget",
+    "english": "Zero Spend Budget",
+    "chinese": "零支出预算",
+    "japanese": "ゼロ支出予算（料金が発生し始めた時点で通知する AWS Budgets のテンプレート）",
+    "note": "适合尽早发现 Free Tier 超额使用或意外产生的小额费用。",
     "frequency": 3
   },
   {

@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-09-29
 tags: [Database, NoSQL, Serverless]
 notionId: 3a6964dc-ce4a-8198-a171-ce08f0f442b0
 notionUrl: https://app.notion.com/p/3a6964dcce4a8198a171ce08f0f442b0
-notionUpdated: "2026-07-30T04:28:54.006Z"
+notionUpdated: "2026-09-28T08:57:42.791Z"
 ---
 
 ## Basic Information
@@ -54,3 +54,10 @@ notionUpdated: "2026-07-30T04:28:54.006Z"
 ## Related services
 
 DAX, Lambda, API Gateway, Streams, Global Tables, AWS Backup.
+
++## Update: streams and access patterns
+
+- DynamoDB Streams captures item creates, updates, and deletes in order and retains records for 24 hours.
+- Evaluate Kinesis Data Streams for DynamoDB when longer retention or more independent stream consumers are required.
+- The partition key controls distribution; add a GSI for a new access pattern instead of scanning the table.
+- PITR, on-demand backup, Global Tables, and Streams solve recovery, backup, cross-Region access, and change events respectively.

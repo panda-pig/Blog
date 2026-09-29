@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS CloudFormation"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["devops","AWS CloudFormation","AWS"]
 notionId: 3a6964dc-ce4a-81fe-8a73-c98ed403b25b
 notionUrl: https://app.notion.com/p/3a6964dcce4a81fe8a73c98ed403b25b
-notionUpdated: "2026-07-30T08:30:26.959Z"
+notionUpdated: "2026-09-28T04:09:30.942Z"
 ---
 
 ## 基本信息
@@ -117,3 +117,10 @@ CloudFormation 是声明式工具：描述“最终需要什么”，而不是�
 ## 重点记忆
 
 Console 靠点，CLI 靠命令，SDK 靠代码，CloudFormation 靠模板；CloudFormation 的核心是 Declarative + Repeatable + Consistent。
+
++## 本轮补充：变更与漂移
+
+- Template 定义目标状态，Stack 管理一组资源；Change Set 在执行前展示将创建、修改或删除的资源。
+- Drift Detection 比较实际资源与 CloudFormation 期望状态，但不会自动修复，也并非所有属性都支持。
+- DeletionPolicy 与 UpdateReplacePolicy 决定删除或替换资源时保留、快照或删除的行为。
+- 避免 Console 手工修改受管资源；参数、动态引用与跨 Stack 输出需要控制耦合和敏感信息。

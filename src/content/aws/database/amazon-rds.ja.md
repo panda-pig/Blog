@@ -8,11 +8,11 @@ kind: service
 lang: ja
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-30
+updated: 2026-09-29
 tags: [Database, Relational, SAA-C03]
 notionId: 3a6964dc-ce4a-81a2-9c3d-ebba79e9df68
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a29c3debba79e9df68
-notionUpdated: "2026-07-29T08:10:20.563Z"
+notionUpdated: "2026-09-28T08:57:41.133Z"
 ---
 
 ## 基本情報
@@ -54,3 +54,11 @@ notionUpdated: "2026-07-29T08:10:20.563Z"
 ## 関連サービス
 
 Aurora、DMS、AWS Backup、Secrets Manager、KMS、CloudWatch。
+
++## 追加：可用性、Connection、Recovery
+
+- Multi-AZ DB Instance は同期 Standby で Failover、Read Replica は Read Scaling と独立 DB への Promote 用です。
+- Multi-AZ DB Cluster は 3 AZ にまたがり、HA と Readable Replica を同時に提供します。
+- RDS Proxy は Connection Pooling / Multiplexing で Lambda Connection Storm を緩和し、Query Cache ではありません。
+- Storage Auto Scaling は容量を増やしますが、自動縮小しません。
+- IAM DB Authentication は対応 Engine で短期 SigV4 Token を使い、DB User Mapping は引き続き必要です。

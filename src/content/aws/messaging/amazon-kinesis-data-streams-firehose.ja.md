@@ -9,11 +9,11 @@ lang: ja
 topicKey: "Amazon Kinesis Data Streams & Data Firehose"
 frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["messaging","Amazon Kinesis Data Streams & Data Firehose","AWS"]
 notionId: 3a6964dc-ce4a-8106-bfc9-db1375ab325d
 notionUrl: https://app.notion.com/p/3a6964dcce4a8106bfc9db1375ab325d
-notionUpdated: "2026-07-30T08:01:42.663Z"
+notionUpdated: "2026-09-28T06:40:09.985Z"
 ---
 
 ## 基本情報
@@ -49,3 +49,10 @@ Data Streams はリアルタイムストリームを取り込み・保持・再�
 ## 重要ポイント
 
 **Streams はストリームと再生、Firehose はバッファリングと配信。**
+
++## 追加：Streams と Firehose
+
+- Kinesis Data Streams は Replay 可能な Real-time Stream で、Partition Key が Shard を決め、同一 Shard 内は順序を維持します。
+- Shared Throughput と Enhanced Fan-Out は Consumer Throughput Model が異なります。
+- Amazon Data Firehose は Destination 向けの Near-real-time Managed Delivery で、Size / Time Buffer、Transform、Compress、Format Conversion を行えます。
+- Redshift 配信は S3 へ一度書き、COPY で Load します。複数 Consumer が自由に Replay する Stream ではありません。

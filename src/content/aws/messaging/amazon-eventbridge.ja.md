@@ -9,11 +9,11 @@ lang: ja
 topicKey: "Amazon EventBridge"
 frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["messaging","Amazon EventBridge","AWS"]
 notionId: 3a6964dc-ce4a-8146-be57-defb6099f3b1
 notionUrl: https://app.notion.com/p/3a6964dcce4a8146be57defb6099f3b1
-notionUpdated: "2026-07-30T04:29:24.633Z"
+notionUpdated: "2026-09-28T04:26:36.036Z"
 ---
 
 ## 基本情報
@@ -40,3 +40,10 @@ notionUpdated: "2026-07-30T04:29:24.633Z"
 ## 試験での判断
 
 > 単純な通知 Fan-out は SNS、耐久 Queue は SQS、ルールベースの Event Routing は EventBridge。
+
++## 追加：Event Routing と Replay
+
+- EventBridge は Event Pattern で Match し、複数 Target へ Route して Cross-service Integration と Event-driven Architecture を構成します。
+- Archive + Replay は過去 Event の再配信で、Business Database の Backup ではありません。
+- SQS の Consumer Polling / Buffering とは異なり、Backlog と Backpressure が必要なら SQS を Target にします。
+- At-least-once Delivery では Target / Consumer の Idempotency、Retry、DLQ が必要です。

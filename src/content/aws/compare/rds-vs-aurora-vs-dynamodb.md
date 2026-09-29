@@ -9,11 +9,11 @@ lang: zh
 topicKey: "RDS vs Aurora vs DynamoDB"
 frequency: "高频对比"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-09-29
 tags: ["compare","RDS vs Aurora vs DynamoDB","AWS"]
 notionId: 3a6964dc-ce4a-81bc-8e9a-ce92a59d7ce7
 notionUrl: https://app.notion.com/p/3a6964dcce4a81bc8e9ace92a59d7ce7
-notionUpdated: "2026-07-29T08:11:55.994Z"
+notionUpdated: "2026-09-27T06:24:29.575Z"
 ---
 
 > 比较传统托管关系型、AWS 云原生关系型与 Serverless NoSQL。
@@ -50,3 +50,10 @@ notionUpdated: "2026-07-29T08:11:55.994Z"
 ## 面试回答
 
 “先从访问模式和数据关系出发；需要复杂事务/查询选关系型，需要可预测 Key 访问和大规模水平扩展选 DynamoDB，再根据兼容性、高可用和运维需求在 RDS 与 Aurora 中选择。”
+
++## 新增判断维度
+
+- RDS 保留熟悉的关系引擎与管理模型；Aurora 使用分布式存储、专用端点、Replica Auto Scaling 与 Global Database。
+- DynamoDB 以访问模式和 Partition Key 为中心，提供 Serverless 水平扩展，不支持关系数据库的任意 Join。
+- Multi-AZ 解决可用性，Read Replica 解决读扩展，DAX / ElastiCache 解决缓存，Backup / PITR 解决恢复。
+- 先从事务与查询模型选择，再讨论延迟、吞吐、扩展、运维与成本。

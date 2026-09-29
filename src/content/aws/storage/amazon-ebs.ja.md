@@ -8,11 +8,11 @@ kind: service
 lang: ja
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-08-15
+updated: 2026-09-29
 tags: [Storage, Block Storage, EC2]
 notionId: 3a6964dc-ce4a-8126-968f-e04a57570ada
 notionUrl: https://app.notion.com/p/3a6964dcce4a8126968fe04a57570ada
-notionUpdated: "2026-08-13T04:38:31.288Z"
+notionUpdated: "2026-09-27T05:20:09.103Z"
 ---
 
 ## 基本情報
@@ -58,3 +58,10 @@ notionUpdated: "2026-08-13T04:38:31.288Z"
 ## 関連サービス
 
 EC2、EBS Snapshot、DLM、AWS Backup、KMS。
+
++## 追加：Volume Type、Encryption、Recovery
+
+- gp3 は Capacity、IOPS、Throughput を比較的独立して設定でき、gp2 の Baseline IOPS は Size と連動します。
+- io2 は持続的な高 IOPS・低 Latency 向けですが EC2 EBS Bandwidth の制限を受け、st1 / sc1 は Boot Volume にできません。
+- EBS Multi-Attach は対応 io1/io2、同一 AZ の Nitro Instance、Cluster-aware Software が必要です。
+- 未暗号化 Volume はその場で暗号化できず Snapshot / Copy で置換し、Fast Snapshot Restore は初回 Read 遅延を除きます。

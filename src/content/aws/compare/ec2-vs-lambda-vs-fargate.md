@@ -9,11 +9,11 @@ lang: zh
 topicKey: "EC2 vs Lambda vs Fargate"
 frequency: "高频对比"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-09-29
 tags: ["compare","EC2 vs Lambda vs Fargate","AWS"]
 notionId: 3a6964dc-ce4a-8171-99fc-f885174daf42
 notionUrl: https://app.notion.com/p/3a6964dcce4a817199fcf885174daf42
-notionUpdated: "2026-07-23T07:24:07.209Z"
+notionUpdated: "2026-09-28T07:43:18.851Z"
 ---
 
 ## 一句话结论
@@ -51,3 +51,10 @@ notionUpdated: "2026-07-23T07:24:07.209Z"
 ## 面试回答
 
 先说运行单位与运维责任，再说明时长、扩展、控制力和成本，最后结合具体业务约束选型。
+
++## 新增判断维度
+
+- 需要完整 OS、专用硬件、Daemon 或超过平台限制的长任务 → EC2。
+- 事件驱动、单次不超过 15 分钟、希望自动按并发扩展 → Lambda；Cold Start 与下游容量仍需设计。
+- 已有容器镜像、任务可长期运行、不想维护节点 → Fargate；它仍由 ECS 或 EKS 编排。
+- 规模稳定且需要特殊节点、GPU 或更强成本控制时，ECS / EKS on EC2 可能更合适。

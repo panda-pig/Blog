@@ -8,11 +8,11 @@ kind: service
 lang: zh
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-30
+updated: 2026-09-29
 tags: [Database, Relational, SAA-C03]
 notionId: 3a6964dc-ce4a-81a2-9c3d-ebba79e9df68
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a29c3debba79e9df68
-notionUpdated: "2026-07-29T08:10:20.563Z"
+notionUpdated: "2026-09-28T08:57:41.133Z"
 ---
 
 ## 基本信息
@@ -83,3 +83,11 @@ notionUpdated: "2026-07-29T08:10:20.563Z"
 ## 关联服务
 
 Aurora、DMS、AWS Backup、Secrets Manager、KMS、CloudWatch、VPC。
+
++## 本轮补充：高可用、连接与恢复
+
+- Multi-AZ DB Instance 以同步 Standby 做故障转移；Read Replica 负责读扩展，可被提升为独立数据库。
+- Multi-AZ DB Cluster 跨 3 个 AZ，同时提供高可用与可读副本。
+- RDS Proxy 用 Connection Pooling / Multiplexing 缓解 Lambda Connection Storm，不是 Query Cache。
+- Storage Auto Scaling 只增加 Allocated Storage，不会自动缩小。
+- IAM DB Authentication 用短期 SigV4 Token 替代长期密码，但仍需数据库用户映射与受支持 Engine。

@@ -8,11 +8,11 @@ kind: service
 lang: ja
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-09-29
 tags: [Database, Relational, Multi-AZ]
 notionId: 3a6964dc-ce4a-8118-949e-f11c86e47043
 notionUrl: https://app.notion.com/p/3a6964dcce4a8118949ef11c86e47043
-notionUpdated: "2026-07-30T04:28:49.028Z"
+notionUpdated: "2026-09-28T08:57:43.843Z"
 ---
 
 ## 基本情報
@@ -54,3 +54,11 @@ notionUpdated: "2026-07-30T04:28:49.028Z"
 ## 関連サービス
 
 RDS、Global Database、AWS Backup、DMS、Secrets Manager。
+
++## 追加：Endpoint、Scaling、Recovery
+
+- Writer / Cluster Endpoint は Read/Write、DDL、Transaction、Reader Endpoint は一般的な Read Traffic の入口です。
+- Aurora Replica Auto Scaling は Reader CPU や Connection などで Replica 数を調整します。
+- Global Database は Primary Region で書き込み、Secondary Region で Global Read と Region-level DR を提供します。
+- Backtrack は作成時に有効化する Aurora MySQL の巻き戻しで、Backup / PITR の代替ではありません。
+- Database Clone は Copy-on-Write で書き込み可能な Dev/Test Cluster を高速作成します。

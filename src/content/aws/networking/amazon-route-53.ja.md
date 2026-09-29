@@ -9,11 +9,11 @@ lang: ja
 topicKey: "Amazon Route 53"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["networking","Amazon Route 53","AWS"]
 notionId: 3a6964dc-ce4a-812e-8b52-d74e98d40a3d
 notionUrl: https://app.notion.com/p/3a6964dcce4a812e8b52d74e98d40a3d
-notionUpdated: "2026-07-30T08:30:19.458Z"
+notionUpdated: "2026-09-27T07:53:30.305Z"
 ---
 
 ## 基本情報
@@ -40,3 +40,10 @@ notionUpdated: "2026-07-30T08:30:19.458Z"
 ## 試験での判断
 
 > Route 53 は接続先を選び、CloudFront はキャッシュし、Global Accelerator は AWS グローバルネットワーク経由で転送する。
+
++## 追加：Routing Policy と Hybrid DNS
+
+- Weighted、Latency、Failover、Geolocation、Geoproximity、IP-based、Multi-Value は DNS Answer を選び、Request-level Proxy ではありません。
+- Alias は Zone Apex から対応 AWS Target を指せますが、CNAME は Apex で使えません。
+- On-prem → AWS Private DNS は Inbound Resolver Endpoint、AWS → On-prem は Outbound Endpoint + Resolver Rule です。
+- Health Check は Record / Policy への関連付け後に有効です。Route 53 Failover は既存 Connection を移行せず、完全な DR でもありません。

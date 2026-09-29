@@ -8,11 +8,11 @@ kind: service
 lang: zh
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-09-29
 tags: [Database, NoSQL, Serverless]
 notionId: 3a6964dc-ce4a-8198-a171-ce08f0f442b0
 notionUrl: https://app.notion.com/p/3a6964dcce4a8198a171ce08f0f442b0
-notionUpdated: "2026-07-30T04:28:54.006Z"
+notionUpdated: "2026-09-28T08:57:42.791Z"
 ---
 
 ## 基本信息
@@ -88,3 +88,10 @@ Partition Key 决定数据分布；良好的高基数键设计有助于均匀流
 ## 关联服务
 
 DAX、Lambda、API Gateway、Streams、Global Tables、AWS Backup、Gateway VPC Endpoint。
+
++## 本轮补充：Streams 与访问模式
+
+- DynamoDB Streams 按时间顺序捕获 Item 的 Create / Update / Delete，记录保留 24 小时。
+- 需要更长保留或更多独立流式消费者时，评估 Kinesis Data Streams for DynamoDB。
+- Partition Key 决定数据分布；新增访问模式使用 GSI，而不是对整表 Scan。
+- PITR、On-demand Backup、Global Tables 与 Streams 分别解决恢复、备份、跨 Region 与变更事件。

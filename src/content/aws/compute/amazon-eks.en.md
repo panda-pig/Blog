@@ -9,11 +9,11 @@ lang: en
 topicKey: "Amazon EKS"
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["compute","Amazon EKS","AWS"]
 notionId: 3a6964dc-ce4a-8197-9431-e9339a24f693
 notionUrl: https://app.notion.com/p/3a6964dcce4a81979431e9339a24f693
-notionUpdated: "2026-07-30T08:30:03.530Z"
+notionUpdated: "2026-09-28T07:43:10.648Z"
 ---
 
 ## Basic Information
@@ -40,3 +40,9 @@ notionUpdated: "2026-07-30T08:30:03.530Z"
 ## Exam takeaway
 
 > Choose ECS first when an AWS-native, simpler orchestration model is sufficient.
+
++## Update: nodes and storage
+
+- A managed node group automates EC2 worker-node provisioning and lifecycle, but the underlying capacity is still EC2 plus an Auto Scaling group.
+- EKS Auto Mode manages additional EC2 infrastructure from pod requirements; it is different from the Fargate no-node-group model.
+- A CSI driver connects StorageClass/PVC requests to EBS or EFS. The driver is an integration layer, not storage itself.

@@ -9,11 +9,11 @@ lang: en
 topicKey: "Amazon EventBridge"
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["messaging","Amazon EventBridge","AWS"]
 notionId: 3a6964dc-ce4a-8146-be57-defb6099f3b1
 notionUrl: https://app.notion.com/p/3a6964dcce4a8146be57defb6099f3b1
-notionUpdated: "2026-07-30T04:29:24.633Z"
+notionUpdated: "2026-09-28T04:26:36.036Z"
 ---
 
 ## Basic Information
@@ -40,3 +40,10 @@ notionUpdated: "2026-07-30T04:29:24.633Z"
 ## Exam takeaway
 
 > Use SNS for simple fan-out notifications, SQS for durable queueing, and EventBridge for rule-based event routing.
+
++## Update: event routing and replay
+
+- EventBridge matches event patterns and routes events to multiple targets for cross-service integration and event-driven architecture.
+- Archive and Replay redelivers historical events; it is not a backup of business data.
+- EventBridge does not provide SQS-style consumer polling and buffering. Use SQS as a target when explicit backlog and backpressure are required.
+- At-least-once delivery still requires idempotent targets, retries, and DLQs.

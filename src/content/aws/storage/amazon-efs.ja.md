@@ -8,11 +8,11 @@ kind: service
 lang: ja
 frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-30
+updated: 2026-09-29
 tags: [Storage, File Storage, NFS]
 notionId: 3a6964dc-ce4a-81c2-8fc7-def0bc74e454
 notionUrl: https://app.notion.com/p/3a6964dcce4a81c28fc7def0bc74e454
-notionUpdated: "2026-07-29T04:41:30.363Z"
+notionUpdated: "2026-09-27T05:20:10.229Z"
 ---
 
 ## 基本情報
@@ -54,3 +54,9 @@ notionUpdated: "2026-07-29T04:41:30.363Z"
 ## 関連サービス
 
 EC2、ECS、EKS、NFS、FSx、AWS Backup。
+
++## 追加：Network Entry と Throughput
+
+- EFS Mount Target は VPC / AZ の Network Entry で、通常 Workload AZ ごとに 1 つ配置し、Client からの NFS TCP 2049 を許可します。
+- Regional EFS は Cross-AZ 冗長、EFS One Zone は低 Cost ですが Cross-AZ Data 冗長性がありません。
+- Elastic Throughput は予測不能、Provisioned は既知の持続負荷、Bursting は File System Size と関連します。

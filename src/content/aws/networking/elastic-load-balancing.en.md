@@ -9,11 +9,11 @@ lang: en
 topicKey: "Elastic Load Balancing"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["networking","Elastic Load Balancing","AWS"]
 notionId: 3a6964dc-ce4a-810c-87bf-c6a286d89cdf
 notionUrl: https://app.notion.com/p/3a6964dcce4a810c87bfc6a286d89cdf
-notionUpdated: "2026-07-30T08:30:21.340Z"
+notionUpdated: "2026-09-27T06:02:11.832Z"
 ---
 
 ## Basic Information
@@ -40,3 +40,10 @@ notionUpdated: "2026-07-30T08:30:21.340Z"
 ## Exam takeaway
 
 > Load balancing distributes traffic; Auto Scaling changes target capacity.
+
++## Update: listeners, TLS, and target state
+
+- A listener defines the accepted protocol and port; a rule combines priority, conditions, and actions; a target group defines backends and health checks.
+- SNI selects a certificate during the TLS handshake, host rules select target groups at HTTP time, and ALPN negotiates an application protocol.
+- Registered, Healthy, and InService are distinct states; an Active load balancer does not prove application availability.
+- Deregistration delay lets in-flight work finish before removal, while stickiness never overrides health checks.

@@ -8,11 +8,11 @@ kind: service
 lang: ja
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-09-29
 tags: [Database, NoSQL, Serverless]
 notionId: 3a6964dc-ce4a-8198-a171-ce08f0f442b0
 notionUrl: https://app.notion.com/p/3a6964dcce4a8198a171ce08f0f442b0
-notionUpdated: "2026-07-30T04:28:54.006Z"
+notionUpdated: "2026-09-28T08:57:42.791Z"
 ---
 
 ## 基本情報
@@ -54,3 +54,10 @@ notionUpdated: "2026-07-30T04:28:54.006Z"
 ## 関連サービス
 
 DAX、Lambda、API Gateway、Streams、Global Tables、AWS Backup。
+
++## 追加：Streams と Access Pattern
+
+- DynamoDB Streams は Item の Create / Update / Delete を順序付きで取得し、Record を 24 時間保持します。
+- より長い Retention や多くの独立 Consumer には Kinesis Data Streams for DynamoDB を検討します。
+- Partition Key が分散を決め、新しい Access Pattern は Table Scan ではなく GSI で対応します。
+- PITR、On-demand Backup、Global Tables、Streams はそれぞれ Recovery、Backup、Cross-Region、Change Event 用です。

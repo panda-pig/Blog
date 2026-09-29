@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Global Accelerator"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["networking","AWS Global Accelerator","AWS"]
 notionId: 3a6964dc-ce4a-814f-9602-eca85431f9f2
 notionUrl: https://app.notion.com/p/3a6964dcce4a814f9602eca85431f9f2
-notionUpdated: "2026-07-30T04:29:19.082Z"
+notionUpdated: "2026-09-28T05:30:48.778Z"
 ---
 
 ## 基本信息
@@ -92,3 +92,9 @@ Global Accelerator 可以把流量送到 ALB/NLB 等端点；负载均衡器再�
 ## 重点记忆
 
 **静态 Anycast IP + 边缘入网 + AWS 骨干网络 + 健康端点 = Global Accelerator。**
+
++## 本轮补充：与 CloudFront 的边界
+
+- Global Accelerator 提供两个静态 Anycast IP，把 TCP / UDP 流量尽早带入 AWS Global Network，并按端点健康与权重选择 Region。
+- 它不缓存内容，也不理解 HTTP Path；需要缓存、WAF 边缘能力和 HTTP 分发时使用 CloudFront。
+- Route 53 在 DNS 层选择 Answer；Global Accelerator 在连接入口和网络路径层优化，已有连接不会被 DNS 改答自动迁移。

@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon CloudFront"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["networking","Amazon CloudFront","AWS"]
 notionId: 3a6964dc-ce4a-8198-a643-ce1e9079cf9c
 notionUrl: https://app.notion.com/p/3a6964dcce4a8198a643ce1e9079cf9c
-notionUpdated: "2026-07-30T04:29:21.974Z"
+notionUpdated: "2026-09-28T08:50:26.931Z"
 ---
 
 ## 基本信息
@@ -83,3 +83,10 @@ CloudFront 可以传输动态内容和 API 请求；只有符合缓存策略的�
 ## 重点记忆
 
 **Route 53 找入口，CloudFront 在边缘交付和缓存 HTTP 内容。**
+
++## 本轮补充：私有源站与边缘控制
+
+- S3 私有源站使用 Origin Access Control + Bucket Policy；S3 Website Endpoint 不支持 OAC。
+- VPC Origin 可让 CloudFront 私有连接 VPC 内的 ALB、NLB 或 EC2，后端无需直接暴露 Internet。
+- Cache Invalidation 在 TTL 前使 Path 失效，下一次请求再从 Origin 拉取。
+- Geo Restriction 在 Distribution 层按国家 Allow / Block；更细粒度控制可结合 WAF 或应用授权。

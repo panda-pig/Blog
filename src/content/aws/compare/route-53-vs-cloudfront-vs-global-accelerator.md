@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Route 53 vs CloudFront vs Global Accelerator"
 frequency: "高频对比"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-09-29
 tags: ["compare","Route 53 vs CloudFront vs Global Accelerator","AWS"]
 notionId: 3a6964dc-ce4a-8181-9078-e6e673a1ec22
 notionUrl: https://app.notion.com/p/3a6964dcce4a81819078e6e673a1ec22
-notionUpdated: "2026-07-27T05:41:45.348Z"
+notionUpdated: "2026-09-28T05:30:47.518Z"
 ---
 
 ## 一句话选型
@@ -61,3 +61,10 @@ notionUpdated: "2026-07-27T05:41:45.348Z"
 ## 记忆口诀
 
 **53 找路，CloudFront 发内容，Global Accelerator 送动态连接。**
+
++## 新增判断维度
+
+- Route 53 在 DNS 层选择答案，受 TTL 与 Resolver 缓存影响。
+- CloudFront 是 HTTP / HTTPS CDN，可缓存内容并在边缘结合 OAC、WAF、Lambda@Edge / Functions。
+- Global Accelerator 提供静态 Anycast IP，优化 TCP / UDP 进入 AWS 的网络路径，不缓存内容。
+- 三者可组合：Route 53 → CloudFront 或 Global Accelerator → Region 内的 ALB / NLB 与后端。

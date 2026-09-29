@@ -8,11 +8,11 @@ kind: service
 lang: zh
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-08-15
+updated: 2026-09-29
 tags: [Storage, Block Storage, EC2]
 notionId: 3a6964dc-ce4a-8126-968f-e04a57570ada
 notionUrl: https://app.notion.com/p/3a6964dcce4a8126968fe04a57570ada
-notionUpdated: "2026-08-13T04:38:31.288Z"
+notionUpdated: "2026-09-27T05:20:09.103Z"
 ---
 
 ## 基本信息
@@ -128,3 +128,10 @@ st1 和 sc1 不能作为启动卷。卷类型选择必须同时看 IOPS、吞吐
 ## 重点记忆
 
 **临时本地盘用 Instance Store；持久云硬盘用 EBS；跨 AZ 通过 Snapshot 重建；资源属于 Account，访问由 Policy 决定。**
+
++## 本轮补充：卷类型、加密与恢复
+
+- gp3 将容量、IOPS 与 Throughput 较独立配置；gp2 的基线 IOPS 与容量耦合。
+- io2 面向持续高 IOPS、低延迟数据库，但仍受 EC2 EBS Bandwidth 限制；st1 / sc1 不能作为 Boot Volume。
+- EBS Multi-Attach 仅支持相应 io1/io2、同一 AZ 和兼容 Nitro 实例，并需要 Cluster-aware 文件系统或应用。
+- 未加密卷不能原地加密，常通过 Snapshot / Copy 创建新加密卷；Fast Snapshot Restore 可消除首次访问延迟。

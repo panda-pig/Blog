@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon EventBridge"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["messaging","Amazon EventBridge","AWS"]
 notionId: 3a6964dc-ce4a-8146-be57-defb6099f3b1
 notionUrl: https://app.notion.com/p/3a6964dcce4a8146be57defb6099f3b1
-notionUpdated: "2026-07-30T04:29:24.633Z"
+notionUpdated: "2026-09-28T04:26:36.036Z"
 ---
 
 ## 基本信息
@@ -74,3 +74,10 @@ Event Source → Event Bus → Rule / Event Pattern → Target（Lambda、SQS、
 ## 重点记忆
 
 EventBridge = 看事件内容，再决定送到哪里。
+
++## 本轮补充：事件路由与重放
+
+- EventBridge 根据 Event Pattern 把事件路由到多个 Target，适合跨服务集成与事件驱动架构。
+- Archive + Replay 用于重新投递历史事件，不等于业务数据库备份。
+- EventBridge 不提供 SQS 那样的消费者拉取队列语义；需要缓冲、背压和显式消费时把 SQS 作为 Target。
+- 至少一次投递下，Target 和 Consumer 仍需幂等、Retry 与 DLQ。

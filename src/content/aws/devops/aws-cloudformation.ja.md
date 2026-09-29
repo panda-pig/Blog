@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS CloudFormation"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["devops","AWS CloudFormation","AWS"]
 notionId: 3a6964dc-ce4a-81fe-8a73-c98ed403b25b
 notionUrl: https://app.notion.com/p/3a6964dcce4a81fe8a73c98ed403b25b
-notionUpdated: "2026-07-30T08:30:26.959Z"
+notionUpdated: "2026-09-28T04:09:30.942Z"
 ---
 
 ## 基本情報
@@ -40,3 +40,10 @@ notionUpdated: "2026-07-30T08:30:26.959Z"
 ## 試験での判断
 
 > Console は手動、CLI は Command 自動化、SDK は Application 連携、CloudFormation は宣言的 Infrastructure 管理。
+
++## 追加：Change と Drift
+
+- Template は Desired State、Stack は Resource Set を管理し、Change Set は実行前に Create / Modify / Delete を表示します。
+- Drift Detection は実際の Resource と期待状態を比較しますが、自動修復せず、すべての Property を対象にしません。
+- DeletionPolicy と UpdateReplacePolicy は Delete / Replace 時の Retain、Snapshot、Delete を制御します。
+- Managed Resource の手動変更を避け、Parameter、Dynamic Reference、Cross-stack Output の Coupling と Secret を管理します。

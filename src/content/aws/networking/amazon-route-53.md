@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon Route 53"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["networking","Amazon Route 53","AWS"]
 notionId: 3a6964dc-ce4a-812e-8b52-d74e98d40a3d
 notionUrl: https://app.notion.com/p/3a6964dcce4a812e8b52d74e98d40a3d
-notionUpdated: "2026-07-30T08:30:19.458Z"
+notionUpdated: "2026-09-27T07:53:30.305Z"
 ---
 
 ## 基本信息
@@ -94,3 +94,10 @@ Route 53 = DNS + 域名 + 健康检查 + 流量路由。
 ## 重点记忆
 
 **Route 53 负责“返回哪个地址”；CloudFront 负责“交付内容”；Global Accelerator 负责“把动态流量快速送到健康端点”。**
+
++## 本轮补充：路由策略与 Hybrid DNS
+
+- Weighted、Latency、Failover、Geolocation、Geoproximity、IP-based 与 Multi-Value 都是在选择 DNS Answer，不是请求级代理。
+- Alias 可在 Zone Apex 指向受支持 AWS Target；CNAME 不能用于 Apex。
+- On-prem → AWS Private DNS 使用 Inbound Resolver Endpoint；AWS → On-prem 使用 Outbound Endpoint + Resolver Rule。
+- Health Check 只有与 Record / Policy 关联后才影响回答；Route 53 Failover 不会迁移已有连接，也不等于完整 DR。

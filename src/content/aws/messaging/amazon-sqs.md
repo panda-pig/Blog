@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon SQS"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-09-29
 tags: ["messaging","Amazon SQS","AWS"]
 notionId: 3a6964dc-ce4a-81ba-bf24-f388c5cddd42
 notionUrl: https://app.notion.com/p/3a6964dcce4a81babf24f388c5cddd42
-notionUpdated: "2026-07-23T07:21:16.024Z"
+notionUpdated: "2026-09-28T06:40:06.316Z"
 ---
 
 ## 基本信息
@@ -83,3 +83,10 @@ SQS → Event Source Mapping 轮询 → Lambda 批量处理 → 成功后删除�
 ## 重点记忆
 
 SQS = Pull + 缓冲 + 解耦；考试重点是 Standard/FIFO、Visibility Timeout、DLQ 和幂等性。
+
++## 本轮补充：轮询、顺序与幂等
+
+- Long Polling 最长等待 20 秒，可减少空响应、假空响应与 API 成本，但不会延长 Visibility Timeout。
+- FIFO 的 Message Group ID 定义顺序边界：组内严格有序，组间可并行。
+- Deduplication ID 处理生产端重复，Group ID 处理顺序与并发；消费者仍需按至少一次投递设计幂等。
+- Visibility Timeout 应覆盖正常处理时间，并结合 Retry、DLQ 与 Redrive Policy。

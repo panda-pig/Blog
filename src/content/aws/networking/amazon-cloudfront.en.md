@@ -9,11 +9,11 @@ lang: en
 topicKey: "Amazon CloudFront"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["networking","Amazon CloudFront","AWS"]
 notionId: 3a6964dc-ce4a-8198-a643-ce1e9079cf9c
 notionUrl: https://app.notion.com/p/3a6964dcce4a8198a643ce1e9079cf9c
-notionUpdated: "2026-07-30T04:29:21.974Z"
+notionUpdated: "2026-09-28T08:50:26.931Z"
 ---
 
 ## Basic Information
@@ -40,3 +40,10 @@ notionUpdated: "2026-07-30T04:29:21.974Z"
 ## Exam takeaway
 
 > Cache policies, TTLs, invalidations, HTTPS, WAF, and signed URLs or cookies are common design points.
+
++## Update: private origins and edge controls
+
+- Use Origin Access Control plus a bucket policy for a private S3 origin; S3 website endpoints do not support OAC.
+- A VPC origin lets CloudFront connect privately to an ALB, NLB, or EC2 instance without exposing the backend directly to the Internet.
+- Cache invalidation expires selected paths before their TTL so the next request returns to the origin.
+- Geo restriction allows or blocks countries at the distribution level; combine WAF or application authorization for finer control.

@@ -2,7 +2,6 @@ export type AwsGlossaryNoteTranslation = {
   en: string;
   ja: string;
 };
-
 export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslation> = {
   "Access Denied": {
     "en": "Start with the denied Action, then check the current principal, direct and inherited policies, explicit denies, resources, and conditions.",
@@ -28,6 +27,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Specifies an AWS API operation such as s3:GetObject; least privilege avoids unnecessary service:* grants.",
     "ja": "アクション（ポリシーで許可または拒否する AWS API 操作を指定する要素）"
   },
+  "ACU": {
+    "en": "Aurora Serverless compute capacity unit representing a corresponding combination of memory, CPU, and network capacity.",
+    "ja": "Aurora Capacity Unit（Aurora 容量単位）"
+  },
   "AdministratorAccess": {
     "en": "An AWS managed policy with extremely broad permissions; it should not be the default policy for ordinary users.",
     "ja": "AdministratorAccess（すべての AWS アクションをすべてのリソースに対して許可する、非常に広範な管理権限の AWS 管理ポリシー）"
@@ -40,13 +43,33 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Layer 7 HTTP/HTTPS; supports path-based and host-based routing, plus WebSocket.",
     "ja": "レイヤー 7 の HTTP/HTTPS。パスベース、ホストベースのルーティングと WebSocket に対応。"
   },
+  "Alias Record": {
+    "en": "A Route 53 extension that can target supported AWS resources at the zone apex and inherits the target's TTL behavior.",
+    "ja": "エイリアスレコード。AWS の Networking に関する概念であり、用途と運用上の境界、CNAME / HTTP Redirect との違いを確認する。"
+  },
+  "ALPN": {
+    "en": "A TLS extension that negotiates an upper-layer protocol such as HTTP/1.1 or HTTP/2 during the handshake.",
+    "ja": "Application-Layer Protocol Negotiation（アプリケーション層プロトコルネゴシエーション）"
+  },
+  "Amazon Cognito": {
+    "en": "Provides customer identity for web and mobile apps: user pools authenticate users and issue tokens, while identity pools exchange identity for temporary AWS credentials.",
+    "ja": "Amazon Cognito（顧客 ID・アクセス管理）。AWS の Security に関する概念であり、用途と運用上の境界、IAM、IAM Identity Center、User Pool vs Identity Pool との違いを確認する。"
+  },
   "Amazon Connect": {
     "en": "Provides IVR, queues, agents, chat, and callback capabilities for a cloud contact center.",
     "ja": "Cloud Contact Center 向けに IVR、Queue、Agent、Chat、Callback を提供する。"
   },
+  "Amazon Data Firehose": {
+    "en": "A destination-oriented near-real-time delivery service with size/time buffering, transformation, compression, and format conversion; it is not a general replay stream.",
+    "ja": "Amazon Data Firehose（配信ストリーム）"
+  },
   "Amazon Detective": {
     "en": "Investigates security incidents through visual relationships and timelines.",
     "ja": "関係性の可視化とタイムラインを使って、セキュリティインシデントを調査する。"
+  },
+  "Amazon EC2": {
+    "en": "An IaaS virtual-server service configured from an AMI, instance type, networking, storage, authentication, and authorization.",
+    "ja": "Amazon EC2（仮想サーバーを必要に応じて起動・停止・拡張できるコンピューティングサービス）"
   },
   "Amazon GuardDuty": {
     "en": "Continuously analyzes activity and threat intelligence to identify suspicious behavior.",
@@ -59,6 +82,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Amazon Macie": {
     "en": "Uses machine learning to discover sensitive data such as PII in S3.",
     "ja": "機械学習を使って、S3 内の PII などの機密データを検出する。"
+  },
+  "Amazon MQ": {
+    "en": "A managed broker for existing JMS, AMQP, MQTT, OpenWire, or STOMP applications. Cloud-native designs usually prefer SQS and SNS.",
+    "ja": "Amazon MQ（マネージドメッセージブローカー）。AWS の Messaging に関する概念であり、用途と運用上の境界、SQS、SNS との違いを確認する。"
   },
   "Amazon SES": {
     "en": "Sends transactional, notification, and marketing email through an API or SMTP.",
@@ -96,6 +123,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "A managed front door for APIs, not a VPC routing gateway.",
     "ja": "API のマネージドなフロントドア。VPC のルーティングゲートウェイではない。"
   },
+  "Application Version": {
+    "en": "A deployable application package in Elastic Beanstalk; an environment runs one version at a time.",
+    "ja": "アプリケーションバージョン。AWS の Compute に関する概念であり、用途と運用上の境界、Application / Environment との違いを確認する。"
+  },
   "ASG": {
     "en": "Maintains desired, minimum, and maximum instance counts; commonly paired with an ALB across multiple AZs.",
     "ja": "希望・最小・最大のインスタンス数を維持し、通常は ALB と複数 AZ を組み合わせる。"
@@ -120,6 +151,26 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "MySQL- and PostgreSQL-compatible, with storage replicated across multiple AZs; part of the RDS family.",
     "ja": "MySQL/PostgreSQL 互換で、ストレージを複数 AZ に複製する RDS ファミリーのサービス。"
   },
+  "Aurora Backtrack": {
+    "en": "An Aurora MySQL feature enabled at cluster creation that quickly rewinds within a configured window of up to 72 hours.",
+    "ja": "元の Aurora クラスターを指定時点へ巻き戻す機能。PITR は新しいクラスターを復元する点が異なり、Backtrack はバックアップの代替にはならない。"
+  },
+  "Aurora Database Clone": {
+    "en": "Uses copy-on-write to create an independent, writable Aurora cluster quickly for development, test, or staging.",
+    "ja": "コピーオンライトで Aurora クラスターをすばやく複製する。クローンは作成後にソースと継続同期せず、継続レプリケーションを行う Replica とは異なる。"
+  },
+  "Aurora Global Database": {
+    "en": "Uses one primary Region for writes and secondary Regions for global reads and regional disaster recovery.",
+    "ja": "Amazon Aurora Global Database（グローバルデータベース）"
+  },
+  "Aurora Replica Auto Scaling": {
+    "en": "Adds or removes Aurora replicas based on reader CPU, connection count, or other supported scaling metrics.",
+    "ja": "負荷に応じて Aurora Reader の数を増減する。単一 DB インスタンスの ACU を変更する Aurora Serverless とは役割が異なる。"
+  },
+  "Aurora Serverless": {
+    "en": "Automatically adjusts the compute capacity of Aurora writer and reader instances based on workload.",
+    "ja": "Amazon Aurora Serverless（サーバーレス）"
+  },
   "Authentication": {
     "en": "Verifies who a user or entity is.",
     "ja": "ユーザーやエンティティが誰であるかを確認する。"
@@ -127,6 +178,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Authenticator App": {
     "en": "Initially linked with a QR code or secret key; later sign-ins use the current TOTP code.",
     "ja": "認証アプリ（仮想 MFA デバイスとして TOTP コードを生成し、ログイン時の追加認証に使用するアプリケーション）"
+  },
+  "Authoritative DNS": {
+    "en": "Stores and returns final DNS records for a zone, unlike a resolver that recursively looks up records for clients.",
+    "ja": "権威DNS。AWS の Networking に関する概念であり、用途と運用上の境界、Recursive Resolver との違いを確認する。"
   },
   "Authorization": {
     "en": "Determines which actions a principal is allowed to perform.",
@@ -324,6 +379,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "A classic offline migration appliance; it is no longer available to new customers, so alternatives such as DataSync should also be understood.",
     "ja": "代表的な Offline Migration Appliance。現在は新規 Customer 向けに提供されていないため、DataSync などの代替手段も押さえる。"
   },
+  "AWS Step Functions": {
+    "en": "Orchestrates multi-step workflows with sequence, choice, parallel, wait, retry/catch, and callback patterns; it coordinates work rather than running application code.",
+    "ja": "AWS Step Functions（ワークフローオーケストレーション）"
+  },
   "AWS Support Plans": {
     "en": "Provides different technical-support response targets and proactive guidance based on workload criticality.",
     "ja": "Workload の重要度に応じて異なる技術支援の応答目標と Proactive Guidance を提供する。"
@@ -380,6 +439,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Processes groups of jobs without requiring immediate responses; common for reporting, simulations, and ETL.",
     "ja": "即時応答を必要とせず、Job をまとめて処理する。Report、Simulation、ETL でよく使う。"
   },
+  "Beanstalk Environment": {
+    "en": "A collection of AWS resources running one Elastic Beanstalk application version, commonly separated into development, test, and production.",
+    "ja": "Elastic Beanstalk 環境。AWS の Compute に関する概念であり、用途と運用上の境界、Application / Application Version との違いを確認する。"
+  },
   "BGP": {
     "en": "A protocol for dynamically exchanging routes between networks.",
     "ja": "ネットワーク間で Route を動的に交換するためのプロトコル。"
@@ -391,6 +454,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Block-level Replication": {
     "en": "Continuously copies changed data blocks to reduce RPO.",
     "ja": "変更されたデータ Block を継続的に複製して RPO を短縮する。"
+  },
+  "Bootstrapping": {
+    "en": "Automates software installation and configuration at launch; repeatable, idempotent scripts make Auto Scaling replacement safer.",
+    "ja": "ブートストラップ（起動時にソフトウェアの導入や設定を自動化して利用可能な状態にする処理）"
   },
   "Boto3": {
     "en": "The modern AWS SDK for Python, used by Python application code to call AWS services.",
@@ -415,6 +482,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Cache-Aside": {
     "en": "The application checks the cache first, then reads from the database and fills the cache on a miss.",
     "ja": "Application が先に Cache を確認し、Miss 時に Database から読み取って Cache へ書き戻す。"
+  },
+  "Capacity Reservation": {
+    "en": "Reserves matching EC2 capacity in a specific AZ without providing a discount by itself; unused reserved capacity is normally billed.",
+    "ja": "オンデマンドキャパシティ予約（特定のアベイラビリティーゾーンで EC2 コンピューティング容量を確保する仕組み）"
   },
   "Cascade Failure": {
     "en": "A failure that propagates downstream; queues, retries, rate limits, and circuit breakers reduce the risk.",
@@ -456,6 +527,18 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Caches and distributes content through global edge locations to reduce user latency.",
     "ja": "世界中のエッジロケーションでコンテンツをキャッシュ・配信し、ユーザーのレイテンシを下げる。"
   },
+  "CloudFront Cache Invalidation": {
+    "en": "Expires selected edge-cache paths before their TTL so the next request fetches fresh content from the origin.",
+    "ja": "CloudFront キャッシュ無効化。AWS の Networking に関する概念であり、用途と運用上の境界、Delete Origin Object / Route 53 TTL / S3 Versioning との違いを確認する。"
+  },
+  "CloudFront Geo Restriction": {
+    "en": "Allows or blocks content at the distribution level by country; blocked requests normally receive HTTP 403.",
+    "ja": "CloudFront 地理的制限。AWS の Security に関する概念であり、用途と運用上の境界、Route 53 Geolocation / WAF Geo Match との違いを確認する。"
+  },
+  "CloudFront VPC Origin": {
+    "en": "Lets CloudFront connect privately to an ALB, NLB, or EC2 instance in a VPC so the backend need not be directly Internet-facing.",
+    "ja": "CloudFront VPC オリジン。AWS の Networking に関する概念であり、用途と運用上の境界、VPC Endpoint / Custom Public Origin との違いを確認する。"
+  },
   "CloudTrail": {
     "en": "Records who performed which API action on what resource and when; answers who did what.",
     "ja": "誰が、いつ、どのリソースに、どの API 操作を行ったかを記録し、「誰が何をしたか」に答える。"
@@ -472,9 +555,29 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "A group of resources that jointly provide compute or orchestration capacity; both ECS and EKS use the cluster concept.",
     "ja": "Compute または Orchestration 能力を共同で提供する Resource 群。ECS と EKS の両方で Cluster を使う。"
   },
+  "Cluster Placement Group": {
+    "en": "Places instances close together in one AZ for tightly coupled or HPC performance; it is not Multi-AZ high availability.",
+    "ja": "クラスタープレイスメントグループ（単一 AZ 内で EC2 を近接配置して低遅延と高スループットを重視する配置戦略）"
+  },
+  "CNAME": {
+    "en": "A standard name-to-name DNS record that cannot be used at the zone apex.",
+    "ja": "CNAMEレコード。AWS の Networking に関する概念であり、用途と運用上の境界、Alias Record との違いを確認する。"
+  },
+  "Cognito Identity Pool": {
+    "en": "Exchanges identities from a user pool or external IdP for temporary AWS credentials constrained by IAM roles and policies.",
+    "ja": "Cognito ID プール。AWS の Security に関する概念であり、用途と運用上の境界、Cognito User Pool との違いを確認する。"
+  },
+  "Cognito User Pool": {
+    "en": "An application user directory and authentication service that handles sign-up/sign-in and issues ID, access, and refresh tokens, not AWS access keys.",
+    "ja": "Cognito ユーザープール。AWS の Security に関する概念であり、用途と運用上の境界、Cognito Identity Pool、IAM Identity Center との違いを確認する。"
+  },
   "Compliance": {
     "en": "When choosing a Region, first check data residency, regulatory, data-protection, and industry compliance requirements.",
     "ja": "Region 選択では、Data Residency、規制、Data Protection、業界 Compliance 要件を最初に確認する。"
+  },
+  "Compute Optimized Instance": {
+    "en": "An EC2 family for CPU-intensive workloads such as high-performance web servers, batch processing, gaming, and scientific computing.",
+    "ja": "コンピューティング最適化インスタンス（高い CPU 性能を重視した EC2 インスタンス）"
   },
   "Compute Resource": {
     "en": "CPU, memory, GPU, running instances, and other resources required to perform computation.",
@@ -483,6 +586,14 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Condition": {
     "en": "An optional policy element that limits when a statement applies based on request context.",
     "ja": "条件（MFA、送信元 IP、タグ、組織などのリクエストコンテキストに基づいて規則の適用条件を指定する任意要素）"
+  },
+  "Connection Refused": {
+    "en": "The destination was reached but no service accepted the port, so check the listener and host firewall before network-path filters.",
+    "ja": "接続拒否（宛先へ到達したが対象ポートでサービスが待ち受けていない、または明示的に拒否された状態）"
+  },
+  "Connection Timeout": {
+    "en": "No response arrived before the limit. Check the complete path including IP, route, IGW, NACL, security group, and firewalls.",
+    "ja": "接続タイムアウト（応答が返らず、接続試行が制限時間を超えた状態）"
   },
   "Console Multi-session Support": {
     "en": "Add Session can keep identities from the same or different accounts open in parallel; a session is not a new account and does not change ownership or permissions.",
@@ -516,9 +627,17 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Safely replace an old credential: create a new key, update every consumer, verify it, deactivate the old key, and delete it after confirming no failures.",
     "ja": "古い認証情報を安全に置き換える運用。新しい Key を作成し、全利用先を更新・検証してから旧 Key を無効化し、異常がないことを確認して削除する。"
   },
+  "Cross-Zone Load Balancing": {
+    "en": "Lets load-balancer nodes route to targets in other AZs. It is enabled by default for ALB and disabled by default for NLB and GWLB.",
+    "ja": "ロードバランサーノードが別 AZ のターゲットへもトラフィックを送れる機能。Multi-AZ は配置範囲を表し、どちらも単独で高可用性を保証するものではない。"
+  },
   "CRR": {
     "en": "Replicates objects to another Region according to configured rules.",
     "ja": "設定したルールに従ってオブジェクトを別の Region へ複製する。"
+  },
+  "CSI Driver": {
+    "en": "Connects Kubernetes storage requests to a storage system. StorageClass and PVC express demand; EBS or EFS CSI drivers perform the AWS integration.",
+    "ja": "CSI ドライバー。AWS の Storage に関する概念であり、用途と運用上の境界、StorageClass、EBS、EFS との違いを確認する。"
   },
   "Customer Managed Policy": {
     "en": "A reusable standalone policy created by the customer, centrally maintained and versioned.",
@@ -568,6 +687,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "A marker that becomes the current version when an ordinary delete is performed with Versioning enabled.",
     "ja": "Versioning 有効時の通常削除で作成され、Current Version となる削除マーカー。"
   },
+  "Delete on Termination": {
+    "en": "Controls whether an attached EBS volume is deleted when EC2 terminates; verify the actual block-device mapping rather than relying on defaults.",
+    "ja": "終了時に削除。AWS の Compute に関する概念であり、用途と運用上の境界、Detach / Delete Volume / Stop / Terminate との違いを確認する。"
+  },
   "Dependency": {
     "en": "A library or component required by an application; container images usually package dependencies together.",
     "ja": "Application の実行に必要な Library または Component。Container Image は通常 Dependency もまとめて Package する。"
@@ -576,6 +699,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Releases an application, configuration, or version into a runtime environment.",
     "ja": "Application、Configuration、Version を実行環境へリリースする。"
   },
+  "Deregistration Delay": {
+    "en": "Protects in-flight connections while a target is removed or an ASG scales in; the older Classic Load Balancer term is connection draining.",
+    "ja": "ターゲットの登録解除時に新規リクエストの受信を止め、既存リクエストが期限内に完了するのを待つ。Draining は Unhealthy と同義ではない。"
+  },
   "Direct Connect": {
     "en": "A dedicated connection that provides consistent bandwidth; encryption is not enabled by default.",
     "ja": "安定した帯域幅を提供する専用接続。デフォルトでは暗号化されない。"
@@ -583,6 +710,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Directly Attached Policy": {
     "en": "Permissions come directly from the identity; removing a user from a group does not revoke this policy.",
     "ja": "直接アタッチされたポリシー（グループを経由せず、IAM ユーザーやロールなどのアイデンティティに直接付与されたポリシー）"
+  },
+  "Directory Bucket": {
+    "en": "A special bucket type for S3 Express One Zone in a selected AZ; it is not a console folder.",
+    "ja": "ディレクトリバケット。AWS の Storage に関する概念であり、用途と運用上の境界、General Purpose Bucket / Folder との違いを確認する。"
   },
   "DLM": {
     "en": "Automates the creation, retention, and deletion of EBS snapshots and EBS-backed AMIs.",
@@ -608,9 +739,17 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Designed for MongoDB-compatible workloads and complex document data.",
     "ja": "MongoDB 互換 Workload と複雑な Document Data 向け。"
   },
+  "Domain Registrar": {
+    "en": "Manages domain registration, renewal, and parent delegation; it is not necessarily the authoritative DNS provider.",
+    "ja": "ドメインレジストラ。AWS の Networking に関する概念であり、用途と運用上の境界、DNS Hosting / Web Hosting との違いを確認する。"
+  },
   "DoS": {
     "en": "Usually exhausts a target service's resources from a single source.",
     "ja": "通常は単一の送信元から対象サービスのリソースを枯渇させる。"
+  },
+  "DSSE-KMS": {
+    "en": "Applies two independent layers of server-side encryption with KMS keys for high-compliance data; it is not TLS plus SSE-KMS.",
+    "ja": "AWS KMS キーによる二層サーバー側暗号化。AWS の Storage に関する概念であり、用途と運用上の境界、SSE-KMS / TLS との違いを確認する。"
   },
   "Durability": {
     "en": "Whether data remains intact over time without permanent loss.",
@@ -624,17 +763,45 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "A managed in-memory cache built for DynamoDB that can reduce suitable reads to microsecond latency.",
     "ja": "DynamoDB 専用のマネージド In-Memory Cache。適切な Read をマイクロ秒単位まで高速化できる。"
   },
+  "DynamoDB Streams": {
+    "en": "Captures item creates, updates, and deletes in order for 24 hours. Use Kinesis Data Streams for DynamoDB when longer retention or more streaming consumers are required.",
+    "ja": "DynamoDB Streams。AWS の Database に関する概念であり、用途と運用上の境界、Kinesis Data Streams、DynamoDB Export との違いを確認する。"
+  },
   "EBS": {
     "en": "An EBS volume belongs to a specific account, Region, and AZ, not privately to the IAM user who created it; visibility depends on account, Region, and policy.",
     "ja": "EBS Volume は作成した IAM User 個人ではなく、特定の Account・Region・AZ に属する。表示可否は Account、Region、Policy に依存する。"
+  },
+  "EBS Encryption": {
+    "en": "Transparently encrypts volumes, snapshots, and EC2-EBS traffic with KMS. An unencrypted volume is normally converted through snapshot/copy and a new encrypted volume.",
+    "ja": "EBS 暗号化。AWS の Security に関する概念であり、用途と運用上の境界、Encryption by Default / Snapshot Copy との違いを確認する。"
+  },
+  "EBS Multi-Attach": {
+    "en": "Allows one io1/io2 volume to be used by compatible Nitro instances in one AZ and requires cluster-aware software; all instances share performance.",
+    "ja": "EBS マルチアタッチ。AWS の Storage に関する概念であり、用途と運用上の境界、Amazon EFS / 普通 EBS Attach との違いを確認する。"
   },
   "EC2": {
     "en": "You manage the operating system, patches, and runtime; suited to long-running workloads that need system-level control.",
     "ja": "OS、パッチ、実行環境は利用者が管理する。長時間稼働し、システム制御が必要なワークロードに適する。"
   },
+  "EC2 Hibernate": {
+    "en": "Writes RAM to an encrypted root EBS volume and restores process state after start. It must be enabled at launch and is not backup or DR.",
+    "ja": "EC2 休止（RAM の内容を暗号化されたルート EBS に保存し、次回起動時にプロセス状態を復元する機能）"
+  },
+  "EC2 Instance Connect": {
+    "en": "Pushes a temporary SSH public key to an instance. SSH still requires IAM permission, the correct OS user, EIC support, and a reachable port 22.",
+    "ja": "EC2 Instance Connect（一時的な SSH 公開鍵をインスタンスへ送信して接続する仕組み）"
+  },
   "EC2 Instance Profile": {
     "en": "An instance profile can contain one role at a time; SDK and CLI processes on EC2 obtain that role's temporary credentials through IMDS.",
     "ja": "1 つの Instance Profile に同時に含められる Role は 1 つ。EC2 内の SDK / CLI は IMDS からその Role の Temporary Credentials を取得する。"
+  },
+  "EC2 Instance Type": {
+    "en": "Defines the CPU, memory, network, and storage performance combination. Read the name by family, generation, capabilities, and size.",
+    "ja": "EC2 インスタンスタイプ（CPU、メモリ、ネットワーク、ストレージ性能の組み合わせを定義するインスタンス構成）"
+  },
+  "EC2 User Data": {
+    "en": "Runs launch initialization, normally on the first boot. A Running instance does not prove that the script or application is ready.",
+    "ja": "EC2 ユーザーデータ。AWS の Compute に関する概念であり、用途と運用上の境界、AMI / Launch Template / Systems Manager との違いを確認する。"
   },
   "ECR": {
     "en": "ECR stores container images; ECS and EKS run and orchestrate them.",
@@ -643,6 +810,18 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "ECS": {
     "en": "AWS-native container orchestration with generally lower learning and operational overhead than EKS.",
     "ja": "AWS ネイティブのコンテナオーケストレーション。一般に EKS より学習・運用負荷が低い。"
+  },
+  "ECS Capacity Provider": {
+    "en": "Defines where ECS tasks obtain compute capacity, such as Fargate, Fargate Spot, or an Auto Scaling group; Base and Weight control strategy allocation.",
+    "ja": "ECS キャパシティプロバイダー。AWS の Compute に関する概念であり、用途と運用上の境界、Service Auto Scaling、Launch Type との違いを確認する。"
+  },
+  "ECS Task Execution Role": {
+    "en": "Used by the ECS or Fargate agent to pull private ECR images, publish logs, and retrieve startup secrets; it is not the application role.",
+    "ja": "ECS タスク実行 IAM ロール。AWS の Compute に関する概念であり、用途と運用上の境界、ECS Task Role、EC2 Instance Role との違いを確認する。"
+  },
+  "ECS Task Role": {
+    "en": "Grants the application inside an ECS task permission to call AWS APIs, independent of whether the task runs on EC2 or Fargate.",
+    "ja": "ECS タスク IAM ロール。AWS の Compute に関する概念であり、用途と運用上の境界、Task Execution Role、EC2 Instance Role との違いを確認する。"
   },
   "EDA": {
     "en": "Components collaborate through events to reduce coupling; commonly combines EventBridge, SNS, SQS, and Lambda.",
@@ -656,6 +835,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "An edge facility near end users that reduces access latency; it is not a Region, AZ, or ordinary application data center.",
     "ja": "End User に近く Access Latency を下げる Edge 拠点。Region、AZ、通常の Application Data Center ではない。"
   },
+  "EDNS Client Subnet": {
+    "en": "Lets a resolver include a truncated client subnet to improve geographic, latency, or IP-based routing decisions, but support is not universal.",
+    "ja": "EDNSクライアントサブネット。AWS の Networking に関する概念であり、用途と運用上の境界、Resolver Source IP との違いを確認する。"
+  },
   "Effect": {
     "en": "Either Allow or Deny; an applicable explicit Deny overrides Allow.",
     "ja": "効果（ポリシーステートメントがアクセスを許可するか拒否するかを Allow または Deny で指定する要素）"
@@ -664,9 +847,25 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "A Linux NFS file system that multiple EC2 instances can mount concurrently across AZs.",
     "ja": "複数 AZ の複数 EC2 から同時に Mount できる Linux NFS ファイルシステム。"
   },
+  "EFS Mount Target": {
+    "en": "The EFS network entry in a VPC and AZ. Workload AZs normally have one, with security groups allowing NFS TCP 2049.",
+    "ja": "EFS マウントターゲット。AWS の Storage に関する概念であり、用途と運用上の境界、Linux Mount Point / EBS Attach との違いを確認する。"
+  },
+  "EFS One Zone": {
+    "en": "Stores EFS data in one AZ at lower cost without cross-AZ data redundancy; clients in other AZs may add latency and transfer cost.",
+    "ja": "EFS One Zone。AWS の Storage に関する概念であり、用途と運用上の境界、EFS Regional / IA / Archive との違いを確認する。"
+  },
+  "EFS Throughput Mode": {
+    "en": "Elastic suits unpredictable or bursty demand, provisioned suits known sustained throughput, and bursting relates throughput to filesystem size.",
+    "ja": "EFS スループットモード。AWS の Storage に関する概念であり、用途と運用上の境界、Performance Mode / Storage Class との違いを確認する。"
+  },
   "EKS": {
     "en": "Prefer EKS when a scenario mentions Kubernetes, cross-cloud compatibility, or existing K8s workloads.",
     "ja": "Kubernetes、クラウド間互換性、既存 K8s ワークロードが要件なら EKS を優先する。"
+  },
+  "EKS Auto Mode": {
+    "en": "Provisions and manages additional EC2 infrastructure from pod requirements. It still uses managed EC2 instances and is different from Fargate.",
+    "ja": "Amazon EKS Auto Mode。AWS の Compute に関する概念であり、用途と運用上の境界、EKS Fargate、Managed Node Group との違いを確認する。"
   },
   "Elastic Beanstalk": {
     "en": "A PaaS-style service that configures EC2, ALB, Auto Scaling, and more after code upload; the underlying resources remain visible and manageable.",
@@ -675,6 +874,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Elastic IP": {
     "en": "A static public IPv4 address that the customer can allocate and reassociate.",
     "ja": "利用者が割り当て、別リソースへ再関連付けできる静的 Public IPv4 Address。"
+  },
+  "Elastic Network Interface (ENI)": {
+    "en": "A virtual NIC carrying IP addresses, security groups, and MAC identity. It belongs to one subnet and one AZ.",
+    "ja": "Elastic Network Interface（EC2 に IP、Security Group、MAC アドレスなどのネットワーク識別情報を与える仮想ネットワークカード）"
   },
   "ElastiCache": {
     "en": "A general-purpose backend cache that reduces repeated database reads.",
@@ -720,6 +923,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "An applicable explicit Deny overrides Allows in other policies and is the highest-priority IAM evaluation result.",
     "ja": "適用される Explicit Deny は他の Policy の Allow より優先され、IAM 権限評価で最優先となる。"
   },
+  "External Session Store": {
+    "en": "Stores only a session ID in a cookie and keeps actual session state in a shared store available to all web nodes.",
+    "ja": "外部セッションストア。AWS の Architecture に関する概念であり、用途と運用上の境界、Sticky Session / Client Cookie との違いを確認する。"
+  },
   "FaaS": {
     "en": "Uses functions as the unit of deployment and execution; Lambda is the typical AWS FaaS service.",
     "ja": "Function を Deployment と実行の単位にする。Lambda は AWS の代表的な FaaS。"
@@ -728,9 +935,17 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Switches traffic or workloads to a standby resource when the primary resource fails.",
     "ja": "主リソースの障害時に、トラフィックまたはワークロードを待機リソースへ切り替える。"
   },
+  "Failover Routing": {
+    "en": "Implements primary/secondary active-passive DNS and can fail open when all evaluated endpoints are unhealthy.",
+    "ja": "フェイルオーバールーティング。AWS の Networking に関する概念であり、用途と運用上の境界、Multi-Value Answer との違いを確認する。"
+  },
   "Fargate": {
     "en": "Not an orchestrator, but a serverless compute option for ECS and EKS that removes the need to manage EC2 instances.",
     "ja": "オーケストレーターではなく、EC2 管理を不要にする ECS/EKS 向けの Serverless コンピューティングオプション。"
+  },
+  "Fast Snapshot Restore": {
+    "en": "Eliminates first-read lazy-loading latency for volumes created from a selected snapshot in a selected AZ at additional cost.",
+    "ja": "高速スナップショット復元。AWS の Storage に関する概念であり、用途と運用上の境界、Snapshot Archive / Recycle Bin との違いを確認する。"
   },
   "Federation": {
     "en": "Sign in through an external identity provider and receive temporary AWS credentials instead of creating long-term IAM users in every account; this is a preferred approach for workforce access.",
@@ -760,6 +975,22 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Protects personal data and privacy in the European Union; exact requirements must be confirmed for the business and applicable law.",
     "ja": "EU の個人 Data と Privacy を保護する規則。具体的要件は Business と適用法に応じて確認する。"
   },
+  "General Purpose Bucket": {
+    "en": "The regular S3 bucket type with broad feature support, distinct from an Express One Zone directory bucket.",
+    "ja": "汎用バケット。AWS の Storage に関する概念であり、用途と運用上の境界、Directory Bucket / Table Bucket との違いを確認する。"
+  },
+  "General Purpose Instance": {
+    "en": "A balanced EC2 family for web servers, small or medium databases, and development environments.",
+    "ja": "汎用インスタンス（コンピューティング、メモリ、ネットワーク資源のバランスを重視した EC2 インスタンス）"
+  },
+  "Geolocation Routing": {
+    "en": "Selects answers by country, continent, or US state and should include a default location for unmatched clients.",
+    "ja": "位置情報ルーティング。AWS の Networking に関する概念であり、用途と運用上の境界、Geoproximity Routing との違いを確認する。"
+  },
+  "Geoproximity Routing": {
+    "en": "Chooses by user and resource geography and can shift boundaries with a bias value; bias is not a traffic percentage.",
+    "ja": "地理的近接性ルーティング。AWS の Networking に関する概念であり、用途と運用上の境界、Geolocation / Weighted との違いを確認する。"
+  },
   "Glacier Deep Archive": {
     "en": "For long-term archives at the lowest cost, with the longest restore times.",
     "ja": "長期アーカイブ向けで、コストは最も低いが復元時間は最も長い。"
@@ -771,6 +1002,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Glacier Instant Retrieval": {
     "en": "For rarely accessed data that still requires millisecond retrieval.",
     "ja": "アクセス頻度は非常に低いが、ミリ秒単位の取り出しが必要なデータ向け。"
+  },
+  "Glacier Vault Lock": {
+    "en": "Makes a vault lock policy immutable after locking, supporting WORM compliance controls.",
+    "ja": "Glacier ボールトロック。AWS の Storage に関する概念であり、用途と運用上の境界、S3 Object Lock との違いを確認する。"
   },
   "Global Accelerator": {
     "en": "Accelerates global TCP/UDP traffic and shifts traffic between endpoints based on health.",
@@ -784,6 +1019,18 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "DynamoDB replication across multiple Regions with a multi-active architecture.",
     "ja": "Multi-Region・Multi-Active を実現する DynamoDB のレプリケーション機能。"
   },
+  "Golden AMI": {
+    "en": "Pre-bakes stable, repeated, slow-to-install operating-system dependencies and application components to accelerate launch and reduce drift.",
+    "ja": "ゴールデンAMI。AWS の Compute に関する概念であり、用途と運用上の境界、User Data / EBS Snapshot との違いを確認する。"
+  },
+  "gp2": {
+    "en": "Older general-purpose EBS SSD with baseline IOPS tied to volume size and a burst-credit model.",
+    "ja": "汎用 SSD（gp2）。AWS の Storage に関する概念であり、用途と運用上の境界、gp3 / Burst Credits との違いを確認する。"
+  },
+  "gp3": {
+    "en": "General-purpose EBS SSD whose capacity, IOPS, and throughput can be configured more independently; usually the default choice for new general workloads.",
+    "ja": "汎用 SSD（gp3）。AWS の Storage に関する概念であり、用途と運用上の境界、gp2 / io2 との違いを確認する。"
+  },
   "Graph Database": {
     "en": "Represents and queries complex relationships using vertices, edges, and properties.",
     "ja": "Vertex、Edge、Property を使って複雑な関係を表現・検索する。"
@@ -792,9 +1039,21 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Distributes traffic through scalable virtual network appliances such as firewalls and inspection systems.",
     "ja": "Firewall や Inspection System などの Virtual Network Appliance へ Traffic を分散する。"
   },
+  "GWLBe": {
+    "en": "Routes traffic transparently through a Gateway Load Balancer service chain for centralized firewalls, IDS/IPS, and deep packet inspection.",
+    "ja": "VPC 内で検査トラフィックを GWLB サービスへ出入りさせるエンドポイント。セキュリティアプライアンスへの負荷分散を担当する GWLB 本体とは役割が異なる。"
+  },
   "HA": {
     "en": "Reduces downtime through multiple AZs, redundancy, and automatic failover; it does not mean zero interruption.",
     "ja": "複数 AZ、冗長化、自動フェイルオーバーで停止時間を減らすが、完全な無停止を意味しない。"
+  },
+  "Health Check Grace Period": {
+    "en": "Temporarily prevents an ASG from replacing a newly InService instance for EC2 or ELB health failures.",
+    "ja": "新しいインスタンスが起動中に早すぎる置換を受けないよう、ヘルスチェック評価を待つ期間。スケーリングメトリクスへの反映を制御する Instance Warmup とは異なる。"
+  },
+  "Hosted Zone": {
+    "en": "An authoritative namespace containing DNS records. A matching private hosted zone does not fall back to public DNS when a record is absent.",
+    "ja": "ホストゾーン。AWS の Networking に関する概念であり、用途と運用上の境界、Public vs Private Hosted Zone との違いを確認する。"
   },
   "Hybrid Cloud": {
     "en": "Combines on-premises data centers with public cloud; Outposts and Direct Connect commonly appear in these scenarios.",
@@ -819,6 +1078,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "IAM Credentials Report": {
     "en": "An account-level CSV covering the root-account row and IAM-user passwords, MFA, access keys, signing certificates, and last-use/rotation data. It excludes role temporary credentials and service-specific credentials.",
     "ja": "Root Account 行と IAM User の Password、MFA、Access Key、Signing Certificate、最終利用・ローテーション情報をまとめた Account レベル CSV。Role の一時認証情報や Service 固有認証情報は含まない。"
+  },
+  "IAM DB Authentication": {
+    "en": "Uses short-lived SigV4 tokens instead of long-term database passwords for supported RDS and Aurora engines.",
+    "ja": "有効期間 15 分の認証トークンを使って DB 接続を開始する。対応する DB ユーザーは必要で、トークン期限切れ後も確立済みセッションが自動切断されるわけではない。"
   },
   "IAM Group": {
     "en": "Contains IAM users only, not other groups. A user may join multiple groups, while a group cannot sign in or be assumed.",
@@ -876,6 +1139,14 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "IAM denies by default; without an applicable Allow, the request remains implicitly denied.",
     "ja": "暗黙的な拒否（アクセスを許可する適用可能な Allow が存在しないため、既定で拒否される状態）"
   },
+  "Inbound Resolver Endpoint": {
+    "en": "Allows on-premises DNS clients to resolve AWS private DNS through conditional forwarding and reachable TCP/UDP port 53.",
+    "ja": "インバウンドリゾルバーエンドポイント。AWS の Networking に関する概念であり、用途と運用上の境界、Outbound Resolver Endpoint との違いを確認する。"
+  },
+  "Inbound Rule": {
+    "en": "A security-group rule allowing incoming traffic by source, protocol, and port; security groups have no explicit deny rules.",
+    "ja": "インバウンドルール（リソースへ入ってくる通信を許可する Security Group の規則）"
+  },
   "Infrastructure": {
     "en": "The underlying compute, networking, storage, security, and related resources.",
     "ja": "Compute、Network、Storage、Security などの基盤 Resource の総称。"
@@ -888,13 +1159,29 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Embedded one-to-one in a user, group, or role; it is deleted with the identity and is not suited to reuse.",
     "ja": "インラインポリシー（単一の IAM ユーザー、グループ、またはロールに直接埋め込む一対一のポリシー）"
   },
+  "Instance Profile": {
+    "en": "The container that delivers an IAM role to EC2. In Elastic Beanstalk it differs from the service role used by the platform.",
+    "ja": "インスタンスプロファイル。AWS の Security に関する概念であり、用途と運用上の境界、Service Role / IAM Role との違いを確認する。"
+  },
   "Instance Store": {
     "en": "Temporary block storage on the physical host; data is lost when the instance stops or terminates.",
     "ja": "物理ホスト上の一時的なブロックストレージ。インスタンスの Stop または Terminate でデータを失う。"
   },
+  "Instance Warmup": {
+    "en": "Prevents new instances from being counted as fully contributing capacity before initialization completes, reducing metric distortion and repeated scale-out.",
+    "ja": "新しいインスタンスがスケーリング指標や判断へ早すぎて影響しないようにする期間。Cooldown は主に Simple Scaling の連続実行を制限し、どちらも接続ドレインを担当しない。"
+  },
+  "io2": {
+    "en": "Provisioned IOPS SSD for critical databases and sustained high-IOPS, low-latency workloads; EC2 EBS bandwidth can still limit performance.",
+    "ja": "プロビジョンド IOPS SSD（io2）。AWS の Storage に関する概念であり、用途と運用上の境界、gp3 / io1 との違いを確認する。"
+  },
   "IOPS": {
     "en": "Measures read and write operations per second; important for random, small-block I/O.",
     "ja": "1 秒あたりの読み書き操作数。ランダムな小ブロック I/O で重視される。"
+  },
+  "IP-based Routing": {
+    "en": "Chooses DNS answers by known ISP or customer CIDR ranges, should include a default rule, and does not support private hosted zones.",
+    "ja": "IPベースルーティング。AWS の Networking に関する概念であり、用途と運用上の境界、Geolocation Routing との違いを確認する。"
   },
   "Isolation": {
     "en": "Separates customers or workloads through virtualization, permissions, and network boundaries.",
@@ -912,13 +1199,29 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Kubernetes is an open-source platform; EKS is the AWS-managed Kubernetes service.",
     "ja": "Kubernetes は Open-Source Platform、EKS は AWS のマネージド Kubernetes Service。"
   },
+  "Kinesis Data Streams": {
+    "en": "A replayable real-time stream. Partition keys select shards, ordering is per shard, and retention can extend to 365 days.",
+    "ja": "Amazon Kinesis Data Streams（リアルタイムストリーム）"
+  },
   "Lambda": {
     "en": "Event-driven, automatically scales, and charges by invocation and duration; each run is limited to 15 minutes and is not suited to long-running processes.",
     "ja": "イベント駆動で自動スケールし、呼び出し回数と実行時間で課金される。1 回の実行は最大 15 分で、長時間プロセスには不向き。"
   },
+  "Lambda SnapStart": {
+    "en": "Creates an encrypted snapshot of initialized function memory and disk state for a published version and restores it on invocation to reduce initialization latency.",
+    "ja": "Lambda SnapStart。AWS の Compute に関する概念であり、用途と運用上の境界、Provisioned Concurrency、Reserved Concurrency との違いを確認する。"
+  },
+  "Latency Routing": {
+    "en": "Returns the AWS Region expected to offer the lowest network latency; it is not geographic distance or a live ping.",
+    "ja": "レイテンシールーティング。AWS の Networking に関する概念であり、用途と運用上の境界、Geoproximity / Geolocation との違いを確認する。"
+  },
   "Least Privilege": {
     "en": "Start with only the Actions, Resources, and conditions needed for the current task to reduce security risk, mistakes, and unexpected cost.",
     "ja": "現在の業務に必要な最小限の Action、Resource、Condition から付与し、Security Risk、誤操作、想定外 Cost を抑える。"
+  },
+  "Legal Hold": {
+    "en": "Protects an S3 object version independently of a retention period and has no automatic expiry until an authorized principal removes it.",
+    "ja": "リーガルホールド。AWS の Storage に関する概念であり、用途と運用上の境界、Retention Period / Compliance Mode との違いを確認する。"
   },
   "Lifecycle Policy": {
     "en": "Moves data between storage classes, expires objects, and cleans up old versions according to rules.",
@@ -932,6 +1235,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Aggregates compatible Direct Connect connections; bandwidth aggregation and site redundancy must be considered separately.",
     "ja": "互換性のある Direct Connect Connection を集約する。帯域幅の集約と Site 冗長化は分けて検討する。"
   },
+  "Listener Rule": {
+    "en": "Combines priority, conditions, and an action. Lower numeric priorities match first and the default rule runs last.",
+    "ja": "受信リクエストの条件に基づき転送先を決める。SNI は TLS ホスト名で証明書を選び、ホストベースルールは復号後の HTTP Host でバックエンドを選ぶ。"
+  },
   "Log Group": {
     "en": "Organizes multiple log streams by application or resource and defines their retention period.",
     "ja": "Application または Resource 単位で複数の Log Stream を整理し、保持期間を設定する。"
@@ -939,6 +1246,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Log Stream": {
     "en": "A sequence of log events from one specific source, such as a Lambda execution environment.",
     "ja": "特定の 1 Source から出る一連の Log Event。例として 1 つの Lambda 実行環境がある。"
+  },
+  "Long Polling": {
+    "en": "Waits for messages for up to 20 seconds, reducing empty responses and API cost. It does not extend a message's visibility timeout.",
+    "ja": "ロングポーリング。AWS の Messaging に関する概念であり、用途と運用上の境界、Short Polling、Visibility Timeout との違いを確認する。"
   },
   "Longest Prefix Match": {
     "en": "The route with the most specific matching destination takes precedence.",
@@ -956,6 +1267,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "A managed service for verifiable, tamper-resistant ledgers shared across multiple organizations.",
     "ja": "複数組織で共有する、検証可能で改ざん耐性の高い Ledger 向けマネージドサービス。"
   },
+  "Managed Node Group": {
+    "en": "Automates provisioning and lifecycle for EKS EC2 worker nodes. The underlying capacity remains EC2 plus Auto Scaling and is not serverless.",
+    "ja": "EKS マネージドノードグループ。AWS の Compute に関する概念であり、用途と運用上の境界、Self-managed Nodes、Fargate、EKS Auto Mode との違いを確認する。"
+  },
   "Managed Service": {
     "en": "AWS operates part of the underlying stack, while users may still configure capacity, versions, and networking.",
     "ja": "基盤運用の一部を AWS が担当するが、利用者が容量、Version、Network を設定する場合もある。"
@@ -968,6 +1283,14 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "A lightweight distributed in-memory caching engine.",
     "ja": "機能を絞った軽量な分散 In-Memory Cache Engine。"
   },
+  "Memory Optimized Instance": {
+    "en": "An EC2 family for memory-heavy workloads such as in-memory caches, real-time analytics, and large databases.",
+    "ja": "メモリ最適化インスタンス（大容量メモリと高速なメモリアクセスを重視した EC2 インスタンス）"
+  },
+  "Message Group ID": {
+    "en": "Defines the ordering boundary in a FIFO queue: messages in one group are processed in order while different groups can progress in parallel.",
+    "ja": "メッセージグループ ID。AWS の Messaging に関する概念であり、用途と運用上の境界、Message Deduplication ID との違いを確認する。"
+  },
   "Metadata": {
     "en": "Describes an object's content and properties; changing user metadata usually requires rewriting the object.",
     "ja": "Object の内容や属性を説明する。User Metadata の変更には通常 Object の再書き込みが必要。"
@@ -975,6 +1298,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "MFA": {
     "en": "Adds another authentication factor but grants no permission. Enable it first for root and privileged identities; root and IAM users currently support up to eight devices.",
     "ja": "追加の Authentication Factor であり権限は付与しない。Root と高権限 Identity を優先し、現在 Root / IAM User は最大 8 Device を登録できる。"
+  },
+  "MFA Delete": {
+    "en": "Requires MFA to permanently delete a specific S3 object version or change versioning state. Only the root user can enable or disable it.",
+    "ja": "MFA 削除。AWS の Storage に関する概念であり、用途と運用上の境界、Object Lock / Delete Marker との違いを確認する。"
   },
   "Migration Evaluator": {
     "en": "Builds a data-driven migration business case from the current environment, licensing, and target options.",
@@ -988,6 +1315,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Primarily provides high availability and automatic failover, not read scaling.",
     "ja": "主目的は高可用性と自動フェイルオーバーであり、読み取り性能の向上ではない。"
   },
+  "Multi-AZ DB Cluster": {
+    "en": "Spans three Availability Zones and combines database high availability with readable instances.",
+    "ja": "1 台の Writer と 2 台の読み取り可能な Replica を 3 AZ に配置する RDS 構成。従来の Multi-AZ DB インスタンスでは Standby を読み取りに利用できない。"
+  },
   "Multi-Region": {
     "en": "Deploys across AWS Regions for Region-level disaster recovery, global low latency, or compliance.",
     "ja": "Region レベルの災害復旧、グローバルな低レイテンシ、コンプライアンスのために複数 Region へ展開する。"
@@ -995,6 +1326,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Multi-Tenancy": {
     "en": "Multiple customers share underlying infrastructure while remaining logically isolated; common in cloud computing.",
     "ja": "複数顧客が基盤 Infrastructure を共有しつつ論理的に分離される、Cloud Computing の一般的な Model。"
+  },
+  "Multi-Value Answer Routing": {
+    "en": "Returns up to eight healthy values with per-record health checks; it is not a load balancer and does not support Alias records.",
+    "ja": "複数値回答ルーティング。AWS の Networking に関する概念であり、用途と運用上の境界、Simple Routing / ELB との違いを確認する。"
   },
   "Multipart Upload": {
     "en": "Uploads a large object in parallel parts; required for objects larger than 5 GB.",
@@ -1019,6 +1354,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "NLB": {
     "en": "Layer 4 TCP/UDP/TLS; suited to extremely high performance, ultra-low latency, and static IP requirements.",
     "ja": "レイヤー 4 の TCP/UDP/TLS。非常に高い性能、超低レイテンシ、固定 IP の要件に適する。"
+  },
+  "Noncurrent Version": {
+    "en": "A historical S3 object version created after the same key receives a newer version; lifecycle rules can transition or permanently delete it.",
+    "ja": "非現行バージョン。AWS の Storage に関する概念であり、用途と運用上の境界、Current Version / Delete Marker との違いを確認する。"
   },
   "NoSQL": {
     "en": "Does not mean no structure; it means a fixed relational-table model is not the only data model.",
@@ -1052,6 +1391,18 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Handles deployment, scaling, scheduling, networking, and failure recovery; ECS and EKS are orchestration services.",
     "ja": "Deployment、Scaling、Scheduling、Network、障害復旧を管理する。ECS と EKS は Orchestration Service。"
   },
+  "Origin Access Control (OAC)": {
+    "en": "Signs CloudFront requests to a private S3 origin and works with a bucket policy. S3 website endpoints do not support OAC.",
+    "ja": "オリジンアクセスコントロール。AWS の Security に関する概念であり、用途と運用上の境界、OAI / Public S3 / S3 Website Endpoint との違いを確認する。"
+  },
+  "Outbound Resolver Endpoint": {
+    "en": "Provides the AWS-to-on-premises DNS forwarding path and must be combined with Resolver rules.",
+    "ja": "アウトバウンドリゾルバーエンドポイント。AWS の Networking に関する概念であり、用途と運用上の境界、Inbound Resolver Endpoint との違いを確認する。"
+  },
+  "Outbound Rule": {
+    "en": "A security-group rule allowing outgoing traffic. Stateful return traffic does not require a matching rule in the reverse direction.",
+    "ja": "アウトバウンドルール（リソースから外へ出ていく通信を許可する Security Group の規則）"
+  },
   "Outposts": {
     "en": "Deploys AWS infrastructure and services in a customer's data center for low latency, data residency, and hybrid cloud.",
     "ja": "低レイテンシ、Data Residency、Hybrid Cloud のために、顧客 Data Center へ AWS Infrastructure と Service を配置する。"
@@ -1067,6 +1418,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Partition Key": {
     "en": "Determines the distribution of DynamoDB items and is the key element required by Query.",
     "ja": "DynamoDB Item の分散を決め、Query で必ず指定するキー要素。"
+  },
+  "Partition Placement Group": {
+    "en": "Separates many instances into independent rack groups. Each AZ supports up to seven partitions, and each partition can contain many instances.",
+    "ja": "パーティションプレイスメントグループ（多数の EC2 を独立したラック集合ごとの障害分離グループへ分ける配置戦略）"
   },
   "Passkey": {
     "en": "AWS supports device-bound security keys and synced passkeys as phishing-resistant MFA options.",
@@ -1104,9 +1459,21 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "The ability to move and run an application across environments; containers commonly improve portability.",
     "ja": "Application を異なる Environment 間で移動・実行できる能力。Container は Portability 向上によく使われる。"
   },
+  "Predictive Scaling": {
+    "en": "Forecasts recurring demand from history and launches capacity before the expected load.",
+    "ja": "過去の周期的な需要から将来の必要容量を予測する。突発的な異常トラフィックへ即時対応する機能ではなく、通常は動的スケーリングと組み合わせる。"
+  },
   "Presigned URL": {
     "en": "Provides temporary, expiring access within the permissions of the signer.",
     "ja": "署名者の権限範囲内で、有効期限付きの一時アクセスを提供する。"
+  },
+  "Price-Capacity-Optimized": {
+    "en": "A Spot allocation strategy that balances deeper available capacity with lower price and is preferred for many new Spot workloads.",
+    "ja": "価格・キャパシティ最適化（中断リスクが低い容量プールの中から価格も考慮して Spot を割り当てる戦略）"
+  },
+  "Primary ENI": {
+    "en": "The device-index-0 network interface that cannot be detached from an instance and provides its primary private IPv4 and network placement.",
+    "ja": "プライマリ ENI（EC2 起動時に Device Index 0 として使用される主要ネットワークインターフェイス）"
   },
   "Primary Key": {
     "en": "A key that uniquely identifies a record or item.",
@@ -1115,6 +1482,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Principal": {
     "en": "Common in resource-based and trust policies; identity-based policies do not use it, and IAM groups cannot be principals.",
     "ja": "プリンシパル（リソースベースまたは信頼ポリシーで、規則の対象となるアカウント、ユーザー、ロール、サービスなどの主体）"
+  },
+  "Private IP": {
+    "en": "Used for private-network communication. A primary private IPv4 normally survives stop/start and can be reached through VPN, bastion, Direct Connect, or private endpoints.",
+    "ja": "プライベート IP アドレス（VPC など到達可能なプライベートネットワーク内で通信するための IP アドレス）"
   },
   "Private Subnet": {
     "en": "Has no direct route to an IGW; resources can initiate outbound access through NAT.",
@@ -1128,6 +1499,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "The party that creates and sends messages or events.",
     "ja": "Message または Event を作成して送信する側。"
   },
+  "Provisioned Concurrency": {
+    "en": "Keeps a configured number of Lambda environments initialized to reduce cold starts. It requires a version or alias, adds cost, and is not a maximum concurrency limit.",
+    "ja": "プロビジョニング済み同時実行数。AWS の Compute に関する概念であり、用途と運用上の境界、Reserved Concurrency、SnapStart との違いを確認する。"
+  },
   "Provisioning": {
     "en": "Creates and configures infrastructure resources; deployment focuses more on releasing applications or versions.",
     "ja": "Infrastructure Resource を作成・設定する。Deployment は Application や Version のリリースに重点を置く。"
@@ -1135,6 +1510,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Pub/Sub": {
     "en": "Publishers do not need to know their subscribers; suitable for one-to-many broadcasting.",
     "ja": "Publisher は Subscriber を知る必要がなく、1 対多のブロードキャストに適する。"
+  },
+  "Public IP": {
+    "en": "An Internet-routable address. An auto-assigned public IPv4 is normally released on stop, and reachability still requires routes and security controls.",
+    "ja": "パブリック IP アドレス（インターネット上でルーティング可能な IP アドレス）"
   },
   "Public Subnet": {
     "en": "Its route table has a direct route to an IGW; resources also need public addresses and security rules for internet communication.",
@@ -1160,13 +1539,37 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Messages are generally processed by one consumer; queues provide ordering, buffering, and load smoothing.",
     "ja": "Message は通常 1 つの Consumer が処理し、待ち行列、Buffer、負荷平準化に使う。"
   },
+  "RBAC": {
+    "en": "Provides finer-grained authorization for ElastiCache Valkey and Redis OSS than a single shared AUTH token.",
+    "ja": "ユーザーのロールに基づきコマンドやキーパターンへの権限を制御する。転送経路を暗号化する TLS とは役割が異なる。"
+  },
   "RDS": {
     "en": "AWS manages backups, patching, and infrastructure; Multi-AZ improves availability while Read Replicas scale reads.",
     "ja": "AWS がバックアップ、パッチ、インフラを管理する。Multi-AZ は可用性を高め、Read Replica は読み取りを拡張する。"
   },
+  "RDS Custom": {
+    "en": "Provides deeper operating-system and database customization for supported Oracle and SQL Server workloads.",
+    "ja": "Amazon RDS Custom（カスタムマネージド DB）"
+  },
+  "RDS Proxy": {
+    "en": "Pools and multiplexes backend database connections, especially for Lambda connection storms; it is not a query cache.",
+    "ja": "DB 接続をプールして接続数を抑える。ElastiCache はクエリ数を減らし、Read Replica は SQL の読み取り容量を増やす点が異なる。"
+  },
+  "RDS Storage Auto Scaling": {
+    "en": "Increases allocated storage when free space remains low and modification constraints are satisfied; it does not shrink storage.",
+    "ja": "RDS の空き容量低下に応じてストレージを自動拡張する。DB インスタンスクラスは変更せず、ストレージを自動縮小する機能でもない。"
+  },
   "Read Replica": {
     "en": "Primarily scales reads and reporting queries; replication is usually asynchronous and can span Regions.",
     "ja": "主に読み取りとレポートクエリを拡張する。通常は非同期レプリケーションで、Region 間にも作成できる。"
+  },
+  "Reader Endpoint": {
+    "en": "Provides one connection endpoint for general Aurora read traffic and automatically includes eligible new readers.",
+    "ja": "Aurora Reader への接続を接続単位で分散するエンドポイント。SQL ステートメントごとに負荷分散するものではない。"
+  },
+  "Recycle Bin": {
+    "en": "Retention rules protect deleted AWS resources from accidental loss. Retained resources continue to incur charges and outlive deletion of the rule.",
+    "ja": "AWS Recycle Bin。AWS の Storage に関する概念であり、用途と運用上の境界、Snapshot Archive / AWS Backup との違いを確認する。"
   },
   "Redis OSS": {
     "en": "Supports rich data structures, replication, leaderboards, sessions, and other use cases.",
@@ -1212,9 +1615,25 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Migrates after limited cloud optimization without changing the core architecture.",
     "ja": "Core Architecture は変えず、限定的な Cloud Optimization を行ってから移行する。"
   },
+  "Replica": {
+    "en": "A copy used for read scaling, failover, or durability depending on the service and replication model.",
+    "ja": "同じデータの複製。異なるデータ区画を保持する Shard や、障害分離の配置範囲を表す Multi-AZ とは異なる。"
+  },
   "Repurchase": {
     "en": "Replaces legacy software with a new product or SaaS offering.",
     "ja": "Legacy Software を廃止し、新しい Product または SaaS に置き換える。"
+  },
+  "Reserved Concurrency": {
+    "en": "Reserves capacity for a Lambda function and caps its maximum concurrency. A value of zero throttles the function, but does not pre-warm environments.",
+    "ja": "予約済み同時実行数。AWS の Compute に関する概念であり、用途と運用上の境界、Provisioned Concurrency、Account Concurrency との違いを確認する。"
+  },
+  "Reserved Instance": {
+    "en": "A billing discount based on commitment. Regional RIs emphasize flexible discount, while matching Zonal RIs also provide an AZ capacity benefit.",
+    "ja": "リザーブドインスタンス（一定期間の利用コミットメントにより EC2 料金の割引を受ける課金上の仕組み）"
+  },
+  "Resolver Rule": {
+    "en": "Defines a forwarded domain and target DNS server IPs and is associated with VPCs; the most specific matching domain wins.",
+    "ja": "リゾルバールール。AWS の Networking に関する概念であり、用途と運用上の境界、Route Table との違いを確認する。"
   },
   "Resource": {
     "en": "Specifies the AWS resource a statement affects; avoid * when an exact scope can be defined.",
@@ -1240,6 +1659,18 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Provides DNS resolution, domain registration, health checks, and traffic routing.",
     "ja": "DNS 解決、ドメイン登録、ヘルスチェック、トラフィックルーティングを提供する。"
   },
+  "Route 53 Health Check": {
+    "en": "Produces a health signal that affects DNS only when associated with a record or policy. Private resources commonly use CloudWatch alarms.",
+    "ja": "Route 53 ヘルスチェック。AWS の Networking に関する概念であり、用途と運用上の境界、ALB Target Health との違いを確認する。"
+  },
+  "Route 53 Resolver": {
+    "en": "The default recursive resolver in a VPC for VPC-local names, private hosted zones, and public DNS.",
+    "ja": "Route 53 Resolver。AWS の Networking に関する概念であり、用途と運用上の境界、Authoritative DNS との違いを確認する。"
+  },
+  "Route 53 Routing Policy": {
+    "en": "Selects which authoritative DNS record to return; it is not an application proxy and includes simple, weighted, latency, failover, geographic, IP-based, and multi-value options.",
+    "ja": "Route 53 ルーティングポリシー。AWS の Networking に関する概念であり、用途と運用上の境界、ELB Routing / HTTP Redirect との違いを確認する。"
+  },
   "Route Table": {
     "en": "Determines the next hop for network traffic; it does not allow or deny individual connections.",
     "ja": "ネットワークトラフィックの次の転送先を決める。個々の接続を許可・拒否するものではない。"
@@ -1264,6 +1695,38 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Provides independent access endpoints and policies for different applications or teams.",
     "ja": "Application や Team ごとに独立した Access Endpoint と Policy を提供する。"
   },
+  "S3 Account Regional Namespace": {
+    "en": "An account-specific regional bucket namespace whose full name includes account ID, Region, and the -an suffix.",
+    "ja": "S3 アカウントリージョナル名前空間。AWS の Storage に関する概念であり、用途と運用上の境界、Shared Global Namespace / Directory Bucket との違いを確認する。"
+  },
+  "S3 Batch Operations": {
+    "en": "Runs managed copy, tagging, restore, Lambda, and other jobs across large sets of existing objects with progress and reports.",
+    "ja": "S3 バッチオペレーション。AWS の Storage に関する概念であり、用途と運用上の境界、Batch Replication / Lifecycle / Event Notifications との違いを確認する。"
+  },
+  "S3 Batch Replication": {
+    "en": "Backfills objects that predate a replication rule or failed replication; it differs from continuous replication of new versions.",
+    "ja": "S3 バッチレプリケーション。AWS の Storage に関する概念であり、用途と運用上の境界、Live Replication との違いを確認する。"
+  },
+  "S3 Block Public Access": {
+    "en": "A guardrail that blocks public ACLs or policies from accidentally exposing data; it does not grant access.",
+    "ja": "S3 ブロックパブリックアクセス。AWS の Storage に関する概念であり、用途と運用上の境界、Private Bucket / Explicit Deny との違いを確認する。"
+  },
+  "S3 Bucket Key": {
+    "en": "Reduces KMS request volume and cost for SSE-KMS encrypted S3 objects while remaining an SSE-KMS design.",
+    "ja": "S3 バケットキー。AWS の Storage に関する概念であり、用途と運用上の境界、KMS Key / SSE-S3 との違いを確認する。"
+  },
+  "S3 Bucket Policy": {
+    "en": "A resource-based policy attached to a bucket. Object operations such as GetObject must match object ARNs such as bucket/*.",
+    "ja": "S3 バケットポリシー。AWS の Storage に関する概念であり、用途と運用上の境界、IAM Policy / ACL との違いを確認する。"
+  },
+  "S3 Byte-Range Fetch": {
+    "en": "Reads selected byte ranges of an object, enabling parallel downloads or retrieval of only a header or segment.",
+    "ja": "S3 バイト範囲取得。AWS の Storage に関する概念であり、用途と運用上の境界、Multipart Upload / Full Object GET との違いを確認する。"
+  },
+  "S3 Event Notifications": {
+    "en": "Sends object events directly to SNS, SQS Standard, or Lambda. Use EventBridge for richer filtering, replay, or FIFO targets.",
+    "ja": "S3 イベント通知。AWS の Storage に関する概念であり、用途と運用上の境界、CloudTrail Data Events / Batch Operations との違いを確認する。"
+  },
   "S3 Express One Zone": {
     "en": "A single-AZ object storage class designed for extremely high performance.",
     "ja": "単一 AZ で非常に高い性能を提供する Object Storage Class。"
@@ -1276,6 +1739,14 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "For data with unknown or changing access patterns; automatically moves data between access tiers.",
     "ja": "アクセスパターンが不明または変化するデータ向けで、アクセス階層を自動調整する。"
   },
+  "S3 Inventory": {
+    "en": "Produces scheduled object-level metadata reports that can be queried with Athena or used as an S3 Batch Operations manifest.",
+    "ja": "S3 インベントリ。AWS の Storage に関する概念であり、用途と運用上の境界、S3 Storage Lens / ListObjects との違いを確認する。"
+  },
+  "S3 Object Lambda": {
+    "en": "Transforms, enriches, or redacts S3 data dynamically on reads without modifying the source object; availability for new customers must be verified.",
+    "ja": "S3 Object Lambda。AWS の Compute に関する概念であり、用途と運用上の境界、S3 Event Notification / Batch Operations との違いを確認する。"
+  },
   "S3 One Zone-IA": {
     "en": "Lower-cost, single-AZ storage for infrequently accessed data that can be recreated.",
     "ja": "単一 AZ の低コストストレージ。再作成可能でアクセス頻度の低いデータに適する。"
@@ -1283,6 +1754,18 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "S3 Outposts": {
     "en": "Provides S3 object storage on Outposts at the customer's location.",
     "ja": "顧客拠点の Outposts 上で S3 Object Storage を提供する。"
+  },
+  "S3 Prefix": {
+    "en": "The leading string of an object key, used for organization, lifecycle and event filters, and per-prefix request scaling.",
+    "ja": "S3 プレフィックス。AWS の Storage に関する概念であり、用途と運用上の境界、Folder / Directory / Bucket-wide limit との違いを確認する。"
+  },
+  "S3 Requester Pays": {
+    "en": "Makes an authenticated requester pay request and download charges while the bucket owner continues to pay storage.",
+    "ja": "S3 リクエスタ支払い。AWS の Storage に関する概念であり、用途と運用上の境界、Permission / Public Access との違いを確認する。"
+  },
+  "S3 Server Access Logging": {
+    "en": "Delivers S3 request logs with delay to a dedicated bucket in the same Region and account; avoid creating a logging loop.",
+    "ja": "S3 サーバーアクセスログ。AWS の Storage に関する概念であり、用途と運用上の境界、CloudTrail Data Events / CloudWatch との違いを確認する。"
   },
   "S3 Standard": {
     "en": "The default storage class for frequently accessed data, with multiple AZs and low latency.",
@@ -1292,9 +1775,33 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "For infrequently accessed data that still needs millisecond retrieval; retrieval fees apply.",
     "ja": "アクセス頻度は低いがミリ秒単位の取り出しが必要なデータ向け。取り出し料金が発生する。"
   },
+  "S3 Static Website Hosting": {
+    "en": "Provides index and error-document behavior through an HTTP-only website endpoint; direct public delivery requires public GetObject access.",
+    "ja": "S3 静的ウェブサイトホスティング。AWS の Storage に関する概念であり、用途と運用上の境界、S3 REST Endpoint / Dynamic Web Server との違いを確認する。"
+  },
+  "S3 Storage Class Analysis": {
+    "en": "Analyzes access patterns and recommends when objects should transition from Standard to Standard-IA.",
+    "ja": "S3 ストレージクラス分析。AWS の Storage に関する概念であり、用途と運用上の境界、Intelligent-Tiering / Storage Lens との違いを確認する。"
+  },
+  "S3 Storage Lens": {
+    "en": "Aggregates S3 usage, cost, protection, activity, and performance metrics across organizations, accounts, Regions, and buckets.",
+    "ja": "S3 Storage Lens（ストレージ分析）。AWS の Storage に関する概念であり、用途と運用上の境界、S3 Inventory / CloudTrail / Storage Class Analysis との違いを確認する。"
+  },
+  "S3 Transfer Acceleration": {
+    "en": "Routes distant clients through a nearby edge location and the AWS global network to accelerate transfers to one S3 bucket.",
+    "ja": "S3 Transfer Acceleration（転送高速化）"
+  },
   "SageMaker": {
     "en": "A managed platform for building, training, tuning, and deploying machine-learning models.",
     "ja": "Machine Learning Model の Build、Training、Tuning、Deployment を行う Managed Platform。"
+  },
+  "Savings Plans": {
+    "en": "Discounts eligible compute in exchange for a one- or three-year hourly spend commitment; it has no two-year term and does not reserve capacity.",
+    "ja": "Savings Plans（1 年または 3 年の時間当たり利用額をコミットしてコンピューティング料金の割引を受ける仕組み）"
+  },
+  "sc1": {
+    "en": "Low-cost cold HDD for infrequent, large sequential EBS access; it cannot boot and is poor for random I/O.",
+    "ja": "Cold HDD（sc1）。AWS の Storage に関する概念であり、用途と運用上の境界、st1 / S3 Glacier との違いを確認する。"
   },
   "Scalability": {
     "en": "A system can scale vertically or horizontally to handle more load, but it does not necessarily scale down automatically.",
@@ -1312,9 +1819,21 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Reads many items before filtering and usually consumes more read capacity than Query.",
     "ja": "多数の Item を読み取ってから Filter するため、通常は Query より多くの Read Capacity を消費する。"
   },
+  "Scheduled Scaling": {
+    "en": "Changes minimum, desired, or maximum capacity at known times, such as market open or a scheduled event.",
+    "ja": "既知の時刻表に合わせて容量を変更する。突発トラフィックへの対応には Target Tracking や Step Scaling などの動的方式が必要になる。"
+  },
   "Schema": {
     "en": "Defines tables, columns, types, and constraints; DynamoDB still has a primary-key schema.",
     "ja": "テーブル、列、型、制約を定義する。DynamoDB にも Primary Key の Schema がある。"
+  },
+  "Secondary ENI": {
+    "en": "An independent additional virtual NIC that can move between compatible EC2 instances in the same AZ while retaining its network identity.",
+    "ja": "セカンダリ ENI（既存の EC2 に追加でアタッチする独立した仮想ネットワークインターフェイス）"
+  },
+  "Secondary Private IP": {
+    "en": "An additional private address on the same ENI, not a second virtual network interface.",
+    "ja": "セカンダリプライベート IP アドレス（同じ ENI に追加で割り当てるプライベート IP アドレス）"
   },
   "Secret Access Key": {
     "en": "Keep it secret and never share or hard-code it; if lost, create and validate a new key before revoking the old one.",
@@ -1360,9 +1879,17 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "The third component of temporary credentials; it must accompany the temporary access key and expires with the session.",
     "ja": "セッショントークン（STS などが発行する一時的な Access Key ID と Secret Access Key とともに使用する、期限付き認証情報の追加要素）"
   },
+  "Shard": {
+    "en": "Horizontally scales capacity by distributing different keys across multiple partitions.",
+    "ja": "データを分割して保持する単位。異なるデータ区画を保存する Shard に対し、Replica は同じデータの複製を保存する。"
+  },
   "Sid": {
     "en": "An optional statement identifier for readability and troubleshooting; it grants no permission by itself.",
     "ja": "ステートメント ID（ポリシー内の各 Statement を識別しやすくする任意の識別子）"
+  },
+  "Simple Routing": {
+    "en": "Uses no special selection logic. A record can return multiple values, but health checks cannot be attached to individual values.",
+    "ja": "シンプルルーティング。AWS の Networking に関する概念であり、用途と運用上の境界、Multi-Value Answer との違いを確認する。"
   },
   "Simulation": {
     "en": "Usually a compute-intensive batch workload; AWS Batch and Spot Instances are common options.",
@@ -1376,6 +1903,14 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "An incremental backup that can restore a volume in any AZ and can be copied to another Region.",
     "ja": "増分 Backup。任意の AZ に Volume を復元でき、別 Region へ Copy することもできる。"
   },
+  "Snapshot Archive": {
+    "en": "A lower-cost tier for long-retained EBS snapshots with slower restore and a minimum billing period.",
+    "ja": "EBS スナップショットアーカイブ。AWS の Storage に関する概念であり、用途と運用上の境界、Recycle Bin / S3 Glacier との違いを確認する。"
+  },
+  "SNI": {
+    "en": "Allows one TLS listener or endpoint to select a certificate by the hostname supplied during the TLS handshake.",
+    "ja": "Server Name Indication（サーバー名表示）"
+  },
   "SNS": {
     "en": "Push-based pub/sub and broadcasting; a common fan-out pattern sends one SNS message to multiple SQS queues.",
     "ja": "Push 型の Pub/Sub・ブロードキャスト。代表的な Fan-out は 1 つの SNS から複数の SQS へ配信する構成。"
@@ -1384,9 +1919,33 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Forms a composite primary key with the partition key and enables range queries within the same partition.",
     "ja": "Partition Key と複合 Primary Key を構成し、同じ Partition 内で Range Query を可能にする。"
   },
+  "Sorted Set": {
+    "en": "An ordered set data structure commonly used for real-time leaderboards.",
+    "ja": "各 Member を一意に保持し、Score に基づいて順序付けるデータ構造。通常の順序なし Set とは異なる。"
+  },
+  "Source/Destination Check": {
+    "en": "Verifies that EC2 traffic is sourced from or destined to the instance; disable it for NAT, router, or firewall appliances that forward other hosts' traffic.",
+    "ja": "送信元／送信先チェック（EC2 を通過するトラフィックの送信元または送信先がそのインスタンス自身であることを確認する機能）"
+  },
   "SPOF": {
     "en": "A component whose failure makes the entire system unavailable.",
     "ja": "そのコンポーネントの障害によってシステム全体が利用不能になる単一障害点。"
+  },
+  "Spot Capacity Pool": {
+    "en": "Spare capacity defined by attributes such as instance type, AZ, and platform; diversification reduces reliance on one pool.",
+    "ja": "Spot キャパシティプール（インスタンスタイプ、アベイラビリティーゾーン、プラットフォームなどで区別される未使用容量の集合）"
+  },
+  "Spot Fleet": {
+    "en": "Launches a fleet across multiple Spot capacity pools to meet target capacity; also compare modern EC2 Fleet and ASG mixed-instance options.",
+    "ja": "スポットフリート（複数の Spot キャパシティプールから目標容量を満たすようインスタンス群を起動する仕組み）"
+  },
+  "Spot Instance": {
+    "en": "Uses discounted spare EC2 capacity and can be interrupted. Design for checkpoints, retries, and a best-effort interruption notice.",
+    "ja": "スポットインスタンス（AWS の未使用 EC2 キャパシティを割引価格で利用する中断可能なインスタンス）"
+  },
+  "Spread Placement Group": {
+    "en": "Separates a small number of critical instances across hardware; rack-level spread supports up to seven running instances per AZ per group.",
+    "ja": "スプレッドプレイスメントグループ（少数の重要な EC2 を異なる基盤ハードウェアへ分散して障害分離を高める配置戦略）"
   },
   "SQL": {
     "en": "A language for defining, querying, and modifying data in relational databases.",
@@ -1400,9 +1959,25 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Replicates S3 objects within the same Region according to configured rules.",
     "ja": "設定した Rule に従って、同じ Region 内で S3 Object を複製する。"
   },
+  "SSE-C": {
+    "en": "S3 encrypts with a customer-provided key that it never stores. Every request supplies the key and must use HTTPS.",
+    "ja": "顧客提供キーによるサーバー側暗号化。AWS の Storage に関する概念であり、用途と運用上の境界、Client-Side Encryption との違いを確認する。"
+  },
+  "SSE-KMS": {
+    "en": "Uses KMS keys for S3 encryption and requires both S3 and KMS authorization; account for KMS audit events, cost, and quotas.",
+    "ja": "AWS KMS キーによるサーバー側暗号化。AWS の Storage に関する概念であり、用途と運用上の境界、SSE-S3 / DSSE-KMS との違いを確認する。"
+  },
+  "SSE-S3": {
+    "en": "The default S3 server-side encryption using S3-managed AES-256 keys with minimal operational overhead.",
+    "ja": "S3 管理キーによるサーバー側暗号化。AWS の Storage に関する概念であり、用途と運用上の境界、SSE-KMS / SSE-C との違いを確認する。"
+  },
   "SSL/TLS Certificate": {
     "en": "Proves a service's identity and enables TLS-encrypted connections.",
     "ja": "サービスの身元を証明し、TLS で暗号化された接続を可能にする。"
+  },
+  "st1": {
+    "en": "A throughput-optimized HDD EBS volume for logs, big data, and large sequential I/O; it cannot be a boot volume.",
+    "ja": "スループット最適化 HDD（st1）。AWS の Storage に関する概念であり、用途と運用上の境界、sc1 / gp3 との違いを確認する。"
   },
   "Stateful": {
     "en": "Tracks permitted connections and their related return traffic.",
@@ -1412,9 +1987,25 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Evaluates each direction independently without tracking connections.",
     "ja": "接続状態を追跡せず、各方向を独立して評価する。"
   },
+  "Stateless Architecture": {
+    "en": "Keeps required session and business state out of an individual web node, enabling horizontal scale and safe replacement.",
+    "ja": "ステートレスアーキテクチャ。AWS の Architecture に関する概念であり、用途と運用上の境界、Stateful Application / Sticky Session との違いを確認する。"
+  },
+  "Step Scaling": {
+    "en": "Uses different scaling adjustments based on how far a metric breaches its threshold.",
+    "ja": "アラームがしきい値をどれだけ超えたかに応じて異なる調整量を適用する。Simple Scaling は通常、固定調整と Cooldown を使用する。"
+  },
+  "Sticky Sessions": {
+    "en": "Routes one client to the same target for a period using load-balancer or application cookies; externalized session state scales more cleanly.",
+    "ja": "同じクライアントを一定期間同じターゲットへ送る。ターゲット固定を永続保証するものではなく、不健康時は別ターゲットへ切り替わり、負荷偏りも起こり得る。"
+  },
   "Storage Gateway": {
     "en": "Lets on-premises applications access AWS storage through file, volume, or tape interfaces.",
     "ja": "On-Premises Application から File、Volume、Tape Interface を通じて AWS Storage へアクセスする。"
+  },
+  "Storage Optimized Instance": {
+    "en": "An EC2 family optimized for high sequential local-storage throughput; it is a separate choice from EBS volume types such as gp3 or io2.",
+    "ja": "ストレージ最適化インスタンス（ローカルストレージへの高い連続読み書き性能を重視した EC2 インスタンス）"
   },
   "Subnet": {
     "en": "A subnet belongs to one AZ; it is public only when its route table points to an Internet Gateway.",
@@ -1427,6 +2018,14 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Tape Gateway": {
     "en": "Replaces physical tape backup infrastructure with virtual tapes.",
     "ja": "物理 Tape の Backup 基盤を Virtual Tape で置き換える。"
+  },
+  "Target Group": {
+    "en": "Defines backends, protocol, port, and health checks; a target can move through initial, healthy, unhealthy, draining, and unused states.",
+    "ja": "ロードバランサーの転送先をまとめる単位。ターゲットが Registered でも Healthy とは限らず、転送先グループは Listener Rule が決める。"
+  },
+  "Target Tracking Scaling": {
+    "en": "Maintains a target for a capacity-sensitive metric such as CPU or ALBRequestCountPerTarget; that metric is not outstanding requests.",
+    "ja": "サーモスタットのように指定メトリクスの目標値を維持する。Auto Scaling が自動作成した CloudWatch Alarm は手動変更しない。"
   },
   "Task": {
     "en": "A running instance of a task definition; it can run once or be continuously maintained by a service.",
@@ -1444,6 +2043,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "Expire automatically and are used by roles, IAM Identity Center, and federation; prefer them over long-term IAM user keys.",
     "ja": "AWS 一時的セキュリティ認証情報（Access Key ID、Secret Access Key、Session Token で構成され、有効期限がある API 認証情報）"
   },
+  "Three-Tier Architecture": {
+    "en": "Separates entry/presentation, application logic, and data so each layer can scale and be secured independently.",
+    "ja": "3層アーキテクチャ。AWS の Architecture に関する概念であり、用途と運用上の境界、Multi-AZ / Microservices との違いを確認する。"
+  },
   "Throughput": {
     "en": "Measures data transferred per second; important for large sequential I/O.",
     "ja": "1 秒あたりのデータ転送量。大きなファイルのシーケンシャル I/O で重視される。"
@@ -1455,6 +2058,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "TLS": {
     "en": "The modern protocol used to establish encrypted network connections.",
     "ja": "暗号化されたネットワーク接続を確立するための現行プロトコル。"
+  },
+  "TLS Termination": {
+    "en": "Makes the load balancer handle certificates, handshakes, and decryption; the certificate proves identity while the policy selects protocols and ciphers.",
+    "ja": "フロントエンドで HTTPS/TLS を終端しても、バックエンド経路まで暗号化されるとは限らない。NLB の TCP 443 では TLS パススルーも構成できる。"
   },
   "Topic": {
     "en": "The logical entry point for publishing messages in SNS; one message can be delivered to multiple subscribers.",
@@ -1479,6 +2086,10 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
   "Trusted Entity": {
     "en": "Identifies who may assume a role, such as an AWS service, account, user, role, or federated principal.",
     "ja": "Role を Assume できる主体を示す。AWS Service、Account、User、Role、Federated Principal などを指定できる。"
+  },
+  "TTL": {
+    "en": "Controls how long recursive resolvers cache a DNS answer. Lowering it does not purge copies already cached under the prior value.",
+    "ja": "TTL（生存時間）。AWS の Networking に関する概念であり、用途と運用上の境界、Authoritative propagation との違いを確認する。"
   },
   "Valkey": {
     "en": "One of the in-memory data-store engines supported by ElastiCache.",
@@ -1532,9 +2143,29 @@ export const awsGlossaryNoteTranslations: Record<string, AwsGlossaryNoteTranslat
     "en": "An application accessed through a browser, often built with ALB, EC2 or ECS, RDS, and S3.",
     "ja": "Browser から利用する Application。ALB、EC2/ECS、RDS、S3 などで構成されることが多い。"
   },
+  "Web Server Environment": {
+    "en": "An Elastic Beanstalk environment serving client HTTP/HTTPS requests, commonly backed by ELB, an Auto Scaling group, and EC2.",
+    "ja": "Webサーバー環境。AWS の Compute に関する概念であり、用途と運用上の境界、Worker Environment との違いを確認する。"
+  },
+  "Weighted Routing": {
+    "en": "Chooses DNS answers by relative weights for canary or blue/green releases, without guaranteeing an exact request percentage.",
+    "ja": "加重ルーティング。AWS の Networking に関する概念であり、用途と運用上の境界、Geoproximity Bias との違いを確認する。"
+  },
+  "Worker Environment": {
+    "en": "Pulls work from SQS for asynchronous processing and can scale from queue backlog.",
+    "ja": "ワーカー環境。AWS の Compute に関する概念であり、用途と運用上の境界、Web Server Environment との違いを確認する。"
+  },
   "Write-Through": {
     "en": "Updates the cache whenever the database is written, keeping cached data fresh.",
     "ja": "Database への Write と同時に Cache を更新し、Cache Data の鮮度を保つ。"
+  },
+  "Writer Endpoint": {
+    "en": "The Aurora endpoint for reads, writes, DDL, and transactions; after failover it points to the new writer.",
+    "ja": "Aurora クラスターの現在の Writer を常に指すエンドポイント。特定の DB インスタンスへ固定される Instance Endpoint とは異なる。"
+  },
+  "Zero Spend Budget": {
+    "en": "An AWS Budgets template that alerts when charges begin, useful for detecting Free Tier overruns and unexpected small charges.",
+    "ja": "ゼロ支出予算（料金が発生し始めた時点で通知する AWS Budgets のテンプレート）"
   },
   "Zonal Resource": {
     "en": "Lives in a specific AZ; the architecture must use multiple AZs when it needs resilience to AZ failure.",

@@ -9,11 +9,11 @@ lang: ja
 topicKey: "场景题关键词索引"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-15
+updated: 2026-09-29
 tags: ["saa-c03", "场景题关键词索引", "AWS"]
 notionId: 3a6964dc-ce4a-81d7-bfeb-ed10071385bc
 notionUrl: https://app.notion.com/p/3a6964dcce4a81d7bfebed10071385bc
-notionUpdated: "2026-08-13T00:40:48.369Z"
+notionUpdated: "2026-09-28T08:57:48.335Z"
 ---
 
 ## シナリオ判断の軸
@@ -75,3 +75,13 @@ notionUpdated: "2026-08-13T00:40:48.369Z"
 | Allow があるのに Deny | Explicit Deny / Boundary / SCP | Allow の無条件追加 |
 | Region 切替後に Resource が見えない | Account、Region、Describe Permission | 自動削除と判断 |
 | Temporary API Credentials | Access Key ID + Secret + Session Token | Console Password |
+
++## 追加 Keyword
+
+- 固定 Ingress IP + HTTP Content Routing → NLB → ALB。
+- Private S3 + CloudFront → OAC + Bucket Policy。
+- Lambda Cold Start → Provisioned Concurrency または対応時の SnapStart。Reserved Concurrency は Pre-warm しません。
+- Inbound 22 なしで Private EC2 運用 → Session Manager。
+- Cassandra CQL 互換で Cluster 運用不要 → Amazon Keyspaces。
+- 双方向 Hybrid DNS → Inbound + Outbound Endpoint + Resolver Rule。
+- Spot の Price / Interruption Risk → price-capacity-optimized + 複数 Instance Type / AZ。

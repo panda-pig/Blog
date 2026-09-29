@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS IAM"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-08-25
+updated: 2026-09-29
 tags: ["security", "AWS IAM", "AWS"]
 notionId: 3a6964dc-ce4a-814c-981d-d23eb8d66e71
 notionUrl: https://app.notion.com/p/3a6964dcce4a814c981dd23eb8d66e71
-notionUpdated: "2026-08-25T07:25:28.538Z"
+notionUpdated: "2026-09-27T02:41:03.551Z"
 ---
 
 ## In one sentence
@@ -76,3 +76,10 @@ Last-accessed data is not a complete real-time audit log. Before removing permis
 Use IAM Identity Center / federation for people and roles for workloads on AWS. Keep long-term keys only for compatibility, rotating in the order create, update and verify, deactivate, then delete.
 
 Credentials Report is an account-level CSV with a root-account row and IAM-user password, MFA, two access keys, signing-certificate, and last-use/rotation data. It excludes role temporary credentials and service-specific credentials. Access Advisor shows service/action last-accessed data and permission sources for users, groups, roles, and policies.
+
++## Update: identities, roles, and denial paths
+
+- Prefer federation/IAM Identity Center for people and roles for workloads. Keep long-term access keys only for compatibility cases that cannot use temporary credentials.
+- A trust policy decides who can assume a role; a permissions policy decides what the resulting session can do. EC2 receives a role through an instance profile.
+- Troubleshoot AccessDenied from the current principal and action, then evaluate allows, explicit denies, resources, conditions, permission boundaries, and SCPs.
+- Policy wildcards widen the authorization surface; refine least privilege continuously with CloudTrail, Access Analyzer, and actual usage.

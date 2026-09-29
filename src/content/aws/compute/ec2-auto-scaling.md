@@ -8,11 +8,11 @@ kind: service
 lang: zh
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["Compute","Auto Scaling","SAA-C03"]
 notionId: 3a6964dc-ce4a-811a-bc62-e247c6def362
 notionUrl: https://app.notion.com/p/3a6964dcce4a811abc62e247c6def362
-notionUpdated: "2026-07-30T04:28:45.501Z"
+notionUpdated: "2026-09-27T06:02:13.109Z"
 ---
 
 ## 基本信息
@@ -90,3 +90,10 @@ ELB 管流量，ASG 管容量；ASG 的核心是 Min ≤ Desired ≤ Max。
 
 - [EC2 Auto Scaling 容量边界](https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-capacity-limits.html)
 - [Target Tracking Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html)
+
++## 本轮补充：健康、Warmup 与缩容
+
+- Launch Template 定义实例配置；ASG 定义 Subnet / AZ、Min / Desired / Max、健康检查与扩缩策略。
+- Registered 不等于 Healthy，ASG InService 也不等于 Target Group Healthy；需要 ELB Health Check Integration 才能让应用层失败触发替换。
+- Grace Period 防止新实例过早判坏，Warmup 防止未完全就绪的容量扭曲指标，Deregistration Delay 保护 In-flight Work。
+- Target Tracking 维持指标目标，Step 按超标程度动作，Scheduled 按已知时间，Predictive 根据周期历史提前扩容。

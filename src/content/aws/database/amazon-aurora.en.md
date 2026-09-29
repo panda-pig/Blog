@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-09-29
 tags: [Database, Relational, Multi-AZ]
 notionId: 3a6964dc-ce4a-8118-949e-f11c86e47043
 notionUrl: https://app.notion.com/p/3a6964dcce4a8118949ef11c86e47043
-notionUpdated: "2026-07-30T04:28:49.028Z"
+notionUpdated: "2026-09-28T08:57:43.843Z"
 ---
 
 ## Basic Information
@@ -54,3 +54,11 @@ notionUpdated: "2026-07-30T04:28:49.028Z"
 ## Related services
 
 RDS, Global Database, AWS Backup, DMS, Secrets Manager.
+
++## Update: endpoints, scaling, and recovery
+
+- The writer/cluster endpoint handles reads, writes, DDL, and transactions; the reader endpoint is a common entry for read traffic.
+- Aurora Replica Auto Scaling adjusts replica count from metrics such as reader CPU and connections.
+- A Global Database writes in the primary Region and serves global reads and regional DR from secondary Regions.
+- Backtrack is an Aurora MySQL rewind feature enabled at creation; it does not replace backup or PITR.
+- Database cloning uses copy-on-write to create fast, writable development and test clusters.

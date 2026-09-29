@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-09-29
 tags: [Database, Cache, Performance]
 notionId: 3a6964dc-ce4a-819f-a367-c7390c1af894
 notionUrl: https://app.notion.com/p/3a6964dcce4a819fa367c7390c1af894
-notionUpdated: "2026-07-30T04:28:56.104Z"
+notionUpdated: "2026-09-28T08:57:41.942Z"
 ---
 
 ## Basic Information
@@ -54,3 +54,10 @@ notionUpdated: "2026-07-30T04:28:56.104Z"
 ## Related services
 
 RDS, Aurora, DAX, CloudFront, EC2, Lambda.
+
++## Update: caching patterns and security
+
+- With cache-aside, the application reads the database on a miss and fills the cache. Write-through updates the cache when primary data changes.
+- TTLs, invalidation, jitter, and request coalescing reduce stale data and cache stampedes.
+- Redis OSS/Valkey supports replicas, failover, sorted sets, and richer structures; Memcached is simpler for horizontally sharded ephemeral caches.
+- RBAC provides finer authorization than one AUTH token; production designs also need encryption and subnet/security-group isolation.

@@ -9,11 +9,11 @@ lang: ja
 topicKey: "Amazon SQS"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-09-29
 tags: ["messaging","Amazon SQS","AWS"]
 notionId: 3a6964dc-ce4a-81ba-bf24-f388c5cddd42
 notionUrl: https://app.notion.com/p/3a6964dcce4a81babf24f388c5cddd42
-notionUpdated: "2026-07-23T07:21:16.024Z"
+notionUpdated: "2026-09-28T06:40:06.316Z"
 ---
 
 ## 基本情報
@@ -40,3 +40,10 @@ notionUpdated: "2026-07-23T07:21:16.024Z"
 ## 試験での判断
 
 > DLQ、再試行、冪等な Consumer、適切な Retention / Visibility 設定が重要。
+
++## 追加：Polling、Ordering、Idempotency
+
+- Long Polling は最大 20 秒待機して空 Response と API Cost を減らしますが、Visibility Timeout は延長しません。
+- FIFO の Message Group ID は順序境界で、Group 内は厳密な順序、Group 間は並列処理できます。
+- Deduplication ID は Producer 重複、Group ID は順序と並列性を扱います。Consumer は At-least-once Delivery に対して Idempotent にします。
+- Visibility Timeout、Retry、DLQ、Redrive Policy を一緒に設計します。

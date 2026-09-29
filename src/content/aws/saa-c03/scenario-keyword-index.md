@@ -9,11 +9,11 @@ lang: zh
 topicKey: "场景题关键词索引"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-15
+updated: 2026-09-29
 tags: ["saa-c03", "场景题关键词索引", "AWS"]
 notionId: 3a6964dc-ce4a-81d7-bfeb-ed10071385bc
 notionUrl: https://app.notion.com/p/3a6964dcce4a81d7bfebed10071385bc
-notionUpdated: "2026-08-13T00:40:48.369Z"
+notionUpdated: "2026-09-28T08:57:48.335Z"
 ---
 
 ## 场景题判断维度
@@ -71,3 +71,13 @@ notionUpdated: "2026-08-13T00:40:48.369Z"
 | Policy 看似允许但被拒绝 | Explicit Deny / Boundary / SCP | 继续增加 Allow |
 | 切换 Region 后资源不见 | 核对 Account、Region、Describe 权限 | 资源被自动删除 |
 | API 临时凭证 | Access Key ID + Secret + Session Token | Console Password |
+
++## 新增关键词速判
+
+- 固定入站 IP + HTTP 内容路由 → NLB → ALB。
+- 私有 S3 + CloudFront → OAC + Bucket Policy。
+- Lambda Cold Start → Provisioned Concurrency 或受支持场景的 SnapStart；Reserved Concurrency 不预热。
+- 私有 EC2 运维且不开放 22 → Session Manager。
+- Cassandra CQL 兼容且不运维集群 → Amazon Keyspaces。
+- DNS 双向 Hybrid → Inbound Endpoint + Outbound Endpoint + Resolver Rule。
+- Spot 兼顾价格与中断风险 → price-capacity-optimized + 多 Instance Type / AZ。

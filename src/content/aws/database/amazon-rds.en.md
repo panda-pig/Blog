@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-30
+updated: 2026-09-29
 tags: [Database, Relational, SAA-C03]
 notionId: 3a6964dc-ce4a-81a2-9c3d-ebba79e9df68
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a29c3debba79e9df68
-notionUpdated: "2026-07-29T08:10:20.563Z"
+notionUpdated: "2026-09-28T08:57:41.133Z"
 ---
 
 ## Basic Information
@@ -54,3 +54,11 @@ notionUpdated: "2026-07-29T08:10:20.563Z"
 ## Related services
 
 Aurora, DMS, AWS Backup, Secrets Manager, KMS, CloudWatch.
+
++## Update: availability, connections, and recovery
+
+- A Multi-AZ DB instance uses a synchronous standby for failover. A read replica scales reads and can be promoted independently.
+- A Multi-AZ DB cluster spans three AZs and combines high availability with readable replicas.
+- RDS Proxy uses connection pooling and multiplexing to absorb Lambda connection storms; it is not a query cache.
+- Storage Auto Scaling increases allocated storage but does not automatically shrink it.
+- IAM DB authentication replaces long-term passwords with short-lived SigV4 tokens for supported engines, while database-user mapping still applies.

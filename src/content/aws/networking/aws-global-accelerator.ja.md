@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Global Accelerator"
 frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["networking","AWS Global Accelerator","AWS"]
 notionId: 3a6964dc-ce4a-814f-9602-eca85431f9f2
 notionUrl: https://app.notion.com/p/3a6964dcce4a814f9602eca85431f9f2
-notionUpdated: "2026-07-30T04:29:19.082Z"
+notionUpdated: "2026-09-28T05:30:48.778Z"
 ---
 
 ## 基本情報
@@ -40,3 +40,9 @@ notionUpdated: "2026-07-30T04:29:19.082Z"
 ## 試験での判断
 
 > HTTP キャッシュは CloudFront、グローバル経路最適化と固定入口 IP は Global Accelerator。
+
++## 追加：CloudFront との境界
+
+- Global Accelerator は 2 つの Static Anycast IP を提供し、TCP / UDP を早期に AWS Global Network へ入れ、Endpoint Health と Weight で Region を選びます。
+- Content Cache や HTTP Path 理解はなく、Cache、Edge WAF、HTTP 配信には CloudFront を使います。
+- Route 53 は DNS Answer、Global Accelerator は Connection Entry と Network Path を最適化します。既存 Connection は DNS 変更だけでは移動しません。

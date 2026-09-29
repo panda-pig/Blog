@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon Kinesis Data Streams & Data Firehose"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["messaging","Amazon Kinesis Data Streams & Data Firehose","AWS"]
 notionId: 3a6964dc-ce4a-8106-bfc9-db1375ab325d
 notionUrl: https://app.notion.com/p/3a6964dcce4a8106bfc9db1375ab325d
-notionUpdated: "2026-07-30T08:01:42.663Z"
+notionUpdated: "2026-09-28T06:40:09.985Z"
 ---
 
 ## 基本信息
@@ -49,3 +49,10 @@ Data Streams 负责接收、保留和回放实时数据流；Data Firehose 负�
 ## 重点记忆
 
 **Streams 负责流与回放；Firehose 负责缓冲与交付。**
+
++## 本轮补充：Streams 与 Firehose
+
+- Kinesis Data Streams 是可重放实时流，Partition Key 决定 Shard，同一 Shard 内有序，保留期可扩展。
+- Shared Throughput 与 Enhanced Fan-Out 的消费者吞吐模型不同。
+- Amazon Data Firehose 是面向目标的近实时托管投递，会按大小或时间缓冲，并可转换、压缩、改格式。
+- Firehose 投递 Redshift 时先写 S3 再由 COPY 加载；它不是让多个消费者任意重放的流。

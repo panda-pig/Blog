@@ -9,11 +9,11 @@ lang: en
 topicKey: "场景题关键词索引"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-15
+updated: 2026-09-29
 tags: ["saa-c03", "场景题关键词索引", "AWS"]
 notionId: 3a6964dc-ce4a-81d7-bfeb-ed10071385bc
 notionUrl: https://app.notion.com/p/3a6964dcce4a81d7bfebed10071385bc
-notionUpdated: "2026-08-13T00:40:48.369Z"
+notionUpdated: "2026-09-28T08:57:48.335Z"
 ---
 
 ## Decision dimensions
@@ -75,3 +75,13 @@ notionUpdated: "2026-08-13T00:40:48.369Z"
 | Allow exists but request is denied | Explicit Deny / boundary / SCP | Adding more Allow blindly |
 | Resource disappears after Region switch | Check account, Region, Describe permission | Assuming automatic deletion |
 | Temporary API credentials | Access key ID + secret + session token | Console password |
+
++## New keyword cues
+
+- Static ingress IP plus HTTP content routing → NLB → ALB.
+- Private S3 through CloudFront → OAC plus bucket policy.
+- Lambda cold starts → provisioned concurrency or SnapStart when supported; reserved concurrency does not pre-warm.
+- Operate private EC2 without inbound port 22 → Session Manager.
+- Cassandra CQL compatibility without cluster operations → Amazon Keyspaces.
+- Bidirectional hybrid DNS → inbound endpoint plus outbound endpoint and resolver rules.
+- Balance Spot price and interruption risk → price-capacity-optimized across multiple instance types and AZs.

@@ -8,11 +8,11 @@ kind: service
 lang: zh
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-09-29
 tags: [Database, Relational, Multi-AZ]
 notionId: 3a6964dc-ce4a-8118-949e-f11c86e47043
 notionUrl: https://app.notion.com/p/3a6964dcce4a8118949ef11c86e47043
-notionUpdated: "2026-07-30T04:28:49.028Z"
+notionUpdated: "2026-09-28T08:57:43.843Z"
 ---
 
 ## 基本信息
@@ -80,3 +80,11 @@ RDS 常规引擎、DynamoDB、Aurora Global Database。
 ## 关联服务
 
 RDS、Global Database、AWS Backup、DMS、Secrets Manager、CloudWatch。
+
++## 本轮补充：端点、扩展与恢复
+
+- Writer / Cluster Endpoint 用于读写、DDL 与事务；Reader Endpoint 为通用读取提供统一入口。
+- Aurora Replica Auto Scaling 根据 Reader CPU、连接等指标调整 Replica 数量。
+- Global Database 以 Primary Region 写入，Secondary Region 提供全球读取和区域级 DR。
+- Backtrack 是 Aurora MySQL 的快速倒回能力，需创建时启用，不能替代 Backup / PITR。
+- Database Clone 使用 Copy-on-Write 快速建立可读写 Dev/Test 环境。

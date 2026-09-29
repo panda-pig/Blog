@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Elastic Load Balancing"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["networking","Elastic Load Balancing","AWS"]
 notionId: 3a6964dc-ce4a-810c-87bf-c6a286d89cdf
 notionUrl: https://app.notion.com/p/3a6964dcce4a810c87bfc6a286d89cdf
-notionUpdated: "2026-07-30T08:30:21.340Z"
+notionUpdated: "2026-09-27T06:02:11.832Z"
 ---
 
 ## 基本信息
@@ -80,3 +80,10 @@ notionUpdated: "2026-07-30T08:30:21.340Z"
 ## 重点记忆
 
 ELB 管流量与健康检查，ASG 管容量；Web 路由看 ALB，高性能 TCP/UDP 看 NLB，网络设备看 GWLB。
+
++## 本轮补充：Listener、TLS 与目标状态
+
+- Listener 决定接收的 Protocol / Port，Rule 由 Priority、Condition、Action 组成，Target Group 定义后端与 Health Check。
+- SNI 在 TLS Handshake 选择 Certificate；Host Rule 在 HTTP 阶段选择 Target Group；ALPN 协商上层协议。
+- Registered、Healthy、InService 是不同状态；Load Balancer Active 也不代表应用可用。
+- Deregistration Delay 让 In-flight Work 在 Target 下线前完成；Sticky Session 不覆盖健康检查。

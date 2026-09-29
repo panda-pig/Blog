@@ -9,11 +9,11 @@ lang: en
 topicKey: "Amazon Route 53"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["networking","Amazon Route 53","AWS"]
 notionId: 3a6964dc-ce4a-812e-8b52-d74e98d40a3d
 notionUrl: https://app.notion.com/p/3a6964dcce4a812e8b52d74e98d40a3d
-notionUpdated: "2026-07-30T08:30:19.458Z"
+notionUpdated: "2026-09-27T07:53:30.305Z"
 ---
 
 ## Basic Information
@@ -40,3 +40,10 @@ notionUpdated: "2026-07-30T08:30:19.458Z"
 ## Exam takeaway
 
 > Route 53 chooses an endpoint; CloudFront caches content, and Global Accelerator routes traffic through the AWS global network.
+
++## Update: routing policies and hybrid DNS
+
+- Weighted, latency, failover, geolocation, geoproximity, IP-based, and multi-value policies select DNS answers; they are not request-level proxies.
+- An Alias can point the zone apex to supported AWS targets; a CNAME cannot be used at the apex.
+- On-premises to AWS private DNS uses an inbound Resolver endpoint; AWS to on-premises uses an outbound endpoint plus Resolver rules.
+- A health check affects answers only after association with a record or policy. Route 53 failover does not move existing connections or provide complete DR.

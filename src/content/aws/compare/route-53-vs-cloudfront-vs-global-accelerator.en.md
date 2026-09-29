@@ -9,11 +9,11 @@ lang: en
 topicKey: "Route 53 vs CloudFront vs Global Accelerator"
 frequency: "Study summary"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-09-29
 tags: ["compare","Route 53 vs CloudFront vs Global Accelerator","AWS"]
 notionId: 3a6964dc-ce4a-8181-9078-e6e673a1ec22
 notionUrl: https://app.notion.com/p/3a6964dcce4a81819078e6e673a1ec22
-notionUpdated: "2026-07-27T05:41:45.348Z"
+notionUpdated: "2026-09-28T05:30:47.518Z"
 ---
 
 ## In one sentence
@@ -29,3 +29,10 @@ notionUpdated: "2026-07-27T05:41:45.348Z"
 ## Exam takeaway
 
 > These services can be combined because they solve DNS, content delivery, and network-path problems at different layers.
+
++## Additional decision dimensions
+
+- Route 53 selects answers at DNS time and is affected by TTL and resolver caches.
+- CloudFront is an HTTP/HTTPS CDN that caches content and integrates edge features such as OAC, WAF, Lambda@Edge, and Functions.
+- Global Accelerator provides static Anycast IPs and optimizes TCP/UDP paths into AWS without caching content.
+- They can be combined: Route 53 → CloudFront or Global Accelerator → regional ALB/NLB and backends.

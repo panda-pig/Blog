@@ -9,11 +9,11 @@ lang: zh
 topicKey: "SAA 考前速查"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-15
+updated: 2026-09-29
 tags: ["saa-c03", "SAA 考前速查", "AWS"]
 notionId: 3a6964dc-ce4a-817c-860b-f61fe547c268
 notionUrl: https://app.notion.com/p/3a6964dcce4a817c860bf61fe547c268
-notionUpdated: "2026-08-13T00:40:49.812Z"
+notionUpdated: "2026-09-28T08:57:47.312Z"
 ---
 
 ## 复习顺序
@@ -43,3 +43,12 @@ notionUpdated: "2026-08-13T00:40:49.812Z"
 - 能解释 Implicit Deny、Explicit Deny、Managed / Inline / Resource-based Policy 与 Principal。
 - 能区分 Password Policy、MFA、长期 Access Key 与包含 Session Token 的临时凭证。
 - 看不到资源时能按 Account → Identity → Region → Permission → Filter / State 排查。
+
++## 本轮考前补充
+
+1. 把 **HA、Read Scaling、Cache、Backup / DR** 分开，不要用一个机制回答四个问题。
+2. ELB Active、ASG InService、Target Registered、Target Healthy 是不同状态。
+3. DNS Policy 选择 Answer，不是请求级代理；TTL 会让切换延迟。
+4. 至少一次投递要求 Consumer 幂等；Retry 必须配合 DLQ、可观察性与毒消息处理。
+5. Savings Plans / Regional RI 是价格机制，Capacity Reservation 是容量机制，Dedicated Host 是隔离与主机控制。
+6. Serverless 减少服务器运维，但不会消除配额、冷启动、状态、重试和成本设计。

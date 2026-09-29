@@ -8,11 +8,11 @@ kind: service
 lang: zh
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-09-29
 tags: [Database, Cache, Performance]
 notionId: 3a6964dc-ce4a-819f-a367-c7390c1af894
 notionUrl: https://app.notion.com/p/3a6964dcce4a819fa367c7390c1af894
-notionUpdated: "2026-07-30T04:28:56.104Z"
+notionUpdated: "2026-09-28T08:57:41.942Z"
 ---
 
 ## 基本信息
@@ -77,3 +77,10 @@ notionUpdated: "2026-07-30T04:28:56.104Z"
 ## 关联服务
 
 RDS、Aurora、DAX、CloudFront、MemoryDB、EC2、Lambda。
+
++## 本轮补充：缓存模式与安全
+
+- Cache-aside 在 Miss 时由应用读取数据库并回填；Write-through 在写入主数据时同步更新缓存。
+- TTL、失效策略、随机抖动与 Request Coalescing 用于降低 Stale Data 和 Cache Stampede。
+- Redis OSS / Valkey 支持 Replica、Failover、Sorted Set 等丰富结构；Memcached 更简单，适合可横向分片的纯缓存。
+- RBAC 提供比单一 AUTH Token 更细粒度的授权；生产环境还应使用加密与 Subnet / SG 隔离。

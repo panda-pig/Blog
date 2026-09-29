@@ -9,11 +9,11 @@ lang: ja
 topicKey: "Amazon CloudFront"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["networking","Amazon CloudFront","AWS"]
 notionId: 3a6964dc-ce4a-8198-a643-ce1e9079cf9c
 notionUrl: https://app.notion.com/p/3a6964dcce4a8198a643ce1e9079cf9c
-notionUpdated: "2026-07-30T04:29:21.974Z"
+notionUpdated: "2026-09-28T08:50:26.931Z"
 ---
 
 ## 基本情報
@@ -40,3 +40,10 @@ notionUpdated: "2026-07-30T04:29:21.974Z"
 ## 試験での判断
 
 > Cache Policy、TTL、Invalidation、HTTPS、WAF、Signed URL / Cookie が主要設計点。
+
++## 追加：Private Origin と Edge Control
+
+- Private S3 Origin は Origin Access Control + Bucket Policy を使い、S3 Website Endpoint は OAC 非対応です。
+- VPC Origin は CloudFront から VPC 内 ALB、NLB、EC2 へ Private 接続し、Backend の直接公開を不要にします。
+- Cache Invalidation は TTL 前に Path を無効化し、次の Request で Origin から再取得します。
+- Geo Restriction は Country 単位の Allow / Block で、細粒度制御は WAF や Application Authorization と組み合わせます。

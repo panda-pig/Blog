@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Lambda"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["compute","AWS Lambda","AWS"]
 notionId: 3a6964dc-ce4a-81f9-8d71-f17f423387eb
 notionUrl: https://app.notion.com/p/3a6964dcce4a81f98d71f17f423387eb
-notionUpdated: "2026-07-30T04:28:44.585Z"
+notionUpdated: "2026-09-28T07:51:36.812Z"
 ---
 
 ## Basic Information
@@ -40,3 +40,10 @@ notionUpdated: "2026-07-30T04:28:44.585Z"
 ## Exam takeaway
 
 > For SQS integrations, remember execution roles, batch processing, idempotency, visibility timeout, retries, and DLQs.
+
++## Update: concurrency and startup latency
+
+- **Reserved concurrency** reserves and caps function concurrency. Setting it to zero continuously throttles the function, but does not pre-initialize environments.
+- **Provisioned concurrency** keeps a configured number of environments initialized to reduce cold starts. It requires a version or alias and adds cost.
+- **SnapStart** snapshots initialized memory and disk state for a published version and restores it on invocation; it is not a concurrency quota.
+- Treat the regional concurrency pool, function caps, startup latency, retries, and downstream capacity as separate design concerns.

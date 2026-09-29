@@ -9,11 +9,11 @@ lang: ja
 topicKey: "SAA 考前速查"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-15
+updated: 2026-09-29
 tags: ["saa-c03", "SAA 考前速查", "AWS"]
 notionId: 3a6964dc-ce4a-817c-860b-f61fe547c268
 notionUrl: https://app.notion.com/p/3a6964dcce4a817c860bf61fe547c268
-notionUpdated: "2026-08-13T00:40:49.812Z"
+notionUpdated: "2026-09-28T08:57:47.312Z"
 ---
 
 ## 復習順序
@@ -46,3 +46,12 @@ notionUpdated: "2026-08-13T00:40:49.812Z"
 - Implicit Deny、Explicit Deny、Managed / Inline / Resource-based Policy、Principal を説明できる。
 - Password Policy、MFA、長期 Access Key、Session Token を含む Temporary Credentials を区別できる。
 - Resource 可視性を Account → Identity → Region → Permission → Filter / State で調査できる。
+
++## 最新の試験補足
+
+1. **HA、Read Scaling、Cache、Backup / DR** を分け、1 つの仕組みで全部を答えません。
+2. ELB Active、ASG InService、Target Registered、Target Healthy は別状態です。
+3. DNS Policy は Answer を選び、Request を Proxy しません。TTL が切替を遅らせます。
+4. At-least-once Delivery では Consumer の Idempotency、DLQ、Observability、Poison Message 対策が必要です。
+5. Savings Plans / Regional RI は価格、Capacity Reservation は容量、Dedicated Host は分離と Host Control です。
+6. Serverless でも Quota、Cold Start、State、Retry、Cost の設計は残ります。

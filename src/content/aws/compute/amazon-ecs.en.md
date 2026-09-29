@@ -9,11 +9,11 @@ lang: en
 topicKey: "Amazon ECS"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["compute","Amazon ECS","AWS"]
 notionId: 3a6964dc-ce4a-8132-9a5c-c4a14b839c97
 notionUrl: https://app.notion.com/p/3a6964dcce4a81329a5cc4a14b839c97
-notionUpdated: "2026-07-30T08:30:05.385Z"
+notionUpdated: "2026-09-28T07:43:11.818Z"
 ---
 
 ## Basic Information
@@ -40,3 +40,9 @@ notionUpdated: "2026-07-30T08:30:05.385Z"
 ## Exam takeaway
 
 > A common path is code → image → ECR → Task Definition → ECS Service → ALB and Auto Scaling.
+
++## Update: roles and capacity providers
+
+- A **task role** authorizes application code in the container. A **task execution role** lets the ECS agent pull ECR images, publish logs, and retrieve startup secrets.
+- A capacity provider defines whether tasks obtain compute from Fargate, Fargate Spot, or an Auto Scaling group.
+- In a strategy, Base is the minimum initial allocation and Weight controls relative distribution of the remaining tasks; neither is a fixed percentage.

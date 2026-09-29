@@ -9,11 +9,11 @@ lang: en
 topicKey: "SAA 考前速查"
 frequency: "阶段性总结"
 date: 2026-08-01
-updated: 2026-08-15
+updated: 2026-09-29
 tags: ["saa-c03", "SAA 考前速查", "AWS"]
 notionId: 3a6964dc-ce4a-817c-860b-f61fe547c268
 notionUrl: https://app.notion.com/p/3a6964dcce4a817c860bf61fe547c268
-notionUpdated: "2026-08-13T00:40:49.812Z"
+notionUpdated: "2026-09-28T08:57:47.312Z"
 ---
 
 ## Review order
@@ -46,3 +46,12 @@ notionUpdated: "2026-08-13T00:40:49.812Z"
 - Explain implicit Deny, explicit Deny, managed / inline / resource-based policies, and Principal.
 - Distinguish password policy, MFA, long-term access keys, and temporary credentials with a session token.
 - Troubleshoot visibility through account → identity → Region → permission → filter / state.
+
++## Latest exam review
+
+1. Separate **HA, read scaling, caching, and backup/DR**; one mechanism does not solve all four.
+2. ELB Active, ASG InService, target Registered, and target Healthy are different states.
+3. DNS policies select answers rather than proxy requests, and TTL delays changes.
+4. At-least-once delivery requires idempotent consumers; retries need DLQs, observability, and poison-message handling.
+5. Savings Plans/Regional RIs address price, Capacity Reservations address capacity, and Dedicated Hosts address isolation and host control.
+6. Serverless reduces server operations but not quota, cold-start, state, retry, and cost design.

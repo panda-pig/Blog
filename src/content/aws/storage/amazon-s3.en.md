@@ -8,11 +8,11 @@ kind: service
 lang: en
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-07-31
+updated: 2026-09-29
 tags: [Storage, Object Storage, SAA-C03]
 notionId: 3a6964dc-ce4a-8167-bdc7-d3b96eb969dc
 notionUrl: https://app.notion.com/p/3a6964dcce4a8167bdc7d3b96eb969dc
-notionUpdated: "2026-07-30T04:27:36.877Z"
+notionUpdated: "2026-09-28T04:42:18.716Z"
 ---
 
 ## Basic Information
@@ -54,3 +54,11 @@ notionUpdated: "2026-07-30T04:27:36.877Z"
 ## Related services
 
 CloudFront, IAM, KMS, CloudTrail, AWS Backup.
+
++## Update: protection, delivery, and bulk operations
+
+- Versioning, replication, Object Lock, legal holds, and MFA Delete protect different failure paths; replication is not backup.
+- Deliver a private S3 origin through CloudFront with OAC and a bucket policy. S3 website endpoints do not support OAC and provide HTTP only.
+- S3 event notifications can target SNS, SQS Standard, and Lambda; use EventBridge for richer filtering, replay, or FIFO delivery.
+- Batch Operations handles large sets of existing objects; Batch Replication backfills older or failed objects.
+- SSE-KMS requires both S3 and KMS permissions, while S3 Bucket Keys can reduce KMS requests and cost.

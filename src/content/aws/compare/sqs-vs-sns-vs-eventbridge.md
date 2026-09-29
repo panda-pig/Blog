@@ -9,11 +9,11 @@ lang: zh
 topicKey: "SQS vs SNS vs EventBridge"
 frequency: "高频对比"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-09-29
 tags: ["compare","SQS vs SNS vs EventBridge","AWS"]
 notionId: 3a6964dc-ce4a-81fb-83ee-e98070269337
 notionUrl: https://app.notion.com/p/3a6964dcce4a81fb83eee98070269337
-notionUpdated: "2026-07-23T07:24:12.397Z"
+notionUpdated: "2026-09-28T06:40:13.513Z"
 ---
 
 ## 一句话结论
@@ -51,3 +51,10 @@ SQS → Lambda：队列削峰，Lambda 批量消费。
 - SNS 不等于持久队列。
 - EventBridge 不主要解决积压缓冲。
 - 三者经常组合，并非只能选择一个。
+
++## 新增判断维度
+
+- SQS 是可积压、由消费者拉取的 Queue，用于缓冲、背压与失败隔离。
+- SNS 是即时 Push Fan-out，适合一条消息同时推送多个订阅者。
+- EventBridge 按事件内容路由到多个 Target，并支持 Archive / Replay 与 SaaS 集成。
+- 常见组合是 SNS / EventBridge → SQS：前者负责分发或路由，后者为每个消费者提供独立缓冲。

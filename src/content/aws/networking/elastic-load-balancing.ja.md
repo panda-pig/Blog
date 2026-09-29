@@ -9,11 +9,11 @@ lang: ja
 topicKey: "Elastic Load Balancing"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-09-29
 tags: ["networking","Elastic Load Balancing","AWS"]
 notionId: 3a6964dc-ce4a-810c-87bf-c6a286d89cdf
 notionUrl: https://app.notion.com/p/3a6964dcce4a810c87bfc6a286d89cdf
-notionUpdated: "2026-07-30T08:30:21.340Z"
+notionUpdated: "2026-09-27T06:02:11.832Z"
 ---
 
 ## 基本情報
@@ -40,3 +40,10 @@ notionUpdated: "2026-07-30T08:30:21.340Z"
 ## 試験での判断
 
 > Load Balancer は通信を分散し、Auto Scaling はターゲット容量を変える。
+
++## 追加：Listener、TLS、Target State
+
+- Listener は Protocol / Port、Rule は Priority・Condition・Action、Target Group は Backend と Health Check を定義します。
+- SNI は TLS Handshake で Certificate、Host Rule は HTTP で Target Group、ALPN は Application Protocol を選びます。
+- Registered、Healthy、InService は別の状態で、Load Balancer の Active も Application 可用性を保証しません。
+- Deregistration Delay は In-flight Work を保護し、Stickiness は Health Check を上書きしません。
