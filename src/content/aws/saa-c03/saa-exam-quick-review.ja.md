@@ -47,7 +47,7 @@ notionUpdated: "2026-09-28T08:57:47.312Z"
 - Password Policy、MFA、長期 Access Key、Session Token を含む Temporary Credentials を区別できる。
 - Resource 可視性を Account → Identity → Region → Permission → Filter / State で調査できる。
 
-+## 最新の試験補足
+## 最新の試験補足
 
 1. **HA、Read Scaling、Cache、Backup / DR** を分け、1 つの仕組みで全部を答えません。
 2. ELB Active、ASG InService、Target Registered、Target Healthy は別状態です。

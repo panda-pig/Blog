@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T07:43:11.818Z"
 
 > A common path is code → image → ECR → Task Definition → ECS Service → ALB and Auto Scaling.
 
-+## Update: roles and capacity providers
+## Update: roles and capacity providers
 
 - A **task role** authorizes application code in the container. A **task execution role** lets the ECS agent pull ECR images, publish logs, and retrieve startup secrets.
 - A capacity provider defines whether tasks obtain compute from Fargate, Fargate Spot, or an Auto Scaling group.

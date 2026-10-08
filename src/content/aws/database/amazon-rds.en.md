@@ -55,7 +55,7 @@ notionUpdated: "2026-09-28T08:57:41.133Z"
 
 Aurora, DMS, AWS Backup, Secrets Manager, KMS, CloudWatch.
 
-+## Update: availability, connections, and recovery
+## Update: availability, connections, and recovery
 
 - A Multi-AZ DB instance uses a synchronous standby for failover. A read replica scales reads and can be promoted independently.
 - A Multi-AZ DB cluster spans three AZs and combines high availability with readable replicas.

@@ -55,7 +55,7 @@ notionUpdated: "2026-09-28T08:57:42.791Z"
 
 DAX, Lambda, API Gateway, Streams, Global Tables, AWS Backup.
 
-+## Update: streams and access patterns
+## Update: streams and access patterns
 
 - DynamoDB Streams captures item creates, updates, and deletes in order and retains records for 24 hours.
 - Evaluate Kinesis Data Streams for DynamoDB when longer retention or more independent stream consumers are required.

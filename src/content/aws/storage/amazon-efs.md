@@ -111,7 +111,7 @@ Linux、NFS、多台 EC2、共享目录、自动扩缩 → EFS。
 
 **要挂载共享 Linux 目录 → EFS；要通过 API 存对象 → S3。**
 
-+## 本轮补充：网络入口与吞吐
+## 本轮补充：网络入口与吞吐
 
 - EFS Mount Target 是 VPC / AZ 内的网络入口，通常每个业务 AZ 一个；Security Group 允许客户端来源的 NFS TCP 2049。
 - Regional EFS 跨 AZ 冗余；EFS One Zone 成本较低，但没有跨 AZ 数据冗余。

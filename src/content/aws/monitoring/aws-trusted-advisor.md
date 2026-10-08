@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Trusted Advisor"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-10-08
 tags: ["monitoring", "AWS Trusted Advisor", "AWS"]
 notionId: 3a6964dc-ce4a-8137-9131-d20e8b6589b3
 notionUrl: https://app.notion.com/p/3a6964dcce4a81379131d20e8b6589b3
-notionUpdated: "2026-07-31T08:18:16.390Z"
+notionUpdated: "2026-10-08T05:04:42.729Z"
 ---
 
 ## 基本信息
@@ -60,3 +60,9 @@ notionUpdated: "2026-07-31T08:18:16.390Z"
 **成本、性能、安全、容错、配额的官方体检建议 → Trusted Advisor。**
 ## 关联服务
 AWS Support / AWS Config / AWS Well-Architected Tool / AWS Service Quotas / Amazon CloudWatch
+
+## 本轮补充：检查范围与自动化边界
+
+- Trusted Advisor 提供账户与资源层面的最佳实践检查，覆盖成本、性能、安全、容错、服务限制和运营卓越等类别。
+- 可用检查项和刷新能力与支持计划及 API 权限有关；不要把所有检查都假定为任意账户可实时使用。
+- Trusted Advisor 给出线索，Well-Architected 评估完整 Workload，Config 检查配置合规，三者不能互相替代。

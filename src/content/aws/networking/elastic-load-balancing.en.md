@@ -41,7 +41,7 @@ notionUpdated: "2026-09-27T06:02:11.832Z"
 
 > Load balancing distributes traffic; Auto Scaling changes target capacity.
 
-+## Update: listeners, TLS, and target state
+## Update: listeners, TLS, and target state
 
 - A listener defines the accepted protocol and port; a rule combines priority, conditions, and actions; a target group defines backends and health checks.
 - SNI selects a certificate during the TLS handshake, host rules select target groups at HTTP time, and ALPN negotiates an application protocol.

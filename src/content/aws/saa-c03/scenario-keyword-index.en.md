@@ -76,7 +76,7 @@ notionUpdated: "2026-09-28T08:57:48.335Z"
 | Resource disappears after Region switch | Check account, Region, Describe permission | Assuming automatic deletion |
 | Temporary API credentials | Access key ID + secret + session token | Console password |
 
-+## New keyword cues
+## New keyword cues
 
 - Static ingress IP plus HTTP content routing → NLB → ALB.
 - Private S3 through CloudFront → OAC plus bucket policy.

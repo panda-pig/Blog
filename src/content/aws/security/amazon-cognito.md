@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T07:51:39.985Z"
 
 Amazon Cognito = 应用用户身份服务
 
-+## 本轮补充：User Pool 与 Identity Pool
+## 本轮补充：User Pool 与 Identity Pool
 
 - User Pool 是应用用户目录与 Authentication，完成 Sign-up / Sign-in 并返回 ID、Access、Refresh Token。
 - Identity Pool 将 User Pool 或外部 IdP 身份换成受 IAM Role 限制的临时 AWS Credentials。

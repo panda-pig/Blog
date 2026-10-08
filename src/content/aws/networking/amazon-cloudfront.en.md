@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T08:50:26.931Z"
 
 > Cache policies, TTLs, invalidations, HTTPS, WAF, and signed URLs or cookies are common design points.
 
-+## Update: private origins and edge controls
+## Update: private origins and edge controls
 
 - Use Origin Access Control plus a bucket policy for a private S3 origin; S3 website endpoints do not support OAC.
 - A VPC origin lets CloudFront connect privately to an ALB, NLB, or EC2 instance without exposing the backend directly to the Internet.

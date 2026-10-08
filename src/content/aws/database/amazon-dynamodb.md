@@ -89,7 +89,7 @@ Partition Key 决定数据分布；良好的高基数键设计有助于均匀流
 
 DAX、Lambda、API Gateway、Streams、Global Tables、AWS Backup、Gateway VPC Endpoint。
 
-+## 本轮补充：Streams 与访问模式
+## 本轮补充：Streams 与访问模式
 
 - DynamoDB Streams 按时间顺序捕获 Item 的 Create / Update / Delete，记录保留 24 小时。
 - 需要更长保留或更多独立流式消费者时，评估 Kinesis Data Streams for DynamoDB。

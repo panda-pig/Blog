@@ -59,7 +59,7 @@ notionUpdated: "2026-09-27T05:20:09.103Z"
 
 EC2、EBS Snapshot、DLM、AWS Backup、KMS。
 
-+## 追加：Volume Type、Encryption、Recovery
+## 追加：Volume Type、Encryption、Recovery
 
 - gp3 は Capacity、IOPS、Throughput を比較的独立して設定でき、gp2 の Baseline IOPS は Size と連動します。
 - io2 は持続的な高 IOPS・低 Latency 向けですが EC2 EBS Bandwidth の制限を受け、st1 / sc1 は Boot Volume にできません。

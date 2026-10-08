@@ -41,7 +41,7 @@ notionUpdated: "2026-09-27T07:53:30.305Z"
 
 > Route 53 chooses an endpoint; CloudFront caches content, and Global Accelerator routes traffic through the AWS global network.
 
-+## Update: routing policies and hybrid DNS
+## Update: routing policies and hybrid DNS
 
 - Weighted, latency, failover, geolocation, geoproximity, IP-based, and multi-value policies select DNS answers; they are not request-level proxies.
 - An Alias can point the zone apex to supported AWS targets; a CNAME cannot be used at the apex.

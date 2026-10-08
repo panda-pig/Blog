@@ -91,7 +91,7 @@ ELB 管流量，ASG 管容量；ASG 的核心是 Min ≤ Desired ≤ Max。
 - [EC2 Auto Scaling 容量边界](https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-capacity-limits.html)
 - [Target Tracking Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html)
 
-+## 本轮补充：健康、Warmup 与缩容
+## 本轮补充：健康、Warmup 与缩容
 
 - Launch Template 定义实例配置；ASG 定义 Subnet / AZ、Min / Desired / Max、健康检查与扩缩策略。
 - Registered 不等于 Healthy，ASG InService 也不等于 Target Group Healthy；需要 ELB Health Check Integration 才能让应用层失败触发替换。

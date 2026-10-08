@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T07:51:38.751Z"
 
 AWS Step Functions = ワークフローオーケストレーション
 
-+## 追加：Orchestration の境界
+## 追加：Orchestration の境界
 
 - State Machine は Sequence、Choice、Parallel、Wait、Retry / Catch、Callback / Human Approval を表現します。
 - Step Functions は処理を編成し、Application Code 自体は実行しません。Compute は Lambda、ECS、API などが担当します。

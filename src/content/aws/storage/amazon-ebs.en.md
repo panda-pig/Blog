@@ -59,7 +59,7 @@ notionUpdated: "2026-09-27T05:20:09.103Z"
 
 EC2, EBS Snapshot, DLM, AWS Backup, KMS.
 
-+## Update: volume types, encryption, and recovery
+## Update: volume types, encryption, and recovery
 
 - gp3 separates capacity, IOPS, and throughput more independently, while gp2 baseline IOPS is tied to size.
 - io2 targets sustained high IOPS and low latency but remains limited by EC2 EBS bandwidth; st1 and sc1 cannot be boot volumes.

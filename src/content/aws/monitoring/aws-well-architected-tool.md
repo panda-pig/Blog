@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Well-Architected Tool"
 frequency: "考试频率 ⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-15
+updated: 2026-10-08
 tags: ["monitoring", "AWS Well-Architected Tool", "AWS"]
 notionId: 3a6964dc-ce4a-8113-88e9-d60dde380c0b
 notionUrl: https://app.notion.com/p/3a6964dcce4a811388e9d60dde380c0b
-notionUpdated: "2026-08-05T01:57:31.393Z"
+notionUpdated: "2026-10-08T05:04:40.813Z"
 ---
 
 ## 基本信息
@@ -57,3 +57,9 @@ notionUpdated: "2026-08-05T01:57:31.393Z"
 **六大支柱 + Workload Review + Risk + Milestone → Well-Architected Tool。**
 ## 关联服务
 AWS Well-Architected Framework / AWS Trusted Advisor / AWS Support
+
+## 本轮补充：Workload、Lens 与里程碑
+
+- Tool 用 Workload 记录架构背景和回答，用 Lens 选择评审视角，用 Milestone 保存某个时间点的评审快照。
+- High Risk Issue 与 Medium Risk Issue 是改进优先级线索，不等于自动修复或合规认证。
+- Custom Lens 可组织自定义问题，但仍要有负责人、证据、改进计划和复审节奏。

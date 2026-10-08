@@ -41,7 +41,7 @@ Manages the encryption keys used to lock and unlock data; it does not store the 
 
 AWS KMS = Manages the encryption keys used to lock and unlock data; it does not store the business data itself.
 
-+## Update: S3 encryption boundaries
+## Update: S3 encryption boundaries
 
 - SSE-S3 uses S3-managed keys. SSE-KMS requires both S3 authorization and KMS key policy/grants and creates KMS audit events and cost.
 - S3 Bucket Keys can reduce KMS request volume and cost for SSE-KMS.

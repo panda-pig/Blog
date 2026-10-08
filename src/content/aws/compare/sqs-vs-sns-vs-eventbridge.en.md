@@ -30,7 +30,7 @@ notionUpdated: "2026-09-28T06:40:13.513Z"
 
 > A common design is EventBridge or SNS for routing, with SQS queues protecting individual consumers.
 
-+## Additional decision dimensions
+## Additional decision dimensions
 
 - SQS is a poll-based queue with backlog for buffering, backpressure, and failure isolation.
 - SNS provides immediate push fan-out to multiple subscribers.

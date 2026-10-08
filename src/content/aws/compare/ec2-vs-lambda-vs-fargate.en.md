@@ -30,7 +30,7 @@ notionUpdated: "2026-09-28T07:43:18.851Z"
 
 > Decide by deployment unit, runtime duration, host control, scaling pattern, and operational responsibility.
 
-+## Additional decision dimensions
+## Additional decision dimensions
 
 - Need a full OS, specialized hardware, daemons, or workloads beyond platform limits → EC2.
 - Event-driven work of at most 15 minutes with concurrency-based scaling → Lambda; still design for cold starts and downstream capacity.

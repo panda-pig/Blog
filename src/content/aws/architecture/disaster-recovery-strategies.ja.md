@@ -9,11 +9,11 @@ lang: ja
 topicKey: "灾难恢复策略"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-10-08
 tags: ["architecture","Disaster Recovery Strategies","AWS"]
 notionId: 3a6964dc-ce4a-81a1-a460-dec79107380f
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a1a460dec79107380f
-notionUpdated: "2026-07-30T04:29:30.913Z"
+notionUpdated: "2026-10-08T01:47:42.025Z"
 ---
 
 ## 基本情報
@@ -40,3 +40,9 @@ notionUpdated: "2026-07-30T04:29:30.913Z"
 ## 試験での判断
 
 > Replication だけでは不十分で、Recovery 自動化、Failover / Failback、依存関係、Data Consistency を検証する。
+
+## 追加：4 DR Strategy と Recovery Validation
+
+- Backup & Restore、Pilot Light、Warm Standby、Multi-site Active/Active の順に常時 Resource、回復速度、Cost、運用 Complexity が増える。
+- MGN は計画 Server 移行、DRS は継続 DR／Drill／Failback、AWS Backup は Backup Plan と Recovery Point を管理する。
+- Replication は Backup ではなく、Plan 設定も復元可能性の証拠ではない。Recovery Point、Permission、KMS、Restore、Business Function を検証する。

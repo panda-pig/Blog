@@ -30,7 +30,7 @@ notionUpdated: "2026-09-28T06:40:13.513Z"
 
 > EventBridge / SNS で振り分け、各 Consumer の前に SQS を置く構成がよく使われる。
 
-+## 追加の判断軸
+## 追加の判断軸
 
 - SQS は Poll 型 Queue と Backlog で Buffer、Backpressure、Failure Isolation を提供します。
 - SNS は複数 Subscriber への即時 Push Fan-out です。

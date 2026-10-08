@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Systems Manager"
 frequency: "Exam frequency ⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-07-31
+updated: 2026-10-08
 tags: ["monitoring", "AWS Systems Manager", "AWS"]
 notionId: 3a6964dc-ce4a-8172-98e0-c06ec5cc85b8
 notionUrl: https://app.notion.com/p/3a6964dcce4a817298e0c06ec5cc85b8
-notionUpdated: "2026-07-31T04:05:11.160Z"
+notionUpdated: "2026-10-08T02:56:58.732Z"
 ---
 
 ## Basic information
@@ -40,3 +40,9 @@ Centrally manages nodes across AWS and hybrid environments and automates operati
 ## Memory hook
 
 AWS Systems Manager = Centrally manages nodes across AWS and hybrid environments and automates operations and remediation.
+
+## Update: agent-based access and operations automation
+
+- Session Manager provides controlled sessions without inbound 22 or 3389, but still requires SSM Agent, an instance role, operator IAM permissions, and outbound access to SSM.
+- Run Command executes commands at scale, Automation orchestrates multi-step operations, and Patch Manager uses patch baselines and maintenance windows.
+- A managed node does not grant every command; documents, targets, concurrency, error thresholds, and logging remain explicit configuration.

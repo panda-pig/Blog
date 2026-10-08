@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T08:50:26.931Z"
 
 > Cache Policy、TTL、Invalidation、HTTPS、WAF、Signed URL / Cookie が主要設計点。
 
-+## 追加：Private Origin と Edge Control
+## 追加：Private Origin と Edge Control
 
 - Private S3 Origin は Origin Access Control + Bucket Policy を使い、S3 Website Endpoint は OAC 非対応です。
 - VPC Origin は CloudFront から VPC 内 ALB、NLB、EC2 へ Private 接続し、Backend の直接公開を不要にします。

@@ -55,7 +55,7 @@ notionUpdated: "2026-09-28T08:57:43.843Z"
 
 RDS, Global Database, AWS Backup, DMS, Secrets Manager.
 
-+## Update: endpoints, scaling, and recovery
+## Update: endpoints, scaling, and recovery
 
 - The writer/cluster endpoint handles reads, writes, DDL, and transactions; the reader endpoint is a common entry for read traffic.
 - Aurora Replica Auto Scaling adjusts replica count from metrics such as reader CPU and connections.

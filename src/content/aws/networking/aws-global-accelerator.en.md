@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T05:30:48.778Z"
 
 > Choose CloudFront for caching HTTP content; choose Global Accelerator for global network acceleration and static entry IPs.
 
-+## Update: boundary with CloudFront
+## Update: boundary with CloudFront
 
 - Global Accelerator provides two static Anycast IPs, brings TCP/UDP traffic onto the AWS global network early, and selects Regions by endpoint health and weight.
 - It does not cache content or understand HTTP paths. Use CloudFront for caching, edge WAF features, and HTTP delivery.

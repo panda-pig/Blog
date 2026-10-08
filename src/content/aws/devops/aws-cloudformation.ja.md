@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS CloudFormation"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-09-29
+updated: 2026-10-08
 tags: ["devops","AWS CloudFormation","AWS"]
 notionId: 3a6964dc-ce4a-81fe-8a73-c98ed403b25b
 notionUrl: https://app.notion.com/p/3a6964dcce4a81fe8a73c98ed403b25b
-notionUpdated: "2026-09-28T04:09:30.942Z"
+notionUpdated: "2026-10-08T03:10:42.581Z"
 ---
 
 ## 基本情報
@@ -41,9 +41,15 @@ notionUpdated: "2026-09-28T04:09:30.942Z"
 
 > Console は手動、CLI は Command 自動化、SDK は Application 連携、CloudFormation は宣言的 Infrastructure 管理。
 
-+## 追加：Change と Drift
+## 追加：Change と Drift
 
 - Template は Desired State、Stack は Resource Set を管理し、Change Set は実行前に Create / Modify / Delete を表示します。
 - Drift Detection は実際の Resource と期待状態を比較しますが、自動修復せず、すべての Property を対象にしません。
 - DeletionPolicy と UpdateReplacePolicy は Delete / Replace 時の Retain、Snapshot、Delete を制御します。
 - Managed Resource の手動変更を避け、Parameter、Dynamic Reference、Cross-stack Output の Coupling と Secret を管理します。
+
+## 追加：IaC、Change、Retention Policy
+
+- Template は Resource を定義し、Stack は Deployment Instance。Change Set は変更を事前表示するが、無停止を保証しない。
+- Drift Detection は対応 Resource の実状態と Template を比較するが、全 Drift を自動修復しない。
+- DeletionPolicy と UpdateReplacePolicy は削除時／置換時の保持を制御し、Service Role と iam:PassRole は最小権限にする。

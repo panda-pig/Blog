@@ -8,7 +8,7 @@ kind: service
 lang: ja
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-29
-updated: 2026-09-29
+updated: 2026-10-08
 tags: [Storage, Object Storage, SAA-C03]
 notionId: 3a6964dc-ce4a-8167-bdc7-d3b96eb969dc
 notionUrl: https://app.notion.com/p/3a6964dcce4a8167bdc7d3b96eb969dc
@@ -55,10 +55,16 @@ notionUpdated: "2026-09-28T04:42:18.716Z"
 
 CloudFront、IAM、KMS、CloudTrail、AWS Backup。
 
-+## 追加：保護、配信、Batch 処理
+## 追加：保護、配信、Batch 処理
 
 - Versioning、Replication、Object Lock、Legal Hold、MFA Delete は異なる失敗経路を保護し、Replication は Backup の代替ではありません。
 - Private S3 Origin は CloudFront の OAC + Bucket Policy で配信します。S3 Website Endpoint は OAC 非対応で、標準は HTTP のみです。
 - S3 Event Notifications は SNS、SQS Standard、Lambda へ直接送れます。複雑な Filter、Replay、FIFO は EventBridge を使います。
 - Batch Operations は大量の Existing Object、Batch Replication は過去・失敗 Object の補完に使います。
 - SSE-KMS は S3 と KMS 両方の権限が必要で、S3 Bucket Key は KMS Request と Cost を削減できます。
+
+## 追加：Event、Encryption、Data Protection
+
+- Event Notification は SNS、SQS、Lambda、EventBridge へ送れる。重複や順序を考慮し Consumer を Idempotent にする。
+- SSE-S3、SSE-KMS、DSSE-KMS、SSE-C では Key の責任が異なり、KMS では Key Policy と API 権限も必要。
+- Versioning、Object Lock、Replication、Lifecycle は復元、改変防止、複製、階層化／削除という別の目的を持つ。

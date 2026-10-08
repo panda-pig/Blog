@@ -95,7 +95,7 @@ Route 53 = DNS + 域名 + 健康检查 + 流量路由。
 
 **Route 53 负责“返回哪个地址”；CloudFront 负责“交付内容”；Global Accelerator 负责“把动态流量快速送到健康端点”。**
 
-+## 本轮补充：路由策略与 Hybrid DNS
+## 本轮补充：路由策略与 Hybrid DNS
 
 - Weighted、Latency、Failover、Geolocation、Geoproximity、IP-based 与 Multi-Value 都是在选择 DNS Answer，不是请求级代理。
 - Alias 可在 Zone Apex 指向受支持 AWS Target；CNAME 不能用于 Apex。

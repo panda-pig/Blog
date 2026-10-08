@@ -57,7 +57,7 @@ notionUpdated: "2026-09-27T06:02:13.109Z"
 
 Elastic Load Balancing, CloudWatch, Launch Template, EC2, SQS.
 
-+## Update: health, warmup, and scale-in
+## Update: health, warmup, and scale-in
 
 - A launch template defines an instance; the ASG defines subnets/AZs, Min/Desired/Max, health, and scaling.
 - Registered does not mean Healthy, and ASG InService does not mean target-group Healthy. Enable ELB health integration when application health should trigger replacement.

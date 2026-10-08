@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Batch"
 frequency: "Exam frequency ⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-10-08
 tags: ["compute","AWS Batch","AWS"]
 notionId: 3a6964dc-ce4a-8195-b971-f961d52b58f6
 notionUrl: https://app.notion.com/p/3a6964dcce4a8195b971f961d52b58f6
-notionUpdated: "2026-07-30T04:28:48.108Z"
+notionUpdated: "2026-10-08T03:01:45.270Z"
 ---
 
 ## Basic Information
@@ -40,3 +40,9 @@ notionUpdated: "2026-07-30T04:28:48.108Z"
 ## Exam takeaway
 
 > Lambda is for short event-driven functions; Batch is better for longer or resource-intensive queued jobs.
+
+## Update: HPC job boundaries
+
+- A job definition describes work, a job queue orders it, and a compute environment supplies capacity.
+- Array jobs fit many independent tasks; multi-node parallel jobs coordinate work across nodes.
+- EC2-based MNP does not support Spot compute environments, and Fargate does not support MNP; Spot support does not apply to every Batch mode.

@@ -30,7 +30,7 @@ notionUpdated: "2026-09-28T05:30:47.518Z"
 
 > DNS、Content Delivery、Network Path の異なる Layer を解決するため、組み合わせてもよい。
 
-+## 追加の判断軸
+## 追加の判断軸
 
 - Route 53 は DNS 時点で Answer を選び、TTL と Resolver Cache の影響を受けます。
 - CloudFront は HTTP / HTTPS CDN で、Cache と OAC、WAF、Lambda@Edge / Functions を提供します。

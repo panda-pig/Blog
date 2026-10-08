@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Lambda"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-09-29
+updated: 2026-10-08
 tags: ["compute","AWS Lambda","AWS"]
 notionId: 3a6964dc-ce4a-81f9-8d71-f17f423387eb
 notionUrl: https://app.notion.com/p/3a6964dcce4a81f98d71f17f423387eb
-notionUpdated: "2026-09-28T07:51:36.812Z"
+notionUpdated: "2026-10-08T02:19:16.603Z"
 ---
 
 ## 基本信息
@@ -104,9 +104,15 @@ Lambda 面向短时、事件驱动任务。长时间批处理通常考虑 AWS Ba
 
 Lambda = 事件触发 + 短时函数 + 自动扩缩；SQS 场景要记住 Execution Role、批处理、幂等、Visibility Timeout 和 DLQ。
 
-+## 本轮补充：并发与启动延迟
+## 本轮补充：并发与启动延迟
 
 - **Reserved Concurrency** 为函数保留并同时限制最大并发；设为 0 会持续 Throttle，但不会预热执行环境。
 - **Provisioned Concurrency** 提前初始化指定数量的环境以降低 Cold Start，需要 Version / Alias，并额外计费。
 - **SnapStart** 在发布 Version 时创建加密的初始化状态快照，调用时恢复；它不是并发配额。
 - 设计时分开看 Account Regional Pool、Function 上限、启动延迟、Retry 与下游容量。
+
+## 本轮补充：事件处理边界
+
+- SQS/Kinesis/DynamoDB Streams 的 Event Source Mapping 会轮询并批量调用函数，Batch Size、Visibility/Retention、并发和下游容量要一起设计。
+- 异步调用可配置 On-success/On-failure Destination；队列重试可配 DLQ 或 Partial Batch Response，不能把所有失败都理解为同一种重试机制。
+- 批处理消费者应幂等，并对 Poison Message、Checkpoint 和重放范围建立明确策略。

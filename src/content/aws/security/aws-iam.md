@@ -130,7 +130,7 @@ Last Accessed 不是完整实时审计日志；收紧权限前要结合业务周
 
 Credentials Report 是包含 Root Account 行与 IAM Users 的账户级 CSV，可审查 Password、MFA、两把 Access Key、签名证书及最后使用 / 轮换信息；不包含 Role 临时凭证或服务专用凭证。Access Advisor 可查看 User、Group、Role、Policy 的 Service / Action 最后访问时间并追踪权限来源。
 
-+## 本轮补充：身份、角色与拒绝路径
+## 本轮补充：身份、角色与拒绝路径
 
 - 人员优先使用 Federation / IAM Identity Center，工作负载使用 Role；长期 Access Key 只留给无法使用临时凭证的兼容场景。
 - Trust Policy 决定谁能 AssumeRole，Permissions Policy 决定代入后能做什么；EC2 通过 Instance Profile 使用 Role。

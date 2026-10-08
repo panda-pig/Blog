@@ -57,7 +57,7 @@ notionUpdated: "2026-09-27T06:02:13.109Z"
 
 Elastic Load Balancing、CloudWatch、Launch Template、EC2、SQS。
 
-+## 追加：Health、Warmup、Scale-in
+## 追加：Health、Warmup、Scale-in
 
 - Launch Template は Instance 構成、ASG は Subnet / AZ、Min / Desired / Max、Health、Scaling を定義します。
 - Registered と Healthy、ASG InService と Target Group Healthy は同義ではありません。Application Health で置換するには ELB Health Integration が必要です。

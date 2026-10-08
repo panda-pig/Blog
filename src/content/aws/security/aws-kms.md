@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T04:42:21.030Z"
 
 AWS KMS = 密钥管理服务
 
-+## 本轮补充：S3 加密边界
+## 本轮补充：S3 加密边界
 
 - SSE-S3 使用 S3 管理密钥；SSE-KMS 同时受 S3 权限与 KMS Key Policy / Grant 控制，并产生 KMS 审计与费用。
 - S3 Bucket Key 可减少 SSE-KMS 对 KMS 的请求次数与成本。

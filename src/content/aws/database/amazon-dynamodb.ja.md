@@ -55,7 +55,7 @@ notionUpdated: "2026-09-28T08:57:42.791Z"
 
 DAX、Lambda、API Gateway、Streams、Global Tables、AWS Backup。
 
-+## 追加：Streams と Access Pattern
+## 追加：Streams と Access Pattern
 
 - DynamoDB Streams は Item の Create / Update / Delete を順序付きで取得し、Record を 24 時間保持します。
 - より長い Retention や多くの独立 Consumer には Kinesis Data Streams for DynamoDB を検討します。

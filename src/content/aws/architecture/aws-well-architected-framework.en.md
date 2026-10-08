@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Well-Architected Framework"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-08-15
+updated: 2026-10-08
 tags: ["architecture", "AWS Well-Architected Framework", "AWS"]
 notionId: 3a6964dc-ce4a-8114-b991-e333cddb8c9b
 notionUrl: https://app.notion.com/p/3a6964dcce4a8114b991e333cddb8c9b
-notionUpdated: "2026-08-05T01:57:33.564Z"
+notionUpdated: "2026-10-08T05:39:41.459Z"
 ---
 
 ## Basic information
@@ -51,3 +51,9 @@ AWS Well-Architected Framework = Uses six pillars to evaluate and improve cloud 
 6. **Sustainability**: reduce resource waste and environmental impact.
 
 The Framework is the best-practice body; the **Well-Architected Tool** records reviews, milestones, and improvements. CAF addresses organizational transformation, while Trusted Advisor provides automated account-level checks.
+
+## Update: review method and six pillars
+
+- The six pillars are operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability. They form a continuous trade-off framework, not a one-time checklist.
+- Define the workload and business outcome, answer lens questions, identify high- and medium-risk issues, and create an improvement plan.
+- Game days and production-scale testing validate assumptions under realistic failure and load; reference architecture is not a substitute for validation.

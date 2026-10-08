@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Systems Manager"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-07-31
+updated: 2026-10-08
 tags: ["monitoring", "AWS Systems Manager", "AWS"]
 notionId: 3a6964dc-ce4a-8172-98e0-c06ec5cc85b8
 notionUrl: https://app.notion.com/p/3a6964dcce4a817298e0c06ec5cc85b8
-notionUpdated: "2026-07-31T04:05:11.160Z"
+notionUpdated: "2026-10-08T02:56:58.732Z"
 ---
 
 ## 基本信息
@@ -40,3 +40,9 @@ notionUpdated: "2026-07-31T04:05:11.160Z"
 ## 重点记忆
 
 AWS Systems Manager = 集中式运维管理
+
+## 本轮补充：无代理入口与运维自动化
+
+- Session Manager 提供无需开放入站 22/3389 的受控会话，但实例仍需 SSM Agent、实例角色、操作者 IAM 和到 SSM 的出站路径。
+- Run Command 批量执行命令；Automation 编排多步骤运维；Patch Manager 通过 Patch Baseline 与 Maintenance Window 管理补丁。
+- 成为 Managed Node 不等于所有命令都有权限；文档、目标选择、并发、错误阈值和日志要单独配置。

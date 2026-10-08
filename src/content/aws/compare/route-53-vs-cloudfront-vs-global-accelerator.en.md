@@ -30,7 +30,7 @@ notionUpdated: "2026-09-28T05:30:47.518Z"
 
 > These services can be combined because they solve DNS, content delivery, and network-path problems at different layers.
 
-+## Additional decision dimensions
+## Additional decision dimensions
 
 - Route 53 selects answers at DNS time and is affected by TTL and resolver caches.
 - CloudFront is an HTTP/HTTPS CDN that caches content and integrates edge features such as OAC, WAF, Lambda@Edge, and Functions.

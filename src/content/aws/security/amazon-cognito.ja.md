@@ -41,7 +41,7 @@ Web・モバイルアプリケーション向けの登録、サインイン、�
 
 Amazon Cognito = アプリユーザー認証
 
-+## 追加：User Pool と Identity Pool
+## 追加：User Pool と Identity Pool
 
 - User Pool は Application User Directory と Authentication を提供し、ID / Access / Refresh Token を発行します。
 - Identity Pool は User Pool または外部 IdP の Identity を、IAM Role で制限された一時 AWS Credential に交換します。

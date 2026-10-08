@@ -9,11 +9,11 @@ lang: en
 topicKey: "灾难恢复策略"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-10-08
 tags: ["architecture","Disaster Recovery Strategies","AWS"]
 notionId: 3a6964dc-ce4a-81a1-a460-dec79107380f
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a1a460dec79107380f
-notionUpdated: "2026-07-30T04:29:30.913Z"
+notionUpdated: "2026-10-08T01:47:42.025Z"
 ---
 
 ## Basic Information
@@ -40,3 +40,9 @@ notionUpdated: "2026-07-30T04:29:30.913Z"
 ## Exam takeaway
 
 > Replication is not enough: automate recovery, test failover and failback, and verify dependencies and data consistency.
+
+## Update: four DR strategies and recovery validation
+
+- Backup and restore, pilot light, warm standby, and multi-site active/active progressively increase running resources, reduce recovery time, and raise cost and operational complexity.
+- MGN supports planned server migration; DRS supports ongoing disaster recovery, drills, and failback; AWS Backup manages backup plans and recovery points.
+- Replication is not backup, and configured plans are not proof of recoverability. Validate recovery points, permissions, KMS, restore procedures, and business function.

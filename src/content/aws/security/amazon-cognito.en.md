@@ -41,7 +41,7 @@ Provides sign-up, sign-in, and access control for web and mobile applications.
 
 Amazon Cognito = Provides sign-up, sign-in, and access control for web and mobile applications.
 
-+## Update: user pools and identity pools
+## Update: user pools and identity pools
 
 - A user pool is an application user directory and authentication service that issues ID, access, and refresh tokens.
 - An identity pool exchanges a user-pool or external-IdP identity for temporary AWS credentials constrained by IAM roles.

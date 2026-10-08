@@ -9,11 +9,11 @@ lang: zh
 topicKey: "灾难恢复策略"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-10-08
 tags: ["architecture","Disaster Recovery Strategies","AWS"]
 notionId: 3a6964dc-ce4a-81a1-a460-dec79107380f
 notionUrl: https://app.notion.com/p/3a6964dcce4a81a1a460dec79107380f
-notionUpdated: "2026-07-30T04:29:30.913Z"
+notionUpdated: "2026-10-08T01:47:42.025Z"
 ---
 
 ## 基本信息
@@ -98,3 +98,9 @@ AWS DRS 持续把物理机、虚拟机或云服务器的数据块复制到 AWS �
 ## 重点记忆
 
 **Backup 恢复数据，DRS 恢复服务器；真正的 DR 还包括网络、DNS、身份、应用依赖和演练。**
+
+## 本轮补充：四种灾备策略与恢复验证
+
+- Backup & Restore、Pilot Light、Warm Standby、Multi-site Active/Active 依次增加常驻资源、缩短恢复时间并提高成本和运维复杂度。
+- MGN 面向计划服务器迁移；DRS 面向持续灾难恢复、演练与 Failback；AWS Backup 管理备份计划与恢复点。
+- 复制不是备份，计划配置也不是可恢复结果；必须验证 Recovery Point、权限、KMS、恢复流程和业务功能。

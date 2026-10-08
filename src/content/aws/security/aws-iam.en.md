@@ -77,7 +77,7 @@ Use IAM Identity Center / federation for people and roles for workloads on AWS. 
 
 Credentials Report is an account-level CSV with a root-account row and IAM-user password, MFA, two access keys, signing-certificate, and last-use/rotation data. It excludes role temporary credentials and service-specific credentials. Access Advisor shows service/action last-accessed data and permission sources for users, groups, roles, and policies.
 
-+## Update: identities, roles, and denial paths
+## Update: identities, roles, and denial paths
 
 - Prefer federation/IAM Identity Center for people and roles for workloads. Keep long-term access keys only for compatibility cases that cannot use temporary credentials.
 - A trust policy decides who can assume a role; a permissions policy decides what the resulting session can do. EC2 receives a role through an instance profile.

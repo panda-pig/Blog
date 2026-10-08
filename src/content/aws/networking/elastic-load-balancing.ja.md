@@ -41,7 +41,7 @@ notionUpdated: "2026-09-27T06:02:11.832Z"
 
 > Load Balancer は通信を分散し、Auto Scaling はターゲット容量を変える。
 
-+## 追加：Listener、TLS、Target State
+## 追加：Listener、TLS、Target State
 
 - Listener は Protocol / Port、Rule は Priority・Condition・Action、Target Group は Backend と Health Check を定義します。
 - SNI は TLS Handshake で Certificate、Host Rule は HTTP で Target Group、ALPN は Application Protocol を選びます。

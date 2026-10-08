@@ -30,7 +30,7 @@ notionUpdated: "2026-09-27T06:24:29.575Z"
 
 > Multi-AZ is high availability, read replicas scale reads, and DynamoDB design starts from keys and queries rather than joins.
 
-+## Additional decision dimensions
+## Additional decision dimensions
 
 - RDS keeps familiar relational engines and operations. Aurora adds distributed storage, specialized endpoints, replica auto scaling, and Global Database.
 - DynamoDB centers design on access patterns and partition keys, offering serverless horizontal scale without arbitrary relational joins.

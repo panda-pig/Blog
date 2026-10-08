@@ -50,7 +50,7 @@ Data Streams はリアルタイムストリームを取り込み・保持・再�
 
 **Streams はストリームと再生、Firehose はバッファリングと配信。**
 
-+## 追加：Streams と Firehose
+## 追加：Streams と Firehose
 
 - Kinesis Data Streams は Replay 可能な Real-time Stream で、Partition Key が Shard を決め、同一 Shard 内は順序を維持します。
 - Shared Throughput と Enhanced Fan-Out は Consumer Throughput Model が異なります。

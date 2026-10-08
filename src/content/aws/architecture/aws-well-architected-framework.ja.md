@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Well-Architected Framework"
 frequency: "試験頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-08-15
+updated: 2026-10-08
 tags: ["architecture", "AWS Well-Architected Framework", "AWS"]
 notionId: 3a6964dc-ce4a-8114-b991-e333cddb8c9b
 notionUrl: https://app.notion.com/p/3a6964dcce4a8114b991e333cddb8c9b
-notionUpdated: "2026-08-05T01:57:33.564Z"
+notionUpdated: "2026-10-08T05:39:41.459Z"
 ---
 
 ## 基本情報
@@ -51,3 +51,9 @@ AWS Well-Architected Framework = AWS 設計ベストプラクティス
 6. **Sustainability**：Resource の無駄と環境負荷を減らす。
 
 Framework は Best Practice 体系、**Well-Architected Tool** は Review、Milestone、改善項目を記録する Tool。CAF は組織変革、Trusted Advisor は Account Level の自動 Check を扱う。
+
+## 追加：Review 方法と 6 Pillars
+
+- 6 Pillars は Operational Excellence、Security、Reliability、Performance Efficiency、Cost Optimization、Sustainability。継続的な判断 Framework であり一度限りの Checklist ではない。
+- Workload と Business Outcome を定義し、Lens の質問に回答し、High／Medium Risk Issue と Improvement Plan を作る。
+- Game Day と Production-scale Testing で実際の Failure／Load に対する仮説を検証する。

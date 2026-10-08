@@ -50,7 +50,7 @@ Data Streams ingests, retains, and replays real-time streams; Data Firehose buff
 
 **Streams is for streaming and replay; Firehose is for buffering and delivery.**
 
-+## Update: Streams and Firehose
+## Update: Streams and Firehose
 
 - Kinesis Data Streams is a replayable real-time stream. The partition key selects a shard and records are ordered within that shard; retention can be extended.
 - Shared throughput and enhanced fan-out provide different consumer throughput models.

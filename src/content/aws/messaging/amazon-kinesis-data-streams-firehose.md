@@ -50,7 +50,7 @@ Data Streams 负责接收、保留和回放实时数据流；Data Firehose 负�
 
 **Streams 负责流与回放；Firehose 负责缓冲与交付。**
 
-+## 本轮补充：Streams 与 Firehose
+## 本轮补充：Streams 与 Firehose
 
 - Kinesis Data Streams 是可重放实时流，Partition Key 决定 Shard，同一 Shard 内有序，保留期可扩展。
 - Shared Throughput 与 Enhanced Fan-Out 的消费者吞吐模型不同。

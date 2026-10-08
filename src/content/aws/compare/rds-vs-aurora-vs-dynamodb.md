@@ -51,7 +51,7 @@ notionUpdated: "2026-09-27T06:24:29.575Z"
 
 “先从访问模式和数据关系出发；需要复杂事务/查询选关系型，需要可预测 Key 访问和大规模水平扩展选 DynamoDB，再根据兼容性、高可用和运维需求在 RDS 与 Aurora 中选择。”
 
-+## 新增判断维度
+## 新增判断维度
 
 - RDS 保留熟悉的关系引擎与管理模型；Aurora 使用分布式存储、专用端点、Replica Auto Scaling 与 Global Database。
 - DynamoDB 以访问模式和 Partition Key 为中心，提供 Serverless 水平扩展，不支持关系数据库的任意 Join。

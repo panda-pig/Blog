@@ -55,7 +55,7 @@ notionUpdated: "2026-09-28T07:43:17.837Z"
 - Fargate 是计算引擎。
 - ECR 是镜像仓库，不能运行容器。
 
-+## 新增判断维度
+## 新增判断维度
 
 - ECS 提供 AWS 原生的 Task / Service 模型，学习与运维面通常更小。
 - EKS 提供 Kubernetes API、生态与可移植性，但控制面与 Add-on 复杂度更高。

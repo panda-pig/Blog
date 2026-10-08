@@ -9,11 +9,11 @@ lang: ja
 topicKey: "Amazon EventBridge"
 frequency: "出題頻度 ⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-09-29
+updated: 2026-10-08
 tags: ["messaging","Amazon EventBridge","AWS"]
 notionId: 3a6964dc-ce4a-8146-be57-defb6099f3b1
 notionUrl: https://app.notion.com/p/3a6964dcce4a8146be57defb6099f3b1
-notionUpdated: "2026-09-28T04:26:36.036Z"
+notionUpdated: "2026-10-08T02:19:18.371Z"
 ---
 
 ## 基本情報
@@ -41,9 +41,15 @@ notionUpdated: "2026-09-28T04:26:36.036Z"
 
 > 単純な通知 Fan-out は SNS、耐久 Queue は SQS、ルールベースの Event Routing は EventBridge。
 
-+## 追加：Event Routing と Replay
+## 追加：Event Routing と Replay
 
 - EventBridge は Event Pattern で Match し、複数 Target へ Route して Cross-service Integration と Event-driven Architecture を構成します。
 - Archive + Replay は過去 Event の再配信で、Business Database の Backup ではありません。
 - SQS の Consumer Polling / Buffering とは異なり、Backlog と Backpressure が必要なら SQS を Target にします。
 - At-least-once Delivery では Target / Consumer の Idempotency、Retry、DLQ が必要です。
+
+## 追加：Rule、Schedule、Replay
+
+- Event Bus と Rule は Content-based Routing、EventBridge Scheduler は One-time／Recurring Schedule を担当する別 Resource。
+- Archive／Replay は Scope 内で保存された Event のみ対象で、Consumer の Idempotency は必要。
+- Cross-account 配信では Event Bus Policy、Target Permission、宛先 Resource Policy を確認する。

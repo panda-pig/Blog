@@ -69,7 +69,7 @@ AWS 管理 Kubernetes 控制平面，用户仍要设计工作负载、网络、�
 
 题目出现 Kubernetes、既有 K8s 工作负载或生态兼容时优先想到 EKS；只需要 AWS 原生简化编排时通常先考虑 ECS。
 
-+## 本轮补充：节点与存储
+## 本轮补充：节点与存储
 
 - Managed Node Group 自动化 EC2 Worker Node 的 Provisioning 和生命周期，但底层仍是 EC2 + ASG，并非 Serverless。
 - EKS Auto Mode 根据 Pod 请求管理更多 EC2 基础设施容量，与 Fargate 的无 Node Group 模型不同。

@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Lambda"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-09-29
+updated: 2026-10-08
 tags: ["compute","AWS Lambda","AWS"]
 notionId: 3a6964dc-ce4a-81f9-8d71-f17f423387eb
 notionUrl: https://app.notion.com/p/3a6964dcce4a81f98d71f17f423387eb
-notionUpdated: "2026-09-28T07:51:36.812Z"
+notionUpdated: "2026-10-08T02:19:16.603Z"
 ---
 
 ## Basic Information
@@ -41,9 +41,15 @@ notionUpdated: "2026-09-28T07:51:36.812Z"
 
 > For SQS integrations, remember execution roles, batch processing, idempotency, visibility timeout, retries, and DLQs.
 
-+## Update: concurrency and startup latency
+## Update: concurrency and startup latency
 
 - **Reserved concurrency** reserves and caps function concurrency. Setting it to zero continuously throttles the function, but does not pre-initialize environments.
 - **Provisioned concurrency** keeps a configured number of environments initialized to reduce cold starts. It requires a version or alias and adds cost.
 - **SnapStart** snapshots initialized memory and disk state for a published version and restores it on invocation; it is not a concurrency quota.
 - Treat the regional concurrency pool, function caps, startup latency, retries, and downstream capacity as separate design concerns.
+
+## Update: event-processing boundaries
+
+- Event source mappings poll SQS, Kinesis, or DynamoDB Streams and invoke functions in batches; design batch size, visibility or retention, concurrency, and downstream capacity together.
+- Asynchronous invocation supports success and failure destinations; queue retries, DLQs, and partial batch responses are different mechanisms.
+- Batch consumers should be idempotent and define policies for poison messages, checkpoints, and replay scope.

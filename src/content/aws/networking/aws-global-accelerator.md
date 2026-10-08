@@ -93,7 +93,7 @@ Global Accelerator 可以把流量送到 ALB/NLB 等端点；负载均衡器再�
 
 **静态 Anycast IP + 边缘入网 + AWS 骨干网络 + 健康端点 = Global Accelerator。**
 
-+## 本轮补充：与 CloudFront 的边界
+## 本轮补充：与 CloudFront 的边界
 
 - Global Accelerator 提供两个静态 Anycast IP，把 TCP / UDP 流量尽早带入 AWS Global Network，并按端点健康与权重选择 Region。
 - 它不缓存内容，也不理解 HTTP Path；需要缓存、WAF 边缘能力和 HTTP 分发时使用 CloudFront。

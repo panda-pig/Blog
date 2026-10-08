@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Batch"
 frequency: "考试频率 ⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-10-08
 tags: ["compute","AWS Batch","AWS"]
 notionId: 3a6964dc-ce4a-8195-b971-f961d52b58f6
 notionUrl: https://app.notion.com/p/3a6964dcce4a8195b971f961d52b58f6
-notionUpdated: "2026-07-30T04:28:48.108Z"
+notionUpdated: "2026-10-08T03:01:45.270Z"
 ---
 
 ## 基本信息
@@ -73,3 +73,9 @@ notionUpdated: "2026-07-30T04:28:48.108Z"
 ## 重点记忆
 
 AWS Batch = 专门运行大量、长时间、非实时的计算任务。
+
+## 本轮补充：HPC 作业边界
+
+- Job Definition 描述作业，Job Queue 排队，Compute Environment 提供资源。
+- Array Job 适合大量独立子任务；Multi-node Parallel 适合协同运行的多节点作业。
+- EC2-based MNP 不支持 Spot Compute Environment，Fargate 也不支持 MNP；不能把 Batch 可用 Spot 推广到所有模式。

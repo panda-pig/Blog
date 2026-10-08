@@ -9,11 +9,11 @@ lang: en
 topicKey: "Amazon SNS"
 frequency: "Exam frequency ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-10-08
 tags: ["messaging","Amazon SNS","AWS"]
 notionId: 3a6964dc-ce4a-815d-a70c-efddf8cc7d63
 notionUrl: https://app.notion.com/p/3a6964dcce4a815da70cefddf8cc7d63
-notionUpdated: "2026-07-23T07:21:18.671Z"
+notionUpdated: "2026-10-08T02:19:17.793Z"
 ---
 
 ## Basic Information
@@ -40,3 +40,9 @@ notionUpdated: "2026-07-23T07:21:18.671Z"
 ## Exam takeaway
 
 > Subscription filters can route only matching messages to each subscriber.
+
+## Update: fan-out and subscription failures
+
+- An SNS topic fans one message out to independent subscribers; combine it with SQS when buffering, retry isolation, and consumption-rate control are needed.
+- A subscription DLQ captures messages SNS could not deliver to the endpoint; it is not the consumer's processing-failure queue.
+- Subscription filters reduce unwanted delivery, while filter conditions, retry policy, and target permissions remain separate configuration.

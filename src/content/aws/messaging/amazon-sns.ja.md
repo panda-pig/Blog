@@ -9,11 +9,11 @@ lang: ja
 topicKey: "Amazon SNS"
 frequency: "出題頻度 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-10-08
 tags: ["messaging","Amazon SNS","AWS"]
 notionId: 3a6964dc-ce4a-815d-a70c-efddf8cc7d63
 notionUrl: https://app.notion.com/p/3a6964dcce4a815da70cefddf8cc7d63
-notionUpdated: "2026-07-23T07:21:18.671Z"
+notionUpdated: "2026-10-08T02:19:17.793Z"
 ---
 
 ## 基本情報
@@ -40,3 +40,9 @@ notionUpdated: "2026-07-23T07:21:18.671Z"
 ## 試験での判断
 
 > Subscription Filter により Subscriber ごとに一致する Message だけを配信できる。
+
+## 追加：Fan-out と Subscription 失敗
+
+- SNS Topic は 1 Message を独立 Subscriber へ Fan-out する。Buffer、Retry 分離、処理速度制御が必要なら SQS と組み合わせる。
+- Subscription DLQ は SNS が Endpoint へ配信できなかった Message を保存し、Consumer 処理失敗の Queue とは異なる。
+- Message Filtering は不要な配信を減らすが、Filter、Retry、Target Permission は別設定。

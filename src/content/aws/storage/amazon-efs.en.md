@@ -55,7 +55,7 @@ notionUpdated: "2026-09-27T05:20:10.229Z"
 
 EC2, ECS, EKS, NFS, FSx, AWS Backup.
 
-+## Update: network entry and throughput
+## Update: network entry and throughput
 
 - An EFS mount target is the network entry in a VPC/AZ. Workload AZs normally have one, with security groups allowing client NFS TCP 2049.
 - Regional EFS provides cross-AZ redundancy; EFS One Zone costs less but does not replicate data across AZs.

@@ -55,7 +55,7 @@ notionUpdated: "2026-09-28T08:57:41.942Z"
 
 RDS, Aurora, DAX, CloudFront, EC2, Lambda.
 
-+## Update: caching patterns and security
+## Update: caching patterns and security
 
 - With cache-aside, the application reads the database on a miss and fills the cache. Write-through updates the cache when primary data changes.
 - TTLs, invalidation, jitter, and request coalescing reduce stale data and cache stampedes.

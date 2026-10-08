@@ -30,7 +30,7 @@ notionUpdated: "2026-09-28T07:43:17.837Z"
 
 > Choose based on Kubernetes compatibility versus operational simplicity, not because one stores or runs images differently.
 
-+## Additional decision dimensions
+## Additional decision dimensions
 
 - ECS provides an AWS-native task/service model with a smaller operational surface.
 - EKS provides the Kubernetes API, ecosystem, and portability with more control-plane and add-on complexity.

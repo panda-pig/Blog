@@ -30,7 +30,7 @@ notionUpdated: "2026-09-28T07:43:18.851Z"
 
 > Deployment Unit、実行時間、Host 制御、Scaling、運用責任で判断する。
 
-+## 追加の判断軸
+## 追加の判断軸
 
 - 完全な OS、専用 Hardware、Daemon、Platform 制限を超える長時間処理 → EC2。
 - Event-driven、15 分以内、同時実行で自動 Scale → Lambda。Cold Start と Downstream Capacity は設計が必要です。

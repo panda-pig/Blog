@@ -30,7 +30,7 @@ notionUpdated: "2026-09-28T07:43:17.837Z"
 
 > Kubernetes 互換性と運用の簡潔さで選び、Image 保存や実行場所と混同しない。
 
-+## 追加の判断軸
+## 追加の判断軸
 
 - ECS は AWS Native の Task / Service Model で、学習・運用面が比較的小さい選択です。
 - EKS は Kubernetes API、Ecosystem、Portability を提供しますが Control Plane / Add-on は複雑です。

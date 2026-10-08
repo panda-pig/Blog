@@ -41,7 +41,7 @@ notionUpdated: "2026-09-27T07:53:30.305Z"
 
 > Route 53 は接続先を選び、CloudFront はキャッシュし、Global Accelerator は AWS グローバルネットワーク経由で転送する。
 
-+## 追加：Routing Policy と Hybrid DNS
+## 追加：Routing Policy と Hybrid DNS
 
 - Weighted、Latency、Failover、Geolocation、Geoproximity、IP-based、Multi-Value は DNS Answer を選び、Request-level Proxy ではありません。
 - Alias は Zone Apex から対応 AWS Target を指せますが、CNAME は Apex で使えません。

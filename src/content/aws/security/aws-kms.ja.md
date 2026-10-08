@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T04:42:21.030Z"
 
 AWS KMS = AWS KMS（暗号鍵管理サービス）
 
-+## 追加：S3 Encryption の境界
+## 追加：S3 Encryption の境界
 
 - SSE-S3 は S3 Managed Key、SSE-KMS は S3 権限と KMS Key Policy / Grant の両方が必要で、KMS Audit と Cost が発生します。
 - S3 Bucket Key は SSE-KMS の KMS Request と Cost を減らせます。

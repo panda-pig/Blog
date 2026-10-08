@@ -62,7 +62,7 @@ notionUpdated: "2026-09-28T05:30:47.518Z"
 
 **53 找路，CloudFront 发内容，Global Accelerator 送动态连接。**
 
-+## 新增判断维度
+## 新增判断维度
 
 - Route 53 在 DNS 层选择答案，受 TTL 与 Resolver 缓存影响。
 - CloudFront 是 HTTP / HTTPS CDN，可缓存内容并在边缘结合 OAC、WAF、Lambda@Edge / Functions。

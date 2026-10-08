@@ -84,7 +84,7 @@ CloudFront 可以传输动态内容和 API 请求；只有符合缓存策略的�
 
 **Route 53 找入口，CloudFront 在边缘交付和缓存 HTTP 内容。**
 
-+## 本轮补充：私有源站与边缘控制
+## 本轮补充：私有源站与边缘控制
 
 - S3 私有源站使用 Origin Access Control + Bucket Policy；S3 Website Endpoint 不支持 OAC。
 - VPC Origin 可让 CloudFront 私有连接 VPC 内的 ALB、NLB 或 EC2，后端无需直接暴露 Internet。

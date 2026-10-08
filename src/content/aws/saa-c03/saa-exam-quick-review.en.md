@@ -47,7 +47,7 @@ notionUpdated: "2026-09-28T08:57:47.312Z"
 - Distinguish password policy, MFA, long-term access keys, and temporary credentials with a session token.
 - Troubleshoot visibility through account → identity → Region → permission → filter / state.
 
-+## Latest exam review
+## Latest exam review
 
 1. Separate **HA, read scaling, caching, and backup/DR**; one mechanism does not solve all four.
 2. ELB Active, ASG InService, target Registered, and target Healthy are different states.

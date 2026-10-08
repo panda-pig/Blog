@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Well-Architected Tool"
 frequency: "考试频率 ⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-15
+updated: 2026-10-08
 tags: ["monitoring", "AWS Well-Architected Tool", "AWS"]
 notionId: 3a6964dc-ce4a-8113-88e9-d60dde380c0b
 notionUrl: https://app.notion.com/p/3a6964dcce4a811388e9d60dde380c0b
-notionUpdated: "2026-08-05T01:57:31.393Z"
+notionUpdated: "2026-10-08T05:04:40.813Z"
 ---
 
 ## Basic Information
@@ -48,3 +48,9 @@ Review workloads against the six pillars and record risks, improvements, and mil
 ## Key takeaway
 
 **Six pillars plus workload review, risks, and milestones means AWS Well-Architected Tool.**
+
+## Update: workloads, lenses, and milestones
+
+- The tool records context and answers in a workload, selects a review perspective through lenses, and saves point-in-time review snapshots as milestones.
+- High- and medium-risk issues guide improvement priority; they are not automatic remediation or compliance certification.
+- A custom lens can organize internal questions, but ownership, evidence, an improvement plan, and review cadence remain necessary.

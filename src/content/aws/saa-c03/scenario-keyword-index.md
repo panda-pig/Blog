@@ -72,7 +72,7 @@ notionUpdated: "2026-09-28T08:57:48.335Z"
 | 切换 Region 后资源不见 | 核对 Account、Region、Describe 权限 | 资源被自动删除 |
 | API 临时凭证 | Access Key ID + Secret + Session Token | Console Password |
 
-+## 新增关键词速判
+## 新增关键词速判
 
 - 固定入站 IP + HTTP 内容路由 → NLB → ALB。
 - 私有 S3 + CloudFront → OAC + Bucket Policy。

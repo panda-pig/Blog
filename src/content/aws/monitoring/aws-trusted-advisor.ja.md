@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Trusted Advisor"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-10-08
 tags: ["monitoring", "AWS Trusted Advisor", "AWS"]
 notionId: 3a6964dc-ce4a-8137-9131-d20e8b6589b3
 notionUrl: https://app.notion.com/p/3a6964dcce4a81379131d20e8b6589b3
-notionUpdated: "2026-07-31T08:18:16.390Z"
+notionUpdated: "2026-10-08T05:04:42.729Z"
 ---
 
 ## 基本情報
@@ -48,3 +48,9 @@ notionUpdated: "2026-07-31T08:18:16.390Z"
 ## 重要ポイント
 
 **Trusted Advisor は自動修復ではなく、AWS ベストプラクティスの診断と推奨を行います。**
+
+## 追加：Check Scope と Automation の境界
+
+- Trusted Advisor は Cost、Performance、Security、Fault Tolerance、Service Limits、Operational Excellence などの Best-practice Check を提供する。
+- 利用可能 Check と Refresh は Support Plan／API Permission に依存し、全 Account で全 Check が Real-time とは限らない。
+- Trusted Advisor は Finding、Well-Architected は Workload Review、Config は Configuration Compliance を扱う。

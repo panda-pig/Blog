@@ -30,7 +30,7 @@ notionUpdated: "2026-09-27T06:24:29.575Z"
 
 > Multi-AZ は HA、Read Replica は Read Scaling、DynamoDB は Join ではなく Key / Query から設計する。
 
-+## 追加の判断軸
+## 追加の判断軸
 
 - RDS は一般的な Relational Engine、Aurora は Distributed Storage、専用 Endpoint、Replica Auto Scaling、Global Database を提供します。
 - DynamoDB は Access Pattern と Partition Key を中心に Serverless Horizontal Scale を行い、任意 Join は扱いません。

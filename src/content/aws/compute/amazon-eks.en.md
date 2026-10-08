@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T07:43:10.648Z"
 
 > Choose ECS first when an AWS-native, simpler orchestration model is sufficient.
 
-+## Update: nodes and storage
+## Update: nodes and storage
 
 - A managed node group automates EC2 worker-node provisioning and lifecycle, but the underlying capacity is still EC2 plus an Auto Scaling group.
 - EKS Auto Mode manages additional EC2 infrastructure from pod requirements; it is different from the Fargate no-node-group model.

@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T07:43:11.818Z"
 
 > 代表構成はコード → イメージ → ECR → Task Definition → ECS Service → ALB / Auto Scaling。
 
-+## 追加：Role と Capacity Provider
+## 追加：Role と Capacity Provider
 
 - **Task Role** は Container 内 Application の AWS API 権限、**Task Execution Role** は ECS Agent の ECR Image Pull、Log、Startup Secret 用です。
 - Capacity Provider は Task が FARGATE、FARGATE_SPOT、ASG のどこから Compute を得るかを定義します。

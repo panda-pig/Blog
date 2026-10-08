@@ -55,7 +55,7 @@ notionUpdated: "2026-09-28T08:57:41.942Z"
 
 RDS、Aurora、DAX、CloudFront、EC2、Lambda。
 
-+## 追加：Cache Pattern と Security
+## 追加：Cache Pattern と Security
 
 - Cache-aside は Miss 時に Application が DB を読み Cache へ格納し、Write-through は Main Data 更新時に Cache も更新します。
 - TTL、Invalidation、Jitter、Request Coalescing で Stale Data と Cache Stampede を抑えます。

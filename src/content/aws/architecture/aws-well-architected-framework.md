@@ -9,11 +9,11 @@ lang: zh
 topicKey: "AWS Well-Architected Framework"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-31
-updated: 2026-08-15
+updated: 2026-10-08
 tags: ["architecture", "AWS Well-Architected Framework", "AWS"]
 notionId: 3a6964dc-ce4a-8114-b991-e333cddb8c9b
 notionUrl: https://app.notion.com/p/3a6964dcce4a8114b991e333cddb8c9b
-notionUpdated: "2026-08-05T01:57:33.564Z"
+notionUpdated: "2026-10-08T05:39:41.459Z"
 ---
 
 ## 基本信息
@@ -51,3 +51,9 @@ AWS Well-Architected Framework = AWS 架构最佳实践框架
 6. **可持续性**：减少资源浪费和环境影响。
 
 Framework 是最佳实践体系；**Well-Architected Tool** 用于执行评审、保存里程碑和改进项。CAF 关注组织转型，Trusted Advisor 提供账户级自动检查。
+
+## 本轮补充：评审方法与六大支柱
+
+- 六大支柱是运营卓越、安全、可靠性、性能效率、成本优化和可持续性；它们是持续取舍框架，不是一次性检查表。
+- 先定义 Workload 与业务结果，再按 Lens 回答问题、识别 High/Medium Risk Issues，制定 Improvement Plan。
+- Game Day 与 Production-scale Testing 用真实故障和规模验证假设；参考架构不能替代业务验证。

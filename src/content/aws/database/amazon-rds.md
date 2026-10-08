@@ -84,7 +84,7 @@ notionUpdated: "2026-09-28T08:57:41.133Z"
 
 Aurora、DMS、AWS Backup、Secrets Manager、KMS、CloudWatch、VPC。
 
-+## 本轮补充：高可用、连接与恢复
+## 本轮补充：高可用、连接与恢复
 
 - Multi-AZ DB Instance 以同步 Standby 做故障转移；Read Replica 负责读扩展，可被提升为独立数据库。
 - Multi-AZ DB Cluster 跨 3 个 AZ，同时提供高可用与可读副本。

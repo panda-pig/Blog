@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T05:30:48.778Z"
 
 > HTTP キャッシュは CloudFront、グローバル経路最適化と固定入口 IP は Global Accelerator。
 
-+## 追加：CloudFront との境界
+## 追加：CloudFront との境界
 
 - Global Accelerator は 2 つの Static Anycast IP を提供し、TCP / UDP を早期に AWS Global Network へ入れ、Endpoint Health と Weight で Region を選びます。
 - Content Cache や HTTP Path 理解はなく、Cache、Edge WAF、HTTP 配信には CloudFront を使います。

@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Batch"
 frequency: "出題頻度 ⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-31
+updated: 2026-10-08
 tags: ["compute","AWS Batch","AWS"]
 notionId: 3a6964dc-ce4a-8195-b971-f961d52b58f6
 notionUrl: https://app.notion.com/p/3a6964dcce4a8195b971f961d52b58f6
-notionUpdated: "2026-07-30T04:28:48.108Z"
+notionUpdated: "2026-10-08T03:01:45.270Z"
 ---
 
 ## 基本情報
@@ -40,3 +40,9 @@ notionUpdated: "2026-07-30T04:28:48.108Z"
 ## 試験での判断
 
 > 短時間のイベント関数は Lambda、長時間・高負荷のキュージョブは Batch を検討する。
+
+## 追加：HPC Job の境界
+
+- Job Definition は作業、Job Queue は順序、Compute Environment は Capacity を提供する。
+- Array Job は独立 Subtask、Multi-node Parallel Job は協調する Multi-node 処理に適する。
+- EC2-based MNP は Spot Compute Environment を、Fargate は MNP を Support しない。

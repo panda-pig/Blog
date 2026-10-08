@@ -9,11 +9,11 @@ lang: zh
 topicKey: "Amazon SNS"
 frequency: "考试频率 ⭐⭐⭐⭐⭐"
 date: 2026-07-30
-updated: 2026-07-30
+updated: 2026-10-08
 tags: ["messaging","Amazon SNS","AWS"]
 notionId: 3a6964dc-ce4a-815d-a70c-efddf8cc7d63
 notionUrl: https://app.notion.com/p/3a6964dcce4a815da70cefddf8cc7d63
-notionUpdated: "2026-07-23T07:21:18.671Z"
+notionUpdated: "2026-10-08T02:19:17.793Z"
 ---
 
 ## 基本信息
@@ -73,3 +73,9 @@ SNS 同时向多个 SQS Queue 推送消息。每个队列由自己的消费者�
 ## 重点记忆
 
 SNS = Push + Pub/Sub + Fan-out。
+
+## 本轮补充：扇出与订阅失败
+
+- SNS Topic 适合一条消息扇出到多个独立订阅者；需要缓冲、重试隔离和消费速率控制时常与 SQS 组合。
+- Subscription DLQ 捕获 SNS 无法成功投递到订阅目标的消息，不等于消费者处理失败队列。
+- Message Filtering 在订阅侧减少不需要的投递，但筛选条件、重试和目标权限仍要分别配置。

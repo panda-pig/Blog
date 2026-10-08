@@ -78,7 +78,7 @@ notionUpdated: "2026-09-28T08:57:41.942Z"
 
 RDS、Aurora、DAX、CloudFront、MemoryDB、EC2、Lambda。
 
-+## 本轮补充：缓存模式与安全
+## 本轮补充：缓存模式与安全
 
 - Cache-aside 在 Miss 时由应用读取数据库并回填；Write-through 在写入主数据时同步更新缓存。
 - TTL、失效策略、随机抖动与 Request Coalescing 用于降低 Stale Data 和 Cache Stampede。

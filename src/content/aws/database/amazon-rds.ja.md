@@ -55,7 +55,7 @@ notionUpdated: "2026-09-28T08:57:41.133Z"
 
 Aurora、DMS、AWS Backup、Secrets Manager、KMS、CloudWatch。
 
-+## 追加：可用性、Connection、Recovery
+## 追加：可用性、Connection、Recovery
 
 - Multi-AZ DB Instance は同期 Standby で Failover、Read Replica は Read Scaling と独立 DB への Promote 用です。
 - Multi-AZ DB Cluster は 3 AZ にまたがり、HA と Readable Replica を同時に提供します。

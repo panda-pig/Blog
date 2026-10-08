@@ -9,11 +9,11 @@ lang: en
 topicKey: "AWS Trusted Advisor"
 frequency: "考试频率 ⭐⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-01
+updated: 2026-10-08
 tags: ["monitoring", "AWS Trusted Advisor", "AWS"]
 notionId: 3a6964dc-ce4a-8137-9131-d20e8b6589b3
 notionUrl: https://app.notion.com/p/3a6964dcce4a81379131d20e8b6589b3
-notionUpdated: "2026-07-31T08:18:16.390Z"
+notionUpdated: "2026-10-08T05:04:42.729Z"
 ---
 
 ## Basic Information
@@ -48,3 +48,9 @@ Provide AWS best-practice recommendations for cost, performance, security, fault
 ## Key takeaway
 
 **Think of Trusted Advisor as an AWS best-practice health check that recommends, rather than automatically fixes.**
+
+## Update: check scope and automation boundaries
+
+- Trusted Advisor provides account- and resource-level best-practice checks across cost, performance, security, fault tolerance, service limits, and operational excellence.
+- Available checks and refresh capabilities depend on the support plan and API permissions; do not assume every account has every check in real time.
+- Trusted Advisor supplies findings, Well-Architected reviews a workload, and Config evaluates configuration compliance. They are complementary.

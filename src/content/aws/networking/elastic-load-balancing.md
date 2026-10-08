@@ -81,7 +81,7 @@ notionUpdated: "2026-09-27T06:02:11.832Z"
 
 ELB 管流量与健康检查，ASG 管容量；Web 路由看 ALB，高性能 TCP/UDP 看 NLB，网络设备看 GWLB。
 
-+## 本轮补充：Listener、TLS 与目标状态
+## 本轮补充：Listener、TLS 与目标状态
 
 - Listener 决定接收的 Protocol / Port，Rule 由 Priority、Condition、Action 组成，Target Group 定义后端与 Health Check。
 - SNI 在 TLS Handshake 选择 Certificate；Host Rule 在 HTTP 阶段选择 Target Group；ALPN 协商上层协议。

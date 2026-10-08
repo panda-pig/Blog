@@ -9,11 +9,11 @@ lang: ja
 topicKey: "AWS Well-Architected Tool"
 frequency: "考试频率 ⭐⭐⭐"
 date: 2026-08-01
-updated: 2026-08-15
+updated: 2026-10-08
 tags: ["monitoring", "AWS Well-Architected Tool", "AWS"]
 notionId: 3a6964dc-ce4a-8113-88e9-d60dde380c0b
 notionUrl: https://app.notion.com/p/3a6964dcce4a811388e9d60dde380c0b
-notionUpdated: "2026-08-05T01:57:31.393Z"
+notionUpdated: "2026-10-08T05:04:40.813Z"
 ---
 
 ## 基本情報
@@ -48,3 +48,9 @@ notionUpdated: "2026-08-05T01:57:31.393Z"
 ## 重要ポイント
 
 **6 本の柱、Workload Review、Risk、Milestone は AWS Well-Architected Tool です。**
+
+## 追加：Workload、Lens、Milestone
+
+- Tool は Workload に背景と回答を記録し、Lens で Review 観点を選び、Milestone で時点 Snapshot を保存する。
+- High／Medium Risk Issue は改善優先度の手掛かりで、自動修復や Compliance Certification ではない。
+- Custom Lens でも Owner、Evidence、Improvement Plan、Review Cadence が必要。

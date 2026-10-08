@@ -129,7 +129,7 @@ st1 和 sc1 不能作为启动卷。卷类型选择必须同时看 IOPS、吞吐
 
 **临时本地盘用 Instance Store；持久云硬盘用 EBS；跨 AZ 通过 Snapshot 重建；资源属于 Account，访问由 Policy 决定。**
 
-+## 本轮补充：卷类型、加密与恢复
+## 本轮补充：卷类型、加密与恢复
 
 - gp3 将容量、IOPS 与 Throughput 较独立配置；gp2 的基线 IOPS 与容量耦合。
 - io2 面向持续高 IOPS、低延迟数据库，但仍受 EC2 EBS Bandwidth 限制；st1 / sc1 不能作为 Boot Volume。

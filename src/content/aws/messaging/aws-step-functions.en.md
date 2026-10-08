@@ -41,7 +41,7 @@ Uses state machines to coordinate Lambda, service calls, and short- or long-runn
 
 AWS Step Functions = Uses state machines to coordinate Lambda, service calls, and short- or long-running workflows.
 
-+## Update: orchestration boundaries
+## Update: orchestration boundaries
 
 - A state machine models sequence, choice, parallel, wait, retry/catch, and callback or human approval.
 - Step Functions orchestrates work; it does not execute application code. Lambda, ECS, APIs, or other services perform the computation.

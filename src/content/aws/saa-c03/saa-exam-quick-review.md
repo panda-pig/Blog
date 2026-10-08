@@ -44,7 +44,7 @@ notionUpdated: "2026-09-28T08:57:47.312Z"
 - 能区分 Password Policy、MFA、长期 Access Key 与包含 Session Token 的临时凭证。
 - 看不到资源时能按 Account → Identity → Region → Permission → Filter / State 排查。
 
-+## 本轮考前补充
+## 本轮考前补充
 
 1. 把 **HA、Read Scaling、Cache、Backup / DR** 分开，不要用一个机制回答四个问题。
 2. ELB Active、ASG InService、Target Registered、Target Healthy 是不同状态。

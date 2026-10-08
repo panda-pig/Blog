@@ -55,7 +55,7 @@ notionUpdated: "2026-09-28T08:57:43.843Z"
 
 RDS、Global Database、AWS Backup、DMS、Secrets Manager。
 
-+## 追加：Endpoint、Scaling、Recovery
+## 追加：Endpoint、Scaling、Recovery
 
 - Writer / Cluster Endpoint は Read/Write、DDL、Transaction、Reader Endpoint は一般的な Read Traffic の入口です。
 - Aurora Replica Auto Scaling は Reader CPU や Connection などで Replica 数を調整します。

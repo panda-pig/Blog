@@ -80,7 +80,7 @@ ECS 负责在 AWS 上部署、调度、扩缩和维护容器，是 AWS 原生的
 
 ECS = AWS 原生编排；ECR = 镜像仓库；EC2 / Fargate = 运行位置。
 
-+## 本轮补充：Role 与 Capacity Provider
+## 本轮补充：Role 与 Capacity Provider
 
 - **Task Role** 授权容器内应用调用 AWS API；**Task Execution Role** 供 ECS Agent 拉取 ECR Image、写日志和读取启动 Secret。
 - Capacity Provider 决定 Task 从 FARGATE、FARGATE_SPOT 或 ASG 获得计算容量。

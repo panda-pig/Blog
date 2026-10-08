@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T07:43:10.648Z"
 
 > AWS ネイティブでより簡単な編成で足りるなら、まず ECS を検討する。
 
-+## 追加：Node と Storage
+## 追加：Node と Storage
 
 - Managed Node Group は EC2 Worker Node の Provisioning と Lifecycle を自動化しますが、基盤は EC2 + ASG で Serverless ではありません。
 - EKS Auto Mode は Pod 要求から追加 EC2 Infrastructure を管理し、Fargate の Node Group 不要モデルとは異なります。

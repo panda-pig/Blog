@@ -41,7 +41,7 @@ notionUpdated: "2026-09-28T07:51:38.751Z"
 
 AWS Step Functions = 工作流编排
 
-+## 本轮补充：编排边界
+## 本轮补充：编排边界
 
 - State Machine 负责 Sequence、Choice、Parallel、Wait、Retry / Catch 与 Callback / Human Approval。
 - Step Functions 编排工作，不执行应用代码；实际计算由 Lambda、ECS、API 或其他服务完成。

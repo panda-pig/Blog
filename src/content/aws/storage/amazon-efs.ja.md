@@ -55,7 +55,7 @@ notionUpdated: "2026-09-27T05:20:10.229Z"
 
 EC2、ECS、EKS、NFS、FSx、AWS Backup。
 
-+## 追加：Network Entry と Throughput
+## 追加：Network Entry と Throughput
 
 - EFS Mount Target は VPC / AZ の Network Entry で、通常 Workload AZ ごとに 1 つ配置し、Client からの NFS TCP 2049 を許可します。
 - Regional EFS は Cross-AZ 冗長、EFS One Zone は低 Cost ですが Cross-AZ Data 冗長性がありません。

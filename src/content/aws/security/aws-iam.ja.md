@@ -77,7 +77,7 @@ Last Accessed は完全なリアルタイム監査ログではありません。
 
 Credentials Report は Root Account 行と IAM User の Password、MFA、2本の Access Key、Signing Certificate、最終利用・更新情報を含む Account レベル CSV です。Role の一時認証情報や Service 固有認証情報は含みません。Access Advisor は User、Group、Role、Policy の Service / Action 最終利用時刻と権限元を確認できます。
 
-+## 追加：Identity、Role、Deny Path
+## 追加：Identity、Role、Deny Path
 
 - 人は Federation / IAM Identity Center、Workload は Role を優先し、長期 Access Key は一時 Credential を使えない互換用途に限定します。
 - Trust Policy は誰が AssumeRole できるか、Permissions Policy は Session が何をできるかを決め、EC2 は Instance Profile 経由で Role を利用します。

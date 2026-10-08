@@ -81,7 +81,7 @@ RDS 常规引擎、DynamoDB、Aurora Global Database。
 
 RDS、Global Database、AWS Backup、DMS、Secrets Manager、CloudWatch。
 
-+## 本轮补充：端点、扩展与恢复
+## 本轮补充：端点、扩展与恢复
 
 - Writer / Cluster Endpoint 用于读写、DDL 与事务；Reader Endpoint 为通用读取提供统一入口。
 - Aurora Replica Auto Scaling 根据 Reader CPU、连接等指标调整 Replica 数量。

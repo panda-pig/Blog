@@ -76,7 +76,7 @@ notionUpdated: "2026-09-28T08:57:48.335Z"
 | Region 切替後に Resource が見えない | Account、Region、Describe Permission | 自動削除と判断 |
 | Temporary API Credentials | Access Key ID + Secret + Session Token | Console Password |
 
-+## 追加 Keyword
+## 追加 Keyword
 
 - 固定 Ingress IP + HTTP Content Routing → NLB → ALB。
 - Private S3 + CloudFront → OAC + Bucket Policy。
