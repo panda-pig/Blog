@@ -359,6 +359,16 @@ export const awsDomainTopics: Record<string, string[]> = {
   ],
 };
 
+// Some directory topics intentionally reuse a canonical article from another
+// category. Keep those relationships explicit so a similarly named article is
+// never linked by accident.
+export const awsTopicArticleOverrides: Record<string, string> = {
+  'analytics:Amazon Redshift': 'Amazon Redshift',
+  'architecture:Multi-AZ 与 Multi-Region': 'Multi-AZ vs Multi-Region',
+  'devops:AWS Elastic Beanstalk': 'AWS Elastic Beanstalk',
+  'migration:AWS Snow Family': 'AWS Snow Family',
+};
+
 export const awsSpecials = [
   {
     slug: 'compare',

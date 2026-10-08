@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build && pagefind --site dist",
+    "test:aws-topic-links": "npm run build && node scripts/check-aws-topic-links.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

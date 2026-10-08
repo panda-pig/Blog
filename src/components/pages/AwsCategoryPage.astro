@@ -3,7 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../Header.astro';
 import Footer from '../Footer.astro';
 import AwsDomainIcon from '../aws/AwsDomainIcon.astro';
-import { awsDomains, awsSpecials, awsDomainTopics, getAwsDomain } from '../../data/aws';
+import {
+  awsDomains,
+  awsSpecials,
+  awsDomainTopics,
+  awsTopicArticleOverrides,
+  getAwsDomain,
+} from '../../data/aws';
 import {
   normalizeAwsNotes,
   getLocalizedAwsNotes,
@@ -46,6 +52,12 @@ const tone = domain?.tone || special!.tone;
 const topics = awsDomainTopics[category || ''] || [];
 const noteByTitle = new Map(
   categoryNotes.map((note: any) => [
+    note.frontmatter.topicKey || note.frontmatter.title,
+    note,
+  ]),
+);
+const allNoteByTitle = new Map(
+  notes.map((note: any) => [
     note.frontmatter.topicKey || note.frontmatter.title,
     note,
   ]),
@@ -159,7 +171,9 @@ const noteByTitle = new Map(
 
             <div class="aws-topic-index">
               {topics.map((topic, index) => {
-                const note = noteByTitle.get(topic);
+                const articleOverride = awsTopicArticleOverrides[`${category}:${topic}`];
+                const note = noteByTitle.get(topic)
+                  || (articleOverride ? allNoteByTitle.get(articleOverride) : undefined);
                 const topicLabel = getAwsTopicLabel(topic, lang);
                 return note ? (
                   <a href={getAwsNoteHref(note, lang)}>
