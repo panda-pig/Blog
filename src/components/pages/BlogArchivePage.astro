@@ -6,6 +6,7 @@ import Search from '../Search.astro';
 import { groupPostsBySlug, getLocalizedPosts, getReadingTime, formatDate } from '../../lib/posts.js';
 import { getArticleEmoji } from '../../lib/animalIcons.js';
 import dict from '../../i18n/dict.js';
+import { getArticleCategories, getArticleCategory } from '../../data/articleCategories.js';
 
 const { lang } = Astro.props;
 const prefix = lang === 'zh' ? '' : `/${lang}`;
@@ -15,96 +16,139 @@ const allPosts = await Astro.glob('../../content/blog/*.md');
 const postsBySlug = groupPostsBySlug(allPosts);
 const displayPosts = getLocalizedPosts(postsBySlug, lang);
 
+const categories = getArticleCategories(lang);
+const categoryCounts = Object.fromEntries(categories.map((category) => [category.id, displayPosts.filter((post) => getArticleCategory(post).id === category.id).length]));
+const categoryIconPaths = {
+  all: 'M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z',
+  development: 'M8 7l-5 5 5 5m8-10 5 5-5 5M13 4l-2 16',
+  metrics: 'M9 3h6v5H9zM3 16h6v5H3zM15 16h6v5h-6zM12 8v4M6 16v-4h12v4',
+};
 const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags || []))];
 ---
 
-<BaseLayout title={`${t['archive.title']} — Panda Blog`} description={t['archive.pageDesc']} lang={lang}>
+<BaseLayout title={`${t['archive.title']} — Panda Blog`} description={t['archive.pageDesc']} slug={`${prefix}/blog`} lang={lang}>
   <Header lang={lang} />
 
-  <main class="min-h-screen">
-    <div class="section-container archive-page pt-10 md:pt-20 pb-16 md:pb-28">
-      <div class="archive-title-wrap text-center mb-12 md:mb-16">
-        <h1 class="archive-animal-title">
-          <span class="archive-ribbon">
-            <span class="archive-ribbon__back archive-ribbon__back--left" aria-hidden="true"></span>
-            <span class="archive-ribbon__back archive-ribbon__back--right" aria-hidden="true"></span>
-            <span class="archive-ribbon__fold archive-ribbon__fold--left" aria-hidden="true"></span>
-            <span class="archive-ribbon__fold archive-ribbon__fold--right" aria-hidden="true"></span>
-            <span class="archive-ribbon__front" aria-hidden="true"></span>
-            <span class="archive-ribbon__text">{t['archive.title']}</span>
-          </span>
-        </h1>
-        <p class="archive-title-desc text-sm" style="color: var(--text-muted);">
-          <span >{t['archive.desc']}</span> {displayPosts.length} <span >{t['archive.desc2']}</span>
-        </p>
-      </div>
-
-      <div class="mx-auto mb-12 md:mb-16" style="max-width: 40rem;">
-        <div class="mb-6">
-          <Search lang={lang} />
-        </div>
-
-        {allTags.length > 0 && (
-          <div class="archive-tabs" id="tag-filter-bar">
-            <span class="archive-tab cursor-pointer tag-filter-btn tag-filter-active" data-tag="all">
-              <span class="archive-tab__dot" aria-hidden="true"></span>
-              {t['archive.all']}
+  <main class="min-h-screen" id="article-archive">
+    <div class="section-container archive-page">
+      <header class="archive-hero">
+        <div class="archive-hero-copy">
+          <p class="archive-eyebrow"><span aria-hidden="true"></span>{t['archive.eyebrow']}</p>
+          <h1 class="archive-title">
+            <span class="archive-ribbon">
+              <span class="archive-ribbon__back archive-ribbon__back--left" aria-hidden="true"></span>
+              <span class="archive-ribbon__back archive-ribbon__back--right" aria-hidden="true"></span>
+              <span class="archive-ribbon__fold archive-ribbon__fold--left" aria-hidden="true"></span>
+              <span class="archive-ribbon__fold archive-ribbon__fold--right" aria-hidden="true"></span>
+              <span class="archive-ribbon__front" aria-hidden="true"></span>
+              <span class="archive-ribbon__text">{t['archive.title']}</span>
             </span>
-            {allTags.map((tag) => (
-              <span class="archive-tab cursor-pointer tag-filter-btn" data-tag={tag}>
-                <span class="archive-tab__dot" aria-hidden="true"></span>
-                {tag}
-              </span>
+          </h1>
+          <p class="archive-intro">{t['archive.intro']}</p>
+        </div>
+        <div class="archive-overview" data-pagefind-ignore>
+          <div><span class="archive-overview-number">{String(displayPosts.length).padStart(2, '0')}</span><span>{t['archive.statArticles']}</span></div>
+          <div><span class="archive-overview-number">{String(categories.length).padStart(2, '0')}</span><span>{t['archive.statTopics']}</span></div>
+        </div>
+      </header>
+
+      <div class="archive-workspace">
+        <aside class="archive-topics" aria-labelledby="archive-topics-title" data-pagefind-ignore>
+          <h2 id="archive-topics-title" class="archive-section-label">{t['archive.categories']}</h2>
+          <nav class="archive-category-grid" aria-label={t['archive.categories']}>
+            <a href={`${prefix}/blog`} class="archive-category archive-all-link" data-category-filter="all" data-title={t['archive.categoryAll']} data-description={t['archive.allIntro']} aria-current="true">
+              <span class="archive-category-top"><svg class="archive-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d={categoryIconPaths.all}/></svg><span class="archive-category-name">{t['archive.categoryAll']}</span><span class="archive-category-count">{displayPosts.length}</span></span>
+            </a>
+            {categories.map((category) => (
+              <a href={`${prefix}/blog?category=${category.id}`} class="archive-category" data-category-filter={category.id} data-title={category.label} data-description={category.description}>
+                <span class="archive-category-top"><svg class="archive-category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={categoryIconPaths[category.id]}/></svg><span class="archive-category-name">{category.label}</span><span class="archive-category-count">{categoryCounts[category.id]}</span></span>
+              </a>
             ))}
+          </nav>
+          <div class="archive-sidebar-note">
+            <p>{t['archive.topicHint']}</p>
+            <a href={`${prefix}/aws`}>{t['nav.aws']}<span aria-hidden="true">↗</span></a>
           </div>
-        )}
-      </div>
+        </aside>
 
-      <div class="mx-auto" style="max-width: 44rem;" data-pagefind-body>
-        {displayPosts.map((post: any, index: number) => {
-          const slug = post.resolvedSlug;
-          const readingTime = getReadingTime(post.rawContent);
-          const formattedDate = formatDate(post.frontmatter.date, lang);
-          const icon = getArticleEmoji(slug, index);
-
-          return (
-            <article class="archive-note-card group archive-article" data-tags={(post.frontmatter.tags || []).join(',')}>
-              <div class="archive-note-icon" aria-hidden="true">
-                <span class="archive-note-emoji" aria-label={icon.label}>{icon.emoji}</span>
-              </div>
-
-              <div class="archive-note-body">
-                <div class="archive-note-meta">
-                  <span>{formattedDate}</span>
-                  <span aria-hidden="true">·</span>
-                  <span>{readingTime} <span >{t['archive.minRead']}</span></span>
-                </div>
-
-                <a href={`${prefix}/blog/${slug}`} class="block mb-3 group-hover:opacity-85 transition-opacity">
-                  <h2 class="archive-note-title font-serif">{post.frontmatter.title}</h2>
-                </a>
-
-                <p class="archive-note-desc">
-                  {post.frontmatter.description}
-                </p>
-
-                {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
-                  <div class="archive-note-tags">
-                    {post.frontmatter.tags.map((tag: string) => (
-                      <span class="archive-card-tag">{tag}</span>
+        <section class="archive-content" aria-labelledby="archive-current-title">
+          <div class="archive-browse" data-pagefind-ignore>
+            <div class="archive-toolbar">
+              <h2 id="archive-current-title" class="archive-current-title">{t['archive.categoryAll']}</h2>
+              <label class="archive-sort-label">{t['archive.sort']}
+                <select id="archive-sort">
+                  <option value="newest">{t['archive.newest']}</option>
+                  <option value="oldest">{t['archive.oldest']}</option>
+                </select>
+              </label>
+            </div>
+            <p id="archive-category-description" class="archive-selected-description">{t['archive.allIntro']}</p>
+            <div class="archive-search"><Search lang={lang} /></div>
+            <div class="archive-list-controls">
+              {allTags.length > 0 && (
+                <details class="archive-tag-details">
+                  <summary>{t['archive.tags']}</summary>
+                  <div class="archive-tabs" id="tag-filter-bar">
+                    <button type="button" class="archive-tab tag-filter-btn tag-filter-active" data-tag="all" aria-pressed="true">{t['archive.all']}</button>
+                    {allTags.map((tag) => (
+                      <button type="button" class="archive-tab tag-filter-btn" data-tag={tag} aria-pressed="false">{tag}</button>
                     ))}
                   </div>
-                )}
-              </div>
-            </article>
-          );
-        })}
-
-        {displayPosts.length === 0 && (
-          <div class="text-center py-20">
-            <p class="text-sm" style="color: var(--text-muted);">{t['musing.empty']}</p>
+                </details>
+              )}
+              <p id="archive-result-count" class="archive-result-count" role="status" aria-live="polite" data-template={t['archive.results']}>{t['archive.results'].replace('{count}', String(displayPosts.length))}</p>
+            </div>
           </div>
-        )}
+
+          <div class="mx-auto archive-article-list" id="archive-article-list" data-pagefind-body>
+            {displayPosts.map((post: any, index: number) => {
+              const slug = post.resolvedSlug;
+              const readingTime = getReadingTime(post.rawContent);
+              const formattedDate = formatDate(post.frontmatter.date, lang);
+              const icon = getArticleEmoji(slug, index);
+              const category = getArticleCategory(post, lang);
+
+              return (
+                <article class="archive-note-card archive-article" data-category={category.id} data-order={index} data-tags={JSON.stringify(post.frontmatter.tags || [])}>
+                  <div class="archive-note-body">
+                    <div class="archive-note-meta">
+                      <span class="archive-animal-mark" aria-hidden="true">{icon.emoji}</span>
+                      <a href={`${prefix}/blog?category=${category.id}`} class="archive-note-category">{category.label}</a>
+                      <span aria-hidden="true">/</span>
+                      <time datetime={new Date(post.frontmatter.date).toISOString()}>{formattedDate}</time>
+                      {index === 0 && <span class="archive-latest-label">{t['archive.latest']}</span>}
+                    </div>
+                    <a href={`${prefix}/blog/${slug}`} class="archive-note-title-link">
+                      <h3 class="archive-note-title">{post.frontmatter.title}</h3>
+                    </a>
+                    <p class="archive-note-desc">{post.frontmatter.description}</p>
+                    <div class="archive-note-footer">
+                      <div class="archive-note-tags">
+                        {(post.frontmatter.tags || []).slice(0, 2).map((tag: string) => <span class="archive-card-tag">{tag}</span>)}
+                      </div>
+                      <span class="archive-reading-time">{readingTime} {t['archive.minRead']}</span>
+                    </div>
+                  </div>
+                  <a href={`${prefix}/blog/${slug}`} class="archive-note-preview" aria-label={post.frontmatter.title}>
+                    {post.frontmatter.cover ? (
+                      <img src={post.frontmatter.cover} alt="" width="480" height="320" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+                    ) : (
+                      <span class="archive-note-emoji" aria-hidden="true">{icon.emoji}</span>
+                    )}
+                    <span class="archive-preview-arrow" aria-hidden="true">↗</span>
+                  </a>
+                </article>
+              );
+            })}
+
+            <div class="archive-empty" id="archive-empty" hidden={displayPosts.length > 0} data-empty-title={t['archive.emptyTitle']} data-no-matches={t['archive.noMatches']} data-pagefind-ignore>
+              <svg class="archive-empty-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="11" y="7" width="28" height="34" rx="3"/><path d="M17 7v34M22 17h11M22 23h9M22 29h6M7 13h7M7 21h7M7 29h7"/></svg>
+              <h2 id="archive-empty-title">{t['archive.emptyTitle']}</h2>
+              <p>{t['archive.emptyDesc']}</p>
+              <a href={`${prefix}/blog`} data-category-filter="all" data-description={t['archive.allIntro']}>{t['archive.reset']}</a>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </main>
@@ -112,61 +156,133 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
 </BaseLayout>
 
 <script>
-  function initTagFilter() {
-    const tagBtns = document.querySelectorAll<HTMLElement>('.tag-filter-btn');
-    const articles = document.querySelectorAll<HTMLElement>('.archive-article');
-    if (!tagBtns.length || !articles.length) return;
+  function initArchive() {
+    const root = document.getElementById('article-archive');
+    if (!root || root.dataset.initialized) return;
+    root.dataset.initialized = 'true';
+    const categoryLinks = Array.from(root.querySelectorAll<HTMLAnchorElement>('[data-category-filter]'));
+    const tagButtons = Array.from(root.querySelectorAll<HTMLButtonElement>('.tag-filter-btn'));
+    const articles = Array.from(root.querySelectorAll<HTMLElement>('.archive-article'));
+    const list = root.querySelector<HTMLElement>('#archive-article-list')!;
+    const sort = root.querySelector<HTMLSelectElement>('#archive-sort')!;
+    const count = root.querySelector<HTMLElement>('#archive-result-count')!;
+    const description = root.querySelector<HTMLElement>('#archive-category-description')!;
+    const currentTitle = root.querySelector<HTMLElement>('#archive-current-title')!;
+    const empty = root.querySelector<HTMLElement>('#archive-empty')!;
+    const emptyTitle = root.querySelector<HTMLElement>('#archive-empty-title')!;
+    let category = 'all';
+    let tag = 'all';
 
-    function setActive(activeBtn: HTMLElement) {
-      tagBtns.forEach((btn) => {
-        const isActive = btn === activeBtn;
-        if (isActive) {
-          btn.classList.add('tag-filter-active');
-        } else {
-          btn.classList.remove('tag-filter-active');
-        }
+    function render() {
+      let visibleCount = 0;
+      let categoryCount = 0;
+      articles.forEach((article) => {
+        const inCategory = category === 'all' || article.dataset.category === category;
+        if (inCategory) categoryCount++;
+        const tags: string[] = JSON.parse(article.dataset.tags || '[]');
+        article.hidden = !(inCategory && (tag === 'all' || tags.includes(tag)));
+        if (!article.hidden) visibleCount++;
+      });
+      articles.slice().sort((a, b) => {
+        const difference = Number(a.dataset.order) - Number(b.dataset.order);
+        return sort.value === 'oldest' ? -difference : difference;
+      }).forEach((article) => list.insertBefore(article, empty));
+      categoryLinks.forEach((link) => {
+        const active = link.dataset.categoryFilter === category;
+        if (active) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
+      });
+      tagButtons.forEach((button) => {
+        const active = button.dataset.tag === tag;
+        button.classList.toggle('tag-filter-active', active);
+        button.setAttribute('aria-pressed', String(active));
+        button.hidden = button.dataset.tag !== 'all' && !articles.some((article) =>
+          (category === 'all' || article.dataset.category === category) &&
+          JSON.parse(article.dataset.tags || '[]').includes(button.dataset.tag));
+      });
+      const selectedCategory = categoryLinks.find((link) => link.dataset.categoryFilter === category);
+      description.textContent = selectedCategory?.dataset.description || '';
+      currentTitle.textContent = selectedCategory?.dataset.title || '';
+      count.textContent = (count.dataset.template || '').replace('{count}', String(visibleCount));
+      empty.hidden = visibleCount > 0;
+      emptyTitle.textContent = categoryCount === 0 ? empty.dataset.emptyTitle! : empty.dataset.noMatches!;
+      // Mobile language links are rendered statically; keep the current category and sort.
+      document.querySelectorAll<HTMLAnchorElement>('.mobile-nav-language-link').forEach((link) => {
+        const url = new URL(link.href);
+        url.search = window.location.search;
+        url.searchParams.delete('tag');
+        link.href = url.toString();
       });
     }
 
-    tagBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const tag = btn.dataset.tag || 'all';
-        setActive(btn);
+    function readLocation() {
+      const params = new URLSearchParams(window.location.search);
+      const requestedCategory = params.get('category') || 'all';
+      category = categoryLinks.some((link) => link.dataset.categoryFilter === requestedCategory) ? requestedCategory : 'all';
+      const requestedTag = params.get('tag') || 'all';
+      tag = tagButtons.some((button) => button.dataset.tag === requestedTag) && articles.some((article) =>
+        (category === 'all' || article.dataset.category === category) &&
+        JSON.parse(article.dataset.tags || '[]').includes(requestedTag)) ? requestedTag : 'all';
+      sort.value = params.get('sort') === 'oldest' ? 'oldest' : 'newest';
+      render();
+    }
 
-        articles.forEach((article) => {
-          if (tag === 'all') {
-            article.style.display = '';
-          } else {
-            const tags = (article.dataset.tags || '').split(',').map((t) => t.trim());
-            article.style.display = tags.includes(tag) ? '' : 'none';
-          }
-        });
-      });
-    });
+    function updateLocation() {
+      const url = new URL(window.location.href);
+      category === 'all' ? url.searchParams.delete('category') : url.searchParams.set('category', category);
+      tag === 'all' ? url.searchParams.delete('tag') : url.searchParams.set('tag', tag);
+      sort.value === 'newest' ? url.searchParams.delete('sort') : url.searchParams.set('sort', sort.value);
+      history.pushState(history.state, '', url);
+      render();
+    }
+
+    categoryLinks.forEach((link) => link.addEventListener('click', (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+      event.preventDefault();
+      category = link.dataset.categoryFilter || 'all';
+      tag = 'all';
+      updateLocation();
+    }));
+    tagButtons.forEach((button) => button.addEventListener('click', () => {
+      tag = button.dataset.tag || 'all';
+      updateLocation();
+    }));
+    sort.addEventListener('change', updateLocation);
+    const onPopState = () => readLocation();
+    window.addEventListener('popstate', onPopState);
+    document.addEventListener('astro:before-swap', () => window.removeEventListener('popstate', onPopState), { once: true });
+    readLocation();
   }
 
-  document.addEventListener('astro:page-load', initTagFilter);
+  document.addEventListener('astro:page-load', initArchive);
 </script>
 
 <style>
+  [hidden] { display: none !important; }
+
   .archive-page {
-    --tab-shadow: 0 5px 0 rgba(52, 70, 100, 0.11);
+    --archive-line: var(--border);
+    padding-top: 3.5rem;
+    padding-bottom: 5rem;
+    font-kerning: normal;
   }
-
-  .archive-title-wrap {
-    position: relative;
+  :global([data-theme="dark"]) .archive-page { --surface-blue: rgba(129, 174, 217, 0.18); }
+  .archive-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 68rem;
+    margin: 0 auto 2.5rem;
+    text-align: center;
   }
-
-  .archive-animal-title {
-    display: inline-block;
-    margin: 0 0 1.15rem;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: clamp(1.65rem, 4.1vw, 2.75rem);
-    font-weight: 900;
-    line-height: 1;
-    user-select: none;
-  }
-
+  .archive-eyebrow { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; color: var(--text-muted); font-size: 0.7rem; font-weight: 600; }
+  .archive-eyebrow > span { width: 0.35rem; height: 0.35rem; border-radius: 50%; background: var(--accent); }
+  .archive-title { display: inline-block; color: var(--text); font-family: 'Noto Sans', sans-serif; font-size: clamp(1.8rem, 3.3vw, 2.3rem); font-weight: 900; line-height: 1; }
+  .archive-intro { margin-top: 1.6rem; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.8; }
+  .archive-overview { display: flex; justify-content: center; gap: 1.25rem; }
+  .archive-overview > div { display: flex; align-items: baseline; gap: 0.4rem; color: var(--text-muted); font-size: 0.7rem; }
+  .archive-overview-number { color: var(--text-secondary); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 600; font-variant-numeric: tabular-nums; }
   .archive-ribbon {
     --rf: var(--surface-blue);
     --rb: #9db8df;
@@ -185,7 +301,7 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
     filter: drop-shadow(0 0.08em 0.12em rgba(82, 111, 164, 0.1));
   }
 
-  [data-theme="dark"] .archive-ribbon {
+  :global([data-theme="dark"]) .archive-ribbon {
     --rf: rgba(129, 174, 217, 0.24);
     --rb: rgba(129, 174, 217, 0.18);
     --rk: rgba(129, 174, 217, 0.34);
@@ -256,200 +372,123 @@ const allTags = [...new Set(displayPosts.flatMap((p: any) => p.frontmatter.tags 
     transform: perspective(11.5em) rotateX(3deg);
   }
 
-  .archive-title-desc {
-    margin-top: 0.15rem;
-    line-height: 1.8;
-  }
-
-  .archive-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.7rem;
-    padding: 0.9rem;
-    border: 1px solid var(--border);
-    border-radius: 1.25rem;
-    background: var(--surface);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
-  }
-
-  .archive-tab {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.42rem;
-    min-height: 2.2rem;
-    padding: 0.45rem 0.85rem;
-    border-radius: 999px;
-    color: var(--text-secondary);
-    background: transparent;
-    border: 1px solid transparent;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
-  }
-
-  .archive-tab:hover {
-    color: var(--text);
-    background: var(--surface-hover);
-    transform: translateY(-1px);
-  }
-
-  .archive-tab.tag-filter-active {
-    color: #ffffff;
-    background: var(--primary);
-    border-color: var(--primary);
-    box-shadow: var(--tab-shadow);
-  }
-
-  .archive-tab__dot {
-    width: 0.48rem;
-    height: 0.48rem;
-    border-radius: 999px;
-    background: var(--accent-warm);
-    box-shadow: inset 0 -1px 0 rgba(31, 42, 61, 0.18);
-  }
-
-  .archive-tab:not(.tag-filter-active) .archive-tab__dot {
-    background: transparent;
-    border: 1px solid var(--accent-warm);
-  }
-
-  .archive-card-tag {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.25rem 0.55rem;
-    border-radius: 999px;
-    font-size: 0.64rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: var(--primary);
-    background: var(--primary-light);
-    border: 1px dashed var(--accent-border);
-  }
-
-  .archive-note-card {
-    position: relative;
+  .archive-workspace {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 1rem;
-    padding: clamp(1rem, 2.5vw, 1.35rem);
-    margin-bottom: 1.05rem;
+    grid-template-columns: 13.5rem minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(2rem, 5vw, 4rem);
+    max-width: 68rem;
+    margin: 0 auto;
+  }
+  .archive-topics { position: sticky; top: 6.5rem; max-height: calc(100dvh - 7.5rem); overflow-y: auto; padding: 1.2rem 0.85rem; background: transparent; }
+  .archive-section-label { margin: 0.1rem 0 1rem 0.85rem; color: var(--text-muted); font-size: 0.75rem; font-weight: 500; }
+  .archive-category-grid { display: grid; gap: 0.3rem; }
+  .archive-category { position: relative; padding: 0.9rem 0.85rem; border: 1px solid transparent; border-radius: 0.9rem; color: var(--text-secondary); transition: background 0.2s, color 0.2s; }
+  .archive-category:hover { background: var(--surface-hover); color: var(--text); }
+  .archive-category[aria-current] { background: var(--primary-light); color: var(--primary); }
+  .archive-category[aria-current]::before { content: ''; position: absolute; left: 0; top: 32%; bottom: 32%; width: 3px; border-radius: 3px; background: var(--accent); }
+  .archive-category-top { display: grid; grid-template-columns: 1.15rem minmax(0, 1fr) auto; align-items: center; gap: 0.65rem; }
+  .archive-category-icon { width: 1.05rem; height: 1.05rem; }
+  .archive-category-name { font-size: 0.85rem; font-weight: 500; line-height: 1.5; text-wrap: balance; }
+  .archive-category-count { min-width: 1.3rem; text-align: center; padding: 0.1rem 0.3rem; border-radius: 999px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-variant-numeric: tabular-nums; }
+  .archive-category[aria-current] .archive-category-count { background: var(--primary-light); color: var(--primary); }
+  .archive-sidebar-note { margin: 1.65rem 0.85rem 0; padding-top: 1.3rem; border-top: 1px dashed var(--accent-border); }
+  .archive-sidebar-note p { color: var(--text-muted); font-size: 0.72rem; line-height: 1.8; }
+  .archive-sidebar-note a { display: flex; justify-content: space-between; align-items: center; margin-top: 0.9rem; color: var(--text-secondary); font-size: 0.75rem; }
+  .archive-sidebar-note a:hover { color: var(--primary); }
+
+  .archive-content { min-width: 0; }
+  .archive-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; }
+  .archive-current-title { color: var(--text); font-family: 'Noto Serif', 'Songti SC', 'Yu Mincho', serif; font-size: 1.3rem; font-weight: 600; line-height: 1.5; letter-spacing: -0.025em; }
+  .archive-sort-label { display: flex; align-items: center; gap: 0.6rem; color: var(--text-muted); font-size: 0.7rem; }
+  .archive-sort-label select { padding: 0.45rem 0.4rem; border: 1px solid var(--border); border-radius: 0.7rem; background: var(--surface); color: var(--text-secondary); font-size: 0.75rem; }
+  .archive-selected-description { margin: 0.5rem 0 1.35rem; color: var(--text-muted); font-size: 0.8rem; line-height: 1.8; }
+  .archive-search { margin-bottom: 0.7rem; }
+  .archive-search :global(#search-input) { min-width: 0; }
+  .archive-list-controls { position: relative; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
+  .archive-tag-details { min-width: 0; }
+  .archive-tag-details summary { cursor: pointer; color: var(--text-secondary); font-size: 0.73rem; padding: 0.65rem 0; }
+  .archive-result-count { flex-shrink: 0; color: var(--text-muted); font-size: 0.7rem; }
+  .archive-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0.7rem 0; }
+  .archive-tab { padding: 0.4rem 0.7rem; border: 1px solid var(--archive-line); border-radius: 999px; background: var(--surface); color: var(--text-secondary); font-size: 0.7rem; transition: background 0.2s, color 0.2s; }
+  .archive-tab:hover { background: var(--surface-hover); }
+  .archive-tab.tag-filter-active { background: var(--primary); border-color: var(--primary); color: var(--surface); }
+
+  .archive-article-list { width: 100%; margin: 0; }
+  .archive-note-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 11.5rem;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 1.5rem;
+    position: relative;
+    margin-bottom: 1.15rem;
     border: 1px solid var(--border);
     border-radius: 1.35rem;
-    background:
-      radial-gradient(circle at 95% 14%, rgba(134, 166, 221, 0.12), transparent 22%),
-      var(--surface);
-    box-shadow: 0 5px 0 rgba(82, 111, 164, 0.08), 0 18px 34px rgba(52, 70, 100, 0.08);
-    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-    overflow: hidden;
+    background: radial-gradient(circle at 96% 8%, rgba(134, 166, 221, 0.1), transparent 32%), var(--surface);
+    box-shadow: 0 4px 0 rgba(82, 111, 164, 0.07), 0 12px 26px rgba(52, 70, 100, 0.045);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
   }
+  .archive-note-card:hover { transform: translateY(-2px); border-color: var(--border-hover); box-shadow: 0 6px 0 rgba(82, 111, 164, 0.09), 0 18px 30px rgba(52, 70, 100, 0.07); }
+  .archive-animal-mark { display: grid; place-items: center; width: 2rem; height: 2rem; margin-right: 0.15rem; border-radius: 0.65rem; background: var(--surface-blue); box-shadow: 0 2px 0 rgba(82, 111, 164, 0.12); font-size: 1.1rem; }
+  .archive-note-body { min-width: 0; }
+  .archive-note-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.6rem; margin-bottom: 0.8rem; color: var(--text-muted); font-size: 0.68rem; line-height: 1.5; }
+  .archive-note-category { color: var(--primary); font-weight: 600; }
+  .archive-latest-label { margin-left: auto; padding: 0.15rem 0.4rem; border-radius: 999px; color: var(--primary); background: var(--primary-light); font-size: 0.61rem; }
+  .archive-note-title-link { display: block; }
+  .archive-note-title { color: var(--text); font-family: 'Noto Serif', 'Songti SC', 'Yu Mincho', serif; font-size: clamp(1.05rem, 1.6vw, 1.3rem); font-weight: 700; line-height: 1.65; letter-spacing: -0.02em; text-wrap: pretty; transition: color 0.2s; }
+  .archive-note-title-link:hover .archive-note-title { color: var(--primary-hover); }
+  .archive-note-desc { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; margin-top: 0.65rem; color: var(--text-secondary); font-size: 0.78rem; line-height: 1.8; }
+  .archive-note-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.7rem; margin-top: 1rem; }
+  .archive-note-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .archive-card-tag { padding: 0.25rem 0.55rem; border-radius: 999px; color: var(--primary); background: var(--primary-light); font-size: 0.63rem; font-weight: 500; }
+  .archive-reading-time { color: var(--text-muted); font-size: 0.64rem; white-space: nowrap; }
+  .archive-note-preview { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 0.9rem; background: var(--bg-warm); border: 1px solid var(--archive-line); }
+  .archive-note-preview img { width: 100%; height: 100%; object-fit: cover; object-position: top left; transition: transform 0.35s; }
+  .archive-note-preview:hover img { transform: scale(1.035); }
+  .archive-note-emoji { font-size: 2rem; }
+  .archive-preview-arrow { position: absolute; right: 0.5rem; bottom: 0.5rem; display: grid; place-items: center; width: 1.55rem; height: 1.55rem; border-radius: 50%; color: var(--text); background: var(--surface); box-shadow: 0 2px 8px rgba(52, 70, 100, 0.08); font-size: 0.85rem; }
 
-  .archive-note-card::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 0.34rem;
-    background:
-      radial-gradient(circle at 0.45rem 50%, var(--surface-blue) 0 0.2rem, transparent 0.22rem) 0 0 / 1.1rem 100% repeat-x;
-    opacity: 0.72;
+  .archive-empty { padding: 3rem 1.5rem; text-align: center; border: 1px solid var(--archive-line); border-radius: 1.35rem; background: var(--surface); }
+  .archive-empty-mark { width: 3rem; height: 3rem; margin: 0 auto 1.1rem; color: var(--text-muted); }
+  .archive-empty h2 { color: var(--text); font-size: 1rem; font-weight: 600; }
+  .archive-empty p { max-width: 26rem; margin: 0.6rem auto 1.1rem; color: var(--text-secondary); font-size: 0.8rem; line-height: 1.8; }
+  .archive-empty a { color: var(--primary); font-size: 0.78rem; text-decoration: underline; text-underline-offset: 0.3rem; }
+
+  .archive-page :is(a, button, select, summary):focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+  @media (min-width: 900px) { .archive-category { min-height: 3rem; } }
+  @media (max-width: 899px) {
+    .archive-page { padding-top: 2rem; }
+    .archive-hero { margin-bottom: 1.9rem; }
+    .archive-workspace { grid-template-columns: minmax(0, 1fr); gap: 1.7rem; }
+    .archive-topics { position: static; max-height: none; overflow: visible; padding: 1rem; }
+    .archive-category-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.4rem; }
+    .archive-category { padding: 0.7rem; }
+    .archive-category-top { gap: 0.4rem; }
+    .archive-sidebar-note { display: none; }
   }
-
-  .archive-note-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--border-hover);
-    box-shadow: 0 7px 0 rgba(82, 111, 164, 0.1), 0 24px 42px rgba(52, 70, 100, 0.12);
+  @media (max-width: 560px) {
+    .archive-hero { align-items: center; gap: 1rem; }
+    .archive-hero-copy { min-width: 0; }
+    .archive-title { font-size: 1.9rem; }
+    .archive-intro { font-size: 0.78rem; }
+    .archive-overview { gap: 1rem; }
+    .archive-overview-number { font-size: 0.8rem; }
+    .archive-overview > div { font-size: 0.65rem; }
+    .archive-category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .archive-category-name { font-size: 0.76rem; }
+    .archive-category-count { font-size: 0.61rem; }
+    .archive-sort-label { font-size: 0; gap: 0; }
+    .archive-sort-label select { font-size: 0.7rem; }
+    .archive-note-card { padding: 1rem; grid-template-columns: minmax(0, 1fr) 5.2rem; align-items: start; gap: 0.8rem; }
+    .archive-note-meta { font-size: 0.6rem; gap: 0.3rem; margin-bottom: 0.7rem; }
+    .archive-animal-mark { width: 1.65rem; height: 1.65rem; font-size: 0.95rem; }
+    .archive-note-title { font-size: 1rem; line-height: 1.65; }
+    .archive-note-preview { margin-top: 2.6rem; }
+    .archive-preview-arrow { width: 1.15rem; height: 1.15rem; right: 0.25rem; bottom: 0.25rem; font-size: 0.7rem; }
+    .archive-note-desc { font-size: 0.73rem; }
+    .archive-note-footer { gap: 0.5rem; margin-top: 0.7rem; }
+    .archive-latest-label { margin-left: 0; }
   }
-
-  .archive-note-icon {
-    width: 3rem;
-    height: 3rem;
-    display: grid;
-    place-items: center;
-    border-radius: 0.9rem;
-    background: var(--surface-blue);
-    box-shadow: 0 4px 0 rgba(82, 111, 164, 0.13);
-    transition: transform 0.2s ease;
-  }
-
-  .archive-note-card:hover .archive-note-icon {
-    transform: translateY(-2px) rotate(-3deg);
-  }
-
-  .archive-note-emoji {
-    display: block;
-    font-size: 1.65rem;
-    line-height: 1;
-  }
-
-  .archive-note-body {
-    min-width: 0;
-  }
-
-  .archive-note-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem 0.7rem;
-    margin-bottom: 0.55rem;
-    color: var(--text-muted);
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-
-  .archive-note-title {
-    color: var(--text);
-    font-size: clamp(1.2rem, 3vw, 1.85rem);
-    font-weight: 800;
-    line-height: 1.24;
-    letter-spacing: 0;
-    text-wrap: balance;
-  }
-
-  .archive-note-desc {
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
-    font-size: 0.94rem;
-    line-height: 1.76;
-  }
-
-  .archive-note-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.42rem;
-    padding-top: 0.8rem;
-    border-top: 1px dashed var(--accent-border);
-  }
-
-  @media (max-width: 640px) {
-    .archive-animal-title {
-      font-size: clamp(1.45rem, 8vw, 2.1rem);
-    }
-
-    .archive-tabs {
-      justify-content: flex-start;
-      overflow-x: auto;
-      flex-wrap: nowrap;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .archive-tab {
-      flex: 0 0 auto;
-    }
-
-    .archive-note-card {
-      grid-template-columns: 1fr;
-      gap: 0.8rem;
-    }
-
-    .archive-note-icon {
-      width: 2.75rem;
-      height: 2.75rem;
-    }
-  }
+  @media (prefers-reduced-motion: reduce) { .archive-page *, .archive-page *::before { transition: none !important; } }
 </style>

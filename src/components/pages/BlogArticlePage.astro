@@ -8,6 +8,7 @@ import Donate from '../../components/Donate.astro';
 import { groupPostsBySlug, getReadingTime, formatDate } from '../../lib/posts.js';
 import { getArticleEmoji } from '../../lib/animalIcons.js';
 import dict from '../../i18n/dict.js';
+import { getArticleCategory } from '../../data/articleCategories.js';
 
 const { slug } = Astro.params;
 const { lang } = Astro.props;
@@ -28,6 +29,7 @@ const { Content } = post;
 const readingTime = getReadingTime(post.rawContent);
 const formattedDate = formatDate(post.frontmatter.date, lang);
 const articleEmoji = getArticleEmoji(slug);
+const category = getArticleCategory(post, lang);
 
 const headings = post.getHeadings ? post.getHeadings() : [];
 ---
@@ -39,7 +41,7 @@ const headings = post.getHeadings ? post.getHeadings() : [];
     <article class="article-page pt-8 md:pt-20 pb-16 md:pb-28 mx-auto">
       
       <div class="mb-6 md:mb-12">
-        <a href={`${prefix}/blog`} class="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider transition-colors hover:opacity-70 py-1" style="color: var(--text-muted);" >{t['article.back']}</a>
+        <a href={`${prefix}/blog?category=${category.id}`} class="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider transition-colors hover:opacity-70 py-1" style="color: var(--text-muted);" >{t['article.back']} · {category.label}</a>
       </div>
 
       {availableLangs.length > 1 && (
@@ -68,6 +70,7 @@ const headings = post.getHeadings ? post.getHeadings() : [];
         </div>
 
         <div class="article-hero__body">
+          <a href={`${prefix}/blog?category=${category.id}`} class="article-category-link">{category.label}</a>
           {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
             <div class="article-hero__tags">
               {post.frontmatter.tags.map((tag: string) => (
@@ -128,6 +131,16 @@ const headings = post.getHeadings ? post.getHeadings() : [];
 </BaseLayout>
 
 <style>
+  .article-category-link {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    color: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+  }
+  .article-category-link:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
   .article-page {
     --animal-shadow: 0 7px 0 rgba(82, 111, 164, 0.14), 0 22px 42px rgba(52, 70, 100, 0.12);
     --animal-press: 0 4px 0 rgba(82, 111, 164, 0.14), 0 14px 28px rgba(52, 70, 100, 0.1);

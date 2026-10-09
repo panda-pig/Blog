@@ -160,6 +160,8 @@ const languages = [
         const url = new URL(window.location.href);
         let cleanPath = url.pathname.replace(/^\/(en|ja)(?=\/|$)/, '');
         if (!cleanPath || cleanPath === '') cleanPath = '/';
+        // Category IDs and ordering are shared; free-form tags differ by language.
+        if (/^\/blog\/?$/.test(cleanPath)) url.searchParams.delete('tag');
 
         if (targetLang === 'zh') {
           url.pathname = cleanPath;

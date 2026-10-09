@@ -4,6 +4,8 @@ lang: en
 title: "Turning Japanese Grammar Into Daily Review Cards: A JLPT Grammar Deck UI Note"
 description: "The latest JLPT Grammar Deck redesign brings together 955 N1–N5 grammar points, local Guest progress, SM-2 review, generated cloze practice, and complete study analytics—all free to use."
 date: 2026-05-01
+cover: "/images/blog/jlpt-grammar-deck/jlpt-home.png"
+category: development
 tags: ["Project Notes", "Study Tools", "JLPT", "Next.js"]
 ---
 

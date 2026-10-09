@@ -6,6 +6,7 @@ import ProjectCard from '../../components/ProjectCard.astro';
 import dict from '../../i18n/dict.js';
 import { groupPostsBySlug, getLocalizedPosts, getReadingTime, formatDate } from '../../lib/posts.js';
 import { projectsData } from '../../data/projects';
+import { getArticleCategory } from '../../data/articleCategories.js';
 
 const { lang } = Astro.props;
 const prefix = lang === 'zh' ? '' : `/${lang}`;
@@ -525,7 +526,7 @@ const heroImageSrcSet = '/images/home-hero-bg-v4-960.webp 960w, /images/home-her
           const slug = post.resolvedSlug;
           const readingTime = getReadingTime(post.rawContent);
           const formattedDate = formatDate(post.frontmatter.date, lang);
-          const category = post.frontmatter.tags?.[0] || t['musing.category'];
+          const category = getArticleCategory(post, lang).label;
           const borderColors = ['#81aed9', '#ff8562', '#4a6ea8'];
           const borderColor = borderColors[index % borderColors.length];
 

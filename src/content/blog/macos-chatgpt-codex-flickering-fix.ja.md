@@ -4,6 +4,7 @@ lang: ja
 title: "macOS 版 ChatGPT で Codex 画面が点滅して操作できない：解決までの記録"
 description: "ChatGPT デスクトップアプリの Codex 画面が点滅し続け、再インストールや再起動でも直らなかった問題を、~/.codex をバックアップして再ログインすることでローカルのプロジェクトやタスクを失わずに解決した記録。"
 date: 2026-07-28
+category: development
 tags: ["ChatGPT", "Codex", "macOS", "トラブルシューティング"]
 draft: true
 ---

@@ -4,6 +4,8 @@ lang: zh
 title: "把租房链接变成决策报告：Japan Rental Analyzer 如何帮我比较日本房源"
 description: "Japan Rental Analyzer 把 SUUMO、LIFULL HOME'S、athome 和 Yahoo!不动产的单个房源链接，整理成个性化评分、区域相场、初期费用、公用数据、居民评价与多房源对比报告。"
 date: 2026-08-19
+cover: "/images/blog/japan-rental-analyzer/report.png"
+category: development
 tags: ["项目复盘", "日本租房", "数据分析", "Python"]
 ---
 

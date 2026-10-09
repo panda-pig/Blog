@@ -4,6 +4,8 @@ lang: ja
 title: "カウントダウンから振り返りへ：JLPT Sprint Desk の学習ループ設計"
 description: "最新版 JLPT Sprint Desk は、動的な試験日、中国語・英語 UI、リマインダーと試験当日の状態、14 日ローリング計画、ICS 出力、完全バックアップ復元、Animal Island デザインを追加しました。"
 date: 2026-05-05
+cover: "/images/blog/jlpt-sprint-desk/dashboard-overview.png"
+category: development
 tags: ["プロジェクト記録", "学習ツール", "JLPT", "React"]
 ---
 

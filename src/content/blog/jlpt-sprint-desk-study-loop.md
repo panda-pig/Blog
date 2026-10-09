@@ -4,6 +4,8 @@ lang: zh
 title: "从倒计时到复盘：JLPT Sprint Desk 的学习闭环设计"
 description: "JLPT Sprint Desk 最新版加入动态 JLPT 考期、双语界面、提醒与考试日状态、14 天滚动计划、ICS 日历导出和完整备份恢复，并升级为 Animal Island 风格的学习工作台。"
 date: 2026-05-05
+cover: "/images/blog/jlpt-sprint-desk/dashboard-overview.png"
+category: development
 tags: ["项目复盘", "学习工具", "JLPT", "React"]
 ---
 

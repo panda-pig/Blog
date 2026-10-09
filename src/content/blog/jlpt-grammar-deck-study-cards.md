@@ -4,6 +4,8 @@ lang: zh
 title: "把日语语法变成每天能复习的词卡：JLPT Grammar Deck 界面设计小记"
 description: "JLPT Grammar Deck 的最新版重新设计了首页与学习流程：955 条 N1–N5 语法、Guest 本地进度、SM-2 复习、自动挖空练习和完整学习数据现已全部免费开放。"
 date: 2026-05-01
+cover: "/images/blog/jlpt-grammar-deck/jlpt-home.png"
+category: development
 tags: ["项目复盘", "学习工具", "JLPT", "Next.js"]
 ---
 

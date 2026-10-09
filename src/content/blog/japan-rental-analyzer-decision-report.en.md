@@ -4,6 +4,8 @@ lang: en
 title: "From Rental URL to Decision Report: Comparing Japanese Apartments with Japan Rental Analyzer"
 description: "Japan Rental Analyzer turns individual listings from SUUMO, LIFULL HOME'S, athome, and Yahoo! Real Estate into personalized scores, market context, move-in cost estimates, public data, resident ratings, and side-by-side comparisons."
 date: 2026-08-19
+cover: "/images/blog/japan-rental-analyzer/report.png"
+category: development
 tags: ["Project Notes", "Renting in Japan", "Data Analysis", "Python"]
 ---
 

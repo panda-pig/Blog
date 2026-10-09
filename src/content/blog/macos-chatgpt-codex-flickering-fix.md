@@ -4,6 +4,7 @@ lang: zh
 title: "macOS 上 ChatGPT Codex 页面持续闪烁、无法点击：我的排查过程与有效方案"
 description: "ChatGPT 桌面端的 Codex 页面持续闪烁、无法操作，重装和重启都无效。记录我如何在保留本地项目与任务数据的前提下，通过备份 ~/.codex 并重新登录 Codex 恢复正常。"
 date: 2026-07-28
+category: development
 tags: ["ChatGPT", "Codex", "macOS", "故障排查"]
 draft: true
 ---

@@ -4,6 +4,8 @@ lang: ja
 title: "賃貸URLを意思決定レポートへ：Japan Rental Analyzerで日本の物件を比較する"
 description: "Japan Rental Analyzer は、SUUMO、LIFULL HOME'S、athome、Yahoo!不動産の物件URLから、個人条件スコア、エリア相場、初期費用、公的データ、住民評価、横断比較をまとめます。"
 date: 2026-08-19
+cover: "/images/blog/japan-rental-analyzer/report.png"
+category: development
 tags: ["プロジェクト記録", "日本の賃貸", "データ分析", "Python"]
 ---
 

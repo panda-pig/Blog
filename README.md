@@ -28,7 +28,16 @@ npm run dev
 
 ## 写作
 
-在 `src/pages/blog/` 目录下创建 Markdown 文件，参考已有的文章格式即可。
+在 `src/content/blog/` 目录下创建 Markdown 文件，参考已有的文章格式即可。中文使用 `slug.md`，英文和日文分别使用 `slug.en.md`、`slug.ja.md`，三种语言共用同一个 `slug` 和 `category`。
+
+文章通过 frontmatter 中的 `category` 归入一个主分类，`tags` 保留具体主题：
+
+| category | 分类 |
+| --- | --- |
+| `development` | 个人开发 |
+| `metrics` | 数据分析-指标体系 |
+
+文章可通过 `cover` 字段指定 `public/` 下已有的项目截图作为列表缩略图，三语言版本使用相同路径。分类名称与介绍统一维护在 `src/data/articleCategories.js`。未填写分类的文章默认归入「个人开发」；标记为 `draft: true` 的文章不会出现在公开列表或分类数量中。AWS 笔记继续保留独立专题入口。
 
 ## 部署
 

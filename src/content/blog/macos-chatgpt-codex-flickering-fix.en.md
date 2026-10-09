@@ -4,6 +4,7 @@ lang: en
 title: "ChatGPT Codex Keeps Flickering and Won’t Respond on macOS: What Finally Fixed It"
 description: "The Codex page in the ChatGPT desktop app kept flickering and became unusable, while reinstalling and restarting did nothing. Here is how I fixed it by backing up ~/.codex and refreshing the Codex login without losing local projects and tasks."
 date: 2026-07-28
+category: development
 tags: ["ChatGPT", "Codex", "macOS", "Troubleshooting"]
 draft: true
 ---

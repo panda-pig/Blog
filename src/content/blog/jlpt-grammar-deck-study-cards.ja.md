@@ -4,6 +4,8 @@ lang: ja
 title: "日本語文法を毎日復習できるカードへ：JLPT Grammar Deck の UI 記録"
 description: "最新版の JLPT Grammar Deck は、955 項目の N1〜N5 文法、Guest のローカル進捗、SM-2 復習、自動穴埋め練習、学習分析を新しい UI に統合し、すべて無料で公開しています。"
 date: 2026-05-01
+cover: "/images/blog/jlpt-grammar-deck/jlpt-home.png"
+category: development
 tags: ["プロジェクト記録", "学習ツール", "JLPT", "Next.js"]
 ---
 
