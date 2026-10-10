@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+  <title id="title">保険業務の分析フロー</title>
+  <desc id="desc">商品検索・選択、見積依頼の送信、見積取得、申込手続きの開始、申込送信、証券発行。最後の点線は、送信成功と最終的な業務成果を区別し、発行状態の定義確認が必要なことを表す。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#7695bd" stroke-width="1.5" /></marker>
+  </defs>
+  <rect width="1200" height="330" rx="24" fill="#f5f7fa" />
+  <g font-family="'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif">
+    <text x="40" y="52" fill="#24324d" font-size="23" font-weight="600">一件の業務を追い、各段階の完了状態を確認する</text>
+    <text x="40" y="82" fill="#607088" font-size="16">操作の意図 → 操作の完了 → 最終的な業務成果を分けて記録</text>
+    <g stroke="#7695bd" stroke-width="2" fill="none" marker-end="url(#arrow)">
+      <path d="M202 175H228" /><path d="M390 175H416" /><path d="M578 175H604" /><path d="M766 175H792" />
+      <path d="M954 175H980" stroke-dasharray="5 5" />
+    </g>
+    <g fill="#e2ebf7" stroke="#c1d1e7">
+      <rect x="40" y="125" width="162" height="100" rx="16" />
+      <rect x="228" y="125" width="162" height="100" rx="16" />
+      <rect x="416" y="125" width="162" height="100" rx="16" />
+      <rect x="604" y="125" width="162" height="100" rx="16" />
+      <rect x="792" y="125" width="162" height="100" rx="16" />
+      <rect x="980" y="125" width="180" height="100" rx="16" fill="#f1eee8" stroke="#b6b0a4" stroke-dasharray="5 5" />
+    </g>
+    <g fill="#24324d" font-size="18" font-weight="600" text-anchor="middle">
+      <text x="121" y="168"><tspan x="121" dy="0">商品検索・選択</tspan></text><text x="309" y="168"><tspan x="309" dy="0">見積依頼を送信</tspan></text>
+      <text x="497" y="168"><tspan x="497" dy="0">見積を取得</tspan></text><text x="685" y="168"><tspan x="685" dy="0">申込手続き開始</tspan></text>
+      <text x="873" y="168"><tspan x="873" dy="0">申込を送信</tspan></text><text x="1070" y="168"><tspan x="1070" dy="0">証券発行</tspan></text>
+    </g>
+    <g fill="#607088" font-size="14" text-anchor="middle">
+      <text x="121" y="196">業務の入口を探す</text><text x="309" y="196">送信結果を確認</text>
+      <text x="497" y="196">利用可能な見積</text><text x="685" y="196">申込段階に移行</text>
+      <text x="873" y="196">サーバー側で確認</text><text x="1070" y="196">最終状態を要確認</text>
+    </g>
+    <text x="40" y="281" fill="#607088" font-size="16">分析用の基本フロー：経路によって段階の省略や、やり取り・資料追加・支払いが発生します。</text>
+  </g>
+</svg>

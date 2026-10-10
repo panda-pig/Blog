@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="840" viewBox="0 0 360 840" role="img" aria-labelledby="title desc">
+<title id="title">保险业务平台的分析主线</title>
+<desc id="desc">查询或选择产品 → 提交询价 → 获得报价 → 转投保 → 提交投保 → 成功出单。不同路径可能跳过节点，或增加沟通、 补充资料、支付等步骤。 提交成功与最终业务成功需分别确认。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#7695bd" stroke-width="1.5"/></marker></defs>
+<rect width="360" height="840" rx="20" fill="#f5f7fa"/>
+<g font-family="Arial,'Noto Sans SC','Noto Sans JP','PingFang SC',sans-serif">
+<text x="24" y="36" fill="#24324d" font-size="20" font-weight="600">一笔业务的分析主线</text>
+<text x="24" y="64" fill="#607088" font-size="14">操作意图、操作完成与最终成果</text>
+<text x="24" y="84" fill="#607088" font-size="14">需要分别记录和判断。</text>
+<path d="M180 195V215" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="110" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="144" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">查询或选择产品</text>
+<text x="180" y="171" text-anchor="middle" fill="#607088" font-size="14">找到业务入口</text>
+<path d="M180 300V320" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="215" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="249" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">提交询价</text>
+<text x="180" y="276" text-anchor="middle" fill="#607088" font-size="14">确认询价提交结果</text>
+<path d="M180 405V425" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="320" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="354" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">获得报价</text>
+<text x="180" y="381" text-anchor="middle" fill="#607088" font-size="14">确认可用报价</text>
+<path d="M180 510V530" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="425" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="459" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">转投保</text>
+<text x="180" y="486" text-anchor="middle" fill="#607088" font-size="14">进入投保阶段</text>
+<path d="M180 615V635" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4 4"/>
+<rect x="24" y="530" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="564" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">提交投保</text>
+<text x="180" y="591" text-anchor="middle" fill="#607088" font-size="14">确认后端提交成功</text>
+<rect x="24" y="635" width="312" height="85" rx="14" fill="#f1eee8" stroke="#b6b0a4" stroke-dasharray="5 5"/>
+<text x="180" y="669" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">成功出单</text>
+<text x="180" y="696" text-anchor="middle" fill="#607088" font-size="14">需确认最终状态口径</text>
+<text x="24" y="765" fill="#607088" font-size="13">不同路径可能跳过节点，或增加沟通、</text>
+<text x="24" y="787" fill="#607088" font-size="13">补充资料、支付等步骤。</text>
+<text x="24" y="809" fill="#607088" font-size="13">提交成功与最终业务成功需分别确认。</text>
+</g></svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+  <title id="title">Insurance platform journey</title>
+  <desc id="desc">Find a product, submit a quote request, receive a usable quote, enter and submit an application, then confirm the policy issuance status separately. The dashed final link distinguishes submission from the business outcome.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#7695bd" stroke-width="1.5" /></marker>
+  </defs>
+  <rect width="1200" height="330" rx="24" fill="#f5f7fa" />
+  <g font-family="Arial,Helvetica,sans-serif">
+    <text x="40" y="52" fill="#24324d" font-size="23" font-weight="600">Follow one journey and confirm completion at every stage</text>
+    <text x="40" y="82" fill="#607088" font-size="16">Record intent, task completion and business outcomes separately</text>
+    <g stroke="#7695bd" stroke-width="2" fill="none" marker-end="url(#arrow)">
+      <path d="M202 175H228" /><path d="M390 175H416" /><path d="M578 175H604" /><path d="M766 175H792" />
+      <path d="M954 175H980" stroke-dasharray="5 5" />
+    </g>
+    <g fill="#e2ebf7" stroke="#c1d1e7">
+      <rect x="40" y="125" width="162" height="100" rx="16" />
+      <rect x="228" y="125" width="162" height="100" rx="16" />
+      <rect x="416" y="125" width="162" height="100" rx="16" />
+      <rect x="604" y="125" width="162" height="100" rx="16" />
+      <rect x="792" y="125" width="162" height="100" rx="16" />
+      <rect x="980" y="125" width="180" height="100" rx="16" fill="#f1eee8" stroke="#b6b0a4" stroke-dasharray="5 5" />
+    </g>
+    <g fill="#24324d" font-size="17" font-weight="600" text-anchor="middle">
+      <text x="121" y="159"><tspan x="121" dy="0">Find a</tspan><tspan x="121" dy="21">product</tspan></text><text x="309" y="159"><tspan x="309" dy="0">Submit quote</tspan><tspan x="309" dy="21">request</tspan></text>
+      <text x="497" y="159"><tspan x="497" dy="0">Receive a</tspan><tspan x="497" dy="21">usable quote</tspan></text><text x="685" y="159"><tspan x="685" dy="0">Enter</tspan><tspan x="685" dy="21">application</tspan></text>
+      <text x="873" y="159"><tspan x="873" dy="0">Submit</tspan><tspan x="873" dy="21">application</tspan></text><text x="1070" y="159"><tspan x="1070" dy="0">Policy</tspan><tspan x="1070" dy="21">issued</tspan></text>
+    </g>
+    <g fill="#607088" font-size="13" text-anchor="middle">
+      <text x="121" y="207">Find the entry point</text><text x="309" y="207">Confirm submission</text>
+      <text x="497" y="207">Confirm usable quote</text><text x="685" y="207">Start the application</text>
+      <text x="873" y="207">Backend confirms</text><text x="1070" y="207">Confirm final status</text>
+    </g>
+    <text x="40" y="281" fill="#607088" font-size="16">Analytical outline: paths may skip stages or add conversations, documents and payment.</text>
+  </g>
+</svg>

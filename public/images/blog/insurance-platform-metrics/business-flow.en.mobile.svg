@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="840" viewBox="0 0 360 840" role="img" aria-labelledby="title desc">
+<title id="title">Insurance platform journey</title>
+<desc id="desc">Find a product → Submit a quote request → Receive a usable quote → Enter the application stage → Submit the application → Policy issued。Paths may skip stages or add conversations, documents and payment. Submission and the final business outcome need separate checks.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#7695bd" stroke-width="1.5"/></marker></defs>
+<rect width="360" height="840" rx="20" fill="#f5f7fa"/>
+<g font-family="Arial,'Noto Sans SC','Noto Sans JP','PingFang SC',sans-serif">
+<text x="24" y="36" fill="#24324d" font-size="20" font-weight="600">Follow one business journey</text>
+<text x="24" y="64" fill="#607088" font-size="14">Record intent, task completion and</text>
+<text x="24" y="84" fill="#607088" font-size="14">business outcomes separately.</text>
+<path d="M180 195V215" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="110" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="144" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">Find a product</text>
+<text x="180" y="171" text-anchor="middle" fill="#607088" font-size="14">Find the entry point</text>
+<path d="M180 300V320" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="215" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="249" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">Submit a quote request</text>
+<text x="180" y="276" text-anchor="middle" fill="#607088" font-size="14">Confirm request submission</text>
+<path d="M180 405V425" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="320" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="354" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">Receive a usable quote</text>
+<text x="180" y="381" text-anchor="middle" fill="#607088" font-size="14">Confirm a usable quote</text>
+<path d="M180 510V530" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="425" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="459" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">Enter the application stage</text>
+<text x="180" y="486" text-anchor="middle" fill="#607088" font-size="14">Start the application</text>
+<path d="M180 615V635" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4 4"/>
+<rect x="24" y="530" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="564" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">Submit the application</text>
+<text x="180" y="591" text-anchor="middle" fill="#607088" font-size="14">Confirm backend submission</text>
+<rect x="24" y="635" width="312" height="85" rx="14" fill="#f1eee8" stroke="#b6b0a4" stroke-dasharray="5 5"/>
+<text x="180" y="669" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">Policy issued</text>
+<text x="180" y="696" text-anchor="middle" fill="#607088" font-size="14">Confirm the final status</text>
+<text x="24" y="765" fill="#607088" font-size="13">Paths may skip stages or add conversations,</text>
+<text x="24" y="787" fill="#607088" font-size="13">documents and payment. Submission and the</text>
+<text x="24" y="809" fill="#607088" font-size="13">final business outcome need separate checks.</text>
+</g></svg>

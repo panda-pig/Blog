@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="840" viewBox="0 0 360 840" role="img" aria-labelledby="title desc">
+<title id="title">保険業務の分析フロー</title>
+<desc id="desc">商品検索・選択 → 見積依頼を送信 → 利用可能な見積を取得 → 申込手続き開始 → 申込を送信 → 証券発行。経路によって段階の省略や、やり取り・ 資料追加・支払いが発生します。 送信成功と最終的な業務成果は別に確認。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#7695bd" stroke-width="1.5"/></marker></defs>
+<rect width="360" height="840" rx="20" fill="#f5f7fa"/>
+<g font-family="Arial,'Noto Sans SC','Noto Sans JP','PingFang SC',sans-serif">
+<text x="24" y="36" fill="#24324d" font-size="20" font-weight="600">一件の業務を追う分析フロー</text>
+<text x="24" y="64" fill="#607088" font-size="14">操作の意図・操作の完了・最終的な成果を</text>
+<text x="24" y="84" fill="#607088" font-size="14">分けて記録し、判定します。</text>
+<path d="M180 195V215" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="110" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="144" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">商品検索・選択</text>
+<text x="180" y="171" text-anchor="middle" fill="#607088" font-size="14">業務の入口を探す</text>
+<path d="M180 300V320" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="215" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="249" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">見積依頼を送信</text>
+<text x="180" y="276" text-anchor="middle" fill="#607088" font-size="14">送信結果を確認</text>
+<path d="M180 405V425" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="320" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="354" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">利用可能な見積を取得</text>
+<text x="180" y="381" text-anchor="middle" fill="#607088" font-size="14">利用可能な見積を確認</text>
+<path d="M180 510V530" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="425" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="459" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">申込手続き開始</text>
+<text x="180" y="486" text-anchor="middle" fill="#607088" font-size="14">申込段階に移行</text>
+<path d="M180 615V635" fill="none" stroke="#7695bd" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4 4"/>
+<rect x="24" y="530" width="312" height="85" rx="14" fill="#e2ebf7" stroke="#c1d1e7"/>
+<text x="180" y="564" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">申込を送信</text>
+<text x="180" y="591" text-anchor="middle" fill="#607088" font-size="14">サーバー側で成功を確認</text>
+<rect x="24" y="635" width="312" height="85" rx="14" fill="#f1eee8" stroke="#b6b0a4" stroke-dasharray="5 5"/>
+<text x="180" y="669" text-anchor="middle" fill="#24324d" font-size="18" font-weight="600">証券発行</text>
+<text x="180" y="696" text-anchor="middle" fill="#607088" font-size="14">最終状態の定義を確認</text>
+<text x="24" y="765" fill="#607088" font-size="13">経路によって段階の省略や、やり取り・</text>
+<text x="24" y="787" fill="#607088" font-size="13">資料追加・支払いが発生します。</text>
+<text x="24" y="809" fill="#607088" font-size="13">送信成功と最終的な業務成果は別に確認。</text>
+</g></svg>

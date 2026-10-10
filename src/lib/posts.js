@@ -29,11 +29,14 @@ export function getLocalizedPosts(postsBySlug, lang) {
 
 export function getReadingTime(rawContent) {
   if (!rawContent) return 1;
-  const text = typeof rawContent === 'string' ? rawContent : String(rawContent);
-  const chineseChars = (text.match(/[一-鿿㐀-䶿]/g) || []).length;
-  const englishWords = (text.match(/[a-zA-Z]+/g) || []).length;
-  const otherChars = text.length - chineseChars - englishWords;
-  const total = Math.ceil(chineseChars / 400 + englishWords / 200 + otherChars / 400);
+  const text = String(rawContent)
+    .replace(/^---\s*\r?\n[\s\S]*?\r?\n---\s*(?:\r?\n|$)/, '')
+    .replace(/<[^>]*>/g, '')
+    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/https?:\/\/\S+/g, '');
+  const eastAsianChars = (text.match(/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/gu) || []).length;
+  const words = (text.match(/[\p{Script=Latin}\p{N}]+(?:['’-][\p{Script=Latin}\p{N}]+)*/gu) || []).length;
+  const total = Math.ceil(eastAsianChars / 400 + words / 200);
   return Math.max(1, total);
 }
 

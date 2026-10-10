@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+  <title id="title">保险业务平台的分析主线</title>
+  <desc id="desc">查询或选择产品、提交询价、获得报价、转投保、提交投保，再观察另行确认口径的成功出单状态。最后一段使用虚线，表示不能将提交直接当作最终业务成功。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#7695bd" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="1200" height="330" rx="24" fill="#f5f7fa"/>
+  <g font-family="'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="40" y="52" fill="#24324d" font-size="23" font-weight="600">沿着一笔业务，确定每个阶段的完成状态</text>
+    <text x="40" y="82" fill="#607088" font-size="16">页面点击 → 操作完成 → 最终业务结果，需要分别记录</text>
+    <g stroke="#7695bd" stroke-width="2" fill="none" marker-end="url(#arrow)">
+      <path d="M202 175H228"/><path d="M390 175H416"/><path d="M578 175H604"/><path d="M766 175H792"/>
+      <path d="M954 175H980" stroke-dasharray="5 5"/>
+    </g>
+    <g fill="#e2ebf7" stroke="#c1d1e7">
+      <rect x="40" y="125" width="162" height="100" rx="16"/>
+      <rect x="228" y="125" width="162" height="100" rx="16"/>
+      <rect x="416" y="125" width="162" height="100" rx="16"/>
+      <rect x="604" y="125" width="162" height="100" rx="16"/>
+      <rect x="792" y="125" width="162" height="100" rx="16"/>
+      <rect x="980" y="125" width="180" height="100" rx="16" fill="#f1eee8" stroke="#b6b0a4" stroke-dasharray="5 5"/>
+    </g>
+    <g fill="#24324d" font-size="19" font-weight="600" text-anchor="middle">
+      <text x="121" y="168">查询或选择产品</text><text x="309" y="168">提交询价</text>
+      <text x="497" y="168">获得报价</text><text x="685" y="168">转投保</text>
+      <text x="873" y="168">提交投保</text><text x="1070" y="168">成功出单</text>
+    </g>
+    <g fill="#607088" font-size="14" text-anchor="middle">
+      <text x="121" y="196">找到业务入口</text><text x="309" y="196">确认询价提交结果</text>
+      <text x="497" y="196">确认可用报价</text><text x="685" y="196">进入投保阶段</text>
+      <text x="873" y="196">确认后端提交成功</text><text x="1070" y="196">需确认最终状态口径</text>
+    </g>
+    <text x="40" y="281" fill="#607088" font-size="16">分析主线示意：不同业务路径可能跳过节点，或增加沟通、补充资料、支付等步骤。</text>
+  </g>
+</svg>
