@@ -306,4 +306,4 @@ A good metric framework tells readers what to examine first, where to look when 
 
 ---
 
-*Source note: This article is based on an insurance platform metric mind map. Process statuses, observation windows and record-linking methods not specified in the source are presented as design recommendations. The example figures are hypothetical. Confirm the relevant system's business definitions and measurement rules before applying the framework.*
+*Source note: The example figures are hypothetical. Confirm the relevant system's business definitions and measurement rules before applying the framework.*

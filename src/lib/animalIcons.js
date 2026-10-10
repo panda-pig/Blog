@@ -1,4 +1,5 @@
 const EMOJI_BY_SLUG = {
+  'insurance-platform-metrics-framework': { emoji: '🛡️', label: '保险保障' },
   'japan-rental-analyzer-decision-report': { emoji: '🏠', label: '租房分析' },
   'jlpt-grammar-deck-study-cards': { emoji: '🗂️', label: '语法卡片' },
   'jlpt-sprint-desk-study-loop': { emoji: '⏱️', label: '学习冲刺' },
