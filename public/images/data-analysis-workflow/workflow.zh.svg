@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1580" height="1020" viewBox="0 0 1580 1020" xml:lang="zh" role="img" aria-labelledby="title desc">
+<title id="title">业务数据分析项目流程</title>
+<desc id="desc">从业务目标到监控迭代 · 四个阶段，十一个步骤. 重新审视目标、指标与数据</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#486b84"/></marker></defs>
+<rect width="1580" height="1020" fill="#fcfaf6"/>
+<g font-family="Noto Sans, Noto Sans CJK SC, Noto Sans CJK JP, Hiragino Kaku Gothic ProN, PingFang SC, sans-serif">
+<text x="40" y="75" font-size="46" font-weight="750" fill="#163149" text-anchor="start">业务数据分析项目流程</text>
+<text x="40" y="117" font-size="23" font-weight="400" fill="#53697b" text-anchor="start">从业务目标到监控迭代 · 四个阶段，十一个步骤</text>
+<rect x="40" y="160" width="1330" height="145" rx="12" fill="#edf5fa"/>
+<rect x="40" y="160" width="205" height="145" rx="12" fill="#246f99"/>
+<text x="62" y="197" font-size="22" font-weight="700" fill="#ffffff" text-anchor="start">01–03</text>
+<text x="62" y="241" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">理解业务</text>
+<rect x="280" y="160" width="330" height="145" rx="9" fill="#ffffff" stroke="#246f99" stroke-opacity="0.35"/>
+<text x="300" y="197" font-size="28" font-weight="750" fill="#246f99" text-anchor="start">01</text>
+<text x="300" y="232" font-size="22" font-weight="650" fill="#163149" text-anchor="start">业务问题／目标定义</text>
+<text x="300" y="287" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">需求访谈 · 成功标准</text>
+<path d="M619 233 H649" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="660" y="160" width="330" height="145" rx="9" fill="#ffffff" stroke="#246f99" stroke-opacity="0.35"/>
+<text x="680" y="197" font-size="28" font-weight="750" fill="#246f99" text-anchor="start">02</text>
+<text x="680" y="232" font-size="22" font-weight="650" fill="#163149" text-anchor="start">业务背景／流程理解</text>
+<text x="680" y="287" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">行业 · 企业 · 业务流程</text>
+<path d="M999 233 H1029" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1040" y="160" width="330" height="145" rx="9" fill="#ffffff" stroke="#246f99" stroke-opacity="0.35"/>
+<text x="1060" y="197" font-size="28" font-weight="750" fill="#246f99" text-anchor="start">03</text>
+<text x="1060" y="232" font-size="22" font-weight="650" fill="#163149" text-anchor="start">指标定义／数据盘点</text>
+<text x="1060" y="287" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">统计口径 · 数据可用性</text>
+<path d="M1370 233 H1410 V330 H262 V428 H277" fill="none" stroke="#486b84" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<rect x="40" y="355" width="1330" height="145" rx="12" fill="#ecf6f4"/>
+<rect x="40" y="355" width="205" height="145" rx="12" fill="#087e82"/>
+<text x="62" y="392" font-size="22" font-weight="700" fill="#ffffff" text-anchor="start">04–06</text>
+<text x="62" y="436" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">数据准备</text>
+<rect x="280" y="355" width="330" height="145" rx="9" fill="#ffffff" stroke="#087e82" stroke-opacity="0.35"/>
+<text x="300" y="392" font-size="28" font-weight="750" fill="#087e82" text-anchor="start">04</text>
+<text x="300" y="427" font-size="22" font-weight="650" fill="#163149" text-anchor="start">数据需求／采集设计</text>
+<text x="300" y="482" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">优先复用 · 按需补充</text>
+<path d="M619 428 H649" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="660" y="355" width="330" height="145" rx="9" fill="#ffffff" stroke="#087e82" stroke-opacity="0.35"/>
+<text x="680" y="392" font-size="28" font-weight="750" fill="#087e82" text-anchor="start">05</text>
+<text x="680" y="427" font-size="22" font-weight="650" fill="#163149" text-anchor="start">数据获取／整合</text>
+<text x="680" y="482" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">业务库 · 日志 · 按需埋点</text>
+<path d="M999 428 H1029" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1040" y="355" width="330" height="145" rx="9" fill="#ffffff" stroke="#087e82" stroke-opacity="0.35"/>
+<text x="1060" y="392" font-size="28" font-weight="750" fill="#087e82" text-anchor="start">06</text>
+<text x="1060" y="427" font-size="22" font-weight="650" fill="#163149" text-anchor="start">数据清洗／验证对账</text>
+<text x="1060" y="482" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">SQL · Python</text>
+<path d="M1370 428 H1410 V525 H262 V623 H277" fill="none" stroke="#486b84" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<rect x="40" y="550" width="1330" height="145" rx="12" fill="#eef3f9"/>
+<rect x="40" y="550" width="205" height="145" rx="12" fill="#3e6a9a"/>
+<text x="62" y="587" font-size="22" font-weight="700" fill="#ffffff" text-anchor="start">07–08</text>
+<text x="62" y="631" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">分析与汇报</text>
+<rect x="280" y="550" width="520" height="145" rx="9" fill="#ffffff" stroke="#3e6a9a" stroke-opacity="0.35"/>
+<text x="300" y="587" font-size="28" font-weight="750" fill="#3e6a9a" text-anchor="start">07</text>
+<text x="300" y="622" font-size="23" font-weight="650" fill="#163149" text-anchor="start">探索分析／可视化</text>
+<text x="300" y="677" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">分群 · 趋势 · 按需统计分析</text>
+<path d="M809 623 H839" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="850" y="550" width="520" height="145" rx="9" fill="#ffffff" stroke="#3e6a9a" stroke-opacity="0.35"/>
+<text x="870" y="587" font-size="28" font-weight="750" fill="#3e6a9a" text-anchor="start">08</text>
+<text x="870" y="622" font-size="23" font-weight="650" fill="#163149" text-anchor="start">结论验证／报告沟通</text>
+<text x="870" y="677" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">业务目标 · 证据 · 改善建议</text>
+<path d="M1370 623 H1410 V720 H262 V818 H277" fill="none" stroke="#486b84" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<rect x="40" y="745" width="1330" height="145" rx="12" fill="#fbf3e7"/>
+<rect x="40" y="745" width="205" height="145" rx="12" fill="#a86614"/>
+<text x="62" y="782" font-size="22" font-weight="700" fill="#ffffff" text-anchor="start">09–11</text>
+<text x="62" y="826" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">改善与验证</text>
+<rect x="280" y="745" width="330" height="145" rx="9" fill="#ffffff" stroke="#a86614" stroke-opacity="0.35"/>
+<text x="300" y="782" font-size="28" font-weight="750" fill="#a86614" text-anchor="start">09</text>
+<text x="300" y="817" font-size="22" font-weight="650" fill="#163149" text-anchor="start">改善方案／试点实施</text>
+<text x="300" y="872" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">实验设计先于试点</text>
+<path d="M619 818 H649" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="660" y="745" width="330" height="145" rx="9" fill="#ffffff" stroke="#a86614" stroke-opacity="0.35"/>
+<text x="680" y="782" font-size="28" font-weight="750" fill="#a86614" text-anchor="start">10</text>
+<text x="680" y="817" font-size="22" font-weight="650" fill="#163149" text-anchor="start">效果评估／A/B Test</text>
+<text x="680" y="872" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">成功指标 · 质量与风险指标</text>
+<path d="M999 818 H1029" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1040" y="745" width="330" height="145" rx="9" fill="#ffffff" stroke="#a86614" stroke-opacity="0.35"/>
+<text x="1060" y="782" font-size="28" font-weight="750" fill="#a86614" text-anchor="start">11</text>
+<text x="1060" y="817" font-size="22" font-weight="650" fill="#163149" text-anchor="start">推广／监控迭代</text>
+<text x="1060" y="872" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">根据验证结果决定推广</text>
+<path d="M1370 818 H1520 V140 H262 V233 H277" fill="none" stroke="#486b84" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="1445" y="295" width="47" height="450" rx="12" fill="#fcfaf6" stroke="#d9c5a3"/>
+<text transform="translate(1475 520) rotate(-90)" text-anchor="middle" font-size="21" font-weight="650" fill="#7d561c">重新审视目标、指标与数据</text>
+<path d="M40 926 H1520" stroke="#d7dfdf"/>
+<text x="40" y="966" font-size="23" font-weight="550" fill="#163149" text-anchor="start">明确业务目标，理解并准备数据，用分析支持决策，再验证与持续监控。</text>
+<text x="40" y="998" font-size="18" font-weight="400" fill="#53697b" text-anchor="start">环节可往返；新增埋点与 A/B Test 按需开展，前后比较不能单独证明因果。</text>
+</g></svg>

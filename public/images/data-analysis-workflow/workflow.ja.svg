@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1580" height="1020" viewBox="0 0 1580 1020" xml:lang="ja" role="img" aria-labelledby="title desc">
+<title id="title">業務データ分析プロジェクトの全体フロー</title>
+<desc id="desc">業務目標からモニタリング・改善へ · 4つの段階と11のステップ. 目標・指標・データを見直す</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#486b84"/></marker></defs>
+<rect width="1580" height="1020" fill="#fcfaf6"/>
+<g font-family="Noto Sans, Noto Sans CJK SC, Noto Sans CJK JP, Hiragino Kaku Gothic ProN, PingFang SC, sans-serif">
+<text x="40" y="75" font-size="46" font-weight="750" fill="#163149" text-anchor="start">業務データ分析プロジェクトの全体フロー</text>
+<text x="40" y="117" font-size="23" font-weight="400" fill="#53697b" text-anchor="start">業務目標からモニタリング・改善へ · 4つの段階と11のステップ</text>
+<rect x="40" y="160" width="1330" height="145" rx="12" fill="#edf5fa"/>
+<rect x="40" y="160" width="205" height="145" rx="12" fill="#246f99"/>
+<text x="62" y="197" font-size="22" font-weight="700" fill="#ffffff" text-anchor="start">01–03</text>
+<text x="62" y="241" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">業務理解</text>
+<rect x="280" y="160" width="330" height="145" rx="9" fill="#ffffff" stroke="#246f99" stroke-opacity="0.35"/>
+<text x="300" y="197" font-size="28" font-weight="750" fill="#246f99" text-anchor="start">01</text>
+<text x="300" y="232" font-size="22" font-weight="650" fill="#163149" text-anchor="start">課題・目標の定義</text>
+<text x="300" y="287" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">ヒアリング・成功基準</text>
+<path d="M619 233 H649" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="660" y="160" width="330" height="145" rx="9" fill="#ffffff" stroke="#246f99" stroke-opacity="0.35"/>
+<text x="680" y="197" font-size="28" font-weight="750" fill="#246f99" text-anchor="start">02</text>
+<text x="680" y="232" font-size="22" font-weight="650" fill="#163149" text-anchor="start">業務背景・フロー理解</text>
+<text x="680" y="287" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">業界・企業・業務プロセス</text>
+<path d="M999 233 H1029" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1040" y="160" width="330" height="145" rx="9" fill="#ffffff" stroke="#246f99" stroke-opacity="0.35"/>
+<text x="1060" y="197" font-size="28" font-weight="750" fill="#246f99" text-anchor="start">03</text>
+<text x="1060" y="232" font-size="22" font-weight="650" fill="#163149" text-anchor="start">指標定義・データ確認</text>
+<text x="1060" y="287" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">集計定義・データの利用可能性</text>
+<path d="M1370 233 H1410 V330 H262 V428 H277" fill="none" stroke="#486b84" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<rect x="40" y="355" width="1330" height="145" rx="12" fill="#ecf6f4"/>
+<rect x="40" y="355" width="205" height="145" rx="12" fill="#087e82"/>
+<text x="62" y="392" font-size="22" font-weight="700" fill="#ffffff" text-anchor="start">04–06</text>
+<text x="62" y="436" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">データ準備</text>
+<rect x="280" y="355" width="330" height="145" rx="9" fill="#ffffff" stroke="#087e82" stroke-opacity="0.35"/>
+<text x="300" y="392" font-size="28" font-weight="750" fill="#087e82" text-anchor="start">04</text>
+<text x="300" y="427" font-size="22" font-weight="650" fill="#163149" text-anchor="start">データ要件・収集設計</text>
+<text x="300" y="482" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">既存データを優先・必要分を追加</text>
+<path d="M619 428 H649" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="660" y="355" width="330" height="145" rx="9" fill="#ffffff" stroke="#087e82" stroke-opacity="0.35"/>
+<text x="680" y="392" font-size="28" font-weight="750" fill="#087e82" text-anchor="start">05</text>
+<text x="680" y="427" font-size="22" font-weight="650" fill="#163149" text-anchor="start">データ取得・統合</text>
+<text x="680" y="482" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">業務DB・ログ・必要に応じて計測</text>
+<path d="M999 428 H1029" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1040" y="355" width="330" height="145" rx="9" fill="#ffffff" stroke="#087e82" stroke-opacity="0.35"/>
+<text x="1060" y="392" font-size="28" font-weight="750" fill="#087e82" text-anchor="start">06</text>
+<text x="1060" y="427" font-size="22" font-weight="650" fill="#163149" text-anchor="start">データ整形・検証・突合</text>
+<text x="1060" y="482" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">SQL · Python</text>
+<path d="M1370 428 H1410 V525 H262 V623 H277" fill="none" stroke="#486b84" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<rect x="40" y="550" width="1330" height="145" rx="12" fill="#eef3f9"/>
+<rect x="40" y="550" width="205" height="145" rx="12" fill="#3e6a9a"/>
+<text x="62" y="587" font-size="22" font-weight="700" fill="#ffffff" text-anchor="start">07–08</text>
+<text x="62" y="631" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">分析・共有</text>
+<rect x="280" y="550" width="520" height="145" rx="9" fill="#ffffff" stroke="#3e6a9a" stroke-opacity="0.35"/>
+<text x="300" y="587" font-size="28" font-weight="750" fill="#3e6a9a" text-anchor="start">07</text>
+<text x="300" y="622" font-size="23" font-weight="650" fill="#163149" text-anchor="start">探索的分析・可視化</text>
+<text x="300" y="677" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">セグメント・傾向・必要に応じて統計分析</text>
+<path d="M809 623 H839" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="850" y="550" width="520" height="145" rx="9" fill="#ffffff" stroke="#3e6a9a" stroke-opacity="0.35"/>
+<text x="870" y="587" font-size="28" font-weight="750" fill="#3e6a9a" text-anchor="start">08</text>
+<text x="870" y="622" font-size="23" font-weight="650" fill="#163149" text-anchor="start">結論の検証・報告</text>
+<text x="870" y="677" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">業務目標・根拠・改善案</text>
+<path d="M1370 623 H1410 V720 H262 V818 H277" fill="none" stroke="#486b84" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<rect x="40" y="745" width="1330" height="145" rx="12" fill="#fbf3e7"/>
+<rect x="40" y="745" width="205" height="145" rx="12" fill="#a86614"/>
+<text x="62" y="782" font-size="22" font-weight="700" fill="#ffffff" text-anchor="start">09–11</text>
+<text x="62" y="826" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">改善・検証</text>
+<rect x="280" y="745" width="330" height="145" rx="9" fill="#ffffff" stroke="#a86614" stroke-opacity="0.35"/>
+<text x="300" y="782" font-size="28" font-weight="750" fill="#a86614" text-anchor="start">09</text>
+<text x="300" y="817" font-size="22" font-weight="650" fill="#163149" text-anchor="start">改善案・試験導入</text>
+<text x="300" y="872" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">実験設計は試験導入の前に</text>
+<path d="M619 818 H649" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="660" y="745" width="330" height="145" rx="9" fill="#ffffff" stroke="#a86614" stroke-opacity="0.35"/>
+<text x="680" y="782" font-size="28" font-weight="750" fill="#a86614" text-anchor="start">10</text>
+<text x="680" y="817" font-size="22" font-weight="650" fill="#163149" text-anchor="start">効果評価・A/Bテスト</text>
+<text x="680" y="872" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">成功指標・品質とリスクの指標</text>
+<path d="M999 818 H1029" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1040" y="745" width="330" height="145" rx="9" fill="#ffffff" stroke="#a86614" stroke-opacity="0.35"/>
+<text x="1060" y="782" font-size="28" font-weight="750" fill="#a86614" text-anchor="start">11</text>
+<text x="1060" y="817" font-size="22" font-weight="650" fill="#163149" text-anchor="start">展開・監視・継続改善</text>
+<text x="1060" y="872" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">検証結果に基づいて展開を判断</text>
+<path d="M1370 818 H1520 V140 H262 V233 H277" fill="none" stroke="#486b84" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="1445" y="295" width="47" height="450" rx="12" fill="#fcfaf6" stroke="#d9c5a3"/>
+<text transform="translate(1475 520) rotate(-90)" text-anchor="middle" font-size="21" font-weight="650" fill="#7d561c">目標・指標・データを見直す</text>
+<path d="M40 926 H1520" stroke="#d7dfdf"/>
+<text x="40" y="966" font-size="23" font-weight="550" fill="#163149" text-anchor="start">業務目標を定め、データを理解・準備し、分析で判断を支え、効果検証と監視を続ける。</text>
+<text x="40" y="998" font-size="18" font-weight="400" fill="#53697b" text-anchor="start">各段階は行き来できる。追加計測とA/Bテストは必要に応じて実施。前後比較だけでは因果関係は示せない。</text>
+</g></svg>

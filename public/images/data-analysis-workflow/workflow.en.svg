@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1580" height="1020" viewBox="0 0 1580 1020" xml:lang="en" role="img" aria-labelledby="title desc">
+<title id="title">Business Data Analysis Workflow</title>
+<desc id="desc">From business goals to monitoring and iteration · 4 phases, 11 steps. Revisit goals, metrics and data</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#486b84"/></marker></defs>
+<rect width="1580" height="1020" fill="#fcfaf6"/>
+<g font-family="Noto Sans, Noto Sans CJK SC, Noto Sans CJK JP, Hiragino Kaku Gothic ProN, PingFang SC, sans-serif">
+<text x="40" y="75" font-size="46" font-weight="750" fill="#163149" text-anchor="start">Business Data Analysis Workflow</text>
+<text x="40" y="117" font-size="23" font-weight="400" fill="#53697b" text-anchor="start">From business goals to monitoring and iteration · 4 phases, 11 steps</text>
+<rect x="40" y="160" width="1330" height="145" rx="12" fill="#edf5fa"/>
+<rect x="40" y="160" width="205" height="145" rx="12" fill="#246f99"/>
+<text x="62" y="197" font-size="22" font-weight="700" fill="#ffffff" text-anchor="start">01–03</text>
+<text x="62" y="241" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">Understand</text>
+<text x="62" y="273" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">the business</text>
+<rect x="280" y="160" width="330" height="145" rx="9" fill="#ffffff" stroke="#246f99" stroke-opacity="0.35"/>
+<text x="300" y="197" font-size="28" font-weight="750" fill="#246f99" text-anchor="start">01</text>
+<text x="300" y="232" font-size="21" font-weight="650" fill="#163149" text-anchor="start">Define the problem</text>
+<text x="300" y="259" font-size="21" font-weight="650" fill="#163149" text-anchor="start">&amp; business goals</text>
+<text x="300" y="287" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">Stakeholder needs · Success criteria</text>
+<path d="M619 233 H649" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="660" y="160" width="330" height="145" rx="9" fill="#ffffff" stroke="#246f99" stroke-opacity="0.35"/>
+<text x="680" y="197" font-size="28" font-weight="750" fill="#246f99" text-anchor="start">02</text>
+<text x="680" y="232" font-size="21" font-weight="650" fill="#163149" text-anchor="start">Understand business</text>
+<text x="680" y="259" font-size="21" font-weight="650" fill="#163149" text-anchor="start">context &amp; processes</text>
+<text x="680" y="287" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">Industry · Company · Workflow</text>
+<path d="M999 233 H1029" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1040" y="160" width="330" height="145" rx="9" fill="#ffffff" stroke="#246f99" stroke-opacity="0.35"/>
+<text x="1060" y="197" font-size="28" font-weight="750" fill="#246f99" text-anchor="start">03</text>
+<text x="1060" y="232" font-size="21" font-weight="650" fill="#163149" text-anchor="start">Define metrics &amp;</text>
+<text x="1060" y="259" font-size="21" font-weight="650" fill="#163149" text-anchor="start">assess existing data</text>
+<text x="1060" y="287" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">Metric definitions · Data availability</text>
+<path d="M1370 233 H1410 V330 H262 V428 H277" fill="none" stroke="#486b84" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<rect x="40" y="355" width="1330" height="145" rx="12" fill="#ecf6f4"/>
+<rect x="40" y="355" width="205" height="145" rx="12" fill="#087e82"/>
+<text x="62" y="392" font-size="22" font-weight="700" fill="#ffffff" text-anchor="start">04–06</text>
+<text x="62" y="436" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">Prepare</text>
+<text x="62" y="468" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">the data</text>
+<rect x="280" y="355" width="330" height="145" rx="9" fill="#ffffff" stroke="#087e82" stroke-opacity="0.35"/>
+<text x="300" y="392" font-size="28" font-weight="750" fill="#087e82" text-anchor="start">04</text>
+<text x="300" y="427" font-size="21" font-weight="650" fill="#163149" text-anchor="start">Data requirements &amp;</text>
+<text x="300" y="454" font-size="21" font-weight="650" fill="#163149" text-anchor="start">collection design</text>
+<text x="300" y="482" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">Reuse existing data · Fill gaps</text>
+<path d="M619 428 H649" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="660" y="355" width="330" height="145" rx="9" fill="#ffffff" stroke="#087e82" stroke-opacity="0.35"/>
+<text x="680" y="392" font-size="28" font-weight="750" fill="#087e82" text-anchor="start">05</text>
+<text x="680" y="427" font-size="21" font-weight="650" fill="#163149" text-anchor="start">Acquire &amp; integrate</text>
+<text x="680" y="454" font-size="21" font-weight="650" fill="#163149" text-anchor="start">data</text>
+<text x="680" y="482" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">DBs · Logs · Optional tracking</text>
+<path d="M999 428 H1029" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1040" y="355" width="330" height="145" rx="9" fill="#ffffff" stroke="#087e82" stroke-opacity="0.35"/>
+<text x="1060" y="392" font-size="28" font-weight="750" fill="#087e82" text-anchor="start">06</text>
+<text x="1060" y="427" font-size="21" font-weight="650" fill="#163149" text-anchor="start">Clean, validate &amp;</text>
+<text x="1060" y="454" font-size="21" font-weight="650" fill="#163149" text-anchor="start">reconcile data</text>
+<text x="1060" y="482" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">SQL · Python</text>
+<path d="M1370 428 H1410 V525 H262 V623 H277" fill="none" stroke="#486b84" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<rect x="40" y="550" width="1330" height="145" rx="12" fill="#eef3f9"/>
+<rect x="40" y="550" width="205" height="145" rx="12" fill="#3e6a9a"/>
+<text x="62" y="587" font-size="22" font-weight="700" fill="#ffffff" text-anchor="start">07–08</text>
+<text x="62" y="631" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">Analyze &amp;</text>
+<text x="62" y="663" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">communicate</text>
+<rect x="280" y="550" width="520" height="145" rx="9" fill="#ffffff" stroke="#3e6a9a" stroke-opacity="0.35"/>
+<text x="300" y="587" font-size="28" font-weight="750" fill="#3e6a9a" text-anchor="start">07</text>
+<text x="300" y="622" font-size="23" font-weight="650" fill="#163149" text-anchor="start">Explore, analyze &amp; visualize</text>
+<text x="300" y="677" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">Segments · Trends · Statistics as needed</text>
+<path d="M809 623 H839" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="850" y="550" width="520" height="145" rx="9" fill="#ffffff" stroke="#3e6a9a" stroke-opacity="0.35"/>
+<text x="870" y="587" font-size="28" font-weight="750" fill="#3e6a9a" text-anchor="start">08</text>
+<text x="870" y="622" font-size="23" font-weight="650" fill="#163149" text-anchor="start">Validate conclusions &amp; report</text>
+<text x="870" y="677" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">Business goals · Evidence · Recommendations</text>
+<path d="M1370 623 H1410 V720 H262 V818 H277" fill="none" stroke="#486b84" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<rect x="40" y="745" width="1330" height="145" rx="12" fill="#fbf3e7"/>
+<rect x="40" y="745" width="205" height="145" rx="12" fill="#a86614"/>
+<text x="62" y="782" font-size="22" font-weight="700" fill="#ffffff" text-anchor="start">09–11</text>
+<text x="62" y="826" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">Improve &amp;</text>
+<text x="62" y="858" font-size="27" font-weight="700" fill="#ffffff" text-anchor="start">evaluate</text>
+<rect x="280" y="745" width="330" height="145" rx="9" fill="#ffffff" stroke="#a86614" stroke-opacity="0.35"/>
+<text x="300" y="782" font-size="28" font-weight="750" fill="#a86614" text-anchor="start">09</text>
+<text x="300" y="817" font-size="21" font-weight="650" fill="#163149" text-anchor="start">Plan improvements</text>
+<text x="300" y="844" font-size="21" font-weight="650" fill="#163149" text-anchor="start">&amp; pilot changes</text>
+<text x="300" y="872" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">Design experiments before the pilot</text>
+<path d="M619 818 H649" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="660" y="745" width="330" height="145" rx="9" fill="#ffffff" stroke="#a86614" stroke-opacity="0.35"/>
+<text x="680" y="782" font-size="28" font-weight="750" fill="#a86614" text-anchor="start">10</text>
+<text x="680" y="817" font-size="21" font-weight="650" fill="#163149" text-anchor="start">Evaluate impact</text>
+<text x="680" y="844" font-size="21" font-weight="650" fill="#163149" text-anchor="start">&amp; run A/B tests</text>
+<text x="680" y="872" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">Success · Quality · Risk metrics</text>
+<path d="M999 818 H1029" fill="none" stroke="#486b84" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1040" y="745" width="330" height="145" rx="9" fill="#ffffff" stroke="#a86614" stroke-opacity="0.35"/>
+<text x="1060" y="782" font-size="28" font-weight="750" fill="#a86614" text-anchor="start">11</text>
+<text x="1060" y="817" font-size="21" font-weight="650" fill="#163149" text-anchor="start">Rollout, monitoring</text>
+<text x="1060" y="844" font-size="21" font-weight="650" fill="#163149" text-anchor="start">&amp; iteration</text>
+<text x="1060" y="872" font-size="16" font-weight="400" fill="#53697b" text-anchor="start">Decide rollout from evaluation results</text>
+<path d="M1370 818 H1520 V140 H262 V233 H277" fill="none" stroke="#486b84" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="1445" y="295" width="47" height="450" rx="12" fill="#fcfaf6" stroke="#d9c5a3"/>
+<text transform="translate(1475 520) rotate(-90)" text-anchor="middle" font-size="21" font-weight="650" fill="#7d561c">Revisit goals, metrics and data</text>
+<path d="M40 926 H1520" stroke="#d7dfdf"/>
+<text x="40" y="966" font-size="23" font-weight="550" fill="#163149" text-anchor="start">Define business goals, understand and prepare data, inform decisions, evaluate and monitor.</text>
+<text x="40" y="998" font-size="18" font-weight="400" fill="#53697b" text-anchor="start">Iterate between phases. Additional tracking and A/B tests are optional; before/after alone does not establish causality.</text>
+</g></svg>
