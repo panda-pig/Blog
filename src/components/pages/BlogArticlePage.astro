@@ -32,6 +32,8 @@ const articleEmoji = getArticleEmoji(slug);
 const category = getArticleCategory(post, lang);
 
 const headings = post.getHeadings ? post.getHeadings() : [];
+const introHeadings = headings.filter((heading) => heading.depth === 2);
+const contentsLabel = { zh: '本文目录', en: 'Contents', ja: '目次' }[lang] || 'Contents';
 ---
 
 <BaseLayout title={post.frontmatter.title} description={post.frontmatter.description} slug={`${prefix}/blog/${slug}`} lang={lang}>
@@ -111,6 +113,16 @@ const headings = post.getHeadings ? post.getHeadings() : [];
       <div class="article-layout flex flex-col lg:flex-row lg:gap-16 xl:gap-20">
         <div class="article-content flex-1 min-w-0">
           <div class="prose prose-lg max-w-none font-serif article-prose" data-pagefind-body style="--tw-prose-body: var(--text); --tw-prose-headings: var(--text); --tw-prose-links: var(--primary); --tw-prose-bold: var(--text); --tw-prose-counters: var(--text-muted); --tw-prose-bullets: var(--text-muted);">
+            {post.frontmatter.showIntroToc && introHeadings.length > 0 && (
+              <nav class="article-intro-toc" aria-label={contentsLabel}>
+                <p class="article-intro-toc__title">{contentsLabel}</p>
+                <ul>
+                  {introHeadings.map((heading) => (
+                    <li><a href={`#${heading.slug}`}>{heading.text}</a></li>
+                  ))}
+                </ul>
+              </nav>
+            )}
             <Content />
           </div>
 
@@ -130,7 +142,49 @@ const headings = post.getHeadings ? post.getHeadings() : [];
   <Footer lang={lang} />
 </BaseLayout>
 
+<script>
+  import '../../scripts/mindMapViewer';
+</script>
+
 <style>
+  .article-intro-toc {
+    margin-bottom: 2rem;
+    padding-block: 1rem;
+    border-block: 1px solid var(--border);
+  }
+
+  .article-intro-toc .article-intro-toc__title {
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .article-prose .article-intro-toc ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .article-intro-toc li {
+    margin: 0;
+    padding: 0.25rem 0;
+  }
+
+  .article-intro-toc a {
+    font-weight: inherit;
+    text-decoration: none;
+  }
+
+  .article-intro-toc a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .article-intro-toc a:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
+
   .article-category-link {
     display: inline-block;
     margin-bottom: 0.8rem;
@@ -339,6 +393,143 @@ const headings = post.getHeadings ? post.getHeadings() : [];
   .article-prose :global(*) {
     max-width: 100%;
     overflow-wrap: anywhere;
+  }
+
+  .article-prose :global(.insurance-map-figure) {
+    margin: 1.75rem 0;
+  }
+
+  .article-prose :global(.mind-map-canvas a) {
+    display: block;
+  }
+
+  .article-prose :global(.insurance-map-figure img) {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
+    background: white;
+  }
+
+  .article-prose :global(.insurance-map-figure figcaption) {
+    margin-top: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.85em;
+    text-align: center;
+  }
+
+  .article-prose :global(.insurance-map-sheet),
+  .article-prose :global(.insurance-metric-note) {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+  }
+
+  .article-prose :global(.insurance-map-sheet summary),
+  .article-prose :global(.insurance-metric-note summary) {
+    cursor: pointer;
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .article-prose :global(.insurance-map-sheet summary:focus-visible),
+  .article-prose :global(.insurance-metric-note summary:focus-visible),
+  .article-prose :global(.insurance-map-figure a:focus-visible) {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+  }
+
+  .article-prose :global(mind-map-viewer) {
+    display: block;
+    margin-block: 1.5rem;
+  }
+
+  .article-prose :global(.mind-map-toolbar) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    padding-block: 0.75rem;
+    font-size: 0.85em;
+  }
+
+  .article-prose :global(.mind-map-toolbar[hidden]) {
+    display: none;
+  }
+
+  .article-prose :global(.mind-map-controls) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .article-prose :global(.mind-map-controls button) {
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 0.4rem;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .article-prose :global(.mind-map-controls button:hover) {
+    background: var(--surface-blue);
+  }
+
+  .article-prose :global(.mind-map-controls button:disabled) {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .article-prose :global(.mind-map-controls button:focus-visible),
+  .article-prose :global(.mind-map-viewport:focus-visible) {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
+
+  .article-prose :global(.mind-map-controls output) {
+    min-width: 3.5em;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-muted);
+  }
+
+  .article-prose :global(.mind-map-viewport) {
+    height: clamp(24rem, 65vh, 36rem);
+    overflow: auto;
+    background: #fff;
+    border-block: 1px solid var(--border);
+    scrollbar-width: thin;
+  }
+
+  .article-prose :global(.mind-map-canvas) {
+    width: max-content;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: none;
+    padding: 12px;
+  }
+
+  .article-prose :global(mind-map-viewer .insurance-map-figure) {
+    margin: 0;
+  }
+
+  .article-prose :global(mind-map-viewer [data-map-image]) {
+    display: block;
+    width: var(--map-width, 100%);
+    max-width: none;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .article-prose :global(.mind-map-hint) {
+    margin-block: 0.5rem 0;
+    font-size: 0.85em;
+    color: var(--text-muted);
   }
 
   .article-prose :global(h2),
